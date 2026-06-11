@@ -1,0 +1,79 @@
+flowchart LR
+    %% THSI Static Scientific Evidence Graph v0.1 - human-readable ML-oriented schema
+
+    subgraph A["Observable signals / features"]
+        HRV["HRV ↓ / low resting HRV"]
+        EDA["EDA ↑ / SCR"]
+        Sleep["Sleep loss / restriction / fragmentation"]
+        Cortisol["Salivary cortisol ↑"]
+        Context["Social-evaluative threat context"]
+        Wearables["Multimodal wearable features"]
+        MultiBio["Multi-system biomarkers"]
+    end
+
+    subgraph B["Physiological mechanisms"]
+        ANS["Autonomic regulation shift"]
+        SNS["Sympathetic arousal"]
+        Recovery["Recovery deficit"]
+        HPA["HPA-axis activation"]
+        AcuteStress["Acute psychosocial stress response"]
+        Allostasis["Allostatic load"]
+    end
+
+    subgraph C["Neurobiological / affective bridge"]
+        EmotionReg["Emotion regulation impairment"]
+        Reactivity["Increased emotional reactivity"]
+        NegMood["Negative mood increase"]
+        LowPositive["Reduced positive affect"]
+        StressVuln["Stress vulnerability"]
+    end
+
+    subgraph D["Cautious state hypotheses - not diagnoses"]
+        Fatigue["Fatigue-like state"]
+        AnxietyLike["Anxiety-like arousal state"]
+        Irritability["Irritability vulnerability"]
+        LowAffect["Low positive-affect state"]
+        StressLike["Acute stress-like state"]
+        CogLoad["Cognitive load / arousal state"]
+    end
+
+    HRV -->|SUPPORTS| ANS
+    HRV -.->|MAY INDICATE, non-specific| StressVuln
+    EDA -->|SUPPORTS| SNS
+    Wearables -.->|MAY INDICATE, requires baseline| StressLike
+
+    Sleep -->|INCREASES PROBABILITY| EmotionReg
+    Sleep -->|INCREASES PROBABILITY| NegMood
+    Sleep -->|INCREASES PROBABILITY| LowPositive
+    Sleep -->|SUPPORTS| Recovery
+    Sleep -.->|weak / mixed| Cortisol
+
+    Cortisol -->|SUPPORTS| HPA
+    Context -->|SUPPORTS| AcuteStress
+    AcuteStress -->|INCREASES PROBABILITY| HPA
+
+    ANS -.->|MAY INDICATE| Recovery
+    SNS -->|SUPPORTS| CogLoad
+    SNS -->|SUPPORTS| StressLike
+    HPA -->|SUPPORTS WITH CONTEXT| AcuteStress
+
+    MultiBio -->|SUPPORTS| Allostasis
+    Allostasis -.->|risk state, not diagnosis| StressVuln
+
+    EmotionReg --> Reactivity
+    Reactivity -.-> AnxietyLike
+    NegMood -.-> Irritability
+    LowPositive -.-> LowAffect
+    Recovery --> Fatigue
+    StressVuln -.-> StressLike
+
+    classDef obs fill:#EEF6FF,stroke:#4B7BEC,stroke-width:1px,color:#102A43;
+    classDef mech fill:#F3F0FF,stroke:#7C3AED,stroke-width:1px,color:#241442;
+    classDef bridge fill:#FFF7E6,stroke:#F59E0B,stroke-width:1px,color:#3B2500;
+    classDef hyp fill:#ECFDF3,stroke:#10B981,stroke-width:1px,color:#052E1A;
+    classDef warning fill:#FFF1F2,stroke:#E11D48,stroke-width:1px,color:#4A0615;
+
+    class HRV,EDA,Sleep,Cortisol,Context,Wearables,MultiBio obs;
+    class ANS,SNS,Recovery,HPA,AcuteStress,Allostasis mech;
+    class EmotionReg,Reactivity,NegMood,LowPositive,StressVuln bridge;
+    class Fatigue,AnxietyLike,Irritability,LowAffect,StressLike,CogLoad hyp;

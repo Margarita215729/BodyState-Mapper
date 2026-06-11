@@ -1,0 +1,675 @@
+{
+  "research_series": {
+    "series_id": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition",
+    "series_name": "Postprandial Glucose Excursions, Brain Fog, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_004c_pattern_001",
+      "pattern_name": "Acute severe hypoglycemia reliably impairs cognitive performance across multiple domains",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "acute_severe_hypoglycemia",
+        "direction": "increased",
+        "measurement_methods": [
+          "glucose clamp",
+          "blood glucose monitoring",
+          "CGM"
+        ],
+        "contexts": [
+          "type 1 diabetes",
+          "type 2 diabetes",
+          "healthy adults under experimental clamp conditions"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "low_blood_glucose_availability",
+        "category": "metabolic_marker",
+        "direction": "decreased",
+        "pathway": "reduced circulating glucose availability during hypoglycemic state",
+        "mechanism": "acute energy substrate limitation for glucose-dependent neural computation, with compensatory autonomic and stress responses"
+      },
+      "neurobehavioral_output": {
+        "variable": "acute_cognitive_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "calculation tasks",
+          "attention tasks",
+          "working memory tasks",
+          "processing speed tasks",
+          "cognitive flexibility tasks"
+        ],
+        "affected_functions": [
+          "attention",
+          "working_memory",
+          "processing_speed",
+          "cognitive_flexibility",
+          "calculation_ability"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Acute severe hypoglycemia increases likelihood of immediate cognitive impairment across attention, working memory, processing speed, and cognitive flexibility.",
+        "hypotheses": [
+          {
+            "target": "acute_cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Experimental clamp studies show consistent acute cognitive declines during induced hypoglycemia."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_hours",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "diabetes_status",
+        "hypoglycemia_awareness",
+        "baseline_cognitive_status",
+        "age",
+        "medication_use"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "The strongest causal evidence concerns severe hypoglycemia rather than ordinary post-meal glucose spikes.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Consistent Effects of Hypoglycemia on Cognitive Function in People With or Without Diabetes",
+            "authors": "Verhulst et al.",
+            "year": 2022,
+            "source_type": "glucose_clamp_study",
+            "doi_or_url": "https://doi.org/10.2337/dc21-2502",
+            "relevant_finding": "Acute hypoglycemia impaired calculation, attention, working memory, processing speed, and cognitive flexibility.",
+            "population": "people with and without diabetes",
+            "sample_size": "",
+            "limitations": "Experimental hypoglycemia may not fully represent all real-world symptomatic states."
+          }
+        ]
+      },
+      "limitations": [
+        "Most direct causal evidence concerns hypoglycemia rather than hyperglycemia.",
+        "Real-world symptom perception may moderate functional impact."
+      ],
+      "alternative_explanations": [
+        "Stress response during hypoglycemia",
+        "symptom awareness",
+        "fear of hypoglycemia"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_severe_hypoglycemia",
+          "low_blood_glucose_availability",
+          "acute_cognitive_performance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_severe_hypoglycemia",
+            "target": "acute_cognitive_performance",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_004c_pattern_002",
+      "pattern_name": "Short-term glycemic variability is associated with poorer global cognition and executive function mainly in type 2 diabetes",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "short_term_glycemic_variability",
+        "direction": "increased",
+        "measurement_methods": [
+          "CGM",
+          "MAGE",
+          "coefficient_of_variation",
+          "postprandial_glucose_excursion"
+        ],
+        "contexts": [
+          "older adults with type 2 diabetes",
+          "middle-aged and elderly patients with type 2 diabetes",
+          "acute ischemic stroke with T2D"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "glucose_instability",
+        "category": "metabolic_marker",
+        "direction": "increased",
+        "pathway": "repeated glucose excursions and metabolic instability",
+        "mechanism": "possible oxidative stress, vascular stress, disrupted brain functional architecture, or chronic metabolic burden"
+      },
+      "neurobehavioral_output": {
+        "variable": "global_cognition_and_executive_function",
+        "direction": "impaired",
+        "measurement_methods": [
+          "MMSE",
+          "executive function tasks",
+          "attention measures",
+          "memory tests"
+        ],
+        "affected_functions": [
+          "global_cognition",
+          "executive_function",
+          "attention",
+          "memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "In people with type 2 diabetes, higher short-term glycemic variability is associated with poorer global cognition and executive function.",
+        "hypotheses": [
+          {
+            "target": "global_cognition_and_executive_function",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "CGM and meta-analytic evidence show associations independent of HbA1c, but direct causal mediation is rare."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days_to_months",
+        "latency": "delayed_or_cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "HbA1c",
+        "age",
+        "diabetes_duration",
+        "microvascular_disease",
+        "medication_use",
+        "stroke_status"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Evidence is strong associational in T2D but not enough for a universal causal rule.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated_in_diabetes",
+        "key_sources": [
+          {
+            "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes: A systematic review and meta-analysis",
+            "authors": "Chi et al.",
+            "year": 2023,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "https://doi.org/10.1371/journal.pone.0289782",
+            "relevant_finding": "Greater glucose variability associated with increased risk of cognitive impairment in T2D.",
+            "population": "type 2 diabetes",
+            "sample_size": "",
+            "limitations": "Mostly observational; causal direction not fully resolved."
+          },
+          {
+            "title": "Relationships Between Daily Acute Glucose Fluctuations and Cognitive Performance Among Aged Type 2 Diabetic Patients",
+            "authors": "Rizzo et al.",
+            "year": 2010,
+            "source_type": "observational_CGM",
+            "doi_or_url": "https://doi.org/10.2337/dc10-0389",
+            "relevant_finding": "Daily acute glucose fluctuations associated with cognitive performance among aged T2D patients.",
+            "population": "aged type 2 diabetes patients",
+            "sample_size": "",
+            "limitations": "Observational design."
+          }
+        ]
+      },
+      "limitations": [
+        "Population-specific to diabetes/metabolic disease.",
+        "Mediation rarely tested.",
+        "Cannot generalize directly to healthy adults."
+      ],
+      "alternative_explanations": [
+        "Disease severity",
+        "vascular complications",
+        "medication effects",
+        "chronic glycemic control"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "short_term_glycemic_variability",
+          "global_cognition_and_executive_function",
+          "type_2_diabetes_context"
+        ],
+        "candidate_edges": [
+          {
+            "source": "short_term_glycemic_variability",
+            "target": "global_cognition_and_executive_function",
+            "edge_type": "associated_with",
+            "polarity": "negative",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_004c_pattern_003",
+      "pattern_name": "Typical meal-induced postprandial glucose spikes do not consistently impair cognition or fatigue in healthy populations",
+      "causal_status": "negative_or_null_association",
+      "physiological_input": {
+        "variable": "typical_postprandial_glycemic_excursion",
+        "direction": "increased",
+        "measurement_methods": [
+          "meal challenge",
+          "high_GI_vs_low_GI_meal",
+          "postprandial glucose measurement",
+          "CGM"
+        ],
+        "contexts": [
+          "healthy adults",
+          "children without diabetes",
+          "young adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "postprandial_glucose_response",
+        "category": "metabolic_marker",
+        "direction": "increased",
+        "pathway": "normal post-meal glucose excursion",
+        "mechanism": "ordinary glucose excursion within non-diabetic physiological range"
+      },
+      "neurobehavioral_output": {
+        "variable": "objective_cognition_and_subjective_fatigue",
+        "direction": "stable_or_mixed",
+        "measurement_methods": [
+          "attention tasks",
+          "working memory tasks",
+          "fatigue questionnaires"
+        ],
+        "affected_functions": [
+          "attention",
+          "working_memory",
+          "subjective_fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "In healthy/non-diabetic populations, ordinary post-meal glucose excursions should not be assumed to cause brain fog or cognitive fatigue.",
+        "hypotheses": [
+          {
+            "target": "objective_cognition_and_subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "stable_or_mixed",
+            "confidence": "moderate",
+            "reason": "Most RCTs/crossover studies report null findings for attention/fatigue/working memory after high- versus low-GI meals."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_hours",
+        "latency": "immediate_or_delayed_postprandial",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "meal_composition",
+        "baseline_metabolic_health",
+        "sleep",
+        "physical_activity",
+        "individual_glucose_response"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Null or inconsistent findings predominate for healthy/non-diabetic populations.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Short-term effects of brief stair climbing interruptions on postprandial hyperglycemia during prolonged sitting",
+            "authors": "Thirunavukkarasu et al.",
+            "year": 2025,
+            "source_type": "randomized_cross_over_trial",
+            "doi_or_url": "https://doi.org/10.1038/s41598-024-77827-3",
+            "relevant_finding": "No significant differences in attention scores or subjective fatigue compared with controls.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Short-term intervention; may not capture vulnerable subgroups."
+          },
+          {
+            "title": "Impact of lunch with carbohydrates differing in glycemic index on children's cognitive functioning in the late postprandial phase",
+            "authors": "Drozdowska et al.",
+            "year": 2021,
+            "source_type": "randomized_crossover_study",
+            "doi_or_url": "https://doi.org/10.1007/s00394-021-02766-y",
+            "relevant_finding": "Meal GI differences did not produce consistent cognitive impairment.",
+            "population": "children",
+            "sample_size": "",
+            "limitations": "Children; specific lunch context; late postprandial phase."
+          }
+        ]
+      },
+      "limitations": [
+        "Brain fog is rarely directly operationalized.",
+        "Threshold magnitude/duration remains unclear.",
+        "Healthy-subgroup susceptibility may be missed."
+      ],
+      "alternative_explanations": [
+        "Meal size",
+        "sleepiness from circadian/post-lunch dip",
+        "expectancy effects",
+        "GI discomfort"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "typical_postprandial_glycemic_excursion",
+          "objective_cognition_and_subjective_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "typical_postprandial_glycemic_excursion",
+            "target": "objective_cognition_and_subjective_fatigue",
+            "edge_type": "hypothesis_only",
+            "polarity": "unknown",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "keep_as_hypothesis",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_004c_pattern_004",
+      "pattern_name": "Subjective awareness of hypo/hyperglycemia may predict daily functioning more than sensor-detected events alone",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "symptomatic_glycemic_event_awareness",
+        "direction": "increased",
+        "measurement_methods": [
+          "EMA",
+          "self-report app",
+          "CGM",
+          "symptom reporting"
+        ],
+        "contexts": [
+          "adults with diabetes",
+          "real-world daily functioning"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "perceived_symptomatic_glycemic_event",
+        "category": "behavioral_state",
+        "direction": "increased",
+        "pathway": "subjective symptom perception and behavioral response to glucose events",
+        "mechanism": "symptom awareness, worry, behavioral interruption, or autonomic activation may mediate functional impairment"
+      },
+      "neurobehavioral_output": {
+        "variable": "daily_functioning_energy_mood_memory",
+        "direction": "impaired",
+        "measurement_methods": [
+          "EMA daily functioning ratings",
+          "energy ratings",
+          "mood ratings",
+          "sleep quality ratings",
+          "memory/social functioning ratings"
+        ],
+        "affected_functions": [
+          "energy",
+          "mood",
+          "memory",
+          "sleep_quality",
+          "social_functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "In diabetes, person-reported symptomatic glucose events may be more informative for daily functioning than asymptomatic sensor-only glucose events.",
+        "hypotheses": [
+          {
+            "target": "daily_functioning_energy_mood_memory",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Prospective app-based data found stronger daily functioning effects for person-reported hypoglycemia than sensor-detected asymptomatic events."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_next_day",
+        "latency": "delayed",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "hypoglycemia_awareness",
+        "anxiety",
+        "diabetes_type",
+        "medication",
+        "sleep"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Subjective symptom awareness/action may be a key bridge between metabolic event and experienced fatigue/brain fog.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "emerging",
+        "key_sources": [
+          {
+            "title": "The impact of hypoglycaemia on daily functioning among adults with diabetes: a prospective observational study using the Hypo-METRICS app",
+            "authors": "Søholm et al.",
+            "year": 2024,
+            "source_type": "prospective_observational_EMA_CGM",
+            "doi_or_url": "https://doi.org/10.1007/s00125-024-06233-1",
+            "relevant_finding": "Person-reported hypoglycemia, more than sensor-detected asymptomatic events, associated with worsened daily functioning.",
+            "population": "adults with diabetes",
+            "sample_size": "",
+            "limitations": "Observational design; diabetes-specific."
+          }
+        ]
+      },
+      "limitations": [
+        "Does not prove glucose excursion alone causes symptoms.",
+        "May reflect perception, anxiety, or behavioral disruption."
+      ],
+      "alternative_explanations": [
+        "symptom_salience",
+        "health_anxiety",
+        "behavioral_interruption",
+        "poor_sleep"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "symptomatic_glycemic_event_awareness",
+          "daily_functioning_energy_mood_memory"
+        ],
+        "candidate_edges": [
+          {
+            "source": "symptomatic_glycemic_event_awareness",
+            "target": "daily_functioning_energy_mood_memory",
+            "edge_type": "predicts",
+            "polarity": "negative",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Typical postprandial glucose spikes directly cause subjective brain fog/fatigue in healthy people.",
+      "reason": "Direct evidence is sparse, brain fog is rarely operationalized, and most healthy/non-diabetic RCTs report null or inconsistent effects.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Postprandial hyperglycemia causes brain fog through a confirmed physiological mediator.",
+      "reason": "Few studies test full physiological-mediator-neurobehavioral chains or formal mediation.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "acute_severe_hypoglycemia",
+      "domain": "biochemical",
+      "definition": "A clinically or experimentally significant drop in blood glucose sufficient to produce acute neurobehavioral effects.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "short_term_glycemic_variability",
+      "domain": "biochemical",
+      "definition": "Short-window fluctuation in glucose levels, measured by CGM-derived metrics such as MAGE or coefficient of variation.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "symptomatic_glycemic_event_awareness",
+      "domain": "neurobehavioral",
+      "definition": "Person-reported awareness of hypo/hyperglycemic symptoms during or after glucose events.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "typical_postprandial_glycemic_excursion",
+      "domain": "biochemical",
+      "definition": "Ordinary rise in blood glucose after a meal, especially within non-diabetic physiological ranges.",
+      "evidence_strength": "low_for_brain_fog"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "acute_severe_hypoglycemia_acute_cognitive_performance_negative_high_confidence",
+      "source": "acute_severe_hypoglycemia",
+      "target": "acute_cognitive_performance",
+      "edge_type": "decreases_likelihood_of",
+      "polarity": "negative",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "short_term_glycemic_variability_global_cognition_executive_function_negative_moderate_confidence",
+      "source": "short_term_glycemic_variability",
+      "target": "global_cognition_and_executive_function",
+      "edge_type": "associated_with",
+      "polarity": "negative",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "typical_postprandial_glycemic_excursion_subjective_brain_fog_hypothesis_low_confidence",
+      "source": "typical_postprandial_glycemic_excursion",
+      "target": "subjective_brain_fog",
+      "edge_type": "hypothesis_only",
+      "polarity": "unknown",
+      "confidence": "low"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "title": "Consistent Effects of Hypoglycemia on Cognitive Function in People With or Without Diabetes",
+      "doi": "10.2337/dc21-2502",
+      "priority": "high"
+    },
+    {
+      "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes",
+      "doi": "10.1371/journal.pone.0289782",
+      "priority": "high"
+    },
+    {
+      "title": "Postprandial plasma glucose excursions and cognitive functioning in aged type 2 diabetics",
+      "doi": "10.1212/01.wnl.0000224760.22802.e8",
+      "priority": "high"
+    },
+    {
+      "title": "The impact of hypoglycaemia on daily functioning among adults with diabetes",
+      "doi": "10.1007/s00125-024-06233-1",
+      "priority": "high"
+    },
+    {
+      "title": "Short-term effects of brief stair climbing interruptions on postprandial hyperglycemia during prolonged sitting",
+      "doi": "10.1038/s41598-024-77827-3",
+      "priority": "medium"
+    }
+  ],
+  "research_gaps": [
+    "Direct evidence linking ordinary postprandial glucose excursions to subjective brain fog/fatigue in healthy adults is weak.",
+    "Mediation analyses linking glucose excursion to inflammatory, autonomic, or neural mediators are rare.",
+    "Threshold magnitude and duration of PPG excursion needed for cognitive effects in non-diabetic populations remains unclear.",
+    "Subjective brain fog is poorly operationalized compared with objective cognition tasks."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Acute severe hypoglycemia reliably impairs cognitive performance.",
+      "Short-term glycemic variability is associated with poorer cognition mainly in diabetes."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Hypoglycemia as a strong acute metabolic-to-cognitive impairment node.",
+      "Glycemic variability as a diabetes/metabolic-risk context marker.",
+      "Symptomatic event awareness as a bridge between glucose events and daily functioning."
+    ],
+    "patterns_requiring_caution": [
+      "Typical postprandial glucose spikes causing brain fog in healthy adults.",
+      "Direct causal mediation from postprandial hyperglycemia to subjective fatigue."
+    ],
+    "recommended_next_queries": [
+      "Are postprandial inflammatory cytokines or autonomic responses associated with subjective fatigue, sleepiness, or brain fog after meals?",
+      "Do gut hormones such as GLP-1, ghrelin, leptin, CCK, and PYY mediate post-meal sleepiness, motivation, and executive function?",
+      "Are reactive hypoglycemia symptoms in non-diabetic adults associated with attention, fatigue, mood, or perceived energy?"
+    ],
+    "overall_assessment": "The evidence supports hypoglycemia and diabetes-associated glycemic variability as meaningful neurobehavioral signals. Ordinary postprandial glucose spikes should not be treated as a confirmed cause of brain fog in healthy people. For BodyState Mapper, glucose-spike-to-brain-fog should remain hypothesis-only, while hypoglycemia and glycemic variability deserve graph edges with population/context constraints."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Consistent Effects of Hypoglycemia on Cognitive Function in People With or Without Diabetes",
+      "url": "https://doi.org/10.2337/dc21-2502",
+      "doi": "10.2337/dc21-2502",
+      "year": 2022
+    },
+    {
+      "index": 2,
+      "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes: A systematic review and meta-analysis",
+      "url": "https://doi.org/10.1371/journal.pone.0289782",
+      "doi": "10.1371/journal.pone.0289782",
+      "year": 2023
+    },
+    {
+      "index": 3,
+      "title": "Relationships Between Daily Acute Glucose Fluctuations and Cognitive Performance Among Aged Type 2 Diabetic Patients",
+      "url": "https://doi.org/10.2337/dc10-0389",
+      "doi": "10.2337/dc10-0389",
+      "year": 2010
+    },
+    {
+      "index": 4,
+      "title": "The impact of hypoglycaemia on daily functioning among adults with diabetes",
+      "url": "https://doi.org/10.1007/s00125-024-06233-1",
+      "doi": "10.1007/s00125-024-06233-1",
+      "year": 2024
+    },
+    {
+      "index": 5,
+      "title": "Short-term effects of brief stair climbing interruptions on postprandial hyperglycemia during prolonged sitting",
+      "url": "https://doi.org/10.1038/s41598-024-77827-3",
+      "doi": "10.1038/s41598-024-77827-3",
+      "year": 2025
+    }
+  ]
+}

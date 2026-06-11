@@ -1,0 +1,222 @@
+{
+  "research_series": {
+    "series_id": "series_049_multibranch_differential_inference_templates",
+    "series_name": "Multi-Branch Differential Inference Templates for Symptoms,Phenotypes,Mechanisms,and Measurements",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_049_pattern_001",
+      "pattern_name": "Symptom-to-phenotype-to-mechanism inference template",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "symptom_report",
+        "direction": "present|uncertain|context_dependent|time_dependent",
+        "measurement_methods": [
+          "clinical history",
+          "questionnaires",
+          "wearables",
+          "labs",
+          "objective testing"
+        ],
+        "contexts": [
+          "fatigue",
+          "brain fog",
+          "dizziness",
+          "anxiety-like symptoms",
+          "mood",
+          "GI",
+          "headache"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "phenotype_uncertain_to_candidate_mechanism_cluster",
+        "category": "diagnostic_rule",
+        "direction": "branching",
+        "pathway": "symptom report is first mapped to phenotype uncertainty, then candidate mechanisms and needed measurements",
+        "mechanism": "multimodal reasoning improves branch selection under uncertainty compared with single-modality inference"
+      },
+      "neurobehavioral_output": {
+        "variable": "candidate_mechanism_and_next_measurement",
+        "direction": "measurement_needed",
+        "measurement_methods": [
+          "confidence update",
+          "Bayesian differential reasoning",
+          "knowledge graph reasoning"
+        ],
+        "affected_functions": [
+          "diagnostic_reasoning",
+          "uncertainty_management"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not jump from symptom to mechanism. Use: symptom→phenotype uncertainty→candidate mechanisms→required measurements→confidence update→guardrails.",
+        "hypotheses": [
+          {
+            "target": "differential_template_core",
+            "domain": "differential_inference",
+            "direction": "recommended",
+            "confidence": "high",
+            "reason": "Methodological reviews support multimodal fusion, Bayesian/probabilistic reasoning, and rule/graph systems for uncertainty-aware differential diagnosis."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "not_applicable",
+        "latency": "unknown|time_context_required",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "measurement quality",
+        "external validation",
+        "interpretability",
+        "missing data",
+        "dataset shift",
+        "workflow integration"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Multimodal AI/ML and Bayesian networks improve differential diagnosis under uncertainty, but most systems lack external validation, interpretability, workflow integration, and full-chain deterministic support.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Methodological Approaches and Inference Templates for Differential Diagnosis",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "methods_paper",
+            "doi_or_url": "",
+            "relevant_finding": "Reusable inference templates rarely achieve full-chain direct support; most serve as guidance tools.",
+            "population": "human health methods literature",
+            "sample_size": "50 included papers",
+            "limitations": "External validation and real-world deployment limited."
+          }
+        ]
+      },
+      "limitations": [
+        "Interpretability limited in black-box models",
+        "Knowledge graphs often lack real-world validation",
+        "Rule-based CDSS scalability issues"
+      ],
+      "alternative_explanations": [
+        "single-modality model overfitting",
+        "dataset shift",
+        "measurement bias"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "symptom_report",
+          "phenotype_uncertain",
+          "candidate_mechanism_cluster",
+          "next_measurement_needed",
+          "confidence_update",
+          "branch_downweighted",
+          "branch_supported",
+          "branch_conflict",
+          "alternative_explanation_required",
+          "guardrail_required"
+        ],
+        "candidate_edges": [
+          {
+            "source": "symptom_report",
+            "target": "phenotype_uncertain",
+            "edge_type": "inference_template",
+            "polarity": "neutral",
+            "confidence": "high"
+          },
+          {
+            "source": "phenotype_uncertain",
+            "target": "candidate_mechanism_cluster",
+            "edge_type": "inference_template",
+            "polarity": "neutral",
+            "confidence": "high"
+          },
+          {
+            "source": "candidate_mechanism_cluster",
+            "target": "next_measurement_needed",
+            "edge_type": "measurement_recommendation",
+            "polarity": "neutral",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Multimodal AI models are ready as deterministic diagnostic engines",
+      "reason": "Most current models lack robust external validation and real-world deployment evidence.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "phenotype_uncertain",
+      "domain": "diagnostic",
+      "definition": "Intermediate node requiring symptom clarification before mechanism inference.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "next_measurement_needed",
+      "domain": "measurement",
+      "definition": "Recommended measurement required to update confidence in candidate mechanisms.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "symptom_report_to_phenotype_uncertain_template",
+      "source": "symptom_report",
+      "target": "phenotype_uncertain",
+      "edge_type": "inference_template",
+      "polarity": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need standardized evaluation for knowledge-graph/rule-based CDSS",
+    "Need external validation across symptom clusters",
+    "Need workflow-integrated explainability"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Multimodal fusion improves diagnostic accuracy vs unimodal methods",
+      "Bayesian networks manage diagnostic uncertainty",
+      "Reusable templates are guidance rather than deterministic rules"
+    ],
+    "highest_value_patterns_for_inference": [
+      "symptom→phenotype→mechanism→measurement template",
+      "negative evidence requires measurement quality",
+      "time/context mandatory"
+    ],
+    "patterns_requiring_caution": [
+      "black-box clinical diagnosis",
+      "unvalidated knowledge graph reasoning"
+    ],
+    "recommended_next_queries": [
+      "Final graph guardrails and validation protocol"
+    ],
+    "overall_assessment": "Core methodological template layer for final system architecture."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Methodological Approaches and Inference Templates for Differential Diagnosis, Clinical Reasoning, and Syndrome Phenotyping",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

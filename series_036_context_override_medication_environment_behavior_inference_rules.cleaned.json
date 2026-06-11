@@ -1,0 +1,221 @@
+{
+  "research_series": {
+    "series_id": "series_036_context_override_medication_environment_behavior_inference_rules",
+    "series_name": "Context Override Rules: Medication, Environment, Behavior, and Health State Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_036_pattern_001",
+      "pattern_name": "Contextual factors can override or downweight biomarker and wearable inference",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "contextual_factor",
+        "direction": "context_dependent",
+        "measurement_methods": [
+          "sleep/circadian history",
+          "medication/substance timing",
+          "environmental exposure",
+          "exercise/meal timing",
+          "menstrual phase",
+          "stress/travel/shift work"
+        ],
+        "contexts": [
+          "wearable inference",
+          "lab interpretation",
+          "symptom interpretation"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "measurement_or_biological_context",
+        "category": "contextual_factor",
+        "direction": "modifies_marker_interpretation",
+        "pathway": "context alters true physiology or measurement reliability",
+        "mechanism": "sleep loss, circadian misalignment, heat, pollution, exercise, meal timing, medication or stress can change biomarkers and symptoms independently of target pathology"
+      },
+      "neurobehavioral_output": {
+        "variable": "inference_confidence",
+        "direction": "context_dependent",
+        "measurement_methods": [
+          "context-aware modeling",
+          "temporal alignment",
+          "downweighting rules"
+        ],
+        "affected_functions": [
+          "fatigue inference",
+          "mood inference",
+          "cognition inference",
+          "wearable/lab interpretation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "When a strong contextual factor is temporally aligned with a biomarker/symptom change, downweight direct physiological interpretation and require an alternative explanation check.",
+        "hypotheses": [
+          {
+            "target": "inference_confidence",
+            "domain": "contextual_inference",
+            "direction": "downweighted_when_context_present",
+            "confidence": "high",
+            "reason": "Sleep/circadian/environmental/behavioral contexts robustly alter biomarkers, wearables, symptoms and cognition."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|same_day|next_day|days",
+        "latency": "immediate|delayed|circadian|post_exertional|postprandial",
+        "reversibility": "context_responsive"
+      },
+      "modulators_confounders": [
+        "sleep loss",
+        "shift work",
+        "travel",
+        "heat",
+        "pollution",
+        "exercise",
+        "meal timing",
+        "stress",
+        "medications",
+        "menstrual phase"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Contextual factors can be true causes or measurement confounders; inference should separate biological modification from artifact and downweight overconfident interpretations.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Contextual Override Rules in Health Inference",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "systematic_review_synthesis",
+            "doi_or_url": "",
+            "relevant_finding": "Sleep/circadian/environmental contexts have strongest support as override/downweighting factors; medication/substance and menstrual-phase contexts need more direct evidence.",
+            "population": "human health studies",
+            "sample_size": "50 included papers",
+            "limitations": "Direct override-rule literature is sparse for some contexts."
+          }
+        ]
+      },
+      "limitations": [
+        "Less direct evidence for menstrual phase and substance-use override rules",
+        "Digital models often omit context integration"
+      ],
+      "alternative_explanations": [
+        "true disease state",
+        "measurement artifact",
+        "behavioral confounding"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "context_override",
+          "medication_timing_context",
+          "substance_use_context",
+          "acute_illness_context",
+          "recent_exercise_context",
+          "postprandial_context",
+          "sleep_loss_context",
+          "shift_work_context",
+          "heat_exposure_context",
+          "alcohol_hangover_context",
+          "caffeine_withdrawal_context",
+          "menstrual_phase_context",
+          "stress_context",
+          "travel_context",
+          "measurement_confounded",
+          "inference_downweighted",
+          "alternative_explanation_required"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sleep_loss_context",
+            "target": "inference_downweighted",
+            "edge_type": "context_override",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "heat_exposure_context",
+            "target": "wearable_lab_marker_confounding",
+            "edge_type": "confounds",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "recent_exercise_context",
+            "target": "biomarker_context_required",
+            "edge_type": "context_override",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Context should erase physiological hypotheses",
+      "reason": "Context should usually downweight or redirect interpretation, not automatically negate other branches.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "context_override",
+      "domain": "contextual",
+      "definition": "A temporally aligned contextual factor that modifies or confounds interpretation of a biomarker, wearable signal or symptom.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "sleep_circadian_context_inference_downweighted",
+      "source": "sleep_loss_context",
+      "target": "inference_confidence",
+      "edge_type": "downweights",
+      "polarity": "negative",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need high-quality medication/substance/menstrual-phase override studies integrated with wearable and lab data."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Sleep/circadian disruption alters cortisol/BP/glucose/inflammation/mood/cognition/fatigue.",
+      "Heat and pollution can acutely confound HRV/BP/glucose/CRP.",
+      "No single physiological measure detects workload/stress without context."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Temporal alignment of context→marker→outcome.",
+      "Downweighting rather than erasing hypotheses."
+    ],
+    "patterns_requiring_caution": [
+      "Understudied contexts such as menstrual phase/substance use."
+    ],
+    "recommended_next_queries": [
+      "How to operationalize context-aware inference in graph scoring?"
+    ],
+    "overall_assessment": "Required override layer for all downstream inference."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Contextual Override Rules in Health Inference",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

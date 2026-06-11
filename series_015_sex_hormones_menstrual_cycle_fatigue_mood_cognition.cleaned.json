@@ -1,0 +1,473 @@
+{
+  "research_series": {
+    "series_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition",
+    "series_name": "Sex Hormones, Menstrual Cycle, Reproductive Endocrine State, Fatigue, Mood, Sleep, Pain, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_015_pattern_001",
+      "pattern_name": "Menstrual cycle/hormone fluctuations drive subjective mood/fatigue/sleep changes",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "menstrual_cycle_hormone_fluctuation",
+        "direction": "phase_dependent",
+        "measurement_methods": [
+          "cycle tracking",
+          "daily diary",
+          "wearable tracking",
+          "estradiol/progesterone when measured"
+        ],
+        "contexts": [
+          "healthy cycling adults",
+          "PMS",
+          "PMDD",
+          "mood disorders"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "late_luteal_premenstrual_hormone_change",
+        "category": "sex_hormone_marker",
+        "direction": "fluctuating_or_withdrawal",
+        "pathway": "cycle-related changes in estradiol/progesterone interact with sleep, stress sensitivity and affect regulation",
+        "mechanism": "phase-dependent vulnerability rather than uniform hormone-level effect"
+      },
+      "neurobehavioral_output": {
+        "variable": "subjective_mood_fatigue_sleep_symptoms",
+        "direction": "worsened_premenstrual_or_late_luteal",
+        "measurement_methods": [
+          "daily mood ratings",
+          "fatigue scales",
+          "sleep self-report",
+          "wearables"
+        ],
+        "affected_functions": [
+          "mood",
+          "fatigue",
+          "sleep quality",
+          "perceived energy"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "late_luteal_phase",
+          "premenstrual_phase",
+          "hormone_fluctuation",
+          "subjective_fatigue",
+          "mood_worsening",
+          "sleep_disturbance_premenstrual"
+        ],
+        "candidate_edges": [
+          {
+            "source": "premenstrual_phase",
+            "target": "subjective_mood_fatigue_sleep_symptoms",
+            "edge_type": "phase_dependent_effect",
+            "polarity": "phase_dependent",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_015_pattern_002",
+      "pattern_name": "Objective cognitive performance is largely stable across menstrual cycle in healthy adults",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "menstrual_cycle_phase",
+        "direction": "phase_dependent",
+        "measurement_methods": [
+          "cycle tracking",
+          "phase verification",
+          "cognitive testing"
+        ],
+        "contexts": [
+          "healthy cycling adults"
+        ]
+      },
+      "mediator": {
+        "status": "not_measured",
+        "name": "none_consistent",
+        "category": "behavioral_state",
+        "direction": "stable",
+        "pathway": "subjective symptoms may fluctuate without objective cognitive performance changes",
+        "mechanism": "expectation, sleep, stress, or individual vulnerability may explain perceived brain fog"
+      },
+      "neurobehavioral_output": {
+        "variable": "objective_cognitive_performance",
+        "direction": "stable",
+        "measurement_methods": [
+          "attention tasks",
+          "executive function tasks",
+          "memory tests"
+        ],
+        "affected_functions": [
+          "attention",
+          "executive function",
+          "working memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "objective_cognitive_performance_stable_across_cycle",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "menstrual_cycle_phase",
+            "target": "objective_cognitive_performance",
+            "edge_type": "no_clear_association",
+            "polarity": "neutral",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_015_pattern_003",
+      "pattern_name": "PMS/PMDD and mood disorders increase cycle-linked symptom vulnerability",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "PMS_PMDD_or_mood_disorder_status",
+        "direction": "increased_vulnerability",
+        "measurement_methods": [
+          "clinical diagnosis",
+          "symptom tracking",
+          "daily diary"
+        ],
+        "contexts": [
+          "PMS",
+          "PMDD",
+          "mood disorders",
+          "ADHD"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "hormone_sensitivity",
+        "category": "behavioral_state",
+        "direction": "increased",
+        "pathway": "clinical sensitivity to normal hormonal fluctuations",
+        "mechanism": "heightened affective and cognitive symptom response to cycle phase"
+      },
+      "neurobehavioral_output": {
+        "variable": "cycle_related_symptom_exacerbation",
+        "direction": "worsened",
+        "measurement_methods": [
+          "mood scales",
+          "fatigue ratings",
+          "symptom diaries"
+        ],
+        "affected_functions": [
+          "mood",
+          "irritability",
+          "fatigue",
+          "sleep",
+          "perceived cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "PMS_symptom_state",
+          "PMDD_symptom_state",
+          "cycle_related_symptom_exacerbation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "PMDD_symptom_state",
+            "target": "mood_worsening",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_015_pattern_004",
+      "pattern_name": "HRV/RHR/body temperature show biphasic cycle patterns",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "menstrual_cycle_phase_or_hormonal_state",
+        "direction": "phase_dependent",
+        "measurement_methods": [
+          "wearables",
+          "HRV",
+          "RHR",
+          "body temperature"
+        ],
+        "contexts": [
+          "healthy cycling adults",
+          "hormonal contraception users"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "autonomic_thermoregulatory_shift",
+        "category": "autonomic_marker",
+        "direction": "luteal_RHR_temperature_increase_HRV_change",
+        "pathway": "ovarian hormone modulation of autonomic and thermoregulatory physiology",
+        "mechanism": "biphasic cycle pattern"
+      },
+      "neurobehavioral_output": {
+        "variable": "readiness_or_recovery_metrics",
+        "direction": "mixed",
+        "measurement_methods": [
+          "wearable readiness",
+          "sleep quality ratings"
+        ],
+        "affected_functions": [
+          "recovery",
+          "sleep",
+          "perceived readiness"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "altered_HRV_across_cycle",
+          "elevated_resting_heart_rate_luteal",
+          "increased_basal_body_temperature_luteal"
+        ],
+        "candidate_edges": [
+          {
+            "source": "luteal_phase",
+            "target": "elevated_resting_heart_rate_luteal",
+            "edge_type": "phase_dependent_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_015_pattern_005",
+      "pattern_name": "Hormonal contraception withdrawal can worsen mood/anxiety/fatigue",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "oral_contraceptive_withdrawal_week",
+        "direction": "withdrawal",
+        "measurement_methods": [
+          "contraceptive schedule",
+          "hormonal contraception studies"
+        ],
+        "contexts": [
+          "oral contraceptive users"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "hormone_withdrawal",
+        "category": "sex_hormone_marker",
+        "direction": "decreased_exogenous_hormone_exposure",
+        "pathway": "withdrawal interval mimics aspects of natural menses symptom vulnerability",
+        "mechanism": "short-term hormone withdrawal"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_anxiety_fatigue_symptoms",
+        "direction": "worsened",
+        "measurement_methods": [
+          "mood/anxiety scales",
+          "fatigue ratings"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "oral_contraceptive_withdrawal_week",
+          "hormone_withdrawal_window"
+        ],
+        "candidate_edges": [
+          {
+            "source": "oral_contraceptive_withdrawal_week",
+            "target": "mood_anxiety_fatigue_symptoms",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_015_pattern_006",
+      "pattern_name": "Perimenopausal estradiol/progesterone variability predicts depressive vulnerability",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "perimenopause_hormone_variability",
+        "direction": "variable",
+        "measurement_methods": [
+          "longitudinal hormone tracking"
+        ],
+        "contexts": [
+          "perimenopause",
+          "postpartum transition"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "estradiol_variability_and_progesterone_status",
+        "category": "sex_hormone_marker",
+        "direction": "variable",
+        "pathway": "reproductive transition-related hormone dynamics alter mood vulnerability",
+        "mechanism": "variability/withdrawal more informative than absolute low level"
+      },
+      "neurobehavioral_output": {
+        "variable": "depressive_symptoms",
+        "direction": "worsened",
+        "measurement_methods": [
+          "depression scales"
+        ],
+        "affected_functions": [
+          "mood"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "perimenopause_transition",
+          "estradiol_variability",
+          "progesterone_protective_pattern"
+        ],
+        "candidate_edges": [
+          {
+            "source": "perimenopause_hormone_variability",
+            "target": "depressive_symptoms",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective brain fog across cycle phases does not reliably correspond to measurable cognitive impairment.",
+      "reason": "Studies comparing self-report with objective tests show incongruence.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Pain sensitivity varies little by menstrual phase in healthy adults.",
+      "reason": "Well-controlled experimental pain studies often find no significant phase/hormone effect.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Cycle phase alone is not a precise proxy for hormone levels.",
+      "reason": "Phase verification and direct hormone measurement are required for strong inference.",
+      "recommendation": "keep_as_guardrail"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "late_luteal_phase",
+      "domain": "contextual",
+      "definition": "Cycle interval preceding menstruation, often associated with symptom vulnerability.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "PMDD_symptom_state",
+      "domain": "neurobehavioral",
+      "definition": "Clinically significant premenstrual affective and functional symptom state.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "oral_contraceptive_withdrawal_week",
+      "domain": "contextual",
+      "definition": "Hormone-free/pill-pause interval during cyclic oral contraceptive use.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "altered_HRV_across_cycle",
+      "domain": "physiological",
+      "definition": "Phase-dependent autonomic variation across menstrual cycle or hormonal states.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "late_luteal_phase_subjective_mood_fatigue_sleep_symptoms_phase_dependent_high",
+      "source": "late_luteal_phase",
+      "target": "subjective_mood_fatigue_sleep_symptoms",
+      "edge_type": "phase_dependent_effect",
+      "polarity": "phase_dependent",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "menstrual_cycle_phase_objective_cognition_no_clear_association_high",
+      "source": "menstrual_cycle_phase",
+      "target": "objective_cognitive_performance",
+      "edge_type": "no_clear_association",
+      "polarity": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "research_gaps": [
+    "Need high-frequency within-person hormone/outcome tracking with sleep/autonomic/inflammatory mediators.",
+    "Need formulation-specific contraception studies.",
+    "Need mechanistic postpartum/perimenopause studies with stress and sleep mediators."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Subjective mood/fatigue/sleep symptoms worsen late-luteal/premenstrual in many individuals.",
+      "Objective cognition is largely stable across cycle phases in healthy adults.",
+      "PMS/PMDD increases cycle-linked vulnerability."
+    ],
+    "patterns_requiring_caution": [
+      "Subjective brain fog as objective cognitive impairment.",
+      "Cycle phase as hormone-level proxy.",
+      "Contraception effects without formulation/withdrawal details."
+    ],
+    "overall_assessment": "Sex hormone/cycle state is a strong contextual modifier for subjective symptoms and wearable physiology, but weak as a standalone predictor of objective cognition in healthy adults."
+  }
+}

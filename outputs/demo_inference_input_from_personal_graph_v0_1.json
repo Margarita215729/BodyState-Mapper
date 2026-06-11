@@ -1,0 +1,66 @@
+[
+  {
+    "observation_id": "derived_raw_demo_001",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "sleep_loss",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "wearable",
+    "quality_score": 0.9,
+    "context": {
+      "sleep_fragmentation": "unknown",
+      "observed_value": 4.5,
+      "baseline_median": 7.4,
+      "hours_below_median": 2.9,
+      "deviation_strength": "strong",
+      "context_only": false
+    },
+    "notes": "Derived from raw observation(s) raw_demo_001 via sleep_duration 4.5h is 2.9h below baseline median 7.4h (>= 1.5h threshold) -> sleep_loss. Short sleep duration relative to baseline."
+  },
+  {
+    "observation_id": "derived_raw_demo_002",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "reduced_hrv_relative_to_baseline",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "wearable",
+    "quality_score": 0.75,
+    "context": {
+      "recording_duration": "unknown",
+      "recent_exercise": false,
+      "illness_symptoms": false,
+      "observed_value": 28.0,
+      "baseline_median": 48.0,
+      "below_median_ms": 20.0,
+      "deviation_strength": "strong",
+      "context_only": false
+    },
+    "notes": "Derived from raw observation(s) raw_demo_002 via hrv_rmssd 28.0ms is below baseline median 48.0ms by 20.0ms (>= 1 std or >= 25%) -> reduced_hrv_relative_to_baseline. HRV below personal baseline."
+  },
+  {
+    "observation_id": "derived_raw_demo_003",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "increased_eda",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "wearable",
+    "quality_score": 0.525,
+    "context": {
+      "skin_contact_quality": "unknown",
+      "recent_movement": "unknown",
+      "ambient_temperature": "unknown",
+      "observed_value": 2.3,
+      "baseline_median": 1.2,
+      "above_median": 1.1,
+      "deviation_strength": "strong",
+      "context_only": false
+    },
+    "notes": "Derived from raw observation(s) raw_demo_003 via eda 2.3 is above baseline median 1.2 by 1.10 (>= 1 std or >= 30%) -> increased_eda. EDA above personal baseline."
+  }
+]

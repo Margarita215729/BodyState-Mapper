@@ -1,0 +1,55 @@
+{
+  "research_series": {
+    "series_id": "series_034_individual_baseline_within_person_deviation_health_state_inference",
+    "series_name": "Individual Baseline Modeling,Within-Person Deviation,and Personalized Health State Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_034_pattern_001",
+      "pattern_name": "Within-person deviations outperform population thresholds for state inference",
+      "causal_status": "prediction",
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "personal_baseline",
+          "rolling_baseline",
+          "within_person_deviation",
+          "persistent_deviation_from_baseline",
+          "transient_deviation",
+          "baseline_drift",
+          "personal_threshold",
+          "measurement_noise",
+          "missing_data",
+          "individualized_confidence_score"
+        ],
+        "candidate_edges": [
+          {
+            "source": "within_person_deviation",
+            "target": "health_state_change",
+            "edge_type": "predicts",
+            "polarity": "mixed",
+            "confidence": "high"
+          },
+          {
+            "source": "persistent_deviation_from_baseline",
+            "target": "state_change_hypothesis",
+            "edge_type": "baseline_deviation",
+            "polarity": "mixed",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "guardrails": [
+    "Population reference range is not personal baseline",
+    "Separate baseline drift from acute state change",
+    "Separate measurement noise from biological change"
+  ],
+  "summary": {
+    "overall_assessment": "Personal baseline modeling should become the default inference frame."
+  }
+}

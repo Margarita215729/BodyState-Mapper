@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/static_node.schema.json",
+  "title": "THSI Static Scientific Graph Node",
+  "description": "Schema for a typed node in the THSI Static Scientific Evidence Graph v0.1. Clinical diagnosis nodes are forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "node_id",
+    "node_type",
+    "label",
+    "domain",
+    "description",
+    "allowed_as_input",
+    "allowed_as_output",
+    "clinical_diagnosis",
+    "created_from_edges"
+  ],
+  "properties": {
+    "node_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique slug identifier matching edge source_node/target_node values."
+    },
+    "node_type": {
+      "type": "string",
+      "enum": [
+        "observable_marker",
+        "physiological_mechanism",
+        "biochemical_marker",
+        "neurobiological_affective_bridge",
+        "psychological_state_hypothesis",
+        "risk_state",
+        "context_node",
+        "model_feature_node",
+        "methodological_node"
+      ]
+    },
+    "label": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Human-readable display label."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Primary evidence domain inferred from connected edges."
+    },
+    "description": {
+      "type": "string",
+      "description": "Conservative explanation of the node's role in the graph."
+    },
+    "allowed_as_input": {
+      "type": "boolean",
+      "description": "True when the node may originate from observations or feature extraction."
+    },
+    "allowed_as_output": {
+      "type": "boolean",
+      "description": "True when the node may be an inference output (mechanism, bridge, risk, or state hypothesis)."
+    },
+    "clinical_diagnosis": {
+      "type": "boolean",
+      "const": false,
+      "description": "Must always be false in v0.1; no clinical diagnosis nodes."
+    },
+    "created_from_edges": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "description": "edge_id values where this node appears as source_node or target_node."
+    }
+  }
+}

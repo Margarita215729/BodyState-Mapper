@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/personal_evidence_graph.schema.json",
+  "title": "THSI Personal Evidence Graph",
+  "description": "Personal evidence graph artifact linking raw observations, baseline, derived markers, and inference inputs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "personal_graph_id",
+    "subject_id",
+    "created_at",
+    "raw_observations",
+    "personal_baseline",
+    "derived_markers",
+    "matched_static_nodes",
+    "inference_input_observations",
+    "inference_result",
+    "warnings"
+  ],
+  "properties": {
+    "personal_graph_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "raw_observations": {
+      "type": "array",
+      "items": { "$ref": "raw_observation.schema.json" }
+    },
+    "personal_baseline": {
+      "$ref": "personal_baseline.schema.json"
+    },
+    "derived_markers": {
+      "type": "array",
+      "items": { "$ref": "derived_marker.schema.json" }
+    },
+    "matched_static_nodes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "description": "Static graph node_ids matched from derived markers."
+    },
+    "inference_input_observations": {
+      "type": "array",
+      "description": "Observations in personal_observation format for run_inference.py."
+    },
+    "inference_result": {
+      "description": "Optional embedded inference engine result; null before inference runs."
+    },
+    "warnings": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

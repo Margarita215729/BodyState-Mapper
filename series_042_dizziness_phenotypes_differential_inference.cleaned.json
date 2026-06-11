@@ -1,0 +1,331 @@
+{
+  "research_series": {
+    "series_id": "series_042_dizziness_phenotypes_differential_inference",
+    "series_name": "Dizziness Phenotypes,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_042_pattern_001",
+      "pattern_name": "Dizziness word must be split into vertigo,lightheadedness,presyncope,syncope,disequilibrium,visual motion sensitivity",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "dizziness_symptom_report",
+        "direction": "variable",
+        "measurement_methods": [
+          "structured history",
+          "Dizziness Handicap Inventory",
+          "vestibular questionnaire"
+        ],
+        "contexts": [
+          "acute dizziness",
+          "chronic dizziness",
+          "vestibular migraine",
+          "PPPD",
+          "BPPV",
+          "POTS/OI",
+          "elderly multifactorial dizziness"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "dizziness_phenotype",
+        "category": "vestibular_marker",
+        "direction": "phenotype_specific",
+        "pathway": "different subjective dizziness descriptors map to distinct mechanism clusters",
+        "mechanism": "vertigo often vestibular; lightheadedness/presyncope often autonomic/cardiovascular; visual motion sensitivity often VM/PPPD/sensory dependence"
+      },
+      "neurobehavioral_output": {
+        "variable": "next_measurement_needed",
+        "direction": "phenotype_specific",
+        "measurement_methods": [
+          "vHIT",
+          "VNG",
+          "caloric testing",
+          "orthostatic vitals",
+          "TCD/NIRS",
+          "capnography",
+          "medication review"
+        ],
+        "affected_functions": [
+          "balance",
+          "functional impairment",
+          "anxiety",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not infer vestibular disease from the word dizziness; first classify the dizziness phenotype and context.",
+        "hypotheses": [
+          {
+            "target": "dizziness_phenotype_uncertain",
+            "domain": "dizziness_phenotyping",
+            "direction": "requires_subtyping",
+            "confidence": "high",
+            "reason": "Reviews emphasize overlap among dizziness syndromes and need integrated history/exam/physiology."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_chronic",
+        "latency": "immediate|attack|orthostatic|cumulative",
+        "reversibility": "position_responsive|treatment_responsive|unknown"
+      },
+      "modulators_confounders": [
+        "age",
+        "sex",
+        "migraine",
+        "anxiety",
+        "medications",
+        "post-viral state",
+        "hearing symptoms"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Dizziness phenotypes are partially differentiable with clinical features and targeted markers, but overlap remains substantial.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Dizziness Phenotypes: Human Studies Review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Vertigo, lightheadedness/presyncope, disequilibrium and visual motion sensitivity should be separated; no single test distinguishes all subtypes.",
+            "population": "mixed dizziness cohorts",
+            "sample_size": "50 papers",
+            "limitations": "Overlap between VM/BPPV/PPPD/Meniere's persists."
+          }
+        ]
+      },
+      "limitations": [
+        "No single test distinguishes all subtypes"
+      ],
+      "alternative_explanations": [
+        "Medication effects",
+        "anxiety/body vigilance",
+        "multifactorial elderly dizziness"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "dizziness_phenotype_uncertain",
+          "vertigo",
+          "lightheadedness",
+          "presyncope",
+          "syncope",
+          "dysequilibrium",
+          "visual_vertigo"
+        ],
+        "candidate_edges": [
+          {
+            "source": "dizziness_symptom_report",
+            "target": "dizziness_phenotype_uncertain",
+            "edge_type": "phenotype_marker",
+            "polarity": "unknown",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_042_pattern_002",
+      "pattern_name": "Orthostatic/POTS/hypocapnia dizziness requires dynamic testing; normal seated BP or SpO2 does not exclude it",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "orthostatic_or_respiratory_dizziness_context",
+        "direction": "orthostatic",
+        "measurement_methods": [
+          "active stand",
+          "tilt table",
+          "orthostatic HR/BP",
+          "TCD",
+          "NIRS",
+          "capnography",
+          "ETCO2"
+        ],
+        "contexts": [
+          "POTS",
+          "orthostatic intolerance",
+          "hypocapnic cerebral hypoperfusion",
+          "post-viral syndromes"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "orthostatic_or_hypocapnic_cerebral_hypoperfusion",
+        "category": "cerebral_perfusion_marker",
+        "direction": "increased",
+        "pathway": "upright posture or hypocapnia reduces cerebral perfusion and provokes dizziness/brain fog",
+        "mechanism": "autonomic dysregulation, hypovolemia, hypocapnia-mediated vasoconstriction"
+      },
+      "neurobehavioral_output": {
+        "variable": "lightheadedness_presyncope_brain_fog",
+        "direction": "impaired",
+        "measurement_methods": [
+          "symptom report during challenge",
+          "functional impairment",
+          "cognitive tasks"
+        ],
+        "affected_functions": [
+          "dizziness",
+          "brain fog",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If dizziness is posture-linked, dynamic orthostatic/perfusion/ETCO2 testing has higher value than seated vitals.",
+        "hypotheses": [
+          {
+            "target": "orthostatic_dizziness",
+            "domain": "dizziness_phenotyping",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "TCD/NIRS/capnography improve specificity for POTS/OI/hypocapnia syndromes."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_minutes",
+        "latency": "orthostatic",
+        "reversibility": "position_responsive"
+      },
+      "modulators_confounders": [
+        "hydration",
+        "heat",
+        "medications",
+        "caffeine",
+        "anxiety",
+        "post-viral state"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Physiological markers during symptoms improve specificity for orthostatic/POTS/hypocapnia forms of dizziness.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Dizziness Phenotypes: Human Studies Review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "tilt_table_study",
+            "doi_or_url": "",
+            "relevant_finding": "TCD/NIRS/capnography differentiate POTS/hypocapnia-related dizziness when measured during symptoms.",
+            "population": "POTS/OI/chronic dizziness cohorts",
+            "sample_size": "50 papers",
+            "limitations": "Specialized testing is less available."
+          }
+        ]
+      },
+      "limitations": [
+        "Dynamic testing limited in routine settings"
+      ],
+      "alternative_explanations": [
+        "Vestibular migraine",
+        "PPPD",
+        "medication dizziness"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "orthostatic_dizziness",
+          "POTS_pattern",
+          "cerebral_hypoperfusion",
+          "hypocapnia_dizziness",
+          "next_measurement_needed"
+        ],
+        "candidate_edges": [
+          {
+            "source": "orthostatic_symptom_timing",
+            "target": "orthostatic_dizziness",
+            "edge_type": "phenotype_marker",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Dizziness alone identifies vestibular disease.",
+      "reason": "Dizziness has multiple phenotypes and substantial overlap; non-vestibular mechanisms are common.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "dizziness_phenotype_uncertain",
+      "domain": "neurobehavioral",
+      "definition": "Dizziness report requiring subtype classification before mechanism inference.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "orthostatic_dizziness",
+      "domain": "neurobehavioral",
+      "definition": "Lightheadedness/presyncope/dizziness triggered by upright posture or orthostatic challenge.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "dizziness_report_dizziness_phenotype_uncertain_high",
+      "source": "dizziness_symptom_report",
+      "target": "dizziness_phenotype_uncertain",
+      "edge_type": "phenotype_marker",
+      "polarity": "unknown",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Real-time multimodal monitoring for dizziness subtypes.",
+    "Medication-induced dizziness interactions with vestibular/autonomic dysfunction."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Dizziness phenotypes require separation.",
+      "Vestibular migraine and PPPD overlap but are distinct."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Posture-linked dizziness suggests orthostatic/perfusion/ETCO2 measurement.",
+      "Vertigo suggests vestibular/neuro-otologic workup."
+    ],
+    "patterns_requiring_caution": [
+      "No single test distinguishes all dizziness subtypes.",
+      "PPPD/VM/BPPV overlap is common."
+    ],
+    "recommended_next_queries": [
+      "How to integrate wearable HR/BP with dizziness EMA?",
+      "Medication-induced dizziness phenotyping."
+    ],
+    "overall_assessment": "Dizziness should be modeled as phenotype-uncertain until descriptor, timing and targeted measurement clarify mechanism."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Differential Characterization of Dizziness Phenotypes: Human Studies Review",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

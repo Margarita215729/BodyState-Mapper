@@ -1,0 +1,350 @@
+{
+  "research_series": {
+    "series_id": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine",
+    "series_name": "Anxiety-like Physiology,Panic,Dysautonomia,Medication,Metabolic,and Endocrine Differential Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_043_pattern_001",
+      "pattern_name": "Anxiety-like symptoms require differential separation from dysautonomia, respiratory, endocrine, metabolic, medication and arrhythmia mechanisms",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "anxiety_like_symptom_cluster",
+        "direction": "attack_state",
+        "measurement_methods": [
+          "symptom report",
+          "HR/RHR",
+          "HRV",
+          "orthostatic HR/BP",
+          "ETCO2",
+          "ECG",
+          "glucose",
+          "TSH/freeT4/freeT3",
+          "medication timing"
+        ],
+        "contexts": [
+          "panic disorder",
+          "POTS/OI",
+          "hyperventilation",
+          "thyroid dysfunction",
+          "hypoglycemia",
+          "arrhythmia",
+          "medication/substance effects"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "mechanism_specific_physiological_signature",
+        "category": "autonomic_marker",
+        "direction": "variable",
+        "pathway": "similar symptoms can arise from distinct physiological or psychiatric mechanisms",
+        "mechanism": "panic respiratory instability; POTS orthostatic tachycardia; hyperthyroid adrenergic state; hypoglycemia; arrhythmia; stimulant/withdrawal effects"
+      },
+      "neurobehavioral_output": {
+        "variable": "anxiety_like_state_uncertain",
+        "direction": "phenotype_specific",
+        "measurement_methods": [
+          "targeted physiologic testing",
+          "context timing",
+          "clinical assessment"
+        ],
+        "affected_functions": [
+          "panic",
+          "dyspnea",
+          "palpitations",
+          "tremor",
+          "dizziness",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not label tachycardia,dyspnea,tremor or dizziness as psychological anxiety by default; require mechanism-specific context and testing.",
+        "hypotheses": [
+          {
+            "target": "anxiety_like_state_uncertain",
+            "domain": "anxiety_like_differential",
+            "direction": "requires_subtyping",
+            "confidence": "high",
+            "reason": "HRV/orthostatic/capnography/endocrine/ECG markers can distinguish overlapping mechanisms when measured during symptoms."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_days",
+        "latency": "attack|orthostatic|postprandial|medication_timed|withdrawal_related",
+        "reversibility": "acute_reversible|position_responsive|dose_adjustment_responsive"
+      },
+      "modulators_confounders": [
+        "sleep",
+        "caffeine",
+        "stimulants",
+        "medications",
+        "post-viral state",
+        "thyroid status",
+        "glucose",
+        "cardiac history",
+        "stress"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Anxiety-like symptoms overlap across panic disorder, POTS/OI, hyperventilation/hypocapnia, thyroid dysfunction, hypoglycemia, arrhythmias and medication effects; multimodal testing improves differential specificity.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Anxiety-like Physiology: Panic, Dysautonomia, Endocrine, and Related Mechanisms",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Reduced HRV is cross-diagnostic; orthostatic tachycardia/POTS can mimic/coexist with anxiety; capnography and endocrine panels help subtyping.",
+            "population": "panic/anxiety/POTS/endocrine cohorts",
+            "sample_size": "50 papers",
+            "limitations": "No single marker perfectly distinguishes all mechanisms."
+          }
+        ]
+      },
+      "limitations": [
+        "No single marker is definitive",
+        "Comorbidity is common"
+      ],
+      "alternative_explanations": [
+        "Primary panic disorder",
+        "POTS/OI",
+        "thyrotoxicosis",
+        "hypoglycemia",
+        "arrhythmia",
+        "medication/substance timing"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "anxiety_like_state_uncertain",
+          "panic_attack",
+          "hyperventilation_state",
+          "hypocapnia",
+          "POTS_pattern",
+          "thyrotoxic_anxiety",
+          "hypoglycemia_anxiety_like_symptoms",
+          "arrhythmia_palpitations",
+          "medication_withdrawal_anxiety"
+        ],
+        "candidate_edges": [
+          {
+            "source": "anxiety_like_symptom_cluster",
+            "target": "anxiety_like_state_uncertain",
+            "edge_type": "phenotype_marker",
+            "polarity": "unknown",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_043_pattern_002",
+      "pattern_name": "HRV is useful but non-specific across anxiety-like states",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "reduced_vagally_mediated_HRV",
+        "direction": "decreased",
+        "measurement_methods": [
+          "ECG HRV",
+          "wearable HRV",
+          "HF-HRV",
+          "RMSSD"
+        ],
+        "contexts": [
+          "panic disorder",
+          "anxiety disorders",
+          "POTS/dysautonomia",
+          "stress states"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "autonomic_imbalance",
+        "category": "autonomic_marker",
+        "direction": "increased_sympathetic_or_reduced_vagal_tone",
+        "pathway": "reduced vagal regulation correlates with anxiety-like symptom severity across diagnoses",
+        "mechanism": "autonomic arousal, impaired vagal regulation, stress physiology"
+      },
+      "neurobehavioral_output": {
+        "variable": "anxiety_like_symptoms",
+        "direction": "mixed",
+        "measurement_methods": [
+          "symptom scales",
+          "panic episode monitoring",
+          "wearables"
+        ],
+        "affected_functions": [
+          "panic",
+          "palpitations",
+          "dyspnea",
+          "somatic arousal"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Low HRV supports autonomic arousal/imbalance but cannot identify panic vs POTS vs endocrine/substance context alone.",
+        "hypotheses": [
+          {
+            "target": "autonomic_arousal_context",
+            "domain": "anxiety_like_differential",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Reduced HRV is robust but cross-diagnostic."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_chronic",
+        "latency": "state_dependent",
+        "reversibility": "context_responsive"
+      },
+      "modulators_confounders": [
+        "fitness",
+        "sleep",
+        "medication",
+        "device quality",
+        "posture",
+        "respiration",
+        "caffeine"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Reduced vagally mediated HRV is consistently replicated across anxiety states, but is not mechanism-specific.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Anxiety-like Physiology: Panic, Dysautonomia, Endocrine, and Related Mechanisms",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "wearable_study",
+            "doi_or_url": "",
+            "relevant_finding": "Reduced HRV is robust across anxiety states but requires context and additional measurements for differential inference.",
+            "population": "anxiety/POTS/wearable cohorts",
+            "sample_size": "50 papers",
+            "limitations": "Cross-diagnostic non-specificity."
+          }
+        ]
+      },
+      "limitations": [
+        "HRV is sensitive to many confounders"
+      ],
+      "alternative_explanations": [
+        "poor sleep",
+        "exercise",
+        "illness",
+        "medications"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "reduced_HRV",
+          "autonomic_arousal_context",
+          "measurement_context_required"
+        ],
+        "candidate_edges": [
+          {
+            "source": "reduced_HRV",
+            "target": "anxiety_like_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Anxiety-like symptoms are psychological by default.",
+      "reason": "POTS, hyperventilation/hypocapnia, endocrine/metabolic states, arrhythmias and medications can produce similar symptoms.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "anxiety_like_state_uncertain",
+      "domain": "neurobehavioral",
+      "definition": "Anxiety-like symptom cluster requiring differential mechanism testing before psychiatric attribution.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "autonomic_arousal_context",
+      "domain": "physiological",
+      "definition": "Non-specific autonomic arousal state often indexed by low HRV/high HR but requiring context.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "anxiety_like_symptom_cluster_anxiety_like_state_uncertain_high",
+      "source": "anxiety_like_symptom_cluster",
+      "target": "anxiety_like_state_uncertain",
+      "edge_type": "phenotype_marker",
+      "polarity": "unknown",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "reduced_HRV_anxiety_like_symptoms_positive_moderate",
+      "source": "reduced_HRV",
+      "target": "anxiety_like_symptoms",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Simultaneous HRV/capnography/endocrine monitoring during symptomatic episodes.",
+    "Medication/substance timing effects on anxiety-like measurements."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Reduced HRV is robust but non-specific.",
+      "POTS/OI can mimic or coexist with anxiety.",
+      "Capnography adds value for hyperventilation/hypocapnia subtyping."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Anxiety-like state uncertain until timing and mechanism markers are known.",
+      "Orthostatic, respiratory, endocrine, metabolic, arrhythmia and medication branches must be considered."
+    ],
+    "patterns_requiring_caution": [
+      "Fatigue/anxiety post-COVID not always explained by autonomic dysfunction.",
+      "Thyroid links are context-dependent."
+    ],
+    "recommended_next_queries": [
+      "Panic vs POTS real-time multimodal differentiation.",
+      "Medication withdrawal/stimulant anxiety biomarkers."
+    ],
+    "overall_assessment": "Anxiety-like physiology is a differential-inference phenotype, not a psychiatric conclusion; multimodal timing-aware measurement is required."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Differential Characterization of Anxiety-like Physiology: Panic, Dysautonomia, Endocrine, and Related Mechanisms",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

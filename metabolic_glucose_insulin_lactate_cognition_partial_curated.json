@@ -1,0 +1,562 @@
+{
+  "curation_metadata": {
+    "curated_by": "ChatGPT",
+    "curation_date": "2026-06-09",
+    "input_source": "Consensus pasted output",
+    "input_truncated": true,
+    "technical_status": "valid_json",
+    "scientific_status": "partial_curated_candidate_output",
+    "graph_import_status": "do_not_import_directly_until_source_verification",
+    "notes": [
+      "The pasted Consensus output was malformed and truncated after series_004_pattern_002.",
+      "Only patterns with sufficient provided content were curated.",
+      "Several DOI/URL fields were missing in the pasted output and were preserved as null for later verification.",
+      "The date_generated value in the raw output was 2024-07-08, but the surrounding project workflow date is 2026-06-09; the raw value is preserved and flagged."
+    ],
+    "normalization_rules_applied": [
+      "Converted curly quotes and malformed unicode whitespace into valid JSON.",
+      "Normalized node IDs to lower_snake_case where possible.",
+      "Converted arrays used for single outcome variables into separate or consolidated lower_snake_case labels.",
+      "Removed quotation marks embedded inside plain language fields.",
+      "Changed empty DOI/URL strings to null.",
+      "Avoided causal upgrades where evidence was associative or genetic findings conflicted with causality.",
+      "Marked source verification as required."
+    ]
+  },
+  "research_series": {
+    "series_id": "series_004_metabolic_glucose_insulin_lactate_cognition",
+    "series_name": "Metabolic State, Glucose, Insulin, Lactate, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "scientific_project_name": "Traceable Human State Inference Under Partial Biological Observability",
+    "date_generated_raw": "2024-07-08",
+    "date_generated_workflow": "2026-06-09",
+    "target_chain": "physiological_observation -> biochemical_or_metabolic_mediator -> cognitive_or_neurobehavioral_output"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_004_pattern_001",
+      "pattern_name": "Insulin resistance associated with cognitive impairment and depression",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "insulin_resistance",
+        "observable_name": "increased_insulin_resistance",
+        "direction": "increased",
+        "baseline_reference": "clinical_threshold",
+        "measurement_methods": [
+          "homa_ir",
+          "fasting_insulin",
+          "genetic_risk_scores"
+        ],
+        "typical_contexts": [
+          "type_2_diabetes",
+          "metabolic_syndrome",
+          "depression",
+          "aging"
+        ],
+        "notes": "Insulin resistance is treated as both physiological/metabolic input and directly measured metabolic mediator in the raw Consensus output."
+      },
+      "biochemical_or_metabolic_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "insulin_resistance",
+            "category": "metabolic_marker",
+            "direction": "increased",
+            "pathway": "impaired_insulin_signaling_in_brain_and_periphery",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "neuroinflammation",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "inflammation_and_oxidative_stress",
+            "evidence_for_mediation": "hypothesized"
+          },
+          {
+            "name": "altered_glucose_metabolism",
+            "category": "metabolic_marker",
+            "direction": "dysregulated",
+            "pathway": "cerebral_and_peripheral_glucose_metabolism",
+            "evidence_for_mediation": "hypothesized"
+          }
+        ],
+        "mechanistic_summary": "Reduced insulin action may impair synaptic plasticity, increase neuroinflammatory signaling, and disrupt glucose metabolism. The provided sources support association more strongly than causal mediation."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "cognitive_impairment_and_depression",
+        "observable_name": "cognitive_impairment_executive_dysfunction_depression",
+        "direction": "increased_or_impaired",
+        "measurement_methods": [
+          "mmse",
+          "adas_cog",
+          "executive_function_tests",
+          "depression_scales"
+        ],
+        "affected_functions": [
+          "memory",
+          "attention",
+          "executive_function",
+          "mood"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Increased insulin resistance is associated with greater likelihood of cognitive impairment, executive dysfunction, and depression, but causality is not established.",
+        "hypotheses": [
+          {
+            "target": "cognitive_impairment",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Meta-analytic and population evidence support association, while genetic analyses do not clearly establish causality."
+          },
+          {
+            "target": "depressed_mood",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Insulin resistance appears elevated in acute depression, but confounding and heterogeneity remain substantial."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "months_to_years",
+        "latency": "chronic",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "obesity",
+        "apoe_genotype",
+        "lifestyle_factors",
+        "comorbidities",
+        "medication_effects",
+        "sleep_loss",
+        "physical_activity"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Multiple reviews and large population analyses associate insulin resistance with depression and cognitive impairment. However, causality remains uncertain, and Mendelian randomization evidence may not support a direct causal interpretation.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Insulin resistance in depression: A large meta-analysis of metabolic parameters and variation",
+            "authors": "Brisa Fernandes et al.",
+            "year": 2022,
+            "source_type": "meta_analysis",
+            "doi_or_url": null,
+            "relevant_finding": "Insulin resistance is increased in acute depression but not necessarily remission; insulin measures show high variation among depressed individuals.",
+            "population": "adults_with_depression_vs_controls",
+            "sample_size": 240704,
+            "limitations": "High heterogeneity and mainly observational evidence."
+          },
+          {
+            "title": "Insulin resistance: Genetic associations with depression and cognition in population based cohorts",
+            "authors": "S. Frangou et al.",
+            "year": 2019,
+            "source_type": "clinical_study",
+            "doi_or_url": null,
+            "relevant_finding": "Genetic risk for insulin resistance was associated with verbal intelligence and depression, but Mendelian randomization did not support causality.",
+            "population": "uk_biobank_and_gs_sfhs_adults",
+            "sample_size": 351368,
+            "limitations": "Limited cognitive measures and weak genetic instruments."
+          }
+        ]
+      },
+      "limitations": [
+        "Causality is not established.",
+        "Confounding by obesity, physical activity, sleep, inflammation, medications, and broader metabolic factors is likely.",
+        "Insulin resistance may be a shared-risk marker rather than a direct driver of mood or cognitive impairment."
+      ],
+      "alternative_explanations": [
+        "Shared genetic and environmental risk factors may influence both metabolic and neuropsychiatric outcomes.",
+        "Depression-related behavior, reduced activity, medication exposure, or sleep disturbance may contribute to insulin resistance."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "insulin_resistance",
+          "cognitive_impairment",
+          "executive_dysfunction",
+          "depressed_mood"
+        ],
+        "candidate_edges": [
+          {
+            "source": "insulin_resistance",
+            "target": "cognitive_impairment",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "insulin_resistance",
+            "target": "depressed_mood",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_004_pattern_002",
+      "pattern_name": "Glucose variability associated with cognitive decline and Alzheimer's disease risk",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "glucose_variability",
+        "observable_name": "unstable_glycemic_variability",
+        "direction": "unstable",
+        "baseline_reference": "clinical_or_population_reference",
+        "measurement_methods": [
+          "mage",
+          "hba1c_variability",
+          "fasting_plasma_glucose_sd",
+          "fasting_plasma_glucose_cv"
+        ],
+        "typical_contexts": [
+          "type_2_diabetes",
+          "aging"
+        ],
+        "notes": "The raw output cited both acute and longer-term glucose variability metrics."
+      },
+      "biochemical_or_metabolic_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "glucose_variability",
+            "category": "metabolic_marker",
+            "direction": "unstable",
+            "pathway": "fluctuating_glucose_supply_to_brain",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "oxidative_stress",
+            "category": "oxidative_stress_marker",
+            "direction": "increased",
+            "pathway": "glycemic_excursions_and_oxidative_stress",
+            "evidence_for_mediation": "hypothesized"
+          },
+          {
+            "name": "impaired_cerebral_metabolism",
+            "category": "metabolic_marker",
+            "direction": "dysregulated",
+            "pathway": "cerebral_glucose_metabolism",
+            "evidence_for_mediation": "hypothesized"
+          }
+        ],
+        "mechanistic_summary": "Greater glycemic excursions may impair neuronal energy homeostasis and contribute to neurodegenerative risk through oxidative stress and altered cerebral glucose metabolism. The provided evidence is associative and not sufficient for strong causal claims."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "cognitive_decline_and_alzheimers_disease_risk",
+        "observable_name": "cognitive_decline_alzheimers_disease_risk",
+        "direction": "increased_or_impaired",
+        "measurement_methods": [
+          "mmse",
+          "adas_cog",
+          "fdg_pet"
+        ],
+        "affected_functions": [
+          "memory",
+          "executive_function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher glucose variability is associated with increased likelihood of cognitive decline and possible Alzheimer's disease risk, especially in type 2 diabetes and aging contexts.",
+        "hypotheses": [
+          {
+            "target": "cognitive_decline",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Meta-analyses report associations between glucose variability and cognitive impairment, but evidence remains observational."
+          },
+          {
+            "target": "alzheimers_disease_risk",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "low_to_moderate",
+            "reason": "The raw Consensus output reports borderline or non-significant meta-analytic evidence due to few eligible studies."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "months_to_years",
+        "latency": "chronic",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "diabetes_duration",
+        "vascular_risk_factors",
+        "glycemic_control",
+        "medications",
+        "sleep",
+        "physical_activity",
+        "diet"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Systematic review and meta-analysis evidence links higher glucose variability with worse cognition in type 2 diabetes. Alzheimer's disease risk evidence appears weaker or borderline based on the raw output.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes: A systematic review and meta-analysis",
+            "authors": "Haiyan Chi et al.",
+            "year": 2023,
+            "source_type": "meta_analysis",
+            "doi_or_url": null,
+            "relevant_finding": "Higher acute glucose variability was associated with increased risk of cognitive impairment in adults with type 2 diabetes.",
+            "population": "adults_with_type_2_diabetes",
+            "sample_size": 1263,
+            "limitations": "Observational studies only."
+          },
+          {
+            "title": "Increased Risk of Alzheimer's Disease With Glycemic Variability: A Systematic Review and Meta-Analysis",
+            "authors": "Paul Nichol G. Gonzales et al.",
+            "year": 2024,
+            "source_type": "meta_analysis",
+            "doi_or_url": null,
+            "relevant_finding": "Glycemic variability may influence cognitive decline or Alzheimer's disease risk, but the raw output states the association was not statistically significant because of limited studies.",
+            "population": "mixed_with_and_without_diabetes",
+            "sample_size": null,
+            "limitations": "Few eligible studies and confidence intervals may include null."
+          }
+        ]
+      },
+      "limitations": [
+        "Evidence is primarily observational.",
+        "Different glucose variability metrics may not be interchangeable.",
+        "Alzheimer's disease risk evidence is weaker than general cognitive impairment evidence.",
+        "Potential confounding by diabetes duration, vascular disease, medication, sleep, diet, and physical activity."
+      ],
+      "alternative_explanations": [
+        "Glucose variability may be a marker of overall metabolic instability rather than a direct cognitive risk factor.",
+        "Vascular risk factors and chronic hyperglycemia may explain part of the observed association."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "glucose_variability",
+          "cognitive_decline",
+          "alzheimers_disease_risk",
+          "oxidative_stress",
+          "impaired_cerebral_metabolism"
+        ],
+        "candidate_edges": [
+          {
+            "source": "glucose_variability",
+            "target": "cognitive_decline",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "glucose_variability",
+            "target": "alzheimers_disease_risk",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "low_to_moderate"
+          },
+          {
+            "source": "glucose_variability",
+            "target": "oxidative_stress",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "mark_as_hypothesis",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Insulin resistance directly causes depression or cognitive impairment.",
+      "reason": "Associative evidence is stronger than causal evidence; Mendelian randomization in the provided output did not support causality.",
+      "evidence_strength": "conflicting",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Glucose variability robustly predicts Alzheimer's disease risk.",
+      "reason": "The provided Consensus output reports a systematic review/meta-analysis with few eligible studies and borderline or non-significant association.",
+      "evidence_strength": "preliminary",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "insulin_resistance",
+      "domain": "biochemical",
+      "definition": "Reduced sensitivity to insulin signaling, often measured by HOMA-IR, fasting insulin, or related clinical/genetic proxies.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "glucose_variability",
+      "domain": "biochemical",
+      "definition": "Instability or excursions in blood glucose over time, measured by MAGE, HbA1c variability, or fasting plasma glucose variability metrics.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "cognitive_impairment",
+      "domain": "neurobehavioral",
+      "definition": "Impairment in memory, attention, executive function, or global cognition measured by neuropsychological tests.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "depressed_mood",
+      "domain": "neurobehavioral",
+      "definition": "Depressive symptoms or clinical depression measured by diagnostic or symptom scales.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "insulin_resistance_to_cognitive_impairment",
+      "source": "insulin_resistance",
+      "target": "cognitive_impairment",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "insulin_resistance_to_depressed_mood",
+      "source": "insulin_resistance",
+      "target": "depressed_mood",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "glucose_variability_to_cognitive_decline",
+      "source": "glucose_variability",
+      "target": "cognitive_decline",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "source_id": "source_001",
+      "title": "Insulin resistance in depression: A large meta-analysis of metabolic parameters and variation",
+      "doi_or_url": null,
+      "priority": "high",
+      "claims": [
+        "insulin_resistance_to_depressed_mood"
+      ]
+    },
+    {
+      "source_id": "source_002",
+      "title": "Insulin resistance: Genetic associations with depression and cognition in population based cohorts",
+      "doi_or_url": null,
+      "priority": "high",
+      "claims": [
+        "insulin_resistance_to_depressed_mood",
+        "insulin_resistance_to_cognitive_impairment",
+        "causality_uncertain"
+      ]
+    },
+    {
+      "source_id": "source_003",
+      "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes: A systematic review and meta-analysis",
+      "doi_or_url": null,
+      "priority": "high",
+      "claims": [
+        "glucose_variability_to_cognitive_decline"
+      ]
+    },
+    {
+      "source_id": "source_004",
+      "title": "Increased Risk of Alzheimer's Disease With Glycemic Variability: A Systematic Review and Meta-Analysis",
+      "doi_or_url": null,
+      "priority": "moderate",
+      "claims": [
+        "glucose_variability_to_alzheimers_disease_risk"
+      ]
+    }
+  ],
+  "research_gaps": [
+    "Need complete Consensus output for the remaining subqueries: hypoglycemia, postprandial glucose, fasting/ketosis, lactate, exercise metabolism, inflammation, leptin/ghrelin, mitochondrial dysfunction, and cerebral glucose metabolism.",
+    "Need DOI/URL verification for all cited sources before static graph import.",
+    "Need separation of diabetes-specific effects from general-population glucose variability effects."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "insulin_resistance_associated_with_depressed_mood",
+      "insulin_resistance_associated_with_cognitive_impairment",
+      "glucose_variability_associated_with_cognitive_decline_in_type_2_diabetes"
+    ],
+    "highest_value_patterns_for_inference": [
+      "insulin_resistance_to_cognitive_impairment",
+      "insulin_resistance_to_depressed_mood",
+      "glucose_variability_to_cognitive_decline"
+    ],
+    "patterns_requiring_caution": [
+      "insulin_resistance_as_direct_causal_driver",
+      "glucose_variability_to_alzheimers_disease_risk"
+    ],
+    "recommended_next_queries": [
+      "Does acute hypoglycemia impair attention, working memory, executive function, reaction time, or mood in humans?",
+      "Do postprandial glucose spikes or high-glycemic meals affect sleepiness, fatigue, attention, reaction time, or mood in humans?",
+      "Is lactate associated with fatigue, panic symptoms, anxiety, or brain energy metabolism in humans?",
+      "Is mitochondrial dysfunction associated with fatigue perception, cognitive fatigue, depression, or brain fog in humans?"
+    ],
+    "overall_assessment": "The partial Consensus output supports two moderate-confidence associative pattern families: insulin resistance with depression/cognitive impairment, and glucose variability with cognitive decline, especially in type 2 diabetes. Causal claims are not justified from the pasted output. The series remains incomplete because the source text was truncated after the second pattern."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Insulin resistance in depression: A large meta-analysis of metabolic parameters and variation",
+      "url": null,
+      "doi": null,
+      "year": 2022
+    },
+    {
+      "index": 2,
+      "title": "Insulin resistance: Genetic associations with depression and cognition in population based cohorts",
+      "url": null,
+      "doi": null,
+      "year": 2019
+    },
+    {
+      "index": 3,
+      "title": "Relationship between acute glucose variability and cognitive decline in type 2 diabetes: A systematic review and meta-analysis",
+      "url": null,
+      "doi": null,
+      "year": 2023
+    },
+    {
+      "index": 4,
+      "title": "Increased Risk of Alzheimer's Disease With Glycemic Variability: A Systematic Review and Meta-Analysis",
+      "url": null,
+      "doi": null,
+      "year": 2024
+    }
+  ],
+  "schema_validation_notes": [
+    "Valid JSON generated from malformed/truncated pasted input.",
+    "Only two patterns are included because the raw input ended after pattern_002.",
+    "Null values used where DOI/URL or sample size was missing.",
+    "No direct graph import recommended until source verification is complete."
+  ]
+}

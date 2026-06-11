@@ -1,0 +1,911 @@
+{
+  "research_series": {
+    "series_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition",
+    "series_name": "Sleep, Circadian State, Autonomic-Metabolic-Inflammatory Changes, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_005_pattern_001",
+      "pattern_name": "Insufficient or disrupted sleep reduces HRV and shifts autonomic balance toward sympathetic predominance",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "insufficient_or_disrupted_sleep",
+        "direction": "increased",
+        "measurement_methods": [
+          "sleep deprivation protocol",
+          "sleep restriction protocol",
+          "sleep fragmentation protocol",
+          "actigraphy",
+          "polysomnography",
+          "wearable sleep tracking",
+          "sleep diary"
+        ],
+        "contexts": [
+          "healthy adults",
+          "shift workers",
+          "population cohorts",
+          "experimental sleep restriction"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "reduced_heart_rate_variability",
+        "category": "autonomic_marker",
+        "direction": "decreased_HRV_increased_sympathetic_activity",
+        "pathway": "sleep loss and fragmentation reduce parasympathetic/vagal modulation and increase sympathetic predominance",
+        "mechanism": "reduced RMSSD/HF-HRV, increased LF/LF-HF indices, elevated resting heart rate and blood pressure"
+      },
+      "neurobehavioral_output": {
+        "variable": "next_day_fatigue_mood_and_cognitive_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "daytime sleepiness scales",
+          "mood questionnaires",
+          "attention tasks",
+          "executive function tasks",
+          "working memory tasks"
+        ],
+        "affected_functions": [
+          "daytime sleepiness",
+          "fatigue",
+          "attention",
+          "executive function",
+          "working memory",
+          "mood regulation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Insufficient, fragmented, or disrupted sleep increases the likelihood of autonomic imbalance, especially reduced HRV and sympathetic predominance, which is associated with next-day fatigue, mood worsening, and impaired cognitive performance.",
+        "hypotheses": [
+          {
+            "target": "next_day_fatigue_mood_and_cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Multiple meta-analyses and experimental studies link sleep deprivation/restriction/fragmentation to reduced HRV, elevated resting heart rate/blood pressure, and adverse neurobehavioral outcomes."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_next_day",
+        "latency": "next_morning",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "baseline fitness",
+        "age",
+        "sex",
+        "sleep apnea",
+        "caffeine",
+        "medications",
+        "stress",
+        "shift work schedule",
+        "measurement time of day"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "The evidence supports a robust relationship between sleep deprivation/restriction/fragmentation and autonomic dysregulation, especially reduced HRV and increased sympathetic activity.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Effects of sleep deprivation on heart rate variability: a systematic review and meta-analysis",
+            "authors": "Zhang et al.",
+            "year": 2025,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.3389/fneur.2025.1556784",
+            "relevant_finding": "Sleep deprivation reduces HRV and indicates autonomic imbalance.",
+            "population": "human participants",
+            "sample_size": "",
+            "limitations": "HRV protocols and sleep deprivation designs vary."
+          },
+          {
+            "title": "Sleep Deprivation Deteriorates Heart Rate Variability and Photoplethysmography",
+            "authors": "Bourdillon et al.",
+            "year": 2021,
+            "source_type": "experimental_sleep_deprivation",
+            "doi_or_url": "https://doi.org/10.3389/fnins.2021.642548",
+            "relevant_finding": "Sleep deprivation deteriorates HRV and peripheral cardiovascular signals.",
+            "population": "healthy humans",
+            "sample_size": "",
+            "limitations": "Acute sleep deprivation may not generalize to chronic insomnia."
+          },
+          {
+            "title": "Effects of sleep fragmentation and partial sleep restriction on heart rate variability during night",
+            "authors": "Schlagintweit et al.",
+            "year": 2023,
+            "source_type": "experimental_sleep_restriction",
+            "doi_or_url": "https://doi.org/10.1038/s41598-023-33013-5",
+            "relevant_finding": "Sleep fragmentation and partial restriction alter nocturnal HRV.",
+            "population": "human participants",
+            "sample_size": "",
+            "limitations": "Nighttime HRV effects may differ from daytime wearable signals."
+          }
+        ]
+      },
+      "limitations": [
+        "HRV is sensitive to measurement protocol and time of day.",
+        "Insomnia symptoms alone show mixed HRV findings unless paired with objective short sleep or comorbidities.",
+        "Full sleep-to-HRV-to-cognition mediation is not consistently tested."
+      ],
+      "alternative_explanations": [
+        "Stress may cause both poor sleep and reduced HRV.",
+        "Sleep apnea or cardiometabolic disease may confound associations.",
+        "Caffeine and medications can alter HRV independently."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "insufficient_or_disrupted_sleep",
+          "reduced_heart_rate_variability",
+          "elevated_resting_heart_rate",
+          "post_sleep_sympathetic_predominance",
+          "next_day_fatigue",
+          "impaired_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "insufficient_or_disrupted_sleep",
+            "target": "reduced_heart_rate_variability",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "insufficient_or_disrupted_sleep",
+            "target": "elevated_resting_heart_rate",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "reduced_heart_rate_variability",
+            "target": "next_day_fatigue_mood_and_cognitive_performance",
+            "edge_type": "associated_with",
+            "polarity": "negative",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_005_pattern_002",
+      "pattern_name": "Circadian misalignment impairs glucose regulation and increases cardiometabolic/inflammatory risk independent of total sleep time",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "circadian_misalignment",
+        "direction": "increased",
+        "measurement_methods": [
+          "forced desynchrony protocol",
+          "shift work exposure",
+          "social jetlag estimates",
+          "sleep timing records",
+          "actigraphy"
+        ],
+        "contexts": [
+          "healthy adults",
+          "shift workers",
+          "laboratory circadian protocols",
+          "population cohorts"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "metabolic_and_inflammatory_dysregulation",
+        "category": "metabolic_marker",
+        "direction": "impaired_glucose_regulation_increased_inflammation",
+        "pathway": "circadian timing mismatch disrupts metabolic, endocrine, and inflammatory regulation",
+        "mechanism": "reduced insulin sensitivity, increased glycemic variability, elevated CRP/IL-6/TNF-alpha/resistin, increased blood pressure"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_and_cognitive_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "mood questionnaires",
+          "attention tasks",
+          "executive function tasks",
+          "working memory tasks"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "mood",
+          "attention",
+          "executive function",
+          "working memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Circadian misalignment can worsen metabolic and inflammatory state even when total sleep duration is controlled, increasing risk for fatigue, mood disturbance, and impaired cognition.",
+        "hypotheses": [
+          {
+            "target": "fatigue_mood_and_cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Human laboratory and shift-work studies show circadian misalignment independently worsens glucose regulation, inflammatory markers, cardiovascular markers, and cognitive/mood outcomes."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days_to_chronic",
+        "latency": "delayed",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "chronotype",
+        "light exposure",
+        "meal timing",
+        "night shift schedule",
+        "social jetlag",
+        "total sleep time",
+        "age",
+        "baseline metabolic health"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Circadian misalignment has independent adverse effects on glucose regulation, insulin sensitivity, inflammatory markers, blood pressure, and neurobehavioral function.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Adverse metabolic and cardiovascular consequences of circadian misalignment",
+            "authors": "Scheer et al.",
+            "year": 2009,
+            "source_type": "experimental_circadian_misalignment",
+            "doi_or_url": "https://doi.org/10.1073/pnas.0808180106",
+            "relevant_finding": "Circadian misalignment worsens metabolic and cardiovascular outcomes independent of sleep duration.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Laboratory protocol may not capture all real-world shift-work complexity."
+          },
+          {
+            "title": "Circadian Misalignment Augments Markers of Insulin Resistance and Inflammation, Independently of Sleep Loss",
+            "authors": "Leproult et al.",
+            "year": 2014,
+            "source_type": "experimental_circadian_misalignment",
+            "doi_or_url": "https://doi.org/10.2337/db13-1546",
+            "relevant_finding": "Circadian misalignment increases insulin resistance and inflammation beyond sleep loss alone.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Short-term laboratory exposure."
+          },
+          {
+            "title": "Adverse Metabolic Consequences in Humans of Prolonged Sleep Restriction Combined with Circadian Disruption",
+            "authors": "Buxton et al.",
+            "year": 2012,
+            "source_type": "experimental_sleep_restriction_and_circadian_disruption",
+            "doi_or_url": "https://doi.org/10.1126/scitranslmed.3003200",
+            "relevant_finding": "Combined sleep restriction and circadian disruption produce adverse metabolic consequences.",
+            "population": "human participants",
+            "sample_size": "",
+            "limitations": "Intensive lab design; ecological validity should be interpreted cautiously."
+          }
+        ]
+      },
+      "limitations": [
+        "Circadian misalignment overlaps with sleep restriction, light exposure, meal timing, and work stress in real-world settings.",
+        "Mediation from metabolic/inflammatory markers to cognition is not always directly tested."
+      ],
+      "alternative_explanations": [
+        "Night shift work may include stress, altered diet, and reduced physical activity.",
+        "Chronotype mismatch may reflect behavioral rather than biological effects."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "circadian_misalignment",
+          "social_jetlag",
+          "shift_work_exposure",
+          "reduced_insulin_sensitivity",
+          "increased_glycemic_variability",
+          "elevated_CRP",
+          "elevated_IL6",
+          "fatigue_mood_and_cognitive_performance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "circadian_misalignment",
+            "target": "reduced_insulin_sensitivity",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "circadian_misalignment",
+            "target": "elevated_CRP",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "circadian_misalignment",
+            "target": "fatigue_mood_and_cognitive_performance",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_005_pattern_003",
+      "pattern_name": "Chronic sleep restriction produces cumulative cognitive impairment even when subjective sleepiness or fatigue plateaus",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "chronic_sleep_restriction",
+        "direction": "increased",
+        "measurement_methods": [
+          "experimental sleep restriction protocol",
+          "psychomotor vigilance task",
+          "working memory tasks",
+          "subjective sleepiness scales"
+        ],
+        "contexts": [
+          "healthy adults",
+          "laboratory sleep restriction"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "sleep_pressure_and_neurobehavioral_instability",
+        "category": "sleep_marker",
+        "direction": "increased",
+        "pathway": "cumulative wakefulness and insufficient recovery sleep degrade sustained attention and executive control",
+        "mechanism": "progressive lapses in vigilance and cognitive throughput, with subjective adaptation/underestimation"
+      },
+      "neurobehavioral_output": {
+        "variable": "attention_executive_function_and_working_memory",
+        "direction": "impaired",
+        "measurement_methods": [
+          "psychomotor vigilance task",
+          "working memory tasks",
+          "executive function tasks",
+          "subjective sleepiness ratings"
+        ],
+        "affected_functions": [
+          "sustained attention",
+          "working memory",
+          "executive function",
+          "vigilance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Repeated nights of insufficient sleep can cause cumulative impairments in attention, executive function, and working memory, even when the person no longer subjectively feels progressively worse.",
+        "hypotheses": [
+          {
+            "target": "attention_executive_function_and_working_memory",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Dose-response experimental sleep restriction data show cumulative neurobehavioral deficits, while subjective fatigue/sleepiness may plateau."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days_to_weeks",
+        "latency": "cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "baseline sleep need",
+        "circadian timing",
+        "recovery sleep",
+        "caffeine",
+        "motivation",
+        "task sensitivity"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Experimental dose-response evidence shows chronic sleep restriction produces cumulative cognitive deficits equivalent to acute total sleep deprivation, while subjective sleepiness may underestimate impairment.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "The cumulative cost of additional wakefulness: dose-response effects on neurobehavioral functions and sleep physiology from chronic sleep restriction and total sleep deprivation",
+            "authors": "Van Dongen et al.",
+            "year": 2003,
+            "source_type": "experimental_sleep_restriction",
+            "doi_or_url": "https://doi.org/10.1093/sleep/26.2.117",
+            "relevant_finding": "Chronic restriction to six hours or less per night produces cumulative deficits in attention/executive function/working memory comparable to total sleep deprivation.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Laboratory restriction may not capture compensatory strategies in real life."
+          }
+        ]
+      },
+      "limitations": [
+        "Subjective fatigue is not a reliable proxy for objective cognitive impairment.",
+        "Individual vulnerability varies substantially.",
+        "Recovery dynamics require separate modeling."
+      ],
+      "alternative_explanations": [
+        "Motivation and task learning can mask some deficits.",
+        "Circadian phase and caffeine intake may alter observed performance."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_sleep_restriction",
+          "subjective_sleepiness_plateau",
+          "impaired_attention",
+          "impaired_working_memory",
+          "impaired_executive_function",
+          "neurobehavioral_instability"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_sleep_restriction",
+            "target": "impaired_attention",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "chronic_sleep_restriction",
+            "target": "impaired_working_memory",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "subjective_sleepiness_plateau",
+            "target": "objective_cognitive_impairment_underestimation",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_005_pattern_004",
+      "pattern_name": "Sleep disturbance is associated with elevated inflammatory markers, especially CRP and IL-6, but effects are modest and variable",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "sleep_disturbance_or_poor_sleep_quality",
+        "direction": "increased",
+        "measurement_methods": [
+          "sleep diary",
+          "questionnaires",
+          "actigraphy",
+          "polysomnography",
+          "experimental sleep deprivation"
+        ],
+        "contexts": [
+          "healthy adults",
+          "population cohorts",
+          "experimental sleep deprivation",
+          "shift workers"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "inflammatory_markers",
+        "category": "inflammatory_marker",
+        "direction": "increased_CRP_IL6_variable_TNF_alpha",
+        "pathway": "sleep disturbance activates inflammatory signaling and interacts with circadian disruption",
+        "mechanism": "elevated CRP and IL-6, variable TNF-alpha effects, stronger inflammatory response when sleep restriction combines with circadian misalignment"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_and_sickness_behavior_like_symptoms",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "mood questionnaires",
+          "sleepiness scales",
+          "cognitive tasks"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "low energy",
+          "mood",
+          "attention"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Poor or disturbed sleep increases the likelihood of modest inflammatory activation, especially CRP and IL-6, which may contribute to fatigue and mood/cognitive symptoms, but this full mediation chain is not consistently proven.",
+        "hypotheses": [
+          {
+            "target": "fatigue_mood_and_sickness_behavior_like_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Meta-analytic evidence links sleep disturbance to CRP/IL-6, but effect sizes are modest and mediation to neurobehavioral symptoms is often indirect."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_chronic",
+        "latency": "delayed",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "BMI",
+        "infection",
+        "chronic disease",
+        "depression",
+        "stress",
+        "circadian misalignment",
+        "sex",
+        "age",
+        "sleep apnea"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Poor sleep/disturbed sleep is associated with increased CRP and IL-6. TNF-alpha findings are less consistent, and full mediator chains to fatigue/cognition require caution.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Sleep Disturbance, Sleep Duration, and Inflammation: A Systematic Review and Meta-Analysis of Cohort Studies and Experimental Sleep Deprivation",
+            "authors": "Irwin et al.",
+            "year": 2015,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.biopsych.2015.05.014",
+            "relevant_finding": "Sleep disturbance and duration are associated with inflammatory markers, especially CRP and IL-6.",
+            "population": "human cohorts and experimental sleep deprivation studies",
+            "sample_size": "",
+            "limitations": "Effect sizes modest; heterogeneity across studies."
+          },
+          {
+            "title": "Circadian Misalignment Augments Markers of Insulin Resistance and Inflammation, Independently of Sleep Loss",
+            "authors": "Leproult et al.",
+            "year": 2014,
+            "source_type": "experimental_circadian_misalignment",
+            "doi_or_url": "https://doi.org/10.2337/db13-1546",
+            "relevant_finding": "Circadian misalignment augments inflammation and insulin resistance independent of sleep loss.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Short-term lab protocol."
+          }
+        ]
+      },
+      "limitations": [
+        "Inflammatory effects are modest and heterogeneous.",
+        "TNF-alpha findings are not uniformly consistent.",
+        "Fatigue/cognition mediation is usually not directly tested."
+      ],
+      "alternative_explanations": [
+        "Adiposity, infection, depression, and stress may drive both poor sleep and inflammation.",
+        "Sleep apnea may explain inflammatory findings in some cohorts."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "sleep_disturbance_or_poor_sleep_quality",
+          "elevated_CRP",
+          "elevated_IL6",
+          "elevated_TNF_alpha",
+          "fatigue_mood_and_sickness_behavior_like_symptoms"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sleep_disturbance_or_poor_sleep_quality",
+            "target": "elevated_CRP",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "sleep_disturbance_or_poor_sleep_quality",
+            "target": "elevated_IL6",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "elevated_IL6",
+            "target": "fatigue_mood_and_sickness_behavior_like_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Insomnia symptoms alone do not reliably predict HRV impairment without objective short sleep duration or comorbidity.",
+      "reason": "The report summarizes a critical review finding high bias and conflicting results unless insomnia co-occurs with objective short total sleep time or conditions such as OSA.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Sleep disturbance elevates TNF-alpha consistently.",
+      "reason": "CRP and IL-6 evidence is stronger; TNF-alpha effects are reported as modest, variable, or sometimes null.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Subjective fatigue reliably tracks objective cognitive impairment during chronic sleep restriction.",
+      "reason": "Dose-response sleep restriction data show subjective fatigue/sleepiness can plateau while objective attention/executive deficits continue accumulating.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "short_sleep_duration",
+      "domain": "physiological",
+      "definition": "Sleep duration below individual or population-recommended needs, often operationalized as less than six hours per night in experimental or cohort studies.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "sleep_fragmentation",
+      "domain": "physiological",
+      "definition": "Repeated disruption of sleep continuity, reducing restorative sleep even when time in bed is preserved.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "circadian_misalignment",
+      "domain": "physiological",
+      "definition": "Mismatch between endogenous circadian phase and behavioral sleep/wake, eating, or work schedule.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_heart_rate_variability",
+      "domain": "physiological",
+      "definition": "Lower variability in beat-to-beat heart intervals, often reflecting reduced parasympathetic/vagal modulation or autonomic imbalance.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "elevated_resting_heart_rate",
+      "domain": "physiological",
+      "definition": "Higher resting heart rate, often interpreted with context as sympathetic activation or reduced recovery.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "reduced_insulin_sensitivity",
+      "domain": "biochemical",
+      "definition": "Reduced tissue response to insulin, impairing glucose regulation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "elevated_IL6",
+      "domain": "biochemical",
+      "definition": "Higher circulating interleukin-6, an inflammatory cytokine linked to sleep disturbance and sickness-behavior-like symptoms.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "elevated_CRP",
+      "domain": "biochemical",
+      "definition": "Higher C-reactive protein, a systemic inflammation marker associated with poor sleep and circadian disruption.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "next_day_fatigue",
+      "domain": "neurobehavioral",
+      "definition": "Subjective fatigue or low energy on the day following insufficient or disrupted sleep.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "impaired_attention",
+      "domain": "neurobehavioral",
+      "definition": "Reduced sustained attention or increased vigilance lapses following sleep loss or circadian disruption.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "short_sleep_duration_reduced_heart_rate_variability_negative_high_confidence",
+      "source": "short_sleep_duration",
+      "target": "reduced_heart_rate_variability",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "sleep_fragmentation_reduced_heart_rate_variability_positive_high_confidence",
+      "source": "sleep_fragmentation",
+      "target": "reduced_heart_rate_variability",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "circadian_misalignment_reduced_insulin_sensitivity_positive_high_confidence",
+      "source": "circadian_misalignment",
+      "target": "reduced_insulin_sensitivity",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "circadian_misalignment_elevated_CRP_positive_moderate_confidence",
+      "source": "circadian_misalignment",
+      "target": "elevated_CRP",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "chronic_sleep_restriction_impaired_attention_positive_high_confidence",
+      "source": "chronic_sleep_restriction",
+      "target": "impaired_attention",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "chronic_sleep_restriction_impaired_working_memory_positive_high_confidence",
+      "source": "chronic_sleep_restriction",
+      "target": "impaired_working_memory",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "title": "Effects of sleep deprivation on heart rate variability: a systematic review and meta-analysis",
+      "authors": "Zhang et al.",
+      "year": 2025,
+      "doi_or_url": "https://doi.org/10.3389/fneur.2025.1556784",
+      "reason": "Recent source; verify DOI, publication details, inclusion criteria, and HRV effect sizes."
+    },
+    {
+      "title": "Sleep loss and emotion: A systematic review and meta-analysis of over 50 years of experimental research",
+      "authors": "Palmer et al.",
+      "year": 2023,
+      "doi_or_url": "https://doi.org/10.1037/bul0000410",
+      "reason": "Important for mood output layer; extract domain-specific emotion results."
+    },
+    {
+      "title": "The cumulative cost of additional wakefulness",
+      "authors": "Van Dongen et al.",
+      "year": 2003,
+      "doi_or_url": "https://doi.org/10.1093/sleep/26.2.117",
+      "reason": "Core source for cumulative cognitive impairment; verify exact sleep restriction groups and outcomes."
+    },
+    {
+      "title": "Circadian Misalignment Augments Markers of Insulin Resistance and Inflammation, Independently of Sleep Loss",
+      "authors": "Leproult et al.",
+      "year": 2014,
+      "doi_or_url": "https://doi.org/10.2337/db13-1546",
+      "reason": "Core source for independent circadian effect; verify biomarkers and protocol."
+    },
+    {
+      "title": "Heart rate variability in insomnia patients: A critical review of the literature",
+      "authors": "Dodds et al.",
+      "year": 2017,
+      "doi_or_url": "https://doi.org/10.1016/j.smrv.2016.06.004",
+      "reason": "Needed to avoid overgeneralizing insomnia symptoms to HRV impairment."
+    }
+  ],
+  "research_gaps": [
+    "Need within-person mediation models linking specific sleep exposure types to physiological mediators and next-day neurobehavioral outcomes.",
+    "Need better separation of sleep duration, sleep fragmentation, insomnia, circadian misalignment, and social jetlag.",
+    "Need more older-adult and adolescent studies measuring inflammatory markers and cognitive outcomes together.",
+    "Need wearable-based longitudinal models that distinguish subjective fatigue from objective cognitive impairment.",
+    "Need better recovery modeling after acute versus chronic sleep disruption."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Insufficient or disrupted sleep reduces HRV and increases sympathetic/autonomic imbalance.",
+      "Circadian misalignment impairs glucose regulation and increases inflammatory/cardiovascular risk independent of total sleep duration.",
+      "Chronic sleep restriction produces cumulative attention/executive/working-memory impairment even when subjective fatigue plateaus."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Sleep disruption as an upstream hub node connecting wearable signals, metabolic state, inflammation, fatigue, mood, and cognition.",
+      "Reduced HRV and elevated resting heart rate as wearable-accessible mediators of poor recovery/autonomic imbalance.",
+      "Circadian misalignment as an independent risk node rather than merely a proxy for short sleep."
+    ],
+    "patterns_requiring_caution": [
+      "Insomnia symptoms alone should not automatically imply reduced HRV.",
+      "Inflammatory mediation from sleep disturbance to fatigue/cognition is plausible but often not directly tested.",
+      "Subjective sleepiness/fatigue can underestimate objective cognitive impairment."
+    ],
+    "recommended_next_queries": [
+      "Human studies linking HRV/resting heart rate/autonomic imbalance to fatigue, anxiety, attention, and cognitive performance.",
+      "Human studies on cortisol awakening response/evening cortisol, stress, fatigue, anxiety, and cognition.",
+      "Human studies on inflammation/cytokines and sickness behavior-like fatigue, mood, and cognitive impairment."
+    ],
+    "overall_assessment": "This sleep/circadian series is a strong hub for BodyState Mapper. Evidence is much stronger than the postprandial glucose-to-brain-fog pathway. The best graph additions are sleep disruption/circadian misalignment nodes linked to HRV, resting heart rate, insulin sensitivity, inflammation, fatigue, mood, and cognitive performance. Direct mediator chains should still be marked carefully unless within-person mediation is shown."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Effects of sleep deprivation on heart rate variability: a systematic review and meta-analysis",
+      "url": "",
+      "doi": "10.3389/fneur.2025.1556784",
+      "year": 2025
+    },
+    {
+      "index": 2,
+      "title": "Sleep Deprivation Deteriorates Heart Rate Variability and Photoplethysmography",
+      "url": "",
+      "doi": "10.3389/fnins.2021.642548",
+      "year": 2021
+    },
+    {
+      "index": 3,
+      "title": "Effects of sleep fragmentation and partial sleep restriction on heart rate variability during night",
+      "url": "",
+      "doi": "10.1038/s41598-023-33013-5",
+      "year": 2023
+    },
+    {
+      "index": 4,
+      "title": "Adverse metabolic and cardiovascular consequences of circadian misalignment",
+      "url": "",
+      "doi": "10.1073/pnas.0808180106",
+      "year": 2009
+    },
+    {
+      "index": 5,
+      "title": "Circadian Misalignment Augments Markers of Insulin Resistance and Inflammation, Independently of Sleep Loss",
+      "url": "",
+      "doi": "10.2337/db13-1546",
+      "year": 2014
+    },
+    {
+      "index": 6,
+      "title": "Adverse Metabolic Consequences in Humans of Prolonged Sleep Restriction Combined with Circadian Disruption",
+      "url": "",
+      "doi": "10.1126/scitranslmed.3003200",
+      "year": 2012
+    },
+    {
+      "index": 7,
+      "title": "Sleep Disturbance, Sleep Duration, and Inflammation: A Systematic Review and Meta-Analysis of Cohort Studies and Experimental Sleep Deprivation",
+      "url": "",
+      "doi": "10.1016/j.biopsych.2015.05.014",
+      "year": 2015
+    },
+    {
+      "index": 8,
+      "title": "The cumulative cost of additional wakefulness",
+      "url": "",
+      "doi": "10.1093/sleep/26.2.117",
+      "year": 2003
+    },
+    {
+      "index": 9,
+      "title": "Sleep loss and emotion: A systematic review and meta-analysis of over 50 years of experimental research",
+      "url": "",
+      "doi": "10.1037/bul0000410",
+      "year": 2023
+    },
+    {
+      "index": 10,
+      "title": "Heart rate variability in insomnia patients: A critical review of the literature",
+      "url": "",
+      "doi": "10.1016/j.smrv.2016.06.004",
+      "year": 2017
+    }
+  ]
+}

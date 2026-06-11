@@ -1,0 +1,234 @@
+{
+  "research_series": {
+    "series_id": "series_048_metabolic_fatigue_clusters_differential_inference",
+    "series_name": "Metabolic Fatigue Clusters,Glucose Variability,Metabolic Flexibility,Exercise Intolerance,and Brain Fog",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_048_pattern_001",
+      "pattern_name": "Mitochondrial/metabolic exertional intolerance cluster",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "impaired_mitochondrial_energy_or_metabolic_flexibility",
+        "direction": "impaired",
+        "measurement_methods": [
+          "CPET",
+          "muscle biopsy",
+          "metabolomics",
+          "lactate",
+          "fat oxidation testing"
+        ],
+        "contexts": [
+          "ME/CFS",
+          "long COVID",
+          "frailty",
+          "heart failure",
+          "exercise intolerance"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "impaired_oxidative_phosphorylation_or_fat_oxidation",
+        "category": "metabolic_marker",
+        "direction": "decreased",
+        "pathway": "reduced ATP generation and abnormal lactate/fat oxidation response to exertion",
+        "mechanism": "impaired mitochondrial function and poor metabolic flexibility increase exertional intolerance and PEM risk"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_exercise_intolerance_PEM_brain_fog",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "CPET performance",
+          "cognitive tests",
+          "symptom reports"
+        ],
+        "affected_functions": [
+          "exercise_tolerance",
+          "attention",
+          "processing_speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "When fatigue worsens after exertion with abnormal CPET/lactate/fat-oxidation signatures, prioritize metabolic energy/recovery branch over generic tiredness.",
+        "hypotheses": [
+          {
+            "target": "post_exertional_malaise",
+            "domain": "metabolic_fatigue_phenotyping",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "CPET, muscle biopsy and metabolomics support impaired oxidative metabolism and lactate/fat oxidation abnormalities in ME/CFS/long COVID."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|next_day|days|chronic",
+        "latency": "post_exertional|delayed",
+        "reversibility": "partially_reversible|training_adaptation|unknown"
+      },
+      "modulators_confounders": [
+        "sleep",
+        "meal_composition",
+        "activity",
+        "fitness",
+        "medications",
+        "thyroid",
+        "anemia",
+        "hydration",
+        "stress"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Strongest evidence is for mitochondrial dysfunction/impaired fat oxidation driving exertional intolerance, fatigue and PEM. Glycemic variability predicts long-term cognitive/adverse outcomes, but acute postprandial brain fog remains less proven.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Metabolic Fatigue Clusters",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Mitochondrial dysfunction causes exertional intolerance/fatigue/PEM; high glycemic variability predicts cognitive/adverse outcomes; postprandial brain fog chain unclear.",
+            "population": "ME/CFS, long COVID, diabetes/metabolic syndrome, athletes",
+            "sample_size": "50 included papers",
+            "limitations": "Direct acute postprandial neurobehavioral chains remain sparse."
+          }
+        ]
+      },
+      "limitations": [
+        "Postprandial glucose→brain fog evidence limited",
+        "GV more established for long-term outcomes than acute symptoms",
+        "Mental fatigue can impair endurance through perception without metabolic marker change"
+      ],
+      "alternative_explanations": [
+        "deconditioning",
+        "sleep debt",
+        "anemia",
+        "thyroid dysfunction",
+        "hydration",
+        "medication"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "metabolic_fatigue_cluster_uncertain",
+          "impaired_metabolic_flexibility",
+          "mitochondrial_dysfunction",
+          "elevated_lactate_at_low_workload",
+          "abnormal_lactate_clearance",
+          "reduced_anaerobic_threshold",
+          "exercise_intolerance",
+          "post_exertional_malaise",
+          "increased_glycemic_variability",
+          "postprandial_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "mitochondrial_dysfunction",
+            "target": "exercise_intolerance",
+            "edge_type": "mechanism_cluster",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "abnormal_CPET_response",
+            "target": "post_exertional_malaise",
+            "edge_type": "post_exertional_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "increased_glycemic_variability",
+            "target": "cognitive_decline_risk",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "postprandial_glucose_spike",
+            "target": "acute_brain_fog",
+            "edge_type": "hypothesis_only",
+            "polarity": "unknown",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Acute postprandial glucose spikes directly cause brain fog outside diabetes",
+      "reason": "Direct CGM+cognitive testing evidence is limited; many studies measure glycemic response without neurobehavioral outcomes.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "metabolic_fatigue_cluster_uncertain",
+      "domain": "measurement",
+      "definition": "Initial phenotype node when fatigue appears meal/exertion/metabolism-related but mechanism is unclear.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "elevated_lactate_at_low_workload",
+      "domain": "biochemical",
+      "definition": "Disproportionate lactate response at low exertional load; possible marker of impaired metabolic handling.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "mitochondrial_dysfunction_exercise_intolerance_high",
+      "source": "mitochondrial_dysfunction",
+      "target": "exercise_intolerance",
+      "edge_type": "mechanism_cluster",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Direct acute postprandial glycemic excursion→attention/fatigue studies outside diabetes",
+    "Mechanistic intervention trials restoring mitochondrial function",
+    "Gut microbiota-metabolite interactions under stress/exercise"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Mitochondrial dysfunction/impaired fat oxidation drives exertional symptoms",
+      "High glycemic variability predicts long-term cognitive/adverse outcomes"
+    ],
+    "highest_value_patterns_for_inference": [
+      "metabolic exertional intolerance branch",
+      "PEM metabolic branch",
+      "glycemic variability risk branch"
+    ],
+    "patterns_requiring_caution": [
+      "postprandial glucose spike→brain fog",
+      "brain FDG-PET hypometabolism as universal explanation"
+    ],
+    "recommended_next_queries": [
+      "Final graph guardrails and validation protocol"
+    ],
+    "overall_assessment": "Strong for exertional/mitochondrial cluster; cautious for acute postprandial brain fog."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Differential Characterization of Metabolic Fatigue Clusters",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

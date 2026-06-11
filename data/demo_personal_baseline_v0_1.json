@@ -1,0 +1,42 @@
+{
+  "subject_id": "demo_subject_001",
+  "baseline_period": {
+    "start": "2026-05-01",
+    "end": "2026-05-31"
+  },
+  "markers": {
+    "resting_heart_rate": {
+      "median": 72,
+      "mean": 73,
+      "std": 6,
+      "iqr": 8,
+      "unit": "bpm",
+      "sample_count": 28
+    },
+    "hrv_rmssd": {
+      "median": 48,
+      "mean": 50,
+      "std": 11,
+      "iqr": 12,
+      "unit": "ms",
+      "sample_count": 28
+    },
+    "sleep_duration": {
+      "median": 7.4,
+      "mean": 7.2,
+      "std": 0.9,
+      "iqr": 1.1,
+      "unit": "hours",
+      "sample_count": 28
+    },
+    "eda": {
+      "median": 1.2,
+      "mean": 1.3,
+      "std": 0.4,
+      "iqr": 0.5,
+      "unit": "microsiemens",
+      "sample_count": 20
+    }
+  },
+  "notes": "Demo baseline for rule-based mapping tests only."
+}

@@ -1,0 +1,460 @@
+{
+  "research_series": {
+    "series_id": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition",
+    "series_name": "Metabolic Flexibility, Mitochondrial Energy, Lactate, Exercise Intolerance, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_024_pattern_001",
+      "pattern_name": "Impaired metabolic flexibility is associated with fatigue and exercise intolerance",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "impaired_metabolic_flexibility",
+        "direction": "impaired",
+        "measurement_methods": [
+          "CPET",
+          "RER/RQ",
+          "fat oxidation capacity",
+          "substrate oxidation",
+          "insulin sensitivity"
+        ],
+        "contexts": [
+          "obesity",
+          "T2D",
+          "aging",
+          "ME/CFS",
+          "long COVID"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "reduced_fat_oxidation_or_substrate_switching",
+        "category": "metabolic_marker",
+        "direction": "decreased",
+        "pathway": "impaired substrate switching and energy availability under load",
+        "mechanism": "reduced ability to switch between fat/carbohydrate oxidation increases metabolic strain during activity"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_exercise_intolerance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "CPET performance",
+          "VO2max",
+          "functional tests"
+        ],
+        "affected_functions": [
+          "physical fatigue",
+          "exercise tolerance",
+          "perceived energy"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Reduced substrate switching/fat oxidation increases likelihood of fatigue and exercise intolerance, especially in metabolic disease, aging and chronic illness.",
+        "hypotheses": [
+          {
+            "target": "fatigue_exercise_intolerance",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "CPET/metabolic studies link impaired flexibility with functional limitation."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|weeks|chronic",
+        "latency": "immediate|cumulative",
+        "reversibility": "training_adaptation|partially_reversible"
+      },
+      "modulators_confounders": [
+        "fitness",
+        "deconditioning",
+        "sleep",
+        "diet",
+        "insulin resistance",
+        "thyroid",
+        "anemia",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Human CPET, substrate oxidation, aging and metabolic disease studies support impaired metabolic flexibility as a functional limitation marker.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Metabolic Flexibility, Mitochondrial Function, and Neurobehavioral Outcomes",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Impaired substrate switching and reduced fat oxidation associate with fatigue/exercise intolerance.",
+            "population": "aging/metabolic disease/chronic illness",
+            "sample_size": "50 included papers",
+            "limitations": "Heterogeneous definitions."
+          }
+        ]
+      },
+      "limitations": [
+        "Not equivalent to insulin resistance.",
+        "May reflect deconditioning in some contexts."
+      ],
+      "alternative_explanations": [
+        "Low fitness",
+        "inactivity",
+        "sleep debt",
+        "anemia"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "impaired_metabolic_flexibility",
+          "reduced_fat_oxidation",
+          "exercise_intolerance",
+          "subjective_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "impaired_metabolic_flexibility",
+            "target": "exercise_intolerance",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_024_pattern_002",
+      "pattern_name": "ME/CFS and long COVID PEM show abnormal CPET/metabolomic recovery distinct from normal exercise fatigue",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "post_exertional_malaise",
+        "direction": "post_exertional",
+        "measurement_methods": [
+          "2-day CPET",
+          "metabolomics",
+          "MRS",
+          "symptom timing"
+        ],
+        "contexts": [
+          "ME/CFS",
+          "long COVID"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "abnormal_CPET_metabolic_recovery",
+        "category": "exercise_marker",
+        "direction": "impaired",
+        "pathway": "exertion-induced metabolic recovery failure",
+        "mechanism": "reduced VO2/anaerobic threshold, abnormal metabolomics and incomplete 24h recovery distinguish PEM from normal fatigue"
+      },
+      "neurobehavioral_output": {
+        "variable": "delayed_fatigue_worsening_and_brain_fog",
+        "direction": "impaired",
+        "measurement_methods": [
+          "PEM reports",
+          "fatigue scales",
+          "cognitive complaints",
+          "CPET change"
+        ],
+        "affected_functions": [
+          "delayed fatigue",
+          "exercise tolerance",
+          "brain fog"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Delayed symptom worsening after exertion should activate PEM branch, not normal acute fatigue branch.",
+        "hypotheses": [
+          {
+            "target": "delayed_fatigue_worsening",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "2-day CPET/metabolomics distinguish pathological post-exertional response."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|days",
+        "latency": "post_exertional|delayed",
+        "reversibility": "partially_reversible|unknown"
+      },
+      "modulators_confounders": [
+        "post_viral_state",
+        "sleep",
+        "activity load",
+        "fitness",
+        "hydration",
+        "orthostatic intolerance"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "ME/CFS and long COVID show abnormal post-exertional physiology and incomplete metabolic recovery, distinguishing PEM from deconditioning/normal fatigue.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Cardiopulmonary and metabolic responses during a 2-day CPET in ME/CFS",
+            "authors": "Keller et al.",
+            "year": 2024,
+            "source_type": "CPET_study",
+            "doi_or_url": "10.1186/s12967-024-05410-5",
+            "relevant_finding": "Reduced oxygen consumption across repeat CPET informs impairment and PEM.",
+            "population": "ME/CFS",
+            "sample_size": "",
+            "limitations": "Specialized testing."
+          },
+          {
+            "title": "Muscle abnormalities worsen after post-exertional malaise in long COVID",
+            "authors": "Appelman et al.",
+            "year": 2024,
+            "source_type": "exercise/metabolic study",
+            "doi_or_url": "10.1038/s41467-023-44432-3",
+            "relevant_finding": "Muscle/metabolic abnormalities worsen after PEM in long COVID.",
+            "population": "long COVID",
+            "sample_size": "",
+            "limitations": "Disease-specific."
+          }
+        ]
+      },
+      "limitations": [
+        "Causality mechanisms remain debated.",
+        "Testing is hard to scale."
+      ],
+      "alternative_explanations": [
+        "Deconditioning alone insufficient but can contribute.",
+        "Orthostatic/respiratory limits"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "post_exertional_malaise",
+          "abnormal_CPET_response",
+          "delayed_fatigue_worsening",
+          "abnormal_lactate_clearance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "post_exertional_malaise",
+            "target": "delayed_fatigue_worsening",
+            "edge_type": "post_exertional_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_024_pattern_003",
+      "pattern_name": "Lactate is context-dependent fuel/signaling marker, not fatigue toxin",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "elevated_lactate",
+        "direction": "increased|adaptive|dysregulated",
+        "measurement_methods": [
+          "blood lactate",
+          "brain MRS lactate",
+          "CPET lactate"
+        ],
+        "contexts": [
+          "acute exercise",
+          "ME/CFS",
+          "long COVID",
+          "metabolic disease"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "lactate_context",
+        "category": "metabolic_marker",
+        "direction": "context_dependent",
+        "pathway": "fuel/signaling versus impaired clearance/energetic stress",
+        "mechanism": "during intense exercise lactate can support energy signaling; elevation at low workloads or delayed clearance may indicate metabolic strain"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_or_energy_stress",
+        "direction": "mixed",
+        "measurement_methods": [
+          "fatigue scales",
+          "exercise tolerance",
+          "MRS"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "exercise tolerance",
+          "brain energy"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not infer lactate toxicity; interpret lactate by workload, timing and clearance.",
+        "hypotheses": [
+          {
+            "target": "metabolic_strain",
+            "domain": "neurobehavioral",
+            "direction": "context_dependent",
+            "confidence": "moderate",
+            "reason": "Pathological lactate patterns depend on workload/timing, while exercise lactate is adaptive."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|days",
+        "latency": "immediate|recovery_phase",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "exercise intensity",
+        "fitness",
+        "oxygen delivery",
+        "mitochondrial function",
+        "sampling timing"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "The report explicitly warns against treating lactate as toxin; abnormal elevations at low workloads or brain lactate may indicate energetic stress.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Brain and muscle chemistry in ME/CFS and long COVID: 7T MRS",
+            "authors": "Godlewska et al.",
+            "year": 2025,
+            "source_type": "MRS_study",
+            "doi_or_url": "10.1038/s41380-025-03108-8",
+            "relevant_finding": "Elevated brain lactate in ME/CFS but not long COVID; needs validation.",
+            "population": "ME/CFS/long COVID",
+            "sample_size": "",
+            "limitations": "Moderate evidence."
+          }
+        ]
+      },
+      "limitations": [
+        "Lactate interpretation is highly contextual."
+      ],
+      "alternative_explanations": [
+        "Recent exercise",
+        "poor oxygen delivery",
+        "anxiety/hyperventilation via perfusion effects"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "elevated_lactate",
+          "abnormal_lactate_clearance",
+          "brain_lactate_elevation",
+          "metabolic_strain"
+        ],
+        "candidate_edges": [
+          {
+            "source": "elevated_lactate_at_low_workload",
+            "target": "metabolic_strain",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Mitochondrial dysfunction should not be inferred from fatigue alone.",
+      "reason": "Deconditioning, anemia, thyroid, orthostatic intolerance and sleep can mimic low energy/exercise intolerance.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "Lactate is not a toxin of fatigue.",
+      "reason": "Lactate has adaptive fuel/signaling roles; pathological interpretation requires timing/workload context.",
+      "recommendation": "reject"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "impaired_metabolic_flexibility",
+      "domain": "biochemical",
+      "definition": "Reduced ability to switch fuel sources across fasting/feeding/exercise states.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "post_exertional_malaise",
+      "domain": "neurobehavioral",
+      "definition": "Delayed symptom worsening after exertion, distinct from normal acute fatigue.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "PEM_delayed_fatigue_worsening_high",
+      "source": "post_exertional_malaise",
+      "target": "delayed_fatigue_worsening",
+      "edge_type": "post_exertional_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Mechanistic link between impaired fat oxidation and PEM severity.",
+    "Integrated metabolic+cognitive intervention trials.",
+    "Genetic modulators of diet/exercise response."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Impaired metabolic flexibility associates with fatigue/exercise intolerance.",
+      "ME/CFS/long COVID PEM has objective CPET/metabolomic abnormalities.",
+      "Exercise/diet can improve flexibility in metabolic/aging cohorts."
+    ],
+    "highest_value_patterns_for_inference": [
+      "PEM vs normal fatigue distinction",
+      "lactate context guardrail",
+      "CPET/metabolomic recovery branch"
+    ],
+    "patterns_requiring_caution": [
+      "mitochondrial dysfunction from symptoms alone",
+      "brain lactate biomarker generalization"
+    ],
+    "recommended_next_queries": [
+      "How to detect PEM using wearables and symptom timing?",
+      "How to separate deconditioning from mitochondrial/metabolic dysfunction?"
+    ],
+    "overall_assessment": "Strong human evidence supports metabolic flexibility and PEM branches, but mitochondrial dysfunction claims require objective markers and context."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Metabolic Flexibility, Mitochondrial Function, and Neurobehavioral Outcomes",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

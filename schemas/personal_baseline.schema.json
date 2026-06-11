@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/personal_baseline.schema.json",
+  "title": "THSI Personal Baseline",
+  "description": "Personal baseline statistics for rule-based comparison against raw observations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "subject_id",
+    "baseline_period",
+    "markers",
+    "notes"
+  ],
+  "properties": {
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the person whose baseline is described."
+    },
+    "baseline_period": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start", "end"],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date",
+          "description": "Start date of the baseline window (inclusive)."
+        },
+        "end": {
+          "type": "string",
+          "format": "date",
+          "description": "End date of the baseline window (inclusive)."
+        }
+      }
+    },
+    "markers": {
+      "type": "object",
+      "description": "Baseline statistics keyed by signal_type or marker name.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "median": { "type": "number" },
+          "mean": { "type": "number" },
+          "std": { "type": "number", "minimum": 0 },
+          "iqr": { "type": "number", "minimum": 0 },
+          "min": { "type": "number" },
+          "max": { "type": "number" },
+          "unit": { "type": "string" },
+          "sample_count": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about the baseline."
+    }
+  }
+}

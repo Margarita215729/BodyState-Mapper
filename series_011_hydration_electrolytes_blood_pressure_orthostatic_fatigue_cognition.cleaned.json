@@ -1,0 +1,366 @@
+{
+  "research_series": {
+    "series_id": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition",
+    "series_name": "Hydration, Electrolytes, Blood Pressure, Orthostatic Intolerance, Dizziness, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_011_pattern_001",
+      "pattern_name": "Dehydration/hypohydration impairs sustained attention and increases fatigue/mood disturbance",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "dehydration_or_hypohydration",
+        "direction": "increased",
+        "measurement_methods": [
+          "plasma_osmolality",
+          "urine_osmolality",
+          "urine_specific_gravity",
+          "body_mass_loss_percentage"
+        ],
+        "contexts": [
+          "healthy adults",
+          "athletes",
+          "older adults",
+          "children/adolescents",
+          "heat stress",
+          "exercise"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "hydration_status",
+        "category": "hydration_marker",
+        "direction": "worsened",
+        "pathway": "fluid deficit and increased osmolality reduce physiological reserve and may affect cerebral perfusion/attention systems",
+        "mechanism": "hypohydration increases subjective fatigue and impairs vigilance/sustained attention, especially above ~2% body mass loss or under heat/exercise stress"
+      },
+      "neurobehavioral_output": {
+        "variable": "sustained_attention_vigilance_and_subjective_fatigue",
+        "direction": "impaired",
+        "measurement_methods": [
+          "attention tasks",
+          "vigilance tasks",
+          "reaction time",
+          "mood/fatigue questionnaires"
+        ],
+        "affected_functions": [
+          "sustained_attention",
+          "vigilance",
+          "working_memory",
+          "processing_speed",
+          "subjective_fatigue",
+          "mood"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Objective dehydration or hypohydration increases likelihood of subjective fatigue/mood disturbance and impaired sustained attention, especially with >2% body mass loss or physiological stress.",
+        "hypotheses": [
+          {
+            "target": "sustained_attention_vigilance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Meta-analyses and RCTs show moderate-to-large impairments in attention/vigilance under objective dehydration, with stronger effects at greater fluid deficits."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours_to_same_day",
+        "latency": "acute",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "heat_stress",
+        "exercise",
+        "age",
+        "sex",
+        "baseline_hydration",
+        "measurement_method",
+        "fitness",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Dehydration impairs sustained attention/vigilance and increases subjective fatigue/mood disturbance, especially when measured objectively and under heat/exercise stress.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Some cognitive domains show null effects at mild dehydration in resting healthy adults.",
+        "Single-point hydration markers may miss dynamic compensation."
+      ],
+      "alternative_explanations": [
+        "heat stress",
+        "exercise fatigue",
+        "sleep loss",
+        "baseline health status"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "dehydration_state",
+          "hypohydration",
+          "elevated_plasma_osmolality",
+          "elevated_urine_osmolality",
+          "subjective_fatigue",
+          "impaired_sustained_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "dehydration_state",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "dehydration_state",
+            "target": "impaired_sustained_attention",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_011_pattern_002",
+      "pattern_name": "Orthostatic intolerance/POTS links volume/BP dysregulation to dizziness, brain fog, fatigue, and cognitive impairment",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "orthostatic_intolerance_or_POTS_pattern",
+        "direction": "increased",
+        "measurement_methods": [
+          "orthostatic_BP_change",
+          "orthostatic_HR_change",
+          "tilt_table_testing",
+          "cerebral_blood_flow_velocity",
+          "symptom_scales"
+        ],
+        "contexts": [
+          "POTS",
+          "orthostatic_hypotension",
+          "vasovagal_syncope",
+          "older adults",
+          "children/adolescents",
+          "post-procedure fluid loss"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "cerebral_hypoperfusion",
+        "category": "cerebral_perfusion_marker",
+        "direction": "increased",
+        "pathway": "volume depletion or autonomic dysregulation causes impaired orthostatic compensation and reduced cerebral perfusion",
+        "mechanism": "standing challenge or tilt produces excessive HR/BP changes and cerebral perfusion reduction, driving dizziness, fatigue, brain fog and working memory/executive dysfunction"
+      },
+      "neurobehavioral_output": {
+        "variable": "orthostatic_brain_fog_dizziness_fatigue_cognition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "brain fog reports",
+          "fatigue scales",
+          "working memory tasks",
+          "executive function tasks",
+          "dizziness/presyncope scales"
+        ],
+        "affected_functions": [
+          "dizziness",
+          "lightheadedness",
+          "brain_fog",
+          "fatigue",
+          "working_memory",
+          "executive_function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Orthostatic intolerance or POTS-pattern physiology increases likelihood of dizziness, brain fog, fatigue, and cognitive impairment through cerebral hypoperfusion/autonomic compensation failure.",
+        "hypotheses": [
+          {
+            "target": "subjective_brain_fog",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Orthostatic/POTS studies support a mechanistic volume/BP/cerebral perfusion pathway; symptom relief with volume expansion/rehydration supports reversibility."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_minutes",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "salt_intake",
+        "fluid_intake",
+        "medications",
+        "menstrual_cycle",
+        "heat",
+        "deconditioning",
+        "autonomic_function"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Orthostatic intolerance/POTS provides mechanistic support for volume/BP/cerebral perfusion links to dizziness, fatigue, brain fog, and cognitive dysfunction.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Long-term intervention data are limited.",
+        "Cerebral perfusion is not always measured in routine studies."
+      ],
+      "alternative_explanations": [
+        "anxiety",
+        "sleep disturbance",
+        "deconditioning",
+        "respiratory hypocapnia",
+        "medication effects"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "orthostatic_intolerance",
+          "POTS_pattern",
+          "excessive_orthostatic_heart_rate_increase",
+          "cerebral_hypoperfusion",
+          "dizziness",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "orthostatic_intolerance",
+            "target": "cerebral_hypoperfusion",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "cerebral_hypoperfusion",
+            "target": "subjective_brain_fog",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Mild dehydration has little/no effect on some cognitive domains in healthy adults at rest.",
+      "reason": "Some large cohort/meta-analysis/null findings suggest limited impact outside stress or extreme deficit contexts.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "Electrolyte imbalance directly explains everyday fatigue/cognition outside clinical extremes.",
+      "reason": "Associations are stronger in acute illness/TBI/stroke, but causality is confounded by disease severity.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "dehydration_state",
+      "domain": "physiological",
+      "definition": "Reduced body water status measured by objective hydration markers or body mass loss.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "orthostatic_intolerance",
+      "domain": "physiological",
+      "definition": "Symptoms and abnormal cardiovascular response provoked by upright posture.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "POTS_pattern",
+      "domain": "physiological",
+      "definition": "Excessive orthostatic heart rate increase with orthostatic symptoms, not defined by low BP alone.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "cerebral_hypoperfusion",
+      "domain": "physiological",
+      "definition": "Reduced cerebral blood flow/perfusion, especially during orthostatic or volume stress.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "dehydration_state_subjective_fatigue_positive_high",
+      "source": "dehydration_state",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "dehydration_state_impaired_sustained_attention_positive_high",
+      "source": "dehydration_state",
+      "target": "impaired_sustained_attention",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "orthostatic_intolerance_cerebral_hypoperfusion_positive_moderate",
+      "source": "orthostatic_intolerance",
+      "target": "cerebral_hypoperfusion",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "cerebral_hypoperfusion_subjective_brain_fog_positive_moderate",
+      "source": "cerebral_hypoperfusion",
+      "target": "subjective_brain_fog",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Mediation analyses linking hydration/electrolyte/orthostatic physiology to cerebral perfusion and neurobehavioral outcomes are limited.",
+    "Longitudinal intervention data on hydration and cognitive decline are limited.",
+    "Sex and age moderators are under-characterized."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Dehydration/hypohydration impairs sustained attention/vigilance and increases fatigue/mood disturbance.",
+      "Orthostatic intolerance/POTS can produce dizziness, brain fog, fatigue, and cognitive impairment via cerebral hypoperfusion."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Normal seated BP does not exclude orthostatic intolerance.",
+      "Hydration effects are strongest under stress/extreme deficit contexts and for sustained attention."
+    ],
+    "patterns_requiring_caution": [
+      "Mild dehydration at rest may have limited effects on some cognitive domains.",
+      "Electrolyte imbalance evidence outside clinical extremes is confounded."
+    ],
+    "recommended_next_queries": [
+      "How do physical activity, exercise load, lactate, overtraining, and recovery markers affect fatigue and cognition?",
+      "How do thyroid markers and basal metabolism affect fatigue, mood, and cognition?"
+    ],
+    "overall_assessment": "Hydration/orthostatic physiology is a strong practical inference layer for fatigue, dizziness, brain fog, and sustained attention, especially when combined with heat/exercise stress or orthostatic challenge data."
+  },
+  "works_cited": []
+}

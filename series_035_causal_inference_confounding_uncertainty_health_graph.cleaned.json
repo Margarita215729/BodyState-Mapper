@@ -1,0 +1,217 @@
+{
+  "research_series": {
+    "series_id": "series_035_causal_inference_confounding_uncertainty_health_graph",
+    "series_name": "Causal Inference, Confounding, Uncertainty, and Evidence Grading for Health State Graphs",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_035_pattern_001",
+      "pattern_name": "DAGs and causal frameworks separate association, prediction, causation, mediation, and confounding",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "observational_health_association",
+        "direction": "uncertain",
+        "measurement_methods": [
+          "DAGs",
+          "potential outcomes",
+          "causal diagrams",
+          "observational cohorts"
+        ],
+        "contexts": [
+          "human health research",
+          "multimodal health inference"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "causal_structure_assumptions",
+        "category": "causal_method",
+        "direction": "clarifies_adjustment_and_bias",
+        "pathway": "exposure-mediator-outcome structure with explicit confounders/colliders/proxies",
+        "mechanism": "graphical assumptions identify adjustment sets and prevent inappropriate conditioning"
+      },
+      "neurobehavioral_output": {
+        "variable": "edge_confidence_assignment",
+        "direction": "improved",
+        "measurement_methods": [
+          "risk of bias assessment",
+          "triangulation",
+          "temporality checks"
+        ],
+        "affected_functions": [
+          "evidence grading",
+          "graph construction"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not convert observational associations into causal graph edges unless temporality, intervention/natural experiment, causal design, or strong mechanistic triangulation supports the claim.",
+        "hypotheses": [
+          {
+            "target": "edge_confidence",
+            "domain": "causal_inference",
+            "direction": "context_dependent",
+            "confidence": "high",
+            "reason": "DAGs, MR, mediation analysis and bias tools improve causal interpretation but depend on assumptions and measurement quality."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "cross_sectional|longitudinal",
+        "latency": "temporally_ordered|required_for_causal_claim",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "unmeasured confounding",
+        "selection bias",
+        "collider bias",
+        "measurement bias",
+        "reverse causality",
+        "proxy measurement"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Modern causal inference methods improve interpretation but cannot remove uncertainty when assumptions, temporality or measurement quality are weak.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Causal Inference, Confounding, Bias, and Evidence Grading in Human Health: Principles and Methods",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "methods_review",
+            "doi_or_url": "",
+            "relevant_finding": "Causal edges require temporality/intervention/natural experiment or strong mechanism; associations should otherwise be marked uncertain, confounded or proxy.",
+            "population": "human health research",
+            "sample_size": "50 included papers",
+            "limitations": "Methodological synthesis; not disease-specific."
+          }
+        ]
+      },
+      "limitations": [
+        "DAG validity depends on domain knowledge",
+        "automated Bayesian network learning can mislead with latent confounders",
+        "mediation is sensitive to unmeasured mediator-outcome confounding"
+      ],
+      "alternative_explanations": [
+        "reverse causality",
+        "collider bias",
+        "selection bias",
+        "measurement proxy artifact"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "causal_uncertainty",
+          "confounding_risk",
+          "reverse_causality_risk",
+          "selection_bias",
+          "collider_bias",
+          "measurement_bias",
+          "proxy_marker",
+          "temporality_supported",
+          "mediation_supported",
+          "intervention_supported",
+          "uncertainty_score",
+          "edge_confidence",
+          "guardrail_required"
+        ],
+        "candidate_edges": [
+          {
+            "source": "observational_association",
+            "target": "causal_edge",
+            "edge_type": "reject_for_now",
+            "polarity": "neutral",
+            "confidence": "high"
+          },
+          {
+            "source": "temporality_supported",
+            "target": "edge_confidence",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "confounding_risk",
+            "target": "edge_confidence",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Automated Bayesian networks can recover valid causal structure without assumptions",
+      "reason": "They depend on assumptions about unmeasured confounders and data-generating processes.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "edge_confidence",
+      "domain": "measurement",
+      "definition": "Confidence score assigned to a graph edge based on evidence strength, temporality, bias risk and personal applicability.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "confounding_risk",
+      "domain": "causal",
+      "definition": "Risk that a third variable explains the observed exposure-outcome association.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "observational_association_to_causal_edge_reject_without_temporality",
+      "source": "observational_association",
+      "target": "causal_edge",
+      "edge_type": "reject_for_now",
+      "polarity": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Few causal inference studies directly target fatigue/brain fog with multimodal wearable/lab data."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "DAGs improve adjustment-set reasoning.",
+      "Collider/selection bias can create spurious associations.",
+      "MR reduces some confounding but depends on instrumental variable assumptions."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Separate association/prediction/causation/mediation/proxy measurement.",
+      "Use temporality and triangulation before causal edge promotion."
+    ],
+    "patterns_requiring_caution": [
+      "Automated graph learning without domain assumptions.",
+      "Mediation without confounder sensitivity analysis."
+    ],
+    "recommended_next_queries": [
+      "How should edge confidence be computed in a multimodal biomedical graph?"
+    ],
+    "overall_assessment": "Essential methodological guardrail layer for BodyState Mapper."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Causal Inference, Confounding, Bias, and Evidence Grading in Human Health: Principles and Methods",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

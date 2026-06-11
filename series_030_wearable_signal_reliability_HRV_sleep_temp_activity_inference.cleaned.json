@@ -1,0 +1,319 @@
+{
+  "research_series": {
+    "series_id": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference",
+    "series_name": "Wearable Signal Reliability, HRV, Sleep, Temperature, Activity, and Health State Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_030_pattern_001",
+      "pattern_name": "Wearable HR/RHR is reliable at rest and sleep but less reliable with motion",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "wearable_RHR_or_HR",
+        "direction": "device_dependent",
+        "measurement_methods": [
+          "PPG wearable",
+          "ECG comparator"
+        ],
+        "contexts": [
+          "rest",
+          "sleep",
+          "free living",
+          "exercise"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "device_signal_quality",
+        "category": "measurement_marker",
+        "direction": "context_dependent",
+        "pathway": "PPG signal acquisition",
+        "mechanism": "PPG estimates HR accurately at rest/sleep but degrades with motion/artifact"
+      },
+      "neurobehavioral_output": {
+        "variable": "health_state_inference_reliability",
+        "direction": "mixed",
+        "measurement_methods": [
+          "ECG validation",
+          "ICC",
+          "bias"
+        ],
+        "affected_functions": [
+          "recovery inference",
+          "illness inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Wearables show strong HR/RHR accuracy at rest/sleep relative to ECG, but accuracy declines with movement.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Wearable-Derived Physiological Signals review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "PPG HR/RHR accurate at rest/sleep; motion reduces accuracy.",
+            "population": "wearable validation cohorts",
+            "sample_size": "50 studies included",
+            "limitations": "Device/firmware heterogeneity."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "wearable_RHR",
+          "personal_RHR_deviation",
+          "measurement_noise",
+          "motion_artifact"
+        ],
+        "candidate_edges": [
+          {
+            "source": "wearable_RHR",
+            "target": "personal_RHR_deviation",
+            "edge_type": "measurement_proxy",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_030_pattern_002",
+      "pattern_name": "Wearable HRV is reliable mainly at rest/sleep",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "wearable_HRV_proxy",
+        "direction": "device_dependent",
+        "measurement_methods": [
+          "PPG RMSSD",
+          "PPG SDNN",
+          "ECG RMSSD"
+        ],
+        "contexts": [
+          "sleep",
+          "rest",
+          "activity"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "PPG_HRV_measurement_error",
+        "category": "measurement_marker",
+        "direction": "increased_during_activity",
+        "pathway": "PPG-derived interbeat interval estimation",
+        "mechanism": "motion artifacts distort HRV, especially during activity and in frequency-domain features"
+      },
+      "neurobehavioral_output": {
+        "variable": "recovery_or_stress_inference",
+        "direction": "mixed",
+        "measurement_methods": [
+          "ECG comparison",
+          "signal quality"
+        ],
+        "affected_functions": [
+          "recovery inference",
+          "stress inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Time-domain HRV metrics agree with ECG at rest/sleep but degrade during ambulatory activity.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Wearable-Derived Physiological Signals review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "PPG_ECG_comparison",
+            "doi_or_url": "",
+            "relevant_finding": "RMSSD/SDNN reliable at rest/sleep, error-prone during activity.",
+            "population": "consumer wearable validation cohorts",
+            "sample_size": "multiple studies",
+            "limitations": "Frequency-domain HRV especially vulnerable."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "wearable_HRV_proxy",
+          "PPG_RMSSD",
+          "ECG_RMSSD",
+          "low_recovery_score"
+        ],
+        "candidate_edges": [
+          {
+            "source": "PPG_RMSSD",
+            "target": "ECG_RMSSD",
+            "edge_type": "measurement_proxy",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_030_pattern_003",
+      "pattern_name": "Wearable sleep duration is better supported than wearable sleep stages",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "wearable_sleep_metrics",
+        "direction": "device_dependent",
+        "measurement_methods": [
+          "consumer wearable",
+          "actigraphy",
+          "PSG comparison"
+        ],
+        "contexts": [
+          "sleep tracking",
+          "free-living",
+          "lab validation"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sleep_stage_classification_uncertainty",
+        "category": "measurement_marker",
+        "direction": "increased",
+        "pathway": "algorithmic sleep staging",
+        "mechanism": "wearables estimate duration better than REM/deep/light stages"
+      },
+      "neurobehavioral_output": {
+        "variable": "sleep_based_fatigue_inference",
+        "direction": "mixed",
+        "measurement_methods": [
+          "PSG comparison",
+          "agreement"
+        ],
+        "affected_functions": [
+          "sleep quality inference",
+          "fatigue inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Wearables estimate sleep duration relatively well compared with PSG, while sleep-stage classification remains limited.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Wearable-Derived Physiological Signals review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "actigraphy_PSG_comparison",
+            "doi_or_url": "",
+            "relevant_finding": "Sleep duration agreement high; stage classification limited.",
+            "population": "consumer wearable users",
+            "sample_size": "multiple studies",
+            "limitations": "Stage algorithms vary across devices."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "wearable_sleep_duration",
+          "wearable_sleep_stage_uncertainty",
+          "actigraphy_sleep_proxy"
+        ],
+        "candidate_edges": [
+          {
+            "source": "wearable_sleep_duration",
+            "target": "sleep_duration",
+            "edge_type": "measurement_proxy",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Wearable recovery score is physiological truth.",
+      "reason": "Composite scores depend on proprietary algorithms, device accuracy, artifacts, and unclear biological validity.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "measurement_noise",
+      "domain": "measurement",
+      "definition": "Device/context variability not reflecting true physiology.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "personal_baseline",
+      "domain": "measurement",
+      "definition": "Within-person rolling baseline preferred over population norms.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "wearable_sleep_stage_uncertainty",
+      "domain": "measurement",
+      "definition": "Uncertainty around consumer wearable REM/deep/light stage estimates.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "wearable_RHR_personal_RHR_deviation_proxy_high",
+      "source": "wearable_RHR",
+      "target": "personal_RHR_deviation",
+      "edge_type": "measurement_proxy",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "HR/RHR reliable at rest/sleep.",
+      "Time-domain HRV useful at rest/sleep but unreliable with motion.",
+      "Sleep duration more reliable than sleep stages."
+    ],
+    "highest_value_patterns_for_inference": [
+      "device accuracy must be separated from biological meaning",
+      "personal baseline deviations beat raw population thresholds"
+    ],
+    "patterns_requiring_caution": [
+      "composite recovery scores",
+      "ambulatory HRV",
+      "consumer sleep stages"
+    ],
+    "recommended_next_queries": [
+      "Multimodal wearable patterns predicting low recovery state within-person"
+    ],
+    "overall_assessment": "Wearables are useful noisy proxies, not direct physiological truth."
+  }
+}

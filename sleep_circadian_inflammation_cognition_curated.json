@@ -1,0 +1,1531 @@
+{
+  "curation_metadata": {
+    "curation_status": "curated_candidate_output",
+    "technical_status": "valid_json",
+    "scientific_status": "usable_after_source_verification",
+    "graph_import_status": "do_not_import_directly_until_source_verification",
+    "curation_notes": [
+      "Converted pasted malformed JSON into valid JSON.",
+      "Normalized node and edge identifiers to lower_snake_case where practical.",
+      "Replaced incorrect mediated_by edges with associated_with or mechanistically_contributes_to when direct mediation was not established.",
+      "Downgraded overstrong full-chain claims to plausible_mechanism, hypothesis, or needs_manual_review.",
+      "Flagged non-peer-reviewed and translational sources for verification.",
+      "Preserved original research-series intent while making the file safer for Evidence Graph ingestion."
+    ]
+  },
+  "research_series": {
+    "series_id": "series_002_sleep_circadian_inflammation_cognition",
+    "series_name": "Sleep, Circadian Rhythm, Inflammation, and Cognition",
+    "project": "BodyState Mapper",
+    "scientific_project_name": "Traceable Human State Inference Under Partial Biological Observability",
+    "objective": "Identify evidence-supported relationships between sleep/circadian physiological markers, biochemical or molecular mediators, and cognitive or neurobehavioral outcomes.",
+    "target_chain": "physiological_observation -> biochemical_or_molecular_mediator -> cognitive_or_neurobehavioral_output",
+    "date_generated": "2026-06-09"
+  },
+  "search_scope": {
+    "species_priority": [
+      "human"
+    ],
+    "include_indirect_evidence": true,
+    "preferred_evidence_types": [
+      "systematic_review",
+      "meta_analysis",
+      "clinical_study",
+      "experimental_human_sleep_deprivation_study",
+      "longitudinal_study",
+      "mechanistic_review"
+    ],
+    "physiological_domain": [
+      "sleep_duration",
+      "short_sleep",
+      "sleep_fragmentation",
+      "sleep_efficiency",
+      "sleep_latency",
+      "wake_after_sleep_onset",
+      "insomnia_symptoms",
+      "circadian_disruption",
+      "irregular_sleep_timing",
+      "shift_work",
+      "daytime_sleepiness",
+      "fatigue",
+      "body_temperature_rhythm",
+      "nocturnal_heart_rate",
+      "nocturnal_hrv",
+      "sleep_apnea",
+      "oxygen_desaturation",
+      "rem_sleep_disruption",
+      "slow_wave_sleep_reduction"
+    ],
+    "biochemical_domain": [
+      "melatonin",
+      "cortisol",
+      "cortisol_awakening_response",
+      "hpa_axis",
+      "il_6",
+      "tnf_alpha",
+      "crp",
+      "interferon_gamma",
+      "prostaglandins",
+      "adenosine",
+      "orexin_hypocretin",
+      "dopamine",
+      "serotonin",
+      "gaba",
+      "glutamate",
+      "bdnf",
+      "glymphatic_clearance",
+      "amyloid_beta",
+      "tau",
+      "glucose_metabolism",
+      "insulin_sensitivity",
+      "leptin",
+      "ghrelin",
+      "oxidative_stress",
+      "mitochondrial_function",
+      "autonomic_immune_interaction"
+    ],
+    "neurobehavioral_domain": [
+      "attention_impairment",
+      "vigilance_impairment",
+      "working_memory_impairment",
+      "executive_dysfunction",
+      "reaction_time_slowing",
+      "cognitive_fog",
+      "emotional_dysregulation",
+      "irritability",
+      "anxiety",
+      "depressed_mood",
+      "stress_reactivity",
+      "impulsivity",
+      "reduced_motivation",
+      "reward_sensitivity_changes",
+      "pain_sensitivity",
+      "interoception_changes",
+      "fatigue_perception",
+      "daytime_functioning_impairment"
+    ]
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_002_pattern_001",
+      "pattern_name": "Acute sleep deprivation, inflammatory signaling, and attention/vigilance impairment",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "plausible_mechanism",
+      "physiological_input": {
+        "variable": "acute_sleep_deprivation",
+        "observable_name": "one_night_or_short_term_sleep_loss",
+        "direction": "increased",
+        "baseline_reference": "experimental_condition",
+        "measurement_methods": [
+          "experimental_sleep_restriction_protocol",
+          "polysomnography",
+          "sleep_diary",
+          "actigraphy"
+        ],
+        "typical_contexts": [
+          "controlled laboratory deprivation",
+          "naturalistic acute deprivation"
+        ],
+        "notes": "Acute sleep loss is a strong physiological perturbation; cognitive impairment is robust, while inflammatory mediation should remain a hypothesis unless directly tested."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured_for_sleep_loss_indirect_for_cognition_mediation",
+        "primary_mediators": [
+          {
+            "name": "il_6",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "tnf_alpha",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "crp",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "systemic_inflammation",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [
+          {
+            "name": "adenosine",
+            "category": "neuromodulator",
+            "direction": "increased",
+            "pathway": "sleep_pressure",
+            "evidence_for_mediation": "hypothesized"
+          }
+        ],
+        "mechanistic_summary": "Acute sleep loss can increase peripheral inflammatory signaling and sleep pressure. These changes may contribute to cortical processing inefficiency, arousal instability, and reduced vigilance, but inflammation should not be treated as the sole proximal mechanism."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "attention_vigilance",
+        "observable_name": "attention_and_vigilance_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "psychomotor_vigilance_task",
+          "reaction_time_tasks",
+          "sustained_attention_tasks"
+        ],
+        "affected_functions": [
+          "attention",
+          "vigilance",
+          "sustained_attention",
+          "reaction_time"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "post_deprivation_cognitive_testing"
+        ],
+        "notes": "Vigilance impairment after sleep loss is robust. Cytokine-mediated contribution is plausible but should be tracked separately from the direct sleep-loss-to-vigilance edge."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If acute sleep deprivation is present, expect increased likelihood of vigilance and attention impairment; inflammatory markers may rise and may partially contribute, but should not be assumed to be the sole mediator.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "physiology.acute_sleep_deprivation",
+              "operator": "==",
+              "reference": "personal_baseline",
+              "value": true,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "attention_vigilance_impairment",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "high",
+              "reason": "Acute sleep loss reliably impairs vigilance and attention."
+            },
+            {
+              "target": "inflammatory_signaling",
+              "target_domain": "biochemical",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "Sleep loss is associated with elevated inflammatory markers in several human studies."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "hours",
+        "latency": "immediate_next_day",
+        "duration": "brief",
+        "reversibility": "acute_reversible",
+        "notes": "Cognitive impairment may appear the next day; inflammatory changes may vary by protocol, assay timing, and baseline health."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "chronotype",
+          "baseline_sleep_need",
+          "psychiatric_history",
+          "metabolic_health"
+        ],
+        "contextual_factors": [
+          "caffeine",
+          "light_exposure",
+          "exercise_timing",
+          "recent_infection",
+          "sleep_environment"
+        ],
+        "confounders": [
+          "medication_effects",
+          "sleep_apnea",
+          "acute_illness",
+          "self_report_bias",
+          "task_practice_effects"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Acute sleep deprivation is strongly linked to attention and vigilance deficits. Associations with inflammatory markers are plausible and repeatedly reported, but direct mediation from cytokine elevation to specific cognitive impairment is not established strongly enough for a causal graph edge.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "experimental_human_sleep_deprivation_study",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8602722",
+            "relevant_finding": "Sleep deprivation and inflammatory marker changes are discussed; verify exact marker directions and cognitive endpoints before graph import.",
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "mechanistic_background"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "requires manual verification"
+          },
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "experimental_human_sleep_deprivation_study",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8832572",
+            "relevant_finding": "Partial sleep deprivation and psychomotor vigilance impairment are discussed; verify whether inflammatory markers were directly measured and linked to cognition.",
+            "supports_which_part": [
+              "physiology_to_neurobehavior"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "requires manual verification"
+          }
+        ]
+      },
+      "limitations": [
+        "Inflammatory mediation is not universally demonstrated.",
+        "Cognitive impairment can arise through non-inflammatory mechanisms including sleep pressure, adenosine, noradrenergic instability, and circadian phase.",
+        "Laboratory sleep-loss protocols may not generalize to chronic naturalistic sleep restriction."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Attention impairment after sleep deprivation may occur even without measured cytokine changes.",
+          "alternative_interpretation": "Sleep pressure and arousal instability may be sufficient mechanisms.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "acute_sleep_deprivation",
+          "il_6",
+          "tnf_alpha",
+          "crp",
+          "attention_vigilance_impairment",
+          "adenosine_sleep_pressure"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_sleep_deprivation",
+            "target": "attention_vigilance_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high",
+            "evidence_basis": "direct human sleep deprivation evidence"
+          },
+          {
+            "source": "acute_sleep_deprivation",
+            "target": "inflammatory_signaling",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "human inflammatory marker evidence"
+          },
+          {
+            "source": "inflammatory_signaling",
+            "target": "attention_vigilance_impairment",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "indirect mediation evidence"
+          }
+        ],
+        "recommended_graph_action": "mark_as_hypothesis",
+        "reason_for_action": "Direct sleep-loss-to-attention edge is strong; cytokine mediation should remain a hypothesis until sources are verified.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_002_pattern_002",
+      "pattern_name": "Acute sleep disruption, HPA-axis/cortisol dynamics, and emotional stress reactivity",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "plausible_mechanism",
+      "physiological_input": {
+        "variable": "acute_sleep_disruption",
+        "observable_name": "acute_sleep_deprivation_or_nocturnal_awakening",
+        "direction": "increased",
+        "baseline_reference": "experimental_condition",
+        "measurement_methods": [
+          "polysomnography",
+          "sleep_diary",
+          "actigraphy",
+          "salivary_cortisol_assay"
+        ],
+        "typical_contexts": [
+          "short_term_deprivation",
+          "fragmented_sleep",
+          "nocturnal_awakening"
+        ],
+        "notes": "Cortisol awakening response is sensitive to awakening timing, circadian phase, and stress context."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured_for_hpa_axis_indirect_for_emotional_outcome",
+        "primary_mediators": [
+          {
+            "name": "cortisol",
+            "category": "hormone",
+            "direction": "dysregulated",
+            "pathway": "hpa_axis",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "cortisol_awakening_response",
+            "category": "hormonal_response",
+            "direction": "context_dependent",
+            "pathway": "morning_hpa_axis_activation",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [
+          {
+            "name": "acth",
+            "category": "hormone",
+            "direction": "context_dependent",
+            "pathway": "hpa_axis",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "mechanistic_summary": "Sleep disruption and awakening can perturb HPA-axis timing. Cortisol dysregulation may alter emotional regulation and stress reactivity, but the effect direction is context-dependent."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "emotional_stress_reactivity",
+        "observable_name": "emotional_dysregulation_and_stress_reactivity",
+        "direction": "increased",
+        "measurement_methods": [
+          "mood_scales",
+          "stress_reactivity_measures",
+          "affective_stress_tasks"
+        ],
+        "affected_functions": [
+          "emotional_regulation",
+          "stress_resilience",
+          "anxiety_stability"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "post_sleep_disruption_mood_or_stress_testing"
+        ],
+        "notes": "Direct causal mediation by cortisol is not consistently proven; graph action should remain hypothesis-level."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "low_to_moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If acute sleep disruption or nocturnal awakening is present, HPA-axis timing may be altered; emotional reactivity may increase, especially under stress.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "physiology.acute_sleep_disruption",
+              "operator": "==",
+              "reference": "personal_baseline",
+              "value": true,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "hpa_axis_dysregulation",
+              "target_domain": "biochemical",
+              "direction": "dysregulated",
+              "confidence": "moderate",
+              "reason": "Sleep-wake transitions and sleep disruption influence cortisol dynamics."
+            },
+            {
+              "target": "emotional_stress_reactivity",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "low_to_moderate",
+              "reason": "Sleep disruption commonly worsens affective regulation; cortisol may contribute but is not the only mechanism."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "hours",
+        "latency": "immediate_next_day",
+        "duration": "brief",
+        "reversibility": "acute_reversible",
+        "notes": "CAR occurs shortly after awakening; behavioral effects can occur same day."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "chronotype",
+          "psychiatric_history",
+          "baseline_stress_level"
+        ],
+        "contextual_factors": [
+          "acute_stress",
+          "light_exposure",
+          "caffeine",
+          "awakening_time",
+          "sleep_timing"
+        ],
+        "confounders": [
+          "medication_effects",
+          "psychiatric_history",
+          "circadian_phase",
+          "sampling_time"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "preliminary",
+        "evidence_summary": "Sleep-wake transitions and sleep disruption affect cortisol dynamics. Downstream emotional regulation effects are plausible but not sufficiently direct for a confident causal edge.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "limited",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "mechanistic_review",
+            "doi_or_url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2021.694046/full",
+            "relevant_finding": "Nocturnal awakenings, ACTH/cortisol dynamics, and CAR are reviewed; verify specific relevance to sleep deprivation and emotional outcomes.",
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "mechanistic_background"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "requires manual verification"
+          }
+        ]
+      },
+      "limitations": [
+        "Cortisol direction can vary by timing, awakening conditions, and chronicity.",
+        "Emotional dysregulation after sleep loss also involves amygdala-prefrontal circuitry, noradrenergic arousal, and subjective fatigue."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Cortisol is not sufficient to explain affective effects of sleep loss.",
+          "alternative_interpretation": "Neural network changes and arousal-system instability may dominate behavioral outcome.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "acute_sleep_disruption",
+          "cortisol",
+          "cortisol_awakening_response",
+          "hpa_axis_dysregulation",
+          "emotional_stress_reactivity"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_sleep_disruption",
+            "target": "hpa_axis_dysregulation",
+            "edge_type": "associated_with",
+            "polarity": "context_dependent",
+            "confidence": "moderate",
+            "evidence_basis": "human cortisol dynamics evidence"
+          },
+          {
+            "source": "hpa_axis_dysregulation",
+            "target": "emotional_stress_reactivity",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "indirect mechanistic evidence"
+          }
+        ],
+        "recommended_graph_action": "mark_as_hypothesis",
+        "reason_for_action": "HPA-axis involvement is plausible, but direct full-chain evidence is limited.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_002_pattern_003",
+      "pattern_name": "Circadian misalignment, inflammatory/metabolic disruption, and cognitive performance impairment",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "circadian_disruption",
+        "observable_name": "circadian_misalignment",
+        "direction": "disrupted",
+        "baseline_reference": "population_norm",
+        "measurement_methods": [
+          "actigraphy",
+          "melatonin_timing",
+          "light_exposure_assessment",
+          "sleep_timing_assessment"
+        ],
+        "typical_contexts": [
+          "shift_work",
+          "jet_lag",
+          "irregular_sleep_timing",
+          "social_jetlag"
+        ],
+        "notes": "Circadian misalignment should be separated from sleep duration and sleep quality when possible."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "indirectly_inferred",
+        "primary_mediators": [
+          {
+            "name": "crp",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "systemic_inflammation",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "il_6",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "tnf_alpha",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [
+          {
+            "name": "insulin_sensitivity",
+            "category": "metabolic_marker",
+            "direction": "decreased",
+            "pathway": "metabolic_disruption",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "mechanistic_summary": "Circadian misalignment is associated with inflammatory and metabolic disruption. These biological changes may contribute to cognitive performance impairment, but total sleep time and fatigue are major alternative pathways."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "cognitive_performance",
+        "observable_name": "attention_working_memory_executive_function",
+        "direction": "impaired",
+        "measurement_methods": [
+          "attention_tasks",
+          "working_memory_tasks",
+          "executive_function_tasks",
+          "cognitive_performance_battery"
+        ],
+        "affected_functions": [
+          "attention",
+          "working_memory",
+          "executive_function"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "shift_work",
+          "circadian_misalignment_conditions"
+        ],
+        "notes": "Avoid claiming independence from sleep duration unless the cited study explicitly controls it."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If circadian timing is disrupted, inflammatory and metabolic dysregulation become more likely; cognitive performance impairment may follow, especially when sleep duration/quality is also degraded.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "physiology.circadian_disruption",
+              "operator": "==",
+              "reference": "population_norm",
+              "value": "disrupted",
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "inflammatory_signaling",
+              "target_domain": "biochemical",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "Circadian misalignment is associated with inflammatory marker changes."
+            },
+            {
+              "target": "cognitive_performance_impairment",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "Circadian disruption is associated with worse performance across several cognitive domains."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "days_to_weeks",
+        "latency": "cumulative",
+        "duration": "sustained_or_chronic",
+        "reversibility": "partially_reversible",
+        "notes": "Effects depend on adaptation, light exposure, sleep duration, and shift schedule."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "chronotype",
+          "sex",
+          "metabolic_health",
+          "bmi"
+        ],
+        "contextual_factors": [
+          "light_exposure_at_night",
+          "shift_work",
+          "sleep_schedule_consistency",
+          "meal_timing"
+        ],
+        "confounders": [
+          "total_sleep_duration",
+          "sleep_quality",
+          "metabolic_health",
+          "medications",
+          "depression",
+          "anxiety"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Circadian disruption is associated with inflammatory and metabolic alterations and with impaired cognition. Full-chain mediation by inflammation remains insufficiently established.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858578",
+            "relevant_finding": "Circadian misalignment is reported to affect inflammatory and metabolic markers; verify exact biomarkers and design before import.",
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "mechanistic_background"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "requires manual verification"
+          },
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "non_peer_reviewed_web_source",
+            "doi_or_url": "https://mindlabneuroscience.com/locations/wall-street/circadian-biology-cognitive-performance",
+            "relevant_finding": "Non-peer-reviewed source discussing circadian biology and cognitive performance; do not use as primary evidence.",
+            "supports_which_part": [
+              "search_lead_only"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "Not acceptable as primary scientific source; use only as search lead."
+          }
+        ]
+      },
+      "limitations": [
+        "Non-peer-reviewed sources must not support graph edges.",
+        "Circadian effects are difficult to isolate from sleep duration and sleep quality.",
+        "Inflammation-to-cognition mediation is not directly demonstrated in the provided evidence."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Cognitive impairment under shift work may be caused by sleep debt rather than circadian phase alone.",
+          "alternative_interpretation": "Total sleep time and sleep fragmentation may mediate much of the observed effect.",
+          "impact_on_confidence": "high"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "circadian_disruption",
+          "crp",
+          "il_6",
+          "tnf_alpha",
+          "insulin_sensitivity",
+          "cognitive_performance_impairment"
+        ],
+        "candidate_edges": [
+          {
+            "source": "circadian_disruption",
+            "target": "inflammatory_signaling",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "human circadian misalignment evidence"
+          },
+          {
+            "source": "circadian_disruption",
+            "target": "cognitive_performance_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "human performance evidence"
+          },
+          {
+            "source": "inflammatory_signaling",
+            "target": "cognitive_performance_impairment",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "indirect evidence"
+          }
+        ],
+        "recommended_graph_action": "needs_manual_review",
+        "reason_for_action": "Promising but confounded by sleep duration, sleep quality, and non-peer-reviewed source contamination.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_002_pattern_004",
+      "pattern_name": "Obstructive sleep apnea, intermittent hypoxia/inflammation, and executive-attention impairment",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "obstructive_sleep_apnea",
+        "observable_name": "sleep_apnea_with_oxygen_desaturation",
+        "direction": "increased",
+        "baseline_reference": "clinical_threshold",
+        "measurement_methods": [
+          "polysomnography",
+          "oxygen_desaturation_index",
+          "apnea_hypopnea_index"
+        ],
+        "typical_contexts": [
+          "sleep_disordered_breathing",
+          "moderate_to_severe_osa"
+        ],
+        "notes": "OSA combines intermittent hypoxia, sleep fragmentation, autonomic arousals, and cardiometabolic comorbidity."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured_for_inflammation_indirect_for_cognitive_mediation",
+        "primary_mediators": [
+          {
+            "name": "intermittent_hypoxia",
+            "category": "physiological_pathway",
+            "direction": "increased",
+            "pathway": "oxygen_desaturation",
+            "evidence_for_mediation": "direct"
+          },
+          {
+            "name": "crp",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "systemic_inflammation",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "il_6",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [
+          {
+            "name": "tnf_alpha",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "oxidative_stress",
+            "category": "oxidative_stress_marker",
+            "direction": "increased",
+            "pathway": "hypoxia_reoxygenation",
+            "evidence_for_mediation": "hypothesized"
+          }
+        ],
+        "mechanistic_summary": "OSA-related intermittent hypoxia and sleep fragmentation may drive inflammation, oxidative stress, and vascular/neural dysfunction. These processes are associated with executive and attention impairments."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "executive_attention_function",
+        "observable_name": "executive_function_and_attention_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "executive_function_battery",
+          "attention_tasks",
+          "memory_tasks"
+        ],
+        "affected_functions": [
+          "executive_function",
+          "attention",
+          "processing_speed"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "osa_population"
+        ],
+        "notes": "Cognitive impact is likely multi-factorial; inflammation alone should not be represented as the only mediator."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If OSA with oxygen desaturation is present, inflammation and oxidative stress become more likely; executive and attention impairment risk increases, especially with chronic or severe disease.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "physiology.apnea_hypopnea_index",
+              "operator": ">=",
+              "reference": "clinical_threshold",
+              "value": "moderate_osa",
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "inflammatory_signaling",
+              "target_domain": "biochemical",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "OSA is associated with inflammatory marker changes."
+            },
+            {
+              "target": "executive_attention_impairment",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "OSA is associated with executive and attention deficits."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "months_to_years",
+        "latency": "cumulative",
+        "duration": "chronic",
+        "reversibility": "partially_reversible",
+        "notes": "Treatment may improve symptoms and some cognitive outcomes, but effects vary by adherence, severity, and comorbidity."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "bmi",
+          "cardiovascular_risk",
+          "metabolic_health"
+        ],
+        "contextual_factors": [
+          "smoking",
+          "alcohol_use",
+          "cpap_adherence",
+          "sleep_position"
+        ],
+        "confounders": [
+          "depression",
+          "medications",
+          "hypertension",
+          "diabetes",
+          "obesity",
+          "vascular_disease"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "OSA is linked to inflammation, intermittent hypoxia, and cognitive impairment. Translational evidence suggests amyloid/tau and neuroinflammatory mechanisms, but human full-chain causal evidence remains incomplete.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "clinical_review_or_article",
+            "doi_or_url": "https://sciencedirect.com/science/article/pii/S074906902100029X",
+            "relevant_finding": "OSA is discussed as a modifiable risk factor for cognitive impairment and neuroinflammation; verify title, source type, and access.",
+            "supports_which_part": [
+              "physiology_to_neurobehavior",
+              "mechanistic_background"
+            ],
+            "study_population": "humans",
+            "sample_size": null,
+            "limitations_of_source": "May be paywalled; exact claims require verification."
+          },
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "translational_mechanistic_article",
+            "doi_or_url": "https://sciencedirect.com/science/article/pii/S0168010224000415",
+            "relevant_finding": "Intermittent hypoxia, amyloid-beta, and tau mechanisms are discussed; likely includes translational/model evidence requiring cautious interpretation.",
+            "supports_which_part": [
+              "mechanistic_background"
+            ],
+            "study_population": "mixed_human_animal_or_model",
+            "sample_size": null,
+            "limitations_of_source": "Translational gap; do not use as direct human causal evidence without verification."
+          }
+        ]
+      },
+      "limitations": [
+        "OSA comorbidities can confound inflammation and cognition.",
+        "Intermittent hypoxia, sleep fragmentation, autonomic arousals, vascular risk, and obesity may all contribute.",
+        "Amyloid/tau claims require strict separation of human evidence from animal/model evidence."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Inflammation may reflect metabolic syndrome or cardiovascular disease rather than OSA itself.",
+          "alternative_interpretation": "Comorbid obesity, hypertension, and insulin resistance may drive a substantial portion of biomarker differences.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "obstructive_sleep_apnea",
+          "oxygen_desaturation",
+          "intermittent_hypoxia",
+          "inflammatory_signaling",
+          "crp",
+          "il_6",
+          "executive_attention_impairment"
+        ],
+        "candidate_edges": [
+          {
+            "source": "obstructive_sleep_apnea",
+            "target": "intermittent_hypoxia",
+            "edge_type": "indicates",
+            "polarity": "positive",
+            "confidence": "high",
+            "evidence_basis": "clinical definition and PSG measures"
+          },
+          {
+            "source": "intermittent_hypoxia",
+            "target": "inflammatory_signaling",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "human and translational evidence"
+          },
+          {
+            "source": "obstructive_sleep_apnea",
+            "target": "executive_attention_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "clinical association"
+          }
+        ],
+        "recommended_graph_action": "needs_manual_review",
+        "reason_for_action": "Pattern is biologically plausible and useful, but full-chain causal mediation requires source verification and comorbidity control.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "extracted_but_underdeveloped_candidates": [
+    {
+      "candidate_id": "series_002_candidate_005",
+      "candidate_name": "slow_wave_sleep_reduction_glymphatic_clearance_amyloid_tau_cognitive_risk",
+      "status": "needs_new_dedicated_pattern_extraction",
+      "reason": "The pasted output lists glymphatic and amyloid/tau nodes but does not provide a full pattern object with evidence and chain validity."
+    },
+    {
+      "candidate_id": "series_002_candidate_006",
+      "candidate_name": "orexin_hypocretin_sleep_latency_sleep_duration_cognition",
+      "status": "needs_new_dedicated_pattern_extraction",
+      "reason": "The pasted output mixes orexin biology and DORA treatment effects; should not be imported as a single biological edge."
+    },
+    {
+      "candidate_id": "series_002_candidate_007",
+      "candidate_name": "insomnia_hpa_axis_inflammation_anxiety_depressed_mood_cognition",
+      "status": "missing_from_patterns",
+      "reason": "Included in search scope but not represented as a separate pattern; run follow-up query."
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Inflammation is always the proximal driver of sleep-disruption-related cognitive impairment.",
+      "reason_for_uncertainty": "Inflammation is a frequent correlate and plausible contributor, but sleep pressure, adenosine, circadian phase, noradrenergic arousal, glymphatic mechanisms, and metabolic factors can also contribute.",
+      "evidence_strength": "unsupported_as_stated",
+      "sources": [
+        {
+          "title": null,
+          "year": null,
+          "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10274531",
+          "relevant_finding": "Source requires verification; likely supports inflammation-cognition association, not universal proximal causation."
+        }
+      ],
+      "recommendation_for_body_state_mapper": "reject_as_universal_claim_keep_as_context_dependent_hypothesis"
+    },
+    {
+      "claim": "Circadian misalignment always reduces cognitive function independently of sleep duration.",
+      "reason_for_uncertainty": "Effects can vary by cognitive domain and are often confounded or moderated by total sleep time, sleep quality, light exposure, and adaptation.",
+      "evidence_strength": "conflicting",
+      "sources": [
+        {
+          "title": null,
+          "year": null,
+          "doi_or_url": "https://mindlabneuroscience.com/locations/wall-street/circadian-biology-cognitive-performance",
+          "relevant_finding": "Non-peer-reviewed web source; use only as search lead, not graph evidence."
+        }
+      ],
+      "recommendation_for_body_state_mapper": "needs_manual_review"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id_suggestion": "acute_sleep_deprivation",
+      "node_label": "Acute sleep deprivation",
+      "domain": "physiological",
+      "definition": "Short-term reduction or loss of sleep, often experimentally induced over one night or several nights.",
+      "why_it_matters": "Strong predictor of next-day vigilance and attention impairment.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id_suggestion": "sleep_fragmentation",
+      "node_label": "Sleep fragmentation",
+      "domain": "physiological",
+      "definition": "Disrupted sleep continuity with repeated awakenings or arousals.",
+      "why_it_matters": "Important bridge between insomnia, OSA, cortisol dynamics, inflammation, and cognition.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "circadian_disruption",
+      "node_label": "Circadian disruption",
+      "domain": "physiological",
+      "definition": "Misalignment between endogenous circadian rhythms and behavioral/environmental timing.",
+      "why_it_matters": "Connects light exposure, shift work, sleep timing, inflammation, metabolism, and cognition.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "obstructive_sleep_apnea",
+      "node_label": "Obstructive sleep apnea",
+      "domain": "physiological",
+      "definition": "Sleep-disordered breathing characterized by repeated upper airway obstruction, arousal, and often oxygen desaturation.",
+      "why_it_matters": "Clear clinical input node for intermittent hypoxia, inflammation, and cognitive-risk inference.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id_suggestion": "inflammatory_signaling",
+      "node_label": "Inflammatory signaling",
+      "domain": "biochemical",
+      "definition": "Composite inflammatory process involving cytokines and acute-phase markers such as IL-6, TNF-alpha, and CRP.",
+      "why_it_matters": "Useful intermediate node when individual cytokine evidence varies across studies.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "cortisol_awakening_response",
+      "node_label": "Cortisol awakening response",
+      "domain": "biochemical",
+      "definition": "Post-awakening rise in cortisol reflecting HPA-axis dynamics and awakening/circadian influences.",
+      "why_it_matters": "Potential link between sleep disruption, stress physiology, and emotional reactivity.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "attention_vigilance_impairment",
+      "node_label": "Attention and vigilance impairment",
+      "domain": "neurobehavioral",
+      "definition": "Reduced sustained attention, slowed reaction time, and impaired vigilance.",
+      "why_it_matters": "High-value neurobehavioral output for sleep-loss inference.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id_suggestion": "glymphatic_clearance",
+      "node_label": "Glymphatic clearance",
+      "domain": "biochemical",
+      "definition": "Sleep-linked brain waste-clearance process implicated in amyloid-beta and tau dynamics.",
+      "why_it_matters": "Potential bridge from sleep architecture to neurodegenerative biomarker risk; should be handled cautiously in human inference.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "amyloid_beta_tau_biomarkers",
+      "node_label": "Amyloid-beta and tau biomarkers",
+      "domain": "biochemical",
+      "definition": "Biomarkers related to amyloid-beta and tau burden or dynamics.",
+      "why_it_matters": "Possible downstream biomarker node for long-term sleep/cognition risk, not acute cognition.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "orexin_hypocretin",
+      "node_label": "Orexin/hypocretin signaling",
+      "domain": "biochemical",
+      "definition": "Arousal-regulating neuropeptide system involved in sleep-wake stability.",
+      "why_it_matters": "Mechanistically important but should not be conflated with DORA treatment outcomes.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id_suggestion": "acute_sleep_deprivation_increases_attention_vigilance_impairment",
+      "source": "acute_sleep_deprivation",
+      "target": "attention_vigilance_impairment",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high",
+      "reason": "Robust human experimental sleep-loss literature supports next-day vigilance impairment."
+    },
+    {
+      "edge_id_suggestion": "acute_sleep_deprivation_associated_with_inflammatory_signaling",
+      "source": "acute_sleep_deprivation",
+      "target": "inflammatory_signaling",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Sleep loss is linked to inflammatory marker changes, though magnitude and markers vary."
+    },
+    {
+      "edge_id_suggestion": "inflammatory_signaling_contributes_to_attention_vigilance_impairment",
+      "source": "inflammatory_signaling",
+      "target": "attention_vigilance_impairment",
+      "edge_type": "mechanistically_contributes_to",
+      "polarity": "positive",
+      "confidence": "low_to_moderate",
+      "reason": "Plausible but not universally demonstrated mediation."
+    },
+    {
+      "edge_id_suggestion": "acute_sleep_disruption_associated_with_hpa_axis_dysregulation",
+      "source": "acute_sleep_disruption",
+      "target": "hpa_axis_dysregulation",
+      "edge_type": "associated_with",
+      "polarity": "context_dependent",
+      "confidence": "moderate",
+      "reason": "Sleep-wake transitions and sleep disruption alter cortisol dynamics."
+    },
+    {
+      "edge_id_suggestion": "circadian_disruption_associated_with_inflammatory_signaling",
+      "source": "circadian_disruption",
+      "target": "inflammatory_signaling",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Circadian misalignment is associated with inflammatory changes, but confounding must be controlled."
+    },
+    {
+      "edge_id_suggestion": "circadian_disruption_increases_cognitive_performance_impairment",
+      "source": "circadian_disruption",
+      "target": "cognitive_performance_impairment",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Circadian disruption often impairs cognitive performance, but sleep duration and adaptation matter."
+    },
+    {
+      "edge_id_suggestion": "obstructive_sleep_apnea_indicates_intermittent_hypoxia",
+      "source": "obstructive_sleep_apnea",
+      "target": "intermittent_hypoxia",
+      "edge_type": "indicates",
+      "polarity": "positive",
+      "confidence": "high",
+      "reason": "Oxygen desaturation is a measured clinical feature in many OSA cases."
+    },
+    {
+      "edge_id_suggestion": "intermittent_hypoxia_contributes_to_inflammatory_signaling",
+      "source": "intermittent_hypoxia",
+      "target": "inflammatory_signaling",
+      "edge_type": "mechanistically_contributes_to",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Hypoxia-reoxygenation biology plausibly drives inflammation and oxidative stress."
+    },
+    {
+      "edge_id_suggestion": "obstructive_sleep_apnea_increases_executive_attention_impairment",
+      "source": "obstructive_sleep_apnea",
+      "target": "executive_attention_impairment",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Clinical association is useful, but comorbidity control is required."
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "source_id": "source_001",
+      "title": "Sleep deprivation and inflammatory/cognitive effects",
+      "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8602722",
+      "verification_priority": "high",
+      "reason_to_verify": "Key source for acute sleep loss and inflammatory markers; exact title, year, design, and endpoints must be extracted.",
+      "claims_depending_on_source": [
+        "series_002_pattern_001",
+        "acute_sleep_deprivation_associated_with_inflammatory_signaling"
+      ]
+    },
+    {
+      "source_id": "source_002",
+      "title": "Partial sleep deprivation and psychomotor vigilance",
+      "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8832572",
+      "verification_priority": "high",
+      "reason_to_verify": "Key source for sleep loss and vigilance impairment; verify whether inflammatory markers are present.",
+      "claims_depending_on_source": [
+        "series_002_pattern_001",
+        "acute_sleep_deprivation_increases_attention_vigilance_impairment"
+      ]
+    },
+    {
+      "source_id": "source_003",
+      "title": "ACTH/cortisol and cortisol awakening response review",
+      "doi_or_url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2021.694046/full",
+      "verification_priority": "moderate",
+      "reason_to_verify": "Supports HPA-axis timing and awakening physiology; does not by itself prove emotional mediation.",
+      "claims_depending_on_source": [
+        "series_002_pattern_002"
+      ]
+    },
+    {
+      "source_id": "source_004",
+      "title": "Circadian misalignment and inflammatory/metabolic markers",
+      "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858578",
+      "verification_priority": "high",
+      "reason_to_verify": "Supports circadian-disruption biology; exact design and biomarkers must be checked.",
+      "claims_depending_on_source": [
+        "series_002_pattern_003"
+      ]
+    },
+    {
+      "source_id": "source_005",
+      "title": "Circadian biology and cognitive performance web source",
+      "doi_or_url": "https://mindlabneuroscience.com/locations/wall-street/circadian-biology-cognitive-performance",
+      "verification_priority": "low",
+      "reason_to_verify": "Non-peer-reviewed; should be excluded as evidence and used only to find primary literature.",
+      "claims_depending_on_source": [
+        "series_002_pattern_003"
+      ]
+    },
+    {
+      "source_id": "source_006",
+      "title": "OSA, cognitive impairment, and neuroinflammation",
+      "doi_or_url": "https://sciencedirect.com/science/article/pii/S074906902100029X",
+      "verification_priority": "high",
+      "reason_to_verify": "Potentially important OSA review/article; may be paywalled and requires source details.",
+      "claims_depending_on_source": [
+        "series_002_pattern_004"
+      ]
+    },
+    {
+      "source_id": "source_007",
+      "title": "Intermittent hypoxia, amyloid-beta, and tau",
+      "doi_or_url": "https://sciencedirect.com/science/article/pii/S0168010224000415",
+      "verification_priority": "high",
+      "reason_to_verify": "Translational/model evidence risk; must distinguish human from non-human claims.",
+      "claims_depending_on_source": [
+        "series_002_pattern_004",
+        "glymphatic_or_ad_biomarker_candidates"
+      ]
+    }
+  ],
+  "research_gaps": [
+    {
+      "gap": "Direct causal mediation from inflammatory cytokines to specific cognitive deficits within a single unified sleep manipulation study remains limited.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Do randomized sleep deprivation protocols demonstrate mediation by IL-6, TNF-alpha, or CRP on standardized attention and executive-function tasks?"
+    },
+    {
+      "gap": "Glymphatic clearance, amyloid-beta/tau, and cognition chain in humans is underdeveloped in this extraction.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Human slow wave sleep glymphatic clearance amyloid beta tau cognition longitudinal study review"
+    },
+    {
+      "gap": "Orexin/hypocretin and DORA treatment effects were mixed into candidate edges without a proper pattern object.",
+      "importance_for_body_state_mapper": "Moderate",
+      "suggested_followup_query": "Dual orexin receptor antagonists sleep latency sleep duration cognition systematic review meta analysis older adults"
+    },
+    {
+      "gap": "Chronic insomnia is missing as a separate pattern despite being in the search scope.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "human chronic insomnia HPA axis cortisol inflammation anxiety depression cognition systematic review meta analysis"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "acute_sleep_deprivation_increases_attention_vigilance_impairment",
+      "obstructive_sleep_apnea_indicates_intermittent_hypoxia_and_increases_executive_attention_impairment",
+      "circadian_disruption_associated_with_inflammatory_and_metabolic_dysregulation"
+    ],
+    "highest_value_patterns_for_inference": [
+      "acute_sleep_deprivation -> attention_vigilance_impairment",
+      "acute_sleep_deprivation -> inflammatory_signaling -> attention_vigilance_impairment as hypothesis",
+      "obstructive_sleep_apnea -> intermittent_hypoxia -> inflammatory_signaling -> executive_attention_impairment as hypothesis",
+      "circadian_disruption -> cognitive_performance_impairment with sleep-duration confounding flag"
+    ],
+    "patterns_requiring_caution": [
+      "inflammation_as_universal_mediator_of_sleep_related_cognitive_impairment",
+      "circadian_misalignment_independent_of_sleep_duration_claims",
+      "glymphatic_clearance_to_amyloid_tau_to_cognition without dedicated human evidence extraction",
+      "orexin_or_dora_to_cognition edges without a proper biological pattern"
+    ],
+    "recommended_next_queries": [
+      "human chronic insomnia HPA axis cortisol inflammation anxiety depression cognition systematic review meta analysis",
+      "human slow wave sleep glymphatic clearance amyloid beta tau cognition longitudinal study review",
+      "human sleep apnea oxygen desaturation inflammation executive function cognitive impairment meta analysis",
+      "human circadian misalignment inflammation cognitive performance sleep duration controlled study"
+    ],
+    "overall_assessment": "The extracted series is scientifically useful but overcompressed. The strongest immediately useful node/edge set concerns acute sleep deprivation and attention/vigilance impairment. Inflammatory, HPA-axis, circadian, glymphatic, and OSA pathways should enter BodyState Mapper as candidate hypotheses until sources are manually verified and mediation claims are separated from direct associations."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8602722",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 2,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8832572",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 3,
+      "title": null,
+      "url": "https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2021.694046/full",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 4,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8483747",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 5,
+      "title": null,
+      "url": "https://mdpi.com/2304-8158/14/22/3856",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 6,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4781675",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 7,
+      "title": null,
+      "url": "https://mindlabneuroscience.com/locations/wall-street/circadian-biology-cognitive-performance",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 8,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5858578",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 9,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3700596",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 10,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10274531",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 11,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12168795",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 12,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9792135",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 13,
+      "title": null,
+      "url": "https://read.qxmd.com/read/42143581/treatment-of-chronic-insomnia-in-elderly-adults-with-dual-orexin-receptor-antagonists-a-systematic-review-and-meta-analysis",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 14,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6249360",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 15,
+      "title": null,
+      "url": "https://sciencedirect.com/science/article/pii/S0168010224000415",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 16,
+      "title": null,
+      "url": "https://sciencedirect.com/science/article/pii/S074906902100029X",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 17,
+      "title": null,
+      "url": "https://sleepreviewmag.com/sleep-disorders/breathing-disorders/obstructive-sleep-apnea/sleep-apnea-autoimmune-disease-cytokines",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 18,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10685043",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    },
+    {
+      "index": 19,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4030107",
+      "doi": null,
+      "year": null,
+      "verification_status": "unverified"
+    }
+  ],
+  "schema_validation_notes": {
+    "known_original_issues_fixed": [
+      "Malformed closing smart quote in summary.overall_assessment.",
+      "Invalid edge_type values such as influences and inhibits|no_significant_effect were removed from graph-ready edges.",
+      "Invalid or inconsistent relationship_type physiology_to_biology_to_neurobehavior corrected to physiology_to_biochemistry_to_neurobehavior.",
+      "Field name with leading space ' evidence_basis' corrected where represented.",
+      "Hyphenated node/search terms normalized where used as identifiers.",
+      "mediated_by removed from simple source-target edges where no explicit mediator object exists.",
+      "Non-peer-reviewed source contamination flagged."
+    ]
+  }
+}

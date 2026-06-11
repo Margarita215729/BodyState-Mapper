@@ -1,0 +1,320 @@
+{
+  "research_series": {
+    "series_id": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition",
+    "series_name": "Physical Activity, Exercise, Lactate, Recovery, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_012_pattern_001",
+      "pattern_name": "Regular moderate-to-vigorous physical activity improves mood, fatigue, sleep, inflammation, and cognition",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "moderate_to_vigorous_physical_activity",
+        "direction": "increased",
+        "measurement_methods": [
+          "accelerometry",
+          "exercise intervention",
+          "self-report",
+          "VO2max/fitness measures"
+        ],
+        "contexts": [
+          "healthy adults",
+          "older adults",
+          "youth",
+          "chronic disease populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "cardiorespiratory_fitness_autonomic_inflammation_sleep",
+        "category": "recovery_marker",
+        "direction": "improved_fitness_increased_HRV_reduced_inflammation_improved_sleep",
+        "pathway": "exercise adaptation and recovery pathways",
+        "mechanism": "improved VO2max, HRV/autonomic regulation, lower CRP/IL-6/SII, improved sleep architecture and psychosocial mediators"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_fatigue_cognition",
+        "direction": "improved",
+        "measurement_methods": [
+          "mood scales",
+          "fatigue scales",
+          "cognitive tests",
+          "sleep measures"
+        ],
+        "affected_functions": [
+          "mood",
+          "vigor",
+          "fatigue",
+          "executive function",
+          "memory",
+          "processing speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "moderate_to_vigorous_physical_activity",
+          "improved_cardiorespiratory_fitness",
+          "increased_HRV",
+          "reduced_low_grade_inflammation",
+          "improved_sleep_quality",
+          "mood_improvement_after_exercise",
+          "improved_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "moderate_to_vigorous_physical_activity",
+            "target": "mood_fatigue_cognition",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_012_pattern_002",
+      "pattern_name": "Sedentary behavior increases risk of depression, fatigue, poor mood, and cognitive decline",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "sedentary_behavior",
+        "direction": "increased",
+        "measurement_methods": [
+          "accelerometry",
+          "sedentary time",
+          "TV/passive sedentary behavior",
+          "ambulatory assessment"
+        ],
+        "contexts": [
+          "general population",
+          "workers",
+          "older adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "inflammatory_markers_and_behavioral_engagement",
+        "category": "inflammatory_marker",
+        "direction": "increased_inflammation_reduced_engagement",
+        "pathway": "sedentary behavior and psychobiological stress pathway",
+        "mechanism": "passive sedentary behavior associated with mood decline; some evidence of IL-6/inflammation mediation"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_depression_motivation_cognition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "depression scales",
+          "fatigue scales",
+          "mood ambulatory assessment",
+          "cognitive assessments"
+        ],
+        "affected_functions": [
+          "motivation",
+          "mood",
+          "fatigue",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "sedentary_behavior",
+          "passive_sedentary_behavior",
+          "subjective_fatigue",
+          "mood_worsening",
+          "low_motivation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sedentary_behavior",
+            "target": "subjective_fatigue",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_012_pattern_003",
+      "pattern_name": "Overexertion and post-exertional malaise can worsen symptoms in vulnerable populations",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "excessive_exertion_or_overtraining",
+        "direction": "increased",
+        "measurement_methods": [
+          "exercise load",
+          "CPET",
+          "CK",
+          "DOMS",
+          "RPE",
+          "symptom exacerbation after exertion"
+        ],
+        "contexts": [
+          "long COVID",
+          "ME/CFS",
+          "post-exertional malaise",
+          "athletes/overtraining"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "muscle_damage_recovery_dysfunction",
+        "category": "recovery_marker",
+        "direction": "worsened",
+        "pathway": "overload without adequate recovery or PEM-specific exercise intolerance",
+        "mechanism": "muscle abnormalities, CK/DOMS, central/peripheral fatigue, delayed symptom exacerbation"
+      },
+      "neurobehavioral_output": {
+        "variable": "post_exertional_malaise_and_fatigue",
+        "direction": "impaired",
+        "measurement_methods": [
+          "PEM reports",
+          "fatigue scales",
+          "functional limitation",
+          "symptom tracking"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "brain fog",
+          "perceived energy",
+          "recovery"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "post_exertional_malaise",
+          "overtraining_state",
+          "nonfunctional_overreaching",
+          "low_recovery_state",
+          "delayed_fatigue_worsening"
+        ],
+        "candidate_edges": [
+          {
+            "source": "vigorous_exercise_without_recovery",
+            "target": "low_recovery_state",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "post_exertional_malaise",
+            "target": "delayed_fatigue_worsening",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Lactate is not a toxin or universal cause of fatigue.",
+      "reason": "The review supports context-specific interpretation of exercise intensity/recovery markers rather than treating lactate as harmful.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "Acute exercise may not improve mental energy if prolonged sedentary time remains high.",
+      "reason": "Some data suggest sitting time can blunt mental-energy/fatigue benefits.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "moderate_to_vigorous_physical_activity",
+      "domain": "physiological",
+      "definition": "Regular activity at moderate-to-vigorous intensity measured by intervention, accelerometry, or related fitness/activity metrics.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "sedentary_behavior",
+      "domain": "physiological",
+      "definition": "Prolonged low-energy sitting/reclining behavior, especially passive sedentary time.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "post_exertional_malaise",
+      "domain": "neurobehavioral",
+      "definition": "Delayed worsening of fatigue, cognition, or systemic symptoms after exertion, especially in ME/CFS and long COVID.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "mvpa_mood_cognition_positive_high",
+      "source": "moderate_to_vigorous_physical_activity",
+      "target": "mood_fatigue_cognition",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "sedentary_behavior_fatigue_positive_high",
+      "source": "sedentary_behavior",
+      "target": "subjective_fatigue",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "post_exertional_malaise_delayed_fatigue_positive_moderate",
+      "source": "post_exertional_malaise",
+      "target": "delayed_fatigue_worsening",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Optimal exercise intensity/duration for long COVID and ME/CFS without triggering PEM.",
+    "Full mediation chains involving lactate thresholds, HRV recovery, inflammation, sleep, and cognition.",
+    "Wearable digital biomarkers for predicting individual exercise response."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Moderate-to-vigorous physical activity improves mood, fatigue, sleep, inflammation, and cognition.",
+      "Sedentary behavior independently predicts fatigue/depression and adverse mood.",
+      "Post-exertional malaise/overtraining can worsen symptoms in vulnerable groups."
+    ],
+    "highest_value_patterns_for_inference": [
+      "MVPA as protective/recovery-supporting node.",
+      "Sedentary behavior as risk node.",
+      "PEM as contraindication/guardrail for generic exercise inference."
+    ],
+    "patterns_requiring_caution": [
+      "Exercise benefits are not universal under PEM/overtraining.",
+      "Lactate should not be treated as a toxin.",
+      "Work/household activity may not equal leisure-time MVPA."
+    ],
+    "recommended_next_queries": [
+      "Thyroid and basal metabolic regulation effects on fatigue, mood, cognition, HRV, and thermoregulation."
+    ],
+    "overall_assessment": "Physical activity is a high-value hub, but the model must distinguish beneficial moderate activity and fitness adaptation from overexertion, inadequate recovery, and post-exertional malaise."
+  }
+}

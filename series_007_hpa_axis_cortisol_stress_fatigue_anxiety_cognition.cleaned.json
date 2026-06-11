@@ -1,0 +1,521 @@
+{
+  "research_series": {
+    "series_id": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition",
+    "series_name": "HPA Axis, Cortisol, Stress Physiology, Fatigue, Anxiety, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09",
+    "source_file": "Search_for_human_studies_on_how_HPA-axis_activity.pdf"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_007_pattern_001",
+      "pattern_name": "Flattened diurnal cortisol slope or blunted CAR is associated with fatigue, burnout, and exhaustion",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "HPA_axis_dysregulation",
+        "direction": "flattened_or_blunted",
+        "measurement_methods": [
+          "salivary cortisol",
+          "cortisol awakening response",
+          "diurnal cortisol slope"
+        ],
+        "contexts": [
+          "burnout",
+          "chronic fatigue syndrome",
+          "PTSD",
+          "chronic stress"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "flattened_diurnal_cortisol_slope_or_blunted_CAR",
+        "category": "endocrine_marker",
+        "direction": "abnormal_within_day_cortisol_dynamics",
+        "pathway": "chronic stress/allostatic load altering circadian HPA-axis rhythm",
+        "mechanism": "reduced dynamic cortisol rise or flattened daily rhythm may reflect impaired stress-system flexibility"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_burnout_exhaustion",
+        "direction": "increased",
+        "measurement_methods": [
+          "fatigue questionnaires",
+          "burnout scales",
+          "clinical symptom scales"
+        ],
+        "affected_functions": [
+          "perceived energy",
+          "exhaustion",
+          "daily functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Flattened diurnal cortisol slope or blunted cortisol awakening response increases the likelihood of fatigue, burnout, or exhaustion, especially in chronic stress/fatigue populations.",
+        "hypotheses": [
+          {
+            "target": "fatigue_burnout_exhaustion",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Systematic reviews/meta-analyses support associations between within-day cortisol rhythm abnormalities and fatigue/burnout/CFS outcomes."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "chronic",
+        "latency": "cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "sleep timing",
+        "sampling protocol",
+        "psychiatric subtype",
+        "medications",
+        "shift work",
+        "sex hormones",
+        "chronic illness"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Within-day cortisol dynamics are more informative than total daily cortisol output for fatigue and burnout states.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Unstimulated cortisol secretory activity in everyday life and its relationship with fatigue and chronic fatigue syndrome",
+            "authors": "Powell et al.",
+            "year": 2013,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.psyneuen.2013.07.004",
+            "relevant_finding": "CFS shows attenuated CAR increase; within-day change markers most relevant to fatigue experience.",
+            "population": "CFS/fatigue populations",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneous cortisol sampling protocols"
+          }
+        ]
+      },
+      "limitations": [
+        "Sampling timing strongly affects interpretation",
+        "Total cortisol output is less reliable than rhythm measures",
+        "Clinical subtype heterogeneity"
+      ],
+      "alternative_explanations": [
+        "Sleep disruption may drive both cortisol rhythm and fatigue",
+        "Medication or comorbid illness effects",
+        "Reverse causality from exhaustion to altered routines"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "flattened_diurnal_cortisol_slope",
+          "blunted_cortisol_awakening_response",
+          "fatigue_burnout_exhaustion"
+        ],
+        "candidate_edges": [
+          {
+            "source": "flattened_diurnal_cortisol_slope",
+            "target": "fatigue_burnout_exhaustion",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "blunted_cortisol_awakening_response",
+            "target": "fatigue_burnout_exhaustion",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_007_pattern_002",
+      "pattern_name": "Acute psychological stress increases cortisol and reduces HRV/vagal tone",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "acute_psychological_stress",
+        "direction": "increased",
+        "measurement_methods": [
+          "TSST",
+          "laboratory stress tasks"
+        ],
+        "contexts": [
+          "healthy adults",
+          "youth",
+          "clinical populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "cortisol_stress_reactivity_and_parasympathetic_withdrawal",
+        "category": "endocrine_marker",
+        "direction": "increased_cortisol_reduced_HRV",
+        "pathway": "acute stress activates HPA axis and autonomic stress response",
+        "mechanism": "coordinated cortisol secretion with reduced vagal modulation during stress response"
+      },
+      "neurobehavioral_output": {
+        "variable": "acute_stress_state",
+        "direction": "increased",
+        "measurement_methods": [
+          "perceived stress scales",
+          "physiological stress markers"
+        ],
+        "affected_functions": [
+          "stress reactivity",
+          "stress recovery"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Acute psychological stress commonly produces increased cortisol and reduced vagally mediated HRV.",
+        "hypotheses": [
+          {
+            "target": "acute_stress_state",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Lab stress/TSST studies using simultaneous cortisol and ECG-derived HRV show this coordinated response."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_hours",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "anticipation",
+        "baseline stress",
+        "sex",
+        "menstrual cycle",
+        "time of day",
+        "task type",
+        "caffeine",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Acute stress reliably increases cortisol and lowers HRV/vagal tone, but baseline cortisol-HRV correlations are often weak.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "HPA-axis and inflammatory reactivity to acute stress is related with basal HPA-axis activity",
+            "authors": "Chen et al.",
+            "year": 2017,
+            "source_type": "laboratory_stress_study",
+            "doi_or_url": "https://doi.org/10.1016/j.psyneuen.2017.01.035",
+            "relevant_finding": "Acute stress reactivity involves HPA-axis and inflammatory changes.",
+            "population": "humans",
+            "sample_size": "not extracted",
+            "limitations": "laboratory context"
+          }
+        ]
+      },
+      "limitations": [
+        "Stress task ecology may differ from real life",
+        "Cortisol and HRV timing windows differ",
+        "Baseline HRV-cortisol association is not strong"
+      ],
+      "alternative_explanations": [
+        "Anticipation drives response",
+        "Respiration and posture affect HRV",
+        "Individual coping style"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_psychological_stress",
+          "exaggerated_cortisol_stress_reactivity",
+          "reduced_HF_HRV",
+          "parasympathetic_withdrawal"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_psychological_stress",
+            "target": "exaggerated_cortisol_stress_reactivity",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "acute_psychological_stress",
+            "target": "parasympathetic_withdrawal",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_007_pattern_003",
+      "pattern_name": "Chronic stress/allostatic load predicts inflammatory and metabolic dysregulation via altered HPA-axis patterns",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_psychological_stress_or_allostatic_load",
+        "direction": "increased",
+        "measurement_methods": [
+          "stress questionnaires",
+          "allostatic load indices",
+          "longitudinal cohorts"
+        ],
+        "contexts": [
+          "occupational stress",
+          "adversity",
+          "chronic stress",
+          "clinical populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "altered_HPA_axis_pattern",
+        "category": "allostatic_load_marker",
+        "direction": "flattened_or_blunted",
+        "pathway": "chronic stress modifies HPA-axis regulation",
+        "mechanism": "long-term stress-system dysregulation interacts with inflammatory and metabolic pathways"
+      },
+      "neurobehavioral_output": {
+        "variable": "metabolic_inflammatory_risk_and_mood_fatigue",
+        "direction": "increased_risk",
+        "measurement_methods": [
+          "CRP",
+          "IL-6",
+          "glucose/insulin markers",
+          "mood/fatigue scales"
+        ],
+        "affected_functions": [
+          "energy",
+          "mood",
+          "metabolic stability"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Chronic stress and allostatic load are associated with altered cortisol rhythms and greater inflammatory/metabolic risk.",
+        "hypotheses": [
+          {
+            "target": "metabolic_inflammatory_risk_and_mood_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased_risk",
+            "confidence": "moderate",
+            "reason": "Large cohort and systematic-review evidence links chronic cortisol rhythm alterations to CRP/IL-6/glucose dysregulation and mood/fatigue outcomes."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_chronic",
+        "latency": "cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "BMI",
+        "sleep",
+        "physical activity",
+        "medications",
+        "socioeconomic stress",
+        "trauma history",
+        "culture/context"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Evidence supports chronic stress/allostatic load associations with inflammatory/metabolic dysregulation, but full mediation chains need more direct testing.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Towards a consensus definition of allostatic load",
+            "authors": "McCrory et al.",
+            "year": 2023,
+            "source_type": "multi_cohort_meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.psyneuen.2023.106117",
+            "relevant_finding": "Allostatic load requires multi-system, multi-biomarker modeling.",
+            "population": "multiple cohorts",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneous biomarker definitions"
+          }
+        ]
+      },
+      "limitations": [
+        "Mostly associative",
+        "Allostatic load definitions differ",
+        "Causal mediation often missing"
+      ],
+      "alternative_explanations": [
+        "Poor sleep and lifestyle mediate both stress and biomarkers",
+        "Comorbid disease",
+        "Socioeconomic confounding"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_psychological_stress",
+          "allostatic_load",
+          "flattened_diurnal_cortisol_slope",
+          "elevated_CRP",
+          "elevated_IL6",
+          "reduced_insulin_sensitivity"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_psychological_stress",
+            "target": "allostatic_load",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "allostatic_load",
+            "target": "elevated_inflammatory_markers",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "allostatic_load",
+            "target": "metabolic_dysregulation",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Baseline HRV and cortisol are not reliably correlated under resting conditions.",
+      "reason": "The report notes weak or absent baseline associations except under anticipation or chronic adversity contexts.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Total daily cortisol output is not a reliable predictor of cognitive performance or fatigue outside clinical extremes.",
+      "reason": "Within-day cortisol pattern markers outperform total output; cognitive links are mixed.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "flattened_diurnal_cortisol_slope",
+      "domain": "biochemical",
+      "definition": "Reduced decline in cortisol across the day, often interpreted as altered circadian HPA-axis regulation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "blunted_cortisol_awakening_response",
+      "domain": "biochemical",
+      "definition": "Reduced normal rise in cortisol after awakening.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "acute_cortisol_stress_reactivity",
+      "domain": "biochemical",
+      "definition": "Cortisol increase after acute psychosocial stress exposure.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "allostatic_load",
+      "domain": "physiological",
+      "definition": "Multi-system cumulative physiological burden from chronic adaptation to stressors.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "flattened_diurnal_cortisol_slope_fatigue_burnout_positive_high",
+      "source": "flattened_diurnal_cortisol_slope",
+      "target": "fatigue_burnout_exhaustion",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "acute_psychological_stress_cortisol_reactivity_positive_high",
+      "source": "acute_psychological_stress",
+      "target": "acute_cortisol_stress_reactivity",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "acute_psychological_stress_parasympathetic_withdrawal_positive_high",
+      "source": "acute_psychological_stress",
+      "target": "parasympathetic_withdrawal",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Mediation analyses from chronic/adverse exposures to HPA-axis pattern to downstream neurobehavioral outcome",
+    "Standardized cortisol sampling protocols",
+    "Mechanistic pathways linking circadian misalignment/HPA dysregulation to metabolic/inflammatory disease risk",
+    "Longitudinal cognition outcomes with cortisol pattern measures"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Flattened diurnal cortisol slope/blunted CAR associates with fatigue/burnout/exhaustion",
+      "Acute psychological stress increases cortisol and reduces HRV/vagal tone"
+    ],
+    "highest_value_patterns_for_inference": [
+      "Within-day cortisol rhythm markers are more useful than total cortisol output",
+      "Acute stress should be modeled as coordinated endocrine-autonomic response"
+    ],
+    "patterns_requiring_caution": [
+      "Baseline HRV/cortisol correlation",
+      "Total cortisol output as cognition/fatigue predictor",
+      "Single-node high_cortisol interpretations"
+    ],
+    "recommended_next_queries": [
+      "How do inflammatory cytokines and sickness behavior mediate fatigue, mood, and cognition in humans?",
+      "How do CRP, IL-6, TNF-alpha, and acute infection/inflammation affect subjective fatigue and cognitive performance?"
+    ],
+    "overall_assessment": "HPA/cortisol should be represented as pattern-specific rhythm and reactivity nodes, not as a generic cortisol_level node. Strongest support is for flattened/blunted within-day rhythms in fatigue/burnout and for acute stress causing coordinated cortisol increase with vagal withdrawal."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Unstimulated cortisol secretory activity in everyday life and its relationship with fatigue and chronic fatigue syndrome",
+      "url": "https://doi.org/10.1016/j.psyneuen.2013.07.004",
+      "doi": "10.1016/j.psyneuen.2013.07.004",
+      "year": 2013
+    },
+    {
+      "index": 2,
+      "title": "HPA-axis and inflammatory reactivity to acute stress is related with basal HPA-axis activity",
+      "url": "https://doi.org/10.1016/j.psyneuen.2017.01.035",
+      "doi": "10.1016/j.psyneuen.2017.01.035",
+      "year": 2017
+    },
+    {
+      "index": 3,
+      "title": "Towards a consensus definition of allostatic load",
+      "url": "https://doi.org/10.1016/j.psyneuen.2023.106117",
+      "doi": "10.1016/j.psyneuen.2023.106117",
+      "year": 2023
+    }
+  ]
+}

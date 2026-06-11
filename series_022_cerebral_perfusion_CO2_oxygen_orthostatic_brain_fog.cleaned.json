@@ -1,0 +1,362 @@
+{
+  "research_series": {
+    "series_id": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog",
+    "series_name": "Cerebral Perfusion, CO2, Oxygenation, Orthostatic Regulation, Dizziness, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_022_pattern_001",
+      "pattern_name": "Orthostatic challenge can reduce cerebral blood flow and produce dizziness, fatigue, brain fog, and cognitive impairment even without systemic hypotension",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "orthostatic_challenge_or_orthostatic_intolerance",
+        "direction": "orthostatic",
+        "measurement_methods": [
+          "tilt-table testing",
+          "head-up tilt",
+          "TCD",
+          "NIRS",
+          "orthostatic HR/BP"
+        ],
+        "contexts": [
+          "ME/CFS",
+          "POTS",
+          "orthostatic hypotension",
+          "long COVID",
+          "orthostatic intolerance"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "reduced_cerebral_blood_flow_or_oxygenation",
+        "category": "cerebral_perfusion_marker",
+        "direction": "decreased",
+        "pathway": "upright posture or orthostatic stress reduces cerebral perfusion/oxygenation despite sometimes normal systemic BP",
+        "mechanism": "autonomic dysregulation, impaired autoregulation, hypocapnia-mediated vasoconstriction, hypovolemia, or microvascular dysfunction"
+      },
+      "neurobehavioral_output": {
+        "variable": "dizziness_fatigue_brain_fog_cognitive_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "symptom scales",
+          "cognitive testing",
+          "attention/executive function tasks",
+          "memory/processing speed tests"
+        ],
+        "affected_functions": [
+          "dizziness",
+          "lightheadedness",
+          "attention",
+          "executive function",
+          "memory",
+          "processing speed",
+          "subjective brain fog",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If symptoms worsen upright and dynamic testing shows reduced cerebral blood flow/oxygenation, infer orthostatic cerebral hypoperfusion as a strong contributor to dizziness/brain fog/fatigue.",
+        "hypotheses": [
+          {
+            "target": "orthostatic_cerebral_hypoperfusion",
+            "domain": "physiological",
+            "direction": "increased_likelihood",
+            "confidence": "high",
+            "reason": "Tilt/TCD/NIRS studies repeatedly show CBF/oxygenation reductions linked to symptoms across POTS, ME/CFS, long COVID and OH."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_minutes",
+        "latency": "orthostatic_immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "hydration_status",
+        "medications",
+        "caffeine",
+        "heat",
+        "sleep",
+        "anxiety",
+        "deconditioning",
+        "post_viral_state",
+        "age",
+        "antihypertensives"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Dynamic orthostatic/respiratory challenges can reduce cerebral perfusion or oxygenation and are linked to dizziness, fatigue, brain fog and cognitive impairment, often missed by seated BP/HR alone.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Cerebral blood flow is reduced in ME/CFS during head-up tilt testing even in the absence of hypotension or tachycardia",
+            "authors": "Van Campen et al.",
+            "year": 2020,
+            "source_type": "tilt_table_TCD_study",
+            "doi_or_url": "10.1016/j.cnp.2020.01.003",
+            "relevant_finding": "CBF reduction during tilt in ME/CFS even without hypotension/tachycardia.",
+            "population": "ME/CFS",
+            "sample_size": "",
+            "limitations": "Specialized cohort; dynamic testing required."
+          },
+          {
+            "title": "Orthostatic intolerance with tachycardia and hypocapnic cerebral hypoperfusion represent a spectrum",
+            "authors": "Novak et al.",
+            "year": 2024,
+            "source_type": "orthostatic_capnography_TCD_study",
+            "doi_or_url": "10.3389/fneur.2024.1476918",
+            "relevant_finding": "ETCO2 drop predicts CBFv decline and symptoms independent of HR/BP.",
+            "population": "POTS/OI",
+            "sample_size": "",
+            "limitations": "Mechanism may differ by subgroup."
+          }
+        ]
+      },
+      "limitations": [
+        "Not all OH cases lead to cognitive decline",
+        "Some studies are cross-sectional",
+        "Dynamic measures are not always paired with simultaneous cognitive testing"
+      ],
+      "alternative_explanations": [
+        "vestibular disorder",
+        "panic/hyperventilation without orthostasis",
+        "medication-induced hypotension",
+        "dehydration",
+        "migraine",
+        "sleep deprivation"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "orthostatic_intolerance",
+          "orthostatic_cerebral_hypoperfusion",
+          "reduced_cerebral_blood_flow",
+          "reduced_cerebral_oxygenation",
+          "dizziness",
+          "subjective_brain_fog",
+          "impaired_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "orthostatic_intolerance",
+            "target": "cerebral_hypoperfusion",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "cerebral_hypoperfusion",
+            "target": "dizziness",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "cerebral_hypoperfusion",
+            "target": "subjective_brain_fog",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node_and_edges",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_022_pattern_002",
+      "pattern_name": "Hypocapnia during upright posture reduces cerebral blood flow via vasoconstriction and can mimic POTS symptoms without tachycardia",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "reduced_ETCO2_or_hypocapnia",
+        "direction": "decreased",
+        "measurement_methods": [
+          "capnography",
+          "ETCO2",
+          "PaCO2"
+        ],
+        "contexts": [
+          "POTS",
+          "hypocapnic cerebral hypoperfusion",
+          "orthostatic intolerance",
+          "hyperventilation"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "hypocapnia_mediated_cerebral_vasoconstriction",
+        "category": "respiratory_marker",
+        "direction": "increased",
+        "pathway": "low CO2 causes cerebral vasoconstriction",
+        "mechanism": "ETCO2 drop reduces CBFv; reported estimate about 3% CBF reduction per 1 mmHg ETCO2 decrease"
+      },
+      "neurobehavioral_output": {
+        "variable": "dizziness_and_brain_fog",
+        "direction": "impaired",
+        "measurement_methods": [
+          "symptom reports",
+          "cognitive testing"
+        ],
+        "affected_functions": [
+          "lightheadedness",
+          "dizziness",
+          "brain fog",
+          "attention"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Normal SpO2 and normal BP do not rule out respiratory/CO2-mediated cerebral hypoperfusion; check ETCO2/capnography or breathing pattern when dizziness/brain fog occurs upright.",
+        "hypotheses": [
+          {
+            "target": "hypocapnic_cerebral_hypoperfusion",
+            "domain": "physiological",
+            "direction": "increased_likelihood",
+            "confidence": "high",
+            "reason": "ETCO2 reduction predicts CBFv decline and symptoms during orthostasis."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds_to_minutes",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "anxiety",
+        "panic",
+        "respiratory_rate",
+        "tidal_volume",
+        "posture",
+        "heat",
+        "deconditioning"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Hypocapnia is a strong mechanism linking orthostatic or hyperventilation states to reduced cerebral perfusion and symptoms.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Not all long COVID cerebral hypoperfusion is hypocapnia-mediated",
+        "Fast breathing does not always imply hypocapnia"
+      ],
+      "alternative_explanations": [
+        "POTS",
+        "orthostatic hypotension",
+        "microvascular dysfunction",
+        "vestibular migraine"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "hypocapnia",
+          "reduced_ETCO2",
+          "hyperventilation_state",
+          "hypocapnic_cerebral_hypoperfusion"
+        ],
+        "candidate_edges": [
+          {
+            "source": "hypocapnia",
+            "target": "cerebral_hypoperfusion",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node_and_edges",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Normal seated blood pressure excludes orthostatic cerebral hypoperfusion.",
+      "reason": "CBF/oxygenation abnormalities can occur during tilt even without hypotension or tachycardia.",
+      "recommendation": "reject"
+    },
+    {
+      "claim": "All orthostatic hypotension causes cognitive decline.",
+      "reason": "Some older-adult cohorts find no cross-sectional association; susceptibility and dynamic testing matter.",
+      "recommendation": "needs_context"
+    },
+    {
+      "claim": "Normal SpO2 excludes respiratory contribution to brain fog.",
+      "reason": "Hypocapnia/ETCO2 abnormalities can reduce CBF without hypoxemia.",
+      "recommendation": "reject"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "orthostatic_cerebral_hypoperfusion",
+      "domain": "physiological",
+      "definition": "Reduced cerebral blood flow/oxygenation during upright posture or orthostatic challenge.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "hypocapnic_cerebral_hypoperfusion",
+      "domain": "physiological",
+      "definition": "Reduced cerebral perfusion due to hypocapnia-mediated cerebral vasoconstriction.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "orthostatic_intolerance_to_cerebral_hypoperfusion",
+      "source": "orthostatic_intolerance",
+      "target": "cerebral_hypoperfusion",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need simultaneous hemodynamic and objective cognitive testing during controlled challenge.",
+    "Need interventions showing that improving upright CBF improves brain fog/fatigue.",
+    "Need ambulatory measures of cerebral oxygenation/perfusion linked to daily symptoms."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Orthostatic/respiratory challenges reduce cerebral perfusion/oxygenation and can cause dizziness/fatigue/brain fog/cognitive impairment.",
+      "Hypocapnia-mediated vasoconstriction is a key mechanism of CBF reduction."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Symptoms during upright posture plus reduced CBF/oxygenation strongly support cerebral hypoperfusion branch.",
+      "Normal BP/SpO2 does not rule out orthostatic/CO2 mechanisms."
+    ],
+    "patterns_requiring_caution": [
+      "OH-to-cognition generalization in older adults",
+      "Assuming all dizziness is orthostatic"
+    ],
+    "recommended_next_queries": [
+      "sickness behavior neuroimmune signaling fatigue motivation cognition",
+      "metabolic flexibility mitochondrial energy fatigue cognition"
+    ],
+    "overall_assessment": "Strong deep-chain series. It integrates orthostatic, respiratory, volume and autonomic branches into a mechanistic cerebral perfusion pathway for dizziness, fatigue and brain fog."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Consensus review PDF: Orthostatic, Respiratory, and Volume-Mediated Changes in Cerebral Perfusion",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

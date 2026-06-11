@@ -1,0 +1,228 @@
+{
+  "research_series": {
+    "series_id": "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference",
+    "series_name": "Missing Data, Partial Observability, Uncertainty, and Sparse Multimodal Health Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_037_pattern_001",
+      "pattern_name": "Sparse or missing multimodal data requires explicit uncertainty and missingness modeling",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "incomplete_multimodal_observations",
+        "direction": "missing|sparse|uncertain",
+        "measurement_methods": [
+          "wearables",
+          "EMA",
+          "lab biomarkers",
+          "passive sensing",
+          "clinical records"
+        ],
+        "contexts": [
+          "digital health",
+          "latent state inference",
+          "personalized monitoring"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "missingness_mechanism_and_uncertainty",
+        "category": "missing_data_marker",
+        "direction": "increases_uncertainty",
+        "pathway": "missing/noisy/confounded observations affect latent-state inference",
+        "mechanism": "MCAR/MAR/MNAR/device nonwear/selective reporting require different imputation and confidence handling"
+      },
+      "neurobehavioral_output": {
+        "variable": "latent_state_hypothesis",
+        "direction": "uncertain",
+        "measurement_methods": [
+          "Bayesian inference",
+          "state-space models",
+          "HMMs",
+          "Kalman filters",
+          "Gaussian processes",
+          "multimodal ML",
+          "imputation"
+        ],
+        "affected_functions": [
+          "fatigue inference",
+          "mood inference",
+          "sleep inference",
+          "illness/recovery inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Absence of a signal is not evidence of absence when data are missing, noisy, sparse or selectively reported; high-confidence latent-state inference requires convergent independent observations.",
+        "hypotheses": [
+          {
+            "target": "latent_state_hypothesis",
+            "domain": "partial_observability",
+            "direction": "confidence_downweighted_when_sparse",
+            "confidence": "high",
+            "reason": "Missingness mechanisms and imputation uncertainty strongly influence prediction validity."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|days|weeks|unknown",
+        "latency": "missing_interval|imputed|latent",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "device nonwear",
+        "selective symptom reporting",
+        "technical dropout",
+        "nonrandom missingness",
+        "motion artifact",
+        "small sample",
+        "lack of external validation"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Multimodal fusion can improve prediction, but missingness mechanisms, imputation uncertainty and lack of validation can bias latent-state inference.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Inferring Hidden Physiological States from Incomplete Multimodal Health Data",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "methods_review",
+            "doi_or_url": "",
+            "relevant_finding": "Do not infer hidden states with high confidence from sparse signals unless multiple independent observations converge; explicitly mark MCAR/MAR/MNAR/device nonwear/selective reporting.",
+            "population": "human digital health and clinical prediction studies",
+            "sample_size": "50 included papers from 116 eligible",
+            "limitations": "Uncertainty methods underused outside imaging."
+          }
+        ]
+      },
+      "limitations": [
+        "No universal missing-data solution",
+        "Deep imputation can lack interpretability/generalizability",
+        "Many ML prediction models have high risk of bias"
+      ],
+      "alternative_explanations": [
+        "missingness bias",
+        "technical artifact",
+        "selective reporting",
+        "confounding"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "partial_observability",
+          "missing_data",
+          "measurement_gap",
+          "latent_state_hypothesis",
+          "uncertainty_increase",
+          "confidence_downweighting",
+          "absence_of_evidence_not_absence",
+          "nonrandom_missingness",
+          "device_nonwear",
+          "selective_symptom_reporting",
+          "imputed_signal",
+          "imputation_uncertainty",
+          "sparse_observation",
+          "convergent_evidence",
+          "independent_signal_convergence"
+        ],
+        "candidate_edges": [
+          {
+            "source": "missing_data",
+            "target": "uncertainty_increase",
+            "edge_type": "uncertainty_increase",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "convergent_evidence",
+            "target": "latent_state_hypothesis_confidence",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "sparse_observation",
+            "target": "latent_state_hypothesis_confidence",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "One imputation method solves missingness in real-world health data",
+      "reason": "Reviews agree methods must be tailored to missingness mechanism and data structure.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "absence_of_evidence_not_absence",
+      "domain": "uncertainty",
+      "definition": "A guardrail preventing missing/unmeasured data from being interpreted as normal or absent physiology.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "independent_signal_convergence",
+      "domain": "measurement",
+      "definition": "Multiple independent signals supporting the same latent-state hypothesis.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "missing_data_uncertainty_increase",
+      "source": "missing_data",
+      "target": "uncertainty_increase",
+      "edge_type": "uncertainty_increase",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need more validation of uncertainty-aware latent state inference for fatigue, brain fog and recovery using wearables+EMA+labs."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Complete-case deletion biases nonrandom missing data.",
+      "Multimodal ML outperforms unimodal prediction when independent signals converge.",
+      "Uncertainty quantification is essential but underused outside imaging."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Separate missing, normal, noisy and confounded signals.",
+      "Require convergent evidence for high-confidence latent states."
+    ],
+    "patterns_requiring_caution": [
+      "Deep imputation without interpretability.",
+      "Sparse-signal hidden state inference."
+    ],
+    "recommended_next_queries": [
+      "How to define uncertainty scoring for BodyState Mapper outputs?"
+    ],
+    "overall_assessment": "Essential partial-observability layer for sparse real-world data."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Inferring Hidden Physiological States from Incomplete Multimodal Health Data",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

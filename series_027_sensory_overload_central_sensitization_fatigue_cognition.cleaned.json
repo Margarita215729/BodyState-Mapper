@@ -1,0 +1,114 @@
+{
+  "research_series": {
+    "series_id": "series_027_sensory_overload_central_sensitization_fatigue_cognition",
+    "series_name": "Sensory Overload, Central Sensitization, Sensory Gain, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_027_pattern_001",
+      "pattern_name": "Central sensitization and sensory sensitivity are associated with fatigue, mood disturbance, sleep problems, and cognitive complaints",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "central_sensitization",
+          "target": "subjective_fatigue",
+          "edge_type": "associated_with",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "central_sensitization",
+          "target": "mood_worsening",
+          "edge_type": "associated_with",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "central_sensitization",
+          "target": "sleep_disturbance",
+          "edge_type": "associated_with",
+          "polarity": "positive",
+          "confidence": "moderate"
+        },
+        {
+          "source": "sensory_overload",
+          "target": "subjective_brain_fog",
+          "edge_type": "associated_with",
+          "polarity": "positive",
+          "confidence": "moderate"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_027_pattern_002",
+      "pattern_name": "Multisensory hypersensitivity is not limited to nociception",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "multisensory_hypersensitivity",
+          "target": "functional_impairment",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "photophobia",
+          "target": "headache_related_disability",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "moderate"
+        },
+        {
+          "source": "phonophobia",
+          "target": "headache_related_disability",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "moderate"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_027_pattern_003",
+      "pattern_name": "Self-reported central sensitivity is not equivalent to QST-confirmed nociceptive gain",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "Central_Sensitization_Inventory_score",
+          "target": "QST_confirmed_sensitization",
+          "edge_type": "no_clear_association",
+          "polarity": "mixed",
+          "confidence": "moderate"
+        },
+        {
+          "source": "body_hypervigilance",
+          "target": "self_reported_sensory_sensitivity",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "moderate"
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "Separate QST-confirmed central sensitization from self-reported sensory sensitivity and hypervigilance.",
+    "Do not infer objective cognitive impairment from sensory overload alone.",
+    "Modality-specific sensitivity and generalized sensory overload may differ.",
+    "Anxiety, depression, pain, migraine, and sleep can mediate or amplify associations."
+  ],
+  "high_value_candidate_nodes": [
+    "sensory_overload",
+    "central_sensitization",
+    "QST_hyperalgesia",
+    "allodynia",
+    "photophobia",
+    "phonophobia",
+    "multisensory_hypersensitivity",
+    "sensory_gain_amplification",
+    "sensory_avoidance",
+    "subjective_fatigue",
+    "subjective_brain_fog",
+    "functional_impairment"
+  ]
+}

@@ -1,0 +1,341 @@
+{
+  "research_series": {
+    "series_id": "series_041_brain_fog_phenotypes_differential_inference",
+    "series_name": "Brain Fog Phenotypes,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_041_pattern_001",
+      "pattern_name": "Subjective brain fog is weakly/inconsistently aligned with objective cognitive impairment",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "subjective_brain_fog",
+        "direction": "increased",
+        "measurement_methods": [
+          "self-report",
+          "Brief Brain Fog Scale",
+          "Cognitive Failures Questionnaire",
+          "structured interview"
+        ],
+        "contexts": [
+          "long COVID",
+          "ME/CFS",
+          "migraine",
+          "TBI/PTSD",
+          "sleep disorders",
+          "hypothyroidism"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "self_report_objective_discordance",
+        "category": "measurement_marker",
+        "direction": "increased",
+        "pathway": "subjective cognitive complaint and standardized performance partly diverge",
+        "mechanism": "symptom experience is influenced by fatigue,mood,sleep,pain,interoception and task sensitivity"
+      },
+      "neurobehavioral_output": {
+        "variable": "objective_cognitive_impairment",
+        "direction": "mixed",
+        "measurement_methods": [
+          "MoCA",
+          "ACE-III",
+          "TMT",
+          "Stroop",
+          "Digit Span",
+          "reaction time tasks"
+        ],
+        "affected_functions": [
+          "attention",
+          "processing speed",
+          "working memory",
+          "executive function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Subjective brain fog should not be automatically treated as objective cognitive impairment; phenotype and context must be specified.",
+        "hypotheses": [
+          {
+            "target": "brain_fog_phenotype_uncertain",
+            "domain": "brain_fog_phenotyping",
+            "direction": "requires_subtyping",
+            "confidence": "high",
+            "reason": "Large cohorts show weak correlations between self-report and objective cognitive tests."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_chronic",
+        "latency": "state_dependent",
+        "reversibility": "context_responsive"
+      },
+      "modulators_confounders": [
+        "fatigue",
+        "sleepiness",
+        "mood symptoms",
+        "pain",
+        "medication exposure",
+        "post-viral state"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Subjective brain fog is common but heterogeneous; objective impairments, when present, most often involve attention control and processing speed. Many symptomatic individuals perform normally on standard tests.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Brain Fog Phenotypes and Differential Characterization: A Structured Review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Subjective brain fog can occur without measurable objective impairment; attention and processing speed are most common objective domains.",
+            "population": "mixed human cohorts",
+            "sample_size": "50 papers",
+            "limitations": "Heterogeneous definitions and tools."
+          }
+        ]
+      },
+      "limitations": [
+        "Standard tests may miss subtle acquired impairments",
+        "Brain fog definitions vary"
+      ],
+      "alternative_explanations": [
+        "Mood/sleep/fatigue driven complaints",
+        "Medication cognitive slowing"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "subjective_brain_fog",
+          "objective_cognitive_impairment",
+          "brain_fog_phenotype_uncertain",
+          "self_report_objective_discordance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "subjective_brain_fog",
+            "target": "objective_cognitive_impairment",
+            "edge_type": "associated_with",
+            "polarity": "mixed",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_041_pattern_002",
+      "pattern_name": "State-dependent brain fog can be provoked by orthostatic challenge, exertion, migraine phase, sleep deprivation, or drug timing",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "context_specific_brain_fog_trigger",
+        "direction": "state_dependent",
+        "measurement_methods": [
+          "EMA",
+          "orthostatic testing",
+          "wearables",
+          "smartphone cognitive tasks",
+          "medication timing"
+        ],
+        "contexts": [
+          "long COVID",
+          "ME/CFS",
+          "POTS",
+          "migraine",
+          "sleep disorders"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "dynamic_physiological_or_contextual_challenge",
+        "category": "cerebral_perfusion_marker",
+        "direction": "variable",
+        "pathway": "challenge or phase changes transiently alter cognitive performance and symptom severity",
+        "mechanism": "orthostatic cerebral perfusion/autonomic load, post-exertional worsening, migraine postdrome/ictal state, sleep loss, pharmacologic cognitive slowing"
+      },
+      "neurobehavioral_output": {
+        "variable": "attention_processing_speed_worsening",
+        "direction": "impaired",
+        "measurement_methods": [
+          "reaction time",
+          "procedural RT",
+          "working memory tasks",
+          "subjective reports"
+        ],
+        "affected_functions": [
+          "attention",
+          "processing speed",
+          "working memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Brain fog is more informative when linked to timing: orthostatic, post-exertional, migraine/postdrome, medication-timed, or sleep-related.",
+        "hypotheses": [
+          {
+            "target": "orthostatic_brain_fog",
+            "domain": "brain_fog_phenotyping",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Orthostatic challenge studies show symptom and cognitive worsening in susceptible groups."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_days",
+        "latency": "orthostatic|post_exertional|postdrome|medication_timed",
+        "reversibility": "position_or_rest_responsive"
+      },
+      "modulators_confounders": [
+        "post-viral state",
+        "migraine",
+        "sleep deprivation",
+        "medications",
+        "orthostatic intolerance"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Real-time and challenge-based studies show brain fog can fluctuate with orthostatic stress, exertion, migraine phase and drug timing.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Brain Fog Phenotypes and Differential Characterization: A Structured Review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "clinical_cohort",
+            "doi_or_url": "",
+            "relevant_finding": "Orthostatic challenge/post-exertion provokes symptom/test worsening in susceptible groups.",
+            "population": "long COVID/ME-CFS/migraine cohorts",
+            "sample_size": "50 papers",
+            "limitations": "Dynamic testing limited outside post-COVID/migraine."
+          }
+        ]
+      },
+      "limitations": [
+        "EMA/wearable evidence sparse in many populations"
+      ],
+      "alternative_explanations": [
+        "Fatigue",
+        "pain",
+        "anxiety",
+        "sleepiness"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "orthostatic_brain_fog",
+          "post_exertional_brain_fog",
+          "migraine_postdrome_brain_fog",
+          "sleepiness_related_fog",
+          "medication_cognitive_slowing"
+        ],
+        "candidate_edges": [
+          {
+            "source": "orthostatic_challenge",
+            "target": "orthostatic_brain_fog",
+            "edge_type": "phenotype_marker",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "migraine_phase",
+            "target": "migraine_postdrome_brain_fog",
+            "edge_type": "phenotype_marker",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Brain fog always implies measurable cognitive impairment.",
+      "reason": "Large cohorts show weak/inconsistent self-report vs objective test relationships.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "brain_fog_phenotype_uncertain",
+      "domain": "neurobehavioral",
+      "definition": "Self-reported cognitive cloudiness requiring subtyping by domain,timing and context before mechanism inference.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "orthostatic_brain_fog",
+      "domain": "neurobehavioral",
+      "definition": "Brain fog worsened during upright posture or orthostatic challenge.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "subjective_brain_fog_objective_cognition_mixed_low",
+      "source": "subjective_brain_fog",
+      "target": "objective_cognitive_impairment",
+      "edge_type": "associated_with",
+      "polarity": "mixed",
+      "confidence": "low"
+    },
+    {
+      "edge_id": "orthostatic_challenge_brain_fog_positive_moderate",
+      "source": "orthostatic_challenge",
+      "target": "orthostatic_brain_fog",
+      "edge_type": "phenotype_marker",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Validate standardized brain fog tools across non-post-COVID populations.",
+    "Link orthostatic/exertional physiological markers with real-time brain fog fluctuations."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Subjective brain fog can occur without objective impairment.",
+      "Objective deficits most often affect attention and processing speed."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Brain fog phenotype uncertain until timing/context/domain are known.",
+      "Orthostatic/post-exertional/migraine/medication-timed brain fog are separable phenotypes."
+    ],
+    "patterns_requiring_caution": [
+      "Standard cognitive tests may miss subtle deficits.",
+      "Imaging/EEG markers are subgroup-specific."
+    ],
+    "recommended_next_queries": [
+      "Which tests best capture real-world brain fog fluctuations?",
+      "How do orthostatic markers map to brain fog severity?"
+    ],
+    "overall_assessment": "Brain fog should be modeled as heterogeneous symptom cluster; objective cognition, timing and mechanism context must be separated."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Brain Fog Phenotypes and Differential Characterization: A Structured Review",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

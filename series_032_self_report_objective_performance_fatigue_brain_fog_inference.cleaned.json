@@ -1,0 +1,51 @@
+{
+  "research_series": {
+    "series_id": "series_032_self_report_objective_performance_fatigue_brain_fog_inference",
+    "series_name": "Self-Report vs Objective Performance,Fatigue,Brain Fog,Sleepiness,and Functional Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_032_pattern_001",
+      "pattern_name": "Subjective symptoms often discordant from objective impairment",
+      "causal_status": "association",
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "subjective_fatigue",
+          "subjective_brain_fog",
+          "objective_cognitive_impairment",
+          "self_report_objective_discordance",
+          "symptom_marker_mismatch"
+        ],
+        "candidate_edges": [
+          {
+            "source": "subjective_brain_fog",
+            "target": "objective_cognitive_impairment",
+            "edge_type": "associated_with",
+            "polarity": "mixed",
+            "confidence": "low"
+          },
+          {
+            "source": "mood_stress_pain_sleep_context",
+            "target": "subjective_symptom_severity",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "guardrails": [
+    "Do not infer objective cognitive impairment from brain fog alone",
+    "Objective normal tests do not invalidate symptoms",
+    "Subjective and objective measures predict different outcomes",
+    "Performance validity context may be needed in clinical settings"
+  ],
+  "summary": {
+    "overall_assessment": "Use self-report as lived-experience/function signal, not as direct proxy for objective impairment."
+  }
+}

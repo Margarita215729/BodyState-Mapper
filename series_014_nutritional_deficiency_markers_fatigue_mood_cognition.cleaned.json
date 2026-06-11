@@ -1,0 +1,648 @@
+{
+  "research_series": {
+    "series_id": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition",
+    "series_name": "Nutritional Deficiency Markers, Fatigue, Mood, Cognition, Dizziness, and Recovery",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_014_pattern_001",
+      "pattern_name": "Iron deficiency with or without anemia is associated with fatigue, mood symptoms, sleep disturbance, and attention/executive deficits",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "iron_deficiency_status",
+        "direction": "deficient",
+        "measurement_methods": [
+          "ferritin",
+          "transferrin saturation",
+          "hemoglobin",
+          "serum iron",
+          "TIBC",
+          "CBC indices"
+        ],
+        "contexts": [
+          "women of reproductive age",
+          "adolescents",
+          "blood donors",
+          "older adults",
+          "kidney disease",
+          "general population"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "iron_biomarkers_and_oxygen_delivery",
+        "category": "hematologic_marker",
+        "direction": "reduced_iron_availability",
+        "pathway": "iron-dependent oxygen delivery, neurotransmitter synthesis, mitochondrial metabolism, and brain electrophysiology",
+        "mechanism": "low iron availability may impair oxygen transport and neural/metabolic processes; symptoms can occur before anemia"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_sleep_attention_cognition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue questionnaires",
+          "PHQ-9",
+          "anxiety scales",
+          "sleep questionnaires",
+          "attention/cognition tests",
+          "EEG in intervention studies"
+        ],
+        "affected_functions": [
+          "subjective fatigue",
+          "attention",
+          "executive function",
+          "working memory",
+          "processing speed",
+          "sleep quality",
+          "depressive symptoms"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Low iron availability, including non-anemic iron deficiency, increases likelihood of fatigue, mood/sleep complaints, and attention/executive deficits; correction is most supported when true baseline deficiency exists.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Cross-sectional, cohort, RCT, and biomarker evidence consistently link iron deficiency to fatigue; RCT evidence supports improvement after correction in deficient individuals."
+          },
+          {
+            "target": "impaired_attention",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate_high",
+            "reason": "Iron biomarkers are linked to attention/cognition in adolescents and adults; some intervention evidence supports biomarker-to-brain-function-to-cognition pathways."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months",
+        "latency": "delayed",
+        "reversibility": "treatment_responsive"
+      },
+      "modulators_confounders": [
+        "sex",
+        "menstrual_status",
+        "pregnancy_postpartum",
+        "age",
+        "inflammation_CRP",
+        "diet",
+        "malabsorption",
+        "kidney disease",
+        "baseline_deficiency"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Iron deficiency, even without anemia, is strongly associated with fatigue, neuropsychiatric complaints, attention/memory/executive deficits, and sleep problems. Supplementation benefits are supported primarily when baseline deficiency is present.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Evaluation of a Single Dose of Ferric Carboxymaltose in Fatigued, Iron-Deficient Women – PREFER",
+            "authors": "Favrat et al.",
+            "year": 2014,
+            "source_type": "RCT",
+            "doi_or_url": "https://doi.org/10.1371/journal.pone.0094217",
+            "relevant_finding": "Correction of iron deficiency improved fatigue/cognition in iron-deficient participants.",
+            "population": "fatigued iron-deficient women",
+            "sample_size": "",
+            "limitations": "Benefit should not be generalized to non-deficient individuals."
+          },
+          {
+            "title": "Beyond anemia: a comprehensive analysis of iron deficiency symptoms in women and their correlation with biomarkers",
+            "authors": "Özbilen & Kaya",
+            "year": 2025,
+            "source_type": "clinical_biomarker_study",
+            "doi_or_url": "https://doi.org/10.1186/s12905-025-03906-w",
+            "relevant_finding": "Symptoms can occur without anemia; transferrin saturation may be a sensitive marker.",
+            "population": "women",
+            "sample_size": "",
+            "limitations": "Observational design."
+          }
+        ]
+      },
+      "limitations": [
+        "Ferritin is confounded by inflammation",
+        "Symptoms are nonspecific",
+        "Thresholds differ by population",
+        "Supplementation benefit depends on baseline deficiency"
+      ],
+      "alternative_explanations": [
+        "Sleep disorder",
+        "depression/anxiety independent of iron",
+        "thyroid dysfunction",
+        "inflammation",
+        "chronic disease"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "low_ferritin",
+          "low_transferrin_saturation",
+          "iron_deficiency_without_anemia",
+          "iron_deficiency_anemia",
+          "impaired_oxygen_delivery",
+          "subjective_fatigue",
+          "impaired_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "iron_deficiency_without_anemia",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "iron_deficiency_anemia",
+            "target": "exercise_intolerance",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "low_transferrin_saturation",
+            "target": "iron_deficiency_symptom_burden",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node_and_edges",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_014_pattern_002",
+      "pattern_name": "Functional vitamin B12 deficiency predicts cognitive and neuropsychiatric impairment more reliably than serum B12 alone",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "functional_vitamin_B12_deficiency",
+        "direction": "deficient",
+        "measurement_methods": [
+          "serum B12",
+          "methylmalonic acid",
+          "homocysteine"
+        ],
+        "contexts": [
+          "older adults",
+          "vegetarian/vegan diets",
+          "malabsorption",
+          "bariatric surgery",
+          "nitrous oxide exposure",
+          "neurodegenerative populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "MMA_homocysteine_supported_B12_deficiency",
+        "category": "micronutrient_marker",
+        "direction": "increased_MMA_or_homocysteine",
+        "pathway": "one-carbon metabolism, myelin maintenance, and neurological function",
+        "mechanism": "B12 deficiency can impair methylation and neurological function; functional markers outperform serum B12 alone"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_and_neuropsychiatric_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "cognitive tests",
+          "clinical neuropsychiatric assessments",
+          "MCI/dementia outcomes"
+        ],
+        "affected_functions": [
+          "memory",
+          "executive function",
+          "attention",
+          "processing speed",
+          "neuropsychiatric symptoms"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "B12-related cognitive/mood inference should rely on functional deficiency evidence such as elevated MMA or homocysteine, not serum B12 alone.",
+        "hypotheses": [
+          {
+            "target": "cognitive_impairment",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Functional B12 deficiency markers are linked to memory/executive dysfunction and cognitive decline risk."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "months_to_years",
+        "latency": "cumulative",
+        "reversibility": "treatment_responsive_or_partially_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "diet",
+        "malabsorption",
+        "bariatric_surgery",
+        "nitrous_oxide_exposure",
+        "renal_function",
+        "folate_status"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "B12 deficiency supported by MMA/homocysteine predicts memory/executive/processing-speed impairment and neuropsychiatric symptoms; supplementation helps truly deficient individuals but not necessarily low-normal serum B12 without functional deficit.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Low Vitamin B12 Levels: An Underestimated Cause Of Minimal Cognitive Impairment And Dementia",
+            "authors": "Jatoi et al.",
+            "year": 2020,
+            "source_type": "clinical_deficiency_study",
+            "doi_or_url": "https://doi.org/10.7759/cureus.6976",
+            "relevant_finding": "Low B12 linked to MCI/dementia outcomes.",
+            "population": "clinical population",
+            "sample_size": "",
+            "limitations": "Study design limits causal inference."
+          },
+          {
+            "title": "Clinical manifestations and outcomes of chronic nitrous oxide misuse: A systematic review",
+            "authors": "Marsden et al.",
+            "year": 2022,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://doi.org/10.1111/1742-6723.13997",
+            "relevant_finding": "Functional B12 disruption can occur even with misleading serum values.",
+            "population": "nitrous oxide exposure",
+            "sample_size": "",
+            "limitations": "Specific exposure context."
+          }
+        ]
+      },
+      "limitations": [
+        "Serum B12 alone is imperfect",
+        "MMA confounded by renal function",
+        "Symptoms are nonspecific"
+      ],
+      "alternative_explanations": [
+        "folate deficiency",
+        "neurodegeneration",
+        "depression",
+        "medication effects",
+        "renal dysfunction"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "low_vitamin_B12",
+          "elevated_methylmalonic_acid",
+          "elevated_homocysteine",
+          "functional_B12_deficiency",
+          "impaired_memory",
+          "slowed_processing_speed"
+        ],
+        "candidate_edges": [
+          {
+            "source": "functional_B12_deficiency",
+            "target": "cognitive_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "serum_B12_low_normal_without_functional_markers",
+            "target": "cognitive_impairment",
+            "edge_type": "hypothesis_only",
+            "polarity": "unknown",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_node_and_edges",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_014_pattern_003",
+      "pattern_name": "Vitamin D, zinc, magnesium, omega-3, and folate show weaker or context-dependent links to mood, sleep, frailty, and cognition",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "non_iron_non_B12_micronutrient_status",
+        "direction": "deficient",
+        "measurement_methods": [
+          "25OH vitamin D",
+          "zinc",
+          "serum magnesium",
+          "RBC magnesium",
+          "omega-3 index",
+          "folate",
+          "homocysteine"
+        ],
+        "contexts": [
+          "older adults",
+          "postpartum women",
+          "frailty",
+          "depression",
+          "dietary restriction",
+          "general population"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "micronutrient_biomarkers",
+        "category": "micronutrient_marker",
+        "direction": "low_or_deficient",
+        "pathway": "immune, neurotransmitter, neuromuscular, and membrane-related pathways",
+        "mechanism": "associations may reflect true deficiency, inflammation, diet quality, sunlight exposure, frailty, or comorbid disease"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_sleep_cognitive_frailty",
+        "direction": "mixed",
+        "measurement_methods": [
+          "depression scales",
+          "sleep measures",
+          "frailty/cognitive frailty scales",
+          "cognitive tests"
+        ],
+        "affected_functions": [
+          "depressive symptoms",
+          "sleep quality",
+          "cognitive frailty",
+          "mood",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Low vitamin D, zinc, folate, magnesium, and omega-3 may raise probability of mood/sleep/frailty or cognitive problems, but causality is context-dependent and supplementation should not be inferred as helpful without confirmed deficiency.",
+        "hypotheses": [
+          {
+            "target": "depressive_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Systematic review/meta-analysis evidence supports associations for vitamin D and zinc, but intervention evidence is less definitive."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_years",
+        "latency": "cumulative",
+        "reversibility": "unknown_or_treatment_responsive_if_deficient"
+      },
+      "modulators_confounders": [
+        "baseline_deficiency",
+        "inflammation",
+        "diet_quality",
+        "sunlight_exposure",
+        "season",
+        "BMI",
+        "pregnancy_postpartum",
+        "age",
+        "frailty",
+        "comorbidities"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Vitamin D and zinc are associated with depression/postpartum depression/cognitive frailty/sleep disturbance; magnesium evidence is limited by biomarker problems; omega-3 status is linked to MCI/frailty but direct energy/brain fog evidence is limited.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Current Evidence on the Association of Micronutrient Malnutrition with Mild Cognitive Impairment, Frailty, and Cognitive Frailty among Older Adults",
+            "authors": "Khalid et al.",
+            "year": 2022,
+            "source_type": "scoping_review",
+            "doi_or_url": "https://doi.org/10.3390/ijerph192315722",
+            "relevant_finding": "Low B vitamins, vitamin D, zinc, and omega-3 linked to MCI/frailty/cognitive frailty.",
+            "population": "older adults",
+            "sample_size": "",
+            "limitations": "Associational; heterogeneous."
+          },
+          {
+            "title": "Invisible Links: Associations Between Micronutrient Deficiencies and Postpartum Depression",
+            "authors": "Voros et al.",
+            "year": 2025,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://doi.org/10.3390/life15101566",
+            "relevant_finding": "Vitamin D/zinc and other deficiencies linked to postpartum depression; magnesium biomarker limitations noted.",
+            "population": "postpartum women",
+            "sample_size": "",
+            "limitations": "Causality uncertain."
+          }
+        ]
+      },
+      "limitations": [
+        "Causality often uncertain",
+        "supplementation evidence weaker than association evidence",
+        "serum magnesium may not reflect intracellular status",
+        "omega-3 direct brain fog/energy evidence limited"
+      ],
+      "alternative_explanations": [
+        "poor diet quality",
+        "low sunlight",
+        "inflammation",
+        "frailty",
+        "obesity",
+        "socioeconomic status",
+        "comorbid illness"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "low_25OH_vitamin_D",
+          "zinc_deficiency",
+          "magnesium_deficiency",
+          "low_RBC_magnesium",
+          "low_omega3_index",
+          "folate_deficiency",
+          "cognitive_frailty"
+        ],
+        "candidate_edges": [
+          {
+            "source": "low_25OH_vitamin_D",
+            "target": "depressive_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "serum_magnesium_low_or_normal",
+            "target": "mood_cognition_symptoms",
+            "edge_type": "hypothesis_only",
+            "polarity": "unknown",
+            "confidence": "low"
+          },
+          {
+            "source": "micronutrient_supplementation_without_deficiency",
+            "target": "symptom_improvement",
+            "edge_type": "no_clear_benefit",
+            "polarity": "neutral",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node_cautiously",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Supplementation improves fatigue/mood/cognition without baseline deficiency.",
+      "reason": "RCTs/meta-analyses generally show no clear benefit unless true biochemical deficiency is present.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Ferritin alone always identifies iron deficiency symptom burden.",
+      "reason": "Ferritin is an acute-phase reactant and may be misleading with elevated CRP/inflammation; transferrin saturation can be more sensitive in some contexts.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Serum magnesium reliably captures magnesium-related mood/cognition risk.",
+      "reason": "Serum magnesium may not reflect intracellular magnesium status.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "low_ferritin",
+      "domain": "biochemical",
+      "definition": "Low iron storage marker; interpretation confounded by inflammation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "low_transferrin_saturation",
+      "domain": "biochemical",
+      "definition": "Marker of reduced circulating iron availability; may detect early symptomatic iron deficiency.",
+      "evidence_strength": "moderate_high"
+    },
+    {
+      "node_id": "iron_deficiency_without_anemia",
+      "domain": "biochemical",
+      "definition": "Iron deficiency with normal hemoglobin.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "iron_deficiency_anemia",
+      "domain": "biochemical",
+      "definition": "Iron deficiency with low hemoglobin/anemia.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "functional_B12_deficiency",
+      "domain": "biochemical",
+      "definition": "B12 deficiency supported by MMA and/or homocysteine rather than serum B12 alone.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "micronutrient_supplementation_without_deficiency",
+      "domain": "contextual",
+      "definition": "Supplementation when baseline deficiency is absent.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "iron_deficiency_without_anemia_subjective_fatigue_positive_high",
+      "source": "iron_deficiency_without_anemia",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "iron_deficiency_anemia_exercise_intolerance_positive_high",
+      "source": "iron_deficiency_anemia",
+      "target": "exercise_intolerance",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "functional_B12_deficiency_cognitive_impairment_positive_high",
+      "source": "functional_B12_deficiency",
+      "target": "cognitive_impairment",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "supplementation_without_deficiency_symptom_improvement_no_clear_benefit_moderate",
+      "source": "micronutrient_supplementation_without_deficiency",
+      "target": "symptom_improvement",
+      "edge_type": "no_clear_benefit",
+      "polarity": "neutral",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Whether correcting non-anemic iron deficiency improves objective cognition across all age groups.",
+    "Whether correcting subclinical B12/folate functional deficits improves executive function.",
+    "How combined micronutrient deficiencies interact to affect fatigue, mood, and cognition."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Iron deficiency with or without anemia is linked to fatigue, mood/sleep complaints, and attention/cognition.",
+      "Functional B12 deficiency is linked to cognitive and neuropsychiatric impairment."
+    ],
+    "highest_value_patterns_for_inference": [
+      "low_transferrin_saturation/low_ferritin -> fatigue",
+      "functional_B12_deficiency -> cognitive impairment",
+      "supplementation_without_deficiency -> no clear benefit"
+    ],
+    "patterns_requiring_caution": [
+      "vitamin D/zinc/magnesium/omega-3 associations with mood/cognition",
+      "ferritin interpretation under inflammation",
+      "serum magnesium as a standalone marker"
+    ],
+    "recommended_next_queries": [
+      "How do sex hormones and menstrual cycle phase influence mood, energy, cognition, sleep, HRV, and pain?",
+      "How do gut-brain axis and GI symptoms influence mood, fatigue, and cognition?"
+    ],
+    "overall_assessment": "Micronutrient branch is useful for BodyState Mapper, but must remain marker-specific. Iron and functional B12 are strong; vitamin D/zinc/folate/magnesium/omega-3 are more context-dependent. Supplementation should not be inferred as helpful without demonstrated baseline deficiency."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Evaluation of a Single Dose of Ferric Carboxymaltose in Fatigued, Iron-Deficient Women – PREFER",
+      "url": "https://doi.org/10.1371/journal.pone.0094217",
+      "doi": "10.1371/journal.pone.0094217",
+      "year": 2014
+    },
+    {
+      "index": 2,
+      "title": "Beyond anemia: a comprehensive analysis of iron deficiency symptoms in women and their correlation with biomarkers",
+      "url": "https://doi.org/10.1186/s12905-025-03906-w",
+      "doi": "10.1186/s12905-025-03906-w",
+      "year": 2025
+    },
+    {
+      "index": 3,
+      "title": "Low Vitamin B12 Levels: An Underestimated Cause Of Minimal Cognitive Impairment And Dementia",
+      "url": "https://doi.org/10.7759/cureus.6976",
+      "doi": "10.7759/cureus.6976",
+      "year": 2020
+    },
+    {
+      "index": 4,
+      "title": "Current Evidence on the Association of Micronutrient Malnutrition with Mild Cognitive Impairment, Frailty, and Cognitive Frailty among Older Adults",
+      "url": "https://doi.org/10.3390/ijerph192315722",
+      "doi": "10.3390/ijerph192315722",
+      "year": 2022
+    }
+  ]
+}

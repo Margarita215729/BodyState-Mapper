@@ -1,0 +1,113 @@
+{
+  "research_series": {
+    "series_id": "series_026_cognitive_load_mental_fatigue_attention_resource_depletion",
+    "series_name": "Cognitive Load, Mental Fatigue, Attention Resource Depletion, Brain Fog, and Performance",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_026_pattern_001",
+      "pattern_name": "Prolonged cognitive load induces mental fatigue and selective performance decline",
+      "causal_status": "causal",
+      "candidate_edges": [
+        {
+          "source": "prolonged_cognitive_load",
+          "target": "mental_fatigue",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "mental_fatigue",
+          "target": "attention_lapses",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "mental_fatigue",
+          "target": "reaction_time_slowing",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "mental_fatigue",
+          "target": "reduced_executive_control",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_026_pattern_002",
+      "pattern_name": "Subjective mental fatigue can dissociate from objective performance under compensatory motivation",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "high_motivation_or_incentive",
+          "target": "objective_performance_decline_under_fatigue",
+          "edge_type": "decreases_likelihood_of",
+          "polarity": "negative",
+          "confidence": "moderate"
+        },
+        {
+          "source": "subjective_mental_fatigue",
+          "target": "objective_cognitive_impairment",
+          "edge_type": "no_clear_association",
+          "polarity": "mixed",
+          "confidence": "moderate"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_026_pattern_003",
+      "pattern_name": "Frontal theta EEG and autonomic/ocular markers track mental fatigue but require multimodal validation",
+      "causal_status": "prediction",
+      "candidate_edges": [
+        {
+          "source": "mental_fatigue",
+          "target": "EEG_theta_increase",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "time_on_task",
+          "target": "HRV_change_under_task",
+          "edge_type": "associated_with",
+          "polarity": "mixed",
+          "confidence": "moderate"
+        },
+        {
+          "source": "mental_fatigue",
+          "target": "pupil_dynamics_change",
+          "edge_type": "associated_with",
+          "polarity": "mixed",
+          "confidence": "moderate"
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not merge mental fatigue with sleepiness, boredom, depression, burnout, PEM, or physical fatigue.",
+    "Do not infer objective cognitive impairment from subjective fatigue alone.",
+    "Motivation can temporarily buffer performance despite high subjective fatigue.",
+    "Subjective scales alone are insufficient for robust assessment."
+  ],
+  "high_value_candidate_nodes": [
+    "prolonged_cognitive_load",
+    "mental_fatigue",
+    "cognitive_fatigue",
+    "attention_lapses",
+    "reaction_time_slowing",
+    "error_rate_increase",
+    "EEG_theta_increase",
+    "pupil_dynamics_change",
+    "HRV_change_under_task",
+    "high_motivation_or_incentive",
+    "rest_recovery"
+  ]
+}

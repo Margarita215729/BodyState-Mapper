@@ -1,0 +1,232 @@
+{
+  "research_series": {
+    "series_id": "series_040_fatigue_phenotypes_differential_inference",
+    "series_name": "Fatigue Phenotypes,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_040_pattern_001",
+      "pattern_name": "Fatigue is multidimensional and requires subtype-specific inference",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "fatigue_symptom_report",
+        "direction": "state_dependent",
+        "measurement_methods": [
+          "fatigue scales",
+          "EMA",
+          "clinical interview",
+          "wearables",
+          "CPET",
+          "neuropsychological testing",
+          "sleep testing"
+        ],
+        "contexts": [
+          "ME/CFS",
+          "long COVID",
+          "MS",
+          "cancer",
+          "psychiatry",
+          "sleep disorders",
+          "occupational health"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "fatigue_phenotype",
+        "category": "fatigue_marker",
+        "direction": "subtyped",
+        "pathway": "different fatigue words map to different physiological/neurobehavioral mechanisms",
+        "mechanism": "sleepiness, objective fatigability, PEM, mental fatigue, weakness, anhedonia, burnout and sickness behavior have different correlates and next measurements"
+      },
+      "neurobehavioral_output": {
+        "variable": "mechanism_specific_measurement_recommendation",
+        "direction": "phenotype_specific",
+        "measurement_methods": [
+          "sleep study",
+          "CPET",
+          "HRV/RHR",
+          "immune markers",
+          "neuropsychological tasks",
+          "mood/anhedonia scales"
+        ],
+        "affected_functions": [
+          "fatigue inference",
+          "brain fog inference",
+          "functional impairment"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not infer mechanism from the word fatigue alone; first phenotype the fatigue by sleepiness, PEM timing, objective fatigability, mental/cognitive fatigue, weakness, mood/anhedonia and recovery context.",
+        "hypotheses": [
+          {
+            "target": "fatigue_phenotype_uncertain",
+            "domain": "fatigue_phenotyping",
+            "direction": "next_measurement_needed",
+            "confidence": "high",
+            "reason": "Systematic reviews support multidimensional fatigue assessment and weak alignment between subjective fatigue and objective fatigability."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|same_day|next_day|days|weeks|chronic",
+        "latency": "immediate|delayed|post_exertional|cumulative|circadian|recovery_phase",
+        "reversibility": "rest_responsive|sleep_responsive|partially_reversible|relapsing|unknown"
+      },
+      "modulators_confounders": [
+        "depression",
+        "anxiety",
+        "sleep disturbance",
+        "pain",
+        "medication",
+        "post-viral state",
+        "activity level"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Fatigue subtypes can be distinguished using multidimensional assessment; subjective reports do not always align with objective fatigability; depression/anxiety/sleep strongly confound subjective fatigue ratings; PEM is a distinctive feature in ME/CFS and long COVID.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Differential Characterization of Fatigue Phenotypes",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Fatigue is multidimensional; PEM distinguishes ME/CFS/long COVID; subjective and objective fatigability can diverge.",
+            "population": "clinical and healthy human populations",
+            "sample_size": "50 included papers",
+            "limitations": "Overlap among subtypes remains common; wearable validation limited."
+          }
+        ]
+      },
+      "limitations": [
+        "Phenotypes overlap and are confounded by mood/sleep/pain.",
+        "Digital/wearable fatigue metrics need more validation."
+      ],
+      "alternative_explanations": [
+        "A single patient may have multiple fatigue phenotypes simultaneously."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "subjective_fatigue",
+          "daytime_sleepiness",
+          "physical_fatigue",
+          "mental_fatigue",
+          "cognitive_fatigue",
+          "objective_fatigability",
+          "perceived_low_energy",
+          "muscle_weakness",
+          "post_exertional_malaise",
+          "delayed_fatigue_worsening",
+          "anhedonia_low_motivation",
+          "apathy",
+          "burnout_state",
+          "sickness_behavior",
+          "low_recovery_state",
+          "fatigue_phenotype_uncertain",
+          "next_measurement_needed"
+        ],
+        "candidate_edges": [
+          {
+            "source": "fatigue_symptom_report",
+            "target": "fatigue_phenotype_uncertain",
+            "edge_type": "phenotype_marker",
+            "polarity": "unknown",
+            "confidence": "high"
+          },
+          {
+            "source": "post_exertional_malaise",
+            "target": "delayed_fatigue_worsening",
+            "edge_type": "mechanism_cluster",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "daytime_sleepiness",
+            "target": "sleep_related_measurement_recommendation",
+            "edge_type": "measurement_recommendation",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Fatigue is a single mechanism/state.",
+      "reason": "Evidence strongly supports multidimensional fatigue subtypes with distinct correlates and measurements.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "fatigue_phenotype_uncertain",
+      "domain": "neurobehavioral",
+      "definition": "A provisional state when fatigue is reported but subtype and likely mechanism are not yet identified.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "objective_fatigability",
+      "domain": "neurobehavioral",
+      "definition": "Objective decline in motor or cognitive performance under sustained effort, distinct from subjective fatigue.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "fatigue_symptom_report_fatigue_phenotype_uncertain_unknown_high",
+      "source": "fatigue_symptom_report",
+      "target": "fatigue_phenotype_uncertain",
+      "edge_type": "phenotype_marker",
+      "polarity": "unknown",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Mechanistic links between PEM biomarkers and trajectories in ME/CFS vs long COVID.",
+    "Digital wearable validation across fatigue phenotypes."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Fatigue is multidimensional.",
+      "Subjective fatigue and objective fatigability often diverge.",
+      "Mood/sleep/pain are major confounders.",
+      "PEM is distinctive in ME/CFS/long COVID."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Phenotype fatigue before assigning mechanism.",
+      "Use time course and objective tests to separate sleepiness, mental fatigue, PEM and fatigability."
+    ],
+    "patterns_requiring_caution": [
+      "Anhedonia/apathy/burnout overlap with fatigue but are separable.",
+      "Wearables can augment but not replace validated assessment."
+    ],
+    "recommended_next_queries": [
+      "Brain fog phenotypes and differential inference."
+    ],
+    "overall_assessment": "Core differential-inference layer; include in graph."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Differential Characterization of Fatigue Phenotypes",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

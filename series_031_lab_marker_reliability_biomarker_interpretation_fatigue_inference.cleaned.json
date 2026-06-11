@@ -1,0 +1,329 @@
+{
+  "research_series": {
+    "series_id": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference",
+    "series_name": "Lab Marker Reliability, Biomarker Interpretation, and Fatigue/Mood/Cognition Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_031_pattern_001",
+      "pattern_name": "No single common lab biomarker reliably infers individual fatigue/mood/cognition state",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "single_lab_biomarker",
+        "direction": "context_dependent",
+        "measurement_methods": [
+          "CRP",
+          "IL-6",
+          "TNF-alpha",
+          "ferritin",
+          "B12",
+          "TSH",
+          "cortisol",
+          "HbA1c"
+        ],
+        "contexts": [
+          "clinical labs",
+          "population studies",
+          "repeat measurement"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "biological_and_preanalytical_variability",
+        "category": "measurement_marker",
+        "direction": "increased",
+        "pathway": "within-person variability and context effects",
+        "mechanism": "time of day, fasting, infection, exercise, medications, sex/age, assay differences alter biomarker levels"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_cognition_inference_reliability",
+        "direction": "mixed",
+        "measurement_methods": [
+          "meta-analyses",
+          "repeat measures",
+          "guidelines"
+        ],
+        "affected_functions": [
+          "fatigue inference",
+          "mood inference",
+          "cognition inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "No single biomarker reliably infers individual-level fatigue/mood/cognition due to variability and confounding.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Reliability, Biological Variability, and Interpretation Limits of Lab Biomarkers",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Group-level biomarker utility does not translate to standalone individual symptom inference.",
+            "population": "varied clinical/population studies",
+            "sample_size": "50 studies included",
+            "limitations": "Biomarker-specific evidence varies."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "biomarker_context_required",
+          "normal_lab_does_not_exclude_symptoms",
+          "repeat_measure_needed",
+          "personal_lab_baseline"
+        ],
+        "candidate_edges": [
+          {
+            "source": "single_lab_biomarker",
+            "target": "fatigue_mood_cognition_inference",
+            "edge_type": "measurement_proxy",
+            "polarity": "mixed",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_031_pattern_002",
+      "pattern_name": "Ferritin requires inflammation context for iron inference",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "ferritin",
+        "direction": "context_dependent",
+        "measurement_methods": [
+          "serum ferritin",
+          "CRP",
+          "transferrin saturation",
+          "hepcidin",
+          "sTfR"
+        ],
+        "contexts": [
+          "iron deficiency",
+          "inflammation",
+          "fatigue"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "inflammation_confounded_ferritin",
+        "category": "hematologic_marker",
+        "direction": "variable",
+        "pathway": "acute phase response",
+        "mechanism": "ferritin rises during inflammation and can mask depleted iron stores"
+      },
+      "neurobehavioral_output": {
+        "variable": "iron_related_fatigue_inference",
+        "direction": "mixed",
+        "measurement_methods": [
+          "iron panels"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "exercise tolerance",
+          "attention"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Ferritin is an acute-phase reactant and cannot reliably diagnose iron deficiency without inflammation context.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Threshold Ferritin Concentrations Reflecting Early Iron Deficiency",
+            "authors": "Tarancón-Díez et al.",
+            "year": 2022,
+            "source_type": "biomarker_validation",
+            "doi_or_url": "",
+            "relevant_finding": "Ferritin thresholds require context/inflammation markers.",
+            "population": "iron deficiency assessment",
+            "sample_size": "",
+            "limitations": "Population-specific thresholds."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "ferritin_inflammation_confounded",
+          "low_transferrin_saturation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "elevated_CRP",
+            "target": "ferritin_inflammation_confounded",
+            "edge_type": "context_dependent",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_031_pattern_003",
+      "pattern_name": "Functional B12 deficiency requires MMA/homocysteine context",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "serum_B12",
+        "direction": "context_dependent",
+        "measurement_methods": [
+          "serum B12",
+          "MMA",
+          "homocysteine",
+          "folate"
+        ],
+        "contexts": [
+          "B12 deficiency",
+          "cognition",
+          "neurologic symptoms"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "functional_B12_status",
+        "category": "nutrient_marker",
+        "direction": "variable",
+        "pathway": "cellular B12-dependent metabolism",
+        "mechanism": "MMA and homocysteine can reveal functional deficiency missed by serum B12 alone"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_or_neurologic_symptom_inference",
+        "direction": "mixed",
+        "measurement_methods": [
+          "B12 panel",
+          "MMA",
+          "homocysteine"
+        ],
+        "affected_functions": [
+          "cognition",
+          "neuropathy",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Serum B12 alone is insufficient; MMA/homocysteine better reflect functional deficiency with their own context limitations.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Vitamin B12 status in health and disease: clinical and laboratory pitfalls",
+            "authors": "Sobczyńska-Malefora et al.",
+            "year": 2021,
+            "source_type": "clinical_guideline",
+            "doi_or_url": "",
+            "relevant_finding": "Functional B12 markers detect deficiency not captured by serum B12 alone.",
+            "population": "clinical deficiency assessment",
+            "sample_size": "",
+            "limitations": "MMA/homocysteine affected by kidney function and folate."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "functional_B12_deficiency",
+          "elevated_MMA",
+          "elevated_homocysteine",
+          "serum_B12_limited"
+        ],
+        "candidate_edges": [
+          {
+            "source": "elevated_MMA",
+            "target": "functional_B12_deficiency",
+            "edge_type": "measurement_proxy",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Normal lab range excludes symptom-relevant dysfunction.",
+      "reason": "Normal values may miss personal baseline shifts, functional deficiencies, or dynamic abnormalities such as cortisol rhythm and glycemic variability.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "biomarker_context_required",
+      "domain": "measurement",
+      "definition": "Biomarker values require timing/context/repeat measures/confounder checks.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "normal_lab_does_not_exclude_symptoms",
+      "domain": "measurement",
+      "definition": "Normal common labs do not rule out fatigue/brain fog/mood symptoms.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "personal_lab_baseline",
+      "domain": "measurement",
+      "definition": "Within-person reference pattern for lab interpretation.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "elevated_CRP_ferritin_context_high",
+      "source": "elevated_CRP",
+      "target": "ferritin_inflammation_confounded",
+      "edge_type": "context_dependent",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "No single lab biomarker reliably infers individual fatigue/mood/cognition.",
+      "Ferritin requires inflammation context.",
+      "Serum B12 alone is insufficient for functional deficiency inference."
+    ],
+    "highest_value_patterns_for_inference": [
+      "repeat measurement and personal baseline are core",
+      "normal labs do not close symptom branches"
+    ],
+    "patterns_requiring_caution": [
+      "CRP/IL6/TNF individual inference",
+      "morning cortisol without rhythm",
+      "HbA1c for acute glycemic variability"
+    ],
+    "recommended_next_queries": [
+      "Multi-marker panels predicting fatigue phenotypes within person"
+    ],
+    "overall_assessment": "Critical guardrail layer: lab markers are context-dependent proxies, not deterministic symptom explanations."
+  }
+}

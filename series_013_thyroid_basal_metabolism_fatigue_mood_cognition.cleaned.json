@@ -1,0 +1,178 @@
+{
+  "research_series": {
+    "series_id": "series_013_thyroid_basal_metabolism_fatigue_mood_cognition",
+    "series_name": "Thyroid Function, Basal Metabolism, Thermoregulation, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "graph_ready_summary": {
+    "overall_assessment": "Overt thyroid dysfunction is a strong graph branch for fatigue, mood, thermoregulation, heart rate/autonomic changes, and cognitive slowing. Subclinical TSH-only abnormalities should be treated cautiously; autoimmune thyroiditis/antibody positivity is a separate immune-psychiatric risk branch.",
+    "recommended_action": "add_nodes_and_edges_with_guardrails",
+    "risk_of_overinterpretation": "moderate"
+  },
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "overt_hypothyroid_state",
+      "domain": "biochemical/endocrine",
+      "definition": "Biochemically overt thyroid hormone deficiency, usually elevated TSH with low free T4 in primary hypothyroidism.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "overt_hyperthyroid_state",
+      "domain": "biochemical/endocrine",
+      "definition": "Biochemically overt thyroid hormone excess, typically suppressed TSH with elevated free T4 and/or free T3.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "subclinical_hypothyroid_state",
+      "domain": "biochemical/endocrine",
+      "definition": "Elevated TSH with normal free T4/free T3; effects on cognition/fatigue are inconsistent and context-dependent.",
+      "evidence_strength": "low_to_moderate"
+    },
+    {
+      "node_id": "autoimmune_thyroiditis",
+      "domain": "biochemical/immune",
+      "definition": "Autoimmune thyroid disease such as Hashimoto's thyroiditis, often indicated by TPOAb/TgAb positivity; psychiatric associations may occur independent of hormone levels.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "positive_TPO_antibodies",
+      "domain": "biochemical/immune",
+      "definition": "Thyroid peroxidase antibody positivity, indicating thyroid autoimmunity.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_basal_metabolic_rate",
+      "domain": "physiological/metabolic",
+      "definition": "Reduced resting energy expenditure, potentially downstream of hypothyroid physiology.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "cold_intolerance",
+      "domain": "physiological/thermoregulatory",
+      "definition": "Subjective/physiological intolerance to cold, commonly associated with hypothyroid states.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "tachycardia",
+      "domain": "physiological/cardiovascular",
+      "definition": "Elevated resting heart rate, commonly associated with hyperthyroid states.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "subjective_fatigue",
+      "domain": "neurobehavioral",
+      "definition": "Self-reported fatigue or low energy.",
+      "evidence_strength": "high_for_overt_dysfunction"
+    },
+    {
+      "node_id": "slowed_processing_speed",
+      "domain": "neurobehavioral",
+      "definition": "Reduced speed of cognitive processing on objective or clinical assessment.",
+      "evidence_strength": "moderate_for_overt_hypothyroidism"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "overt_hypothyroid_state_subjective_fatigue_positive_high",
+      "source": "overt_hypothyroid_state",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "overt_hypothyroid_state_depressive_symptoms_positive_high",
+      "source": "overt_hypothyroid_state",
+      "target": "depressive_symptoms",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "overt_hypothyroid_state_slowed_processing_speed_positive_moderate",
+      "source": "overt_hypothyroid_state",
+      "target": "slowed_processing_speed",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "overt_hypothyroid_state_cold_intolerance_positive_high",
+      "source": "overt_hypothyroid_state",
+      "target": "cold_intolerance",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "overt_hyperthyroid_state_anxiety_symptoms_positive_high",
+      "source": "overt_hyperthyroid_state",
+      "target": "anxiety_symptoms",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "overt_hyperthyroid_state_sleep_disturbance_positive_high",
+      "source": "overt_hyperthyroid_state",
+      "target": "sleep_disturbance",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "overt_hyperthyroid_state_tachycardia_positive_high",
+      "source": "overt_hyperthyroid_state",
+      "target": "tachycardia",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "autoimmune_thyroiditis_depression_anxiety_positive_high",
+      "source": "autoimmune_thyroiditis",
+      "target": "depression_anxiety_symptoms",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "subclinical_hypothyroid_state_cognitive_decline_null_high",
+      "source": "subclinical_hypothyroid_state",
+      "target": "cognitive_decline_risk",
+      "edge_type": "no_strong_association",
+      "polarity": "neutral",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "levothyroxine_subclinical_elderly_cognition_no_benefit_high",
+      "source": "levothyroxine_in_subclinical_hypothyroidism_elderly",
+      "target": "cognition_or_fatigue_improvement",
+      "edge_type": "no_clear_benefit",
+      "polarity": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "guardrails": [
+    "Do not use TSH-only borderline abnormalities as a strong explanation for fatigue or brain fog.",
+    "Separate overt hypothyroidism/hyperthyroidism from subclinical thyroid dysfunction.",
+    "Separate autoimmune thyroiditis/antibody positivity from hormone deficiency.",
+    "Do not infer that levothyroxine improves cognition/fatigue in elderly subclinical hypothyroidism; RCT evidence is negative.",
+    "Normal TSH makes common primary overt thyroid dysfunction less likely, but does not fully resolve edge cases such as central hypothyroidism, treatment status, free hormone abnormalities, or autoimmune psychiatric associations.",
+    "Treat within-reference-range FT4/FT3 effects as subtle, nonlinear, and low/moderate confidence."
+  ],
+  "source_verification_queue": [
+    "Bernardes et al. 2024",
+    "Nicola et al. 2021",
+    "Lekurwale et al. 2023",
+    "Van Vliet et al. 2021",
+    "Sinha et al. 2024",
+    "Akintola et al. 2015",
+    "Rieben et al. 2016",
+    "Siegmann et al. 2018",
+    "Soheili-Nezhad et al. 2022",
+    "Parle et al. 2010",
+    "Samuels et al. 2007"
+  ]
+}

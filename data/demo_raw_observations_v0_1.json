@@ -1,0 +1,48 @@
+[
+  {
+    "observation_id": "raw_demo_001",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "signal_type": "sleep_duration",
+    "value": 4.5,
+    "unit": "hours",
+    "source": "wearable",
+    "quality_score": 0.9,
+    "context": {
+      "sleep_fragmentation": "unknown"
+    },
+    "notes": "Short sleep duration relative to baseline."
+  },
+  {
+    "observation_id": "raw_demo_002",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "signal_type": "hrv_rmssd",
+    "value": 28,
+    "unit": "ms",
+    "source": "wearable",
+    "quality_score": 0.75,
+    "context": {
+      "recording_duration": "unknown",
+      "recent_exercise": false,
+      "illness_symptoms": false
+    },
+    "notes": "HRV below personal baseline."
+  },
+  {
+    "observation_id": "raw_demo_003",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "signal_type": "eda",
+    "value": 2.3,
+    "unit": "microsiemens",
+    "source": "wearable",
+    "quality_score": 0.7,
+    "context": {
+      "skin_contact_quality": "unknown",
+      "recent_movement": "unknown",
+      "ambient_temperature": "unknown"
+    },
+    "notes": "EDA above personal baseline."
+  }
+]

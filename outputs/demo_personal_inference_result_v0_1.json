@@ -1,0 +1,721 @@
+{
+  "inference_id": "demo_personal_inference_v0_1",
+  "graph_id": "thsi_static_scientific_evidence_graph_v0_1",
+  "subject_id": "demo_subject_001",
+  "created_at": "2026-06-08T19:46:40.722222+00:00",
+  "input_observations": [
+    {
+      "observation_id": "derived_raw_demo_001",
+      "subject_id": "demo_subject_001",
+      "timestamp": "2026-06-08T10:00:00Z",
+      "observed_node": "sleep_loss",
+      "value": true,
+      "value_type": "derived_marker",
+      "unit": null,
+      "source": "wearable",
+      "quality_score": 0.9,
+      "context": {
+        "sleep_fragmentation": "unknown",
+        "observed_value": 4.5,
+        "baseline_median": 7.4,
+        "hours_below_median": 2.9,
+        "deviation_strength": "strong",
+        "context_only": false
+      },
+      "notes": "Derived from raw observation(s) raw_demo_001 via sleep_duration 4.5h is 2.9h below baseline median 7.4h (>= 1.5h threshold) -> sleep_loss. Short sleep duration relative to baseline."
+    },
+    {
+      "observation_id": "derived_raw_demo_002",
+      "subject_id": "demo_subject_001",
+      "timestamp": "2026-06-08T10:00:00Z",
+      "observed_node": "reduced_hrv_relative_to_baseline",
+      "value": true,
+      "value_type": "derived_marker",
+      "unit": null,
+      "source": "wearable",
+      "quality_score": 0.75,
+      "context": {
+        "recording_duration": "unknown",
+        "recent_exercise": false,
+        "illness_symptoms": false,
+        "observed_value": 28.0,
+        "baseline_median": 48.0,
+        "below_median_ms": 20.0,
+        "deviation_strength": "strong",
+        "context_only": false
+      },
+      "notes": "Derived from raw observation(s) raw_demo_002 via hrv_rmssd 28.0ms is below baseline median 48.0ms by 20.0ms (>= 1 std or >= 25%) -> reduced_hrv_relative_to_baseline. HRV below personal baseline."
+    },
+    {
+      "observation_id": "derived_raw_demo_003",
+      "subject_id": "demo_subject_001",
+      "timestamp": "2026-06-08T10:00:00Z",
+      "observed_node": "increased_eda",
+      "value": true,
+      "value_type": "derived_marker",
+      "unit": null,
+      "source": "wearable",
+      "quality_score": 0.525,
+      "context": {
+        "skin_contact_quality": "unknown",
+        "recent_movement": "unknown",
+        "ambient_temperature": "unknown",
+        "observed_value": 2.3,
+        "baseline_median": 1.2,
+        "above_median": 1.1,
+        "deviation_strength": "strong",
+        "context_only": false
+      },
+      "notes": "Derived from raw observation(s) raw_demo_003 via eda 2.3 is above baseline median 1.2 by 1.10 (>= 1 std or >= 30%) -> increased_eda. EDA above personal baseline."
+    }
+  ],
+  "matched_observed_nodes": [
+    "increased_eda",
+    "reduced_hrv_relative_to_baseline",
+    "sleep_loss"
+  ],
+  "reachable_summary": {
+    "physiological_mechanisms": [
+      "acute_arousal_state",
+      "autonomic_regulation_shift",
+      "recovery_deficit",
+      "sympathetic_arousal"
+    ],
+    "biochemical_markers": [],
+    "neurobiological_affective_bridge_nodes": [
+      "emotion_regulation_impairment",
+      "reduced_positive_affect"
+    ],
+    "risk_states": [],
+    "psychological_state_hypotheses": [
+      "anxiety_like_arousal_state",
+      "fatigue_like_state"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesis_node": "fatigue_like_state",
+      "label": "Fatigue Like State",
+      "hypothesis_score": 0.45116573415005373,
+      "interpretation": "Observed `reduced_hrv_relative_to_baseline` (among other inputs) supports literature-backed pathways that may be compatible with a cautious 'Fatigue Like State' hypothesis (preliminary score 0.45). Primary supporting path: reduced_hrv_relative_to_baseline \u2192 autonomic_regulation_shift \u2192 recovery_deficit \u2192 fatigue_like_state. This reflects evidence-linked mechanism traversal, not a clinical conclusion; context is required and alternative explanations remain possible.",
+      "supporting_paths": [
+        {
+          "path_score": 0.45116573415005373,
+          "node_sequence": [
+            "reduced_hrv_relative_to_baseline",
+            "autonomic_regulation_shift",
+            "recovery_deficit",
+            "fatigue_like_state"
+          ],
+          "edge_sequence": [
+            "hrv_reduced_to_autonomic_regulation_shift",
+            "autonomic_regulation_shift_to_recovery_deficit",
+            "recovery_deficit_to_fatigue_like_state"
+          ],
+          "source_ids": [
+            "mcewen_2007_stress_adaptation_brain",
+            "palmer_2024_sleep_loss_emotion_meta_analysis",
+            "shaffer_ginsberg_2017_hrv_metrics_norms",
+            "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses"
+          ],
+          "relationship_types": [
+            "SUPPORTS",
+            "MAY_INDICATE",
+            "SUPPORTS"
+          ],
+          "limitations": [
+            "Not emotion-specific",
+            "Affected by respiration, age, fitness, illness, medication, and device quality",
+            "Requires baseline-sensitive interpretation",
+            "Mechanistic bridge edge",
+            "Needs co-markers",
+            "Not specific to psychological fatigue",
+            "Fatigue has many causes",
+            "Needs medical/medication/illness context",
+            "Not equivalent to chronic fatigue diagnosis"
+          ],
+          "context_requirements": [
+            "Personal baseline",
+            "Recording duration",
+            "Respiration/activity context",
+            "Medication/illness screening",
+            "Sleep metrics",
+            "Activity load",
+            "Subjective fatigue/energy",
+            "Illness screening",
+            "Low energy report",
+            "Sleep loss or fragmentation",
+            "Reduced activity or autonomic recovery markers",
+            "Illness and medication context"
+          ],
+          "risk_of_overinterpretation": "medium",
+          "score_components": [
+            {
+              "edge_id": "hrv_reduced_to_autonomic_regulation_shift",
+              "confidence_prior": 0.78,
+              "evidence_strength_score": 4,
+              "evidence_strength_modifier": 0.85,
+              "risk_of_overinterpretation": "medium",
+              "risk_penalty": 0.85,
+              "quality_score_applied": 0.75,
+              "edge_score": 0.4226625
+            },
+            {
+              "edge_id": "autonomic_regulation_shift_to_recovery_deficit",
+              "confidence_prior": 0.58,
+              "evidence_strength_score": 4,
+              "evidence_strength_modifier": 0.85,
+              "risk_of_overinterpretation": "medium",
+              "risk_penalty": 0.85,
+              "quality_score_applied": null,
+              "edge_score": 0.4190499999999999
+            },
+            {
+              "edge_id": "recovery_deficit_to_fatigue_like_state",
+              "confidence_prior": 0.61,
+              "evidence_strength_score": 5,
+              "evidence_strength_modifier": 1.0,
+              "risk_of_overinterpretation": "medium",
+              "risk_penalty": 0.85,
+              "quality_score_applied": null,
+              "edge_score": 0.5185
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Not emotion-specific",
+        "Affected by respiration, age, fitness, illness, medication, and device quality",
+        "Requires baseline-sensitive interpretation",
+        "Mechanistic bridge edge",
+        "Needs co-markers",
+        "Not specific to psychological fatigue",
+        "Fatigue has many causes",
+        "Needs medical/medication/illness context",
+        "Not equivalent to chronic fatigue diagnosis"
+      ],
+      "not_diagnostic_warning": true
+    },
+    {
+      "hypothesis_node": "anxiety_like_arousal_state",
+      "label": "Anxiety Like Arousal State",
+      "hypothesis_score": 0.4469843957007895,
+      "interpretation": "Observed `sleep_loss` (among other inputs) supports literature-backed pathways that may be compatible with a cautious 'Anxiety Like Arousal State' hypothesis (preliminary score 0.45). Primary supporting path: sleep_loss \u2192 emotion_regulation_impairment \u2192 anxiety_like_arousal_state. This reflects evidence-linked mechanism traversal, not a clinical conclusion; context is required and alternative explanations remain possible.",
+      "supporting_paths": [
+        {
+          "path_score": 0.4469843957007895,
+          "node_sequence": [
+            "sleep_loss",
+            "emotion_regulation_impairment",
+            "anxiety_like_arousal_state"
+          ],
+          "edge_sequence": [
+            "sleep_loss_to_emotion_regulation_impairment",
+            "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual"
+          ],
+          "source_ids": [
+            "palmer_2024_sleep_loss_emotion_meta_analysis",
+            "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+            "vandekerckhove_wang_2017_emotion_regulation_sleep"
+          ],
+          "relationship_types": [
+            "INCREASES_PROBABILITY_OF",
+            "WEAKLY_SUPPORTS"
+          ],
+          "limitations": [
+            "Does not identify a specific emotion or diagnosis",
+            "Effects vary by sleep-loss type and individual vulnerability",
+            "Bidirectional sleep-emotion effects are possible",
+            "Bridge to psychological hypothesis",
+            "Not diagnostic",
+            "Many alternative explanations"
+          ],
+          "context_requirements": [
+            "Sleep duration/quality metrics",
+            "Previous-night and multi-night context",
+            "Subjective energy/mood",
+            "Illness/pain/medication screening",
+            "Physiological arousal",
+            "Subjective anxiety/stress or threat context",
+            "Sleep history",
+            "Alternative-explanation screening"
+          ],
+          "risk_of_overinterpretation": "high",
+          "score_components": [
+            {
+              "edge_id": "sleep_loss_to_emotion_regulation_impairment",
+              "confidence_prior": 0.82,
+              "evidence_strength_score": 5,
+              "evidence_strength_modifier": 1.0,
+              "risk_of_overinterpretation": "medium",
+              "risk_penalty": 0.85,
+              "quality_score_applied": 0.9,
+              "edge_score": 0.6273
+            },
+            {
+              "edge_id": "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual",
+              "confidence_prior": 0.49,
+              "evidence_strength_score": 5,
+              "evidence_strength_modifier": 1.0,
+              "risk_of_overinterpretation": "high",
+              "risk_penalty": 0.65,
+              "quality_score_applied": null,
+              "edge_score": 0.3185
+            }
+          ]
+        }
+      ],
+      "limitations": [
+        "Does not identify a specific emotion or diagnosis",
+        "Effects vary by sleep-loss type and individual vulnerability",
+        "Bidirectional sleep-emotion effects are possible",
+        "Bridge to psychological hypothesis",
+        "Not diagnostic",
+        "Many alternative explanations"
+      ],
+      "not_diagnostic_warning": true
+    }
+  ],
+  "all_evidence_paths": [
+    {
+      "path_score": 0.6273,
+      "observation_id": "derived_raw_demo_001",
+      "node_sequence": [
+        "sleep_loss",
+        "emotion_regulation_impairment"
+      ],
+      "edge_sequence": [
+        "sleep_loss_to_emotion_regulation_impairment"
+      ],
+      "source_ids": [
+        "palmer_2024_sleep_loss_emotion_meta_analysis",
+        "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+        "vandekerckhove_wang_2017_emotion_regulation_sleep"
+      ],
+      "relationship_types": [
+        "INCREASES_PROBABILITY_OF"
+      ],
+      "limitations": [
+        "Does not identify a specific emotion or diagnosis",
+        "Effects vary by sleep-loss type and individual vulnerability",
+        "Bidirectional sleep-emotion effects are possible"
+      ],
+      "context_requirements": [
+        "Sleep duration/quality metrics",
+        "Previous-night and multi-night context",
+        "Subjective energy/mood",
+        "Illness/pain/medication screening"
+      ],
+      "risk_of_overinterpretation": "medium",
+      "score_components": [
+        {
+          "edge_id": "sleep_loss_to_emotion_regulation_impairment",
+          "confidence_prior": 0.82,
+          "evidence_strength_score": 5,
+          "evidence_strength_modifier": 1.0,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.9,
+          "edge_score": 0.6273
+        }
+      ]
+    },
+    {
+      "path_score": 0.5967,
+      "observation_id": "derived_raw_demo_001",
+      "node_sequence": [
+        "sleep_loss",
+        "reduced_positive_affect"
+      ],
+      "edge_sequence": [
+        "sleep_loss_to_reduced_positive_affect"
+      ],
+      "source_ids": [
+        "palmer_2024_sleep_loss_emotion_meta_analysis",
+        "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses"
+      ],
+      "relationship_types": [
+        "INCREASES_PROBABILITY_OF"
+      ],
+      "limitations": [
+        "Not specific to depression",
+        "Can be mediated by fatigue, illness, pain, or medication",
+        "Requires within-person comparison"
+      ],
+      "context_requirements": [
+        "Subjective energy",
+        "Sleep duration and fragmentation",
+        "Recent illness/pain",
+        "Baseline affect"
+      ],
+      "risk_of_overinterpretation": "medium",
+      "score_components": [
+        {
+          "edge_id": "sleep_loss_to_reduced_positive_affect",
+          "confidence_prior": 0.78,
+          "evidence_strength_score": 5,
+          "evidence_strength_modifier": 1.0,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.9,
+          "edge_score": 0.5967
+        }
+      ]
+    },
+    {
+      "path_score": 0.45116573415005373,
+      "observation_id": "derived_raw_demo_002",
+      "node_sequence": [
+        "reduced_hrv_relative_to_baseline",
+        "autonomic_regulation_shift",
+        "recovery_deficit",
+        "fatigue_like_state"
+      ],
+      "edge_sequence": [
+        "hrv_reduced_to_autonomic_regulation_shift",
+        "autonomic_regulation_shift_to_recovery_deficit",
+        "recovery_deficit_to_fatigue_like_state"
+      ],
+      "source_ids": [
+        "mcewen_2007_stress_adaptation_brain",
+        "palmer_2024_sleep_loss_emotion_meta_analysis",
+        "shaffer_ginsberg_2017_hrv_metrics_norms",
+        "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses"
+      ],
+      "relationship_types": [
+        "SUPPORTS",
+        "MAY_INDICATE",
+        "SUPPORTS"
+      ],
+      "limitations": [
+        "Not emotion-specific",
+        "Affected by respiration, age, fitness, illness, medication, and device quality",
+        "Requires baseline-sensitive interpretation",
+        "Mechanistic bridge edge",
+        "Needs co-markers",
+        "Not specific to psychological fatigue",
+        "Fatigue has many causes",
+        "Needs medical/medication/illness context",
+        "Not equivalent to chronic fatigue diagnosis"
+      ],
+      "context_requirements": [
+        "Personal baseline",
+        "Recording duration",
+        "Respiration/activity context",
+        "Medication/illness screening",
+        "Sleep metrics",
+        "Activity load",
+        "Subjective fatigue/energy",
+        "Illness screening",
+        "Low energy report",
+        "Sleep loss or fragmentation",
+        "Reduced activity or autonomic recovery markers",
+        "Illness and medication context"
+      ],
+      "risk_of_overinterpretation": "medium",
+      "score_components": [
+        {
+          "edge_id": "hrv_reduced_to_autonomic_regulation_shift",
+          "confidence_prior": 0.78,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.75,
+          "edge_score": 0.4226625
+        },
+        {
+          "edge_id": "autonomic_regulation_shift_to_recovery_deficit",
+          "confidence_prior": 0.58,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": null,
+          "edge_score": 0.4190499999999999
+        },
+        {
+          "edge_id": "recovery_deficit_to_fatigue_like_state",
+          "confidence_prior": 0.61,
+          "evidence_strength_score": 5,
+          "evidence_strength_modifier": 1.0,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": null,
+          "edge_score": 0.5185
+        }
+      ]
+    },
+    {
+      "path_score": 0.4469843957007895,
+      "observation_id": "derived_raw_demo_001",
+      "node_sequence": [
+        "sleep_loss",
+        "emotion_regulation_impairment",
+        "anxiety_like_arousal_state"
+      ],
+      "edge_sequence": [
+        "sleep_loss_to_emotion_regulation_impairment",
+        "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual"
+      ],
+      "source_ids": [
+        "palmer_2024_sleep_loss_emotion_meta_analysis",
+        "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+        "vandekerckhove_wang_2017_emotion_regulation_sleep"
+      ],
+      "relationship_types": [
+        "INCREASES_PROBABILITY_OF",
+        "WEAKLY_SUPPORTS"
+      ],
+      "limitations": [
+        "Does not identify a specific emotion or diagnosis",
+        "Effects vary by sleep-loss type and individual vulnerability",
+        "Bidirectional sleep-emotion effects are possible",
+        "Bridge to psychological hypothesis",
+        "Not diagnostic",
+        "Many alternative explanations"
+      ],
+      "context_requirements": [
+        "Sleep duration/quality metrics",
+        "Previous-night and multi-night context",
+        "Subjective energy/mood",
+        "Illness/pain/medication screening",
+        "Physiological arousal",
+        "Subjective anxiety/stress or threat context",
+        "Sleep history",
+        "Alternative-explanation screening"
+      ],
+      "risk_of_overinterpretation": "high",
+      "score_components": [
+        {
+          "edge_id": "sleep_loss_to_emotion_regulation_impairment",
+          "confidence_prior": 0.82,
+          "evidence_strength_score": 5,
+          "evidence_strength_modifier": 1.0,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.9,
+          "edge_score": 0.6273
+        },
+        {
+          "edge_id": "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual",
+          "confidence_prior": 0.49,
+          "evidence_strength_score": 5,
+          "evidence_strength_modifier": 1.0,
+          "risk_of_overinterpretation": "high",
+          "risk_penalty": 0.65,
+          "quality_score_applied": null,
+          "edge_score": 0.3185
+        }
+      ]
+    },
+    {
+      "path_score": 0.4226625,
+      "observation_id": "derived_raw_demo_002",
+      "node_sequence": [
+        "reduced_hrv_relative_to_baseline",
+        "autonomic_regulation_shift"
+      ],
+      "edge_sequence": [
+        "hrv_reduced_to_autonomic_regulation_shift"
+      ],
+      "source_ids": [
+        "shaffer_ginsberg_2017_hrv_metrics_norms"
+      ],
+      "relationship_types": [
+        "SUPPORTS"
+      ],
+      "limitations": [
+        "Not emotion-specific",
+        "Affected by respiration, age, fitness, illness, medication, and device quality",
+        "Requires baseline-sensitive interpretation"
+      ],
+      "context_requirements": [
+        "Personal baseline",
+        "Recording duration",
+        "Respiration/activity context",
+        "Medication/illness screening"
+      ],
+      "risk_of_overinterpretation": "medium",
+      "score_components": [
+        {
+          "edge_id": "hrv_reduced_to_autonomic_regulation_shift",
+          "confidence_prior": 0.78,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.75,
+          "edge_score": 0.4226625
+        }
+      ]
+    },
+    {
+      "path_score": 0.42085237390918917,
+      "observation_id": "derived_raw_demo_002",
+      "node_sequence": [
+        "reduced_hrv_relative_to_baseline",
+        "autonomic_regulation_shift",
+        "recovery_deficit"
+      ],
+      "edge_sequence": [
+        "hrv_reduced_to_autonomic_regulation_shift",
+        "autonomic_regulation_shift_to_recovery_deficit"
+      ],
+      "source_ids": [
+        "mcewen_2007_stress_adaptation_brain",
+        "shaffer_ginsberg_2017_hrv_metrics_norms"
+      ],
+      "relationship_types": [
+        "SUPPORTS",
+        "MAY_INDICATE"
+      ],
+      "limitations": [
+        "Not emotion-specific",
+        "Affected by respiration, age, fitness, illness, medication, and device quality",
+        "Requires baseline-sensitive interpretation",
+        "Mechanistic bridge edge",
+        "Needs co-markers",
+        "Not specific to psychological fatigue"
+      ],
+      "context_requirements": [
+        "Personal baseline",
+        "Recording duration",
+        "Respiration/activity context",
+        "Medication/illness screening",
+        "Sleep metrics",
+        "Activity load",
+        "Subjective fatigue/energy",
+        "Illness screening"
+      ],
+      "risk_of_overinterpretation": "medium",
+      "score_components": [
+        {
+          "edge_id": "hrv_reduced_to_autonomic_regulation_shift",
+          "confidence_prior": 0.78,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": 0.75,
+          "edge_score": 0.4226625
+        },
+        {
+          "edge_id": "autonomic_regulation_shift_to_recovery_deficit",
+          "confidence_prior": 0.58,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "medium",
+          "risk_penalty": 0.85,
+          "quality_score_applied": null,
+          "edge_score": 0.4190499999999999
+        }
+      ]
+    },
+    {
+      "path_score": 0.27976911027220286,
+      "observation_id": "derived_raw_demo_003",
+      "node_sequence": [
+        "increased_eda",
+        "sympathetic_arousal",
+        "acute_arousal_state"
+      ],
+      "edge_sequence": [
+        "increased_eda_to_sympathetic_arousal",
+        "sympathetic_arousal_to_acute_arousal_state"
+      ],
+      "source_ids": [
+        "allen_2017_tsst_principles_practice",
+        "sosa_2026_beyond_eda_multimodal_sns_arousal"
+      ],
+      "relationship_types": [
+        "SUPPORTS",
+        "SUPPORTS"
+      ],
+      "limitations": [
+        "EDA is not emotion-specific",
+        "Sensitive to temperature, movement, skin contact, sweat gland physiology, and cognitive load",
+        "Arousal can reflect stress, cognitive load, excitement, pain, heat, or movement",
+        "Needs context disambiguation"
+      ],
+      "context_requirements": [
+        "Motion/contact quality",
+        "Temperature context",
+        "Activity context",
+        "Co-markers such as HRV/PPG/skin temperature",
+        "Activity/temperature context",
+        "Task context",
+        "Co-markers",
+        "Subjective label if available"
+      ],
+      "risk_of_overinterpretation": "high",
+      "score_components": [
+        {
+          "edge_id": "increased_eda_to_sympathetic_arousal",
+          "confidence_prior": 0.74,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "high",
+          "risk_penalty": 0.65,
+          "quality_score_applied": 0.525,
+          "edge_score": 0.21464625
+        },
+        {
+          "edge_id": "sympathetic_arousal_to_acute_arousal_state",
+          "confidence_prior": 0.66,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "high",
+          "risk_penalty": 0.65,
+          "quality_score_applied": null,
+          "edge_score": 0.36465000000000003
+        }
+      ]
+    },
+    {
+      "path_score": 0.21464625,
+      "observation_id": "derived_raw_demo_003",
+      "node_sequence": [
+        "increased_eda",
+        "sympathetic_arousal"
+      ],
+      "edge_sequence": [
+        "increased_eda_to_sympathetic_arousal"
+      ],
+      "source_ids": [
+        "sosa_2026_beyond_eda_multimodal_sns_arousal"
+      ],
+      "relationship_types": [
+        "SUPPORTS"
+      ],
+      "limitations": [
+        "EDA is not emotion-specific",
+        "Sensitive to temperature, movement, skin contact, sweat gland physiology, and cognitive load"
+      ],
+      "context_requirements": [
+        "Motion/contact quality",
+        "Temperature context",
+        "Activity context",
+        "Co-markers such as HRV/PPG/skin temperature"
+      ],
+      "risk_of_overinterpretation": "high",
+      "score_components": [
+        {
+          "edge_id": "increased_eda_to_sympathetic_arousal",
+          "confidence_prior": 0.74,
+          "evidence_strength_score": 4,
+          "evidence_strength_modifier": 0.85,
+          "risk_of_overinterpretation": "high",
+          "risk_penalty": 0.65,
+          "quality_score_applied": 0.525,
+          "edge_score": 0.21464625
+        }
+      ]
+    }
+  ],
+  "warnings": [
+    "This output is not a medical diagnosis.",
+    "All psychological outputs are cautious state hypotheses.",
+    "Interpretation requires context and may change with additional observations."
+  ]
+}

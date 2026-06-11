@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/static_edge.schema.json",
+  "title": "THSI Static Scientific Edge",
+  "description": "Schema for a directed evidence edge in the THSI Static Scientific Evidence Graph. Every edge must trace to at least one source_id. Direct diagnostic inference (marker → psychological diagnosis) is forbidden.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "edge_id",
+    "source_node",
+    "target_node",
+    "relationship_type",
+    "evidence_strength_score",
+    "source_ids",
+    "domain",
+    "risk_of_overinterpretation"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique slug identifier for this edge."
+    },
+    "source_node": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Origin node (observable, biomarker, or mechanism)."
+    },
+    "target_node": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Target node (mechanism or intermediate construct; not a clinical diagnosis)."
+    },
+    "relationship_type": {
+      "type": "string",
+      "enum": [
+        "SUPPORTS",
+        "WEAKLY_SUPPORTS",
+        "MAY_INDICATE",
+        "INCREASES_PROBABILITY_OF",
+        "DECREASES_PROBABILITY_OF",
+        "MODULATES",
+        "CONTRADICTS",
+        "REQUIRES_CONTEXT",
+        "EXPLAINED_BY",
+        "SUPPORTED_BY_SOURCE"
+      ]
+    },
+    "evidence_strength_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "confidence_prior": {
+      "type": "string",
+      "description": "Optional prior confidence label or numeric string for THSI weighting."
+    },
+    "source_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9_]+$"
+      },
+      "description": "One or more source_id values from the evidence registry."
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "HRV_autonomic_regulation",
+        "EDA_sympathetic_arousal",
+        "sleep_emotion_regulation",
+        "sleep_mood",
+        "sleep_cortisol",
+        "HPA_axis_cortisol",
+        "acute_psychosocial_stress",
+        "TSST",
+        "allostasis",
+        "allostatic_load_measurement",
+        "wearable_stress_detection"
+      ]
+    },
+    "methodology_basis": {
+      "type": "string"
+    },
+    "main_finding_summary": {
+      "type": "string"
+    },
+    "limitations": {
+      "type": "string"
+    },
+    "context_requirements": {
+      "type": "string",
+      "description": "Conditions under which this edge applies (population, timing, baseline, etc.)."
+    },
+    "forbidden_direct_inference": {
+      "type": "string",
+      "description": "Explicit note of what must NOT be inferred from this edge alone."
+    },
+    "risk_of_overinterpretation": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    }
+  },
+  "examples": [
+    {
+      "edge_id": "reduced_hrv_to_autonomic_regulation_shift",
+      "source_node": "reduced_hrv_relative_to_baseline",
+      "target_node": "autonomic_regulation_shift",
+      "relationship_type": "SUPPORTS",
+      "evidence_strength_score": 4,
+      "confidence_prior": "moderate",
+      "source_ids": ["an_overview_of_heart_rate_variability"],
+      "domain": "HRV_autonomic_regulation",
+      "methodology_basis": "HRV metrics vs autonomic balance literature",
+      "main_finding_summary": "Reduced HRV relative to baseline may reflect autonomic regulation shift.",
+      "limitations": "Context-dependent; not diagnostic.",
+      "context_requirements": "Requires baseline comparison and artifact control.",
+      "forbidden_direct_inference": "Must not infer depression_diagnosis or anxiety_diagnosis.",
+      "risk_of_overinterpretation": "medium"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "research_series": {
+    "series_id": "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference",
+    "series_name": "GI-Fatigue-Mood-Brain Fog Clusters,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_046_pattern_001",
+      "pattern_name": "GI disorders form multidimensional fatigue-mood-sleep-cognition clusters",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "GI_symptom_cluster",
+        "direction": "persistent/episodic/postprandial",
+        "measurement_methods": [
+          "GI symptom scores",
+          "Bristol stool scale",
+          "calprotectin",
+          "CRP",
+          "microbiome/metabolomics",
+          "nutrient labs"
+        ],
+        "contexts": [
+          "IBS",
+          "IBD",
+          "celiac",
+          "SIBO",
+          "functional GI disorders"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "GI_fatigue_mood_brain_fog_cluster",
+        "category": "GI_marker",
+        "direction": "increased",
+        "pathway": "GI symptom burden/inflammation/microbiome/gut-brain axis/nutrient deficiency/sleep disruption",
+        "mechanism": "clustered symptoms predict disability better than stool subtype alone"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_sleep_brain_fog_functional_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "mood scales",
+          "sleep scales",
+          "cognitive complaints",
+          "QoL"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "mood",
+          "sleep",
+          "cognition",
+          "function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "GI-fatigue-mood clusters are real, but do not infer dysbiosis or inflammation without biomarkers; use GI phenotype plus mechanism-specific measurements.",
+        "hypotheses": [
+          {
+            "target": "GI_cluster_uncertain",
+            "domain": "GI_cluster_phenotyping",
+            "direction": "requires_split",
+            "confidence": "high",
+            "reason": "IBS/IBD clusters consistently include fatigue,mood,sleep,cognition and disability."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "postprandial_to_chronic",
+        "latency": "postprandial/delayed/cumulative/relapsing",
+        "reversibility": "diet_or_treatment_responsive"
+      },
+      "modulators_confounders": [
+        "diet",
+        "medications",
+        "antibiotics",
+        "stress",
+        "sleep",
+        "cycle phase",
+        "inflammation",
+        "BMI"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Distinct GI-neurobehavioral symptom clusters exist in IBS/IBD; microbiome/metabolomic associations are promising but causality remains unclear.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Full phenotype→mechanism→outcome chains are rare",
+        "Microbiome causality unresolved"
+      ],
+      "alternative_explanations": [
+        "psychological factors",
+        "sleep disruption",
+        "nutrient deficiency",
+        "inflammation",
+        "pain"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "GI_cluster_uncertain",
+          "IBS_fatigue_mood_cluster",
+          "IBD_inflammation_fatigue_cluster",
+          "celiac_brain_fog_cluster",
+          "malabsorption_nutrient_deficiency_cluster",
+          "postprandial_GI_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "high_GI_symptom_burden",
+            "target": "fatigue_mood_sleep_cognition_cluster",
+            "edge_type": "phenotype_marker",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "GI symptoms imply microbiome dysbiosis",
+      "reason": "GI symptom burden and microbiome composition are distinct; causality remains unclear.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "GI_cluster_uncertain",
+      "domain": "physiological",
+      "definition": "Nonspecific GI-neurobehavioral cluster requiring differentiation into IBS,IBD,celiac,malabsorption,constipation,diarrhea,reflux,SIBO or biomarker-supported microbiome/inflammatory branches.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "high_GI_symptom_burden_to_fatigue_mood_sleep_cognition_cluster",
+      "source": "high_GI_symptom_burden",
+      "target": "fatigue_mood_sleep_cognition_cluster",
+      "edge_type": "phenotype_marker",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Longitudinal multiomics causal studies",
+    "Full phenotype→mechanism→outcome timing chains"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "IBS/IBD clusters include fatigue,mood,sleep,cognition",
+      "Fatigue is a core disability node"
+    ],
+    "highest_value_patterns_for_inference": [
+      "GI phenotype split plus biomarker-supported branch selection"
+    ],
+    "patterns_requiring_caution": [
+      "Dysbiosis inference without stool/metabolomic data"
+    ],
+    "recommended_next_queries": [],
+    "overall_assessment": "Strong GI cluster differential layer; microbiome causality remains cautious."
+  },
+  "works_cited": []
+}

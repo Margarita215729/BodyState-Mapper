@@ -1,0 +1,224 @@
+{
+  "research_series": {
+    "series_id": "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference",
+    "series_name": "Headache/Migraine-Brain Fog-Dizziness-Fatigue Clusters,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_047_pattern_001",
+      "pattern_name": "Migraine phase-dependent neurobehavioral cluster",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "migraine_phase",
+        "direction": "prodrome|attack|postdrome|interictal",
+        "measurement_methods": [
+          "headache diary",
+          "prospective diary",
+          "clinical interview",
+          "neuropsychological testing"
+        ],
+        "contexts": [
+          "migraine",
+          "chronic migraine",
+          "episodic migraine"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "phase_dependent_sensory_pain_sleep_cognitive_state",
+        "category": "headache_marker",
+        "direction": "phase_dependent",
+        "pathway": "migraine cycle alters sensory thresholds, pain networks, sleep and attention networks",
+        "mechanism": "prodrome/postdrome show fatigue and brain fog; attacks show larger objective cognitive impairment and sensory hypersensitivity"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_brain_fog_cognitive_impairment_sensory_sensitivity",
+        "direction": "phase_dependent",
+        "measurement_methods": [
+          "self-report",
+          "diary",
+          "neuropsychological tests",
+          "functional disability scales"
+        ],
+        "affected_functions": [
+          "attention",
+          "processing_speed",
+          "executive_function",
+          "memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Headache/migraine symptoms should be interpreted by phase: prodrome/postdrome often explain fatigue and brain fog, while attacks more strongly impair objective cognition.",
+        "hypotheses": [
+          {
+            "target": "migraine_postdrome_brain_fog",
+            "domain": "headache_cluster_phenotyping",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Prospective diaries and testing show fatigue/brain fog peaks in prodrome/postdrome and cognitive impairment is stronger during attacks."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|same_day|next_day|days",
+        "latency": "prodrome|attack|postdrome",
+        "reversibility": "attack_resolves|partially_reversible"
+      },
+      "modulators_confounders": [
+        "sleep",
+        "stress",
+        "cycle_phase",
+        "medications",
+        "light_noise",
+        "post_concussion",
+        "post_viral_state"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Migraine has multidimensional burden with phase-dependent fatigue, brain fog, sensory sensitivity, sleep disturbance, nausea, dizziness and cognitive impairment. Interictal objective deficits are more variable.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Headache and Migraine Subtypes review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Neurobehavioral symptoms fluctuate by phase; prodrome/postdrome have high fatigue/brain fog/sensory sensitivity; attack cognition worsens.",
+            "population": "migraine/headache populations",
+            "sample_size": "50 included papers",
+            "limitations": "Many studies rely on self-report and confounding remains."
+          }
+        ]
+      },
+      "limitations": [
+        "Medication and lifestyle confounding",
+        "Interictal cognitive findings inconsistent",
+        "Non-migraine headache subtypes understudied"
+      ],
+      "alternative_explanations": [
+        "sleep disturbance",
+        "medication effect",
+        "post-viral fatigue",
+        "post-concussion symptoms"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "headache_cluster_uncertain",
+          "migraine_attack",
+          "migraine_prodrome",
+          "migraine_postdrome",
+          "interictal_migraine_state",
+          "vestibular_migraine",
+          "medication_overuse_headache",
+          "photophobia",
+          "phonophobia",
+          "nausea",
+          "migraine_postdrome_brain_fog",
+          "headache_related_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "migraine_postdrome",
+            "target": "migraine_postdrome_brain_fog",
+            "edge_type": "phase_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "migraine_attack",
+            "target": "impaired_attention",
+            "edge_type": "phase_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "vestibular_migraine",
+            "target": "headache_related_dizziness",
+            "edge_type": "mechanism_cluster",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective brain fog always equals objective impairment in migraine",
+      "reason": "Objective deficits are strongest during attacks/clinic samples and less consistent interictally/community samples.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "migraine_postdrome_brain_fog",
+      "domain": "neurobehavioral",
+      "definition": "Brain fog/concentration difficulty after headache pain resolves or during postdrome.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "headache_cluster_uncertain",
+      "domain": "measurement",
+      "definition": "Initial phenotype node when headache is reported without subtype/phase context.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "migraine_postdrome_to_brain_fog_phase_effect",
+      "source": "migraine_postdrome",
+      "target": "migraine_postdrome_brain_fog",
+      "edge_type": "phase_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need within-person longitudinal multimodal measurement across phases",
+    "Wearable/autonomic monitoring underused",
+    "Medication and lifestyle confounding poorly controlled"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Migraine has broad neurobehavioral symptom burden",
+      "Symptoms fluctuate by migraine phase",
+      "Vestibular migraine combines dizziness with migrainous features"
+    ],
+    "highest_value_patterns_for_inference": [
+      "phase-specific headache branch",
+      "postdrome brain fog/fatigue branch",
+      "vestibular migraine dizziness branch"
+    ],
+    "patterns_requiring_caution": [
+      "interictal cognitive impairment",
+      "tension-type headache non-pain outcomes"
+    ],
+    "recommended_next_queries": [
+      "Final graph guardrails and validation protocol"
+    ],
+    "overall_assessment": "Strong graph-ready phenotype layer; requires phase/subtype context."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Headache and Migraine Subtypes: Neurobehavioral, Cognitive, Sensory, and Sleep Outcomes Across Phenotypes and Phases",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

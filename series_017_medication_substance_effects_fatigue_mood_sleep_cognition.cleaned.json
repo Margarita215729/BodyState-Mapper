@@ -1,0 +1,864 @@
+{
+  "research_series": {
+    "series_id": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition",
+    "series_name": "Medication and Substance Effects on Fatigue,Mood,Sleep,Autonomic State,GI Symptoms,and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_017_pattern_001",
+      "pattern_name": "Caffeine dose/timing impairs sleep but acute caffeine may improve attention under fatigue or sleep restriction",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "caffeine_intake",
+        "direction": "dose_dependent",
+        "measurement_methods": [
+          "dose timing records",
+          "RCT caffeine administration",
+          "self-report"
+        ],
+        "contexts": [
+          "healthy adults",
+          "sleep restriction",
+          "habitual caffeine users"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sleep_latency_total_sleep_time_and_arousal",
+        "category": "sleep_marker",
+        "direction": "increased_sleep_latency_decreased_sleep_duration",
+        "pathway": "adenosine receptor antagonism and increased arousal",
+        "mechanism": "caffeine delays sleep onset and reduces total sleep time; withdrawal can worsen fatigue and cognition"
+      },
+      "neurobehavioral_output": {
+        "variable": "sleep_quality_fatigue_attention",
+        "direction": "mixed",
+        "measurement_methods": [
+          "sleep diaries",
+          "polysomnography/actigraphy where available",
+          "cognitive tasks",
+          "fatigue ratings"
+        ],
+        "affected_functions": [
+          "sleep quality",
+          "fatigue",
+          "attention",
+          "executive function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Caffeine taken later or at higher dose increases likelihood of poorer sleep; acute caffeine can improve attention mainly when fatigue/sleep loss/withdrawal is present.",
+        "hypotheses": [
+          {
+            "target": "sleep_quality",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Meta-analyses/RCTs support dose- and timing-dependent sleep impairment."
+          },
+          {
+            "target": "attention_under_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "moderate",
+            "reason": "Benefits are strongest under fatigue or withdrawal reversal rather than baseline enhancement."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|next_day",
+        "latency": "immediate|delayed|rebound",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "dose",
+        "timing",
+        "habitual use",
+        "sleep debt",
+        "withdrawal state",
+        "individual caffeine sensitivity"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Caffeine robustly impairs sleep quality/duration dose-dependently; acute cognitive benefits are context-dependent and strongest under fatigue or withdrawal reversal.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Coffee, caffeine, and sleep: A systematic review of epidemiological studies and randomized controlled trials",
+            "authors": "Clark & Landolt",
+            "year": 2017,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://doi.org/10.1016/j.smrv.2016.01.006",
+            "relevant_finding": "Caffeine impairs sleep quality/duration dose-dependently.",
+            "population": "mixed human samples",
+            "sample_size": "",
+            "limitations": "Dose/timing/habitual use heterogeneity."
+          },
+          {
+            "title": "The effect of caffeine on subsequent sleep: A systematic review and meta-analysis",
+            "authors": "Gardiner et al.",
+            "year": 2023,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.smrv.2023.101764",
+            "relevant_finding": "Caffeine negatively affects subsequent sleep.",
+            "population": "human participants",
+            "sample_size": "",
+            "limitations": "Variation in doses and timing."
+          }
+        ]
+      },
+      "limitations": [
+        "Cognitive benefits may reflect withdrawal reversal",
+        "Individual sensitivity varies"
+      ],
+      "alternative_explanations": [
+        "Sleep restriction itself",
+        "expectancy effects",
+        "habitual caffeine tolerance"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "caffeine_intake",
+          "caffeine_withdrawal",
+          "sleep_fragmentation",
+          "subjective_fatigue",
+          "impaired_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "caffeine_intake",
+            "target": "sleep_quality",
+            "edge_type": "dose_dependent_effect",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "caffeine_withdrawal",
+            "target": "subjective_fatigue",
+            "edge_type": "withdrawal_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_017_pattern_002",
+      "pattern_name": "Sedative, benzodiazepine, opioid, and anticholinergic exposure increases sedation and cognitive slowing risk, especially in older adults/polypharmacy",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "sedative_opioid_anticholinergic_exposure",
+        "direction": "increased",
+        "measurement_methods": [
+          "prescription records",
+          "medication exposure assessment",
+          "longitudinal cohorts"
+        ],
+        "contexts": [
+          "older adults",
+          "pain patients",
+          "polypharmacy",
+          "sleep/anxiety disorders"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "CNS_depression_and_anticholinergic_burden",
+        "category": "pharmacologic_exposure",
+        "direction": "increased",
+        "pathway": "sedation, anticholinergic effects, opioid receptor effects",
+        "mechanism": "reduced alertness and domain-specific cognitive impairment"
+      },
+      "neurobehavioral_output": {
+        "variable": "sedation_cognitive_slowing_physical_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "cognitive testing",
+          "functional assessments",
+          "sedation/fatigue scales"
+        ],
+        "affected_functions": [
+          "attention",
+          "visuospatial ability",
+          "processing speed",
+          "physical function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Chronic sedative/opioid/anticholinergic burden increases likelihood of sedation and domain-specific cognitive impairment, with higher risk in older adults and polypharmacy.",
+        "hypotheses": [
+          {
+            "target": "cognitive_slowing",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Longitudinal data link chronic CNS medication exposure to cognitive decline; discontinuation may partly reverse effects."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|days|months|chronic",
+        "latency": "immediate|cumulative",
+        "reversibility": "dose_adjustment_responsive|partially_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "polypharmacy",
+        "dose",
+        "duration",
+        "underlying pain/anxiety/insomnia",
+        "renal/hepatic function"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Chronic opioid/sedative exposure is linked to domain-specific cognitive decline and impairment; discontinuation may help, but confounding by indication remains important.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Longitudinal effects of using and discontinuing central nervous system medications on cognitive functioning",
+            "authors": "Koch et al.",
+            "year": 2022,
+            "source_type": "longitudinal_cohort",
+            "doi_or_url": "https://doi.org/10.1002/pds.5569",
+            "relevant_finding": "Using/discontinuing CNS medications affects cognition over time.",
+            "population": "older adults/medication users",
+            "sample_size": "",
+            "limitations": "Confounding by indication."
+          },
+          {
+            "title": "Long-term exposure to anticholinergic and sedative medications and cognitive and physical function in later life",
+            "authors": "Wouters et al.",
+            "year": 2019,
+            "source_type": "longitudinal_cohort",
+            "doi_or_url": "https://doi.org/10.1093/gerona/glz019",
+            "relevant_finding": "Long-term anticholinergic/sedative burden linked to cognitive/physical function.",
+            "population": "older adults",
+            "sample_size": "",
+            "limitations": "Observational design."
+          }
+        ]
+      },
+      "limitations": [
+        "Indication confounding",
+        "polypharmacy interactions understudied"
+      ],
+      "alternative_explanations": [
+        "Underlying pain or insomnia",
+        "depression/anxiety severity",
+        "age-related frailty"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "benzodiazepine_use",
+          "opioid_use",
+          "sedating_antihistamine_use",
+          "polypharmacy",
+          "sedation",
+          "cognitive_slowing"
+        ],
+        "candidate_edges": [
+          {
+            "source": "benzodiazepine_use",
+            "target": "cognitive_slowing",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "opioid_use",
+            "target": "sedation",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_017_pattern_003",
+      "pattern_name": "SSRIs/SNRIs improve mood when indicated but may cause fatigue, sleep/GI effects, HRV reduction, and withdrawal symptoms",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "SSRI_SNRI_use_or_discontinuation",
+        "direction": "variable|withdrawal",
+        "measurement_methods": [
+          "RCTs",
+          "meta-analyses",
+          "prescription/treatment records"
+        ],
+        "contexts": [
+          "depression",
+          "anxiety",
+          "discontinuation",
+          "long-term use"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "serotonergic_noradrenergic_pharmacologic_effects",
+        "category": "pharmacologic_exposure",
+        "direction": "drug_specific",
+        "pathway": "monoamine modulation; autonomic and GI effects; discontinuation physiology",
+        "mechanism": "therapeutic mood/anxiety improvement when indicated, with possible adverse sleep/GI/fatigue and withdrawal effects"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_sleep_fatigue_cognition_withdrawal",
+        "direction": "mixed",
+        "measurement_methods": [
+          "depression/anxiety scales",
+          "cognitive tests",
+          "sleep reports",
+          "withdrawal symptom scales"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "sleep",
+          "fatigue",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "SSRIs/SNRIs can improve mood/anxiety in indicated clinical populations but side effects and withdrawal must be modeled separately from treatment benefit.",
+        "hypotheses": [
+          {
+            "target": "depressive_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "high",
+            "reason": "Meta-analytic evidence supports benefits in depressed patients."
+          },
+          {
+            "target": "withdrawal_mood_sleep_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Withdrawal risk increases with duration/dose and certain drugs including SNRIs/paroxetine."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days|weeks|months",
+        "latency": "delayed|withdrawal_related",
+        "reversibility": "dose_adjustment_responsive|withdrawal_resolves|unknown"
+      },
+      "modulators_confounders": [
+        "indication",
+        "drug",
+        "dose",
+        "duration",
+        "taper speed",
+        "comorbid anxiety/depression",
+        "polypharmacy"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "SSRIs/SNRIs improve mood/cognition mainly in depressed patients; withdrawal and autonomic effects are important separate branches.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "A meta-analysis of the effects of antidepressants on cognitive functioning in depressed and non-depressed samples",
+            "authors": "Prado et al.",
+            "year": 2018,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.1007/s11065-018-9369-5",
+            "relevant_finding": "Benefits mainly in depressed samples.",
+            "population": "depressed and non-depressed samples",
+            "sample_size": "",
+            "limitations": "Heterogeneity across drugs/outcomes."
+          },
+          {
+            "title": "Estimating Risk of Antidepressant Withdrawal from a Review of Published Data",
+            "authors": "Horowitz et al.",
+            "year": 2022,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://doi.org/10.1007/s40263-022-00960-y",
+            "relevant_finding": "Withdrawal risk varies by drug/dose/duration.",
+            "population": "antidepressant users",
+            "sample_size": "",
+            "limitations": "Published data limitations."
+          }
+        ]
+      },
+      "limitations": [
+        "Side effects are drug-specific",
+        "treatment benefit vs adverse effects must be separated"
+      ],
+      "alternative_explanations": [
+        "Underlying disorder symptoms",
+        "nocebo effects",
+        "comorbid sleep disturbance"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "SSRI_use",
+          "SNRI_use",
+          "antidepressant_withdrawal",
+          "GI_side_effects",
+          "sleep_disturbance",
+          "reduced_HRV"
+        ],
+        "candidate_edges": [
+          {
+            "source": "SSRI_SNRI_use",
+            "target": "depressive_symptoms",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "antidepressant_withdrawal",
+            "target": "rebound_anxiety",
+            "edge_type": "withdrawal_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_017_pattern_004",
+      "pattern_name": "Stimulants improve ADHD executive function but can worsen sleep, appetite, RHR/anxiety depending on dose and timing",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "stimulant_or_ADHD_medication_use",
+        "direction": "dose_dependent",
+        "measurement_methods": [
+          "RCTs",
+          "meta-analyses",
+          "daily medication/sleep tracking"
+        ],
+        "contexts": [
+          "ADHD",
+          "children/adolescents",
+          "adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "catecholaminergic_modulation_and_arousal",
+        "category": "pharmacologic_exposure",
+        "direction": "increased_arousal",
+        "pathway": "dopamine/norepinephrine signaling",
+        "mechanism": "improves executive function in ADHD but may cause insomnia/anorexia/elevated arousal"
+      },
+      "neurobehavioral_output": {
+        "variable": "executive_function_sleep_anxiety",
+        "direction": "mixed",
+        "measurement_methods": [
+          "executive function tests",
+          "sleep measures",
+          "side effect reports"
+        ],
+        "affected_functions": [
+          "executive function",
+          "attention",
+          "sleep",
+          "anxiety"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Stimulants improve executive function in ADHD but adverse sleep/appetite/autonomic effects depend on medication, dose, and timing.",
+        "hypotheses": [
+          {
+            "target": "executive_function_in_ADHD",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "high",
+            "reason": "Meta-analyses/RCTs support executive-function improvement."
+          },
+          {
+            "target": "insomnia",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Sleep effects vary by drug, timing, dose, and population."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|days|weeks",
+        "latency": "immediate|delayed",
+        "reversibility": "dose_adjustment_responsive"
+      },
+      "modulators_confounders": [
+        "ADHD diagnosis",
+        "dose",
+        "timing",
+        "drug type",
+        "baseline sleep",
+        "comorbid anxiety"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Stimulants/ADHD meds improve executive function in ADHD but may cause insomnia or reduced sleep efficiency; effects are drug/dose/timing dependent.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Effects of Chronic Administration of Stimulant and Non-stimulant Medications on Executive Functions in ADHD",
+            "authors": "Isfandnia et al.",
+            "year": 2024,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.neubiorev.2024.105703",
+            "relevant_finding": "Methylphenidate/atomoxetine improve executive functions in ADHD.",
+            "population": "ADHD",
+            "sample_size": "",
+            "limitations": "Medication heterogeneity."
+          },
+          {
+            "title": "Examining daily stimulant medication use and sleep in adolescents with ADHD",
+            "authors": "Wiggs et al.",
+            "year": 2023,
+            "source_type": "daily_sleep_study",
+            "doi_or_url": "https://doi.org/10.1007/s00787-023-02204-w",
+            "relevant_finding": "Daily stimulant use and sleep effects vary in adolescents with ADHD.",
+            "population": "adolescents with ADHD",
+            "sample_size": "",
+            "limitations": "Population-specific."
+          }
+        ]
+      },
+      "limitations": [
+        "Not generalizable to non-ADHD cognitive enhancement",
+        "sleep effects inconsistent"
+      ],
+      "alternative_explanations": [
+        "ADHD symptom severity",
+        "school/work demands",
+        "sleep hygiene"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "stimulant_use",
+          "ADHD_context",
+          "insomnia",
+          "elevated_RHR",
+          "improved_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "stimulant_use_in_ADHD",
+            "target": "improved_executive_function",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "late_day_stimulant_use",
+            "target": "insomnia",
+            "edge_type": "dose_dependent_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_017_pattern_005",
+      "pattern_name": "THC/cannabis and alcohol/nicotine affect sleep, autonomic state, anxiety, and cognition in dose- and context-dependent ways",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "THC_cannabis_alcohol_nicotine_use",
+        "direction": "dose_dependent|variable",
+        "measurement_methods": [
+          "self-report",
+          "acute administration studies",
+          "meta-analyses",
+          "sleep studies"
+        ],
+        "contexts": [
+          "healthy adults",
+          "young adults",
+          "anxiety",
+          "substance use"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "autonomic_arousal_sleep_disruption_intoxication",
+        "category": "pharmacologic_exposure",
+        "direction": "variable",
+        "pathway": "THC autonomic effects; alcohol/nicotine sleep disruption",
+        "mechanism": "substances alter sleep, HR/HRV, anxiety, and cognition depending on dose, timing, product composition, and chronicity"
+      },
+      "neurobehavioral_output": {
+        "variable": "sleep_anxiety_cognition_fatigue",
+        "direction": "mixed",
+        "measurement_methods": [
+          "sleep quality measures",
+          "HRV/RHR",
+          "anxiety ratings",
+          "cognitive tests"
+        ],
+        "affected_functions": [
+          "sleep",
+          "anxiety",
+          "attention",
+          "memory",
+          "fatigue"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Alcohol/nicotine are associated with sleep disturbance; THC acutely increases HR and lowers HRV and can increase anxiety at higher doses; chronic cannabis cognitive effects are generally small but domain-specific.",
+        "hypotheses": [
+          {
+            "target": "sleep_disturbance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Alcohol/nicotine associated with higher odds of sleep disturbance."
+          },
+          {
+            "target": "autonomic_arousal",
+            "domain": "physiological",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "THC acutely increases HR and decreases HRV."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|next_day|chronic",
+        "latency": "immediate|rebound|cumulative",
+        "reversibility": "acute_reversible|unknown"
+      },
+      "modulators_confounders": [
+        "dose",
+        "timing",
+        "THC/CBD ratio",
+        "frequency",
+        "tolerance",
+        "baseline anxiety",
+        "sleep timing"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "THC/cannabis, alcohol, and nicotine have context-dependent effects on sleep, autonomic state, anxiety, and cognition; acute and chronic phases should be modeled separately.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Acute effects of oral THC on autonomic cardiac activity and subjective/anxiogenic effects",
+            "authors": "Pabon et al.",
+            "year": 2021,
+            "source_type": "acute_administration_study",
+            "doi_or_url": "https://doi.org/10.1111/psyp.13955",
+            "relevant_finding": "THC increases heart rate, decreases HRV, and relates to subjective intoxication/anxiety.",
+            "population": "human participants",
+            "sample_size": "",
+            "limitations": "Acute effects; dose-specific."
+          },
+          {
+            "title": "A systematic review and meta-analysis of young adults' sleep habits and substance use",
+            "authors": "Meneo et al.",
+            "year": 2023,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.smrv.2023.101792",
+            "relevant_finding": "Alcohol/nicotine associated with sleep disturbances.",
+            "population": "young adults",
+            "sample_size": "",
+            "limitations": "Observational confounding."
+          }
+        ]
+      },
+      "limitations": [
+        "Causal direction often unclear in observational substance-sleep studies",
+        "product composition matters"
+      ],
+      "alternative_explanations": [
+        "Self-medication for anxiety/insomnia",
+        "lifestyle confounding",
+        "co-use of substances"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "alcohol_intake",
+          "alcohol_hangover",
+          "nicotine_use",
+          "THC_use",
+          "CBD_dominant_cannabis_use",
+          "sleep_fragmentation",
+          "elevated_RHR",
+          "reduced_HRV"
+        ],
+        "candidate_edges": [
+          {
+            "source": "THC_use",
+            "target": "elevated_RHR",
+            "edge_type": "dose_dependent_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "alcohol_intake",
+            "target": "sleep_disturbance",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Medication effects cannot be inferred without exposure timing relative to symptom onset/change.",
+      "reason": "Indication confounding and underlying condition symptoms can mimic medication side effects.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Vitamin B12 supplementation improves cognition/mood/fatigue without deficiency.",
+      "reason": "Review notes no clear benefit unless overt deficiency is present.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "medication_exposure_timing",
+      "domain": "contextual",
+      "definition": "Temporal relation between medication/substance dose/start/stop/change and symptom change.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "polypharmacy",
+      "domain": "contextual",
+      "definition": "Concurrent use of multiple medications increasing interaction/side-effect risk.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "caffeine_intake_timing",
+      "domain": "contextual",
+      "definition": "Dose and timing of caffeine exposure, especially relative to sleep period.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "antidepressant_withdrawal",
+      "domain": "physiological",
+      "definition": "Discontinuation syndrome risk after reducing/stopping antidepressants, varying by drug/dose/duration.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "caffeine_intake_sleep_quality_negative_high",
+      "source": "caffeine_intake",
+      "target": "sleep_quality",
+      "edge_type": "dose_dependent_effect",
+      "polarity": "negative",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "stimulant_use_ADHD_executive_function_positive_high",
+      "source": "stimulant_use_in_ADHD",
+      "target": "executive_function",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "sedative_opioid_anticholinergic_exposure_cognitive_slowing_positive_moderate",
+      "source": "sedative_opioid_anticholinergic_exposure",
+      "target": "cognitive_slowing",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "antidepressant_withdrawal_rebound_anxiety_positive_moderate",
+      "source": "antidepressant_withdrawal",
+      "target": "rebound_anxiety",
+      "edge_type": "withdrawal_effect",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "psychotropic_medication_use_reduced_HRV_positive_moderate",
+      "source": "psychotropic_medication_use",
+      "target": "reduced_HRV",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Polypharmacy/drug-drug interaction effects on neurobehavioral outcomes",
+    "Objective autonomic/glucose/GI outcomes for many medication classes",
+    "Direct comparisons of acute vs chronic vs withdrawal phases",
+    "Longitudinal designs separating indication confounding from medication effect"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Caffeine impairs sleep dose/timing-dependently.",
+      "Stimulants improve executive function in ADHD.",
+      "SSRIs/SNRIs improve mood/cognition mainly when clinically indicated.",
+      "Sedative/opioid/anticholinergic exposure increases cognitive/sedation risk, especially in older adults/polypharmacy."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Medication/substance exposure timing as required context node.",
+      "Withdrawal/rebound effects as distinct from active-drug effects.",
+      "Drug-specific rather than class-generic effects."
+    ],
+    "patterns_requiring_caution": [
+      "Psychotropic HRV reduction because psychiatric disorder itself may reduce HRV.",
+      "Cannabis chronic cognition effects are small/domain-specific.",
+      "Antidepressant side effects vs disorder symptoms are easily confounded."
+    ],
+    "recommended_next_queries": [
+      "Environmental exposures: light, noise, heat/cold, indoor air quality, CO2, air pollution, fatigue, mood, cognition.",
+      "Temperature/fever/thermoregulation and neurobehavioral outcomes."
+    ],
+    "overall_assessment": "Medication/substance branch is essential for BodyState Mapper because it can override or mimic physiological interpretations. It should be modeled through exposure timing, dose, drug specificity, acute/chronic/withdrawal phase, and indication confounding guardrails."
+  }
+}

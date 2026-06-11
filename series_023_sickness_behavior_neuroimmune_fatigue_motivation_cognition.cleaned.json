@@ -1,0 +1,474 @@
+{
+  "research_series": {
+    "series_id": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition",
+    "series_name": "Sickness Behavior, Neuroimmune Signaling, Fatigue, Motivation, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_023_pattern_001",
+      "pattern_name": "Acute systemic immune activation induces sickness behavior",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "acute_immune_activation",
+        "direction": "activated",
+        "measurement_methods": [
+          "LPS/endotoxin challenge",
+          "typhoid vaccination",
+          "cytokine assays"
+        ],
+        "contexts": [
+          "healthy adults",
+          "experimental immune challenge"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "cytokine_surge_IL6_TNFalpha_IL1beta",
+        "category": "inflammatory_marker",
+        "direction": "increased",
+        "pathway": "peripheral immune-to-brain signaling",
+        "mechanism": "cytokines act on interoceptive/neuroimmune circuits producing fatigue, anhedonia, low motivation and cognitive slowing"
+      },
+      "neurobehavioral_output": {
+        "variable": "sickness_behavior",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue ratings",
+          "mood/anhedonia scales",
+          "cognitive tasks",
+          "fMRI"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "motivation",
+          "concentration",
+          "processing speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Acute immune activation with cytokine rise can acutely increase fatigue, anhedonia, low motivation and cognitive slowing.",
+        "hypotheses": [
+          {
+            "target": "sickness_behavior",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Human LPS/vaccine challenge studies show dose-dependent cytokine and behavioral effects."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|same_day",
+        "latency": "immediate|delayed",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "baseline_CRP",
+        "BMI",
+        "sex_hormonal_status",
+        "genetics",
+        "sleep",
+        "pain",
+        "stress"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Experimental immune challenge studies causally link cytokine surges to acute fatigue, anhedonia, motivational change and cognitive slowing.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Neural Origins of Human Sickness in Interoceptive Responses to Inflammation",
+            "authors": "Harrison et al.",
+            "year": 2009,
+            "source_type": "experimental_immune_challenge",
+            "doi_or_url": "10.1016/j.biopsych.2009.03.007",
+            "relevant_finding": "Typhoid vaccination/inflammation altered interoceptive neural responses and sickness behavior.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Acute model, not chronic illness."
+          },
+          {
+            "title": "Dose-Dependent Effects of Endotoxin on Neurobehavioral Functions in Humans",
+            "authors": "Grigoleit et al.",
+            "year": 2011,
+            "source_type": "LPS_study",
+            "doi_or_url": "10.1371/journal.pone.0028330",
+            "relevant_finding": "Endotoxin dose-dependently induced cytokines and neurobehavioral symptoms.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Experimental acute exposure."
+          }
+        ]
+      },
+      "limitations": [
+        "Acute challenge models may not generalize to chronic syndromes."
+      ],
+      "alternative_explanations": [
+        "Sleep disruption",
+        "expectancy/nocebo",
+        "baseline inflammation"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_immune_activation",
+          "cytokine_surge_IL6_TNFalpha_IL1beta",
+          "sickness_behavior",
+          "low_motivation",
+          "anhedonia",
+          "subjective_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_immune_activation",
+            "target": "sickness_behavior",
+            "edge_type": "immune_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "IL6_pathway_activation",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_023_pattern_002",
+      "pattern_name": "Chronic low-grade inflammation links to motivational deficits/anhedonia in depression",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_low_grade_inflammation",
+        "direction": "increased",
+        "measurement_methods": [
+          "CRP",
+          "IL-6",
+          "TNF-alpha",
+          "soluble receptors"
+        ],
+        "contexts": [
+          "major depression",
+          "high inflammation subgroup"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "CRP_IL6_TNFalpha_elevation",
+        "category": "inflammatory_marker",
+        "direction": "increased",
+        "pathway": "inflammation-corticostriatal reward signaling",
+        "mechanism": "inflammatory signaling disrupts effort-based motivation and reward processing"
+      },
+      "neurobehavioral_output": {
+        "variable": "anhedonia_low_motivation",
+        "direction": "impaired",
+        "measurement_methods": [
+          "effort-based decision-making",
+          "anhedonia scales",
+          "depression scales"
+        ],
+        "affected_functions": [
+          "motivation",
+          "reward",
+          "energy"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "High-inflammation depression subgroups are more likely to show anhedonia and low motivation than pure mood symptoms.",
+        "hypotheses": [
+          {
+            "target": "anhedonia_low_motivation",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Meta-analyses and anti-TNF proof-of-mechanism data support inflammatory motivational subtype."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks|chronic",
+        "latency": "cumulative",
+        "reversibility": "treatment_responsive"
+      },
+      "modulators_confounders": [
+        "BMI",
+        "infection",
+        "autoimmune disease",
+        "medications",
+        "sleep",
+        "pain"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Meta-analyses show elevated inflammatory markers in a subset of depression; anti-TNF appears most relevant in high-CRP motivational-deficit subgroup.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Peripheral cytokine and chemokine alterations in depression",
+            "authors": "Köhler et al.",
+            "year": 2017,
+            "source_type": "meta_analysis",
+            "doi_or_url": "10.1111/acps.12698",
+            "relevant_finding": "Depression associated with cytokine alterations.",
+            "population": "major depression",
+            "sample_size": "",
+            "limitations": "Heterogeneous populations."
+          },
+          {
+            "title": "Randomized proof-of-mechanism trial of TNF antagonism for motivational deficits",
+            "authors": "Treadway et al.",
+            "year": 2024,
+            "source_type": "RCT",
+            "doi_or_url": "10.1038/s41380-024-02751-x",
+            "relevant_finding": "Anti-TNF improved effort-based motivation in high-inflammation depressed patients.",
+            "population": "depressed patients with high inflammation",
+            "sample_size": "",
+            "limitations": "Subgroup-specific."
+          }
+        ]
+      },
+      "limitations": [
+        "Inflammation is not present in all depression.",
+        "Associations are domain-specific."
+      ],
+      "alternative_explanations": [
+        "Obesity/metabolic disease",
+        "sleep disturbance",
+        "medication effects"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_low_grade_inflammation",
+          "high_CRP_depression_subtype",
+          "anhedonia_low_motivation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_low_grade_inflammation",
+            "target": "anhedonia_low_motivation",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_023_pattern_003",
+      "pattern_name": "Kynurenine pathway bridges interferon/immune activation to depression-anhedonia risk",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "interferon_signaling",
+        "direction": "activated",
+        "measurement_methods": [
+          "interferon-alpha treatment",
+          "KYN/TRP ratio",
+          "IDO activity",
+          "tryptophan"
+        ],
+        "contexts": [
+          "hepatitis C",
+          "cancer",
+          "immune challenge",
+          "depression"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "kynurenine_pathway_activation",
+        "category": "metabolic_marker",
+        "direction": "increased",
+        "pathway": "IDO-mediated tryptophan-kynurenine shift",
+        "mechanism": "immune activation increases IDO activity, reduces tryptophan availability and shifts neuroactive metabolites"
+      },
+      "neurobehavioral_output": {
+        "variable": "depressive_anhedonic_symptoms",
+        "direction": "impaired",
+        "measurement_methods": [
+          "depression scales",
+          "anhedonia scales"
+        ],
+        "affected_functions": [
+          "mood",
+          "motivation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Interferon/immune activation can increase IDO-kynurenine signaling and raise risk of depressive/anhedonic symptoms.",
+        "hypotheses": [
+          {
+            "target": "depressive_anhedonic_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Interferon and LPS studies show KYN/TRP shifts associated with depressive symptoms."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days|weeks",
+        "latency": "delayed",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "baseline inflammation",
+        "infection",
+        "medications",
+        "nutrition",
+        "stress"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Interferon and immune challenge evidence supports kynurenine pathway as a mechanistic bridge, but biomarker specificity remains limited.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Effect of Immune Activation on the Kynurenine Pathway and Depression Symptoms",
+            "authors": "Hunt et al.",
+            "year": 2020,
+            "source_type": "systematic_review/meta_analysis",
+            "doi_or_url": "10.1016/j.neubiorev.2020.08.010",
+            "relevant_finding": "Immune activation alters kynurenine pathway and depression symptoms.",
+            "population": "immune challenge/treatment populations",
+            "sample_size": "",
+            "limitations": "Heterogeneous interventions."
+          }
+        ]
+      },
+      "limitations": [
+        "Few studies map full peripheral-to-neural circuit chain."
+      ],
+      "alternative_explanations": [
+        "General inflammation",
+        "sickness burden",
+        "sleep disruption"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "interferon_signaling",
+          "kynurenine_pathway_activation",
+          "increased_IDO_activity",
+          "tryptophan_depletion",
+          "depressive_anhedonic_symptoms"
+        ],
+        "candidate_edges": [
+          {
+            "source": "interferon_signaling",
+            "target": "kynurenine_pathway_activation",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "kynurenine_pathway_activation",
+            "target": "anhedonia_low_motivation",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Normal CRP or IL-6 does not exclude neuroimmune fatigue or post-infectious syndrome.",
+      "reason": "No single biomarker reliably diagnoses ME/CFS/long COVID-like neuroimmune states; peripheral markers may miss CNS or pathway-specific changes.",
+      "recommendation": "keep_as_guardrail"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "sickness_behavior",
+      "domain": "neurobehavioral",
+      "definition": "Coordinated fatigue, sleepiness, low motivation, anhedonia and cognitive slowing during immune activation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "kynurenine_pathway_activation",
+      "domain": "biochemical",
+      "definition": "Immune-driven tryptophan metabolism shift via IDO toward kynurenine metabolites.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "acute_immune_activation_sickness_behavior_high",
+      "source": "acute_immune_activation",
+      "target": "sickness_behavior",
+      "edge_type": "immune_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Peripheral-to-central circuit mapping remains incomplete.",
+    "Individual vulnerability/resilience mechanisms unclear.",
+    "No single biomarker reliably distinguishes post-infectious neuroimmune syndromes."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Acute immune activation causes transient sickness behavior.",
+      "High-inflammation depression subtype is linked to motivational deficits.",
+      "Kynurenine pathway mediates part of immune-to-mood/anhedonia effects."
+    ],
+    "highest_value_patterns_for_inference": [
+      "sickness_behavior node",
+      "IL6/cytokine surge -> fatigue/motivation",
+      "kynurenine pathway -> anhedonia"
+    ],
+    "patterns_requiring_caution": [
+      "post-infectious brain fog biomarker inference",
+      "objective cognition from subjective brain fog"
+    ],
+    "recommended_next_queries": [
+      "How to distinguish sickness behavior fatigue from sleepiness and PEM?",
+      "Which biomarkers best subtype neuroimmune fatigue?"
+    ],
+    "overall_assessment": "Strong evidence for acute immune-to-brain sickness behavior; moderate evidence for chronic/post-infectious neuroimmune mechanisms and kynurenine-mediated anhedonia."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Immune-to-Brain Signaling and Sickness Behavior: Human Evidence Linking Cytokines, Neuroimmune Pathways, and Neurobehavioral Outcomes",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

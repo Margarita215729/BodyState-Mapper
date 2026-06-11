@@ -1,0 +1,53 @@
+{
+  "research_series": {
+    "series_id": "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures",
+    "series_name": "Temporal Dynamics,Acute vs Delayed vs Chronic Signatures,Fatigue,Brain Fog,and Recovery",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_033_pattern_001",
+      "pattern_name": "Delayed PEM and chronic symptom trajectories",
+      "causal_status": "association",
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_symptom_onset",
+          "delayed_symptom_worsening",
+          "post_exertional_delay",
+          "relapsing_remitting_pattern",
+          "chronic_baseline_shift",
+          "persistent_deviation_from_baseline",
+          "recovery_slope",
+          "next_day_fatigue"
+        ],
+        "candidate_edges": [
+          {
+            "source": "post_exertional_malaise",
+            "target": "delayed_fatigue_worsening",
+            "edge_type": "delayed_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "reduced_HRV",
+            "target": "fatigue_severity",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "guardrails": [
+    "Separate immediate acute fatigue from delayed PEM",
+    "Require trigger-time-lag-peak-recovery fields",
+    "One-time abnormal value is not chronic baseline shift"
+  ],
+  "summary": {
+    "overall_assessment": "Temporal signature is a core inference dimension, not metadata."
+  }
+}

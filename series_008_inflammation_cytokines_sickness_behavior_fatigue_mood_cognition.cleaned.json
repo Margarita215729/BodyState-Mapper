@@ -1,0 +1,648 @@
+{
+  "research_series": {
+    "series_id": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition",
+    "series_name": "Inflammation, Cytokines, Sickness Behavior, Fatigue, Mood, Motivation, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_008_pattern_001",
+      "pattern_name": "IL-6 / systemic immune activation contributes to sickness behavior, fatigue, anhedonia, and motivation loss",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "acute_immune_activation_or_chronic_low_grade_inflammation",
+        "direction": "increased",
+        "measurement_methods": [
+          "CRP",
+          "hsCRP",
+          "IL-6",
+          "TNF-alpha",
+          "IL-1beta",
+          "LPS/endotoxin challenge",
+          "vaccination challenge",
+          "Mendelian randomization",
+          "anti-inflammatory intervention"
+        ],
+        "contexts": [
+          "healthy experimental immune challenge",
+          "depression with high inflammation",
+          "infection recovery",
+          "long COVID",
+          "autoimmune disease",
+          "cancer-related fatigue"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "IL6_pathway_activation",
+        "category": "inflammatory_marker",
+        "direction": "increased",
+        "pathway": "peripheral immune activation and cytokine signaling affecting neuroimmune and reward-related circuits",
+        "mechanism": "IL-6-related inflammatory signaling is associated with sickness behavior, fatigue, sleep disturbance, anhedonia, and reduced motivation; experimental immune activation and intervention evidence strengthen causal interpretation."
+      },
+      "neurobehavioral_output": {
+        "variable": "sickness_behavior_fatigue_anhedonia_motivation_loss",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "depression symptom scales",
+          "anhedonia measures",
+          "motivation/reward tasks",
+          "sleep disturbance measures",
+          "self-reported sickness behavior"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "sleepiness",
+          "anhedonia",
+          "motivation",
+          "perceived energy",
+          "neurovegetative symptoms"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Elevated systemic inflammation, especially IL-6 pathway activity, increases likelihood of sickness-behavior symptoms such as fatigue, sleepiness, anhedonia, and reduced motivation.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "MR, immune challenge, longitudinal biomarker-symptom tracking, and anti-inflammatory intervention evidence support IL-6-related contribution to fatigue-like neurovegetative symptoms."
+          },
+          {
+            "target": "anhedonia_low_motivation",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Inflammation is repeatedly linked with anhedonia/motivational deficits and TNF antagonism improved motivational deficits in high-inflammation depression."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours_to_chronic",
+        "latency": "immediate_to_delayed",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "sex",
+        "BMI",
+        "baseline inflammation",
+        "infection status",
+        "depression subtype",
+        "autoimmune disease",
+        "cancer",
+        "long COVID",
+        "sleep disturbance",
+        "metabolic status"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Strong human evidence links systemic inflammation, especially IL-6 pathway activity, with subjective fatigue, sleepiness, anhedonia, and motivation loss across acute challenge models and chronic clinical contexts.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Association of inflammation with depression and anxiety: evidence for symptom-specificity and potential causality from UK Biobank and NESDA cohorts",
+            "authors": "Milaneschi et al.",
+            "year": 2021,
+            "source_type": "Mendelian_randomization_and_cohort",
+            "doi_or_url": "https://doi.org/10.1038/s41380-021-01188-w",
+            "relevant_finding": "IL-6/IL-6R pathway implicated in fatigue and sleep problems more strongly than CRP.",
+            "population": "UK Biobank and NESDA cohorts",
+            "sample_size": "large population cohorts",
+            "limitations": "MR and cohort evidence supports causality but does not fully specify individual-level temporal mediation."
+          },
+          {
+            "title": "Selective increase of cerebrospinal fluid IL-6 during experimental systemic inflammation in humans: association with depressive symptoms",
+            "authors": "Engler et al.",
+            "year": 2017,
+            "source_type": "experimental_immune_challenge",
+            "doi_or_url": "https://doi.org/10.1038/mp.2016.264",
+            "relevant_finding": "Experimental systemic inflammation increased CSF IL-6 and was associated with mood/fatigue changes.",
+            "population": "healthy human volunteers",
+            "sample_size": "",
+            "limitations": "Experimental context may not generalize to chronic low-grade inflammation."
+          },
+          {
+            "title": "A randomized proof-of-mechanism trial of TNF antagonism for motivational deficits and related corticostriatal circuitry in depressed patients with high inflammation",
+            "authors": "Treadway et al.",
+            "year": 2024,
+            "source_type": "RCT",
+            "doi_or_url": "https://doi.org/10.1038/s41380-024-02751-x",
+            "relevant_finding": "Anti-inflammatory intervention improved motivational deficits in high-inflammation depression.",
+            "population": "depressed patients with high inflammation",
+            "sample_size": "",
+            "limitations": "Subtype-specific; not evidence for all depression or all fatigue states."
+          }
+        ]
+      },
+      "limitations": [
+        "Peripheral markers do not always reflect central neuroinflammation.",
+        "Standard biomarkers may be normal in some severe chronic fatigue or post-infectious cases.",
+        "Cognition effects are weaker than fatigue/anhedonia effects."
+      ],
+      "alternative_explanations": [
+        "Sleep disturbance",
+        "metabolic illness",
+        "pain",
+        "medication effects",
+        "depression subtype",
+        "autonomic dysfunction"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_immune_activation",
+          "chronic_low_grade_inflammation",
+          "IL6_pathway_activation",
+          "sickness_behavior",
+          "subjective_fatigue",
+          "anhedonia_low_motivation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_immune_activation",
+            "target": "sickness_behavior",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "IL6_pathway_activation",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "chronic_low_grade_inflammation",
+            "target": "anhedonia_low_motivation",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_008_pattern_002",
+      "pattern_name": "Inflammation is modestly and inconsistently associated with objective cognitive impairment",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "systemic_inflammation",
+        "direction": "increased",
+        "measurement_methods": [
+          "CRP",
+          "IL-6",
+          "TNF-alpha",
+          "IL-1beta",
+          "biomarker studies",
+          "meta-analysis"
+        ],
+        "contexts": [
+          "older adults",
+          "MCI/AD",
+          "depression",
+          "bipolar disorder",
+          "post-infectious states",
+          "MS"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "inflammatory_markers",
+        "category": "inflammatory_marker",
+        "direction": "increased",
+        "pathway": "immune signaling associated with slowed processing, executive dysfunction, and memory retrieval changes",
+        "mechanism": "Inflammation may affect neural signaling and processing efficiency, but effect sizes are small to moderate and replication varies."
+      },
+      "neurobehavioral_output": {
+        "variable": "objective_cognitive_performance",
+        "direction": "mixed_or_modestly_impaired",
+        "measurement_methods": [
+          "executive function tests",
+          "processing speed tests",
+          "attention tasks",
+          "memory tests",
+          "cognitive batteries"
+        ],
+        "affected_functions": [
+          "processing speed",
+          "executive function",
+          "attention",
+          "memory retrieval"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Inflammatory markers can raise suspicion of slowed processing or executive dysfunction, but objective cognition should not be inferred strongly from peripheral inflammation alone.",
+        "hypotheses": [
+          {
+            "target": "slowed_processing_speed",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Systematic reviews show modest associations, especially in older or clinical populations."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days_to_chronic",
+        "latency": "delayed_or_cumulative",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "age",
+        "neurodegenerative disease",
+        "depression",
+        "bipolar disorder",
+        "post-infectious state",
+        "MS",
+        "BMI",
+        "vascular risk"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Inflammation-cognition associations are present but weaker and less consistent than inflammation-fatigue/anhedonia associations.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Role of inflammation in depressive and anxiety disorders, affect, and cognition",
+            "authors": "Mac Giollabhui et al.",
+            "year": 2025,
+            "source_type": "genetic_and_cohort",
+            "doi_or_url": "https://doi.org/10.1038/s41398-025-03372-w",
+            "relevant_finding": "Inflammation-cognition links were weaker/inconsistent compared with symptom-specific depression/fatigue associations.",
+            "population": "Lifelines cohort",
+            "sample_size": "",
+            "limitations": "Associational and genetic evidence varies by marker/domain."
+          },
+          {
+            "title": "Association of inflammation and cognition in the elderly",
+            "authors": "Leonardo & Fregni",
+            "year": 2023,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "https://doi.org/10.3389/fnagi.2023.1069439",
+            "relevant_finding": "Inflammation associated with cognition in elderly populations, but domain specificity and effect sizes vary.",
+            "population": "elderly adults",
+            "sample_size": "",
+            "limitations": "Heterogeneous cognitive measures and inflammatory markers."
+          }
+        ]
+      },
+      "limitations": [
+        "Weak-to-moderate effect sizes.",
+        "Peripheral cytokines may not represent central inflammation.",
+        "Domain-specific cognitive effects are not consistently replicated."
+      ],
+      "alternative_explanations": [
+        "Vascular risk",
+        "sleep disruption",
+        "depression severity",
+        "medication effects",
+        "illness burden"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "elevated_IL6",
+          "elevated_CRP",
+          "slowed_processing_speed",
+          "impaired_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "elevated_IL6",
+            "target": "slowed_processing_speed",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "elevated_CRP",
+            "target": "objective_cognitive_performance",
+            "edge_type": "associated_with",
+            "polarity": "mixed",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_008_pattern_003",
+      "pattern_name": "Persistent post-infectious or chronic illness fatigue can occur without elevated standard peripheral inflammatory markers",
+      "causal_status": "hypothesis",
+      "physiological_input": {
+        "variable": "persistent_fatigue_with_normal_standard_inflammatory_markers",
+        "direction": "variable",
+        "measurement_methods": [
+          "CRP",
+          "cytokine panels",
+          "immune profiling",
+          "clinical symptom scales"
+        ],
+        "contexts": [
+          "long COVID",
+          "post-infectious fatigue",
+          "chronic pain",
+          "chronic illness"
+        ]
+      },
+      "mediator": {
+        "status": "not_measured",
+        "name": "nonstandard_or_central_mechanisms",
+        "category": "neuroimmune_marker",
+        "direction": "unknown",
+        "pathway": "possible central immune signaling, autonomic dysfunction, mitochondrial/metabolic factors, pain/sleep interactions, or sex-specific susceptibility",
+        "mechanism": "Standard peripheral biomarkers can be normal despite severe symptoms, implying biomarker-symptom mapping is incomplete."
+      },
+      "neurobehavioral_output": {
+        "variable": "persistent_subjective_fatigue_or_brain_fog",
+        "direction": "increased",
+        "measurement_methods": [
+          "fatigue scales",
+          "brain fog reports",
+          "functioning scales"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "brain fog",
+          "daily functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "low"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Normal CRP/cytokines do not rule out persistent fatigue, brain fog, or post-infectious symptoms.",
+        "hypotheses": [
+          {
+            "target": "persistent_subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased_possible",
+            "confidence": "moderate",
+            "reason": "Several cohorts report severe persistent symptoms without elevated standard markers."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_chronic",
+        "latency": "cumulative",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "sex",
+        "pain",
+        "sleep disruption",
+        "autonomic dysfunction",
+        "infection history",
+        "baseline health",
+        "measurement sensitivity"
+      ],
+      "evidence": {
+        "strength": "low_to_moderate",
+        "summary": "Evidence warns against excluding post-infectious or chronic fatigue when standard peripheral inflammatory markers are normal.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Persistent fatigue following SARS-CoV-2 infection is common and independent of severity of initial infection",
+            "authors": "Townsend et al.",
+            "year": 2020,
+            "source_type": "post_infectious_cohort",
+            "doi_or_url": "https://doi.org/10.1371/journal.pone.0240784",
+            "relevant_finding": "Persistent fatigue after SARS-CoV-2 was common and not simply explained by acute disease severity.",
+            "population": "post-COVID individuals",
+            "sample_size": "",
+            "limitations": "Mechanisms not resolved."
+          },
+          {
+            "title": "Associations between sickness behavior, but not inflammatory cytokines, and psychiatric comorbidity in chronic pain",
+            "authors": "Reitan et al.",
+            "year": 2024,
+            "source_type": "clinical_biomarker_study",
+            "doi_or_url": "https://doi.org/10.1016/j.psyneuen.2024.107094",
+            "relevant_finding": "High sickness behavior symptoms occurred with normal-range inflammatory biomarkers.",
+            "population": "chronic pain",
+            "sample_size": "",
+            "limitations": "Does not exclude central or nonstandard immune mechanisms."
+          }
+        ]
+      },
+      "limitations": [
+        "Mechanism unresolved.",
+        "Standard biomarkers may miss central or dynamic immune processes.",
+        "High risk of overinterpreting null blood markers."
+      ],
+      "alternative_explanations": [
+        "autonomic dysfunction",
+        "sleep disruption",
+        "deconditioning",
+        "pain",
+        "mitochondrial/metabolic dysfunction",
+        "psychological distress"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "persistent_fatigue_with_normal_CRP",
+          "post_infectious_fatigue",
+          "standard_inflammatory_markers_normal"
+        ],
+        "candidate_edges": [
+          {
+            "source": "standard_inflammatory_markers_normal",
+            "target": "absence_of_fatigue",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "keep_as_hypothesis",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Peripheral cytokine levels do not always reflect central neuroinflammatory activity or predict brain fog/cognition.",
+      "reason": "CSF-blood correlations can be weak under basal conditions; PET and direct central measures are limited/mixed.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Not all persistent post-infectious or post-COVID fatigue is explained by elevated standard inflammatory biomarkers.",
+      "reason": "Several studies report severe fatigue despite normal-range biomarkers or weak biomarker-symptom links.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "acute_immune_activation",
+      "domain": "biochemical",
+      "definition": "Short-term activation of immune signaling, often experimentally induced by LPS/endotoxin or vaccination.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "chronic_low_grade_inflammation",
+      "domain": "biochemical",
+      "definition": "Persistent elevation of inflammatory markers such as hsCRP, IL-6, or TNF-alpha below acute infection levels.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "IL6_pathway_activation",
+      "domain": "biochemical",
+      "definition": "Activation of IL-6-related inflammatory signaling, including IL-6 or IL-6R pathway evidence.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "sickness_behavior",
+      "domain": "neurobehavioral",
+      "definition": "Coordinated fatigue, sleepiness, low motivation, anhedonia, and reduced activity during immune activation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "anhedonia_low_motivation",
+      "domain": "neurobehavioral",
+      "definition": "Reduced reward responsiveness or motivation associated with inflammatory signaling in some populations.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "slowed_processing_speed",
+      "domain": "neurobehavioral",
+      "definition": "Reduced speed of cognitive processing; modestly associated with inflammatory markers in some populations.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "IL6_pathway_activation_subjective_fatigue_positive_high",
+      "source": "IL6_pathway_activation",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "acute_immune_activation_sickness_behavior_positive_high",
+      "source": "acute_immune_activation",
+      "target": "sickness_behavior",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "chronic_low_grade_inflammation_anhedonia_low_motivation_positive_high",
+      "source": "chronic_low_grade_inflammation",
+      "target": "anhedonia_low_motivation",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "elevated_IL6_slowed_processing_speed_positive_moderate",
+      "source": "elevated_IL6",
+      "target": "slowed_processing_speed",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "title": "Association of inflammation with depression and anxiety: evidence for symptom-specificity and potential causality from UK Biobank and NESDA cohorts",
+      "doi_or_url": "https://doi.org/10.1038/s41380-021-01188-w"
+    },
+    {
+      "title": "Selective increase of cerebrospinal fluid IL-6 during experimental systemic inflammation in humans",
+      "doi_or_url": "https://doi.org/10.1038/mp.2016.264"
+    },
+    {
+      "title": "A randomized proof-of-mechanism trial of TNF antagonism for motivational deficits",
+      "doi_or_url": "https://doi.org/10.1038/s41380-024-02751-x"
+    },
+    {
+      "title": "Fatigue and cognitive impairment in Post-COVID-19 Syndrome",
+      "doi_or_url": "https://doi.org/10.1016/j.bbi.2021.12.020"
+    }
+  ],
+  "research_gaps": [
+    "Need cytokine-specific mediation studies linking immune activation to distinct symptom domains.",
+    "Need interventional trials testing whether IL-6/IL-6R targeting reduces post-infectious or long-COVID fatigue.",
+    "Need mechanisms for severe persistent fatigue when standard inflammatory biomarkers are normal.",
+    "Need better separation of peripheral inflammation from central neuroinflammatory states.",
+    "Need sex/gender-specific models of inflammation-induced fatigue and brain fog."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "IL-6-related immune activation contributes to subjective fatigue, sleepiness, anhedonia, and low motivation.",
+      "Chronic low-grade inflammation is associated with somatic/neurovegetative depressive symptoms.",
+      "Acute immune challenge can induce sickness behavior."
+    ],
+    "highest_value_patterns_for_inference": [
+      "IL6_pathway_activation -> subjective_fatigue",
+      "acute_immune_activation -> sickness_behavior",
+      "chronic_low_grade_inflammation -> anhedonia_low_motivation"
+    ],
+    "patterns_requiring_caution": [
+      "Peripheral inflammation -> objective cognitive impairment is modest and inconsistent.",
+      "Peripheral cytokines -> central neuroinflammation should not be assumed.",
+      "Normal CRP/cytokines do not rule out persistent fatigue or brain fog."
+    ],
+    "recommended_next_queries": [
+      "How do pain, nociception, and central sensitization affect fatigue, mood, cognition, HRV, and inflammation?",
+      "How do oxygen saturation, CO2, breathing patterns, and respiratory dysregulation affect panic, fatigue, and cognition?"
+    ],
+    "overall_assessment": "This series supports inflammation as a strong hub for sickness behavior, fatigue, anhedonia, and motivation loss, especially via IL-6-related pathways. It provides weaker/moderate evidence for objective cognitive impairment and warns against overinterpreting standard peripheral biomarkers."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Association of inflammation with depression and anxiety: evidence for symptom-specificity and potential causality from UK Biobank and NESDA cohorts",
+      "url": "",
+      "doi": "10.1038/s41380-021-01188-w",
+      "year": 2021
+    },
+    {
+      "index": 2,
+      "title": "Selective increase of cerebrospinal fluid IL-6 during experimental systemic inflammation in humans: association with depressive symptoms",
+      "url": "",
+      "doi": "10.1038/mp.2016.264",
+      "year": 2017
+    },
+    {
+      "index": 3,
+      "title": "A randomized proof-of-mechanism trial of TNF antagonism for motivational deficits and related corticostriatal circuitry in depressed patients with high inflammation",
+      "url": "",
+      "doi": "10.1038/s41380-024-02751-x",
+      "year": 2024
+    },
+    {
+      "index": 4,
+      "title": "Fatigue and cognitive impairment in Post-COVID-19 Syndrome: A systematic review and meta-analysis",
+      "url": "",
+      "doi": "10.1016/j.bbi.2021.12.020",
+      "year": 2021
+    }
+  ]
+}

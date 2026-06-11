@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/evidence_source.schema.json",
+  "title": "THSI Evidence Source Registry Entry",
+  "description": "Schema for a single evidence source in the THSI Static Scientific Evidence Graph registry.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "source_id",
+    "title",
+    "source_type",
+    "domain",
+    "evidence_strength_score",
+    "risk_of_overinterpretation"
+  ],
+  "properties": {
+    "source_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Unique slug identifier derived from filename or assigned manually."
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authors": {
+      "type": "string"
+    },
+    "year": {
+      "oneOf": [
+        { "type": "integer", "minimum": 1900, "maximum": 2100 },
+        { "type": "string", "pattern": "^\\d{4}$" },
+        { "type": "string", "maxLength": 0 }
+      ]
+    },
+    "journal_or_source": {
+      "type": "string"
+    },
+    "doi": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "pdf_filename": {
+      "type": "string"
+    },
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "meta_analysis",
+        "systematic_review",
+        "umbrella_review",
+        "systematic_review_of_reviews",
+        "methodological_review",
+        "theoretical_review",
+        "narrative_review",
+        "experimental_study",
+        "machine_learning_systematic_review"
+      ]
+    },
+    "domain": {
+      "type": "string",
+      "enum": [
+        "HRV_autonomic_regulation",
+        "EDA_sympathetic_arousal",
+        "sleep_emotion_regulation",
+        "sleep_mood",
+        "sleep_cortisol",
+        "HPA_axis_cortisol",
+        "acute_psychosocial_stress",
+        "TSST",
+        "allostasis",
+        "allostatic_load_measurement",
+        "wearable_stress_detection"
+      ]
+    },
+    "access_status": {
+      "type": "string"
+    },
+    "population": {
+      "type": "string"
+    },
+    "sample_size": {
+      "type": "string"
+    },
+    "methodology_short": {
+      "type": "string"
+    },
+    "main_findings_short": {
+      "type": "string"
+    },
+    "supported_nodes": {
+      "type": "string",
+      "description": "Comma-separated node identifiers supported by this source."
+    },
+    "supported_edges": {
+      "type": "string",
+      "description": "Comma-separated edge identifiers supported by this source."
+    },
+    "limitations": {
+      "type": "string"
+    },
+    "risk_of_overinterpretation": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "critical"]
+    },
+    "evidence_strength_score": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "5=meta/umbrella/SRoR; 4=systematic review/large methodological review; 3=narrative/theoretical by major author; 2=individual experimental/modeling; 1=comment/hypothesis/weak"
+    },
+    "use_in_thsi": {
+      "type": "string"
+    },
+    "notes_for_thsi": {
+      "type": "string"
+    }
+  }
+}

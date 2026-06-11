@@ -1,0 +1,316 @@
+{
+  "research_series": {
+    "series_id": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition",
+    "series_name": "Sleep Architecture, Glymphatic Clearance, Memory Consolidation, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_029_pattern_001",
+      "pattern_name": "NREM SO-spindle coupling supports memory consolidation",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "precise_SO_spindle_coupling",
+        "direction": "increased",
+        "measurement_methods": [
+          "PSG",
+          "EEG",
+          "fMRI/EEG"
+        ],
+        "contexts": [
+          "memory consolidation",
+          "older adults",
+          "young adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "hippocampo_thalamocortical_synchrony",
+        "category": "neurocognitive_marker",
+        "direction": "increased",
+        "pathway": "NREM slow oscillation-spindle timing",
+        "mechanism": "supports replay and overnight retention"
+      },
+      "neurobehavioral_output": {
+        "variable": "memory_consolidation",
+        "direction": "improved",
+        "measurement_methods": [
+          "overnight retention tasks"
+        ],
+        "affected_functions": [
+          "memory"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Precise SO-spindle coupling during NREM predicts overnight memory consolidation.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Precise Slow Oscillation–Spindle Coupling Promotes Memory Consolidation in Younger and Older Adults",
+            "authors": "Muehlroth et al.",
+            "year": 2018,
+            "source_type": "EEG_study",
+            "doi_or_url": "",
+            "relevant_finding": "SO-spindle coupling predicted retention.",
+            "population": "young and older adults",
+            "sample_size": "",
+            "limitations": "Requires EEG/PSG, not wearables."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "precise_SO_spindle_coupling",
+          "impaired_memory_consolidation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "precise_SO_spindle_coupling",
+            "target": "memory_consolidation",
+            "edge_type": "sleep_architecture_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_029_pattern_002",
+      "pattern_name": "Reduced glymphatic activity associates with amyloid/tau burden and cognitive decline",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "reduced_glymphatic_clearance",
+        "direction": "decreased",
+        "measurement_methods": [
+          "DTI-ALPS",
+          "MRI",
+          "PET",
+          "CSF biomarkers"
+        ],
+        "contexts": [
+          "older adults",
+          "MCI",
+          "Alzheimer's disease",
+          "OSA"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "amyloid_tau_burden",
+        "category": "neurodegeneration_marker",
+        "direction": "increased",
+        "pathway": "reduced brain waste clearance",
+        "mechanism": "reduced clearance may increase amyloid/tau accumulation"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_decline_risk",
+        "direction": "impaired",
+        "measurement_methods": [
+          "global cognition",
+          "memory tests"
+        ],
+        "affected_functions": [
+          "memory",
+          "global cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "MRI/PET/DTI-ALPS studies link lower glymphatic indices with amyloid/tau burden and cognitive decline; full mediation remains limited.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Glymphatic system dysfunction predicts amyloid deposition, neurodegeneration, and clinical progression in Alzheimer's disease",
+            "authors": "Huang et al.",
+            "year": 2024,
+            "source_type": "MRI/PET_study",
+            "doi_or_url": "",
+            "relevant_finding": "Lower glymphatic indices predicted AD biomarkers/progression.",
+            "population": "AD/MCI cohorts",
+            "sample_size": "",
+            "limitations": "Associative imaging-biomarker evidence."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "reduced_glymphatic_clearance",
+          "elevated_beta_amyloid",
+          "elevated_tau",
+          "cognitive_decline_risk"
+        ],
+        "candidate_edges": [
+          {
+            "source": "reduced_glymphatic_clearance",
+            "target": "cognitive_decline_risk",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_029_pattern_003",
+      "pattern_name": "Sleep fragmentation increases next-day fatigue and can impair executive inhibition",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "sleep_fragmentation",
+        "direction": "fragmented",
+        "measurement_methods": [
+          "PSG",
+          "experimental sleep fragmentation",
+          "WASO",
+          "arousal index"
+        ],
+        "contexts": [
+          "experimental sleep loss",
+          "healthy adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "reduced_sleep_continuity",
+        "category": "sleep_marker",
+        "direction": "increased",
+        "pathway": "fragmented sleep architecture",
+        "mechanism": "disrupts restorative sleep despite possible preserved duration"
+      },
+      "neurobehavioral_output": {
+        "variable": "next_day_fatigue_and_executive_inhibition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "inhibition tasks"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "inhibition",
+          "executive function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Experimental sleep fragmentation increases subjective fatigue and impairs inhibition/executive function, though short-term compensation is possible.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Impact of Sleep Fragmentation on Cognition and Fatigue",
+            "authors": "Benkirane et al.",
+            "year": 2022,
+            "source_type": "sleep_intervention",
+            "doi_or_url": "",
+            "relevant_finding": "Fragmentation increased fatigue and impaired inhibition.",
+            "population": "healthy adults",
+            "sample_size": "",
+            "limitations": "Short-term experimental model."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "sleep_fragmentation",
+          "high_WASO",
+          "next_day_fatigue",
+          "impaired_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sleep_fragmentation",
+            "target": "next_day_fatigue",
+            "edge_type": "next_day_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Macro-level SWS/N3 percentage alone reliably predicts cognition.",
+      "reason": "Large cohort evidence suggests N3/SWS percentage alone is inconsistent after confounder adjustment; microarchitecture and sleep efficiency may be stronger.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "sleep_fragmentation",
+      "domain": "physiological",
+      "definition": "Disrupted sleep continuity reflected by WASO/arousal index.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "precise_SO_spindle_coupling",
+      "domain": "physiological",
+      "definition": "NREM slow oscillation-spindle timing supporting memory consolidation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_glymphatic_clearance",
+      "domain": "physiological",
+      "definition": "Reduced CSF/perivascular brain waste clearance activity measured by imaging/CSF proxies.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "sleep_fragmentation_next_day_fatigue_positive_moderate",
+      "source": "sleep_fragmentation",
+      "target": "next_day_fatigue",
+      "edge_type": "next_day_effect",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "SO-spindle coupling supports memory consolidation.",
+      "Reduced glymphatic activity associates with amyloid/tau and cognitive decline.",
+      "Sleep fragmentation increases next-day fatigue."
+    ],
+    "highest_value_patterns_for_inference": [
+      "sleep duration is insufficient; architecture/fragmentation/microarchitecture matter"
+    ],
+    "patterns_requiring_caution": [
+      "N3/SWS percentage alone",
+      "glymphatic claims without imaging/CSF evidence"
+    ],
+    "recommended_next_queries": [
+      "Repeated mild sleep fragmentation and real-world next-day brain fog/fatigue"
+    ],
+    "overall_assessment": "Strong sleep-mechanism layer; direct full-chain glymphatic mediation is still a gap."
+  }
+}

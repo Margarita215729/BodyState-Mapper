@@ -1,0 +1,410 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_001_feces_stool_microbiome_GI_markers_v2",
+    "series_name": "Feces/Stool Data Variation Tree v2: Clinical Stool Markers + Microbiome/Metabolomics",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "feces_stool",
+    "source_category": "biofluid_microbiome_GI",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "symptom_triggered",
+      "research_protocol"
+    ]
+  },
+  "status": {
+    "v1_quality": "weak/incomplete",
+    "v2_quality": "usable_with_gaps",
+    "completion_inputs": [
+      "astro_data_tree_001A_clinical_stool_markers_completion",
+      "astro_data_tree_001B_microbiome_metabolomics_completion"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "fecal_occult_blood_FIT",
+      "entity_name": "FOBT/FIT",
+      "measurement_type": "bleeding_marker",
+      "result_variations": [
+        {
+          "variation_id": "fit_positive",
+          "result_pattern": "positive FIT/FOBT",
+          "direction": "present",
+          "standalone_interpretation": [
+            "blood detected in stool; useful screening/triage marker"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "colonoscopy/follow-up",
+            "Hb/Hct",
+            "ferritin/iron markers",
+            "GI symptoms",
+            "NSAID/anticoagulant use"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "hemoglobin_ferritin",
+              "combined_meaning": "positive stool blood + low Hb/ferritin supports GI blood loss -> iron deficiency branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "GI_blood_loss",
+            "iron_deficiency_from_GI_loss"
+          ],
+          "candidate_chains": [
+            "positive_occult_blood + low_Hb/ferritin -> GI_blood_loss_iron_deficiency_branch"
+          ],
+          "guardrails": [
+            "Do not infer source of bleeding from FIT/FOBT alone.",
+            "Positive FIT/FOBT is not a diagnosis; requires clinical follow-up.",
+            "False positives and non-neoplastic bleeding are possible."
+          ],
+          "evidence_strength": "high"
+        }
+      ]
+    },
+    {
+      "entity_id": "fecal_calprotectin_lactoferrin",
+      "entity_name": "fecal calprotectin / lactoferrin",
+      "measurement_type": "inflammatory_marker",
+      "result_variations": [
+        {
+          "variation_id": "fecal_inflammation_high",
+          "result_pattern": "elevated calprotectin/lactoferrin",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "intestinal inflammation marker; helps distinguish inflammatory from functional patterns"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "GI symptoms",
+            "CRP/IL6/CBC",
+            "infection testing",
+            "NSAIDs",
+            "repeat testing",
+            "endoscopy if indicated"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_IL6_CBC",
+              "combined_meaning": "fecal inflammation + systemic inflammation + GI symptoms supports intestinal inflammation/IBD branch",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "intestinal_inflammation",
+            "IBD_activity_hypothesis",
+            "infectious_inflammation_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_calprotectin/lactoferrin + CRP_high + GI_symptoms -> intestinal_inflammation_or_IBD_branch"
+          ],
+          "guardrails": [
+            "Do not infer IBD from calprotectin alone.",
+            "Fecal inflammation markers can rise with infection, NSAIDs, and other GI inflammation.",
+            "Normal marker does not erase symptoms."
+          ],
+          "evidence_strength": "high"
+        }
+      ]
+    },
+    {
+      "entity_id": "stool_pathogen_Cdiff_parasites",
+      "entity_name": "stool pathogen panel / C. difficile / parasites",
+      "measurement_type": "infection_marker",
+      "result_variations": [
+        {
+          "variation_id": "pathogen_positive_symptomatic",
+          "result_pattern": "pathogen/toxin positive with compatible symptoms",
+          "direction": "present",
+          "standalone_interpretation": [
+            "supports infectious diarrhea branch when symptoms and timing fit"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "acute diarrhea",
+            "fever",
+            "travel/exposure",
+            "antibiotics",
+            "C. difficile toxin vs PCR",
+            "hydration/urine/electrolytes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urine_osmolality_electrolytes",
+              "combined_meaning": "infectious diarrhea + concentrated urine/electrolyte shift supports dehydration risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "infectious_diarrhea",
+            "dehydration_risk"
+          ],
+          "candidate_chains": [
+            "watery_diarrhea + pathogen_positive + urine_concentration/electrolyte_shift -> infectious_diarrhea_dehydration_branch"
+          ],
+          "guardrails": [
+            "Separate colonization from active disease when tests allow.",
+            "Do not infer dehydration from diarrhea alone.",
+            "Do not conflate infectious diarrhea with IBD/IBS."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ]
+    },
+    {
+      "entity_id": "malabsorption_markers",
+      "entity_name": "fecal fat / pancreatic elastase / bile acids / stool pH",
+      "measurement_type": "malabsorption_digestive_function_marker",
+      "result_variations": [
+        {
+          "variation_id": "malabsorption_pattern",
+          "result_pattern": "fecal fat high and/or pancreatic elastase low and/or bile acid abnormality",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "supports malabsorption/digestive insufficiency branch depending on marker pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "dietary fat intake",
+            "weight/body mass",
+            "GI symptoms",
+            "B12/iron/vitamin D",
+            "albumin",
+            "stool frequency"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_nutrients",
+              "other_entity": "iron_B12_vitaminD_albumin",
+              "combined_meaning": "malabsorption markers + nutrient deficiency supports malabsorption-fatigue cluster",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "malabsorption",
+            "exocrine_pancreatic_insufficiency",
+            "bile_acid_diarrhea"
+          ],
+          "candidate_chains": [
+            "low_pancreatic_elastase + fecal_fat_high + nutrient_deficiency -> malabsorption_fatigue_cluster"
+          ],
+          "guardrails": [
+            "Do not infer malabsorption from fatigue alone.",
+            "Fecal fat requires dietary/context interpretation.",
+            "Bile acid branch requires chronic watery diarrhea context."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ]
+    },
+    {
+      "entity_id": "bristol_bowel_pattern",
+      "entity_name": "Bristol stool type / bowel frequency / diarrhea / constipation",
+      "measurement_type": "stool_pattern",
+      "result_variations": [
+        {
+          "variation_id": "patterned_constipation_or_diarrhea",
+          "result_pattern": "Bristol 1-2/low frequency or Bristol 6-7/high frequency",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "phenotype marker for transit/stool pattern, not mechanism"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber/fluid",
+            "medications",
+            "GI symptoms",
+            "urine hydration markers",
+            "blood electrolytes",
+            "sleep/mood/fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urine_osmolality_volume",
+              "combined_meaning": "high-frequency diarrhea + concentrated urine suggests dehydration risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "constipation_burden_cluster",
+            "diarrhea_dehydration_risk_cluster"
+          ],
+          "candidate_chains": [
+            "Bristol_6_7 + high_frequency + low_urine_volume/high_osmolality -> diarrhea_dehydration_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer dysbiosis from stool pattern alone.",
+            "Bristol pattern is phenotype, not diagnosis.",
+            "Do not infer dehydration without urine/blood/intake/context."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "microbiome_diversity",
+      "entity_name": "alpha/beta diversity",
+      "measurement_type": "diversity_marker",
+      "result_variations": [
+        {
+          "variation_id": "low_diversity_contextual",
+          "result_pattern": "decreased alpha diversity or altered beta diversity",
+          "direction": "decreased/patterned",
+          "standalone_interpretation": [
+            "associated with several disease states but not diagnostic"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet",
+            "BMI",
+            "medications/antibiotics",
+            "GI symptoms",
+            "inflammation",
+            "geography/mission diet"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_HOMA_IR",
+              "combined_meaning": "lower diversity + inflammatory/metabolic markers supports inflammatory/metabolic microbiome disturbance hypothesis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "microbiome_disturbance_hypothesis"
+          ],
+          "candidate_chains": [
+            "low_diversity + symptoms + blood_marker_shift -> context-dependent microbiome branch"
+          ],
+          "guardrails": [
+            "Low diversity is not always pathological.",
+            "Do not infer dysbiosis/disease from diversity alone.",
+            "Associations are often cross-sectional."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ]
+    },
+    {
+      "entity_id": "taxa_shifts",
+      "entity_name": "Faecalibacterium / Akkermansia / Bifidobacterium / Lactobacillus / Enterobacteriaceae / Prevotella/Bacteroides/Ruminococcus",
+      "measurement_type": "taxa_marker",
+      "result_variations": [
+        {
+          "variation_id": "taxa_shift_pattern",
+          "result_pattern": "butyrate-producer depletion or pro-inflammatory taxa expansion",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "taxa-level association with gut/metabolic/immune states; not diagnostic alone"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber",
+            "antibiotics/probiotics",
+            "GI symptoms",
+            "blood inflammation",
+            "stool transit"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_cytokines",
+              "combined_meaning": "low Faecalibacterium/butyrate producers + CRP/cytokines + GI symptoms supports intestinal inflammation-metabolite branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "inflammatory_dysbiosis_hypothesis",
+            "diet_microbiome_response_branch"
+          ],
+          "candidate_chains": [
+            "Enterobacteriaceae_expansion + inflammation_markers + GI_symptoms -> inflammatory_dysbiosis_hypothesis"
+          ],
+          "guardrails": [
+            "Do not infer disease from a single taxon.",
+            "Probiotic-associated taxa increase is not automatically beneficial.",
+            "Firmicutes/Bacteroidetes ratio is not reliable standalone."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "stool_metabolites",
+      "entity_name": "SCFA / butyrate / propionate / acetate / bile acid metabolites / tryptophan-kynurenine / indoles / LPS pathways",
+      "measurement_type": "metabolite_marker",
+      "result_variations": [
+        {
+          "variation_id": "metabolite_shift_pattern",
+          "result_pattern": "reduced butyrate/SCFA or altered bile acid/tryptophan pathway",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "microbiome functional/metabolite signal; systemic meaning requires cross-modal data"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber",
+            "stool transit",
+            "blood inflammation",
+            "blood tryptophan/kynurenine",
+            "mood/fatigue/cognition",
+            "GI symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "tryptophan_kynurenine_inflammation",
+              "combined_meaning": "stool tryptophan/kynurenine shift + inflammation + mood/fatigue supports immune-metabolic gut-brain hypothesis",
+              "confidence": "moderate/low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "gut_brain_axis_hypothesis",
+            "intestinal_inflammation_metabolite_branch"
+          ],
+          "candidate_chains": [
+            "low_butyrate + high_calprotectin/CRP + GI_symptoms -> intestinal_inflammation_metabolite_branch"
+          ],
+          "guardrails": [
+            "SCFA concentration is not the same as production/absorption.",
+            "Stool metabolite level is not necessarily systemic exposure.",
+            "Do not infer causality from cross-sectional metabolomics."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    }
+  ],
+  "critical_guardrails": [
+    "GI symptoms != dysbiosis",
+    "microbiome association != causality",
+    "stool pattern != diagnosis",
+    "FIT/FOBT does not localize bleeding source",
+    "calprotectin/lactoferrin are inflammation markers, not IBD diagnosis",
+    "stool microbiome without symptoms/blood changes may be uncertain significance"
+  ],
+  "high_value_cross_modal_chains": [
+    "positive_occult_blood + low_Hb/ferritin -> GI_blood_loss_iron_deficiency_branch",
+    "high_calprotectin/lactoferrin + CRP_high + GI_symptoms -> intestinal_inflammation_or_IBD_branch",
+    "pathogen_positive + acute_watery_diarrhea + urine_concentration/electrolyte_shift -> infectious_diarrhea_dehydration_branch",
+    "fecal_fat_high/low_pancreatic_elastase + nutrient_deficiency -> malabsorption_fatigue_cluster",
+    "low_butyrate/Faecalibacterium + high_calprotectin/CRP + GI_symptoms -> intestinal_inflammation_metabolite_branch",
+    "microbiome_shift + no_symptoms + no_blood_change -> uncertain_significance_branch"
+  ],
+  "research_gaps": [
+    "Direct evidence linking stool markers to fatigue/cognition is limited.",
+    "Some clinical entities such as mucus, visible blood, parasites are underrepresented in available abstracts.",
+    "Longitudinal microbiome-metabolite-blood-symptom chains remain sparse."
+  ],
+  "evidence_note": "Evidence synthesized from uploaded Consensus completion reports; see assistant response citations."
+}

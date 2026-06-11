@@ -1,0 +1,207 @@
+{
+  "research_series": {
+    "series_id": "series_038_uncertainty_scoring_confidence_calibration_health_state_inference",
+    "series_name": "Uncertainty Scoring,Confidence Calibration,and Health State Inference",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_038_pattern_001",
+      "pattern_name": "Clinical and digital health models often report discrimination without adequate calibration",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "uncalibrated_model_score",
+        "direction": "overconfident",
+        "measurement_methods": [
+          "ML prediction score",
+          "clinical prediction model",
+          "wearable/digital health model"
+        ],
+        "contexts": [
+          "clinical prediction",
+          "digital health",
+          "wearable inference"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "calibration_error",
+        "category": "calibration_marker",
+        "direction": "increased",
+        "pathway": "model score does not reliably equal observed probability",
+        "mechanism": "lack of calibration plots/metrics, external validation, dataset shift, measurement noise"
+      },
+      "neurobehavioral_output": {
+        "variable": "health_state_confidence",
+        "direction": "miscalibrated",
+        "measurement_methods": [
+          "calibration plot",
+          "Brier score",
+          "calibration slope/intercept",
+          "external validation"
+        ],
+        "affected_functions": [
+          "fatigue inference",
+          "brain fog inference",
+          "mood inference",
+          "sleep/recovery inference"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not present an uncalibrated model score as probability; require calibration metrics and external validation before using it as confidence.",
+        "hypotheses": [
+          {
+            "target": "health_state_confidence",
+            "domain": "uncertainty",
+            "direction": "downweight_if_uncalibrated",
+            "confidence": "high",
+            "reason": "Systematic reviews show calibration is poorly reported and many ML clinical models have high risk of bias."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "evidence_update",
+        "latency": "predicted",
+        "reversibility": "evidence_revision_possible"
+      },
+      "modulators_confounders": [
+        "dataset shift",
+        "calibration drift",
+        "missing data",
+        "measurement noise",
+        "small sample size",
+        "external validation status"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Calibration reporting is inadequate in most published clinical prediction models; discrimination metrics are common but confidence/probability calibration is often missing.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Calibrated Confidence, Uncertainty Scoring, and Health State Inference in Human Health",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "<25% of many published models report calibration plots/metrics; >90% report AUC/C-index.",
+            "population": "human health prediction models",
+            "sample_size": "50 included papers",
+            "limitations": "Review-level synthesis; outcome-specific fatigue/brain fog calibration remains sparse."
+          }
+        ]
+      },
+      "limitations": [
+        "Calibration data for fatigue/brain fog/wearable inference is sparse.",
+        "Digital health studies often lack external validation."
+      ],
+      "alternative_explanations": [
+        "High discrimination may coexist with poor calibration.",
+        "Model performance may degrade under dataset shift."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "uncertainty_score",
+          "confidence_calibration",
+          "calibration_error",
+          "overconfidence_risk",
+          "model_confidence",
+          "external_validation",
+          "calibration_drift",
+          "dataset_shift",
+          "missing_data_penalty",
+          "measurement_reliability_weight"
+        ],
+        "candidate_edges": [
+          {
+            "source": "uncalibrated_model_score",
+            "target": "overconfidence_risk",
+            "edge_type": "uncertainty_increase",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "external_validation",
+            "target": "confidence_calibration",
+            "edge_type": "uncertainty_decrease",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Wearable/digital health model confidence can be treated as calibrated probability.",
+      "reason": "Most wearable/digital health studies lack robust calibration reporting.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "uncertainty_score",
+      "domain": "uncertainty",
+      "definition": "Calibrated confidence assigned to an inferred state after accounting for evidence, measurement reliability, missingness, context and validation status.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "overconfidence_risk",
+      "domain": "uncertainty",
+      "definition": "Risk that an inference is stated more confidently than supported by calibrated evidence.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "uncalibrated_model_score_overconfidence_risk_positive_high",
+      "source": "uncalibrated_model_score",
+      "target": "overconfidence_risk",
+      "edge_type": "uncertainty_increase",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Outcome-specific calibration for fatigue, brain fog, recovery and wearable inference.",
+    "Routine epistemic/aleatoric separation in non-imaging health data."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Calibration reporting is inadequate in many clinical prediction models.",
+      "Wearable/digital health inference often lacks robust uncertainty calibration."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Separate model confidence from true probability.",
+      "Penalize missing/noisy/unvalidated signals."
+    ],
+    "patterns_requiring_caution": [
+      "AUC/C-index should not be treated as calibration.",
+      "Bayesian/conformal methods are promising but not universally adopted."
+    ],
+    "recommended_next_queries": [
+      "How to operationalize uncertainty scoring for BodyState Mapper graph edges?"
+    ],
+    "overall_assessment": "Strong methodological guardrail series; include as core inference-confidence layer."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Calibrated Confidence, Uncertainty Scoring, and Health State Inference in Human Health",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

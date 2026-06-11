@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://thsi.local/schemas/personal_observation.schema.json",
+  "title": "THSI Personal Observation",
+  "description": "Schema for a personal observation input to the THSI Inference Engine v0.1. observed_node must match a node_id in the static evidence graph.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "observation_id",
+    "subject_id",
+    "timestamp",
+    "observed_node",
+    "value",
+    "value_type",
+    "source",
+    "quality_score",
+    "context",
+    "notes"
+  ],
+  "properties": {
+    "observation_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique identifier for this observation record."
+    },
+    "subject_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Identifier for the person to whom the observation applies."
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 datetime when the observation was recorded."
+    },
+    "observed_node": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$",
+      "description": "Graph node_id corresponding to the observed signal or marker."
+    },
+    "value": {
+      "description": "Observed value: boolean, number, string, or structured object."
+    },
+    "value_type": {
+      "type": "string",
+      "enum": [
+        "boolean",
+        "numeric",
+        "categorical",
+        "derived_marker",
+        "manual_report"
+      ]
+    },
+    "unit": {
+      "type": ["string", "null"],
+      "description": "Measurement unit when applicable; null otherwise."
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "wearable",
+        "manual_input",
+        "lab_test",
+        "derived_feature",
+        "questionnaire",
+        "unknown"
+      ]
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Observation quality weight between 0 and 1; observations with quality_score <= 0 are excluded from inference."
+    },
+    "context": {
+      "type": "object",
+      "description": "Structured contextual metadata for conservative interpretation."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free-text notes about the observation."
+    }
+  }
+}

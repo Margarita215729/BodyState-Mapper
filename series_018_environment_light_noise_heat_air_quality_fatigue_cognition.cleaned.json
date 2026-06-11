@@ -1,0 +1,797 @@
+{
+  "research_series": {
+    "series_id": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition",
+    "series_name": "Environmental Exposures,Light,Noise,Temperature,Air Quality,Fatigue,Sleep,Mood,and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_018_pattern_001",
+      "pattern_name": "Evening blue light/light-at-night worsens sleep timing/quality and next-day cognition/alertness",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "evening_blue_light_exposure_or_light_at_night",
+        "direction": "increased",
+        "measurement_methods": [
+          "lab light exposure",
+          "screen/tablet exposure",
+          "self-report device use",
+          "wearable/light monitoring"
+        ],
+        "contexts": [
+          "adolescents",
+          "adults",
+          "screen use",
+          "night exposure"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "circadian_phase_delay_and_sleep_disruption",
+        "category": "circadian_marker|sleep_marker",
+        "direction": "increased",
+        "pathway": "evening light suppresses/delays circadian signaling and disrupts sleep",
+        "mechanism": "timing-dependent retinal melanopsin/circadian alerting effects plus psychological appraisal of intrusive light"
+      },
+      "neurobehavioral_output": {
+        "variable": "sleep_quality_attention_mood",
+        "direction": "impaired",
+        "measurement_methods": [
+          "sleep duration/quality",
+          "selective attention",
+          "motor accuracy",
+          "memory/concentration reports"
+        ],
+        "affected_functions": [
+          "sleep",
+          "selective attention",
+          "memory/concentration",
+          "mood"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Evening blue light or intrusive light-at-night increases likelihood of sleep disruption and may impair next-day attention/mood; timing matters more than light exposure alone.",
+        "hypotheses": [
+          {
+            "target": "sleep_disturbance",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "RCT/lab and field studies support timing-dependent sleep effects."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|next_day",
+        "latency": "circadian_phase_shift",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "chronotype",
+        "age",
+        "screen behavior",
+        "baseline insomnia",
+        "light intensity/spectrum/duration"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Evening blue light after ~9pm and light-at-night are consistently linked to poorer sleep and some attention/cognition effects; morning/daytime light can have different or beneficial effects.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Impact of evening blue light exposure timing on sleep, motor, and cognitive performance",
+            "authors": "Souissi et al.",
+            "year": 2025,
+            "source_type": "lab_exposure_study",
+            "doi_or_url": "",
+            "relevant_finding": "Evening blue light worsened sleep and attention/motor performance in young athletes.",
+            "population": "adolescents/young athletes",
+            "sample_size": "",
+            "limitations": "specific chronotype/population"
+          }
+        ]
+      },
+      "limitations": [
+        "Effects depend on timing,spectrum,intensity,duration.",
+        "Self-reported light/device exposure can be confounded."
+      ],
+      "alternative_explanations": [
+        "late bedtime behavior",
+        "social media/arousal",
+        "workload/stress"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "evening_blue_light_exposure",
+          "light_at_night",
+          "circadian_phase_delay",
+          "sleep_disturbance",
+          "impaired_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "evening_blue_light_exposure",
+            "target": "sleep_disturbance",
+            "edge_type": "timing_dependent_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_018_pattern_002",
+      "pattern_name": "Daytime/morning bright light improves alertness,mood,and selected cognitive performance",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "morning_or_daytime_bright_light_exposure",
+        "direction": "increased",
+        "measurement_methods": [
+          "light exposure monitoring",
+          "office illuminance manipulation",
+          "bright-light intervention"
+        ],
+        "contexts": [
+          "office workers",
+          "healthy adults",
+          "brain injury recovery",
+          "Alzheimer disease"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "circadian_alignment_and_acute_alerting",
+        "category": "circadian_marker|behavioral_state",
+        "direction": "increased",
+        "pathway": "daytime light strengthens circadian signaling and acute alertness",
+        "mechanism": "non-image-forming retinal pathways affect alertness and sleep timing"
+      },
+      "neurobehavioral_output": {
+        "variable": "alertness_mood_executive_function",
+        "direction": "improved",
+        "measurement_methods": [
+          "reaction time",
+          "working memory/vigilance",
+          "executive tasks",
+          "subjective alertness/mood"
+        ],
+        "affected_functions": [
+          "alertness",
+          "working memory",
+          "vigilance",
+          "executive function",
+          "mood"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher daytime or morning bright light is associated with less sleepiness and better alertness/selected cognitive performance, but spectrum/CCT effects are mixed.",
+        "hypotheses": [
+          {
+            "target": "daytime_sleepiness",
+            "domain": "neurobehavioral",
+            "direction": "decreased",
+            "confidence": "moderate",
+            "reason": "wearable and office-light studies support alerting effects."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours|days",
+        "latency": "immediate|circadian_phase_shift",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "time_of_day",
+        "baseline sleep",
+        "season",
+        "outdoor activity"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Daytime light exposure correlates with reduced sleepiness and better working memory/vigilance; effects of color temperature/spectrum are inconsistent.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "CCT/spectrum effects inconsistent.",
+        "Outdoor activity confounds real-world light exposure."
+      ],
+      "alternative_explanations": [
+        "physical activity",
+        "social schedule",
+        "seasonality"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "morning_bright_light_exposure",
+          "low_daytime_light",
+          "daytime_sleepiness",
+          "working_memory"
+        ],
+        "candidate_edges": [
+          {
+            "source": "low_daytime_light",
+            "target": "daytime_sleepiness",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_018_pattern_003",
+      "pattern_name": "Air pollution/PM exposure is linked to cognitive decline and acute executive-function impairment",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "PM2_5_air_pollution_exposure",
+        "direction": "increased",
+        "measurement_methods": [
+          "ambient pollution monitoring",
+          "short-term particulate exposure",
+          "cohort exposure models",
+          "indoor pollution proxy"
+        ],
+        "contexts": [
+          "older adults",
+          "middle-aged adults",
+          "children",
+          "urban populations",
+          "indoor solid fuel exposure"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "sleep_disruption_inflammation_or_brain_structural_change",
+        "category": "inflammatory_marker|sleep_marker|environmental_exposure",
+        "direction": "increased",
+        "pathway": "pollution exposure may impair sleep and brain health via inflammatory/vascular pathways",
+        "mechanism": "particulate exposure, oxidative stress/inflammation, sleep cycle disruption"
+      },
+      "neurobehavioral_output": {
+        "variable": "global_cognition_executive_function",
+        "direction": "impaired",
+        "measurement_methods": [
+          "verbal/math tests",
+          "selective attention",
+          "emotion discrimination",
+          "global cognition scores"
+        ],
+        "affected_functions": [
+          "global cognition",
+          "executive function",
+          "selective attention",
+          "verbal/math performance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher PM2.5/air pollution exposure increases likelihood of poorer cognitive performance, especially with chronic exposure and vulnerability factors.",
+        "hypotheses": [
+          {
+            "target": "cognitive_decline_risk",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "large cohorts/meta-analyses support association."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|years",
+        "latency": "delayed|cumulative",
+        "reversibility": "partially_reversible|unknown"
+      },
+      "modulators_confounders": [
+        "age",
+        "education",
+        "APOE4",
+        "cardiovascular disease",
+        "SES",
+        "greenspace",
+        "sleep quality"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Long-term PM2.5/PM10/NO2 exposure is consistently associated with worse cognitive performance/decline; short-term PM can impair selected executive tasks after delay.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Exposure models can be noisy.",
+        "SES and neighborhood confounding remain important."
+      ],
+      "alternative_explanations": [
+        "socioeconomic status",
+        "traffic noise",
+        "baseline disease"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "PM2_5_exposure",
+          "air_pollution_exposure",
+          "sleep_disruption_from_pollution",
+          "impaired_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "PM2_5_exposure",
+            "target": "cognitive_decline_risk",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_018_pattern_004",
+      "pattern_name": "High indoor CO2/poor ventilation and moderate heat increase fatigue and reduce task performance",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "high_indoor_CO2_or_moderate_heat_poor_ventilation",
+        "direction": "increased",
+        "measurement_methods": [
+          "lab chamber CO2/temperature manipulation",
+          "indoor environmental monitoring",
+          "task performance tests"
+        ],
+        "contexts": [
+          "office/indoor settings",
+          "controlled chambers",
+          "workplaces"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "thermal_air_quality_stress_and_sleepiness",
+        "category": "environmental_exposure|thermoregulatory_marker|behavioral_state",
+        "direction": "increased",
+        "pathway": "indoor environmental strain reduces performance and increases fatigue/sleepiness",
+        "mechanism": "combined ventilation/CO2/temperature stress affects comfort-independent physiology and task performance"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_stress_task_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "subjective sleepiness/fatigue/stress",
+          "addition/subtraction tasks",
+          "cognitive performance batteries"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "sleepiness",
+          "stress",
+          "calculation/task performance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Poor indoor air quality/high CO2 and moderately high temperature can increase fatigue/sleepiness and reduce cognitive task performance even when people report acceptable comfort.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "lab chamber/RCT data support causal links."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes|hours",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "ventilation",
+        "humidity",
+        "clothing",
+        "activity",
+        "hydration",
+        "baseline sleep"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Chamber studies/RCTs show high indoor CO2/moderate heat increases fatigue and reduces task performance.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Indoor CO2 is ventilation proxy, not blood CO2.",
+        "Comfort ratings may not capture performance effects."
+      ],
+      "alternative_explanations": [
+        "workload",
+        "poor sleep",
+        "dehydration",
+        "crowding"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "high_indoor_CO2",
+          "poor_ventilation",
+          "heat_stress",
+          "subjective_fatigue",
+          "impaired_task_performance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "high_indoor_CO2",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_018_pattern_005",
+      "pattern_name": "Noise exposure and combined environmental stressors impair sleep,mood,and higher-order cognition",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_noise_or_noise_heat_combined_exposure",
+        "direction": "increased",
+        "measurement_methods": [
+          "decibel/noise exposure estimates",
+          "lab combined stressor studies",
+          "cohort exposure models"
+        ],
+        "contexts": [
+          "urban environments",
+          "nighttime noise",
+          "workplace/lab stressors",
+          "older adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sleep_disruption_annoyance_and_stress_response",
+        "category": "sleep_marker|environmental_exposure|autonomic_marker",
+        "direction": "increased",
+        "pathway": "noise affects sleep and stress physiology, with additive effects when combined with heat/pollution",
+        "mechanism": "nighttime arousal/annoyance/sleep fragmentation and cognitive load"
+      },
+      "neurobehavioral_output": {
+        "variable": "higher_order_cognition_anxiety_depression",
+        "direction": "impaired",
+        "measurement_methods": [
+          "logical reasoning",
+          "calculation",
+          "data processing",
+          "anxiety/depression scales",
+          "sleep disturbance"
+        ],
+        "affected_functions": [
+          "higher-order cognition",
+          "mood",
+          "sleep"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Chronic or nighttime noise increases likelihood of sleep disturbance, anxiety/depression symptoms, and higher-order cognitive impairment; combined noise+heat can additively worsen performance.",
+        "hypotheses": [
+          {
+            "target": "sleep_fragmentation",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "systematic reviews and cohort studies support sleep/noise relationships."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|chronic",
+        "latency": "immediate|cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "nighttime exposure",
+        "annoyance/appraisal",
+        "air pollution",
+        "SES",
+        "housing",
+        "baseline anxiety"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Noise is linked to higher-order cognitive impairment and mood risk; combined noise+heat has additive effects in few lab studies.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Noise often co-occurs with pollution/SES confounding.",
+        "Combined exposure evidence still limited."
+      ],
+      "alternative_explanations": [
+        "air pollution",
+        "urban stress",
+        "sleep debt"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "noise_exposure",
+          "nighttime_noise",
+          "sleep_disruption_from_noise",
+          "mood_worsening",
+          "impaired_higher_order_cognition"
+        ],
+        "candidate_edges": [
+          {
+            "source": "nighttime_noise",
+            "target": "sleep_fragmentation",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_018_pattern_006",
+      "pattern_name": "Green/nature space exposure is associated with better well-being and lower distress",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "green_space_or_nature_exposure",
+        "direction": "increased",
+        "measurement_methods": [
+          "surveyed visits",
+          "residential greenness",
+          "green/blue space exposure"
+        ],
+        "contexts": [
+          "general population",
+          "multi-country samples",
+          "urban/rural settings"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "stress_reduction_and_restorative_attention",
+        "category": "behavioral_state|environmental_exposure",
+        "direction": "improved",
+        "pathway": "nature exposure may reduce stress and support restoration",
+        "mechanism": "restorative environment, activity/social exposure, lower pollution/noise"
+      },
+      "neurobehavioral_output": {
+        "variable": "wellbeing_mental_distress",
+        "direction": "improved",
+        "measurement_methods": [
+          "well-being scales",
+          "mental distress",
+          "depression/anxiety medication use"
+        ],
+        "affected_functions": [
+          "mood",
+          "well-being",
+          "distress"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "More frequent green/blue space visits are associated with higher well-being and lower mental distress, but causal pathways are not fully established.",
+        "hypotheses": [
+          {
+            "target": "mood_improvement",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "moderate",
+            "reason": "large surveys support associations after adjustment."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|weeks|chronic",
+        "latency": "immediate|cumulative",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "physical activity",
+        "SES",
+        "social interaction",
+        "air quality",
+        "season",
+        "access/safety"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Green/blue space visits are consistently associated with improved well-being and lower distress; causality and mediators remain less certain.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Observational confounding.",
+        "Exposure quality and activity vary."
+      ],
+      "alternative_explanations": [
+        "exercise",
+        "social contact",
+        "wealth/neighborhood quality"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "green_space_exposure",
+          "nature_exposure",
+          "mood_improvement",
+          "mental_distress"
+        ],
+        "candidate_edges": [
+          {
+            "source": "green_space_exposure",
+            "target": "mood_improvement",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective fatigue/brain fog does not always match objective cognitive impairment under environmental exposures.",
+      "reason": "Some chamber/lab studies report dissociation between subjective and objective performance.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Effects of daytime CCT/light spectrum on alertness/cognition are inconsistent.",
+      "reason": "Mixed results depending on task type and exposure duration.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "evening_blue_light_exposure",
+      "domain": "contextual",
+      "definition": "Exposure to blue-enriched light/screens during evening/night window.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "high_indoor_CO2",
+      "domain": "contextual",
+      "definition": "Elevated indoor CO2 indicating poor ventilation/occupancy load; environmental proxy, not blood CO2.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "PM2_5_exposure",
+      "domain": "contextual",
+      "definition": "Fine particulate matter exposure from outdoor or indoor air pollution.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "nighttime_noise",
+      "domain": "contextual",
+      "definition": "Noise exposure during sleep period.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "heat_stress",
+      "domain": "physiological",
+      "definition": "Environmental thermal load sufficient to affect physiology or performance.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "evening_blue_light_exposure_sleep_disturbance_high",
+      "source": "evening_blue_light_exposure",
+      "target": "sleep_disturbance",
+      "edge_type": "timing_dependent_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "high_indoor_CO2_subjective_fatigue_high",
+      "source": "high_indoor_CO2",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "PM2_5_exposure_cognitive_decline_risk_high",
+      "source": "PM2_5_exposure",
+      "target": "cognitive_decline_risk",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Combined noise+heat+pollution exposure studies are limited.",
+    "Mechanistic full-chain studies linking environment→sleep/autonomic/inflammatory mediator→outcome are sparse.",
+    "Standardized subjective brain fog vs objective cognition measures are needed."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Evening blue light impairs sleep and selected cognition/attention.",
+      "Long-term PM2.5/air pollution is associated with cognitive decline.",
+      "High indoor CO2/moderate heat increases fatigue and reduces task performance.",
+      "Nighttime/chronic noise disrupts sleep and higher-order cognition."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Indoor air quality/temperature as acute fatigue-performance modifier.",
+      "Light timing as circadian sleep modifier.",
+      "Noise and PM2.5 as chronic contextual risk nodes."
+    ],
+    "patterns_requiring_caution": [
+      "Daytime light spectrum/CCT effects on cognition.",
+      "Green space causal effects.",
+      "Subjective brain fog as proxy for objective impairment."
+    ],
+    "recommended_next_queries": [
+      "How do acute infection/immune activation signals interact with environmental heat/air quality to affect fatigue?",
+      "What real-world wearable/environmental sensors best predict next-day fatigue/cognition?"
+    ],
+    "overall_assessment": "Environmental exposures are strong contextual and sometimes causal modifiers of sleep,fatigue,mood,and cognition. The most graph-ready nodes are light timing, indoor CO2/ventilation, heat stress, PM2.5, and nighttime noise. Guardrails must separate indoor CO2 from blood CO2, subjective fatigue from objective cognition, and acute exposure effects from chronic risk."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Environmental Exposures and Neurobehavioral Outcomes: Effects on Fatigue, Mood, Sleep, Autonomic State, Cognition, and Brain Fog",
+      "url": "uploaded_pdf",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

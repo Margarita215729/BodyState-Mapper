@@ -1,0 +1,175 @@
+{
+  "research_series": {
+    "series_id": "series_044_low_recovery_state_differential_inference",
+    "series_name": "Low Recovery State,Recovery Failure,Readiness,Fatigue,Mood,and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_044_pattern_001",
+      "pattern_name": "Low recovery requires convergent multi-domain repeated deviations",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "convergent_sleep_autonomic_activity_symptom_deviation",
+        "direction": "persistent/baseline_relative",
+        "measurement_methods": [
+          "HRV/RMSSD",
+          "RHR",
+          "sleep metrics",
+          "activity load",
+          "subjective recovery scales"
+        ],
+        "contexts": [
+          "athletes",
+          "workers",
+          "clinical/post-infection"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "low_recovery_state",
+        "category": "recovery_marker",
+        "direction": "increased",
+        "pathway": "load/stressor exceeds recovery capacity",
+        "mechanism": "combined autonomic,sleep,activity and subjective recovery disruption"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_cognition_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "mood questionnaires",
+          "performance metrics",
+          "cognitive tests"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "mood",
+          "performance",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Infer low recovery only when repeated within-person deviations or convergent multi-domain signals are present; do not infer it from one marker.",
+        "hypotheses": [
+          {
+            "target": "low_recovery_state",
+            "domain": "recovery_state_inference",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Reviews support repeated within-person deviation/convergence across domains as best practice."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "night_to_weeks",
+        "latency": "recovery_phase/cumulative",
+        "reversibility": "rest_or_load_reduction_responsive"
+      },
+      "modulators_confounders": [
+        "device quality",
+        "fitness",
+        "illness",
+        "menstrual phase",
+        "stress",
+        "heat",
+        "alcohol",
+        "caffeine",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Low recovery states are best detected by convergent physiological, subjective, behavioral and contextual signals rather than any single biomarker.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Subjective and objective measures correlate modestly",
+        "Wearable readiness scores require individual calibration"
+      ],
+      "alternative_explanations": [
+        "sleep debt",
+        "acute illness",
+        "medication/substance effect",
+        "PEM",
+        "burnout"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "low_recovery_state",
+          "recovery_failure",
+          "recovery_state_uncertain",
+          "baseline_relative_low_HRV",
+          "baseline_relative_high_RHR",
+          "poor_sleep_recovery",
+          "high_activity_load"
+        ],
+        "candidate_edges": [
+          {
+            "source": "convergent_multi_domain_deviation",
+            "target": "low_recovery_state",
+            "edge_type": "phenotype_marker",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Single HRV/RHR/sleep marker is diagnostic of low recovery",
+      "reason": "No single marker reliably captures low recovery state.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "low_recovery_state",
+      "domain": "physiological",
+      "definition": "Baseline-relative state of insufficient recovery supported by convergent sleep/autonomic/activity/symptom/context signals.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "convergent_multi_domain_deviation_to_low_recovery_state",
+      "source": "convergent_multi_domain_deviation",
+      "target": "low_recovery_state",
+      "edge_type": "phenotype_marker",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Causal pathways linking chronic low recovery to long-term health outcomes",
+    "Sex hormone modulation of recovery metrics"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Low recovery requires convergent multi-domain signals",
+      "Chronic insufficient recovery increases overtraining/burnout risk"
+    ],
+    "highest_value_patterns_for_inference": [
+      "Repeated within-person deviation across HRV/RHR/sleep/activity/symptoms"
+    ],
+    "patterns_requiring_caution": [
+      "Wearable readiness scores without individualized calibration"
+    ],
+    "recommended_next_queries": [],
+    "overall_assessment": "Strong recovery-state layer for phenotype-first inference."
+  },
+  "works_cited": []
+}

@@ -1,0 +1,461 @@
+{
+  "research_series": {
+    "series_id": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety",
+    "series_name": "Interoception, Symptom Perception, Prediction Error, Fatigue, Anxiety, Dizziness, and Brain Fog",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_025_pattern_001",
+      "pattern_name": "Interoceptive constructs diverge: accuracy, sensibility and awareness are distinct",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "interoceptive_construct_mismatch",
+        "direction": "dysregulated",
+        "measurement_methods": [
+          "heartbeat detection",
+          "questionnaires",
+          "metacognitive confidence"
+        ],
+        "contexts": [
+          "psychiatric",
+          "chronic pain",
+          "functional syndromes",
+          "IBS"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "accuracy_sensibility_awareness_dissociation",
+        "category": "interoceptive_marker",
+        "direction": "mixed",
+        "pathway": "bottom-up signal detection vs self-reported body vigilance",
+        "mechanism": "objective internal signal detection can be low while subjective body vigilance is high"
+      },
+      "neurobehavioral_output": {
+        "variable": "symptom_perception",
+        "direction": "mixed",
+        "measurement_methods": [
+          "symptom questionnaires",
+          "behavioral tasks",
+          "clinical scales"
+        ],
+        "affected_functions": [
+          "symptom burden",
+          "anxiety",
+          "pain",
+          "fatigue perception"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Self-reported body awareness is not equivalent to objective interoceptive accuracy.",
+        "hypotheses": [
+          {
+            "target": "symptom_perception",
+            "domain": "neurobehavioral",
+            "direction": "context_dependent",
+            "confidence": "high",
+            "reason": "Reviews show weak convergence among interoception measures."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "chronic",
+        "latency": "cumulative",
+        "reversibility": "treatment_responsive|partially_reversible"
+      },
+      "modulators_confounders": [
+        "anxiety",
+        "trauma",
+        "pain",
+        "IBS",
+        "autism",
+        "ADHD",
+        "sleep"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Modern interoception literature distinguishes accuracy, sensibility and awareness; self-report and performance-based measures often diverge.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "The New Measures of Interoceptive Accuracy",
+            "authors": "Desmedt et al.",
+            "year": 2023,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.1016/j.neubiorev.2023.105388",
+            "relevant_finding": "Interoceptive measures vary; constructs require separation.",
+            "population": "human studies",
+            "sample_size": "",
+            "limitations": "Method heterogeneity."
+          },
+          {
+            "title": "What Do Measures of Self-Report Interoception Measure?",
+            "authors": "Desmedt et al.",
+            "year": 2021,
+            "source_type": "systematic_review/network analysis",
+            "doi_or_url": "10.31234/osf.io/8mpz9",
+            "relevant_finding": "Self-report interoception measures show poor overlap.",
+            "population": "human studies",
+            "sample_size": "",
+            "limitations": "Questionnaire construct validity."
+          }
+        ]
+      },
+      "limitations": [
+        "Terminology inconsistent across field."
+      ],
+      "alternative_explanations": [
+        "Response bias",
+        "negative affect",
+        "attention to symptoms"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "interoceptive_accuracy",
+          "interoceptive_sensibility",
+          "interoceptive_awareness",
+          "body_hypervigilance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "body_hypervigilance",
+            "target": "symptom_perception",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_025_pattern_002",
+      "pattern_name": "Chronic pain often combines reduced interoceptive accuracy with increased body vigilance",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_pain_state",
+        "direction": "increased",
+        "measurement_methods": [
+          "pain diagnosis",
+          "pain scales",
+          "interoception tasks/questionnaires"
+        ],
+        "contexts": [
+          "chronic pain"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "low_accuracy_high_sensibility_pattern",
+        "category": "interoceptive_marker",
+        "direction": "mixed",
+        "pathway": "pain-related attention and bodily threat monitoring",
+        "mechanism": "persistent pain can reduce objective body signal discrimination while increasing perceived vigilance toward bodily states"
+      },
+      "neurobehavioral_output": {
+        "variable": "symptom_amplification",
+        "direction": "increased",
+        "measurement_methods": [
+          "body vigilance scales",
+          "pain/symptom scales"
+        ],
+        "affected_functions": [
+          "pain perception",
+          "fatigue perception",
+          "anxiety"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Chronic pain can amplify symptom salience without implying symptoms are imaginary.",
+        "hypotheses": [
+          {
+            "target": "symptom_amplification",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "high",
+            "reason": "Meta-analyses show reduced accuracy but increased self-reported vigilance in chronic pain."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks|chronic",
+        "latency": "cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "anxiety",
+        "depression",
+        "sleep",
+        "central sensitization"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Chronic pain shows a consistent pattern of reduced interoceptive accuracy with increased self-reported sensibility/body vigilance.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "The Relationship Between Pain and Interoception",
+            "authors": "Horsburgh et al.",
+            "year": 2024,
+            "source_type": "systematic_review/meta_analysis",
+            "doi_or_url": "10.1016/j.jpain.2024.01.341",
+            "relevant_finding": "Chronic pain associated with altered interoception.",
+            "population": "chronic pain",
+            "sample_size": "",
+            "limitations": "Heterogeneous pain conditions."
+          },
+          {
+            "title": "Pain in the body: Altered interoception in chronic pain conditions",
+            "authors": "Di Lernia et al.",
+            "year": 2016,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.1016/j.neubiorev.2016.09.015",
+            "relevant_finding": "Altered interoception in chronic pain.",
+            "population": "chronic pain",
+            "sample_size": "",
+            "limitations": "Study heterogeneity."
+          }
+        ]
+      },
+      "limitations": [
+        "Directionality not fully causal."
+      ],
+      "alternative_explanations": [
+        "Attention bias",
+        "mood symptoms",
+        "medication"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_pain_state",
+          "body_hypervigilance",
+          "symptom_amplification"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_pain_state",
+            "target": "body_hypervigilance",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_025_pattern_003",
+      "pattern_name": "Prediction error models explain symptom amplification without excluding physiological abnormality",
+      "causal_status": "hypothesis",
+      "physiological_input": {
+        "variable": "interoceptive_prediction_error",
+        "direction": "heightened",
+        "measurement_methods": [
+          "Bayesian modeling",
+          "expectation manipulation",
+          "neuroimaging",
+          "intervention studies"
+        ],
+        "contexts": [
+          "functional syndromes",
+          "anxiety",
+          "somatic symptoms"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "top_down_bottom_up_mismatch",
+        "category": "neurocognitive_marker",
+        "direction": "increased",
+        "pathway": "predictive processing of bodily states",
+        "mechanism": "mismatch between expected and actual bodily signals can amplify symptom perception, especially under uncertainty/threat"
+      },
+      "neurobehavioral_output": {
+        "variable": "symptom_amplification",
+        "direction": "increased",
+        "measurement_methods": [
+          "symptom ratings",
+          "expectation tasks",
+          "EMA"
+        ],
+        "affected_functions": [
+          "fatigue perception",
+          "dyspnea perception",
+          "dizziness perception",
+          "anxiety"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Prediction-error amplification can coexist with real dysautonomia, GI, pain or respiratory abnormalities; it should not be used to dismiss symptoms.",
+        "hypotheses": [
+          {
+            "target": "symptom_amplification",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Experimental/Bayesian work supports prediction-error mechanisms, but direct clinical evidence remains developing."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "seconds|minutes|chronic",
+        "latency": "anticipatory|immediate",
+        "reversibility": "treatment_responsive|unknown"
+      },
+      "modulators_confounders": [
+        "trauma",
+        "anxiety",
+        "prior illness",
+        "sleep",
+        "POTS",
+        "IBS",
+        "pain"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Prediction error frameworks provide a plausible transdiagnostic mechanism of symptom amplification, with experimental support but still limited direct clinical chain evidence.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Do expectations shape interoceptive perceptions across body domains?",
+            "authors": "Schmitz et al.",
+            "year": 2025,
+            "source_type": "experimental_study",
+            "doi_or_url": "10.1016/j.ijchp.2025.100609",
+            "relevant_finding": "Expectation/predictive processing influences bodily perception.",
+            "population": "experimental human study",
+            "sample_size": "",
+            "limitations": "Mechanistic model, not definitive clinical biomarker."
+          }
+        ]
+      },
+      "limitations": [
+        "Risk of psychologizing true physiological symptoms."
+      ],
+      "alternative_explanations": [
+        "Actual physiological abnormality",
+        "measurement error",
+        "contextual stress"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "interoceptive_prediction_error",
+          "symptom_amplification",
+          "panic_sensitivity",
+          "dyspnea_perception",
+          "fatigue_perception"
+        ],
+        "candidate_edges": [
+          {
+            "source": "interoceptive_prediction_error",
+            "target": "symptom_amplification",
+            "edge_type": "prediction_error_effect",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Interoceptive amplification means symptoms are psychological or not real.",
+      "reason": "The review emphasizes amplification can coexist with physiological abnormalities; constructs are multidimensional.",
+      "recommendation": "reject"
+    },
+    {
+      "claim": "Cardiac interoceptive accuracy is systematically impaired in anxiety/depression.",
+      "reason": "Large meta-analyses find no consistent association for cardiac accuracy; self-report may differ.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "body_hypervigilance",
+      "domain": "neurobehavioral",
+      "definition": "Heightened self-reported attention/vigilance toward bodily sensations.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "interoceptive_prediction_error",
+      "domain": "neurobehavioral",
+      "definition": "Mismatch between expected and actual bodily signals influencing symptom perception.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "body_hypervigilance_symptom_perception_high",
+      "source": "body_hypervigilance",
+      "target": "symptom_perception",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Need harmonized interoception measures.",
+    "Need more respiratory/GI interoception neuroimaging.",
+    "Need longitudinal/interventional tests of prediction-error models."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Interoceptive accuracy/sensibility/awareness are distinct.",
+      "Chronic pain shows low accuracy + high body vigilance.",
+      "Self-report measures do not equal objective performance."
+    ],
+    "highest_value_patterns_for_inference": [
+      "body vigilance as symptom-amplification modifier",
+      "prediction error as non-dismissive symptom perception node"
+    ],
+    "patterns_requiring_caution": [
+      "using interoception to psychologize symptoms",
+      "cardiac-only interoception generalization"
+    ],
+    "recommended_next_queries": [
+      "How to distinguish symptom amplification from dysautonomia or respiratory dysfunction?",
+      "Can interoceptive interventions reduce fatigue/brain fog specifically?"
+    ],
+    "overall_assessment": "Interoception is a crucial modifier layer for symptom perception, but must be separated from physiological abnormality and measured construct-specifically."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Interoception, Symptom Perception, and Prediction Error",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

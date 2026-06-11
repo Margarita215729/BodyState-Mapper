@@ -1,0 +1,109 @@
+{
+  "research_series": {
+    "series_id": "series_028_endocrine_rhythm_integration_fatigue_mood_cognition",
+    "series_name": "Endocrine Rhythm Integration, Cortisol, Thyroid, Sex Hormones, Glucose, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_028_pattern_001",
+      "pattern_name": "Endocrine circadian rhythm disruption predicts fatigue, mood, sleep, and cognitive problems",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "flattened_diurnal_cortisol_slope",
+          "target": "subjective_fatigue",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "circadian_misalignment",
+          "target": "mood_worsening",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "melatonin_phase_delay",
+          "target": "sleep_disturbance",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "circadian_misalignment",
+          "target": "impaired_attention",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_028_pattern_002",
+      "pattern_name": "Single-point hormone levels are less informative than rhythm loss",
+      "causal_status": "prediction",
+      "candidate_edges": [
+        {
+          "source": "single_point_hormone_abnormality",
+          "target": "neurobehavioral_outcome",
+          "edge_type": "no_clear_association",
+          "polarity": "mixed",
+          "confidence": "moderate"
+        },
+        {
+          "source": "loss_of_endocrine_rhythmicity",
+          "target": "neurobehavioral_outcome",
+          "edge_type": "predicts",
+          "polarity": "positive",
+          "confidence": "moderate"
+        }
+      ]
+    },
+    {
+      "pattern_id": "series_028_pattern_003",
+      "pattern_name": "Shift work and environmental circadian disruption affect endocrine rhythms and neurobehavioral outcomes",
+      "causal_status": "association",
+      "candidate_edges": [
+        {
+          "source": "shift_work",
+          "target": "circadian_misalignment",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        },
+        {
+          "source": "circadian_misalignment",
+          "target": "insulin_resistance_or_glucose_dysregulation",
+          "edge_type": "increases_likelihood_of",
+          "polarity": "positive",
+          "confidence": "high"
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "Separate cortisol rhythm from cortisol level.",
+    "Separate melatonin/DLMO from sleep timing proxy.",
+    "Single morning hormone value may be normal despite disrupted rhythm.",
+    "Measured hormone rhythm is stronger evidence than calendar phase or single lab value.",
+    "Thyroid-axis rhythmicity is underexplored compared with cortisol/melatonin."
+  ],
+  "high_value_candidate_nodes": [
+    "endocrine_rhythm_dysregulation",
+    "flattened_diurnal_cortisol_slope",
+    "blunted_CAR",
+    "elevated_evening_cortisol",
+    "melatonin_phase_delay",
+    "circadian_misalignment",
+    "shift_work",
+    "insulin_resistance",
+    "increased_glycemic_variability",
+    "temperature_rhythm_disruption",
+    "subjective_fatigue",
+    "mood_worsening",
+    "impaired_attention"
+  ]
+}

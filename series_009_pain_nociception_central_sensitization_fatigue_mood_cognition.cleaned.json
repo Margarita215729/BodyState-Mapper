@@ -1,0 +1,399 @@
+{
+  "research_series": {
+    "series_id": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition",
+    "series_name": "Pain, Nociception, Central Sensitization, Fatigue, Mood, Sleep, Autonomic State, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_009_pattern_001",
+      "pattern_name": "Chronic centralized pain is associated with impaired attention, executive function, working memory, and processing speed",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_centralized_pain",
+        "direction": "increased",
+        "measurement_methods": [
+          "pain intensity scales",
+          "pain interference scales",
+          "fibromyalgia index",
+          "QST",
+          "clinical diagnosis"
+        ],
+        "contexts": [
+          "fibromyalgia",
+          "chronic low back pain",
+          "nociplastic pain",
+          "chronic musculoskeletal pain"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "attentional_capture_sleep_disturbance_affective_distress",
+        "category": "behavioral_state",
+        "direction": "increased",
+        "pathway": "pain-related cognitive load and sleep/affective disruption",
+        "mechanism": "persistent pain consumes attentional resources and co-occurs with sleep disturbance, anxiety/depression, and fatigue"
+      },
+      "neurobehavioral_output": {
+        "variable": "objective_cognitive_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "neuropsychological tests",
+          "executive function tasks",
+          "working memory tasks",
+          "processing speed tests"
+        ],
+        "affected_functions": [
+          "attention",
+          "executive function",
+          "working memory",
+          "processing speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Multiple human cross-sectional and cohort studies link chronic or centralized pain with deficits in attention, executive function, working memory, and processing speed, but causal direction and mediation are not fully resolved.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Central Sensitization Severity in Chronic Low Back Pain: Associations with Sleep, Distress, Cortisol, and Visuospatial Working Memory",
+            "authors": "Sahebalam et al.",
+            "year": 2026,
+            "source_type": "QST/clinical_study",
+            "doi_or_url": "https://doi.org/10.2147/jpr.s583843",
+            "relevant_finding": "Central sensitization severity associated with poor sleep, distress, elevated morning cortisol, and reduced visuospatial working memory.",
+            "population": "chronic low back pain",
+            "sample_size": "",
+            "limitations": "Some biomarkers inconsistent; cross-sectional elements."
+          },
+          {
+            "title": "Cognitive Impairments in Fibromyalgia Syndrome",
+            "authors": "Galvez-Sánchez et al.",
+            "year": 2018,
+            "source_type": "clinical_study",
+            "doi_or_url": "https://doi.org/10.3389/fpsyg.2018.00377",
+            "relevant_finding": "Fibromyalgia associated with impairments across processing speed, attention, and memory domains, correlated with pain and affective factors.",
+            "population": "fibromyalgia",
+            "sample_size": "",
+            "limitations": "Affective confounding and symptom overlap."
+          }
+        ]
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_centralized_pain",
+          "pain_interference",
+          "attentional_capture",
+          "impaired_attention",
+          "impaired_working_memory",
+          "impaired_executive_function",
+          "slowed_processing_speed"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_centralized_pain",
+            "target": "impaired_attention",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "chronic_centralized_pain",
+            "target": "impaired_working_memory",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "pain_interference",
+            "target": "impaired_executive_function",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_009_pattern_002",
+      "pattern_name": "Poor sleep and affective distress partially mediate pain-related fatigue and cognitive impairment",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "chronic_pain_state",
+        "direction": "increased",
+        "measurement_methods": [
+          "pain scales",
+          "pain interference scales",
+          "central sensitization inventories"
+        ],
+        "contexts": [
+          "chronic pain",
+          "knee pain",
+          "fibromyalgia",
+          "chronic low back pain"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sleep_disturbance_and_affective_distress",
+        "category": "sleep_marker",
+        "direction": "increased",
+        "pathway": "pain disrupts sleep and increases catastrophizing/anxiety/depression, which worsens fatigue and cognitive symptoms",
+        "mechanism": "bidirectional pain-sleep-fatigue loop and attentional/emotional load"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_and_cognitive_symptoms",
+        "direction": "impaired",
+        "measurement_methods": [
+          "PSQI",
+          "DASS-21",
+          "fatigue scales",
+          "cognitive tests"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "subjective brain fog",
+          "attention",
+          "functional disability"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "moderate"
+      },
+      "evidence": {
+        "strength": "high",
+        "summary": "Mediation analyses indicate that sleep quality and affective factors partially mediate relationships between chronic pain/central sensitization and cognition/disability.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "chronic_pain_state",
+          "sleep_disturbance_due_to_pain",
+          "pain_catastrophizing",
+          "emotional_distress",
+          "subjective_fatigue",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "chronic_pain_state",
+            "target": "sleep_disturbance_due_to_pain",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "sleep_disturbance_due_to_pain",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "pain_catastrophizing",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_009_pattern_003",
+      "pattern_name": "Autonomic dysfunction and baroreflex impairment are linked to fibromyalgia symptom burden",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "fibromyalgia_symptom_burden",
+        "direction": "increased",
+        "measurement_methods": [
+          "clinical diagnosis",
+          "pain ratings",
+          "fatigue/sleep/mood scales"
+        ],
+        "contexts": [
+          "fibromyalgia"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "baroreflex_impairment_autonomic_dysfunction",
+        "category": "autonomic_marker",
+        "direction": "increased",
+        "pathway": "reduced autonomic regulatory capacity",
+        "mechanism": "blunted cardiac/vasomotor/myocardial baroreflex sensitivity and reduced autonomic flexibility"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_mood_sleep_symptoms",
+        "direction": "impaired",
+        "measurement_methods": [
+          "baroreflex sensitivity/effectiveness",
+          "HRV-related measures",
+          "clinical scales"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "sleep problems",
+          "depression",
+          "anxiety"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Physiological monitoring in fibromyalgia links blunted baroreflex sensitivity/effectiveness to pain, fatigue, mood, and sleep symptoms.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "uncertain",
+        "key_sources": []
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "fibromyalgia_symptom_burden",
+          "reduced_baroreflex_sensitivity",
+          "autonomic_dysregulation",
+          "subjective_fatigue",
+          "sleep_disturbance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "fibromyalgia_symptom_burden",
+            "target": "reduced_baroreflex_sensitivity",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "reduced_baroreflex_sensitivity",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Central Sensitization Inventory alone proves nociceptive sensitization.",
+      "reason": "The review notes CSI may reflect psychological hypervigilance more than true nociceptive gain.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Subjective fatigue in chronic pain equals objective cognitive fatigability.",
+      "reason": "Studies show subjective fatigue may correlate strongly with emotional distress while objective cognitive fatigability may not differ from controls.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Pain-related cognition effects are direct and independent of sleep/mood.",
+      "reason": "Sleep quality and affective factors partially mediate many associations.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "chronic_centralized_pain",
+      "domain": "physiological",
+      "definition": "Persistent pain state with features of central amplification or nociplastic pain.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "pain_interference",
+      "domain": "neurobehavioral",
+      "definition": "Degree to which pain disrupts daily functioning and cognitive/emotional activity.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "sleep_disturbance_due_to_pain",
+      "domain": "physiological",
+      "definition": "Sleep disruption attributable to pain symptoms.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_baroreflex_sensitivity",
+      "domain": "physiological",
+      "definition": "Reduced autonomic cardiovascular regulatory flexibility.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "chronic_centralized_pain_sleep_disturbance_positive_high",
+      "source": "chronic_centralized_pain",
+      "target": "sleep_disturbance_due_to_pain",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "pain_interference_subjective_fatigue_positive_high",
+      "source": "pain_interference",
+      "target": "subjective_fatigue",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "chronic_centralized_pain_impaired_attention_positive_high",
+      "source": "chronic_centralized_pain",
+      "target": "impaired_attention",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "research_gaps": [
+    "Longitudinal multimodal designs integrating QST/neuroimaging, HRV/baroreflex, cortisol, sleep, and cognitive testing.",
+    "Temporal coupling between autonomic/HPA changes and daily brain fog/fatigue fluctuations.",
+    "Condition-specific comparisons across fibromyalgia, migraine, neuropathic pain, and chronic low back pain."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Chronic centralized pain is associated with impaired attention/executive function/working memory.",
+      "Poor sleep quality and affective distress partially mediate pain-related cognition/fatigue.",
+      "Pain interference is often more informative than pain intensity for neurobehavioral outcomes."
+    ],
+    "highest_value_patterns_for_inference": [
+      "chronic_pain_state -> sleep_disturbance_due_to_pain -> subjective_fatigue",
+      "pain_interference -> impaired_attention / subjective_brain_fog",
+      "fibromyalgia_symptom_burden -> reduced_baroreflex_sensitivity -> fatigue/sleep/mood symptoms"
+    ],
+    "patterns_requiring_caution": [
+      "Central Sensitization Inventory should not be treated as direct proof of nociceptive sensitization.",
+      "Subjective brain fog/fatigue may exceed objective cognitive deficits.",
+      "Inflammatory/HPA biomarkers are inconsistent when measured at a single time point."
+    ],
+    "recommended_next_queries": [
+      "Human evidence linking respiration, CO2, oxygen saturation, hyperventilation, panic, dizziness, fatigue, and cognition.",
+      "Human evidence linking blood pressure, orthostatic intolerance, hydration/electrolytes, dizziness, fatigue, and brain fog."
+    ],
+    "overall_assessment": "Strong graph value. Pain should be modeled as a multimodal stressor that affects sleep, autonomic regulation, affective load, fatigue, and selected cognitive domains. Do not model pain-to-cognition as a single direct deterministic edge."
+  }
+}

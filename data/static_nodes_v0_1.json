@@ -1,0 +1,440 @@
+[
+  {
+    "node_id": "acute_arousal_state",
+    "node_type": "physiological_mechanism",
+    "label": "Acute Arousal State",
+    "domain": "EDA_sympathetic_arousal",
+    "description": "Acute Arousal State: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sympathetic_arousal_to_acute_arousal_state"
+    ]
+  },
+  {
+    "node_id": "acute_psychosocial_stress_response",
+    "node_type": "physiological_mechanism",
+    "label": "Acute Psychosocial Stress Response",
+    "domain": "HPA_axis_cortisol",
+    "description": "Acute Psychosocial Stress Response: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "acute_psychosocial_stress_response_to_hpa_axis_activation",
+      "social_evaluative_threat_to_acute_psychosocial_stress_response"
+    ]
+  },
+  {
+    "node_id": "acute_sleep_deprivation",
+    "node_type": "observable_marker",
+    "label": "Acute Sleep Deprivation",
+    "domain": "sleep_cortisol",
+    "description": "Acute Sleep Deprivation: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "acute_sleep_deprivation_to_cortisol_elevation_contextual"
+    ]
+  },
+  {
+    "node_id": "allostatic_load",
+    "node_type": "physiological_mechanism",
+    "label": "Allostatic Load",
+    "domain": "allostasis",
+    "description": "Allostatic Load: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "allostatic_load_to_health_risk_state",
+      "multi_system_dysregulation_to_allostatic_load"
+    ]
+  },
+  {
+    "node_id": "anxiety_like_arousal_state",
+    "node_type": "psychological_state_hypothesis",
+    "label": "Anxiety Like Arousal State",
+    "domain": "sleep_emotion_regulation",
+    "description": "Anxiety Like Arousal State: Cautious psychological state hypothesis; not a clinical diagnosis.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual"
+    ]
+  },
+  {
+    "node_id": "autonomic_regulation_shift",
+    "node_type": "physiological_mechanism",
+    "label": "Autonomic Regulation Shift",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Autonomic Regulation Shift: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "autonomic_regulation_shift_to_recovery_deficit",
+      "hrv_reduced_to_autonomic_regulation_shift"
+    ]
+  },
+  {
+    "node_id": "cortisol_elevation",
+    "node_type": "biochemical_marker",
+    "label": "Cortisol Elevation",
+    "domain": "sleep_cortisol",
+    "description": "Cortisol Elevation: Biochemical marker node used in mechanism pathways.",
+    "allowed_as_input": false,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "acute_sleep_deprivation_to_cortisol_elevation_contextual"
+    ]
+  },
+  {
+    "node_id": "depressive_like_pattern_contextual",
+    "node_type": "neurobiological_affective_bridge",
+    "label": "Depressive Like Pattern Contextual",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Depressive Like Pattern Contextual: Neurobiological/affective bridge between physiology and cautious state hypotheses.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "persistent_low_hrv_to_depressive_like_pattern_contextual"
+    ]
+  },
+  {
+    "node_id": "emotion_regulation_impairment",
+    "node_type": "neurobiological_affective_bridge",
+    "label": "Emotion Regulation Impairment",
+    "domain": "sleep_emotion_regulation",
+    "description": "Emotion Regulation Impairment: Neurobiological/affective bridge between physiology and cautious state hypotheses.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual",
+      "sleep_loss_to_emotion_regulation_impairment"
+    ]
+  },
+  {
+    "node_id": "fatigue_like_state",
+    "node_type": "psychological_state_hypothesis",
+    "label": "Fatigue Like State",
+    "domain": "sleep_mood",
+    "description": "Fatigue Like State: Cautious psychological state hypothesis; not a clinical diagnosis.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "recovery_deficit_to_fatigue_like_state"
+    ]
+  },
+  {
+    "node_id": "health_risk_state",
+    "node_type": "risk_state",
+    "label": "Health Risk State",
+    "domain": "allostatic_load_measurement",
+    "description": "Health Risk State: Risk-oriented physiological burden state; not a clinical diagnosis.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "allostatic_load_to_health_risk_state"
+    ]
+  },
+  {
+    "node_id": "hpa_axis_activation",
+    "node_type": "physiological_mechanism",
+    "label": "Hpa Axis Activation",
+    "domain": "HPA_axis_cortisol",
+    "description": "Hpa Axis Activation: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "acute_psychosocial_stress_response_to_hpa_axis_activation",
+      "salivary_cortisol_increase_to_hpa_axis_activation"
+    ]
+  },
+  {
+    "node_id": "increased_eda",
+    "node_type": "observable_marker",
+    "label": "Increased Eda",
+    "domain": "EDA_sympathetic_arousal",
+    "description": "Increased Eda: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "increased_eda_to_sympathetic_arousal"
+    ]
+  },
+  {
+    "node_id": "increased_emotional_reactivity",
+    "node_type": "neurobiological_affective_bridge",
+    "label": "Increased Emotional Reactivity",
+    "domain": "sleep_emotion_regulation",
+    "description": "Increased Emotional Reactivity: Neurobiological/affective bridge between physiology and cautious state hypotheses.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sleep_disturbance_to_increased_emotional_reactivity"
+    ]
+  },
+  {
+    "node_id": "irritability_vulnerability",
+    "node_type": "psychological_state_hypothesis",
+    "label": "Irritability Vulnerability",
+    "domain": "sleep_mood",
+    "description": "Irritability Vulnerability: Cautious psychological state hypothesis; not a clinical diagnosis.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "negative_mood_increase_to_irritability_vulnerability"
+    ]
+  },
+  {
+    "node_id": "low_resting_hrv",
+    "node_type": "observable_marker",
+    "label": "Low Resting Hrv",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Low Resting Hrv: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "low_resting_hrv_to_mental_health_related_autonomic_dysregulation"
+    ]
+  },
+  {
+    "node_id": "mental_health_related_autonomic_dysregulation",
+    "node_type": "physiological_mechanism",
+    "label": "Mental Health Related Autonomic Dysregulation",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Mental Health Related Autonomic Dysregulation: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "low_resting_hrv_to_mental_health_related_autonomic_dysregulation"
+    ]
+  },
+  {
+    "node_id": "multi_system_dysregulation",
+    "node_type": "physiological_mechanism",
+    "label": "Multi System Dysregulation",
+    "domain": "allostasis",
+    "description": "Multi System Dysregulation: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "multi_system_dysregulation_to_allostatic_load"
+    ]
+  },
+  {
+    "node_id": "negative_mood_increase",
+    "node_type": "neurobiological_affective_bridge",
+    "label": "Negative Mood Increase",
+    "domain": "sleep_mood",
+    "description": "Negative Mood Increase: Neurobiological/affective bridge between physiology and cautious state hypotheses.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "negative_mood_increase_to_irritability_vulnerability",
+      "sleep_restriction_to_negative_mood_increase"
+    ]
+  },
+  {
+    "node_id": "persistent_low_hrv",
+    "node_type": "observable_marker",
+    "label": "Persistent Low Hrv",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Persistent Low Hrv: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "persistent_low_hrv_to_depressive_like_pattern_contextual"
+    ]
+  },
+  {
+    "node_id": "recovery_deficit",
+    "node_type": "physiological_mechanism",
+    "label": "Recovery Deficit",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Recovery Deficit: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "autonomic_regulation_shift_to_recovery_deficit",
+      "recovery_deficit_to_fatigue_like_state"
+    ]
+  },
+  {
+    "node_id": "reduced_hrv_relative_to_baseline",
+    "node_type": "observable_marker",
+    "label": "Reduced Hrv Relative To Baseline",
+    "domain": "HRV_autonomic_regulation",
+    "description": "Reduced Hrv Relative To Baseline: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "hrv_reduced_to_autonomic_regulation_shift"
+    ]
+  },
+  {
+    "node_id": "reduced_positive_affect",
+    "node_type": "neurobiological_affective_bridge",
+    "label": "Reduced Positive Affect",
+    "domain": "sleep_emotion_regulation",
+    "description": "Reduced Positive Affect: Neurobiological/affective bridge between physiology and cautious state hypotheses.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sleep_loss_to_reduced_positive_affect"
+    ]
+  },
+  {
+    "node_id": "repeated_stress_responses",
+    "node_type": "physiological_mechanism",
+    "label": "Repeated Stress Responses",
+    "domain": "allostasis",
+    "description": "Repeated Stress Responses: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "repeated_stress_responses_to_stress_adaptation_response"
+    ]
+  },
+  {
+    "node_id": "salivary_cortisol_increase",
+    "node_type": "observable_marker",
+    "label": "Salivary Cortisol Increase",
+    "domain": "HPA_axis_cortisol",
+    "description": "Salivary Cortisol Increase: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "salivary_cortisol_increase_to_hpa_axis_activation"
+    ]
+  },
+  {
+    "node_id": "sleep_disturbance",
+    "node_type": "observable_marker",
+    "label": "Sleep Disturbance",
+    "domain": "sleep_emotion_regulation",
+    "description": "Sleep Disturbance: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sleep_disturbance_to_increased_emotional_reactivity"
+    ]
+  },
+  {
+    "node_id": "sleep_loss",
+    "node_type": "observable_marker",
+    "label": "Sleep Loss",
+    "domain": "sleep_emotion_regulation",
+    "description": "Sleep Loss: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sleep_loss_to_emotion_regulation_impairment",
+      "sleep_loss_to_reduced_positive_affect"
+    ]
+  },
+  {
+    "node_id": "sleep_restriction",
+    "node_type": "observable_marker",
+    "label": "Sleep Restriction",
+    "domain": "sleep_mood",
+    "description": "Sleep Restriction: Observable input signal referenced in evidence edges.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "sleep_restriction_to_negative_mood_increase"
+    ]
+  },
+  {
+    "node_id": "social_evaluative_threat_context",
+    "node_type": "context_node",
+    "label": "Social Evaluative Threat Context",
+    "domain": "HPA_axis_cortisol",
+    "description": "Social Evaluative Threat Context: Contextual factor required for edge interpretation.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "social_evaluative_threat_to_acute_psychosocial_stress_response"
+    ]
+  },
+  {
+    "node_id": "stress_adaptation_response",
+    "node_type": "physiological_mechanism",
+    "label": "Stress Adaptation Response",
+    "domain": "allostasis",
+    "description": "Stress Adaptation Response: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "repeated_stress_responses_to_stress_adaptation_response"
+    ]
+  },
+  {
+    "node_id": "stress_state_prediction",
+    "node_type": "risk_state",
+    "label": "Stress State Prediction",
+    "domain": "wearable_stress_detection",
+    "description": "Stress State Prediction: Risk-oriented physiological burden state; not a clinical diagnosis.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "wearable_multimodal_features_to_stress_state_prediction"
+    ]
+  },
+  {
+    "node_id": "sympathetic_arousal",
+    "node_type": "physiological_mechanism",
+    "label": "Sympathetic Arousal",
+    "domain": "EDA_sympathetic_arousal",
+    "description": "Sympathetic Arousal: Physiological mechanism node used as an intermediate bridge.",
+    "allowed_as_input": false,
+    "allowed_as_output": true,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "increased_eda_to_sympathetic_arousal",
+      "sympathetic_arousal_to_acute_arousal_state"
+    ]
+  },
+  {
+    "node_id": "wearable_multimodal_features",
+    "node_type": "model_feature_node",
+    "label": "Wearable Multimodal Features",
+    "domain": "EDA_sympathetic_arousal",
+    "description": "Wearable Multimodal Features: Model or composite feature node used in inference pathways.",
+    "allowed_as_input": true,
+    "allowed_as_output": false,
+    "clinical_diagnosis": false,
+    "created_from_edges": [
+      "wearable_multimodal_features_to_stress_state_prediction"
+    ]
+  }
+]

@@ -1,0 +1,527 @@
+{
+  "research_series": {
+    "series_id": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition",
+    "series_name": "Gut-Brain Axis, GI Symptoms, Microbiome, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_016_pattern_001",
+      "pattern_name": "Gut microbiota composition/function is associated with mood, fatigue, and cognitive symptoms across multiple populations",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "gut_microbiota_composition_function",
+        "direction": "dysregulated",
+        "measurement_methods": [
+          "stool microbiome diversity/taxa",
+          "metagenomics",
+          "SCFA profiles",
+          "GI symptom scales"
+        ],
+        "contexts": [
+          "IBS",
+          "IBD",
+          "CFS/ME",
+          "autism",
+          "depression",
+          "older adults"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "microbial_metabolite_immune_endocrine_vagal_pathways",
+        "category": "microbiome_marker",
+        "direction": "altered",
+        "pathway": "microbiome to CNS via SCFA, immune, endocrine, vagal, barrier integrity pathways",
+        "mechanism": "altered SCFA profiles, inflammation/endotoxemia, tryptophan-kynurenine shifts, serotonin/gut hormone signaling, vagal signaling"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_fatigue_cognitive_symptoms",
+        "direction": "mixed",
+        "measurement_methods": [
+          "fatigue scales",
+          "depression/anxiety scales",
+          "cognitive tests",
+          "quality of life scales"
+        ],
+        "affected_functions": [
+          "subjective fatigue",
+          "mood",
+          "anxiety",
+          "depression",
+          "brain fog",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Altered gut microbiome composition/function is associated with higher probability of mood, fatigue, and cognitive symptoms, but causality is usually not proven.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue_or_mood_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "worsened",
+            "confidence": "moderate",
+            "reason": "Human cohort/intervention evidence supports associations, while full temporal causal chains are uncommon."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months",
+        "latency": "cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "diet",
+        "medications",
+        "antibiotics",
+        "stress",
+        "sleep",
+        "BMI",
+        "age",
+        "sex",
+        "comorbidities",
+        "baseline_microbiome"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Strong association evidence across populations; causal evidence remains limited by confounding and incomplete mediator-outcome chains.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Gut-Brain Axis, Microbiome, GI Symptoms, and Neurobehavioral Outcomes: Human Evidence Review",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review",
+            "doi_or_url": "",
+            "relevant_finding": "Gut microbiota composition is associated with mood/fatigue/cognitive symptoms; causality remains difficult to establish.",
+            "population": "multiple human populations",
+            "sample_size": "50 included studies",
+            "limitations": "Methodological heterogeneity; confounding; limited full-chain longitudinal/interventional evidence."
+          }
+        ]
+      },
+      "limitations": [
+        "Mostly associative evidence",
+        "Population heterogeneity",
+        "Diet/medication/stress confounding",
+        "Few full-chain mediation/intervention studies"
+      ],
+      "alternative_explanations": [
+        "Diet quality",
+        "Stress/sleep disturbance",
+        "Comorbid GI disease",
+        "Medication or antibiotic exposure"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "gut_dysbiosis",
+          "low_microbiome_diversity",
+          "altered_SCFA_profile",
+          "tryptophan_kynurenine_shift",
+          "subjective_fatigue",
+          "depressive_symptoms",
+          "anxiety_symptoms",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "gut_dysbiosis",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "gut_dysbiosis",
+            "target": "depressive_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_016_pattern_002",
+      "pattern_name": "IBS/IBD symptom burden is linked to fatigue, anxiety/depression, and extraintestinal symptoms",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "IBS_IBD_symptom_burden",
+        "direction": "increased",
+        "measurement_methods": [
+          "IBS severity scales",
+          "IBD activity markers",
+          "fecal calprotectin",
+          "GI symptom scales"
+        ],
+        "contexts": [
+          "IBS",
+          "IBD",
+          "functional GI disorders"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "GI_inflammation_visceral_pain_and_GBA_dysregulation",
+        "category": "GI_marker",
+        "direction": "increased",
+        "pathway": "GI symptom burden and inflammation interact with mood/fatigue via immune, vagal, and interoceptive pathways",
+        "mechanism": "visceral pain, inflammation, gut-brain signaling, sleep disruption"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_anxiety_depression",
+        "direction": "worsened",
+        "measurement_methods": [
+          "fatigue scales",
+          "anxiety/depression scales",
+          "QoL scales"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "mood",
+          "anxiety",
+          "sleep",
+          "quality_of_life"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher IBS/IBD symptom burden increases likelihood of fatigue and mood symptoms, but mechanisms vary by disease activity and individual context.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "worsened",
+            "confidence": "moderate",
+            "reason": "IBS/IBD populations show consistent comorbidity between GI burden and fatigue/mood symptoms."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days_to_months",
+        "latency": "cumulative",
+        "reversibility": "treatment_responsive"
+      },
+      "modulators_confounders": [
+        "disease activity",
+        "visceral pain",
+        "sleep",
+        "diet",
+        "stress",
+        "inflammation",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "IBS/IBD are repeatedly linked to fatigue and anxiety/depression; microbiome-targeted therapies show variable/modest benefits.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Causality often unclear",
+        "Symptom burden and psychological distress are bidirectional"
+      ],
+      "alternative_explanations": [
+        "Sleep disruption",
+        "Pain interference",
+        "Diet restriction",
+        "Inflammatory disease activity"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "IBS_symptom_burden",
+          "IBD_inflammation",
+          "visceral_pain",
+          "GI_related_sleep_disturbance",
+          "subjective_fatigue",
+          "anxiety_symptoms",
+          "depressive_symptoms"
+        ],
+        "candidate_edges": [
+          {
+            "source": "IBS_symptom_burden",
+            "target": "anxiety_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "IBD_inflammation",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_016_pattern_003",
+      "pattern_name": "Microbiome-targeted interventions may improve subjective GI/mood/fatigue symptoms in select groups but objective cognition effects are inconsistent",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "diet_probiotic_prebiotic_FMT_intervention",
+        "direction": "variable",
+        "measurement_methods": [
+          "RCTs",
+          "dietary interventions",
+          "probiotic/prebiotic/FMT trials"
+        ],
+        "contexts": [
+          "IBS",
+          "IBD",
+          "older adults",
+          "depression",
+          "ASD",
+          "selected clinical populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "microbiome_or_metabolite_shift",
+        "category": "microbiome_marker",
+        "direction": "altered",
+        "pathway": "intervention alters microbiome composition/metabolites and may alter symptoms",
+        "mechanism": "SCFA production, reduced inflammation, altered neurotransmitter/gut hormone pathways"
+      },
+      "neurobehavioral_output": {
+        "variable": "subjective_mood_fatigue_GI_symptoms",
+        "direction": "improved_or_mixed",
+        "measurement_methods": [
+          "symptom scales",
+          "depression/anxiety scales",
+          "cognitive tests"
+        ],
+        "affected_functions": [
+          "subjective mood",
+          "fatigue",
+          "GI symptoms",
+          "objective cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Microbiome-targeted interventions can improve subjective symptoms in select groups, but effects are modest, strain/population-specific, and not consistently seen for objective cognition or sleep.",
+        "hypotheses": [
+          {
+            "target": "subjective_mood_or_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "moderate",
+            "reason": "RCTs/meta-analyses show small-to-moderate benefits, but heterogeneity is high."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months",
+        "latency": "delayed",
+        "reversibility": "treatment_responsive"
+      },
+      "modulators_confounders": [
+        "strain",
+        "dose",
+        "duration",
+        "baseline_microbiome",
+        "diet",
+        "population",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Probiotic/prebiotic/FMT interventions show modest and inconsistent benefits; objective cognition/sleep effects are weak.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "conflicting",
+        "key_sources": []
+      },
+      "limitations": [
+        "Strain specificity",
+        "Small samples",
+        "Inconsistent endpoints",
+        "Safety/efficacy uncertainty for FMT"
+      ],
+      "alternative_explanations": [
+        "Placebo effects",
+        "Diet changes",
+        "Regression to mean",
+        "Concurrent treatment"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "probiotic_intervention",
+          "prebiotic_intervention",
+          "fiber_intervention",
+          "FMT_intervention",
+          "microbiome_shift",
+          "subjective_symptom_improvement"
+        ],
+        "candidate_edges": [
+          {
+            "source": "probiotic_intervention",
+            "target": "subjective_mood_fatigue_GI_symptoms",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "probiotic_intervention",
+            "target": "objective_cognitive_performance",
+            "edge_type": "no_clear_association",
+            "polarity": "neutral",
+            "confidence": "low"
+          }
+        ],
+        "recommended_action": "keep_as_hypothesis",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Full causal chain from GI/microbiome marker to mediator to neurobehavioral outcome is rarely demonstrated.",
+      "reason": "Most studies are cross-sectional or measure only two links in the chain.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Probiotics do not consistently improve objective cognition or sleep quality.",
+      "reason": "Some RCTs show subjective improvement without objective cognitive/sleep benefit.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "IBS_symptom_burden",
+      "domain": "physiological",
+      "definition": "Severity of functional bowel symptoms such as abdominal pain, bloating, constipation, and diarrhea.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "IBD_inflammation",
+      "domain": "biochemical",
+      "definition": "Inflammatory bowel disease activity reflected by clinical activity and inflammatory biomarkers such as fecal calprotectin.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "gut_dysbiosis",
+      "domain": "biochemical",
+      "definition": "Altered gut microbiome composition/function measured by stool microbiome or metabolomic assays.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "altered_SCFA_profile",
+      "domain": "biochemical",
+      "definition": "Altered levels of microbial short-chain fatty acids such as butyrate, propionate, acetate.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "tryptophan_kynurenine_shift",
+      "domain": "biochemical",
+      "definition": "Shift in tryptophan metabolism toward kynurenine pathway activity.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "IBS_symptom_burden_anxiety_symptoms_positive_moderate",
+      "source": "IBS_symptom_burden",
+      "target": "anxiety_symptoms",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "IBD_inflammation_subjective_fatigue_positive_moderate",
+      "source": "IBD_inflammation",
+      "target": "subjective_fatigue",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "gut_dysbiosis_subjective_fatigue_positive_moderate",
+      "source": "gut_dysbiosis",
+      "target": "subjective_fatigue",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "probiotic_intervention_objective_cognition_neutral_low",
+      "source": "probiotic_intervention",
+      "target": "objective_cognitive_performance",
+      "edge_type": "no_clear_association",
+      "polarity": "neutral",
+      "confidence": "low"
+    }
+  ],
+  "source_verification_queue": [
+    "Petrut et al. 2025",
+    "Patil & Mehdi 2025",
+    "Chojnacki et al. 2025",
+    "Krynicka et al. 2025",
+    "Valles-Colomer et al. 2019",
+    "Kim et al. 2020",
+    "Gillies et al. 2024"
+  ],
+  "research_gaps": [
+    "Few full-chain longitudinal/interventional studies measuring GI/microbiome marker, mediator, and neurobehavioral outcome.",
+    "Objective cognition endpoints are underrepresented compared with subjective mood/fatigue.",
+    "Strain-specific probiotic effects require better standardization.",
+    "Baseline diet, medications, antibiotics, stress, and comorbidities confound many findings."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Gut microbiome/GI symptom burden is associated with subjective mood/fatigue/cognitive symptoms across multiple populations.",
+      "IBS/IBD symptom burden is linked to fatigue and anxiety/depression.",
+      "Microbiome-targeted interventions may improve subjective symptoms in selected groups."
+    ],
+    "highest_value_patterns_for_inference": [
+      "GI symptom burden as a more reliable practical node than generic dysbiosis.",
+      "IBD inflammation and fecal calprotectin as stronger biological nodes when measured.",
+      "SCFA and tryptophan-kynurenine pathways as mechanistic hypothesis nodes."
+    ],
+    "patterns_requiring_caution": [
+      "Microbiome association interpreted as causality.",
+      "Probiotics generalized across strains/populations.",
+      "Subjective brain fog equated with objective cognitive impairment."
+    ],
+    "recommended_next_queries": [
+      "Medication and substance effects on fatigue, mood, cognition, HRV, sleep, and GI symptoms."
+    ],
+    "overall_assessment": "Gut-brain evidence is promising and clinically relevant but heavily confounded. For BodyState Mapper, prioritize GI symptom burden and directly measured inflammatory/metabolomic markers; treat dysbiosis and intervention effects cautiously."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Gut-Brain Axis, Microbiome, GI Symptoms, and Neurobehavioral Outcomes: Human Evidence Review",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

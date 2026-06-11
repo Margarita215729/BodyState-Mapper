@@ -1,0 +1,471 @@
+{
+  "research_series": {
+    "series_id": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition",
+    "series_name": "Headache,Migraine,Vestibular Symptoms,Fatigue,Brain Fog,Mood,Sleep,and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_019_pattern_001",
+      "pattern_name": "Migraine phases and cognitive/fatigue symptoms",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "migraine_attack_or_postdrome",
+        "direction": "attack_state",
+        "measurement_methods": [
+          "clinical diagnosis",
+          "prospective diary",
+          "cognitive testing"
+        ],
+        "contexts": [
+          "migraine attack",
+          "postdrome",
+          "episodic migraine",
+          "chronic migraine"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "migraine_phase_state",
+        "category": "pain_marker",
+        "direction": "attack_or_postdrome",
+        "pathway": "pain sensory hypersensitivity autonomic and sleep disruption pathways",
+        "mechanism": "migraine phases involve pain, sensory sensitivity, nausea, sleep disruption and autonomic changes that can impair attention/processing"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_brain_fog_cognitive_performance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "attention tests",
+          "working memory tests",
+          "processing speed tests",
+          "self-report brain fog/fatigue"
+        ],
+        "affected_functions": [
+          "attention",
+          "working memory",
+          "processing speed",
+          "executive function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Migraine attack and postdrome states increase likelihood of fatigue, subjective brain fog and transient cognitive impairment, especially attention/processing speed.",
+        "hypotheses": [
+          {
+            "target": "fatigue_brain_fog_cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Prospective and objective testing evidence supports transient deficits during attacks/postdrome; interictal effects are more variable."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|days",
+        "latency": "prodrome|attack|postdrome",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "sleep disturbance",
+        "stress",
+        "medication use",
+        "cycle phase",
+        "light/noise exposure",
+        "hydration",
+        "attack frequency"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Migraine/headache disorders are multisystem conditions; cognitive impairment is strongest during attacks/postdrome and in chronic/high-frequency migraine.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Interictal deficits are variable",
+        "Subjective brain fog does not always map to objective tests",
+        "Medication/sleep/stress confounding"
+      ],
+      "alternative_explanations": [
+        "sleep disruption",
+        "medication effects",
+        "anxiety/depression",
+        "environmental triggers"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "migraine_attack",
+          "migraine_postdrome",
+          "subjective_fatigue",
+          "subjective_brain_fog",
+          "impaired_attention",
+          "slowed_processing_speed"
+        ],
+        "candidate_edges": [
+          {
+            "source": "migraine_attack",
+            "target": "impaired_attention",
+            "edge_type": "attack_phase_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "migraine_postdrome",
+            "target": "subjective_fatigue",
+            "edge_type": "attack_phase_effect",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_019_pattern_002",
+      "pattern_name": "Vestibular migraine and dizziness/visuospatial cognitive symptoms",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "vestibular_migraine",
+        "direction": "increased",
+        "measurement_methods": [
+          "clinical diagnosis",
+          "vestibular testing",
+          "neuropsychological testing"
+        ],
+        "contexts": [
+          "vestibular migraine",
+          "episodic vertigo"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "vestibular_dysfunction",
+        "category": "vestibular_marker",
+        "direction": "increased",
+        "pathway": "vestibular dysfunction and sensory integration burden",
+        "mechanism": "vestibular impairment may increase visuospatial processing load and dizziness-related cognitive complaints"
+      },
+      "neurobehavioral_output": {
+        "variable": "dizziness_brain_fog_visuospatial_cognition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "DHI",
+          "cognitive tests",
+          "vestibular tests"
+        ],
+        "affected_functions": [
+          "visuospatial cognition",
+          "attention",
+          "processing speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Vestibular migraine increases likelihood of dizziness/vertigo, subjective brain fog and visuospatial cognitive difficulty.",
+        "hypotheses": [
+          {
+            "target": "subjective_brain_fog",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Systematic review and testing evidence show subjective and objective cognitive symptoms, but mechanisms remain incompletely proven."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours|days|chronic",
+        "latency": "attack|interictal|delayed",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "Meniere disease",
+        "orthostatic intolerance",
+        "respiratory hypocapnia",
+        "medication effects",
+        "anxiety"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Vestibular migraine is a leading cause of episodic vertigo and is linked to subjective brain fog and objective visuospatial deficits.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Dizziness etiologies overlap",
+        "Objective cognitive tools may miss subjective symptoms"
+      ],
+      "alternative_explanations": [
+        "orthostatic intolerance",
+        "panic/hyperventilation",
+        "medication",
+        "sleep loss"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "vestibular_migraine",
+          "dizziness",
+          "vertigo",
+          "subjective_brain_fog",
+          "visuospatial_deficit"
+        ],
+        "candidate_edges": [
+          {
+            "source": "vestibular_migraine",
+            "target": "dizziness",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "vestibular_migraine",
+            "target": "visuospatial_deficit",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_019_pattern_003",
+      "pattern_name": "Sleep disturbance and mood/autonomic comorbidity amplify migraine burden",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "migraine_burden_or_chronic_headache",
+        "direction": "increased",
+        "measurement_methods": [
+          "headache frequency",
+          "diagnosis",
+          "sleep questionnaires",
+          "autonomic testing"
+        ],
+        "contexts": [
+          "chronic migraine",
+          "episodic migraine",
+          "post-infectious states"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sleep_disturbance_and_autonomic_dysfunction",
+        "category": "sleep_marker|autonomic_marker",
+        "direction": "increased",
+        "pathway": "sleep-autonomic-pain sensitization loop",
+        "mechanism": "poor sleep and autonomic dysfunction can worsen headache recurrence, fatigue and cognitive complaints"
+      },
+      "neurobehavioral_output": {
+        "variable": "functional_impairment_mood_fatigue_cognition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "sleep quality scales",
+          "mood scales",
+          "fatigue scales",
+          "cognitive complaints"
+        ],
+        "affected_functions": [
+          "mood",
+          "fatigue",
+          "cognition",
+          "functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Poor sleep and autonomic dysfunction amplify migraine/headache burden and increase likelihood of fatigue, mood symptoms and cognitive complaints.",
+        "hypotheses": [
+          {
+            "target": "subjective_fatigue",
+            "domain": "neurobehavioral",
+            "direction": "increased",
+            "confidence": "moderate",
+            "reason": "Prospective and observational studies link sleep/autonomic comorbidity to headache recurrence and disability."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "days|weeks|chronic",
+        "latency": "delayed|cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "depression",
+        "anxiety",
+        "POTS",
+        "medication overuse",
+        "stress"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Sleep disturbance and autonomic dysfunction are common in migraine and headache disorders and correlate with fatigue/cognitive complaints/disability.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Bidirectionality likely",
+        "Autonomic findings not always causal"
+      ],
+      "alternative_explanations": [
+        "underlying psychiatric disorder",
+        "medication overuse",
+        "pain chronification"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "sleep_disturbance_headache_related",
+          "autonomic_dysfunction_headache_related",
+          "POTS_comorbidity",
+          "functional_impairment"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sleep_disturbance_headache_related",
+            "target": "migraine_attack_risk",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "autonomic_dysfunction_headache_related",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective brain fog does not always correlate with objective cognitive test results across headache syndromes.",
+      "reason": "Retrospective/prospective studies highlight measurement limitations and detection challenges.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Dizziness should not automatically be interpreted as vestibular migraine.",
+      "reason": "Orthostatic, respiratory, medication, dehydration and environmental branches can also explain dizziness.",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "migraine_attack",
+      "domain": "physiological",
+      "definition": "Active migraine attack phase with pain and sensory/autonomic symptoms.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "migraine_postdrome",
+      "domain": "physiological",
+      "definition": "Post-attack recovery phase often involving fatigue and cognitive complaints.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "vestibular_migraine",
+      "domain": "physiological",
+      "definition": "Migraine subtype with episodic vertigo/dizziness and sensory symptoms.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "photophobia",
+      "domain": "neurobehavioral",
+      "definition": "Light sensitivity commonly associated with migraine.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "subjective_brain_fog",
+      "domain": "neurobehavioral",
+      "definition": "Self-reported cognitive clouding not always matching objective cognitive impairment.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "migraine_attack_impaired_attention_high",
+      "source": "migraine_attack",
+      "target": "impaired_attention",
+      "edge_type": "attack_phase_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "migraine_postdrome_subjective_fatigue_high",
+      "source": "migraine_postdrome",
+      "target": "subjective_fatigue",
+      "edge_type": "attack_phase_effect",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "vestibular_migraine_dizziness_high",
+      "source": "vestibular_migraine",
+      "target": "dizziness",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "sleep_disturbance_migraine_attack_risk_moderate",
+      "source": "sleep_disturbance_headache_related",
+      "target": "migraine_attack_risk",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Mechanisms linking vestibular dysfunction to cognitive impairment in vestibular migraine",
+    "Sleep mediation between headache frequency/intensity and neurobehavioral outcomes",
+    "Objective tools for brain fog versus true cognitive impairment across headache syndromes"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Migraine/headache disorders involve multisystem symptoms beyond pain.",
+      "Cognitive impairment is strongest during attacks/postdrome and in chronic/high-frequency migraine.",
+      "Vestibular migraine is linked to dizziness/vertigo and cognitive complaints."
+    ],
+    "highest_value_patterns_for_inference": [
+      "migraine_attack/postdrome as timed state nodes",
+      "vestibular_migraine as dizziness/brain-fog context node",
+      "sleep/autonomic comorbidity as amplifier"
+    ],
+    "patterns_requiring_caution": [
+      "subjective brain fog as objective cognitive impairment",
+      "dizziness as vestibular migraine without headache/sensory timing"
+    ],
+    "recommended_next_queries": [
+      "acute infection/fever/immune activation vs fatigue/cognition?",
+      "Should we now consolidate v0.1 schema and node ontology?"
+    ],
+    "overall_assessment": "Series 019 should enter v0.1 as a headache/vestibular context layer with phase-specific migraine nodes, not as a generic pain-only branch."
+  },
+  "works_cited": []
+}

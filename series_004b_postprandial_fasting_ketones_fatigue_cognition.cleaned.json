@@ -1,0 +1,491 @@
+{
+  "research_series": {
+    "series_id": "series_004b_postprandial_fasting_ketones_fatigue_cognition",
+    "series_name": "Postprandial State, Fasting, Ketones, Fatigue, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2024-07-17"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_004b_pattern_001",
+      "pattern_name": "Intermittent fasting and time-restricted eating improve metabolic health and may benefit cognitive function in older adults",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "intermittent_fasting_or_time_restricted_eating",
+        "direction": "increased",
+        "measurement_methods": [
+          "dietary intervention",
+          "randomized controlled trial",
+          "systematic review"
+        ],
+        "contexts": [
+          "older adults",
+          "overweight/obese adults",
+          "general adult population"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "glucose_and_ketone_bodies",
+        "category": "metabolic_marker",
+        "direction": "decreased_glucose_increased_ketones",
+        "pathway": "energy metabolism shift from glucose to ketone utilization during fasting periods",
+        "mechanism": "improved insulin sensitivity, increased beta-hydroxybutyrate production, reduced inflammation"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_function_and_mental_health",
+        "direction": "improved_or_stable",
+        "measurement_methods": [
+          "cognitive test batteries",
+          "executive function tasks",
+          "mood questionnaires"
+        ],
+        "affected_functions": [
+          "executive function",
+          "memory",
+          "mental well-being"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Intermittent fasting or time-restricted eating leads to metabolic changes (lower glucose, higher ketones) that are associated with improved or stable cognitive function and mental health in older adults.",
+        "hypotheses": [
+          {
+            "target": "cognitive_function_and_mental_health",
+            "domain": "neurobehavioral",
+            "direction": "improved_or_stable",
+            "confidence": "moderate",
+            "reason": "Systematic reviews and RCTs show positive or neutral effects on cognition and mood in older adults practicing intermittent fasting or TRE."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months",
+        "latency": "delayed_cumulative",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "physical_activity",
+        "baseline_metabolic_health",
+        "sleep_quality",
+        "diet_composition"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Systematic reviews and RCTs indicate that intermittent fasting and TRE improve metabolic markers including glucose, insulin, and ketones and may benefit cognitive function and mental health in older adults. Effects on cognition are generally positive or neutral; more research is needed for definitive conclusions.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Effect of time-restricted eating and intermittent fasting on cognitive function and mental health in older adults: A systematic review",
+            "authors": "Sina Sharifi et al.",
+            "year": 2024,
+            "source_type": "systematic_review",
+            "doi_or_url": null,
+            "relevant_finding": "TRE and intermittent fasting may have a positive impact on cognitive function and mental health in older adults.",
+            "population": "older adults",
+            "sample_size": 8,
+            "limitations": "Heterogeneity of interventions; need for more high-quality trials."
+          },
+          {
+            "title": "Time-restricted feeding and cognitive function in sedentary and physically active elderly individuals: Ramadan diurnal intermittent fasting as a model",
+            "authors": "M. Boujelbane et al.",
+            "year": 2022,
+            "source_type": "clinical_study",
+            "doi_or_url": null,
+            "relevant_finding": "Physically active elderly participants improved in executive function, attention, inhibition, and associative memory during Ramadan intermittent fasting; sedentary participants showed decreased associative learning.",
+            "population": "elderly adults, mean age about 63",
+            "sample_size": 58,
+            "limitations": "Subjective sleep measures; cultural adaptation of tests."
+          }
+        ]
+      },
+      "limitations": [
+        "Heterogeneity of study designs",
+        "Short intervention durations",
+        "Limited mechanistic mediation analyses",
+        "Potential confounding by physical activity or sleep changes"
+      ],
+      "alternative_explanations": [
+        "Practice effects on cognitive tests",
+        "Social or cultural factors during religious fasts",
+        "Diet composition differences unrelated to timing"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "intermittent_fasting_or_time_restricted_eating",
+          "glucose_and_ketone_bodies",
+          "cognitive_function_and_mental_health"
+        ],
+        "candidate_edges": [
+          {
+            "source": "intermittent_fasting_or_time_restricted_eating",
+            "target": "glucose_and_ketone_bodies",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "glucose_and_ketone_bodies",
+            "target": "cognitive_function_and_mental_health",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node_and_edges",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_004b_pattern_002",
+      "pattern_name": "Beta-hydroxybutyrate is positively associated with general cognitive performance in humans",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "beta_hydroxybutyrate_levels",
+        "direction": "increased",
+        "measurement_methods": [
+          "NMR spectroscopy",
+          "blood assays"
+        ],
+        "contexts": [
+          "fasting",
+          "ketogenic diet"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "beta_hydroxybutyrate",
+        "category": "metabolic_marker",
+        "direction": "increased",
+        "pathway": "alternative brain energy substrate during low glucose availability",
+        "mechanism": "supports neuronal energy metabolism; may reduce neuroinflammation"
+      },
+      "neurobehavioral_output": {
+        "variable": "general_cognitive_performance",
+        "direction": "improved",
+        "measurement_methods": [
+          "standardized cognitive test batteries",
+          "MMSE",
+          "ADAS-Cog"
+        ],
+        "affected_functions": [
+          "global cognition",
+          "memory",
+          "executive function"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher BHB levels are associated with better general cognitive performance; genetic evidence may support a protective association against cognitive decline.",
+        "hypotheses": [
+          {
+            "target": "general_cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "moderate",
+            "reason": "Observational regression and Mendelian randomization studies report that BHB predicts better cognition and lower AD risk."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours_to_years",
+        "latency": "immediate_for_metabolic_shift_long_term_for_cognition",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "diabetes_status",
+        "APOE_genotype"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Observational and Mendelian randomization studies report that higher BHB predicts better cognition and lower AD risk. This is supported indirectly by meta-analyses of ketogenic diet interventions in AD patients, but general-population causal inference remains limited.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Triangulating evidence from observational and Mendelian randomization studies of ketone bodies for cognitive performance",
+            "authors": "Wichanon Sae-jie et al.",
+            "year": 2023,
+            "source_type": "observational_and_MR",
+            "doi_or_url": null,
+            "relevant_finding": "BHB positively associated with general cognitive function; MR supports protective effect against AD.",
+            "population": "adults older than 45",
+            "sample_size": "5506 observational; over 45000 genetic",
+            "limitations": "No direct intervention data."
+          },
+          {
+            "title": "Effects of ketogenic diet on cognitive function of patients with Alzheimer's disease: a systematic review and meta-analysis",
+            "authors": "Liyang Rong et al.",
+            "year": 2024,
+            "source_type": "meta_analysis",
+            "doi_or_url": null,
+            "relevant_finding": "Ketogenic diet improves MMSE or ADAS-Cog scores in AD patients and increases BHB levels.",
+            "population": "AD patients",
+            "sample_size": "10 RCTs / 691 participants",
+            "limitations": "Heterogeneity across studies."
+          }
+        ]
+      },
+      "limitations": [
+        "Causality not proven for short-term interventions",
+        "Most direct evidence comes from AD populations",
+        "Potential confounding by overall metabolic health"
+      ],
+      "alternative_explanations": [
+        "Reverse causality: healthier individuals may have higher BHB",
+        "Other dietary or lifestyle factors correlated with BHB"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "beta_hydroxybutyrate_levels",
+          "general_cognitive_performance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "beta_hydroxybutyrate_levels",
+            "target": "general_cognitive_performance",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_004b_pattern_003",
+      "pattern_name": "Short-term fasting does not meaningfully impair cognitive performance in healthy adults, but longer fasts may cause modest reductions",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "short_term_fasting_duration_hours_to_days",
+        "direction": "increased",
+        "measurement_methods": [
+          "experimental fasting protocols"
+        ],
+        "contexts": [
+          "healthy adults"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "glucose_availability",
+        "category": "metabolic_marker",
+        "direction": "decreased",
+        "pathway": "depletion of hepatic glycogen stores",
+        "mechanism": "lowered blood glucose triggers compensatory ketogenesis"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_performance",
+        "direction": "stable_or_modestly_impaired",
+        "measurement_methods": [
+          "standardized psychological tasks"
+        ],
+        "affected_functions": [
+          "attention",
+          "inhibitory_control"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Short-term fasting up to about 12 hours does not impair cognition; longer fasts may cause small decrements.",
+        "hypotheses": [
+          {
+            "target": "cognitive_performance",
+            "domain": "neurobehavioral",
+            "direction": "stable_or_modestly_impaired",
+            "confidence": "high",
+            "reason": "Meta-analysis shows no meaningful difference between fasted and satiated participants overall."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours_to_days",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "fast_duration"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "A meta-analysis of more than 3000 participants reports no meaningful difference between fasted and satiated groups for most cognitive domains.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Acute effects of fasting on cognitive performance: A systematic review and meta-analysis",
+            "authors": "Christoph Bamberg and David Moreau",
+            "year": 2025,
+            "source_type": "meta_analysis",
+            "doi_or_url": null,
+            "relevant_finding": "No meaningful difference between fasted and satiated participants overall. Modest reductions may appear for longer fasts or younger participants.",
+            "population": "healthy adults",
+            "sample_size": "3484 participants / 222 effect sizes",
+            "limitations": "Some heterogeneity for long fasts and young subjects."
+          }
+        ]
+      },
+      "limitations": [
+        "Not all cognitive domains tested equally",
+        "Longer fasts greater than 24 hours are less studied"
+      ],
+      "alternative_explanations": [
+        "Practice effects",
+        "Motivation differences"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "short_term_fasting_duration_hours_to_days",
+          "cognitive_performance"
+        ],
+        "candidate_edges": [
+          {
+            "source": "short_term_fasting_duration_hours_to_days",
+            "target": "cognitive_performance",
+            "edge_type": "associated_with",
+            "polarity": "nonlinear",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "No strong human evidence links postprandial glucose spikes directly to brain fog or acute cognitive fatigue.",
+      "reason": "No included study performed formal mediation analysis or demonstrated an acute causal chain from postprandial hyperglycemia to subjective brain fog or cognitive fatigue.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "beta_hydroxybutyrate_levels",
+      "domain": "biochemical",
+      "definition": "The primary circulating ketone body produced during ketosis; alternative brain fuel when glucose is low.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "time_restricted_eating_intervention",
+      "domain": "physiological",
+      "definition": "Dietary pattern restricting food intake to specific daily windows such as 8 to 10 hours.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "time_restricted_eating_intervention_beta_hydroxybutyrate_levels_positive_association_high_confidence",
+      "source": "time_restricted_eating_intervention",
+      "target": "beta_hydroxybutyrate_levels",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "source_title": "Effect of time-restricted eating and intermittent fasting on cognitive function and mental health in older adults: A systematic review",
+      "reason": "DOI or URL missing; verify bibliographic metadata before adding to source registry."
+    },
+    {
+      "source_title": "Triangulating evidence from observational and Mendelian randomization studies of ketone bodies for cognitive performance",
+      "reason": "DOI or URL missing; verify MR assumptions, exposure definition, and outcome dataset."
+    },
+    {
+      "source_title": "Acute effects of fasting on cognitive performance: A systematic review and meta-analysis",
+      "reason": "Year 2025 and DOI/URL missing; verify publication status and exact conclusions."
+    },
+    {
+      "source_title": "Effects of ketogenic diet on cognitive function of patients with Alzheimer's disease: a systematic review and meta-analysis",
+      "reason": "DOI or URL missing; verify included population and whether findings generalize beyond AD."
+    },
+    {
+      "source_title": "Time-restricted feeding and cognitive function in sedentary and physically active elderly individuals",
+      "reason": "DOI or URL missing; verify study design, fasting model, sleep confounding, and test battery."
+    }
+  ],
+  "research_gaps": [
+    "Lack of direct mediation analyses linking postprandial glycemic excursions to acute changes in attention, fatigue, or mood.",
+    "Inadequate mechanistic human studies connecting gut hormones such as ghrelin and leptin to motivation or cognition after meal timing manipulations.",
+    "Heterogeneity in outcome measures for subjective fatigue and brain fog limits synthesis."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Intermittent fasting and TRE improve metabolic markers and may benefit cognition or mood in older adults.",
+      "Higher beta-hydroxybutyrate is associated with better general cognition."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Beta-hydroxybutyrate as a node linking metabolic state to neurobehavioral outcomes.",
+      "Time-restricted eating as an actionable physiological input."
+    ],
+    "patterns_requiring_caution": [
+      "Direct causal claims about postprandial glucose spikes causing brain fog or fatigue remain unproven.",
+      "Short-term fasting generally does not impair cognition, but individual variability exists."
+    ],
+    "recommended_next_queries": [
+      "Are acute postprandial glycemic excursions causally linked to subjective brain fog or measured attention/fatigue deficits?",
+      "Do ghrelin/leptin fluctuations after meal skipping mediate changes in motivation/executive function?"
+    ],
+    "overall_assessment": "Human evidence supports beneficial associations between intermittent fasting, TRE, metabolic switching, higher BHB, and some aspects of cognition or mood, especially in older or metabolically impaired populations. Direct causal chains from postprandial glycemic spikes to acute neurobehavioral impairment remain speculative. Mechanistic mediation analyses are rare. Most findings are associative rather than strictly causal."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Effect of time-restricted eating and intermittent fasting on cognitive function and mental health in older adults: A systematic review",
+      "url": null,
+      "doi": null,
+      "year": 2024
+    },
+    {
+      "index": 2,
+      "title": "Triangulating evidence from observational and Mendelian randomization studies of ketone bodies for cognitive performance",
+      "url": null,
+      "doi": null,
+      "year": 2023
+    },
+    {
+      "index": 3,
+      "title": "Acute effects of fasting on cognitive performance: A systematic review and meta-analysis",
+      "url": null,
+      "doi": null,
+      "year": 2025
+    },
+    {
+      "index": 4,
+      "title": "Effects of ketogenic diet on cognitive function of patients with Alzheimer's disease: a systematic review and meta-analysis",
+      "url": null,
+      "doi": null,
+      "year": 2024
+    },
+    {
+      "index": 5,
+      "title": "Time-restricted feeding and cognitive function in sedentary and physically active elderly individuals",
+      "url": null,
+      "doi": null,
+      "year": 2022
+    }
+  ]
+}

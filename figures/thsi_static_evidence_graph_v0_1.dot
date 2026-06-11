@@ -1,0 +1,85 @@
+
+digraph G {
+  graph [rankdir=LR, bgcolor="white", pad="0.5", nodesep="0.55", ranksep="0.9", splines=ortho, outputorder=edgesfirst];
+  node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=12, margin="0.12,0.08", penwidth=1.4];
+  edge [fontname="Helvetica", fontsize=9, color="#64748B", arrowsize=0.7, penwidth=1.2];
+
+  subgraph cluster_obs {
+    label="Observable signals / ML features";
+    color="#BFDBFE"; style="rounded,filled"; fillcolor="#EFF6FF"; fontname="Helvetica-Bold"; fontsize=16;
+    HRV [label="HRV ↓\nlow resting HRV", fillcolor="#DBEAFE", color="#2563EB"];
+    EDA [label="EDA ↑ / SCR", fillcolor="#DBEAFE", color="#2563EB"];
+    Sleep [label="Sleep loss\nrestriction\nfragmentation", fillcolor="#DBEAFE", color="#2563EB"];
+    Cortisol [label="Salivary\ncortisol ↑", fillcolor="#DBEAFE", color="#2563EB"];
+    Context [label="Social-evaluative\nthreat context", fillcolor="#DBEAFE", color="#2563EB"];
+    Wearables [label="Multimodal\nwearable features", fillcolor="#DBEAFE", color="#2563EB"];
+    MultiBio [label="Multi-system\nbiomarkers", fillcolor="#DBEAFE", color="#2563EB"];
+  }
+
+  subgraph cluster_mech {
+    label="Physiological mechanisms";
+    color="#DDD6FE"; style="rounded,filled"; fillcolor="#F5F3FF"; fontname="Helvetica-Bold"; fontsize=16;
+    ANS [label="Autonomic\nregulation shift", fillcolor="#EDE9FE", color="#7C3AED"];
+    SNS [label="Sympathetic\narousal", fillcolor="#EDE9FE", color="#7C3AED"];
+    Recovery [label="Recovery\ndeficit", fillcolor="#EDE9FE", color="#7C3AED"];
+    HPA [label="HPA-axis\nactivation", fillcolor="#EDE9FE", color="#7C3AED"];
+    AcuteStress [label="Acute psychosocial\nstress response", fillcolor="#EDE9FE", color="#7C3AED"];
+    Allostasis [label="Allostatic\nload", fillcolor="#EDE9FE", color="#7C3AED"];
+  }
+
+  subgraph cluster_bridge {
+    label="Neurobiological / affective bridge";
+    color="#FED7AA"; style="rounded,filled"; fillcolor="#FFF7ED"; fontname="Helvetica-Bold"; fontsize=16;
+    EmotionReg [label="Emotion regulation\nimpairment", fillcolor="#FFEDD5", color="#EA580C"];
+    Reactivity [label="Increased emotional\nreactivity", fillcolor="#FFEDD5", color="#EA580C"];
+    NegMood [label="Negative mood\nincrease", fillcolor="#FFEDD5", color="#EA580C"];
+    LowPositive [label="Reduced positive\naffect", fillcolor="#FFEDD5", color="#EA580C"];
+    StressVuln [label="Stress\nvulnerability", fillcolor="#FFEDD5", color="#EA580C"];
+  }
+
+  subgraph cluster_hyp {
+    label="Cautious state hypotheses - not diagnoses";
+    color="#BBF7D0"; style="rounded,filled"; fillcolor="#F0FDF4"; fontname="Helvetica-Bold"; fontsize=16;
+    Fatigue [label="Fatigue-like\nstate", fillcolor="#DCFCE7", color="#16A34A"];
+    AnxietyLike [label="Anxiety-like\narousal state", fillcolor="#DCFCE7", color="#16A34A"];
+    Irritability [label="Irritability\nvulnerability", fillcolor="#DCFCE7", color="#16A34A"];
+    LowAffect [label="Low positive-affect\nstate", fillcolor="#DCFCE7", color="#16A34A"];
+    StressLike [label="Acute stress-like\nstate", fillcolor="#DCFCE7", color="#16A34A"];
+    CogLoad [label="Cognitive load /\narousal state", fillcolor="#DCFCE7", color="#16A34A"];
+  }
+
+  HRV -> ANS [label="supports"];
+  HRV -> StressVuln [label="may indicate\nnon-specific", style=dashed];
+  EDA -> SNS [label="supports"];
+  Wearables -> StressLike [label="may indicate\nrequires baseline", style=dashed];
+
+  Sleep -> EmotionReg [label="increases probability"];
+  Sleep -> NegMood [label="increases probability"];
+  Sleep -> LowPositive [label="increases probability"];
+  Sleep -> Recovery [label="supports"];
+  Sleep -> Cortisol [label="weak / mixed", style=dashed];
+
+  Cortisol -> HPA [label="supports"];
+  Context -> AcuteStress [label="supports"];
+  AcuteStress -> HPA [label="increases probability"];
+
+  ANS -> Recovery [label="may indicate", style=dashed];
+  SNS -> CogLoad [label="supports"];
+  SNS -> StressLike [label="supports"];
+  HPA -> AcuteStress [label="with context", style=dashed];
+
+  MultiBio -> Allostasis [label="supports"];
+  Allostasis -> StressVuln [label="risk state\nnot diagnosis", style=dashed];
+
+  EmotionReg -> Reactivity [label="supports"];
+  Reactivity -> AnxietyLike [label="contextual", style=dashed];
+  NegMood -> Irritability [label="contextual", style=dashed];
+  LowPositive -> LowAffect [label="contextual", style=dashed];
+  Recovery -> Fatigue [label="supports"];
+  StressVuln -> StressLike [label="contextual", style=dashed];
+
+  forbidden [label="Forbidden shortcut:\nbiomarker → diagnosis", shape=note, fillcolor="#FFE4E6", color="#E11D48", fontcolor="#881337"];
+  HRV -> forbidden [style=dotted, color="#E11D48", arrowhead=none];
+  EDA -> forbidden [style=dotted, color="#E11D48", arrowhead=none];
+  Sleep -> forbidden [style=dotted, color="#E11D48", arrowhead=none];
+}

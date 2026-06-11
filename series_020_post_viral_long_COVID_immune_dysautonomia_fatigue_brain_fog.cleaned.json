@@ -1,0 +1,741 @@
+{
+  "research_series": {
+    "series_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog",
+    "series_name": "Post-Viral States, Long COVID, Immune Activation, Dysautonomia, Fatigue, Brain Fog, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_020_pattern_001",
+      "pattern_name": "Post-viral syndromes are associated with persistent multisystem fatigue, brain fog, dyspnea, sleep disturbance, pain, and PEM",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "post_viral_state_or_long_COVID_state",
+        "direction": "persistent",
+        "measurement_methods": [
+          "clinical diagnosis",
+          "symptom inventories",
+          "post-acute infection cohort follow-up"
+        ],
+        "contexts": [
+          "long COVID",
+          "post-viral syndrome",
+          "ME/CFS-like illness",
+          "post-infectious sequelae"
+        ]
+      },
+      "mediator": {
+        "status": "indirectly_inferred",
+        "name": "multisystem_post_infectious_dysregulation",
+        "category": "behavioral_state",
+        "direction": "dysregulated",
+        "pathway": "infection-triggered multisystem perturbation involving immune, autonomic, vascular, metabolic, sleep, and neurocognitive domains",
+        "mechanism": "persistent symptoms may reflect combined immune activation, dysautonomia, endothelial dysfunction, altered neurocognitive processing, sleep disruption, and impaired exertional recovery"
+      },
+      "neurobehavioral_output": {
+        "variable": "persistent_fatigue_brain_fog_and_functional_impairment",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "cognitive complaints",
+          "neuropsychological testing",
+          "sleep questionnaires",
+          "functional impairment measures"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "attention",
+          "memory",
+          "executive function",
+          "sleep",
+          "exercise tolerance",
+          "daily functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "A post-viral or long-COVID state increases the likelihood of persistent multisystem symptoms, especially fatigue, brain fog, sleep disturbance, dyspnea, pain, and exercise intolerance, but mechanisms are heterogeneous.",
+        "hypotheses": [
+          {
+            "target": "persistent_fatigue_brain_fog_and_functional_impairment",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Large reviews and cohorts consistently report persistent fatigue, brain fog/cognitive symptoms, sleep disturbance, dyspnea, pain, and PEM months after infection."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months_or_years",
+        "latency": "delayed_or_persistent",
+        "reversibility": "partially_reversible_or_unknown"
+      },
+      "modulators_confounders": [
+        "sex",
+        "age",
+        "acute illness severity",
+        "vaccination status",
+        "comorbidities",
+        "baseline health",
+        "sleep",
+        "activity level",
+        "mental health",
+        "medications"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Persistent fatigue, dyspnea, brain fog, sleep disturbance, pain/myalgia, mood symptoms, and PEM are common after viral infections including SARS-CoV-2. Symptoms cluster into subphenotypes and affect both hospitalized and non-hospitalized patients.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "SARS-CoV-2 post-acute sequelae in previously hospitalised patients: systematic literature review and meta-analysis",
+            "authors": "Kelly et al.",
+            "year": 2023,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "https://doi.org/10.1183/16000617.0254-2022",
+            "relevant_finding": "Persistent fatigue and multisystem symptoms are common after acute infection.",
+            "population": "previously hospitalized SARS-CoV-2 patients",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneity across cohorts and symptom definitions"
+          },
+          {
+            "title": "Mid and long-term neurological and neuropsychiatric manifestations of post-COVID-19 syndrome: A meta-analysis",
+            "authors": "Premraj et al.",
+            "year": 2022,
+            "source_type": "meta_analysis",
+            "doi_or_url": "https://doi.org/10.1016/j.jns.2022.120162",
+            "relevant_finding": "Neurological and neuropsychiatric symptoms persist after COVID-19.",
+            "population": "post-COVID cohorts",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneous measures and follow-up intervals"
+          }
+        ]
+      },
+      "limitations": [
+        "Mechanisms are heterogeneous",
+        "Cohort definitions vary",
+        "Symptom reports may not align with objective biomarkers",
+        "Causality from specific immune signatures to symptoms remains incompletely proven"
+      ],
+      "alternative_explanations": [
+        "sleep disruption",
+        "deconditioning",
+        "medication effects",
+        "pre-existing psychiatric or medical illness",
+        "unmeasured autonomic or respiratory dysfunction"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "post_viral_state",
+          "long_COVID_state",
+          "ME_CFS_like_state",
+          "subjective_fatigue",
+          "subjective_brain_fog",
+          "dyspnea",
+          "sleep_disturbance",
+          "post_exertional_malaise"
+        ],
+        "candidate_edges": [
+          {
+            "source": "post_viral_state",
+            "target": "persistent_fatigue_brain_fog_and_functional_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_020_pattern_002",
+      "pattern_name": "Post-infectious dysautonomia and POTS are common in long COVID and ME/CFS-like illness",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "post_infectious_dysautonomia",
+        "direction": "increased",
+        "measurement_methods": [
+          "autonomic testing",
+          "tilt-table testing",
+          "orthostatic HR/BP",
+          "HRV",
+          "small fiber neuropathy testing"
+        ],
+        "contexts": [
+          "long COVID",
+          "ME/CFS",
+          "POTS",
+          "post-infectious syndromes"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "autonomic_dysfunction",
+        "category": "autonomic_marker",
+        "direction": "dysregulated",
+        "pathway": "post-infectious autonomic regulation failure affecting orthostatic tolerance, vagal activity, sympathetic activity, and small fiber function",
+        "mechanism": "reduced HRV, impaired parasympathetic activity, exaggerated orthostatic responses, sympathetic overactivation, and small fiber neuropathy may contribute to fatigue, dizziness, brain fog, and exercise intolerance"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_dizziness_brain_fog_exercise_intolerance",
+        "direction": "impaired",
+        "measurement_methods": [
+          "symptom scales",
+          "orthostatic symptom reports",
+          "cognitive testing",
+          "exercise intolerance reports"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "dizziness",
+          "attention",
+          "exercise tolerance",
+          "daily functioning"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "After viral infection, dysautonomia/POTS-like patterns increase the likelihood of fatigue, dizziness, brain fog, and exercise intolerance, especially when symptoms worsen upright or after exertion.",
+        "hypotheses": [
+          {
+            "target": "fatigue_dizziness_brain_fog_exercise_intolerance",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Autonomic testing studies show high rates of dysautonomia/POTS and HRV abnormalities in long COVID and ME/CFS compared with controls."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months_or_chronic",
+        "latency": "delayed_or_persistent",
+        "reversibility": "partially_reversible_or_unknown"
+      },
+      "modulators_confounders": [
+        "hydration",
+        "salt intake",
+        "deconditioning",
+        "medications",
+        "sleep",
+        "menstrual cycle",
+        "baseline autonomic function",
+        "activity level"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Multiple autonomic testing studies report dysautonomia/POTS, reduced HRV, impaired vagal activity, exaggerated orthostatic responses, sympathetic overactivation, and small fiber neuropathy in long COVID/ME-CFS-like states.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Dysautonomia and small fiber neuropathy in post-COVID condition and Chronic Fatigue Syndrome",
+            "authors": "Azcue et al.",
+            "year": 2023,
+            "source_type": "autonomic_testing_study",
+            "doi_or_url": "https://doi.org/10.1186/s12967-023-04678-3",
+            "relevant_finding": "Dysautonomia and small fiber neuropathy are common in post-COVID condition and ME/CFS.",
+            "population": "post-COVID and ME/CFS patients",
+            "sample_size": "not extracted",
+            "limitations": "case-control and subgroup heterogeneity"
+          }
+        ]
+      },
+      "limitations": [
+        "Autonomic findings differ by test protocol and phenotype",
+        "Causality and directionality are not always established",
+        "POTS-like symptoms overlap with dehydration, medication, anxiety, and deconditioning"
+      ],
+      "alternative_explanations": [
+        "orthostatic hypovolemia",
+        "respiratory dysregulation",
+        "medication effects",
+        "deconditioning",
+        "anxiety/panic physiology"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "post_infectious_dysautonomia",
+          "POTS_pattern",
+          "orthostatic_intolerance",
+          "reduced_HRV",
+          "elevated_RHR",
+          "small_fiber_neuropathy",
+          "dizziness",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "post_infectious_dysautonomia",
+            "target": "orthostatic_intolerance",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "orthostatic_intolerance",
+            "target": "subjective_brain_fog",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_020_pattern_003",
+      "pattern_name": "Persistent immune dysregulation and interferon/T-cell alterations are associated with long COVID symptoms",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "persistent_immune_activation_after_infection",
+        "direction": "persistent",
+        "measurement_methods": [
+          "cytokine panels",
+          "T-cell phenotyping",
+          "interferon signaling",
+          "autoantibodies",
+          "immune profiling"
+        ],
+        "contexts": [
+          "long COVID",
+          "post-acute sequelae",
+          "ME/CFS-like illness"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "immune_dysregulation",
+        "category": "immune_marker",
+        "direction": "dysregulated",
+        "pathway": "persistent inflammatory/interferon and adaptive immune activation after infection",
+        "mechanism": "elevated IFN signatures, altered T-cell subsets, persistent CD8 activation/proliferation, autoantibodies, and endothelial dysfunction may contribute to fatigue and neurocognitive symptoms in subgroups"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_brain_fog_mood_symptoms",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "cognitive complaints",
+          "formal cognitive testing",
+          "mood scales"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "attention",
+          "memory",
+          "mood",
+          "motivation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Persistent immune dysregulation after infection can increase the likelihood of fatigue and brain fog, but standard inflammatory markers may be normal and mechanisms differ by subgroup.",
+        "hypotheses": [
+          {
+            "target": "fatigue_brain_fog_mood_symptoms",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "moderate",
+            "reason": "Longitudinal immune profiling reports persistent interferon/T-cell changes, but symptom mechanisms are heterogeneous and standard CRP/IL-6 can be normal."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "months_to_years",
+        "latency": "persistent_or_relapsing",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "sex",
+        "age",
+        "variant",
+        "vaccination",
+        "baseline immune status",
+        "comorbid autoimmune disease",
+        "medications",
+        "activity pacing"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Long COVID and ME/CFS show immune dysregulation including interferon signaling, altered T-cell subsets, persistent T-cell activation/proliferation, and in some cases neural autoantibodies. However, standard markers like CRP/IL-6 may be normal despite severe symptoms.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Distinguishing features of long COVID identified through immune profiling",
+            "authors": "Klein et al.",
+            "year": 2022,
+            "source_type": "immune_profiling_study",
+            "doi_or_url": "https://doi.org/10.1038/s41586-023-06651-y",
+            "relevant_finding": "Immune profiling identifies distinguishing features of long COVID.",
+            "population": "long COVID patients and controls",
+            "sample_size": "not extracted",
+            "limitations": "subgroup heterogeneity and causal uncertainty"
+          },
+          {
+            "title": "Long COVID manifests with T cell dysregulation, inflammation and an uncoordinated adaptive immune response to SARS-CoV-2",
+            "authors": "Yin et al.",
+            "year": 2024,
+            "source_type": "immune_profiling_study",
+            "doi_or_url": "https://doi.org/10.1038/s41590-023-01724-6",
+            "relevant_finding": "Long COVID associated with T-cell dysregulation and immune activation.",
+            "population": "long COVID patients",
+            "sample_size": "not extracted",
+            "limitations": "causal chain to symptoms not fully established"
+          }
+        ]
+      },
+      "limitations": [
+        "Standard inflammatory markers can be normal",
+        "Autoantibodies may define only a subgroup",
+        "Full causal chains from immune signature to fatigue/brain fog remain incomplete"
+      ],
+      "alternative_explanations": [
+        "autonomic dysfunction",
+        "sleep disturbance",
+        "respiratory dysfunction",
+        "deconditioning",
+        "mood symptoms as mediator or consequence"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "immune_activation",
+          "interferon_signaling",
+          "T_cell_dysregulation",
+          "autoantibody_presence",
+          "standard_inflammatory_markers_normal",
+          "subjective_fatigue",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "immune_activation",
+            "target": "subjective_fatigue",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "standard_inflammatory_markers_normal",
+            "target": "no_post_viral_fatigue",
+            "edge_type": "reject_inference",
+            "polarity": "neutral",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_020_pattern_004",
+      "pattern_name": "Objective cognitive deficits are present in post-viral states but subjective brain fog does not always correlate with testing or imaging",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "post_viral_neurocognitive_state",
+        "direction": "variable",
+        "measurement_methods": [
+          "neuropsychological testing",
+          "cognitive complaints",
+          "PET",
+          "MRI",
+          "QEEG"
+        ],
+        "contexts": [
+          "long COVID",
+          "post-COVID brain fog",
+          "ME/CFS"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "neurocognitive_and_neuroimaging_marker_variability",
+        "category": "neurocognitive_marker",
+        "direction": "mixed",
+        "pathway": "post-viral neurocognitive dysfunction may involve attention, memory, executive deficits and variable imaging/electrophysiological findings",
+        "mechanism": "fatigue, depression, autonomic dysfunction, sleep disruption, neurovascular changes, and neural network dysfunction may contribute to subjective and objective impairment"
+      },
+      "neurobehavioral_output": {
+        "variable": "subjective_brain_fog_and_objective_cognitive_impairment",
+        "direction": "mixed",
+        "measurement_methods": [
+          "cognitive complaints",
+          "attention tests",
+          "memory tests",
+          "executive function tests",
+          "QEEG",
+          "PET/MRI"
+        ],
+        "affected_functions": [
+          "attention",
+          "memory",
+          "executive function",
+          "processing speed"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Post-viral brain fog may include objective attention, memory, and executive deficits, but subjective complaints, cognitive testing, and imaging are not interchangeable and may dissociate.",
+        "hypotheses": [
+          {
+            "target": "subjective_brain_fog_and_objective_cognitive_impairment",
+            "domain": "neurobehavioral",
+            "direction": "mixed",
+            "confidence": "moderate",
+            "reason": "Cognitive testing shows deficits in some cohorts, while imaging findings and subjective-objective correlations are inconsistent."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "weeks_to_months_or_chronic",
+        "latency": "delayed_or_persistent",
+        "reversibility": "unknown"
+      },
+      "modulators_confounders": [
+        "fatigue severity",
+        "depression",
+        "sleep quality",
+        "migraine",
+        "medication",
+        "autonomic dysfunction",
+        "testing sensitivity",
+        "prior cognitive baseline"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Objective cognitive deficits in attention, memory, and executive function are documented in post-viral cohorts, but subjective brain fog does not always correlate with objective cognitive performance or neuroimaging.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Unraveling brain fog in post-COVID syndrome",
+            "authors": "Delgado-Alonso et al.",
+            "year": 2023,
+            "source_type": "cognitive_testing_study",
+            "doi_or_url": "https://doi.org/10.1111/ene.16084",
+            "relevant_finding": "Subjective cognitive complaints relate variably to cognitive function, fatigue, and neuropsychiatric symptoms.",
+            "population": "post-COVID syndrome",
+            "sample_size": "not extracted",
+            "limitations": "subjective-objective dissociation and mediator complexity"
+          }
+        ]
+      },
+      "limitations": [
+        "Imaging findings inconsistent",
+        "Brain fog is not a single cognitive construct",
+        "Testing tools may miss functional cognitive fatigue"
+      ],
+      "alternative_explanations": [
+        "fatigue mediating perceived impairment",
+        "depression/anxiety",
+        "sleep disruption",
+        "orthostatic intolerance",
+        "migraine"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "subjective_brain_fog",
+          "objective_cognitive_impairment",
+          "impaired_attention",
+          "memory_impairment",
+          "executive_dysfunction",
+          "neuroimaging_abnormality_absent"
+        ],
+        "candidate_edges": [
+          {
+            "source": "post_viral_state",
+            "target": "objective_cognitive_impairment",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "subjective_brain_fog",
+            "target": "objective_cognitive_impairment",
+            "edge_type": "no_direct_equivalence",
+            "polarity": "mixed",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Normal standard inflammatory markers do not exclude post-viral fatigue or brain fog.",
+      "reason": "Reports show CRP/IL-6 or other standard inflammatory measures may be normal despite severe symptoms.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "Subjective brain fog is not equivalent to objective cognitive impairment.",
+      "reason": "Subjective complaints, cognitive testing, fatigue, mood symptoms, and imaging findings can dissociate.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "A single mechanism cannot explain all long COVID or ME/CFS-like cases.",
+      "reason": "Post-viral syndromes are heterogeneous across immune, autonomic, endothelial, respiratory, metabolic, and neurocognitive domains.",
+      "recommendation": "keep_as_guardrail"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "post_viral_state",
+      "domain": "contextual",
+      "definition": "Persistent physiological/neurobehavioral state after acute viral infection.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "long_COVID_state",
+      "domain": "contextual",
+      "definition": "Post-acute sequelae after SARS-CoV-2 infection with persistent multisystem symptoms.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "ME_CFS_like_state",
+      "domain": "contextual",
+      "definition": "Chronic fatigue syndrome-like illness characterized by fatigue, PEM, cognitive symptoms, and multisystem dysfunction.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "post_exertional_malaise",
+      "domain": "neurobehavioral",
+      "definition": "Delayed symptom exacerbation after physical or cognitive exertion.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "post_infectious_dysautonomia",
+      "domain": "physiological",
+      "definition": "Autonomic dysfunction following infection, including POTS-like patterns and HRV abnormalities.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "immune_activation",
+      "domain": "biochemical",
+      "definition": "Persistent activation or dysregulation of immune pathways after infection.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "standard_inflammatory_markers_normal",
+      "domain": "biochemical",
+      "definition": "Normal routine inflammatory markers despite persistent symptoms.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "post_viral_state_subjective_fatigue_positive_high",
+      "source": "post_viral_state",
+      "target": "subjective_fatigue",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "post_viral_state_subjective_brain_fog_positive_high",
+      "source": "post_viral_state",
+      "target": "subjective_brain_fog",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "post_infectious_dysautonomia_orthostatic_intolerance_positive_high",
+      "source": "post_infectious_dysautonomia",
+      "target": "orthostatic_intolerance",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "standard_inflammatory_markers_normal_no_exclusion_guardrail",
+      "source": "standard_inflammatory_markers_normal",
+      "target": "post_viral_fatigue_exclusion",
+      "edge_type": "reject_inference",
+      "polarity": "neutral",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Causal links between specific immune signatures and fatigue/brain fog remain unclear.",
+    "Pediatric cohorts, autonomic testing, immune biomarkers, and neuroimaging are unevenly represented.",
+    "Objective biomarkers predicting prognosis or treatment response are not yet reliable.",
+    "Need longitudinal full-chain studies measuring infection history, immune/autonomic/endothelial mediators, and neurobehavioral outcomes."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Persistent fatigue and cognitive symptoms are common after viral infection.",
+      "Autonomic dysfunction/POTS-like patterns are prevalent in long COVID and ME/CFS-like illness.",
+      "Immune dysregulation can persist months after infection."
+    ],
+    "highest_value_patterns_for_inference": [
+      "post_viral_state -> subjective_fatigue",
+      "post_infectious_dysautonomia -> orthostatic_intolerance -> brain fog/dizziness",
+      "standard inflammatory markers normal does not exclude post-viral fatigue"
+    ],
+    "patterns_requiring_caution": [
+      "immune_activation -> fatigue as a direct causal chain",
+      "autoantibodies -> symptom severity as a general mechanism",
+      "subjective brain fog -> objective cognitive impairment"
+    ],
+    "recommended_next_queries": [
+      "allostatic load and recovery failure as cross-domain mechanism",
+      "post-exertional malaise and delayed symptom amplification",
+      "wearable markers of post-viral autonomic dysfunction"
+    ],
+    "overall_assessment": "Post-viral syndromes are a high-value v1 graph domain because they integrate immune, autonomic, vascular, respiratory, metabolic, sleep, and cognitive branches. The strongest practical inference is not a single biomarker, but a pattern: infection history plus persistent fatigue/brain fog plus orthostatic intolerance/PEM/autonomic or immune abnormalities."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Dysautonomia and small fiber neuropathy in post-COVID condition and Chronic Fatigue Syndrome",
+      "url": "https://doi.org/10.1186/s12967-023-04678-3",
+      "doi": "10.1186/s12967-023-04678-3",
+      "year": 2023
+    },
+    {
+      "index": 2,
+      "title": "Distinguishing features of long COVID identified through immune profiling",
+      "url": "https://doi.org/10.1038/s41586-023-06651-y",
+      "doi": "10.1038/s41586-023-06651-y",
+      "year": 2022
+    },
+    {
+      "index": 3,
+      "title": "Unraveling brain fog in post-COVID syndrome",
+      "url": "https://doi.org/10.1111/ene.16084",
+      "doi": "10.1111/ene.16084",
+      "year": 2023
+    }
+  ]
+}

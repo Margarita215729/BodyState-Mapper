@@ -1,0 +1,1348 @@
+{
+  "research_series": {
+    "series_id": "series_003_gut_immune_microbiome_brain_axis",
+    "series_name": "Gut, Immune, Microbiome, and Brain Axis",
+    "project": "BodyState Mapper",
+    "scientific_project_name": "Traceable Human State Inference Under Partial Biological Observability",
+    "objective": "Identify evidence-supported relationships between gastrointestinal physiological markers, biochemical/molecular/microbiome mediators, and cognitive or neurobehavioral outcomes.",
+    "target_chain": "physiological_observation -> biochemical_or_molecular_or_microbiome_mediator -> cognitive_or_neurobehavioral_output",
+    "date_generated": "2026-06-09"
+  },
+  "curation_metadata": {
+    "curated_by": "GPT-5.5 Thinking",
+    "curation_date": "2026-06-09",
+    "input_status": "invalid_json_from_raw_research_output",
+    "technical_status": "valid_json",
+    "scientific_status": "curated_candidate_output",
+    "graph_import_status": "do_not_import_directly_until_source_verification",
+    "major_curation_actions": [
+      "Repaired invalid JSON structure around pattern_004 and array nesting.",
+      "Normalized node and edge identifiers to lower_snake_case.",
+      "Replaced invalid or semantically wrong operators and edge types.",
+      "Downgraded over-strong causal and mediation claims to association, plausible_mechanism, or needs_manual_review.",
+      "Separated direct evidence from hypothesized mediator chains.",
+      "Marked non-primary, future-dated, or insufficiently specified sources for verification."
+    ]
+  },
+  "search_scope": {
+    "species_priority": [
+      "human"
+    ],
+    "include_indirect_evidence": true,
+    "preferred_evidence_types": [
+      "systematic_review",
+      "meta_analysis",
+      "clinical_study",
+      "experimental_human_study",
+      "longitudinal_study",
+      "mechanistic_review",
+      "randomized_controlled_trial"
+    ],
+    "physiological_domain": [
+      "abdominal_pain",
+      "bloating",
+      "constipation",
+      "diarrhea",
+      "stool_frequency",
+      "stool_consistency",
+      "fecal_urgency",
+      "fecal_incontinence",
+      "dyspepsia",
+      "nausea",
+      "reflux",
+      "gerd_symptoms",
+      "appetite_changes",
+      "gut_motility",
+      "visceral_hypersensitivity",
+      "ibs_symptoms",
+      "ibd_activity",
+      "gut_permeability",
+      "autonomic_gut_symptoms",
+      "postprandial_symptoms",
+      "food_triggered_symptoms",
+      "gi_associated_fatigue"
+    ],
+    "biochemical_domain": [
+      "gut_microbiome_diversity",
+      "dysbiosis",
+      "short_chain_fatty_acids",
+      "butyrate",
+      "propionate",
+      "acetate",
+      "tryptophan_metabolism",
+      "kynurenine_pathway",
+      "serotonin",
+      "dopamine",
+      "gaba",
+      "glutamate",
+      "histamine",
+      "bile_acids",
+      "lipopolysaccharide",
+      "lps",
+      "gut_permeability_markers",
+      "zonulin",
+      "calprotectin",
+      "crp",
+      "il_6",
+      "tnf_alpha",
+      "il_1beta",
+      "mast_cell_activation",
+      "vagal_signaling",
+      "enteric_nervous_system_signaling",
+      "hpa_axis_interaction",
+      "cortisol",
+      "immune_activation",
+      "oxidative_stress",
+      "mitochondrial_metabolism"
+    ],
+    "neurobehavioral_domain": [
+      "anxiety",
+      "panic_symptoms",
+      "depressed_mood",
+      "irritability",
+      "emotional_dysregulation",
+      "cognitive_fog",
+      "attention_impairment",
+      "working_memory_impairment",
+      "executive_dysfunction",
+      "fatigue_perception",
+      "interoception",
+      "pain_perception",
+      "stress_reactivity",
+      "sleep_disturbance",
+      "reduced_motivation",
+      "reward_sensitivity_changes",
+      "somatic_hypervigilance",
+      "avoidance_behavior",
+      "quality_of_life_impairment"
+    ]
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_003_pattern_001",
+      "pattern_name": "IBS symptoms, SCFA alterations, and mood symptoms",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "plausible_mechanism",
+      "physiological_input": {
+        "variable": "ibs_symptoms",
+        "observable_name": "abdominal_pain_bloating_altered_bowel_habits",
+        "direction": "increased",
+        "baseline_reference": "population_norm",
+        "measurement_methods": [
+          "clinical_diagnosis",
+          "symptom_questionnaire"
+        ],
+        "typical_contexts": [
+          "human_gastrointestinal_disorder_cohorts"
+        ],
+        "notes": "Curated from raw Tavily extraction; source-level verification required before static graph promotion."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "indirectly_inferred",
+        "primary_mediators": [
+          {
+            "name": "short_chain_fatty_acids",
+            "category": "microbial_metabolite",
+            "direction": "altered",
+            "pathway": "scfa_metabolism_and_gut_brain_signaling",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [],
+        "mechanistic_summary": "Candidate gut-brain mediator chain. Direct mediation is not assumed unless explicitly supported by cited human data."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "anxiety_and_depressed_mood",
+        "observable_name": "anxiety_and_depression_scores",
+        "direction": "increased",
+        "measurement_methods": [
+          "anxiety_scale",
+          "depression_scale",
+          "clinical_symptom_scale",
+          "quality_of_life_scale"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "depression",
+          "quality_of_life"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "gi_disorder_cohorts"
+        ],
+        "notes": "Neurobehavioral association is retained as candidate evidence, not definitive causality."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If the gastrointestinal marker is elevated or altered, this may increase likelihood of the listed biochemical/microbiome mediator state and related neurobehavioral symptoms, but the chain remains hypothesis-level until direct mediation is verified.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "ibs_symptoms",
+              "operator": "deviates_from",
+              "reference": "personal_baseline",
+              "value": null,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "anxiety_and_depressed_mood",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "GI symptom and mediator associations reported in human literature; full causal mediation not confirmed."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "weeks_to_months",
+        "latency": "delayed",
+        "duration": "variable",
+        "reversibility": "partially_reversible",
+        "notes": "Temporal direction is uncertain in most human studies."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "baseline_microbiome",
+          "diet",
+          "fiber_intake",
+          "psychiatric_history",
+          "immune_status",
+          "medications",
+          "antibiotic_exposure"
+        ],
+        "contextual_factors": [
+          "acute_stress",
+          "chronic_stress",
+          "sleep_quality",
+          "meal_timing",
+          "food_triggers",
+          "infection",
+          "menstrual_cycle",
+          "exercise",
+          "hydration"
+        ],
+        "confounders": [
+          "medication_effects",
+          "dietary_change",
+          "self_report_bias",
+          "comorbid_conditions",
+          "ibs_subtype_misclassification",
+          "ibd_vs_ibs_misclassification",
+          "psychiatric_comorbidity",
+          "sibo",
+          "food_intolerance"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Candidate relationship extracted from human gut-brain literature. Stronger claims are held for manual verification.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "mechanistic_review",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9577580",
+            "relevant_finding": "SCFAs are discussed as gut-brain mediators relevant to pain, stress, anxiety, and depression.",
+            "supports_which_part": [
+              "mechanistic_background"
+            ],
+            "study_population": "humans_and_translational_models",
+            "sample_size": "unknown",
+            "limitations_of_source": "Not a direct randomized mediation test in IBS."
+          },
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://mdpi.com/1422-0067/25/20/10879",
+            "relevant_finding": "Fecal SCFA findings in IBS are heterogeneous; acetate may differ while butyrate findings are less consistent.",
+            "supports_which_part": [
+              "physiology_to_biochemistry"
+            ],
+            "study_population": "IBS patients and controls",
+            "sample_size": "unknown",
+            "limitations_of_source": "Heterogeneous methods and IBS subtypes."
+          }
+        ]
+      },
+      "limitations": [
+        "Most evidence is associative or mechanistic rather than direct causal mediation.",
+        "GI disorders are heterogeneous; subtype-specific interpretation is required.",
+        "Diet, medication, psychiatric comorbidity, and infection can confound microbiome and mood associations."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Bidirectionality and confounding",
+          "alternative_interpretation": "Mood or stress may alter gut physiology and microbiome state rather than being downstream of it.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "ibs_symptoms",
+          "short_chain_fatty_acids",
+          "anxiety_and_depressed_mood"
+        ],
+        "candidate_edges": [
+          {
+            "source": "ibs_symptoms",
+            "target": "short_chain_fatty_acids",
+            "edge_type": "associated_with",
+            "polarity": "context_dependent",
+            "confidence": "moderate",
+            "evidence_basis": "IBS symptom burden and SCFA differences reported, but directions are heterogeneous."
+          },
+          {
+            "source": "short_chain_fatty_acids",
+            "target": "anxiety_and_depressed_mood",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "context_dependent",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "Mechanistic plausibility; direct human IBS mediation not established."
+          }
+        ],
+        "recommended_graph_action": "mark_as_hypothesis",
+        "reason_for_action": "Retain as candidate/hypothesis until source verification and edge normalization are complete.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_003_pattern_002",
+      "pattern_name": "IBS microbiome composition/dysbiosis and mood symptoms",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "ibs_microbial_dysbiosis",
+        "observable_name": "altered_gut_microbiome_composition",
+        "direction": "altered",
+        "baseline_reference": "population_norm",
+        "measurement_methods": [
+          "clinical_diagnosis",
+          "symptom_questionnaire"
+        ],
+        "typical_contexts": [
+          "human_gastrointestinal_disorder_cohorts"
+        ],
+        "notes": "Curated from raw Tavily extraction; source-level verification required before static graph promotion."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "gut_microbiome_composition",
+            "category": "microbiome_marker",
+            "direction": "altered",
+            "pathway": "microbiome_network",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "short_chain_fatty_acids",
+            "category": "microbial_metabolite",
+            "direction": "altered",
+            "pathway": "metabolite_signaling",
+            "evidence_for_mediation": "hypothesized"
+          }
+        ],
+        "secondary_mediators": [],
+        "mechanistic_summary": "Candidate gut-brain mediator chain. Direct mediation is not assumed unless explicitly supported by cited human data."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "anxiety_and_depressed_mood",
+        "observable_name": "anxiety_and_depression_scores",
+        "direction": "increased",
+        "measurement_methods": [
+          "anxiety_scale",
+          "depression_scale",
+          "clinical_symptom_scale",
+          "quality_of_life_scale"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "depression",
+          "quality_of_life"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "gi_disorder_cohorts"
+        ],
+        "notes": "Neurobehavioral association is retained as candidate evidence, not definitive causality."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If the gastrointestinal marker is elevated or altered, this may increase likelihood of the listed biochemical/microbiome mediator state and related neurobehavioral symptoms, but the chain remains hypothesis-level until direct mediation is verified.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "ibs_microbial_dysbiosis",
+              "operator": "deviates_from",
+              "reference": "personal_baseline",
+              "value": null,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "anxiety_and_depressed_mood",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "GI symptom and mediator associations reported in human literature; full causal mediation not confirmed."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "weeks_to_months",
+        "latency": "delayed",
+        "duration": "variable",
+        "reversibility": "partially_reversible",
+        "notes": "Temporal direction is uncertain in most human studies."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "baseline_microbiome",
+          "diet",
+          "fiber_intake",
+          "psychiatric_history",
+          "immune_status",
+          "medications",
+          "antibiotic_exposure"
+        ],
+        "contextual_factors": [
+          "acute_stress",
+          "chronic_stress",
+          "sleep_quality",
+          "meal_timing",
+          "food_triggers",
+          "infection",
+          "menstrual_cycle",
+          "exercise",
+          "hydration"
+        ],
+        "confounders": [
+          "medication_effects",
+          "dietary_change",
+          "self_report_bias",
+          "comorbid_conditions",
+          "ibs_subtype_misclassification",
+          "ibd_vs_ibs_misclassification",
+          "psychiatric_comorbidity",
+          "sibo",
+          "food_intolerance"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Candidate relationship extracted from human gut-brain literature. Stronger claims are held for manual verification.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "multi_omics_analysis",
+            "doi_or_url": "https://link.springer.com/article/10.1186/s40168-022-01450-5",
+            "relevant_finding": "IBS associated with microbiome beta-diversity and functional profile differences compared with controls.",
+            "supports_which_part": [
+              "physiology_to_biochemistry"
+            ],
+            "study_population": "IBS patients and healthy controls",
+            "sample_size": "663",
+            "limitations_of_source": "Observational; not direct mood mediation."
+          }
+        ]
+      },
+      "limitations": [
+        "Most evidence is associative or mechanistic rather than direct causal mediation.",
+        "GI disorders are heterogeneous; subtype-specific interpretation is required.",
+        "Diet, medication, psychiatric comorbidity, and infection can confound microbiome and mood associations."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Bidirectionality and confounding",
+          "alternative_interpretation": "Mood or stress may alter gut physiology and microbiome state rather than being downstream of it.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "ibs_microbial_dysbiosis",
+          "gut_microbiome_composition",
+          "anxiety_and_depressed_mood"
+        ],
+        "candidate_edges": [
+          {
+            "source": "ibs_microbial_dysbiosis",
+            "target": "anxiety_and_depressed_mood",
+            "edge_type": "associated_with",
+            "polarity": "context_dependent",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "Microbiome differences and mood comorbidity are reported separately or indirectly; causal direction uncertain."
+          }
+        ],
+        "recommended_graph_action": "needs_manual_review",
+        "reason_for_action": "Retain as candidate/hypothesis until source verification and edge normalization are complete.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_003_pattern_003",
+      "pattern_name": "IBS-D permeability/LPS/endotoxemia, inflammation, and mood symptoms",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "gut_permeability_markers",
+        "observable_name": "lac_man_ratio_and_lps",
+        "direction": "increased",
+        "baseline_reference": "clinical_threshold",
+        "measurement_methods": [
+          "clinical_diagnosis",
+          "symptom_questionnaire"
+        ],
+        "typical_contexts": [
+          "human_gastrointestinal_disorder_cohorts"
+        ],
+        "notes": "Curated from raw Tavily extraction; source-level verification required before static graph promotion."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "lipopolysaccharide",
+            "category": "permeability_marker",
+            "direction": "increased",
+            "pathway": "endotoxin_translocation",
+            "evidence_for_mediation": "direct"
+          },
+          {
+            "name": "il_6",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          },
+          {
+            "name": "tnf_alpha",
+            "category": "cytokine",
+            "direction": "increased",
+            "pathway": "inflammatory_signaling",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [],
+        "mechanistic_summary": "Candidate gut-brain mediator chain. Direct mediation is not assumed unless explicitly supported by cited human data."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "depressed_and_anxiety_symptoms",
+        "observable_name": "depression_and_anxiety_scores",
+        "direction": "increased",
+        "measurement_methods": [
+          "anxiety_scale",
+          "depression_scale",
+          "clinical_symptom_scale",
+          "quality_of_life_scale"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "depression",
+          "quality_of_life"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "gi_disorder_cohorts"
+        ],
+        "notes": "Neurobehavioral association is retained as candidate evidence, not definitive causality."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "experimental_causal_mediation",
+        "chain_confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If the gastrointestinal marker is elevated or altered, this may increase likelihood of the listed biochemical/microbiome mediator state and related neurobehavioral symptoms, but the chain remains hypothesis-level until direct mediation is verified.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "gut_permeability_markers",
+              "operator": "deviates_from",
+              "reference": "personal_baseline",
+              "value": null,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "depressed_and_anxiety_symptoms",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "moderate",
+              "reason": "GI symptom and mediator associations reported in human literature; full causal mediation not confirmed."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "weeks_to_months",
+        "latency": "delayed",
+        "duration": "variable",
+        "reversibility": "partially_reversible",
+        "notes": "Temporal direction is uncertain in most human studies."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "baseline_microbiome",
+          "diet",
+          "fiber_intake",
+          "psychiatric_history",
+          "immune_status",
+          "medications",
+          "antibiotic_exposure"
+        ],
+        "contextual_factors": [
+          "acute_stress",
+          "chronic_stress",
+          "sleep_quality",
+          "meal_timing",
+          "food_triggers",
+          "infection",
+          "menstrual_cycle",
+          "exercise",
+          "hydration"
+        ],
+        "confounders": [
+          "medication_effects",
+          "dietary_change",
+          "self_report_bias",
+          "comorbid_conditions",
+          "ibs_subtype_misclassification",
+          "ibd_vs_ibs_misclassification",
+          "psychiatric_comorbidity",
+          "sibo",
+          "food_intolerance"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Candidate relationship extracted from human gut-brain literature. Stronger claims are held for manual verification.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "clinical_study",
+            "doi_or_url": "https://mdpi.com/2072-6643/18/9/1473",
+            "relevant_finding": "Raw extraction reports associations among depressive symptoms, Lac/Man ratio, LPS, IL-6, and low-FODMAP response in IBS-D; verify details before graph import.",
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "physiology_to_neurobehavior"
+            ],
+            "study_population": "IBS-D patients",
+            "sample_size": "unknown",
+            "limitations_of_source": "Needs source verification; possible future-dated or metadata issue."
+          },
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://mdpi.com/2077-0383/14/7/2483",
+            "relevant_finding": "Raw extraction reports elevated LPS and pro-inflammatory cytokines in diarrhea-predominant IBS with depression; verify before use.",
+            "supports_which_part": [
+              "mechanistic_background"
+            ],
+            "study_population": "IBS-D patients",
+            "sample_size": "unknown",
+            "limitations_of_source": "Narrative/synthesis; direct causality unclear."
+          }
+        ]
+      },
+      "limitations": [
+        "Most evidence is associative or mechanistic rather than direct causal mediation.",
+        "GI disorders are heterogeneous; subtype-specific interpretation is required.",
+        "Diet, medication, psychiatric comorbidity, and infection can confound microbiome and mood associations."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Bidirectionality and confounding",
+          "alternative_interpretation": "Mood or stress may alter gut physiology and microbiome state rather than being downstream of it.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "gut_permeability_markers",
+          "lipopolysaccharide",
+          "il_6",
+          "tnf_alpha",
+          "depressed_and_anxiety_symptoms"
+        ],
+        "candidate_edges": [
+          {
+            "source": "gut_permeability_markers",
+            "target": "lipopolysaccharide",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "Permeability/endotoxemia relationship reported in IBS-D contexts; verify sources."
+          },
+          {
+            "source": "lipopolysaccharide",
+            "target": "il_6",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "Known endotoxin-inflammatory signaling, but direct clinical mediation is not assumed."
+          },
+          {
+            "source": "il_6",
+            "target": "depressed_and_anxiety_symptoms",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "low_to_moderate",
+            "evidence_basis": "Cytokine-mood association is plausible and reported, but not definitive for IBS-D."
+          }
+        ],
+        "recommended_graph_action": "needs_manual_review",
+        "reason_for_action": "Retain as candidate/hypothesis until source verification and edge normalization are complete.",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_003_pattern_004",
+      "pattern_name": "IBS mast cell activation, abdominal pain, and possible mood effects",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "plausible_mechanism",
+      "physiological_input": {
+        "variable": "abdominal_pain_in_ibs",
+        "observable_name": "pain_severity",
+        "direction": "increased",
+        "baseline_reference": "population_norm",
+        "measurement_methods": [
+          "clinical_diagnosis",
+          "symptom_questionnaire"
+        ],
+        "typical_contexts": [
+          "human_gastrointestinal_disorder_cohorts"
+        ],
+        "notes": "Curated from raw Tavily extraction; source-level verification required before static graph promotion."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "mast_cell_activation",
+            "category": "immune_pathway",
+            "direction": "increased",
+            "pathway": "mast_cell_degranulation",
+            "evidence_for_mediation": "direct"
+          },
+          {
+            "name": "tryptase",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "mast_cell_degranulation",
+            "evidence_for_mediation": "direct"
+          },
+          {
+            "name": "histamine",
+            "category": "inflammatory_marker",
+            "direction": "increased",
+            "pathway": "mast_cell_degranulation",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "secondary_mediators": [],
+        "mechanistic_summary": "Candidate gut-brain mediator chain. Direct mediation is not assumed unless explicitly supported by cited human data."
+      },
+      "cognitive_neurobehavioral_output": {
+        "variable": "anxiety_and_depressed_mood",
+        "observable_name": "mood_score",
+        "direction": "increased",
+        "measurement_methods": [
+          "anxiety_scale",
+          "depression_scale",
+          "clinical_symptom_scale",
+          "quality_of_life_scale"
+        ],
+        "affected_functions": [
+          "mood",
+          "anxiety",
+          "depression",
+          "quality_of_life"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "gi_disorder_cohorts"
+        ],
+        "notes": "Neurobehavioral association is retained as candidate evidence, not definitive causality."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": false,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "low"
+      },
+      "inference_rule": {
+        "plain_language_rule": "If the gastrointestinal marker is elevated or altered, this may increase likelihood of the listed biochemical/microbiome mediator state and related neurobehavioral symptoms, but the chain remains hypothesis-level until direct mediation is verified.",
+        "machine_rule": {
+          "if": [
+            {
+              "field": "abdominal_pain_in_ibs",
+              "operator": "deviates_from",
+              "reference": "personal_baseline",
+              "value": null,
+              "unit": null
+            }
+          ],
+          "then_hypotheses": [
+            {
+              "target": "anxiety_and_depressed_mood",
+              "target_domain": "neurobehavioral",
+              "direction": "increased",
+              "confidence": "low",
+              "reason": "GI symptom and mediator associations reported in human literature; full causal mediation not confirmed."
+            }
+          ]
+        }
+      },
+      "temporal_dynamics": {
+        "typical_timescale": "weeks_to_months",
+        "latency": "delayed",
+        "duration": "variable",
+        "reversibility": "partially_reversible",
+        "notes": "Temporal direction is uncertain in most human studies."
+      },
+      "modulators": {
+        "individual_factors": [
+          "age",
+          "sex",
+          "baseline_microbiome",
+          "diet",
+          "fiber_intake",
+          "psychiatric_history",
+          "immune_status",
+          "medications",
+          "antibiotic_exposure"
+        ],
+        "contextual_factors": [
+          "acute_stress",
+          "chronic_stress",
+          "sleep_quality",
+          "meal_timing",
+          "food_triggers",
+          "infection",
+          "menstrual_cycle",
+          "exercise",
+          "hydration"
+        ],
+        "confounders": [
+          "medication_effects",
+          "dietary_change",
+          "self_report_bias",
+          "comorbid_conditions",
+          "ibs_subtype_misclassification",
+          "ibd_vs_ibs_misclassification",
+          "psychiatric_comorbidity",
+          "sibo",
+          "food_intolerance"
+        ]
+      },
+      "evidence": {
+        "evidence_strength": "low",
+        "evidence_summary": "Candidate relationship extracted from human gut-brain literature. Stronger claims are held for manual verification.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "limited",
+        "key_sources": [
+          {
+            "title": null,
+            "authors": null,
+            "year": null,
+            "source_type": "clinical_study",
+            "doi_or_url": "https://insight.jci.org/articles/view/146529",
+            "relevant_finding": "Mucosal mast cell activation products reported in IBS and associated with symptom severity; direct mood mediation not established.",
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "mechanistic_background"
+            ],
+            "study_population": "IBS patients",
+            "sample_size": "unknown",
+            "limitations_of_source": "Correlational; mood outcomes require targeted verification."
+          }
+        ]
+      },
+      "limitations": [
+        "Most evidence is associative or mechanistic rather than direct causal mediation.",
+        "GI disorders are heterogeneous; subtype-specific interpretation is required.",
+        "Diet, medication, psychiatric comorbidity, and infection can confound microbiome and mood associations."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "Bidirectionality and confounding",
+          "alternative_interpretation": "Mood or stress may alter gut physiology and microbiome state rather than being downstream of it.",
+          "impact_on_confidence": "moderate"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "abdominal_pain_in_ibs",
+          "mast_cell_activation",
+          "histamine",
+          "tryptase",
+          "anxiety_and_depressed_mood"
+        ],
+        "candidate_edges": [
+          {
+            "source": "mast_cell_activation",
+            "target": "abdominal_pain_in_ibs",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate",
+            "evidence_basis": "IBS mast cell mediators correlate with pain/symptom severity."
+          },
+          {
+            "source": "mast_cell_activation",
+            "target": "anxiety_and_depressed_mood",
+            "edge_type": "mechanistically_contributes_to",
+            "polarity": "positive",
+            "confidence": "low",
+            "evidence_basis": "Plausible neuroimmune pathway; direct human IBS mood evidence limited."
+          }
+        ],
+        "recommended_graph_action": "mark_as_hypothesis",
+        "reason_for_action": "Retain as candidate/hypothesis until source verification and edge normalization are complete.",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Zonulin or global microbiome diversity are definitive clinical markers of human gut-brain state.",
+      "reason_for_uncertainty": "Evidence is inconsistent, assay-dependent, and often indirect. Diversity metrics are not sufficient clinical state markers by themselves.",
+      "evidence_strength": "conflicting",
+      "sources": [
+        {
+          "title": null,
+          "year": null,
+          "doi_or_url": "https://mdpi.com/2077-0383/14/7/2483",
+          "relevant_finding": "Permeability and LPS evidence discussed, but not enough to validate zonulin or diversity as definitive clinical markers."
+        },
+        {
+          "title": null,
+          "year": null,
+          "doi_or_url": "https://mdpi.com/1422-0067/25/20/10879",
+          "relevant_finding": "SCFA and microbiome findings are heterogeneous across IBS cohorts."
+        }
+      ],
+      "recommendation_for_body_state_mapper": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Dysbiosis causes anxiety or depression in IBS.",
+      "reason_for_uncertainty": "Human evidence supports association and plausible mediation, but causal direction and specific mediators remain unresolved.",
+      "evidence_strength": "preliminary",
+      "sources": [],
+      "recommendation_for_body_state_mapper": "needs_more_evidence"
+    },
+    {
+      "claim": "Peripheral gut serotonin directly explains mood symptoms.",
+      "reason_for_uncertainty": "Gut serotonin is biologically important for gut function, but peripheral serotonin does not straightforwardly map onto central mood states.",
+      "evidence_strength": "unsupported",
+      "sources": [],
+      "recommendation_for_body_state_mapper": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id_suggestion": "ibs_symptoms",
+      "node_label": "IBS symptoms",
+      "domain": "physiological",
+      "definition": "Functional gastrointestinal symptom cluster including abdominal pain and altered bowel habits.",
+      "why_it_matters": "Common GI input state with strong anxiety/depression comorbidity and candidate gut-brain mechanisms.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "short_chain_fatty_acids",
+      "node_label": "Short-chain fatty acids",
+      "domain": "biochemical",
+      "definition": "Microbial metabolites including acetate, propionate, and butyrate.",
+      "why_it_matters": "Candidate mediator linking microbiome, barrier function, immune tone, and neurobehavioral state.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "gut_permeability_markers",
+      "node_label": "Gut permeability markers",
+      "domain": "biochemical",
+      "definition": "Surrogate markers such as lactulose/mannitol ratio and related barrier-function readouts.",
+      "why_it_matters": "Potential bridge between GI symptoms, endotoxemia, inflammation, and mood symptoms.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "lipopolysaccharide",
+      "node_label": "Lipopolysaccharide",
+      "domain": "biochemical",
+      "definition": "Bacterial endotoxin that may enter circulation when barrier function is disrupted.",
+      "why_it_matters": "Mechanistic link to inflammatory cytokine activation.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id_suggestion": "mast_cell_activation",
+      "node_label": "Mast cell activation",
+      "domain": "biochemical",
+      "definition": "Immune activation state involving mast cell mediators such as histamine and tryptase.",
+      "why_it_matters": "Relevant to IBS pain, barrier disruption, and possible neuroimmune signaling.",
+      "evidence_strength": "low_to_moderate"
+    },
+    {
+      "node_id_suggestion": "anxiety_and_depressed_mood",
+      "node_label": "Anxiety and depressed mood",
+      "domain": "neurobehavioral",
+      "definition": "Neurobehavioral symptom cluster measured by anxiety and depression scales.",
+      "why_it_matters": "High-value output for gut-brain inference.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id_suggestion": "ibs_symptoms_to_short_chain_fatty_acids",
+      "source": "ibs_symptoms",
+      "target": "short_chain_fatty_acids",
+      "edge_type": "associated_with",
+      "polarity": "context_dependent",
+      "confidence": "moderate",
+      "reason": "IBS cohorts show heterogeneous SCFA differences; not a universal directional biomarker."
+    },
+    {
+      "edge_id_suggestion": "short_chain_fatty_acids_to_anxiety_and_depressed_mood",
+      "source": "short_chain_fatty_acids",
+      "target": "anxiety_and_depressed_mood",
+      "edge_type": "mechanistically_contributes_to",
+      "polarity": "context_dependent",
+      "confidence": "low_to_moderate",
+      "reason": "Mechanistic gut-brain plausibility, but direct human IBS mediation is not established."
+    },
+    {
+      "edge_id_suggestion": "gut_permeability_markers_to_lipopolysaccharide",
+      "source": "gut_permeability_markers",
+      "target": "lipopolysaccharide",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Barrier disruption and LPS/endotoxemia reported in IBS-D/mood contexts; verify sources."
+    },
+    {
+      "edge_id_suggestion": "lipopolysaccharide_to_il_6",
+      "source": "lipopolysaccharide",
+      "target": "il_6",
+      "edge_type": "mechanistically_contributes_to",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Endotoxin signaling plausibly promotes IL-6; direct clinical chain needs verification."
+    },
+    {
+      "edge_id_suggestion": "mast_cell_activation_to_abdominal_pain_in_ibs",
+      "source": "mast_cell_activation",
+      "target": "abdominal_pain_in_ibs",
+      "edge_type": "associated_with",
+      "polarity": "positive",
+      "confidence": "moderate",
+      "reason": "Mast cell mediator data in IBS pain are more direct than mast-cell-to-mood claims."
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "source_id": "source_001",
+      "title": "Anxiety and Depression Comorbidities in Irritable Bowel Syndrome (IBS): A Systematic Review and Meta-analysis",
+      "doi_or_url": "https://research.pasteur.fr/en/publication/anxiety-and-depression-comorbidities-in-irritable-bowel-syndrome-ibs-a-systematic-review-and-meta-analysis",
+      "verification_priority": "high",
+      "reason_to_verify": "Key quantitative IBS-mood comorbidity estimates.",
+      "claims_depending_on_source": [
+        "ibs_anxiety_depression_association"
+      ]
+    },
+    {
+      "source_id": "source_002",
+      "title": "Fecal SCFAs in IBS: Systematic Review and Meta-analysis",
+      "doi_or_url": "https://mdpi.com/1422-0067/25/20/10879",
+      "verification_priority": "high",
+      "reason_to_verify": "SCFA directionality is central and likely heterogeneous.",
+      "claims_depending_on_source": [
+        "series_003_pattern_001"
+      ]
+    },
+    {
+      "source_id": "source_003",
+      "title": "IBS microbiome multi-omics analysis",
+      "doi_or_url": "https://link.springer.com/article/10.1186/s40168-022-01450-5",
+      "verification_priority": "high",
+      "reason_to_verify": "Supports microbiome composition claims; mood mediation unclear.",
+      "claims_depending_on_source": [
+        "series_003_pattern_002"
+      ]
+    },
+    {
+      "source_id": "source_004",
+      "title": "IBS-D permeability/LPS/mood source",
+      "doi_or_url": "https://mdpi.com/2072-6643/18/9/1473",
+      "verification_priority": "high",
+      "reason_to_verify": "Raw output includes future-looking metadata and specific intervention claims; must verify before use.",
+      "claims_depending_on_source": [
+        "series_003_pattern_003"
+      ]
+    },
+    {
+      "source_id": "source_005",
+      "title": "IBS mast cell activation source",
+      "doi_or_url": "https://insight.jci.org/articles/view/146529",
+      "verification_priority": "moderate",
+      "reason_to_verify": "Mast-cell-to-pain evidence likely useful; mood extension requires caution.",
+      "claims_depending_on_source": [
+        "series_003_pattern_004"
+      ]
+    },
+    {
+      "source_id": "source_006",
+      "title": "Future-dated or potentially unstable sources from Tavily output",
+      "doi_or_url": "https://frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1853009/full",
+      "verification_priority": "high",
+      "reason_to_verify": "Current date is 2026-06-09; source metadata and publication validity must be checked before scientific use.",
+      "claims_depending_on_source": [
+        "works_cited_only"
+      ]
+    }
+  ],
+  "research_gaps": [
+    {
+      "gap": "Direct causal testing of SCFA-mediated mood changes in IBS with randomized mediation designs.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Do experimentally manipulated SCFA levels or SCFA receptor signaling modify mood outcomes in IBS patients under controlled conditions?"
+    },
+    {
+      "gap": "Longitudinal sequencing of gut permeability, LPS, cytokines, and mood trajectories across IBS subtypes and IBD.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "What are the temporal sequences and reversibility of permeability-endotoxemia-mood changes in IBS and IBD cohorts?"
+    },
+    {
+      "gap": "Direct measurement of mast cell mediators and mood endpoints in the same IBS cohorts.",
+      "importance_for_body_state_mapper": "Moderate",
+      "suggested_followup_query": "Are IBS mast cell mediators independently associated with anxiety/depression after controlling for pain severity and stress?"
+    },
+    {
+      "gap": "Subtype-specific gut-brain inference rules for IBS-C, IBS-D, IBS-M, IBD, functional dyspepsia, and GERD.",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Which gut-brain mediators differ reliably by GI disorder subtype?"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "IBS symptoms co-occur with anxiety and depressed mood, but mediator chains require cautious grading.",
+      "IBS microbiome and SCFA findings are biologically plausible but heterogeneous.",
+      "Permeability/LPS/inflammation/mood is a high-value candidate pathway, especially for IBS-D, but needs source verification and causal caution.",
+      "Mast cell activation is more defensible as a pain/barrier-related mechanism than as a direct mood mechanism."
+    ],
+    "highest_value_patterns_for_inference": [
+      "ibs_symptoms_to_anxiety_and_depressed_mood",
+      "gut_permeability_markers_to_lipopolysaccharide_to_il_6",
+      "mast_cell_activation_to_abdominal_pain_in_ibs",
+      "short_chain_fatty_acids_to_neurobehavioral_state_hypothesis"
+    ],
+    "patterns_requiring_caution": [
+      "dysbiosis_causes_anxiety",
+      "zonulin_or_diversity_as_definitive_clinical_markers",
+      "gut_serotonin_directly_explains_mood",
+      "mast_cell_activation_directly_causes_depression"
+    ],
+    "recommended_next_queries": [
+      "human IBS anxiety depression systematic review meta-analysis DOI",
+      "IBS short chain fatty acids meta-analysis acetate propionate butyrate depression anxiety",
+      "IBS-D lipopolysaccharide lactulose mannitol depression IL-6 TNF-alpha clinical study",
+      "IBS mast cell activation tryptase histamine abdominal pain anxiety depression human study",
+      "IBD inflammation cytokines fatigue cognitive impairment depression anxiety meta-analysis"
+    ],
+    "overall_assessment": "The raw extraction contained useful gut-brain candidates but overused mediation language and included invalid structure. The curated file preserves four candidate patterns while downgrading causal claims. Nothing should be imported directly into the static evidence graph until source verification is complete."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": null,
+      "url": "https://research.pasteur.fr/en/publication/anxiety-and-depression-comorbidities-in-irritable-bowel-syndrome-ibs-a-systematic-review-and-meta-analysis",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 2,
+      "title": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37463429",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 3,
+      "title": null,
+      "url": "https://frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2021.741049/full",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 4,
+      "title": null,
+      "url": "https://mdpi.com/1422-0067/25/20/10879",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 5,
+      "title": null,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39456661",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 6,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9577580",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 7,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10882305",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 8,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12293967",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 9,
+      "title": null,
+      "url": "https://insight.jci.org/articles/view/146529",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 10,
+      "title": null,
+      "url": "https://frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2022.937906/full",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 11,
+      "title": null,
+      "url": "https://frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2026.1853009/full",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 12,
+      "title": null,
+      "url": "https://nature.com/articles/s41398-025-03339-x",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 13,
+      "title": null,
+      "url": "https://mdpi.com/2072-6643/18/9/1473",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 14,
+      "title": null,
+      "url": "https://mdpi.com/2077-0383/14/7/2483",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 15,
+      "title": null,
+      "url": "https://frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1395235/full",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 16,
+      "title": null,
+      "url": "https://jnmjournal.org/journal/view.html?doi=10.5056%2Fjnm16220",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 17,
+      "title": null,
+      "url": "https://frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1650212/full",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 18,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10528227",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 19,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8428857",
+      "doi": null,
+      "year": null
+    },
+    {
+      "index": 20,
+      "title": null,
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6408019",
+      "doi": null,
+      "year": null
+    }
+  ],
+  "schema_validation_notes": {
+    "valid_json": true,
+    "pattern_count": 4,
+    "known_remaining_issues": [
+      "Only four patterns were present in the raw output despite the prompt asking for at least ten.",
+      "Many source titles, years, authors, and DOIs are missing and must be resolved before registry import.",
+      "Some URLs are publisher pages, search leads, or future-dated-looking sources; verification is mandatory.",
+      "No full-chain direct causal evidence is accepted without manual source review."
+    ]
+  }
+}

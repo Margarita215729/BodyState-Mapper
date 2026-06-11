@@ -1,0 +1,213 @@
+{
+  "research_series": {
+    "series_id": "series_039_evidence_grading_source_quality_graph_edge_promotion",
+    "series_name": "Evidence Grading,Source Quality,and Graph Edge Promotion Rules",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_039_pattern_001",
+      "pattern_name": "Graph edge promotion requires structured evidence grading and risk-of-bias assessment",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "evidence_body_quality",
+        "direction": "high_quality",
+        "measurement_methods": [
+          "GRADE",
+          "ROBINS-I",
+          "ROBINS-E",
+          "RoB 2",
+          "AMSTAR-2",
+          "ROBIS",
+          "PRISMA"
+        ],
+        "contexts": [
+          "systematic review",
+          "clinical guideline",
+          "biomedical knowledge graph"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "evidence_strength_and_risk_of_bias",
+        "category": "evidence_marker",
+        "direction": "graded",
+        "pathway": "source quality, risk of bias, consistency, directness, precision and publication bias determine whether an edge can be promoted",
+        "mechanism": "structured evidence grading prevents promotion of weak associations to causal graph edges"
+      },
+      "neurobehavioral_output": {
+        "variable": "graph_edge_promotion_decision",
+        "direction": "promote|downweight|reject|keep_as_hypothesis",
+        "measurement_methods": [
+          "edge promotion rules",
+          "evidence table",
+          "risk-of-bias review"
+        ],
+        "affected_functions": [
+          "graph construction",
+          "edge confidence",
+          "guardrail creation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Promote edges only when replicated, direct, human evidence supports the relation; keep mechanistic-only or single-study findings as hypothesis nodes.",
+        "hypotheses": [
+          {
+            "target": "edge_promotion_ready",
+            "domain": "evidence_grading",
+            "direction": "promote_when_replication_directness_low_bias",
+            "confidence": "high",
+            "reason": "GRADE/ROBINS frameworks require explicit assessment of bias, inconsistency, indirectness, imprecision and publication bias."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "evidence_update",
+        "latency": "not_applicable",
+        "reversibility": "evidence_revision_possible"
+      },
+      "modulators_confounders": [
+        "study design",
+        "risk of bias",
+        "publication bias",
+        "effect size",
+        "directness",
+        "replication",
+        "population applicability"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "GRADE and ROBINS-style tools provide structured evidence assessment. Knowledge graph edge promotion should require replicated human/intervention or strong chain-of-causality support, not statistical association alone.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Evidence Grading, Source Quality, Risk of Bias, and Graph Edge Promotion Rules in Biomedical Research",
+            "authors": "Consensus review synthesis",
+            "year": 2026,
+            "source_type": "evidence_synthesis",
+            "doi_or_url": "",
+            "relevant_finding": "GRADE is robust; ROBINS tools help assess bias; graph edge promotion requires replicated human/intervention evidence, not just association.",
+            "population": "biomedical evidence synthesis",
+            "sample_size": "50 included papers",
+            "limitations": "Direct graph edge promotion literature remains sparse."
+          }
+        ]
+      },
+      "limitations": [
+        "Knowledge graph-specific edge promotion rules are underdeveloped.",
+        "Risk-of-bias tools are complex and can be misapplied."
+      ],
+      "alternative_explanations": [
+        "High-quality mechanistic evidence may support a hypothesis but not promotion to causal edge without human support."
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "evidence_strength",
+          "source_quality",
+          "risk_of_bias",
+          "replication_status",
+          "effect_size",
+          "precision",
+          "consistency",
+          "directness",
+          "publication_bias",
+          "human_evidence",
+          "mechanistic_evidence",
+          "intervention_evidence",
+          "full_chain_support",
+          "edge_promotion_ready",
+          "keep_as_hypothesis",
+          "reject_for_now"
+        ],
+        "candidate_edges": [
+          {
+            "source": "high_risk_of_bias",
+            "target": "edge_confidence",
+            "edge_type": "downweights",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "replicated_human_evidence",
+            "target": "edge_promotion_ready",
+            "edge_type": "promotes",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "One statistically significant small study is sufficient to promote a graph edge.",
+      "reason": "Evidence grading frameworks require replication, directness, risk-of-bias evaluation and effect-size interpretation.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "edge_promotion_ready",
+      "domain": "evidence",
+      "definition": "An edge has enough replicated, direct and low-bias evidence to be used as a stable inference relation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "risk_of_bias",
+      "domain": "evidence",
+      "definition": "Structured assessment of systematic error risk in the evidence supporting a node or edge.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "replicated_human_evidence_edge_promotion_ready_positive_high",
+      "source": "replicated_human_evidence",
+      "target": "edge_promotion_ready",
+      "edge_type": "promotes",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Formal graph edge promotion standards for biomedical inference graphs.",
+    "Fatigue/brain fog-specific evidence grading adaptations."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "GRADE-like frameworks structure evidence certainty.",
+      "Risk-of-bias assessment is essential before edge promotion."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Separate evidence strength, edge confidence, causal status and personal applicability."
+    ],
+    "patterns_requiring_caution": [
+      "AI/LLM risk-of-bias assessment is promising but not ready to replace expert review."
+    ],
+    "recommended_next_queries": [
+      "Design BodyState Mapper edge promotion rules from GRADE/ROBINS concepts."
+    ],
+    "overall_assessment": "Essential graph governance layer."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Evidence Grading, Source Quality, Risk of Bias, and Graph Edge Promotion Rules in Biomedical Research",
+      "url": "",
+      "doi": "",
+      "year": 2026
+    }
+  ]
+}

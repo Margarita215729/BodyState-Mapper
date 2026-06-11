@@ -1,0 +1,819 @@
+{
+  "research_series": {
+    "series_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition",
+    "series_name": "Autonomic State, HRV, Resting Heart Rate, Fatigue, Stress, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_006_pattern_001",
+      "pattern_name": "Reduced vagally mediated HRV is associated with higher fatigue, stress, anxiety/depression symptoms, and lower recovery state",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "reduced_vagally_mediated_HRV",
+        "direction": "decreased",
+        "measurement_methods": [
+          "RMSSD",
+          "HF-HRV",
+          "SDNN",
+          "ambulatory HRV",
+          "resting HRV",
+          "wearable/ECG-derived HRV"
+        ],
+        "contexts": [
+          "healthy adults",
+          "clinical fatigue populations",
+          "CFS/ME",
+          "cancer",
+          "multiple sclerosis",
+          "fibromyalgia",
+          "anxiety",
+          "depression",
+          "PTSD",
+          "post-COVID"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "parasympathetic_vagal_activity",
+        "category": "autonomic_marker",
+        "direction": "decreased",
+        "pathway": "reduced cardiac vagal modulation and autonomic flexibility",
+        "mechanism": "lower vagal tone may reflect reduced regulatory capacity, impaired recovery, and higher allostatic load"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_stress_mood_recovery_status",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "perceived stress scales",
+          "anxiety/depression/PTSD symptom measures",
+          "self-reported wellness/recovery",
+          "daily monitoring"
+        ],
+        "affected_functions": [
+          "subjective fatigue",
+          "perceived stress",
+          "anxiety symptoms",
+          "mood",
+          "recovery",
+          "perceived energy"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Reduced RMSSD/HF-HRV increases the likelihood of fatigue, stress/anxiety symptoms, mood disturbance, and poor recovery state, but should be treated as a probabilistic marker rather than a direct diagnosis.",
+        "hypotheses": [
+          {
+            "target": "fatigue_stress_mood_recovery_status",
+            "domain": "neurobehavioral",
+            "direction": "impaired",
+            "confidence": "high",
+            "reason": "Multiple reviews/meta-analyses and clinical studies link reduced vagally mediated HRV with fatigue, stress, anxiety/depression/PTSD symptoms, and lower recovery/wellness."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_chronic",
+        "latency": "variable",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "sleep",
+        "respiration",
+        "physical activity",
+        "fitness",
+        "illness/infection",
+        "medications",
+        "caffeine",
+        "alcohol",
+        "time of day",
+        "age",
+        "sex",
+        "measurement protocol",
+        "clinical comorbidity"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Reduced vagally mediated HRV, especially RMSSD and HF-HRV, is consistently associated with fatigue, stress, anxiety/depression/PTSD symptoms, mood disturbance, and poorer recovery across healthy and clinical populations.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Heart Rate Variability and Cognitive Function: A Systematic Review",
+            "authors": "Forte et al.",
+            "year": 2019,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.3389/fnins.2019.00710",
+            "relevant_finding": "HRV is associated with cognitive functioning and regulatory capacity.",
+            "population": "mixed human populations",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneity of HRV protocols and cognitive tasks"
+          },
+          {
+            "title": "Decreased Heart Rate Variability Is Associated with Increased Fatigue Across Different Medical Populations",
+            "authors": "Penfold et al.",
+            "year": 2025,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.3390/pathophysiology32030046",
+            "relevant_finding": "Reduced HRV is associated with increased fatigue across medical populations.",
+            "population": "medical populations",
+            "sample_size": "not extracted",
+            "limitations": "clinical heterogeneity and cross-sectional designs"
+          },
+          {
+            "title": "Stress and Heart Rate Variability: A Meta-Analysis and Review of the Literature",
+            "authors": "Kim et al.",
+            "year": 2018,
+            "source_type": "meta_analysis",
+            "doi_or_url": "10.30773/pi.2017.08.17",
+            "relevant_finding": "Stress is associated with reduced HRV and autonomic imbalance.",
+            "population": "human stress studies",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneity of stressors and HRV metrics"
+          }
+        ]
+      },
+      "limitations": [
+        "Directionality is often uncertain",
+        "HRV is sensitive to non-psychological confounders",
+        "Metric-specific interpretation is required",
+        "Resting HRV and phasic HRV should not be merged"
+      ],
+      "alternative_explanations": [
+        "sleep loss",
+        "infection",
+        "physical deconditioning",
+        "medication effects",
+        "respiratory rate differences",
+        "measurement artifacts"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "reduced_RMSSD",
+          "reduced_HF_HRV",
+          "reduced_vagal_tone",
+          "autonomic_imbalance",
+          "subjective_fatigue",
+          "perceived_stress",
+          "anxiety_symptoms",
+          "low_recovery_state"
+        ],
+        "candidate_edges": [
+          {
+            "source": "reduced_RMSSD",
+            "target": "subjective_fatigue",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "reduced_HF_HRV",
+            "target": "perceived_stress",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "reduced_vagal_tone",
+            "target": "low_recovery_state",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_006_pattern_002",
+      "pattern_name": "Higher resting vagally mediated HRV is associated with better executive function, working memory, and attention",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "higher_resting_vagally_mediated_HRV",
+        "direction": "increased",
+        "measurement_methods": [
+          "RMSSD",
+          "HF-HRV",
+          "respiratory sinus arrhythmia",
+          "resting ECG HRV"
+        ],
+        "contexts": [
+          "healthy adults",
+          "older adults",
+          "adolescents",
+          "clinical populations"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "vagal_flexibility",
+        "category": "autonomic_marker",
+        "direction": "increased",
+        "pathway": "neurovisceral integration / prefrontal-autonomic regulation",
+        "mechanism": "higher vagally mediated HRV may index better top-down regulatory capacity and physiological flexibility"
+      },
+      "neurobehavioral_output": {
+        "variable": "executive_attention_working_memory_performance",
+        "direction": "improved",
+        "measurement_methods": [
+          "executive function tasks",
+          "working memory tasks",
+          "attention tasks",
+          "global cognitive batteries"
+        ],
+        "affected_functions": [
+          "executive function",
+          "working memory",
+          "attention",
+          "cognitive performance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Higher resting RMSSD/HF-HRV is associated with better executive function, working memory, and attention, but the relationship is context-dependent and not necessarily causal.",
+        "hypotheses": [
+          {
+            "target": "executive_attention_working_memory_performance",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "high",
+            "reason": "Systematic reviews and cohort/lab studies consistently link higher vagally mediated HRV with better cognition."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "same_day_to_chronic",
+        "latency": "variable",
+        "reversibility": "partially_reversible"
+      },
+      "modulators_confounders": [
+        "age",
+        "fitness",
+        "sleep",
+        "respiration",
+        "task difficulty",
+        "clinical disease",
+        "baseline arousal"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Higher resting vagally mediated HRV is consistently associated with better executive function, attention, working memory, and cognitive performance; lower HRV may predict cognitive decline in older adults.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Heart Rate Variability and Cognitive Function: A Systematic Review",
+            "authors": "Forte et al.",
+            "year": 2019,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.3389/fnins.2019.00710",
+            "relevant_finding": "HRV is linked to executive function and cognitive performance.",
+            "population": "mixed human populations",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneous measures"
+          },
+          {
+            "title": "Heart Rate Variability and Cognition: A Narrative Systematic Review of Longitudinal Studies",
+            "authors": "Nicolini et al.",
+            "year": 2024,
+            "source_type": "systematic_review",
+            "doi_or_url": "10.3390/jcm13010280",
+            "relevant_finding": "Longitudinal literature suggests HRV-cognition links, especially in aging.",
+            "population": "older and mixed adults",
+            "sample_size": "not extracted",
+            "limitations": "narrative synthesis"
+          }
+        ]
+      },
+      "limitations": [
+        "Causality is not established",
+        "Some sympathetic activity may support performance under specific conditions",
+        "Effect depends on HRV metric and context"
+      ],
+      "alternative_explanations": [
+        "fitness and vascular health",
+        "sleep quality",
+        "depression/anxiety",
+        "medication effects"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "higher_RMSSD",
+          "higher_HF_HRV",
+          "vagal_flexibility",
+          "executive_function",
+          "working_memory",
+          "attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "higher_RMSSD",
+            "target": "executive_function",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "higher_HF_HRV",
+            "target": "working_memory",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_006_pattern_003",
+      "pattern_name": "Acute mental stress induces sympathetic activation and vagal withdrawal",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "acute_mental_stress",
+        "direction": "increased",
+        "measurement_methods": [
+          "laboratory stress task",
+          "psychophysiological stress protocol",
+          "self-reported stress"
+        ],
+        "contexts": [
+          "healthy adults",
+          "stress laboratory studies"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "sympathetic_activation_and_vagal_withdrawal",
+        "category": "autonomic_marker",
+        "direction": "increased_sympathetic_decreased_parasympathetic",
+        "pathway": "acute fight-or-flight autonomic response",
+        "mechanism": "stress exposure rapidly decreases HF-HRV/RMSSD and may increase LF/HF ratio or other sympathetic-dominant indices"
+      },
+      "neurobehavioral_output": {
+        "variable": "acute_stress_state_and_recovery",
+        "direction": "mixed",
+        "measurement_methods": [
+          "HRV reactivity/recovery",
+          "stress ratings",
+          "performance tasks"
+        ],
+        "affected_functions": [
+          "perceived stress",
+          "arousal",
+          "stress recovery",
+          "attention under stress"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "An acute stressor commonly produces rapid vagal withdrawal and sympathetic activation; recovery of parasympathetic activity after the stressor is informative about resilience/recovery.",
+        "hypotheses": [
+          {
+            "target": "acute_stress_state_and_recovery",
+            "domain": "neurobehavioral",
+            "direction": "mixed",
+            "confidence": "high",
+            "reason": "Meta-analyses/lab studies show robust HRV changes during acute mental stress."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes",
+        "latency": "immediate",
+        "reversibility": "acute_reversible"
+      },
+      "modulators_confounders": [
+        "baseline HRV",
+        "stress task type",
+        "breathing",
+        "fitness",
+        "trait anxiety",
+        "caffeine",
+        "sleep"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Acute stress reliably reduces HF-HRV/RMSSD and can increase sympathetic-dominant indices. Recovery trajectory is important and should be modeled separately from stress reactivity.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Acute mental stress assessment via short term HRV analysis in healthy adults",
+            "authors": "Castaldo et al.",
+            "year": 2015,
+            "source_type": "systematic_review_meta_analysis",
+            "doi_or_url": "10.1016/j.bspc.2015.02.012",
+            "relevant_finding": "Acute mental stress changes short-term HRV indices.",
+            "population": "healthy adults",
+            "sample_size": "not extracted",
+            "limitations": "heterogeneity of protocols"
+          },
+          {
+            "title": "Stress and Heart Rate Variability: A Meta-Analysis and Review of the Literature",
+            "authors": "Kim et al.",
+            "year": 2018,
+            "source_type": "meta_analysis",
+            "doi_or_url": "10.30773/pi.2017.08.17",
+            "relevant_finding": "Stress is associated with autonomic imbalance and reduced HRV.",
+            "population": "human stress studies",
+            "sample_size": "not extracted",
+            "limitations": "varied stressors and metrics"
+          }
+        ]
+      },
+      "limitations": [
+        "Acute low HRV can be adaptive, not always pathological",
+        "LF/HF interpretation is controversial",
+        "Respiration must be controlled"
+      ],
+      "alternative_explanations": [
+        "physical movement",
+        "breathing changes",
+        "measurement artifacts"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_stress_response",
+          "sympathetic_activation",
+          "parasympathetic_withdrawal",
+          "impaired_stress_recovery"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_stress_response",
+            "target": "parasympathetic_withdrawal",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "impaired_stress_recovery",
+            "target": "low_recovery_state",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_006_pattern_004",
+      "pattern_name": "Slow breathing and HRV biofeedback can improve vagal tone, baroreflex sensitivity, mood, and stress resilience",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "slow_breathing_or_HRV_biofeedback",
+        "direction": "increased",
+        "measurement_methods": [
+          "paced breathing",
+          "HRV biofeedback",
+          "transcutaneous vagus nerve stimulation"
+        ],
+        "contexts": [
+          "healthy adults",
+          "depression",
+          "older adults",
+          "stress intervention studies"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "increased_vagal_tone_and_baroreflex_sensitivity",
+        "category": "autonomic_marker",
+        "direction": "increased",
+        "pathway": "respiratory sinus arrhythmia and baroreflex modulation",
+        "mechanism": "slow breathing near resonance frequency can increase HRV and baroreflex engagement"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_stress_resilience",
+        "direction": "improved",
+        "measurement_methods": [
+          "mood scales",
+          "depression scales",
+          "stress resilience measures",
+          "HRV biofeedback outcomes"
+        ],
+        "affected_functions": [
+          "mood",
+          "stress regulation",
+          "resilience",
+          "recovery"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Slow breathing and HRV biofeedback may improve autonomic regulation and mood/stress resilience, but long-term standardized evidence remains less mature.",
+        "hypotheses": [
+          {
+            "target": "mood_stress_resilience",
+            "domain": "neurobehavioral",
+            "direction": "improved",
+            "confidence": "moderate",
+            "reason": "Intervention studies show improvements, but protocols and long-term follow-up vary."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "minutes_to_weeks",
+        "latency": "immediate_and_cumulative",
+        "reversibility": "training_adaptation"
+      },
+      "modulators_confounders": [
+        "protocol duration",
+        "breathing rate",
+        "adherence",
+        "baseline HRV",
+        "clinical status"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Slow breathing/HRV biofeedback interventions can increase vagal tone/baroreflex sensitivity and improve mood or stress resilience, but standardization and long-term evidence remain gaps.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Preliminary Results of an Open Label Study of Heart Rate Variability Biofeedback for the Treatment of Major Depression",
+            "authors": "Karavidas et al.",
+            "year": 2007,
+            "source_type": "intervention_trial",
+            "doi_or_url": "10.1007/s10484-006-9029-z",
+            "relevant_finding": "HRV biofeedback showed potential antidepressant effects.",
+            "population": "major depression",
+            "sample_size": "not extracted",
+            "limitations": "open-label preliminary design"
+          },
+          {
+            "title": "Effects of transcutaneous vagus nerve stimulation in individuals aged 55 years or above",
+            "authors": "Bretherton et al.",
+            "year": 2019,
+            "source_type": "intervention_trial",
+            "doi_or_url": "10.18632/aging.102074",
+            "relevant_finding": "Daily stimulation showed potential autonomic and well-being benefits.",
+            "population": "older adults",
+            "sample_size": "not extracted",
+            "limitations": "intervention standardization and generalizability"
+          }
+        ]
+      },
+      "limitations": [
+        "Long-term cognitive effects uncertain",
+        "Protocols vary",
+        "Some trials are small or preliminary"
+      ],
+      "alternative_explanations": [
+        "relaxation expectancy effects",
+        "attention/placebo effects",
+        "concurrent behavioral changes"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "slow_breathing",
+          "HRV_biofeedback",
+          "increased_vagal_tone",
+          "increased_baroreflex_sensitivity",
+          "stress_resilience"
+        ],
+        "candidate_edges": [
+          {
+            "source": "slow_breathing",
+            "target": "increased_vagal_tone",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "HRV_biofeedback",
+            "target": "stress_resilience",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Negative affect is not always associated with lower resting HRV outside clinical samples.",
+      "reason": "Large non-clinical samples can show null findings for negative affect/resting HRV links.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "LF/HF ratio should not be treated as a simple direct measure of sympathetic-vagal balance.",
+      "reason": "HRV metric interpretation is context-dependent and methodologically heterogeneous.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "Moderate sympathetic activation may support cognition or exercise capacity in some older or disease populations.",
+      "reason": "Some evidence suggests nonlinear/inverted-U effects rather than a simple harmful effect of sympathetic activation.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "reduced_RMSSD",
+      "domain": "physiological",
+      "definition": "Reduced root mean square of successive differences, a time-domain HRV index reflecting vagally mediated variability.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_HF_HRV",
+      "domain": "physiological",
+      "definition": "Reduced high-frequency HRV, commonly interpreted as lower parasympathetic/vagal cardiac modulation under appropriate measurement conditions.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "elevated_resting_heart_rate",
+      "domain": "physiological",
+      "definition": "Resting heart rate above individual baseline, potentially reflecting stress, illness, poor recovery, sleep loss, or other physiological load.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "parasympathetic_withdrawal",
+      "domain": "physiological",
+      "definition": "Acute or chronic reduction in vagally mediated autonomic activity.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "sympathetic_activation",
+      "domain": "physiological",
+      "definition": "Increased sympathetic arousal commonly observed during acute stress, exertion, illness, or threat response.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "impaired_stress_recovery",
+      "domain": "physiological",
+      "definition": "Delayed restoration of autonomic balance after a stressor.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "low_recovery_state",
+      "domain": "neurobehavioral",
+      "definition": "Subjective or inferred state of poor recovery/wellness and reduced readiness.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "cognitive_fatigue",
+      "domain": "neurobehavioral",
+      "definition": "Decline in mental performance or perceived mental effort during sustained cognitive demand.",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "reduced_RMSSD_subjective_fatigue_positive_high_confidence",
+      "source": "reduced_RMSSD",
+      "target": "subjective_fatigue",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "reduced_HF_HRV_perceived_stress_positive_high_confidence",
+      "source": "reduced_HF_HRV",
+      "target": "perceived_stress",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "higher_RMSSD_executive_function_positive_high_confidence",
+      "source": "higher_RMSSD",
+      "target": "executive_function",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "acute_stress_response_parasympathetic_withdrawal_positive_high_confidence",
+      "source": "acute_stress_response",
+      "target": "parasympathetic_withdrawal",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "slow_breathing_increased_vagal_tone_positive_moderate_confidence",
+      "source": "slow_breathing",
+      "target": "increased_vagal_tone",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "source_verification_queue": [
+    {
+      "title": "Heart rate variability as a dual-use digital biomarker: integrating clinical, AI, and operational perspectives on human performance and resilience",
+      "reason": "Future-dated 2026 source should be verified before inclusion in static graph."
+    },
+    {
+      "title": "From brain to heart: cognitive performance shapes exercise-induced cardiac autonomic trajectories in older adults",
+      "reason": "Future-dated 2026 source should be verified before inclusion in static graph."
+    },
+    {
+      "title": "Breathe better, live better: the science of slow breathing and heart rate variability",
+      "reason": "2025 review should be verified and assessed for source type before evidence weighting."
+    },
+    {
+      "title": "Decreased Heart Rate Variability Is Associated with Increased Fatigue Across Different Medical Populations",
+      "reason": "2025 review should be verified and source details extracted."
+    }
+  ],
+  "research_gaps": [
+    "Need longitudinal and interventional studies linking autonomic changes to daily functioning and fatigue over time.",
+    "Need standardization of HRV recording protocols, respiration control, and metric interpretation.",
+    "Baroreflex sensitivity is under-studied in longitudinal and intervention designs.",
+    "Long-term cognitive effects of HRV biofeedback or vagal tone interventions remain unclear.",
+    "Directionality between chronic autonomic imbalance and subjective fatigue remains uncertain."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Reduced RMSSD/HF-HRV is associated with increased fatigue, stress, anxiety/depression symptoms, and poorer recovery.",
+      "Higher resting vagally mediated HRV is associated with better executive function and cognitive performance.",
+      "Acute mental stress induces sympathetic activation and vagal withdrawal."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Reduced vagally mediated HRV as a probabilistic evidence node for allostatic load, fatigue, stress, and recovery.",
+      "Dynamic HRV reactivity/recovery as a marker of resilience and stress recovery.",
+      "HRV metric-specific edges instead of a generic HRV node."
+    ],
+    "patterns_requiring_caution": [
+      "LF/HF ratio as a direct sympathetic-vagal balance metric.",
+      "Negative affect -> lower resting HRV in non-clinical samples.",
+      "Sympathetic activation as always harmful; evidence suggests nonlinear context-dependent effects."
+    ],
+    "recommended_next_queries": [
+      "How do cortisol and HPA-axis dynamics interact with HRV, fatigue, anxiety, and cognition in humans?",
+      "How do respiration rate, CO2, panic symptoms, and HRV interact in anxiety and cognitive impairment?"
+    ],
+    "overall_assessment": "The autonomic/HRV series is strong and graph-relevant. HRV should be modeled as a noisy probabilistic physiological evidence node, not a direct psychological diagnosis. Metric-specific, context-aware edges are essential."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Heart Rate Variability and Cognitive Function: A Systematic Review",
+      "url": "https://doi.org/10.3389/fnins.2019.00710",
+      "doi": "10.3389/fnins.2019.00710",
+      "year": 2019
+    },
+    {
+      "index": 2,
+      "title": "Stress and Heart Rate Variability: A Meta-Analysis and Review of the Literature",
+      "url": "https://doi.org/10.30773/pi.2017.08.17",
+      "doi": "10.30773/pi.2017.08.17",
+      "year": 2018
+    },
+    {
+      "index": 3,
+      "title": "Acute mental stress assessment via short term HRV analysis in healthy adults: A systematic review with meta-analysis",
+      "url": "https://doi.org/10.1016/j.bspc.2015.02.012",
+      "doi": "10.1016/j.bspc.2015.02.012",
+      "year": 2015
+    },
+    {
+      "index": 4,
+      "title": "Reduced heart rate variability predicts fatigue severity in individuals with chronic fatigue syndrome/myalgic encephalomyelitis",
+      "url": "https://doi.org/10.1186/s12967-019-02184-z",
+      "doi": "10.1186/s12967-019-02184-z",
+      "year": 2020
+    },
+    {
+      "index": 5,
+      "title": "Change in Heart Rate Variability with Increasing Time-on-Task as a Marker for Mental Fatigue: A Systematic Review",
+      "url": "https://doi.org/10.1016/j.biopsycho.2023.108727",
+      "doi": "10.1016/j.biopsycho.2023.108727",
+      "year": 2023
+    }
+  ]
+}

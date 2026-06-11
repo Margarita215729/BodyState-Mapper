@@ -1,0 +1,366 @@
+{
+  "research_series": {
+    "series_id": "series_021_allostatic_load_recovery_failure_physiological_reserve",
+    "series_name": "Allostatic Load, Recovery Failure, Physiological Reserve, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_021_pattern_001",
+      "pattern_name": "Composite allostatic load predicts adverse physical and neurobehavioral outcomes",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "allostatic_load",
+        "direction": "increased",
+        "measurement_methods": [
+          "multi-system biomarker index",
+          "composite AL score"
+        ],
+        "contexts": [
+          "older adults",
+          "working adults",
+          "clinical populations",
+          "athletes"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "multi_system_physiological_dysregulation",
+        "category": "recovery_marker",
+        "direction": "increased",
+        "pathway": "neuroendocrine/autonomic/inflammatory/metabolic/cardiovascular dysregulation",
+        "mechanism": "cumulative stress adaptation reduces physiological reserve and raises vulnerability"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_burnout_mood_cognition_health_risk",
+        "direction": "impaired",
+        "measurement_methods": [
+          "fatigue scales",
+          "burnout measures",
+          "mood scales",
+          "cognitive tests",
+          "morbidity/mortality outcomes"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "mood",
+          "cognition",
+          "recovery",
+          "illness vulnerability"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "allostatic_load",
+          "low_physiological_reserve",
+          "multi_system_physiological_dysregulation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "allostatic_load",
+            "target": "low_physiological_reserve",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "allostatic_load",
+            "target": "fatigue_burnout_mood_cognition_health_risk",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_021_pattern_002",
+      "pattern_name": "Recovery failure requires repeated multi-signal deviation, not a single abnormal marker",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "persistent_multi_signal_deviation_from_baseline",
+        "direction": "dysregulated",
+        "measurement_methods": [
+          "HRV/RMSSD",
+          "RHR",
+          "sleep metrics",
+          "cortisol",
+          "CRP/IL-6",
+          "glucose/HbA1c",
+          "activity load"
+        ],
+        "contexts": [
+          "wearables",
+          "athlete monitoring",
+          "occupational stress",
+          "clinical fatigue"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "impaired_recovery_pattern",
+        "category": "wearable_marker",
+        "direction": "persistent_deviation",
+        "pathway": "multi-modal recovery monitoring",
+        "mechanism": "persistent within-person deviations across systems indicate maladaptation more reliably than isolated values"
+      },
+      "neurobehavioral_output": {
+        "variable": "low_recovery_state",
+        "direction": "impaired",
+        "measurement_methods": [
+          "subjective recovery",
+          "fatigue scales",
+          "performance metrics",
+          "wearables"
+        ],
+        "affected_functions": [
+          "fatigue",
+          "performance",
+          "stress resilience",
+          "recovery"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "within_person_baseline_deviation",
+          "persistent_multi_signal_deviation",
+          "recovery_failure",
+          "low_recovery_state"
+        ],
+        "candidate_edges": [
+          {
+            "source": "persistent_multi_signal_deviation",
+            "target": "recovery_failure",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "single_marker_deviation",
+            "target": "recovery_failure",
+            "edge_type": "no_clear_association",
+            "polarity": "neutral",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_021_pattern_003",
+      "pattern_name": "Acute stress response must be distinguished from chronic allostatic overload",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "acute_stress_response",
+        "direction": "increased",
+        "measurement_methods": [
+          "cortisol reactivity",
+          "HRV reactivity",
+          "stress recovery timing"
+        ],
+        "contexts": [
+          "acute psychosocial stress",
+          "stress recovery studies"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "stress_reactivity_and_recovery",
+        "category": "endocrine_marker",
+        "direction": "transient_or_delayed_recovery",
+        "pathway": "acute stress physiology",
+        "mechanism": "adaptive stress responses should return to baseline; delayed recovery or persistent dysregulation may signal cumulative stress burden"
+      },
+      "neurobehavioral_output": {
+        "variable": "long_term_stress_burden",
+        "direction": "mixed",
+        "measurement_methods": [
+          "stress questionnaires",
+          "health markers",
+          "AL indices"
+        ],
+        "affected_functions": [
+          "stress resilience",
+          "fatigue",
+          "recovery"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "acute_stress_response",
+          "delayed_stress_recovery",
+          "chronic_allostatic_overload"
+        ],
+        "candidate_edges": [
+          {
+            "source": "acute_stress_response",
+            "target": "allostatic_load",
+            "edge_type": "hypothesis_only",
+            "polarity": "unknown",
+            "confidence": "low"
+          },
+          {
+            "source": "delayed_stress_recovery",
+            "target": "allostatic_load",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Single-point biomarker deviations confirm recovery failure/allostatic overload.",
+      "reason": "The review emphasizes longitudinal and multi-modal assessment; isolated HRV/RHR/cortisol/CRP values are insufficient.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Low HRV alone reliably tracks subjective stress, illness onset, or burnout for every individual.",
+      "reason": "Wearable studies show large individual variability and inconsistent HRV-subjective stress correlations.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "allostatic_load",
+      "domain": "physiological",
+      "definition": "Cumulative multi-system physiological burden from chronic stress/adaptation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "low_physiological_reserve",
+      "domain": "physiological",
+      "definition": "Reduced ability to maintain or recover homeostasis under stressors.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "recovery_failure",
+      "domain": "physiological",
+      "definition": "Persistent or delayed return to baseline after load/stress, preferably inferred from repeated multi-signal deviation.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "within_person_baseline_deviation",
+      "domain": "contextual",
+      "definition": "Repeated deviation from an individual's own baseline rather than population norms.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "allostatic_load_low_physiological_reserve_positive_high",
+      "source": "allostatic_load",
+      "target": "low_physiological_reserve",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "persistent_multi_signal_deviation_recovery_failure_positive_moderate",
+      "source": "persistent_multi_signal_deviation",
+      "target": "recovery_failure",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "moderate"
+    },
+    {
+      "edge_id": "single_marker_deviation_recovery_failure_neutral_moderate",
+      "source": "single_marker_deviation",
+      "target": "recovery_failure",
+      "edge_type": "no_clear_association",
+      "polarity": "neutral",
+      "confidence": "moderate"
+    }
+  ],
+  "research_gaps": [
+    "No universal allostatic load biomarker panel exists.",
+    "Need integration of wearable continuous data with traditional biomarkers.",
+    "Need temporal models for transition from adaptive acute stress to chronic overload.",
+    "Need more clinical fatigue/cognitive studies with repeated biomarkers."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Composite allostatic load predicts adverse health outcomes better than single biomarkers.",
+      "Chronic stress/burnout is associated with higher AL and physical/mental illness risk.",
+      "Wearable HRV/sleep metrics are useful but require individualized multi-signal interpretation."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Allostatic load as a multi-system burden node.",
+      "Recovery failure as repeated within-person multi-signal deviation.",
+      "Single-marker guardrail: low HRV or high cortisol alone is insufficient."
+    ],
+    "patterns_requiring_caution": [
+      "Cortisol-only inference.",
+      "HRV-only recovery scores.",
+      "Subjective fatigue inferred from biomarkers without self-report/performance context."
+    ],
+    "recommended_next_queries": [
+      "How do cerebral perfusion, orthostatic intolerance, CO2, oxygenation and blood volume jointly explain dizziness/brain fog/fatigue?",
+      "How should within-person baseline deviations be modeled for wearable health inference?"
+    ],
+    "overall_assessment": "Series 021 is a deep mechanism layer. It should shape BodyState Mapper's inference architecture: recovery/allostatic hypotheses require repeated, multi-system, within-person evidence, not isolated abnormal values."
+  },
+  "works_cited": [
+    {
+      "index": 1,
+      "title": "Allostatic Load and Its Impact on Health: A Systematic Review",
+      "url": "",
+      "doi": "",
+      "year": 2020
+    },
+    {
+      "index": 2,
+      "title": "Towards a consensus definition of allostatic load",
+      "url": "",
+      "doi": "",
+      "year": 2023
+    },
+    {
+      "index": 3,
+      "title": "Allostatic Load and Mortality: A Systematic Review and Meta-Analysis",
+      "url": "",
+      "doi": "",
+      "year": 2022
+    },
+    {
+      "index": 4,
+      "title": "Monitoring stress and allostatic load using HRV",
+      "url": "",
+      "doi": "",
+      "year": 2021
+    },
+    {
+      "index": 5,
+      "title": "Validating Subjective Ratings with Wearable Data",
+      "url": "",
+      "doi": "",
+      "year": 2025
+    }
+  ]
+}

@@ -1,0 +1,523 @@
+{
+  "research_series": {
+    "series_id": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition",
+    "series_name": "Respiration, CO2, Oxygenation, Panic, Dizziness, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-09",
+    "source_pdf": "Search_for_human_studies_on_how_respiration_respi.pdf"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_010_pattern_001",
+      "pattern_name": "Acute hyperventilation/hypocapnia impairs attention and cognitive inhibition via cerebral hypoperfusion",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "hyperventilation_state",
+        "direction": "increased",
+        "measurement_methods": [
+          "end-tidal CO2",
+          "capnography",
+          "experimental hyperventilation",
+          "simulated altitude"
+        ],
+        "contexts": [
+          "healthy adults",
+          "laboratory challenge",
+          "simulated altitude"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "hypocapnia_reduced_end_tidal_CO2",
+        "category": "gas_exchange_marker",
+        "direction": "decreased_CO2",
+        "pathway": "hyperventilation lowers CO2, causing cerebral vasoconstriction and reduced cerebral blood flow",
+        "mechanism": "hypocapnia-induced cerebral vasoconstriction reduces perfusion, impairing attention and inhibition"
+      },
+      "neurobehavioral_output": {
+        "variable": "attention_and_cognitive_inhibition",
+        "direction": "impaired",
+        "measurement_methods": [
+          "Stroop task",
+          "reaction time",
+          "error rate",
+          "neuropsychological tasks"
+        ],
+        "affected_functions": [
+          "attention",
+          "cognitive inhibition",
+          "processing speed",
+          "concentration"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "hyperventilation_state",
+          "hypocapnia",
+          "reduced_end_tidal_CO2",
+          "cerebral_hypoperfusion",
+          "impaired_attention",
+          "dizziness"
+        ],
+        "candidate_edges": [
+          {
+            "source": "hyperventilation_state",
+            "target": "hypocapnia",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "hypocapnia",
+            "target": "cerebral_hypoperfusion",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "cerebral_hypoperfusion",
+            "target": "impaired_attention",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_010_pattern_002",
+      "pattern_name": "Dysfunctional breathing/hyperventilation is common in ME/CFS and long COVID with dyspnea, fatigue, and brain fog",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "dysfunctional_breathing_pattern",
+        "direction": "increased",
+        "measurement_methods": [
+          "CPET",
+          "ventilatory pattern analysis",
+          "VE/VCO2 slope",
+          "end-tidal CO2"
+        ],
+        "contexts": [
+          "ME/CFS",
+          "long COVID",
+          "post-viral fatigue",
+          "unexplained dyspnea"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "ventilatory_abnormality_or_exercise_hypocapnia",
+        "category": "respiratory_marker",
+        "direction": "increased_abnormality",
+        "pathway": "erratic or excessive ventilation during exertion may increase dyspnea and contribute to fatigue/mental fog",
+        "mechanism": "abnormal ventilatory control, hypocapnia, autonomic/interoceptive amplification"
+      },
+      "neurobehavioral_output": {
+        "variable": "fatigue_dyspnea_brain_fog",
+        "direction": "increased",
+        "measurement_methods": [
+          "symptom reports",
+          "fatigue scales",
+          "dyspnea scales",
+          "clinical cohorts"
+        ],
+        "affected_functions": [
+          "perceived energy",
+          "brain fog",
+          "exercise tolerance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "dysfunctional_breathing_pattern",
+          "exercise_induced_hypocapnia",
+          "dyspnea",
+          "subjective_fatigue",
+          "subjective_brain_fog"
+        ],
+        "candidate_edges": [
+          {
+            "source": "dysfunctional_breathing_pattern",
+            "target": "dyspnea",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "dysfunctional_breathing_pattern",
+            "target": "subjective_fatigue",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "dysfunctional_breathing_pattern",
+            "target": "subjective_brain_fog",
+            "edge_type": "associated_with",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_010_pattern_003",
+      "pattern_name": "Panic disorder is associated with chronic hypocapnia and increased CO2 sensitivity",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "panic_disorder_or_panic_attack_state",
+        "direction": "increased",
+        "measurement_methods": [
+          "ETCO2",
+          "minute ventilation",
+          "CO2 challenge",
+          "capnography"
+        ],
+        "contexts": [
+          "panic disorder",
+          "anxiety disorders"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "lower_baseline_end_tidal_CO2_and_CO2_sensitivity",
+        "category": "gas_exchange_marker",
+        "direction": "lower_ETCO2_higher_sensitivity",
+        "pathway": "chronic hypocapnia and variable ventilation increase vulnerability to panic symptoms during CO2 challenge",
+        "mechanism": "respiratory chemosensitivity and interoceptive threat amplification"
+      },
+      "neurobehavioral_output": {
+        "variable": "panic_anxiety_symptoms",
+        "direction": "increased",
+        "measurement_methods": [
+          "panic symptom scales",
+          "CO2 challenge response",
+          "clinical diagnosis"
+        ],
+        "affected_functions": [
+          "anxiety",
+          "panic sensitivity",
+          "interoception"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": true,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "panic_attack_state",
+          "lower_baseline_ETCO2",
+          "CO2_sensitivity",
+          "air_hunger",
+          "anxiety_symptoms"
+        ],
+        "candidate_edges": [
+          {
+            "source": "lower_baseline_ETCO2",
+            "target": "panic_attack_risk",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "CO2_sensitivity",
+            "target": "panic_anxiety_symptoms",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_010_pattern_004",
+      "pattern_name": "Sleep-disordered breathing/intermittent hypoxia predicts cognitive decline risk",
+      "causal_status": "prediction",
+      "physiological_input": {
+        "variable": "sleep_disordered_breathing_intermitent_hypoxia",
+        "direction": "increased",
+        "measurement_methods": [
+          "polysomnography",
+          "oxygen desaturation index",
+          "SpO2",
+          "apnea-hypopnea index"
+        ],
+        "contexts": [
+          "older adults",
+          "sleep apnea",
+          "longitudinal cohorts"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "nocturnal_oxygen_desaturation",
+        "category": "gas_exchange_marker",
+        "direction": "increased_desaturation",
+        "pathway": "intermittent hypoxemia during sleep may impair neural/metabolic function and increase neurodegenerative risk",
+        "mechanism": "repeated nocturnal oxygen desaturation, vascular stress, possible amyloid-related pathways"
+      },
+      "neurobehavioral_output": {
+        "variable": "cognitive_decline_and_executive_dysfunction",
+        "direction": "impaired",
+        "measurement_methods": [
+          "MCI/dementia incidence",
+          "executive function tests",
+          "cognitive batteries"
+        ],
+        "affected_functions": [
+          "executive function",
+          "global cognition",
+          "dementia risk"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "sleep_disordered_breathing",
+          "intermittent_hypoxia",
+          "nocturnal_oxygen_desaturation",
+          "daytime_sleepiness",
+          "impaired_executive_function"
+        ],
+        "candidate_edges": [
+          {
+            "source": "sleep_disordered_breathing",
+            "target": "intermittent_hypoxia",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          },
+          {
+            "source": "intermittent_hypoxia",
+            "target": "impaired_executive_function",
+            "edge_type": "predicts",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    },
+    {
+      "pattern_id": "series_010_pattern_005",
+      "pattern_name": "Slow/paced breathing improves HRV, anxiety/arousal, and attention",
+      "causal_status": "causal",
+      "physiological_input": {
+        "variable": "slow_paced_diaphragmatic_breathing",
+        "direction": "increased",
+        "measurement_methods": [
+          "paced breathing protocols",
+          "respiratory rate",
+          "HRV/RSA",
+          "intervention trials"
+        ],
+        "contexts": [
+          "healthy adults",
+          "anxiety/stress regulation",
+          "breathing interventions"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "increased_HRV_respiratory_sinus_arrhythmia",
+        "category": "autonomic_marker",
+        "direction": "increased_parasympathetic_activity",
+        "pathway": "slow breathing entrains cardiorespiratory oscillations and increases vagal tone",
+        "mechanism": "respiratory sinus arrhythmia, vagal afferents, locus-coeruleus/noradrenergic attentional coupling"
+      },
+      "neurobehavioral_output": {
+        "variable": "anxiety_arousal_attention",
+        "direction": "improved",
+        "measurement_methods": [
+          "anxiety scales",
+          "affect scores",
+          "attention tasks",
+          "EEG/pupil measures"
+        ],
+        "affected_functions": [
+          "anxiety",
+          "negative affect",
+          "sustained attention",
+          "arousal regulation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "slow_paced_breathing",
+          "increased_respiratory_sinus_arrhythmia",
+          "increased_HRV",
+          "reduced_anxiety_symptoms",
+          "improved_sustained_attention"
+        ],
+        "candidate_edges": [
+          {
+            "source": "slow_paced_breathing",
+            "target": "increased_HRV",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "slow_paced_breathing",
+            "target": "reduced_anxiety_symptoms",
+            "edge_type": "decreases_likelihood_of",
+            "polarity": "negative",
+            "confidence": "moderate"
+          },
+          {
+            "source": "slow_paced_breathing",
+            "target": "improved_sustained_attention",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          }
+        ],
+        "recommended_action": "add_edge",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Not all subjective fatigue or brain fog maps onto objective autonomic or gas-exchange dysfunction.",
+      "reason": "Some post-COVID cohorts show high symptom burden without pathological autonomic/gas-exchange findings.",
+      "recommendation": "keep_as_guardrail"
+    },
+    {
+      "claim": "Normal SpO2 does not exclude hypocapnia or dysfunctional breathing.",
+      "reason": "Hyperventilation can lower CO2 without significant hypoxemia; resting measures may miss exertional abnormalities.",
+      "recommendation": "keep_as_guardrail"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "hyperventilation_state",
+      "domain": "physiological",
+      "definition": "Breathing pattern with excessive ventilation relative to metabolic demand, often reducing CO2.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "hypocapnia",
+      "domain": "biochemical",
+      "definition": "Reduced blood or end-tidal CO2, often caused by hyperventilation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "reduced_end_tidal_CO2",
+      "domain": "biochemical",
+      "definition": "Low ETCO2 measured by capnography; proxy for hypocapnia in many contexts.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "intermittent_hypoxia",
+      "domain": "biochemical",
+      "definition": "Repeated oxygen desaturation episodes, especially during sleep-disordered breathing.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "dysfunctional_breathing_pattern",
+      "domain": "physiological",
+      "definition": "Erratic or inefficient breathing pattern, often detected during exertion or CPET.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "CO2_sensitivity",
+      "domain": "physiological",
+      "definition": "Heightened panic/anxiety response to CO2 challenge or CO2-related interoceptive signals.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "hyperventilation_state_hypocapnia_positive_high",
+      "source": "hyperventilation_state",
+      "target": "hypocapnia",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "hypocapnia_cerebral_hypoperfusion_positive_high",
+      "source": "hypocapnia",
+      "target": "cerebral_hypoperfusion",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "intermittent_hypoxia_cognitive_decline_positive_high",
+      "source": "intermittent_hypoxia",
+      "target": "cognitive_decline_risk",
+      "edge_type": "predicts",
+      "polarity": "positive",
+      "confidence": "high"
+    },
+    {
+      "edge_id": "slow_paced_breathing_increased_HRV_positive_moderate",
+      "source": "slow_paced_breathing",
+      "target": "increased_HRV",
+      "edge_type": "increases_likelihood_of",
+      "polarity": "positive",
+      "confidence": "moderate"
+    }
+  ],
+  "research_gaps": [
+    "Chronic dysfunctional breathing and brain fog/fatigue outside ME/CFS and long COVID cohorts remains understudied.",
+    "More intervention trials are needed to test whether correcting chronic hypocapnia improves fatigue/brain fog.",
+    "Need to distinguish interoceptive threat/metacognition from true gas-exchange abnormalities.",
+    "Resting measures may miss exertional respiratory abnormalities."
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Acute hyperventilation/hypocapnia impairs attention/cognitive inhibition through reduced cerebral blood flow.",
+      "Panic disorder is associated with lower baseline ETCO2 and increased CO2 sensitivity.",
+      "Sleep-disordered breathing/intermittent hypoxia predicts cognitive decline risk."
+    ],
+    "highest_value_patterns_for_inference": [
+      "Normal SpO2 does not rule out hypocapnia.",
+      "Exercise/CPET may reveal dysfunctional breathing not visible at rest.",
+      "Nocturnal oxygen desaturation is more informative than sleep fragmentation for cognitive decline in SDB."
+    ],
+    "patterns_requiring_caution": [
+      "Subjective post-COVID fatigue/brain fog may occur without objective autonomic/gas-exchange dysfunction.",
+      "Slow breathing benefits are promising but not universal or diagnostic."
+    ],
+    "recommended_next_queries": [
+      "Hydration, electrolytes, blood pressure, orthostatic intolerance, dizziness, fatigue, and cognition."
+    ],
+    "overall_assessment": "Respiratory physiology is a strong v0.1 hub because CO2/O2 disturbances can causally affect attention, dizziness, panic sensitivity, fatigue and cognitive risk. The graph must separate hypocapnia from hypoxia and subjective dyspnea from objective gas exchange."
+  }
+}

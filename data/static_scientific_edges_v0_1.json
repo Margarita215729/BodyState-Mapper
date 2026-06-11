@@ -1,0 +1,629 @@
+[
+  {
+    "edge_id": "hrv_reduced_to_autonomic_regulation_shift",
+    "source_node": "reduced_hrv_relative_to_baseline",
+    "target_node": "autonomic_regulation_shift",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.78,
+    "source_ids": [
+      "shaffer_ginsberg_2017_hrv_metrics_norms"
+    ],
+    "domain": "HRV_autonomic_regulation",
+    "methodology_basis": "Methodological review of HRV metrics, recording durations, physiological interpretation, and norms.",
+    "main_finding_summary": "HRV is a useful non-invasive marker of autonomic regulation when interpreted relative to protocol, context, and personal baseline.",
+    "limitations": [
+      "Not emotion-specific",
+      "Affected by respiration, age, fitness, illness, medication, and device quality",
+      "Requires baseline-sensitive interpretation"
+    ],
+    "context_requirements": [
+      "Personal baseline",
+      "Recording duration",
+      "Respiration/activity context",
+      "Medication/illness screening"
+    ],
+    "forbidden_direct_inference": [
+      "reduced_hrv_relative_to_baseline_to_anxiety_diagnosis",
+      "reduced_hrv_relative_to_baseline_to_depression_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "low_resting_hrv_to_mental_health_related_autonomic_dysregulation",
+    "source_node": "low_resting_hrv",
+    "target_node": "mental_health_related_autonomic_dysregulation",
+    "relationship_type": "MAY_INDICATE",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.62,
+    "source_ids": [
+      "wang_2025_hrv_mental_disorders_umbrella_review"
+    ],
+    "domain": "HRV_autonomic_regulation",
+    "methodology_basis": "Umbrella review of systematic reviews and pooled analyses of HRV in mental disorders.",
+    "main_finding_summary": "Lower HRV is associated with several mental-health-related conditions at group level, but the signal is non-specific and cannot identify a diagnosis.",
+    "limitations": [
+      "High heterogeneity across disorders and HRV metrics",
+      "Population-level association",
+      "Not usable as a standalone individual diagnosis"
+    ],
+    "context_requirements": [
+      "Repeated measurements",
+      "Functional context",
+      "Psychological/subjective data",
+      "Exclusion of confounders"
+    ],
+    "forbidden_direct_inference": [
+      "low_resting_hrv_to_any_psychiatric_diagnosis"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "persistent_low_hrv_to_depressive_like_pattern_contextual",
+    "source_node": "persistent_low_hrv",
+    "target_node": "depressive_like_pattern_contextual",
+    "relationship_type": "WEAKLY_SUPPORTS",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.46,
+    "source_ids": [
+      "wu_2023_hrv_rest_depression_meta_analysis",
+      "wang_2025_hrv_mental_disorders_umbrella_review"
+    ],
+    "domain": "HRV_autonomic_regulation",
+    "methodology_basis": "Meta-analysis and umbrella-review evidence on resting HRV differences in depressed populations.",
+    "main_finding_summary": "Persistent low HRV may support a depression-like physiological pattern only when combined with mood, energy, sleep, activity, and longitudinal context.",
+    "limitations": [
+      "Not diagnostic",
+      "Can reflect many physiological states",
+      "Confounded by sleep, medication, cardiovascular status, and fitness"
+    ],
+    "context_requirements": [
+      "Low mood report",
+      "Reduced activity",
+      "Sleep disruption",
+      "Longitudinal persistence",
+      "Clinical screening if used in care context"
+    ],
+    "forbidden_direct_inference": [
+      "persistent_low_hrv_to_major_depressive_disorder"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "increased_eda_to_sympathetic_arousal",
+    "source_node": "increased_eda",
+    "target_node": "sympathetic_arousal",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.74,
+    "source_ids": [
+      "sosa_2026_beyond_eda_multimodal_sns_arousal"
+    ],
+    "domain": "EDA_sympathetic_arousal",
+    "methodology_basis": "Systematic review of multimodal sympathetic nervous system arousal classification and stress detection.",
+    "main_finding_summary": "EDA is a useful anchor signal for sympathetic arousal, but its interpretation improves when combined with other physiological and contextual signals.",
+    "limitations": [
+      "EDA is not emotion-specific",
+      "Sensitive to temperature, movement, skin contact, sweat gland physiology, and cognitive load"
+    ],
+    "context_requirements": [
+      "Motion/contact quality",
+      "Temperature context",
+      "Activity context",
+      "Co-markers such as HRV/PPG/skin temperature"
+    ],
+    "forbidden_direct_inference": [
+      "increased_eda_to_anxiety_diagnosis",
+      "increased_eda_to_stress_diagnosis"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "wearable_multimodal_features_to_stress_state_prediction",
+    "source_node": "wearable_multimodal_features",
+    "target_node": "stress_state_prediction",
+    "relationship_type": "MAY_INDICATE",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.52,
+    "source_ids": [
+      "vos_2023_wearable_stress_monitoring_systematic_review",
+      "sosa_2026_beyond_eda_multimodal_sns_arousal"
+    ],
+    "domain": "wearable_stress_detection",
+    "methodology_basis": "Systematic reviews of wearable stress monitoring and multimodal sympathetic arousal classification.",
+    "main_finding_summary": "Multimodal wearable features can support stress-state prediction, but generalization across people, protocols, and contexts remains a major limitation.",
+    "limitations": [
+      "Generalization problem",
+      "Small/heterogeneous datasets",
+      "Label noise",
+      "Context dependence",
+      "Risk of overfitting to protocol-specific stressors"
+    ],
+    "context_requirements": [
+      "Personal baseline",
+      "Clear label definition",
+      "Activity and environmental context",
+      "Model uncertainty reporting"
+    ],
+    "forbidden_direct_inference": [
+      "wearable_multimodal_features_to_clinical_stress_diagnosis"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "sleep_loss_to_emotion_regulation_impairment",
+    "source_node": "sleep_loss",
+    "target_node": "emotion_regulation_impairment",
+    "relationship_type": "INCREASES_PROBABILITY_OF",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.82,
+    "source_ids": [
+      "palmer_2024_sleep_loss_emotion_meta_analysis",
+      "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+      "vandekerckhove_wang_2017_emotion_regulation_sleep"
+    ],
+    "domain": "sleep_emotion_regulation",
+    "methodology_basis": "Systematic review/meta-analysis plus review evidence on sleep loss, emotion, and emotion regulation.",
+    "main_finding_summary": "Sleep loss reliably worsens emotional functioning and should be modeled as a major upstream modulator of emotional regulation capacity.",
+    "limitations": [
+      "Does not identify a specific emotion or diagnosis",
+      "Effects vary by sleep-loss type and individual vulnerability",
+      "Bidirectional sleep-emotion effects are possible"
+    ],
+    "context_requirements": [
+      "Sleep duration/quality metrics",
+      "Previous-night and multi-night context",
+      "Subjective energy/mood",
+      "Illness/pain/medication screening"
+    ],
+    "forbidden_direct_inference": [
+      "sleep_loss_to_depression_diagnosis",
+      "sleep_loss_to_anxiety_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "sleep_restriction_to_negative_mood_increase",
+    "source_node": "sleep_restriction",
+    "target_node": "negative_mood_increase",
+    "relationship_type": "INCREASES_PROBABILITY_OF",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.76,
+    "source_ids": [
+      "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+      "palmer_2024_sleep_loss_emotion_meta_analysis"
+    ],
+    "domain": "sleep_mood",
+    "methodology_basis": "Meta-analytic evidence on sleep deprivation/restriction effects on mood, emotion, and emotion regulation.",
+    "main_finding_summary": "Sleep restriction/deprivation increases vulnerability to negative mood states and reduces positive mood.",
+    "limitations": [
+      "Mood effects are not diagnosis-specific",
+      "Acute and chronic sleep restriction may differ",
+      "Population and experimental setting matter"
+    ],
+    "context_requirements": [
+      "Sleep history",
+      "Baseline mood",
+      "Timing of measurement",
+      "Stress/activity context"
+    ],
+    "forbidden_direct_inference": [
+      "sleep_restriction_to_mood_disorder"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "sleep_loss_to_reduced_positive_affect",
+    "source_node": "sleep_loss",
+    "target_node": "reduced_positive_affect",
+    "relationship_type": "INCREASES_PROBABILITY_OF",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.78,
+    "source_ids": [
+      "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+      "palmer_2024_sleep_loss_emotion_meta_analysis"
+    ],
+    "domain": "sleep_mood",
+    "methodology_basis": "Meta-analytic evidence on sleep loss and affective outcomes.",
+    "main_finding_summary": "Sleep loss is linked to lower positive affect, making low-energy or low-positive-affect hypotheses more plausible when context agrees.",
+    "limitations": [
+      "Not specific to depression",
+      "Can be mediated by fatigue, illness, pain, or medication",
+      "Requires within-person comparison"
+    ],
+    "context_requirements": [
+      "Subjective energy",
+      "Sleep duration and fragmentation",
+      "Recent illness/pain",
+      "Baseline affect"
+    ],
+    "forbidden_direct_inference": [
+      "sleep_loss_to_depression_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "sleep_disturbance_to_increased_emotional_reactivity",
+    "source_node": "sleep_disturbance",
+    "target_node": "increased_emotional_reactivity",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 3,
+    "confidence_prior": 0.64,
+    "source_ids": [
+      "vandekerckhove_wang_2017_emotion_regulation_sleep",
+      "palmer_2024_sleep_loss_emotion_meta_analysis"
+    ],
+    "domain": "sleep_emotion_regulation",
+    "methodology_basis": "Narrative review and meta-analysis evidence on sleep-emotion interaction.",
+    "main_finding_summary": "Sleep disturbance can increase emotional reactivity and weaken regulation, but causality may be bidirectional.",
+    "limitations": [
+      "Narrative mechanism source",
+      "Bidirectional stress-sleep effects",
+      "Needs temporal sequencing"
+    ],
+    "context_requirements": [
+      "Temporal order",
+      "Stress context",
+      "Baseline sleep quality",
+      "Subjective report"
+    ],
+    "forbidden_direct_inference": [
+      "sleep_disturbance_to_any_psychiatric_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "acute_sleep_deprivation_to_cortisol_elevation_contextual",
+    "source_node": "acute_sleep_deprivation",
+    "target_node": "cortisol_elevation",
+    "relationship_type": "MAY_INDICATE",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.38,
+    "source_ids": [
+      "chen_2024_acute_sleep_deprivation_cortisol_meta_analysis"
+    ],
+    "domain": "sleep_cortisol",
+    "methodology_basis": "Systematic review and meta-analysis of acute sleep deprivation and cortisol level.",
+    "main_finding_summary": "The relationship between acute sleep deprivation and cortisol is mixed/contextual; this edge should remain weak and explicitly uncertain.",
+    "limitations": [
+      "Total cortisol effects may be non-significant",
+      "Sampling medium and timing matter",
+      "Acute deprivation differs from chronic sleep disruption"
+    ],
+    "context_requirements": [
+      "Sampling medium",
+      "Time of day",
+      "Baseline cortisol",
+      "Sleep deprivation protocol"
+    ],
+    "forbidden_direct_inference": [
+      "acute_sleep_deprivation_to_chronic_stress"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "salivary_cortisol_increase_to_hpa_axis_activation",
+    "source_node": "salivary_cortisol_increase",
+    "target_node": "hpa_axis_activation",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.81,
+    "source_ids": [
+      "gu_2022_tsst_salivary_cortisol_meta_analysis"
+    ],
+    "domain": "HPA_axis_cortisol",
+    "methodology_basis": "Meta-analysis of salivary cortisol responses to the Trier Social Stress Test.",
+    "main_finding_summary": "Salivary cortisol increases support HPA-axis activation, especially in structured acute psychosocial stress paradigms.",
+    "limitations": [
+      "Time of day, sex, sample timing, and protocol features influence response",
+      "Cortisol is not a direct psychological-state marker"
+    ],
+    "context_requirements": [
+      "Sampling timing",
+      "Baseline sample",
+      "Time of day",
+      "Sex/hormonal context",
+      "Acute stressor context"
+    ],
+    "forbidden_direct_inference": [
+      "salivary_cortisol_increase_to_anxiety_diagnosis",
+      "salivary_cortisol_increase_to_chronic_stress_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "social_evaluative_threat_to_acute_psychosocial_stress_response",
+    "source_node": "social_evaluative_threat_context",
+    "target_node": "acute_psychosocial_stress_response",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.78,
+    "source_ids": [
+      "allen_2017_tsst_principles_practice",
+      "frisch_2015_tsst_social_threat_paradigm"
+    ],
+    "domain": "acute_psychosocial_stress",
+    "methodology_basis": "TSST methodological and paradigm-focused reviews.",
+    "main_finding_summary": "Social-evaluative threat and uncontrollability are central contextual features that support acute psychosocial stress-response inference.",
+    "limitations": [
+      "Laboratory paradigm may not map directly to everyday contexts",
+      "Requires context evidence, not physiology alone"
+    ],
+    "context_requirements": [
+      "Evaluation threat",
+      "Task demand",
+      "Uncontrollability/novelty",
+      "Temporal proximity"
+    ],
+    "forbidden_direct_inference": [
+      "social_evaluative_threat_context_to_anxiety_disorder"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "acute_psychosocial_stress_response_to_hpa_axis_activation",
+    "source_node": "acute_psychosocial_stress_response",
+    "target_node": "hpa_axis_activation",
+    "relationship_type": "INCREASES_PROBABILITY_OF",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.73,
+    "source_ids": [
+      "gu_2022_tsst_salivary_cortisol_meta_analysis",
+      "allen_2017_tsst_principles_practice"
+    ],
+    "domain": "HPA_axis_cortisol",
+    "methodology_basis": "Meta-analysis of cortisol responses in TSST and methodological review of TSST.",
+    "main_finding_summary": "Acute psychosocial stress responses can involve HPA-axis activation, measurable through salivary cortisol under appropriate sampling conditions.",
+    "limitations": [
+      "Not all stressors produce the same cortisol response",
+      "Habituation and individual differences matter"
+    ],
+    "context_requirements": [
+      "Stressor type",
+      "Sampling schedule",
+      "Baseline comparison",
+      "Repeated exposure/habituation"
+    ],
+    "forbidden_direct_inference": [
+      "hpa_axis_activation_to_psychiatric_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "repeated_stress_responses_to_stress_adaptation_response",
+    "source_node": "repeated_stress_responses",
+    "target_node": "stress_adaptation_response",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 3,
+    "confidence_prior": 0.7,
+    "source_ids": [
+      "mcewen_2007_stress_adaptation_brain",
+      "mcewen_2000_allostasis_allostatic_load_neuropsychopharmacology"
+    ],
+    "domain": "allostasis",
+    "methodology_basis": "Theoretical reviews by McEwen on stress adaptation, brain-body regulation, allostasis, and allostatic load.",
+    "main_finding_summary": "Stress responses are adaptive regulatory processes involving brain, autonomic, neuroendocrine, immune, cardiovascular, and metabolic systems.",
+    "limitations": [
+      "Theoretical framework",
+      "Requires operational biomarkers for individual measurement"
+    ],
+    "context_requirements": [
+      "Repeated or prolonged exposure",
+      "Multi-system markers",
+      "Time course"
+    ],
+    "forbidden_direct_inference": [
+      "repeated_stress_responses_to_disease_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "multi_system_dysregulation_to_allostatic_load",
+    "source_node": "multi_system_dysregulation",
+    "target_node": "allostatic_load",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.76,
+    "source_ids": [
+      "beese_2022_allostatic_load_measurement_review_of_reviews",
+      "mcewen_2000_allostasis_allostatic_load_neuropsychopharmacology",
+      "mcewen_2007_stress_adaptation_brain"
+    ],
+    "domain": "allostatic_load_measurement",
+    "methodology_basis": "Systematic review of reviews on allostatic load measurement plus foundational allostasis theory.",
+    "main_finding_summary": "Allostatic load is best represented as multi-system dysregulation, operationalized through composite biomarkers rather than one signal.",
+    "limitations": [
+      "No single universal allostatic load formula",
+      "Biomarker panels vary",
+      "Cross-sectional scores may miss temporal dynamics"
+    ],
+    "context_requirements": [
+      "Multi-system biomarker panel",
+      "Personal or population reference ranges",
+      "Longitudinal trend if available"
+    ],
+    "forbidden_direct_inference": [
+      "single_biomarker_to_allostatic_load"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "allostatic_load_to_health_risk_state",
+    "source_node": "allostatic_load",
+    "target_node": "health_risk_state",
+    "relationship_type": "INCREASES_PROBABILITY_OF",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.68,
+    "source_ids": [
+      "beese_2022_allostatic_load_measurement_review_of_reviews",
+      "mcewen_2000_allostasis_allostatic_load_neuropsychopharmacology"
+    ],
+    "domain": "allostatic_load_measurement",
+    "methodology_basis": "Review-of-reviews evidence and allostatic-load theory.",
+    "main_finding_summary": "Higher allostatic load can represent increased physiological risk burden, but it should be treated as a risk state rather than a diagnosis.",
+    "limitations": [
+      "Measurement heterogeneity",
+      "Different biomarker panels produce different scores",
+      "Health-risk inference needs clinical validation"
+    ],
+    "context_requirements": [
+      "Validated biomarker set",
+      "Age/sex/reference context",
+      "Longitudinal comparison"
+    ],
+    "forbidden_direct_inference": [
+      "allostatic_load_to_specific_disease_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "autonomic_regulation_shift_to_recovery_deficit",
+    "source_node": "autonomic_regulation_shift",
+    "target_node": "recovery_deficit",
+    "relationship_type": "MAY_INDICATE",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.58,
+    "source_ids": [
+      "shaffer_ginsberg_2017_hrv_metrics_norms",
+      "mcewen_2007_stress_adaptation_brain"
+    ],
+    "domain": "HRV_autonomic_regulation",
+    "methodology_basis": "HRV methodological review plus stress-adaptation framework.",
+    "main_finding_summary": "Autonomic shifts may support a recovery-deficit interpretation when paired with poor sleep, low energy, or repeated stress context.",
+    "limitations": [
+      "Mechanistic bridge edge",
+      "Needs co-markers",
+      "Not specific to psychological fatigue"
+    ],
+    "context_requirements": [
+      "Sleep metrics",
+      "Activity load",
+      "Subjective fatigue/energy",
+      "Illness screening"
+    ],
+    "forbidden_direct_inference": [
+      "autonomic_regulation_shift_to_burnout_diagnosis"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "sympathetic_arousal_to_acute_arousal_state",
+    "source_node": "sympathetic_arousal",
+    "target_node": "acute_arousal_state",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 4,
+    "confidence_prior": 0.66,
+    "source_ids": [
+      "sosa_2026_beyond_eda_multimodal_sns_arousal",
+      "allen_2017_tsst_principles_practice"
+    ],
+    "domain": "EDA_sympathetic_arousal",
+    "methodology_basis": "Multimodal sympathetic arousal review plus stress-paradigm methodology.",
+    "main_finding_summary": "Sympathetic arousal supports an acute physiological arousal state, not a specific emotion.",
+    "limitations": [
+      "Arousal can reflect stress, cognitive load, excitement, pain, heat, or movement",
+      "Needs context disambiguation"
+    ],
+    "context_requirements": [
+      "Activity/temperature context",
+      "Task context",
+      "Co-markers",
+      "Subjective label if available"
+    ],
+    "forbidden_direct_inference": [
+      "sympathetic_arousal_to_anxiety_diagnosis"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "emotion_regulation_impairment_to_anxiety_like_arousal_state_contextual",
+    "source_node": "emotion_regulation_impairment",
+    "target_node": "anxiety_like_arousal_state",
+    "relationship_type": "WEAKLY_SUPPORTS",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.49,
+    "source_ids": [
+      "palmer_2024_sleep_loss_emotion_meta_analysis",
+      "vandekerckhove_wang_2017_emotion_regulation_sleep"
+    ],
+    "domain": "sleep_emotion_regulation",
+    "methodology_basis": "Evidence on sleep loss and emotional functioning, used as bridge from regulation capacity to cautious state hypothesis.",
+    "main_finding_summary": "Impaired emotion regulation can support anxiety-like arousal as a hypothesis only when physiological arousal and subjective/contextual evidence agree.",
+    "limitations": [
+      "Bridge to psychological hypothesis",
+      "Not diagnostic",
+      "Many alternative explanations"
+    ],
+    "context_requirements": [
+      "Physiological arousal",
+      "Subjective anxiety/stress or threat context",
+      "Sleep history",
+      "Alternative-explanation screening"
+    ],
+    "forbidden_direct_inference": [
+      "emotion_regulation_impairment_to_anxiety_disorder"
+    ],
+    "risk_of_overinterpretation": "high"
+  },
+  {
+    "edge_id": "recovery_deficit_to_fatigue_like_state",
+    "source_node": "recovery_deficit",
+    "target_node": "fatigue_like_state",
+    "relationship_type": "SUPPORTS",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.61,
+    "source_ids": [
+      "palmer_2024_sleep_loss_emotion_meta_analysis",
+      "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+      "shaffer_ginsberg_2017_hrv_metrics_norms"
+    ],
+    "domain": "sleep_mood",
+    "methodology_basis": "Sleep-loss meta-analytic evidence and HRV/autonomic interpretation.",
+    "main_finding_summary": "Recovery deficit can support a fatigue-like state hypothesis when sleep, autonomic, activity, and subjective-energy evidence align.",
+    "limitations": [
+      "Fatigue has many causes",
+      "Needs medical/medication/illness context",
+      "Not equivalent to chronic fatigue diagnosis"
+    ],
+    "context_requirements": [
+      "Low energy report",
+      "Sleep loss or fragmentation",
+      "Reduced activity or autonomic recovery markers",
+      "Illness and medication context"
+    ],
+    "forbidden_direct_inference": [
+      "recovery_deficit_to_chronic_fatigue_syndrome"
+    ],
+    "risk_of_overinterpretation": "medium"
+  },
+  {
+    "edge_id": "negative_mood_increase_to_irritability_vulnerability",
+    "source_node": "negative_mood_increase",
+    "target_node": "irritability_vulnerability",
+    "relationship_type": "MAY_INDICATE",
+    "evidence_strength_score": 5,
+    "confidence_prior": 0.52,
+    "source_ids": [
+      "tomaso_2021_sleep_deprivation_restriction_mood_meta_analyses",
+      "palmer_2024_sleep_loss_emotion_meta_analysis"
+    ],
+    "domain": "sleep_mood",
+    "methodology_basis": "Meta-analytic evidence that sleep loss worsens mood and emotion outcomes.",
+    "main_finding_summary": "Increased negative mood after poor sleep may support irritability vulnerability as a state hypothesis, not as a trait or diagnosis.",
+    "limitations": [
+      "Not specific to irritability",
+      "Needs subjective/behavioral confirmation",
+      "May reflect pain, stressor exposure, or illness"
+    ],
+    "context_requirements": [
+      "Subjective mood",
+      "Recent sleep loss",
+      "Behavioral context",
+      "Pain/illness/stressor screening"
+    ],
+    "forbidden_direct_inference": [
+      "negative_mood_increase_to_personality_trait"
+    ],
+    "risk_of_overinterpretation": "medium"
+  }
+]

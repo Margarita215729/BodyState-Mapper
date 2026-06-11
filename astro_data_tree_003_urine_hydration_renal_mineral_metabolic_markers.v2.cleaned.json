@@ -1,0 +1,372 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers_v2",
+    "series_name": "Urine Data Variation Tree v2: Hydration/Renal + Symptoms/Hormone/Circadian/Oxidative/Nitrogen Completion",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "urine",
+    "source_category": "biofluid_hydration_renal_metabolic",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "symptom_triggered",
+      "research_protocol"
+    ]
+  },
+  "status": {
+    "v1_quality": "usable",
+    "v2_quality": "usable_with_explicit_symptom_guardrails",
+    "completion_inputs": [
+      "astro_data_tree_003A_urine_symptom_hormone_metabolite_completion"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "urine_hydration_markers",
+      "entity_name": "urine osmolality / USG / color / volume",
+      "measurement_type": "hydration_marker",
+      "result_variations": [
+        {
+          "variation_id": "concentrated_urine_contextual",
+          "result_pattern": "high UOsm/USG, dark color, low volume",
+          "direction": "increased/patterned",
+          "standalone_interpretation": [
+            "concentrated urine and renal water conservation; not sufficient for clinical dehydration"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "fluid intake",
+            "body mass",
+            "plasma osmolality",
+            "orthostatic HR/BP",
+            "heat/exercise",
+            "symptoms",
+            "age/comorbidity"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "plasma_osmolality",
+              "combined_meaning": "concentrated urine + normal plasma osmolality supports renal conservation adaptation",
+              "confidence": "high"
+            },
+            {
+              "other_source": "orthostatic_vitals",
+              "other_entity": "HR_BP_response",
+              "combined_meaning": "concentrated urine + orthostatic tachycardia/hypotension + dizziness supports hypovolemia/dehydration hypothesis",
+              "confidence": "low/moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "renal_conservation_adaptation",
+            "mild_hypohydration",
+            "hypovolemia_dehydration_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_uosm/high_USG + normal_plasma_osmolality + stable_body_mass -> renal_conservation_adaptation",
+            "high_uosm/high_USG + orthostatic_tachycardia + dizziness -> hypovolemia_dehydration_hypothesis"
+          ],
+          "guardrails": [
+            "Concentrated urine alone does not confirm clinically meaningful dehydration.",
+            "Hydration marker is not blood volume/orthostatic tolerance.",
+            "Accuracy is weaker in older/comorbid populations."
+          ],
+          "evidence_strength": "high for hydration context; weak for symptom causality"
+        }
+      ]
+    },
+    {
+      "entity_id": "urinary_tubular_markers",
+      "entity_name": "KIM-1 / MCP-1 / A1M / B2M / NGAL and related tubular markers",
+      "measurement_type": "renal_injury_marker",
+      "result_variations": [
+        {
+          "variation_id": "tubular_dysfunction_high",
+          "result_pattern": "elevated tubular injury/dysfunction markers",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "renal tubular injury/dysfunction signal; associated with frailty/cognitive impairment in CKD contexts"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "eGFR",
+            "albuminuria/proteinuria",
+            "CKD/AKI context",
+            "BP",
+            "diabetes",
+            "age"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition_function",
+              "other_entity": "frailty_cognitive_tests",
+              "combined_meaning": "tubular markers + frailty/cognitive impairment in CKD supports renal-systemic vulnerability branch",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "renal_systemic_vulnerability",
+            "CKD_progression_risk"
+          ],
+          "candidate_chains": [
+            "tubular_injury_markers + CKD_context + frailty/cognition -> renal_systemic_vulnerability_branch"
+          ],
+          "guardrails": [
+            "Do not generalize CKD findings to healthy astronauts without validation.",
+            "Cutoffs vary; repeat/context required."
+          ],
+          "evidence_strength": "strong in CKD/frailty context"
+        }
+      ]
+    },
+    {
+      "entity_id": "urine_metabolomics",
+      "entity_name": "urine metabolomics panels",
+      "measurement_type": "omics_marker",
+      "result_variations": [
+        {
+          "variation_id": "metabolomics_disorder_signature",
+          "result_pattern": "multi-metabolite pattern discriminating mood/cognitive/fatigue-related groups",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "research-level classifier signal; may separate group-level disease states"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "external validation",
+            "repeat sampling",
+            "symptoms timing",
+            "blood/sleep/cognition measures",
+            "diet/medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "neurobehavioral",
+              "other_entity": "mood_cognition_fatigue",
+              "combined_meaning": "repeated urine metabolomics + timed symptoms/cognitive tests may support personalized trajectory tracking",
+              "confidence": "moderate/low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "metabolic_omics_signature_hypothesis"
+          ],
+          "candidate_chains": [
+            "repeated_urine_metabolomics + symptom_trajectory -> mood/cognition/fatigue_omics_hypothesis"
+          ],
+          "guardrails": [
+            "Single-day urine metabolomics does not represent stable phenotype.",
+            "Group classifier is not individual diagnosis.",
+            "External validation required."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "hormone_circadian_metabolites",
+      "entity_name": "urinary cortisol metabolites / catecholamine metabolites / 6-sulfatoxymelatonin",
+      "measurement_type": "hormone_metabolite_circadian_marker",
+      "result_variations": [
+        {
+          "variation_id": "circadian_stress_pattern",
+          "result_pattern": "shifted melatonin metabolite or elevated stress hormone metabolites",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "non-invasive proxy for circadian output or stress physiology"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "collection timing",
+            "actigraphy",
+            "light exposure",
+            "sleep logs",
+            "workload/stress",
+            "saliva/serum hormones"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_light",
+              "other_entity": "actigraphy_light_exposure",
+              "combined_meaning": "shifted 6-sulfatoxymelatonin + light/sleep timing supports circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_disruption_branch",
+            "stress_recovery_branch"
+          ],
+          "candidate_chains": [
+            "low/shifted_6_sulfatoxymelatonin + light_exposure_shift + sleep_fragmentation -> circadian_disruption_branch",
+            "urinary_cortisol_metabolites + workload/stress + poor_sleep -> stress_recovery_branch"
+          ],
+          "guardrails": [
+            "Urine hormone metabolites are not equivalent to serum/saliva levels.",
+            "6-sulfatoxymelatonin is not direct sleep quality.",
+            "Timing/collection protocol is mandatory."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "oxidative_stress_markers",
+      "entity_name": "8-OHdG / F2-isoprostanes and oxidative stress markers",
+      "measurement_type": "oxidative_stress_marker",
+      "result_variations": [
+        {
+          "variation_id": "oxidative_stress_high",
+          "result_pattern": "elevated urinary oxidative stress markers",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "non-specific oxidative stress signal"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "radiation exposure",
+            "inflammation",
+            "exercise",
+            "renal status",
+            "diet/antioxidants",
+            "fatigue/outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "radiation_inflammation",
+              "other_entity": "radiation_dose_CRP_cytokines",
+              "combined_meaning": "oxidative marker + radiation/inflammation + symptoms supports oxidative stress hypothesis",
+              "confidence": "low/moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "oxidative_stress_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_oxidative_stress_markers + radiation_or_inflammation + fatigue -> oxidative_stress_hypothesis"
+          ],
+          "guardrails": [
+            "Oxidative stress marker lacks mechanism specificity.",
+            "Do not explain fatigue from urine oxidative marker alone.",
+            "Repeat and cross-modal context needed."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "nitrogen_balance_urea",
+      "entity_name": "urinary urea nitrogen / nitrogen balance markers",
+      "measurement_type": "nitrogen_balance_marker",
+      "result_variations": [
+        {
+          "variation_id": "negative_nitrogen_balance_pattern",
+          "result_pattern": "catabolic nitrogen balance pattern",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "protein metabolism/catabolism indicator when intake and excretion are quantified"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "protein intake",
+            "energy intake",
+            "exercise load",
+            "body composition",
+            "muscle strength",
+            "mission phase"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "nutrition_muscle",
+              "other_entity": "protein_intake_body_composition_strength",
+              "combined_meaning": "negative nitrogen balance + low energy/protein intake + muscle loss supports catabolic/low-energy availability branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "catabolic_state",
+            "low_energy_availability"
+          ],
+          "candidate_chains": [
+            "negative_nitrogen_balance + low_energy_intake + exercise_load + muscle_loss -> catabolic_low_energy_availability_branch"
+          ],
+          "guardrails": [
+            "Nitrogen balance is not muscle loss by itself.",
+            "Requires accurate intake and collection data.",
+            "Single measurement is not stable phenotype."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    },
+    {
+      "entity_id": "urinary_calcium_bone_context",
+      "entity_name": "urinary calcium / mineral excretion",
+      "measurement_type": "mineral_marker",
+      "result_variations": [
+        {
+          "variation_id": "urinary_calcium_high_microgravity_context",
+          "result_pattern": "elevated urinary calcium/mineral excretion in unloading/microgravity context",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "possible mineral mobilization signal; not bone loss by itself"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "microgravity/unloading",
+            "bone turnover markers",
+            "DXA/imaging",
+            "vitamin D/PTH",
+            "diet",
+            "exercise countermeasures",
+            "kidney stone markers"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "bone",
+              "other_entity": "bone_turnover_DXA",
+              "combined_meaning": "urinary calcium + bone turnover/DXA + microgravity supports bone mineral loss risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "bone_mineral_loss_risk",
+            "kidney_stone_risk"
+          ],
+          "candidate_chains": [
+            "high_urinary_calcium + microgravity + bone_turnover -> bone_mineral_loss_risk_branch"
+          ],
+          "guardrails": [
+            "Urinary calcium alone != bone loss.",
+            "Separate bone loss risk from kidney stone risk/current stone.",
+            "Diet and exercise countermeasures must be included."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ]
+    }
+  ],
+  "critical_guardrails": [
+    "A urine biomarker rarely explains fatigue/cognition alone.",
+    "Symptom-linked urine branches are low/moderate confidence unless same-participant outcome data exist.",
+    "Single-day urine metabolomics is not a stable phenotype.",
+    "Urine hormone metabolites are not direct serum/saliva hormone levels.",
+    "Hydration adaptation must be separated from hypovolemia."
+  ],
+  "high_value_cross_modal_chains": [
+    "high_uosm/high_USG + normal_plasma_osmolality + stable_body_mass -> renal_conservation_adaptation",
+    "high_uosm/high_USG + orthostatic_tachycardia + dizziness -> hypovolemia_dehydration_hypothesis",
+    "shifted_6_sulfatoxymelatonin + light_exposure_shift + sleep_fragmentation -> circadian_disruption_branch",
+    "urinary_cortisol_metabolites + workload/stress + poor_sleep -> stress_recovery_branch",
+    "oxidative_stress_markers + radiation_or_inflammation + fatigue -> oxidative_stress_hypothesis",
+    "negative_nitrogen_balance + low_energy_intake + exercise_load + muscle_loss -> catabolic_low_energy_availability_branch",
+    "urinary_calcium + microgravity + bone_turnover -> bone_mineral_loss_risk_branch"
+  ],
+  "research_gaps": [
+    "Direct spaceflight/microgravity urine-symptom longitudinal evidence remains sparse.",
+    "Urine markers rarely explain fatigue/cognition without same-participant mediator/outcome chains.",
+    "Repeated multi-omics urine panels need validation for personalized trajectory inference."
+  ],
+  "evidence_note": "Evidence synthesized from uploaded Consensus completion reports; see assistant response citations."
+}

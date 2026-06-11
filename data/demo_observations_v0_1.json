@@ -1,0 +1,59 @@
+[
+  {
+    "observation_id": "obs_demo_001",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "sleep_loss",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "manual_input",
+    "quality_score": 0.9,
+    "context": {
+      "sleep_duration_hours": 4.5,
+      "sleep_fragmentation": "unknown",
+      "recent_exercise": false,
+      "illness_symptoms": false,
+      "caffeine": "unknown",
+      "medication_change": "unknown"
+    },
+    "notes": "Demo observation for testing sleep-loss pathway."
+  },
+  {
+    "observation_id": "obs_demo_002",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "increased_eda",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "wearable",
+    "quality_score": 0.7,
+    "context": {
+      "skin_contact_quality": "unknown",
+      "ambient_temperature": "unknown",
+      "recent_movement": "unknown",
+      "recent_exercise": false
+    },
+    "notes": "Demo observation for testing sympathetic arousal pathway."
+  },
+  {
+    "observation_id": "obs_demo_003",
+    "subject_id": "demo_subject_001",
+    "timestamp": "2026-06-08T10:00:00Z",
+    "observed_node": "reduced_hrv_relative_to_baseline",
+    "value": true,
+    "value_type": "derived_marker",
+    "unit": null,
+    "source": "wearable",
+    "quality_score": 0.75,
+    "context": {
+      "baseline_available": true,
+      "recording_duration": "unknown",
+      "respiration_context": "unknown",
+      "recent_exercise": false,
+      "illness_symptoms": false
+    },
+    "notes": "Demo observation for testing autonomic regulation pathway."
+  }
+]

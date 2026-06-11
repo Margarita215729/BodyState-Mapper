@@ -1,0 +1,175 @@
+{
+  "research_series": {
+    "series_id": "series_045_mood_worsening_phenotypes_differential_inference",
+    "series_name": "Mood Worsening Phenotypes,Differential Inference,and Mechanism-Specific Measurement",
+    "project": "BodyState Mapper",
+    "date_generated": "2026-06-10"
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_045_pattern_001",
+      "pattern_name": "Mood worsening phenotypes have distinct symptom-biomarker profiles",
+      "causal_status": "phenotype_rule",
+      "physiological_input": {
+        "variable": "mood_worsening_symptom_profile",
+        "direction": "phenotype_specific",
+        "measurement_methods": [
+          "symptom scales",
+          "biomarkers",
+          "actigraphy",
+          "neuroimaging"
+        ],
+        "contexts": [
+          "depression",
+          "anxiety",
+          "post-viral",
+          "burnout",
+          "sleep disruption"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "symptom_specific_mood_phenotype",
+        "category": "mood_marker",
+        "direction": "variable",
+        "pathway": "symptom clusters map to inflammatory,endocrine,sleep,reward and contextual mechanisms",
+        "mechanism": "somatic/neurovegetative symptoms correlate more with inflammation than core sadness/hopelessness"
+      },
+      "neurobehavioral_output": {
+        "variable": "mood_worsening_subtype",
+        "direction": "phenotype_specific",
+        "measurement_methods": [
+          "depression/anxiety scales",
+          "anhedonia scales",
+          "actigraphy",
+          "neuroimaging"
+        ],
+        "affected_functions": [
+          "mood",
+          "motivation",
+          "sleep",
+          "fatigue",
+          "cognition"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": true,
+        "mediator_to_output_supported": true,
+        "full_chain_directly_supported": false,
+        "confidence": "moderate"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Split mood worsening into sadness/anhedonia/apathy/irritability/anxiety/sickness behavior/burnout before assigning mechanism.",
+        "hypotheses": [
+          {
+            "target": "mood_worsening_phenotype_uncertain",
+            "domain": "mood_phenotyping",
+            "direction": "requires_split",
+            "confidence": "high",
+            "reason": "Mood phenotypes show heterogeneous biomarker and neuroimaging associations."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "hours_to_chronic",
+        "latency": "circadian/phase_dependent/cumulative",
+        "reversibility": "context_or_treatment_responsive"
+      },
+      "modulators_confounders": [
+        "sleep",
+        "pain",
+        "stress",
+        "medication",
+        "substance use",
+        "cycle phase",
+        "thyroid",
+        "post-viral state",
+        "life events"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "Inflammation is strongly associated with somatic/neurovegetative depressive symptoms, while core emotional/cognitive symptoms show weaker or no inflammatory association.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "well_replicated",
+        "key_sources": []
+      },
+      "limitations": [
+        "Medication/substance timing rarely measured",
+        "Hormone-related mood change less represented"
+      ],
+      "alternative_explanations": [
+        "sleep/circadian disruption",
+        "medication/substance effects",
+        "fatigue-driven low motivation"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "mood_worsening_phenotype_uncertain",
+          "depressive_symptoms",
+          "anhedonia_low_motivation",
+          "irritability",
+          "sickness_behavior_mood",
+          "sleep_related_mood_worsening",
+          "inflammation_related_mood_worsening"
+        ],
+        "candidate_edges": [
+          {
+            "source": "somatic_neurovegetative_mood_profile",
+            "target": "inflammation_related_mood_worsening",
+            "edge_type": "mechanism_cluster",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_node",
+        "risk_of_overinterpretation": "moderate"
+      }
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Mood worsening alone indicates major depression or inflammation-driven depression",
+      "reason": "Mood worsening is heterogeneous; core emotional symptoms are not consistently linked to inflammatory markers.",
+      "recommendation": "exclude"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id": "mood_worsening_phenotype_uncertain",
+      "domain": "neurobehavioral",
+      "definition": "Initial state for nonspecific mood worsening requiring phenotype split before mechanism attribution.",
+      "evidence_strength": "high"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id": "somatic_neurovegetative_profile_to_inflammation_related_mood",
+      "source": "somatic_neurovegetative_mood_profile",
+      "target": "inflammation_related_mood_worsening",
+      "edge_type": "mechanism_cluster",
+      "polarity": "positive",
+      "confidence": "high"
+    }
+  ],
+  "source_verification_queue": [],
+  "research_gaps": [
+    "Direct measurement of medication/substance timing",
+    "Longitudinal post-viral mood biomarker trajectories"
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "Inflammation links strongest to fatigue/sleep/appetite symptoms",
+      "Neuroimaging supports biologically distinct depression subtypes"
+    ],
+    "highest_value_patterns_for_inference": [
+      "Phenotype split before mechanism assignment"
+    ],
+    "patterns_requiring_caution": [
+      "Core sadness/hopelessness as inflammatory marker proxy"
+    ],
+    "recommended_next_queries": [],
+    "overall_assessment": "Strong mood phenotype differential layer."
+  },
+  "works_cited": []
+}

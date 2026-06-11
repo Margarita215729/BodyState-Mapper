@@ -1,0 +1,379 @@
+{
+  "research_series": {
+    "series_id": "series_001_autonomic_stress_axis",
+    "series_name": "Autonomic Physiology, Stress Axis, and Neurobehavior",
+    "project": "BodyState Mapper",
+    "scientific_project_name": "Traceable Human State Inference Under Partial Biological Observability",
+    "objective": "Identify evidence-supported relationships between autonomic physiological markers, biochemical stress mediators, and cognitive or neurobehavioral outcomes.",
+    "target_chain": "physiological_observation -> biochemical_or_molecular_mediator -> cognitive_or_neurobehavioral_output",
+    "date_generated": "2026-06-09"
+  },
+  "search_scope": {
+    "species_priority": ["human"],
+    "include_indirect_evidence": true,
+    "preferred_evidence_types": [
+      "systematic_review",
+      "meta_analysis",
+      "clinical_study",
+      "experimental_human_study",
+      "longitudinal_study",
+      "mechanistic_review"
+    ],
+    "physiological_domain": [
+      "heart_rate_variability",
+      "resting_heart_rate",
+      "blood_pressure",
+      "respiration",
+      "skin_conductance",
+      "pupil_dilation",
+      "baroreflex_sensitivity",
+      "sympathetic_activation",
+      "parasympathetic_withdrawal",
+      "vagal_tone"
+    ],
+    "biochemical_domain": [
+      "cortisol",
+      "HPA_axis",
+      "ACTH",
+      "CRH",
+      "norepinephrine",
+      "epinephrine",
+      "catecholamines",
+      "sympathetic_adrenal_medullary_axis",
+      "IL_6",
+      "TNF_alpha",
+      "CRP",
+      "glucose",
+      "lactate",
+      "vagal_anti_inflammatory_pathway"
+    ],
+    "neurobehavioral_domain": [
+      "anxiety",
+      "panic_symptoms",
+      "hyperarousal",
+      "stress_reactivity",
+      "emotional_regulation",
+      "attention",
+      "working_memory",
+      "executive_function",
+      "reaction_time",
+      "cognitive_fatigue",
+      "interoception",
+      "threat_sensitivity",
+      "fear_conditioning",
+      "sleep_disturbance"
+    ]
+  },
+  "patterns": [
+    {
+      "pattern_id": "series_001_pattern_001",
+      "pattern_name": "HRV-driven modulation of HPA-axis cortisol during stress and anxiety-related neurobehavior",
+      "relationship_type": "physiology_to_biochemistry_to_neurobehavior",
+      "causal_status": "association",
+      "physiological_input": {
+        "variable": "Heart rate variability",
+        "observable_name": "RMSSD; SDNN; resting HR; HRV reactivity",
+        "direction": "context_dependent",
+        "baseline_reference": "personal_baseline",
+        "measurement_methods": [
+          "ECG-derived RMSSD",
+          "time-domain HRV metrics (SDNN, RMSSD)",
+          "standardized HRV assessment during rest and stress tasks"
+        ],
+        "typical_contexts": [
+          "cognitive stress tasks (e.g., Stroop, TSST-type protocols)",
+          "social/stress paradigms",
+          "resting state"
+        ],
+        "notes": "HRV and HR metrics show directionally opposite responses across contexts (e.g., RMSSD decreases with stress; resting HR may rise). Evidence base includes multiple adult samples with varying task demands; mixed findings exist in full-sample analyses."
+      },
+      "biochemical_or_molecular_mediator": {
+        "mediator_status": "directly_measured",
+        "primary_mediators": [
+          {
+            "name": "cortisol",
+            "category": "hormone",
+            "direction": "variable",
+            "pathway": "HPA axis",
+            "evidence_for_mediation": "direct"
+          }
+        ],
+        "secondary_mediators": [
+          {
+            "name": "catecholamines (norepinephrine, epinephrine)",
+            "category": "catecholamine",
+            "direction": "variable",
+            "pathway": "SMA axis",
+            "evidence_for_mediation": "indirect"
+          }
+        ],
+        "mechanistic_summary": "Vagal modulation of autonomic tone (as indexed by HRV) is plausibly linked to HPA-axis engagement; several human studies indicate that higher HRV during stress is associated with reduced cortisol reactivity or more rapid cortisol recovery, whereas lower HRV can accompany greater cortisol changes in some contexts. This pattern is context-sensitive and not uniformly observed across all samples."
+        },
+      "cognitive_neurobehavioral_output": {
+        "variable": "anxiety and stress reactivity; emotional regulation",
+        "observable_name": "state/trait anxiety measures; threat reactivity; interoceptive awareness",
+        "direction": "increased or decreased depending on context",
+        "measurement_methods": [
+          "state/trait anxiety questionnaires",
+          "threat reactivity paradigms",
+          "interoceptive tasks"
+        ],
+        "affected_functions": [
+          "anxiety levels",
+          "emotional regulation",
+          "interoceptive awareness"
+        ],
+        "clinical_or_behavioral_contexts": [
+          "general population",
+          "clinical samples (e.g., anxiety disorders, PTSD)"
+        ],
+        "notes": "When cortisol is measured alongside HRV, associations with anxiety/stress reactivity tend to be context dependent; some studies report blunted cortisol responses with higher trait anxiety, others report a more robust cortisol response, or no relation in full samples. Several studies highlight subgroup differences (e.g., anxious subgroups) vs. whole-sample findings."
+      },
+      "chain_validity": {
+        "physiology_to_biochemistry_supported": true,
+        "biochemistry_to_neurobehavior_supported": true,
+        "full_chain_directly_supported": false,
+        "missing_link": "full_chain_not_directly_tested",
+        "chain_confidence": "moderate"
+      },
+      "evidence": {
+        "evidence_strength": "moderate",
+        "evidence_summary": "Human studies repeatedly show associations between HRV metrics and cortisol reactivity, particularly under stress. Several datasets (including large samples and subgroups) report that higher HRV or greater vagal tone can be linked to attenuated cortisol responses or faster cortisol recovery, while others show no clear relationship in the full sample. When HRV and cortisol are combined, predictive value for stress-related anxiety or reactivity appears greater in some analyses, though not uniformly across all studies.",
+        "human_evidence": true,
+        "mechanistic_evidence": true,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Greater HRV during preparation for a stressor is associated with less Δ stress-induced cortisol",
+            "authors": "Pulopulos et al.",
+            "year": 2018,
+            "source_type": "clinical_study",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889120",
+            "relevant_finding": "Higher HRV before a stressor linked to smaller cortisol increase; higher HRV during stress linked to cortisol decline.",
+            "supports_which_part": ["physiology_to_biochemistry"]
+            ,
+            "study_population": "adult humans",
+            "sample_size": 386,
+            "limitations_of_source": "Sample drawn from archival MIDUS-like data; generalizability limited to similar contexts"
+          },
+          {
+            "title": "HRV and cortisol during social stress tasks: evidence from adults",
+            "authors": "Murdock et al.",
+            "year": 2017,
+            "source_type": "experimental_human_study",
+            "doi_or_url": "https://pubmed.ncbi.nlm.nih.gov/22901344",
+            "relevant_finding": "HRV and cortisol measured during social stress tasks; patterns support an association between autonomic and HPA responses under social stress.",
+            "supports_which_part": ["physiology_to_biochemistry"],
+            "study_population": "adult humans",
+            "sample_size": "not specified in provided excerpt",
+            "limitations_of_source": "Details on sample size and exact analytic approach not provided here"
+          },
+          {
+            "title": "RMSSD as a marker of vagal tone and stress reactivity",
+            "authors": "Meissner et al. (2019)",
+            "year": 2019,
+            "source_type": "mechanistic_review",
+            "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8045383",
+            "relevant_finding": "RMSSD robustly reflects vagal tone and is sensitive to stress induction; TSST reduces RMSSD",
+            "supports_which_part": ["physiology_to_biochemistry"],
+            "study_population": "human",
+            "sample_size": "not applicable",
+            "limitations_of_source": "Mechanistic review; not a single primary study"
+          },
+          {
+            "title": "Interplay between HRV and cortisol in adolescence and adulthood",
+            "authors": "Gaps in literature (summary across multiple sources)",
+            "year": 2018,
+            "source_type": "systematic_review",
+            "doi_or_url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0105054",
+            "relevant_finding": "HRV and cortisol relationships show developmental variability; higher HRV during stress is sometimes associated with lower cortisol reactivity, but findings are not universal across age groups",
+            "supports_which_part": ["physiology_to_biochemistry", "biochemistry_to_neurobehavior"],
+            "study_population": "mixed_age",
+            "sample_size": "not applicable",
+            "limitations_of_source": "Systematic review notes context-dependency and age-related differences"
+          }
+        ]
+      },
+      "limitations": [
+        "Evidence for a direct full-chain causal pathway in a single human study is lacking; most evidence is associative or context-dependent.",
+        "Some large-sample studies show no association in the whole sample but reveal associations in subgroups (e.g., anxious individuals).",
+        "Temporal dynamics vary by task, baseline state, and population; replication across diverse cohorts remains incomplete."
+      ],
+      "contradictions_or_alternative_explanations": [
+        {
+          "issue": "No relationship between anxiety and HRV or cortisol metrics in the full sample",
+          "alternative_interpretation": "Subgroup differences (e.g., clinically anxious individuals) may reveal relationships obscured in aggregate analyses.",
+          "impact_on_confidence": "moderate"
+        },
+        {
+          "issue": "Mixed cortisol-anxiety associations across studies",
+          "alternative_interpretation": "Differences in measurement (salivary vs plasma), timing, and sample characteristics may account for divergent findings",
+          "impact_on_confidence": "high"
+        }
+      ],
+      "body_state_mapper_use": {
+        "candidate_static_nodes": [
+          "HRV_RMSSD",
+          "HRV_SDNN",
+          "Resting_HR",
+          "Cortisol_Saliva"
+        ],
+        "candidate_edges": [
+          {
+            "source": "HRV_RMSSD",
+            "target": "Cortisol_Saliva",
+            "edge_type": "mediated_by",
+            "polarity": "context_dependent",
+            "confidence": "moderate",
+            "evidence_basis": "HRV changes associated with cortisol reactivity in several stress studies"
+          },
+          {
+            "source": "Cortisol_Saliva",
+            "target": "Anxiety",
+            "edge_type": "associated_with",
+            "polarity": "positive/variable",
+            "confidence": "moderate",
+            "evidence_basis": "mixed findings across studies; subgroup effects noted"
+          }
+        ],
+        "recommended_graph_action": "add_edge",
+        "reason_for_action": "Represents plausible HRV-cortisol-anxiety associations supported by multiple human studies",
+        "risk_of_overinterpretation": "moderate"
+      }
+    ]
+  },
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "In some large adult samples, no relationship between anxiety and HRV or cortisol metrics was observed",
+      "reason_for_uncertainty": "Evidence is heterogeneous; several studies report null effects in full samples but detect effects in subgroups",
+      "evidence_strength": "low",
+      "sources": [
+        {
+          "title": "Theses from Marquette University",
+          "year": 2021,
+          "doi_or_url": "https://epublications.marquette.edu/theses_open/691",
+          "relevant_finding": "No relationship was found between anxiety and HRV or cortisol metrics, including trajectory patterns, in the full sample"
+        },
+        {
+          "title": "Marquette thesis - additional study",
+          "year": 2020,
+          "doi_or_url": "https://epublications.marquette.edu/cgi/viewcontent.cgi?article=1693&context=theses_open",
+          "relevant_finding": "Prior work reported mixed findings; some studies show negative cortisol-anxiety relationships, others positive; the current full-sample analysis did not show a relationship"
+        }
+      ],
+      "recommendation_for_body_state_mapper": "needs_manual_review"
+    }
+  ],
+  "high_value_candidate_nodes": [
+    {
+      "node_id_suggestion": "HRV_RMSSD_resting",
+      "node_label": "Resting RMSSD (vagal tone, parasympathetic activity)",
+      "domain": "physiological",
+      "definition": "RMSSD indexed vagal-mediated HRV at rest; reflects parasympathetic influence on heart rate",
+      "why_it_matters": "High resting RMSSD is repeatedly associated with better cognitive and emotional regulation in several populations and with stronger stress resilience in some studies",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id_suggestion": " Cortisol_Saliva",
+      "node_label": "Salivary cortisol reactivity",
+      "domain": "biochemical",
+      "definition": "HPA-axis mediated cortisol response measured noninvasively in saliva",
+      "why_it_matters": "Directly measured mediator in multiple HRV-stress studies; linked to anxiety and stress reactivity in context-dependent ways",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id_suggestion": "Anxiety_State",
+      "node_label": "Anxiety (state/trait)",
+      "domain": "neurobehavioral",
+      "definition": "Subjective anxiety measures or clinically defined anxiety states",
+      "why_it_matters": "A primary neurobehavioral output linked to autonomic and hormonal changes during stress",
+      "evidence_strength": "moderate"
+    }
+  ],
+  "high_value_candidate_edges": [
+    {
+      "edge_id_suggestion": "edge_HRV_to_cortisol",
+      "source": "HRV_RMSSD_resting",
+      "target": "Cortisol_Saliva",
+      "edge_type": "mediated_by",
+      "polarity": "context_dependent",
+      "confidence": "moderate",
+      "evidence_basis": "Associations between HRV measures and cortisol reactivity across stress paradigms; some studies show attenuation of cortisol with higher HRV"
+    },
+    {
+      "edge_id_suggestion": "edge_cortisol_to_anxiety",
+      "source": "Cortisol_Saliva",
+      "target": "Anxiety_State",
+      "edge_type": "associated_with",
+      "polarity": "positive/variable",
+      "confidence": "moderate",
+      "evidence_basis": "Cortisol-anxiety associations reported as mixed across studies; subgroup effects noted"
+    }
+  ],
+  "research_gaps": [
+    {
+      "gap": "Direct full-chain causal testing in a single human study",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Is HRV change causally mediating cortisol changes to specific cognitive/neurobehavioral outputs in a controlled experimental design?"
+    },
+    {
+      "gap": "Subgroup-specific effects (e.g., clinically anxious, PTSD, depression) vs whole-sample patterns",
+      "importance_for_body_state_mapper": "High",
+      "suggested_followup_query": "Do HRV-cortisol-anxiety relationships replicate within discrete clinical populations or developmental stages?"
+    }
+  ],
+  "summary": {
+    "most_supported_patterns": [
+      "HRV metrics (RMSSD, SDNN) show robust linkage to autonomic vagal tone and stress reactivity; cortisol responses to stress show context-dependent coupling to HRV, with higher HRV associated with attenuated cortisol rise in some studies and greater cortisol recovery in others.",
+      "Resting HRV and related vagal tone indices positively associate with certain cognitive and executive-function outcomes in diverse populations (older adults, twins, athletes), though findings vary by age and task type.",
+      "Inflammatory cytokines (IL-6, TNF-α, CRP) and proinflammatory states show associations with attention and executive function in clinical populations (e.g., MDD, CVD), consistent with immune-neural interfaces that may interact with autonomic signals."
+    ],
+    "highest_value_patterns_for_inference": [
+      "HRVResting/ RMSSD ↔ cortisol reactivity patterns during stress; HRV may modulate or reflect HPA-axis responsiveness and, in turn, influence anxiety and stress reactivity.",
+      "Resting vagal tone (HF HRV) predicting executive function and cognitive performance in multiple populations, suggesting a robust link from autonomic state to higher-order cognition."
+    ],
+    "patterns_requiring_caution": [
+      "Full-sample null findings for HRV-cortisol-anxiety link; subgroup effects are common and may drive observed associations.",
+      "Cortisol-anxiety relationships are inconsistent across studies; confounds such as measurement modality, timing, and population characteristics limit causal inferences."
+    ],
+    "recommended_next_queries": [
+      "Perform longitudinal or experimental manipulations to test whether intentional HRV augmentation (e.g., paced breathing) causally modulates cortisol responses and downstream cognition in healthy and clinical cohorts.",
+      "Investigate whether inflammatory markers interact with HRV and cortisol to predict cognitive outcomes, and identify moderating factors such as BMI, sleep quality, and circadian phase.",
+      "Systematically compare resting HRV, HRV reactivity, and baroreflex sensitivity in relation to executive function across age ranges and clinical conditions."
+    ],
+    "overall_assessment": "The evidence base supports a biologically plausible and clinically relevant chain linking autonomic stress physiology (HRV and related metrics) to biochemical mediators (cortisol, catecholamines; inflammatory markers in some contexts) and to cognitive/neurobehavioral outputs (anxiety, stress reactivity, executive function). The strongest, most replicable patterns concern HRV as a stable correlate of vagal tone with cognitive outcome associations and cortisol interactions under stress. Causal inference remains limited by the predominance of associative designs and subgroup-specific effects; targeted experimental work is needed to establish directionality and mechanism, particularly for the biochemistry-to-neurobehavior links."
+  },
+  "Works Cited": {
+    "sources": [
+      [1] "https://epublications.marquette.edu/theses_open/691",
+      [2] "https://epublications.marquette.edu/cgi/viewcontent.cgi?article=1693&context=theses_open",
+      [3] "https://nature.com/articles/s41598-025-93137-8",
+      [4] "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0274298",
+      [5] "https://pmc.ncbi.nlm.nih.gov/articles/PMC5967249",
+      [6] "https://pmc.ncbi.nlm.nih.gov/articles/PMC8045383",
+      [7] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889120",
+      [8] "https://diva-portal.org/smash/get/diva2:345553/FULLTEXT01.pdf",
+      [9] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12010509",
+      [10] "https://journals.viamedica.pl/international_maritime_health/article/download/26125/20919",
+      [11] "https://pmc.ncbi.nlm.nih.gov/articles/PMC9839632",
+      [12] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12171375",
+      [13] "https://pmc.ncbi.nlm.nih.gov/articles/PMC2937087",
+      [14] "https://pmc.ncbi.nlm.nih.gov/articles/PMC3805119",
+      [15] "https://pmc.ncbi.nlm.nih.gov/articles/PMC3307789",
+      [16] "https://pubmed.ncbi.nlm.nih.gov/6869114",
+      [17] "https://pubmed.ncbi.nlm.nih.gov/8038025",
+      [18] "https://frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1474650/full",
+      [19] "https://midus.wisc.edu/wp-content/uploads/2024/04/1702.pdf",
+      [20] "https://pubmed.ncbi.nlm.nih.gov/24016864",
+      [21] "https://pmc.ncbi.nlm.nih.gov/articles/PMC11617258",
+      [22] "https://ptsd.va.gov/professional/articles/article-pdf/id1548512.pdf",
+      [23] "https://pubmed.ncbi.nlm.nih.gov/22901344",
+      [24] "https://sciencedirect.com/science/article/abs/pii/S1569904820300859",
+      [25] "https://nature.com/articles/s41398-023-02331-7",
+      [26] "https://frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1068410/full",
+      [27] "https://eneuro.org/content/10/6/ENEURO.0088-23.2023",
+      [28] "https://frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1055445/full",
+      [29] "https://www.sciencedaily.com/releases/2010/03/100329162926.htm"
+    ]
+  }
+}
