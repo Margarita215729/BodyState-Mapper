@@ -1,0 +1,112 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair",
+    "series_name": "Blood Systemic State Repair Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "status": "cleaned_usable",
+    "repair_reason": "Missing/incomplete tree 002"
+  },
+  "core_interpretation": "CBC/CMP/electrolytes/kidney/liver markers are high-value systemic context signals, but they require personal baseline, symptoms, urine/vitals/medication context, and confirmatory panels before mechanism inference.",
+  "measured_domains": [
+    "CBC oxygen delivery",
+    "CBC differential inflammation proxies",
+    "platelets/coagulation context",
+    "electrolytes/acid-base",
+    "kidney function",
+    "liver enzymes/protein status"
+  ],
+  "high_value_chains": [
+    {
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain": "low_Hb + low_MCV/high_RDW + low_ferritin_or_low_TSAT -> iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CBC",
+        "iron studies"
+      ]
+    },
+    {
+      "chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain": "low_Hb + normal_MCV + high_CRP_or_kidney_marker -> anemia_of_inflammation_or_chronic_disease_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CBC",
+        "CRP",
+        "kidney markers"
+      ]
+    },
+    {
+      "chain_id": "acute_inflammatory_infection_branch",
+      "chain": "high_WBC_neutrophils + fever_temperature + high_CRP -> acute_inflammatory_infection_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CBC differential",
+        "temperature/symptoms",
+        "CRP"
+      ]
+    },
+    {
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "chain": "high_BUN_creatinine_ratio + high_urine_osmolality + orthostatic_tachycardia -> hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "CMP/kidney panel",
+        "urine osmolality",
+        "orthostatic vitals"
+      ]
+    },
+    {
+      "chain_id": "electrolyte_neurocognitive_risk_branch",
+      "chain": "low_sodium_or_major_electrolyte_shift + confusion/fatigue + medication_or_fluid_context -> electrolyte_neurocognitive_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "electrolytes",
+        "symptoms",
+        "medication/fluid context"
+      ]
+    },
+    {
+      "chain_id": "hepatic_or_muscle_context_branch",
+      "chain": "high_AST_ALT + medication_timing_or_exertion + symptoms -> hepatic_or_muscle_context_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "liver enzymes",
+        "medication/exertion timing",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "chain": "low_albumin + high_CRP + edema_or_fluid_shift -> inflammation_fluid_nutrition_confounded_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "albumin",
+        "CRP",
+        "fluid/nutrition context"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer diagnosis from CBC/CMP alone.",
+    "Do not infer dehydration from BUN/creatinine or sodium alone.",
+    "Do not infer infection from WBC/NLR/CRP alone.",
+    "Do not infer liver injury from one mild AST/ALT elevation without timing/context.",
+    "Do not infer nutrition deficiency from albumin alone.",
+    "Use serial trends and individual baselines when possible."
+  ],
+  "required_next_measurements": [
+    "ferritin",
+    "TSAT",
+    "CRP",
+    "renal panel",
+    "urine osmolality",
+    "orthostatic vitals",
+    "medication log",
+    "repeat CBC/CMP trend"
+  ],
+  "research_gaps": [
+    "Sparse astronaut/spaceflight validation for systemic blood markers.",
+    "Need cross-modal validation linking blood markers to fatigue/cognition/exercise outcomes.",
+    "Need parameter-level cutoffs using within-person baseline rather than only population ranges."
+  ]
+}

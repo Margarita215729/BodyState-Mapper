@@ -1,0 +1,118 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_016_respiration_SpO2_CO2_ventilation_gas_exchange",
+    "series_name": "Respiration and Gas Exchange Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "usable_with_guardrails",
+  "measured_entities": [
+    {
+      "entity_id": "respiratory_rate",
+      "key_variations": [
+        "increased_rr",
+        "decreased_rr"
+      ],
+      "interpretation": "Useful context marker for illness,pain,metabolic load,cognitive load or exercise; not diagnostic alone.",
+      "guardrails": [
+        "Do not infer disease from wearable RR alone.",
+        "Interpret by activity state and device quality."
+      ]
+    },
+    {
+      "entity_id": "SpO2_rest_sleep_exercise",
+      "key_variations": [
+        "resting_desaturation",
+        "sleep_desaturation",
+        "exercise_desaturation"
+      ],
+      "interpretation": "Oxygenation marker distinct from ventilation and dyspnea.",
+      "guardrails": [
+        "SpO2 can be biased by skin tone,motion and sensor location.",
+        "SpO2 alone does not define tissue oxygen delivery."
+      ]
+    },
+    {
+      "entity_id": "ETCO2_transcutaneous_CO2",
+      "key_variations": [
+        "low_ETCO2_hypocapnia",
+        "high_CO2_hypercapnia"
+      ],
+      "interpretation": "High-value CO2/ventilation branch when paired with symptoms,orthostatic testing or sleep data.",
+      "guardrails": [
+        "Environmental CO2 is not equal to blood CO2.",
+        "Capnography quality matters."
+      ]
+    },
+    {
+      "entity_id": "hyperventilation_hypocapnia_pattern",
+      "key_variations": [
+        "low_ETCO2_orthostatic_symptoms_normal_SpO2"
+      ],
+      "interpretation": "Supports hyperventilation/hypocapnia orthostatic branch seen in ME/CFS,long COVID/PASC contexts.",
+      "guardrails": [
+        "Do not infer anxiety from hyperventilation alone."
+      ]
+    },
+    {
+      "entity_id": "sleep_breathing_proxy",
+      "key_variations": [
+        "nocturnal_desaturation_ODI",
+        "fragmented_sleep_daytime_sleepiness"
+      ],
+      "interpretation": "Supports sleep breathing disruption branch when combined with overnight monitoring and symptoms.",
+      "guardrails": [
+        "Requires continuous overnight monitoring; not from single SpO2 spot checks."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "hyperventilation_hypocapnia_orthostatic_branch",
+      "chain": "low_ETCO2 + dizziness + orthostatic_symptoms + normal_SpO2 -> hyperventilation_hypocapnia_orthostatic_branch",
+      "confidence": "high",
+      "required_sources": [
+        "capnography",
+        "orthostatic test",
+        "symptom timing"
+      ]
+    },
+    {
+      "chain_id": "sleep_breathing_disruption_branch",
+      "chain": "sleep_SpO2_desaturation + fragmented_sleep + daytime_sleepiness -> sleep_breathing_disruption_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "overnight pulse oximetry",
+        "sleep/actigraphy",
+        "symptom report"
+      ]
+    },
+    {
+      "chain_id": "environmental_CO2_performance_risk_branch",
+      "chain": "high_habitat_CO2 + headache/sleepiness/cognitive_lapses -> environmental_CO2_performance_risk_branch",
+      "confidence": "low_to_moderate",
+      "required_sources": [
+        "habitat CO2",
+        "symptom timing",
+        "cognition/PVT"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Pulse oximetry is equally accurate across all skin tones.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "SpO2/FiO2 can reliably replace PaO2/FiO2 for severity classification.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Capnography alone detects all hypoventilation events.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "summary": {
+    "overall_assessment": "Respiration tree is usable. Strongest branch is ETCO2/hypocapnia with orthostatic symptoms; wearable SpO2/RR are useful but artifact- and context-dependent."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects",
+    "series_name": "Bone and Mineral Metabolism Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "cleaned_strong",
+  "core_interpretation": "Bone/mineral tree is strong for spaceflight unloading: BMD/QCT plus CTX/NTX/P1NP and urine calcium provide a high-value musculoskeletal-risk layer. Vitamin D/calcium markers remain context-dependent.",
+  "high_value_chains": [
+    {
+      "chain_id": "unloading_bone_loss_branch",
+      "chain": "microgravity_or_bed_rest + increased_CTX/NTX + decreased_BMD -> unloading_bone_loss_branch",
+      "confidence": "high",
+      "required_sources": [
+        "DXA/QCT/pQCT",
+        "CTX/NTX",
+        "mission phase"
+      ]
+    },
+    {
+      "chain_id": "renal_stone_risk_branch",
+      "chain": "high_urinary_calcium + microgravity + low_fluid_intake -> renal_stone_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "urine markers",
+        "fluid intake",
+        "mission phase"
+      ]
+    },
+    {
+      "chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain": "low_25OH_D + high_PTH + low_BMD_or_high_turnover -> secondary_hyperparathyroid_bone_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "vitamin D",
+        "PTH",
+        "BMD or turnover"
+      ]
+    },
+    {
+      "chain_id": "fracture_fall_risk_branch",
+      "chain": "decreased_BMD + low_muscle_strength + balance_impairment -> fracture_fall_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "BMD/structure",
+        "strength",
+        "balance/falls context"
+      ]
+    },
+    {
+      "chain_id": "bone_countermeasure_response_branch",
+      "chain": "countermeasure_adherence + stable_BMD + preserved_strength -> bone_countermeasure_response_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "countermeasure logs",
+        "BMD",
+        "strength/function"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer fracture risk from vitamin D alone.",
+    "Do not infer bone loss from one bone turnover marker alone.",
+    "Do not infer osteoporosis from microgravity-associated reversible changes without context.",
+    "Do not infer renal stone risk from urinary calcium alone.",
+    "Do not compare BMD across devices/sites without protocol context."
+  ],
+  "research_gaps": [
+    "Limited astronaut data on long-term postflight recovery rates and functional outcomes.",
+    "Sparse integration of muscle strength/balance/fall risk with bone outcomes in unloading studies.",
+    "Few studies directly linking countermeasure adherence to both biomarker and clinical endpoints."
+  ]
+}

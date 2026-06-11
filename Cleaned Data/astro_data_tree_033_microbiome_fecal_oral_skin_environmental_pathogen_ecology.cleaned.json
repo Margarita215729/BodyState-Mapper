@@ -1,0 +1,53 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology",
+    "series_name": "Microbiome and Microbial Ecology Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable_but_correlative",
+  "core_interpretation": "Microbiome data are cross-site ecological context, not a diagnostic layer. Functional/metabolite signals and paired host outcomes are stronger than diversity alone.",
+  "high_value_chains": [
+    {
+      "chain_id": "diet_GI_microbiome_branch",
+      "chain": "low_fiber_intake + reduced_butyrate_producers + constipation/GI_symptoms -> diet_GI_microbiome_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "gut_immune_brain_hypothesis",
+      "chain": "gut_microbiome_shift + immune_activation + fatigue/mood -> gut_immune_brain_hypothesis",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "oral_systemic_inflammation_hypothesis",
+      "chain": "oral_dysbiosis + periodontal_inflammation + blood_CRP -> oral_systemic_inflammation_hypothesis",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "crew_environment_transfer_branch",
+      "chain": "environmental_pathogen_detection + crew_skin/oral_matching + symptoms -> crew_environment_transfer_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "antimicrobial_resistance_risk_branch",
+      "chain": "AMR_gene_increase + antibiotic_use + pathogen_detection -> antimicrobial_resistance_risk_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "astronaut_microbiome_immune_branch",
+      "chain": "spaceflight_microbiome_instability + immune_shift + infection_risk -> astronaut_microbiome_immune_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer disease from low diversity alone.",
+    "Do not infer infection from pathogen DNA alone.",
+    "Do not infer gut-brain causality from microbiome shift alone.",
+    "Do not infer host colonization from environmental swab alone.",
+    "Do not compare microbiome profiles without sequencing/platform/diet/antibiotic context."
+  ],
+  "research_gaps": [
+    "Sparse direct evidence linking environmental/ISS microbial shifts to astronaut health events.",
+    "Need harmonized multi-site sampling protocols.",
+    "Most microbiome-health links remain correlative rather than causal."
+  ]
+}

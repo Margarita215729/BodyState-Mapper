@@ -1,0 +1,61 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing",
+    "series_name": "Medication and Countermeasure Context Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_strong_context_override_layer",
+  "core_interpretation": "Medication/countermeasure/procedure logs are context-override layers: new symptoms or physiological shifts should be checked against timing, dose, adherence, interactions and spaceflight PK before assigning a primary mechanism.",
+  "high_value_chains": [
+    {
+      "chain_id": "medication_sleepiness_context_override",
+      "chain": "sedative_hypnotic_use + next_day_PVT_lapses + sleepiness -> medication_sleepiness_context_override",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "medication_chronotropic_override",
+      "chain": "beta_blocker_use + low_peak_HR/chronotropic_response + exercise_intolerance -> medication_chronotropic_override",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "anticholinergic_cognitive_GI_branch",
+      "chain": "anticholinergic_burden + cognitive_slowing + dry_mouth/constipation -> anticholinergic_cognitive_GI_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "antidepressant_timing_context_branch",
+      "chain": "SSRI/SNRI_start_or_change + GI_symptoms/sleep_change/anxiety_shift -> antidepressant_timing_context_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "respiratory_depression_risk_branch",
+      "chain": "opioid_or_tramadol_use + low_RR/sleep_desaturation + sedation -> respiratory_depression_risk_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "bone_countermeasure_response_branch",
+      "chain": "bisphosphonate_use + stable_BMD + reduced_CTX -> bone_countermeasure_response_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "countermeasure_adherence_gap_branch",
+      "chain": "exercise_countermeasure_low_adherence + strength/BMD_loss -> countermeasure_adherence_gap_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer new disease mechanism before checking medication timing.",
+    "Do not infer countermeasure failure without adherence/load/timing data.",
+    "Do not infer psychiatric or autonomic disorder from medication-induced symptoms.",
+    "Do not infer drug causality without temporal relationship.",
+    "Do not ignore drug interactions/polypharmacy.",
+    "Do not assume all medications act the same way in space as on Earth."
+  ],
+  "research_gaps": [
+    "Lack of systematic inflight pharmacokinetic/pharmacodynamic studies for most drug classes.",
+    "Limited objective tracking of medication adherence/effectiveness during missions.",
+    "Insufficient integration of drug interaction/polypharmacy data into operational protocols.",
+    "Sparse long-term safety/effectiveness data for hormonal agents in female astronauts.",
+    "Need for validated packaging/repackaging strategies for drug stability on long-duration missions."
+  ]
+}

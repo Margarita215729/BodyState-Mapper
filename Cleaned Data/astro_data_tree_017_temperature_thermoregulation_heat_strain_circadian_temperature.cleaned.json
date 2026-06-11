@@ -1,0 +1,112 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_017_temperature_thermoregulation_heat_strain_circadian_temperature",
+    "series_name": "Temperature and Thermoregulation Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "usable_with_limited_spaceflight_specificity",
+  "measured_entities": [
+    {
+      "entity_id": "core_body_temperature",
+      "key_variations": [
+        "exercise_induced_hyperthermia",
+        "fever_pattern",
+        "circadian_temperature_phase"
+      ],
+      "interpretation": "Gold-standard layer for heat strain, fever/contextual illness, and circadian thermal rhythm when measured with validated core methods.",
+      "guardrails": [
+        "Do not infer fever from exercise-induced hyperthermia.",
+        "Compare body sites only with calibration."
+      ]
+    },
+    {
+      "entity_id": "skin_wrist_temperature",
+      "key_variations": [
+        "distal_skin_warming_sleep_transition",
+        "cold_stress_skin_drop",
+        "wearable_temperature_deviation"
+      ],
+      "interpretation": "Useful for sleep transition/circadian proxy and thermal comfort, not clinical fever diagnosis.",
+      "guardrails": [
+        "Wrist/skin temperature alone is not validated for fever diagnosis."
+      ]
+    },
+    {
+      "entity_id": "heat_strain_index",
+      "key_variations": [
+        "high_CBT_high_HR_environment_heat"
+      ],
+      "interpretation": "Strong cross-modal heat strain branch when CBT, HR, environment and symptoms/performance are measured together.",
+      "guardrails": [
+        "Thermal discomfort is not identical to heat strain."
+      ]
+    },
+    {
+      "entity_id": "menstrual_cycle_temperature_shift",
+      "key_variations": [
+        "luteal_phase_rise",
+        "ovulation_related_shift"
+      ],
+      "interpretation": "Wearable/distal temperature can support menstrual-cycle context and should not be misread as infection without inflammatory/symptom context.",
+      "guardrails": [
+        "Cycle phase must be tracked."
+      ]
+    },
+    {
+      "entity_id": "temperature_medication_context",
+      "key_variations": [
+        "thermoregulatory_impairment_risk"
+      ],
+      "interpretation": "Medication effects can confound heat strain and thermal response.",
+      "guardrails": [
+        "Do not generalize all medications as raising CBT."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "heat_strain_branch",
+      "chain": "high_core_temperature + high_HR + high_humidity/environment_heat + fatigue/cognitive_slowing -> heat_strain_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CBT",
+        "HR",
+        "environment",
+        "fatigue/cognition outcome"
+      ]
+    },
+    {
+      "chain_id": "menstrual_cycle_temperature_branch",
+      "chain": "luteal_phase_temperature_rise + cycle_tracking + no_inflammation -> menstrual_cycle_temperature_branch",
+      "confidence": "high",
+      "required_sources": [
+        "wearable/BBT",
+        "cycle phase",
+        "inflammation context"
+      ]
+    },
+    {
+      "chain_id": "sleep_transition_branch",
+      "chain": "distal_skin_warming + sleep_onset -> sleep_transition_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "wrist/distal skin temp",
+        "sleep diary/actigraphy"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Fever can be reliably detected with wrist temperature alone.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Low temperature trend can diagnose thyroid dysfunction.",
+      "recommendation": "exclude"
+    }
+  ],
+  "summary": {
+    "overall_assessment": "Temperature tree is usable. Strong for heat strain, menstrual-cycle temperature, and sleep transition; weaker for astronaut-specific thermoregulation and fever detection via wearables."
+  }
+}

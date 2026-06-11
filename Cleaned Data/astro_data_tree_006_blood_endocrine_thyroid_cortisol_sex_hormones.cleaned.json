@@ -1,0 +1,299 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones",
+    "series_name": "Blood Endocrine Biomarker Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "status": "cleaned_from_uploaded_consensus_report",
+    "quality": "usable_with_cross_modal_gaps"
+  },
+  "data_source": {
+    "source_id": "blood_endocrine",
+    "source_category": "biofluid_endocrine_rhythm_hormonal_state",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "symptom_triggered",
+      "cycle_phase_specific",
+      "morning_evening_sampling",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "thyroid_hormones",
+      "result_variations": [
+        {
+          "variation_id": "overt_hypothyroid_pattern",
+          "result_pattern": "TSH high + free T4 low",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "overt hypothyroidism pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "RHR",
+            "body temperature",
+            "thyroid antibodies"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "low_RHR/body_temperature",
+              "combined_meaning": "supports hypothyroid physiological phenotype when labs are abnormal",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "overt_hypothyroid_branch"
+          ],
+          "candidate_chains": [
+            "TSH_high + freeT4_low + fatigue/cold_intolerance/low_RHR -> overt_hypothyroid_branch"
+          ],
+          "guardrails": [
+            "do not infer thyroid dysfunction from fatigue alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fitzgerald 2020",
+              "Rong 2021"
+            ]
+          }
+        },
+        {
+          "variation_id": "subclinical_hypothyroid_pattern",
+          "result_pattern": "TSH high + free T4 normal",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "subclinical hypothyroid lab pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "thyroid antibodies",
+            "repeat testing",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_endocrine",
+              "other_entity": "TPOAb/TgAb",
+              "combined_meaning": "antibody positivity increases future/overt dysfunction risk",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "subclinical_hypothyroid_or_autoimmune_context_branch"
+          ],
+          "candidate_chains": [
+            "TSH_high + freeT4_normal + TPOAb/TgAb_positive -> thyroid_autoimmune_risk_branch"
+          ],
+          "guardrails": [
+            "subclinical pattern is not overt dysfunction"
+          ],
+          "evidence": {
+            "strength": "moderate/high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Bliddal 2022",
+              "Fitzgerald 2020"
+            ]
+          }
+        },
+        {
+          "variation_id": "hyperthyroid_pattern",
+          "result_pattern": "TSH low + free T4/free T3 high",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "overt hyperthyroid pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "tachycardia",
+            "anxiety/tremor",
+            "temperature",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "tachycardia/high_RHR",
+              "combined_meaning": "endocrine-like anxiety/tachycardia branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "hyperthyroid_anxiety_like_branch"
+          ],
+          "candidate_chains": [
+            "TSH_low + freeT4/freeT3_high + tachycardia/anxiety/tremor -> hyperthyroid_anxiety_like_branch"
+          ],
+          "guardrails": [
+            "do not infer psychiatric anxiety from tachycardia before endocrine/autonomic/medication context"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fitzgerald 2020"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "HPA_axis_cortisol",
+      "result_variations": [
+        {
+          "variation_id": "flattened_cortisol_slope",
+          "result_pattern": "flattened diurnal cortisol slope / disrupted rhythm",
+          "direction": "circadian|patterned",
+          "standalone_interpretation": [
+            "associated with poorer health/stress-circadian disruption; rhythm more meaningful than one value"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sampling time",
+            "sleep timing",
+            "light exposure",
+            "stress/workload",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_actigraphy",
+              "other_entity": "sleep fragmentation/light timing",
+              "combined_meaning": "supports HPA-circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "HPA_circadian_disruption_branch",
+            "stress_recovery_branch"
+          ],
+          "candidate_chains": [
+            "flattened_cortisol_slope + poor_sleep + fatigue/mood_worsening -> HPA_circadian_disruption_branch",
+            "high_evening_cortisol + sleep_fragmentation + low_recovery -> stress_sleep_recovery_branch"
+          ],
+          "guardrails": [
+            "do not infer HPA-axis state from one cortisol value"
+          ],
+          "evidence": {
+            "strength": "moderate/high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Adam 2017",
+              "Noushad 2021",
+              "Juliana 2025"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "sex_hormones_gonadal_axis",
+      "result_variations": [
+        {
+          "variation_id": "cycle_phase_or_contraception_modulated_pattern",
+          "result_pattern": "phase-dependent or contraception-modulated hormone pattern",
+          "direction": "phase_dependent",
+          "standalone_interpretation": [
+            "may modulate mood/sleep/HRV/cognition/HPA response"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "cycle phase",
+            "hormonal contraception",
+            "sampling timing",
+            "symptoms",
+            "sleep",
+            "HRV"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "HRV/sleep/RHR",
+              "combined_meaning": "supports sex-hormone modulation branch if temporally aligned",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sex_hormone_modulation_branch"
+          ],
+          "candidate_chains": [
+            "cycle_phase_or_hormonal_contraception + HRV/sleep/mood_shift -> sex_hormone_modulation_branch"
+          ],
+          "guardrails": [
+            "do not infer hormone-related mood change without cycle/contraception/timing context"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Wieczorek 2023",
+              "Klusmann 2022",
+              "Kjaergaard 2021"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "overt_hypothyroid_branch",
+      "chain": "TSH_high + freeT4_low + fatigue/cold_intolerance/low_RHR -> overt_hypothyroid_branch",
+      "confidence": "high",
+      "required_sources": [
+        "TSH",
+        "freeT4",
+        "symptoms",
+        "RHR/body temperature"
+      ]
+    },
+    {
+      "chain_id": "hyperthyroid_anxiety_like_branch",
+      "chain": "TSH_low + freeT4/freeT3_high + tachycardia/anxiety/tremor -> hyperthyroid_anxiety_like_branch",
+      "confidence": "high",
+      "required_sources": [
+        "TSH",
+        "freeT4/freeT3",
+        "HR/RHR",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "HPA_circadian_disruption_branch",
+      "chain": "flattened_cortisol_slope + poor_sleep + fatigue/mood_worsening -> HPA_circadian_disruption_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "multi-timepoint cortisol",
+        "sleep/light data",
+        "symptoms"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "One cortisol value can define HPA-axis state",
+      "reason": "diurnal slope/rhythm/CAR and timing are required",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Fatigue alone implies thyroid dysfunction",
+      "reason": "thyroid lab pattern and context are required",
+      "recommendation": "exclude"
+    }
+  ],
+  "summary": {
+    "overall_assessment": "Usable as an endocrine rhythm/lab-pattern tree, but not sufficient for symptom causality without timing and cross-modal physiology."
+  }
+}

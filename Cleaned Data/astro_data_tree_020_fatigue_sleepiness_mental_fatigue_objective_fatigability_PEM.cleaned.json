@@ -1,0 +1,189 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_020_fatigue_sleepiness_mental_fatigue_objective_fatigability_PEM",
+    "series_name": "Fatigue Variation Tree: Subjective Fatigue, Sleepiness, Mental Fatigue, Objective Fatigability, PEM, Recovery Failure, and Differential Inference",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "fatigue_symptom_performance",
+    "source_category": "subjective_objective_fatigue_neurobehavioral_function",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "daily_report",
+      "symptom_triggered",
+      "after_exertion",
+      "sleep_loss_protocol",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "subjective_fatigue_severity",
+      "entity_name": "Subjective Fatigue Severity",
+      "measurement_type": "subjective_fatigue_marker",
+      "sample_or_sensor": "questionnaire|EMA|VAS|symptom_diary",
+      "key_variations": [
+        "high_subjective_fatigue_within_day_variability",
+        "persistent_fatigue",
+        "episodic_fatigue"
+      ],
+      "standalone_interpretation": [
+        "perceived tiredness/exhaustion; mechanism unknown"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "objective fatigability",
+        "mood/depression",
+        "sleep quality",
+        "activity",
+        "HRV/RHR"
+      ],
+      "guardrails": [
+        "Do not infer mechanism from fatigue severity alone."
+      ]
+    },
+    {
+      "entity_id": "objective_fatigability",
+      "entity_name": "Objective Fatigability",
+      "measurement_type": "objective_fatigability_marker|performance_marker",
+      "sample_or_sensor": "performance_test|force_sensor|cognitive_test|actigraphy",
+      "key_variations": [
+        "performance_decline_over_task",
+        "objective_performance_decline_with_low_subjective_fatigue"
+      ],
+      "standalone_interpretation": [
+        "measurable decline in performance capacity"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "task type",
+        "effort criteria",
+        "subjective report",
+        "sleep and mood"
+      ],
+      "guardrails": [
+        "Separate subjective fatigue from objective fatigability."
+      ]
+    },
+    {
+      "entity_id": "PEM_delayed_recovery",
+      "entity_name": "Post-Exertional Malaise / Delayed Recovery",
+      "measurement_type": "PEM_marker|recovery_marker",
+      "sample_or_sensor": "symptom_diary|2_day_CPET|actigraphy|EMA",
+      "key_variations": [
+        "delayed_symptom_worsening",
+        "next_day_activity_drop",
+        "day2_CPET_decline"
+      ],
+      "standalone_interpretation": [
+        "post-exertional worsening phenotype; requires timing"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "exertion trigger",
+        "symptom timing",
+        "serial CPET/activity data"
+      ],
+      "guardrails": [
+        "Do not infer PEM without delayed symptom/performance pattern."
+      ]
+    },
+    {
+      "entity_id": "sleepiness_vs_fatigue",
+      "entity_name": "Sleepiness vs Fatigue",
+      "measurement_type": "sleepiness_marker|fatigue_marker",
+      "sample_or_sensor": "questionnaire|PVT|sleep diary",
+      "key_variations": [
+        "high_sleepiness_with_PVT_lapses",
+        "high_fatigue_without_sleepiness"
+      ],
+      "standalone_interpretation": [
+        "overlapping but distinct states"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "sleep duration",
+        "PVT",
+        "subjective sleepiness scale"
+      ],
+      "guardrails": [
+        "Do not equate fatigue with sleepiness."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "sleep_loss_fatigue_sleepiness_branch",
+      "chain": "high_fatigue + short_sleep + PVT_lapses -> sleep_loss_fatigue_sleepiness_branch",
+      "confidence": "high",
+      "required_sources": [
+        "fatigue report",
+        "PVT",
+        "sleep log"
+      ]
+    },
+    {
+      "chain_id": "low_recovery_state_branch",
+      "chain": "high_fatigue + normal_sleep + low_HRV/elevated_RHR -> low_recovery_state_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "EMA",
+        "actigraphy",
+        "HRV/RHR"
+      ]
+    },
+    {
+      "chain_id": "PEM_objective_branch",
+      "chain": "high_fatigue + day2_CPET_decline + delayed_symptom_worsening -> PEM_objective_branch",
+      "confidence": "high",
+      "required_sources": [
+        "serial CPET",
+        "symptom diary"
+      ]
+    },
+    {
+      "chain_id": "perceptual_or_neurobehavioral_fatigue_branch",
+      "chain": "high_subjective_fatigue + high_RPE + normal_CPET -> perceptual_or_neurobehavioral_fatigue_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RPE",
+        "CPET/performance test"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective PEM always predicts day-2 CPET impairment.",
+      "reason": "Long COVID evidence suggests mismatch between self-report and objective day-2 decline in some cohorts.",
+      "recommendation": "needs_more_evidence"
+    },
+    {
+      "claim": "One fatigue scale captures all domains/triggers/impacts.",
+      "reason": "No single tool comprehensively captures all clinical fatigue dimensions.",
+      "recommendation": "exclude"
+    }
+  ],
+  "summary": {
+    "status": "strong",
+    "most_reliable_markers": [
+      "validated fatigue scales",
+      "objective performance decline",
+      "EMA/actigraphy variability",
+      "2-day CPET for PEM in ME/CFS"
+    ],
+    "most_context_dependent_markers": [
+      "subjective fatigue",
+      "RPE",
+      "inflammatory/nutrient attribution"
+    ],
+    "overall_assessment": "Essential differential-inference layer that separates fatigue, sleepiness, fatigability, PEM, recovery failure, and perception-performance mismatch."
+  },
+  "schema_notes": {
+    "source_pdf": "PROMPT_020_fatigue_sleepiness_mental_fatigue.pdf",
+    "cleaned_by": "ChatGPT",
+    "version": "cleaned_v1"
+  }
+}

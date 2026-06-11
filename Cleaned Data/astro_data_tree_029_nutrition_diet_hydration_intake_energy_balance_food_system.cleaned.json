@@ -1,0 +1,54 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system",
+    "series_name": "Nutrition and Hydration Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_strong_context_layer",
+  "core_interpretation": "Nutrition/intake data are behavioral-nutritional context layers; intake must be connected to biomarkers, body mass, function, hydration markers and timing before mechanistic inference.",
+  "high_value_chains": [
+    {
+      "chain_id": "low_energy_availability_branch",
+      "chain": "low_energy_intake + weight_loss + BHB_high -> low_energy_availability_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "catabolic_muscle_loss_branch",
+      "chain": "low_protein_intake + negative_nitrogen_balance + muscle_mass_loss -> catabolic_muscle_loss_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "chain": "low_fluid_intake + high_urine_osmolality + orthostatic_tachycardia -> hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "meal_timing_circadian_metabolic_branch",
+      "chain": "late_eating + circadian_misalignment + poor_sleep/glucose_variability -> meal_timing_circadian_metabolic_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "diet_GI_microbiome_branch",
+      "chain": "low_fiber_intake + constipation/GI_symptoms + microbiome_shift -> diet_GI_microbiome_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "food_system_behavioral_risk_branch",
+      "chain": "poor_food_acceptability + reduced_energy_intake + mood/fatigue -> food_system_behavioral_risk_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer nutrient deficiency from intake alone.",
+    "Do not infer hydration status from fluid intake alone.",
+    "Do not infer low energy availability from one low-calorie day.",
+    "Do not infer dietary causality for mood/fatigue without timing and biomarkers.",
+    "Do not compare diet logs without underreporting and protocol context."
+  ],
+  "research_gaps": [
+    "Lack of robust studies on standalone nutritional countermeasures for spaceflight deconditioning.",
+    "Limited long-term RCTs on circadian-aligned eating and metabolic health.",
+    "Insufficient validation of dietary assessment tools across diverse populations/settings.",
+    "Few studies integrating food system constraints/appetite with physiological outcomes in extreme environments."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_013_heart_rate_HRV_autonomic_balance",
+    "series_name": "Heart Rate and HRV Variation Tree:Autonomic Balance,Stress,Recovery,Fatigue,Sleep,Cognition,and Orthostatic Physiology",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "status": "usable",
+  "data_source": {
+    "source_id": "heart_rate_HRV",
+    "source_category": "wearable_ECG_PPG_autonomic_physiology"
+  },
+  "core_branches": [
+    {
+      "chain_id": "low_recovery_state_branch",
+      "chain": "elevated_resting_HR_relative_to_baseline + low_HRV + poor_sleep -> low_recovery_state_branch",
+      "confidence": "high",
+      "required_sources": [
+        "resting HR",
+        "HRV",
+        "sleep quality"
+      ]
+    },
+    {
+      "chain_id": "infection_or_inflammatory_load_branch",
+      "chain": "elevated_resting_HR + fever/inflammation + fatigue -> infection_or_inflammatory_load_branch",
+      "confidence": "high",
+      "required_sources": [
+        "resting HR",
+        "CRP/IL-6 or fever",
+        "fatigue/symptoms"
+      ]
+    },
+    {
+      "chain_id": "oxygen_delivery_compensation_branch",
+      "chain": "elevated_resting_HR + low_Hb/ferritin + exercise_intolerance -> oxygen_delivery_compensation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "resting HR",
+        "CBC/iron markers",
+        "exercise tolerance"
+      ]
+    },
+    {
+      "chain_id": "orthostatic_intolerance_branch",
+      "chain": "orthostatic_HR_increase + dizziness + normal_BP_or_BP_drop -> orthostatic_intolerance_branch",
+      "confidence": "high",
+      "required_sources": [
+        "orthostatic HR/BP",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "insufficient_recovery_or_overreaching_branch",
+      "chain": "low_RMSSD + high_training_load + next_day_fatigue -> insufficient_recovery_or_overreaching_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RMSSD",
+        "training load",
+        "timed fatigue"
+      ]
+    },
+    {
+      "chain_id": "sympathetic_arousal_branch",
+      "chain": "low_HRV + high_alpha_amylase + anxiety_like_symptoms -> sympathetic_arousal_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "HRV",
+        "salivary alpha-amylase",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "autonomic_deconditioning_branch",
+      "chain": "spaceflight_or_bed_rest + altered_HRV + orthostatic_intolerance_postflight -> autonomic_deconditioning_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "mission/bedrest phase",
+        "HRV",
+        "orthostatic test"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer stress from low HRV alone.",
+    "Do not infer parasympathetic withdrawal from one wearable reading.",
+    "Do not infer dehydration from elevated HR alone.",
+    "Do not compare HRV values across devices/protocols without validation.",
+    "LF/HF ratio should not be treated as a direct measure of sympathovagal balance.",
+    "PPG-derived PRV cannot fully replace ECG-derived HRV."
+  ],
+  "research_gaps": [
+    "Limited standardization of artifact correction and device comparison across wearables.",
+    "Sparse longitudinal data linking sleep-derived HRV features to neurobehavioral outcomes.",
+    "Few studies integrate circadian/day-night HRV patterns with cognitive/fatigue outcomes."
+  ]
+}

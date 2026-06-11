@@ -1,0 +1,74 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure",
+    "series_name": "Ocular and SANS Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "cleaned_strong_astronaut_specific",
+  "core_interpretation": "Ocular/SANS tree is strong and astronaut-specific. SANS should be modeled as a neuro-ocular fluid-shift/venous-CSF redistribution syndrome, not as generic visual symptoms or terrestrial IIH.",
+  "high_value_chains": [
+    {
+      "chain_id": "SANS_risk_branch",
+      "chain": "microgravity + cephalad_fluid_shift + optic_disc_edema/RNFL_change -> SANS_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "spaceflight/HDT exposure",
+        "OCT/fundoscopy",
+        "fluid-shift or venous markers"
+      ]
+    },
+    {
+      "chain_id": "SANS_structural_visual_branch",
+      "chain": "hyperopic_shift + globe_flattening + optic_disc_edema -> SANS_structural_visual_branch",
+      "confidence": "high",
+      "required_sources": [
+        "refraction/visual acuity",
+        "OCT/MRI",
+        "fundoscopy"
+      ]
+    },
+    {
+      "chain_id": "ICP_proxy_hypothesis",
+      "chain": "optic_nerve_sheath_diameter_increase + head_down_tilt + visual_symptoms -> ICP_proxy_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "ONSD ultrasound/MRI",
+        "HDT/fluid-shift",
+        "visual symptoms"
+      ]
+    },
+    {
+      "chain_id": "countermeasure_effect_branch",
+      "chain": "LBNP + decreased_IOP/ONSD/choroidal_thickness -> countermeasure_effect_branch",
+      "confidence": "high",
+      "required_sources": [
+        "LBNP/countermeasure log",
+        "IOP",
+        "ONSD/OCT"
+      ]
+    },
+    {
+      "chain_id": "non_structural_visual_symptom_branch",
+      "chain": "visual_symptoms + normal_OCT/fundoscopy -> non_structural_visual_symptom_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "symptom report",
+        "OCT/fundus",
+        "environment/headache/migraine context"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer ICP from IOP alone.",
+    "Do not infer SANS from subjective visual symptoms alone.",
+    "Do not infer brain fog from ocular markers alone.",
+    "Do not treat terrestrial papilledema/IIH literature as identical to spaceflight SANS.",
+    "Do not compare OCT/ultrasound metrics without protocol and device context."
+  ],
+  "research_gaps": [
+    "Lack of direct continuous ICP measurements during spaceflight linked to in-flight ocular imaging.",
+    "Limited integration of jugular venous/cerebral venous outflow markers with OCT and visual performance.",
+    "Sparse long-term follow-up of persistent RNFL/retinal changes and operational implications."
+  ]
+}

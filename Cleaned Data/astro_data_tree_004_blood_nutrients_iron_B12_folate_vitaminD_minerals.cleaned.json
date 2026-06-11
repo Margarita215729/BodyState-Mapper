@@ -1,0 +1,602 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals",
+    "series_name": "Blood Nutrient Biomarker Variation Tree: Iron, B12, Folate, Vitamin D, Minerals, Fatigue, Cognition, and Mood",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "version": "cleaned_v1_from_consensus"
+  },
+  "data_source": {
+    "source_id": "blood_nutrients",
+    "source_category": "biofluid_nutrition_mineral_status",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "symptom_triggered",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "iron_panel_ferritin_tsat_stfr_hepcidin",
+      "entity_name": "Iron status panel: ferritin, TSAT, serum iron, TIBC, sTfR, hepcidin",
+      "measurement_type": "iron_marker|inflammation_confounded_nutrient_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "low_ferritin_low_tsat_no_inflammation",
+          "result_pattern": "Low ferritin and/or low TSAT with normal CRP/AGP",
+          "direction": "decreased",
+          "standalone_interpretation": [
+            "Iron deficiency likely when inflammatory markers are not elevated."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/AGP",
+            "CBC",
+            "Hb/Hct",
+            "MCV/RDW",
+            "symptoms",
+            "diet",
+            "GI blood loss/malabsorption context"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CBC",
+              "other_entity": "Hb/MCV/RDW",
+              "combined_meaning": "Low Hb + low ferritin/TSAT + low MCV or high RDW supports iron deficiency anemia and oxygen-delivery limitation branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "symptom_report",
+              "other_entity": "fatigue/exercise intolerance",
+              "combined_meaning": "Low ferritin/TSAT with fatigue but normal Hb supports iron deficiency without anemia branch, not oxygen-delivery limitation unless performance/HR response supports it.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "feces_stool",
+              "other_entity": "FIT/FOBT or fecal inflammation/malabsorption markers",
+              "combined_meaning": "Iron deficiency with positive occult blood or malabsorption markers supports GI blood loss/malabsorption investigation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "iron_deficiency_without_anemia",
+            "iron_deficiency_anemia",
+            "oxygen_delivery_limitation_if_anemic"
+          ],
+          "candidate_chains": [
+            "low_ferritin_or_low_TSAT + fatigue + normal_Hb -> iron_deficiency_without_anemia_branch",
+            "low_Hb + low_ferritin/TSAT + low_MCV/high_RDW -> iron_deficiency_anemia_oxygen_delivery_branch"
+          ],
+          "guardrails": [
+            "Do not infer anemia from low ferritin alone.",
+            "Do not infer oxygen delivery limitation without Hb/Hct/performance context."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Lahtiharju 2025",
+              "Namaste 2017",
+              "Skikne 2011",
+              "Daude 2020"
+            ]
+          }
+        },
+        {
+          "variation_id": "normal_or_high_ferritin_with_inflammation",
+          "result_pattern": "Normal/high ferritin with elevated CRP/AGP or inflammatory disease context",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "Ferritin may be elevated as an acute phase reactant; iron stores may be overestimated."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/AGP",
+            "TSAT",
+            "sTfR or sTfR/log ferritin index",
+            "hepcidin",
+            "inflammatory diagnosis",
+            "CBC"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/AGP/IL6",
+              "combined_meaning": "Inflammation can mask iron deficiency by raising ferritin; TSAT/sTfR helps disambiguate.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "inflammation_confounded_iron_status",
+            "anemia_of_inflammation",
+            "functional_iron_deficiency"
+          ],
+          "candidate_chains": [
+            "ferritin_normal_or_high + CRP_high + low_TSAT -> inflammation_confounded_iron_status_branch"
+          ],
+          "guardrails": [
+            "Normal/high ferritin does not rule out iron deficiency when inflammation is present."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Namaste 2017",
+              "Mei 2017",
+              "Richardson 2024",
+              "Daude 2020"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "b12_folate_functional_panel",
+      "entity_name": "Vitamin B12, MMA, homocysteine, folate",
+      "measurement_type": "B_vitamin_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "borderline_b12_high_mma_homocysteine",
+          "result_pattern": "Borderline/low B12 with elevated MMA and/or homocysteine",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "Suggests functional B12 deficiency more strongly than serum B12 alone."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "renal function",
+            "folate",
+            "CBC macrocytosis",
+            "neurologic/cognitive symptoms",
+            "diet/supplementation"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CBC",
+              "other_entity": "MCV/RDW",
+              "combined_meaning": "Macrocytosis plus abnormal B12/MMA/homocysteine supports megaloblastic deficiency branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "neurobehavioral",
+              "other_entity": "cognitive symptoms/paresthesias/fatigue",
+              "combined_meaning": "Symptoms increase clinical relevance but do not prove causality without biochemical pattern.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "functional_B12_deficiency",
+            "megaloblastic_deficiency_branch"
+          ],
+          "candidate_chains": [
+            "borderline_B12 + high_MMA/homocysteine + cognitive_symptoms -> functional_B12_deficiency_branch"
+          ],
+          "guardrails": [
+            "Serum B12 alone is insufficient to diagnose functional B12 deficiency.",
+            "Interpret MMA with renal function."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Storz 2023",
+              "Lukovac 2024"
+            ]
+          }
+        },
+        {
+          "variation_id": "folate_low_or_b12_low_macrocytosis",
+          "result_pattern": "Low folate and/or B12 with macrocytosis",
+          "direction": "decreased|patterned",
+          "standalone_interpretation": [
+            "Supports megaloblastic deficiency pattern when paired with CBC changes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "B12",
+            "MMA",
+            "homocysteine",
+            "CBC",
+            "diet",
+            "medications",
+            "malabsorption"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "feces_stool",
+              "other_entity": "malabsorption markers/GI disease",
+              "combined_meaning": "GI malabsorption plus B-vitamin deficiency supports malabsorption-fatigue branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "folate_deficiency",
+            "B12_deficiency",
+            "malabsorption_related_deficiency"
+          ],
+          "candidate_chains": [
+            "macrocytosis + low_B12_or_folate + cognitive/fatigue symptoms -> megaloblastic_deficiency_branch"
+          ],
+          "guardrails": [
+            "Do not treat macrocytosis as B12 deficiency without folate, medication, alcohol/liver and thyroid context."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Ozkanay 2023"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "vitamin_d_calcium_pth_bone_mineral_panel",
+      "entity_name": "25OH vitamin D, calcium, phosphate, PTH, magnesium",
+      "measurement_type": "vitamin_marker|bone_mineral_marker|mineral_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "low_25ohd_high_pth_bone_context",
+          "result_pattern": "Low 25OH vitamin D with elevated PTH and bone/mineral context",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "Suggests vitamin D-related bone-mineral stress when paired with PTH/calcium/phosphate and bone context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "PTH",
+            "calcium",
+            "phosphate",
+            "magnesium",
+            "urinary calcium",
+            "bone turnover markers",
+            "DXA",
+            "microgravity exposure",
+            "diet/supplements"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urinary calcium",
+              "combined_meaning": "Low vitamin D/high PTH plus urinary calcium/bone turnover and microgravity supports bone mineral risk branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "musculoskeletal",
+              "other_entity": "DXA/bone turnover",
+              "combined_meaning": "Bone markers are required to move from nutrient abnormality to bone loss risk.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "bone_mineral_risk_branch",
+            "secondary_hyperparathyroidism_context"
+          ],
+          "candidate_chains": [
+            "low_25OH_D + high_PTH + urinary_calcium/bone_turnover + microgravity -> bone_mineral_risk_branch"
+          ],
+          "guardrails": [
+            "Vitamin D deficiency alone should not explain fatigue.",
+            "Do not infer bone loss from vitamin D/calcium alone."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Soepnel 2023",
+              "Isa 2023",
+              "Ozkanay 2023"
+            ]
+          }
+        },
+        {
+          "variation_id": "serum_magnesium_abnormal",
+          "result_pattern": "Low or high serum magnesium",
+          "direction": "decreased|increased",
+          "standalone_interpretation": [
+            "Serum magnesium may reflect circulating magnesium but is not a complete measure of total body magnesium status."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "renal function",
+            "urine magnesium",
+            "diet/supplements",
+            "GI loss",
+            "medications",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "magnesium excretion",
+              "combined_meaning": "Serum plus urine magnesium helps separate intake/renal loss/GI loss contexts.",
+              "confidence": "low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mineral_status_uncertain",
+            "renal_or_GI_mineral_loss_context"
+          ],
+          "candidate_chains": [
+            "serum_magnesium_abnormal + urine_magnesium + GI_or_renal_context -> mineral_loss_hypothesis"
+          ],
+          "guardrails": [
+            "Serum magnesium is not equivalent to total body magnesium stores."
+          ],
+          "evidence": {
+            "strength": "low",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "general mineral biomarker literature in retrieved set"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "zinc_copper_selenium_micronutrient_panel",
+      "entity_name": "Zinc, copper, selenium",
+      "measurement_type": "mineral_marker|immune_nutrition_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "low_trace_mineral_pattern",
+          "result_pattern": "Low zinc, copper, or selenium, alone or patterned",
+          "direction": "decreased|patterned",
+          "standalone_interpretation": [
+            "May reflect micronutrient insufficiency, inflammation redistribution, or dietary/malabsorption context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/inflammation",
+            "albumin",
+            "diet",
+            "GI malabsorption",
+            "immune markers",
+            "infection frequency",
+            "supplement use"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "immune",
+              "other_entity": "infection frequency/immune markers",
+              "combined_meaning": "Low trace minerals with immune alterations may support micronutrient-immune function hypothesis but rarely a standalone explanation.",
+              "confidence": "low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "micronutrient_immune_function_hypothesis",
+            "malabsorption_or_low_intake_branch"
+          ],
+          "candidate_chains": [
+            "low_zinc_or_selenium + immune_markers + infection_frequency -> micronutrient_immune_function_hypothesis"
+          ],
+          "guardrails": [
+            "Trace mineral abnormalities are context dependent and affected by inflammation and protein status."
+          ],
+          "evidence": {
+            "strength": "low",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Valvano 2025"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "albumin_prealbumin_total_protein",
+      "entity_name": "Albumin, prealbumin, total protein",
+      "measurement_type": "protein_nutrition_marker|inflammation_confounded_nutrient_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "low_albumin_prealbumin_contextual",
+          "result_pattern": "Low albumin/prealbumin/total protein",
+          "direction": "decreased",
+          "standalone_interpretation": [
+            "May reflect malnutrition, inflammation/illness, liver disease, kidney loss, or fluid shifts depending on context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/inflammation",
+            "liver markers",
+            "kidney markers/proteinuria",
+            "fluid status",
+            "dietary protein",
+            "body mass",
+            "illness"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/IL6",
+              "combined_meaning": "Low albumin/prealbumin with inflammation supports illness/inflammation-nutrition confounded branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "urine",
+              "other_entity": "proteinuria/albuminuria",
+              "combined_meaning": "Low serum protein plus urinary protein loss supports renal protein loss branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "illness_inflammation_nutrition_confounded_branch",
+            "protein_energy_malnutrition_hypothesis",
+            "renal_or_hepatic_loss_branch",
+            "fluid_shift_context"
+          ],
+          "candidate_chains": [
+            "low_albumin/prealbumin + inflammation_markers -> illness_inflammation_nutrition_confounded_branch"
+          ],
+          "guardrails": [
+            "Albumin/prealbumin are not pure nutrition markers.",
+            "Interpret with inflammation, fluid shifts, liver and kidney context."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Mizuiri 2025",
+              "Valvano 2025"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cross_source_matrix": [
+    {
+      "blood_nutrient_entity": "ferritin/TSAT",
+      "paired_source": "blood_inflammation",
+      "paired_entity": "CRP/AGP",
+      "combined_pattern": "normal_or_high_ferritin + high_CRP + low_TSAT",
+      "interpretation": "Inflammation-confounded iron status; possible functional iron deficiency or masked deficiency.",
+      "confidence": "high",
+      "guardrail": "Normal/high ferritin does not exclude iron deficiency during inflammation."
+    },
+    {
+      "blood_nutrient_entity": "B12/MMA/homocysteine",
+      "paired_source": "CBC/neurobehavioral",
+      "paired_entity": "MCV/RDW + cognitive/fatigue symptoms",
+      "combined_pattern": "borderline_B12 + high_MMA/homocysteine + macrocytosis or neuro symptoms",
+      "interpretation": "Functional B12/megaloblastic deficiency branch.",
+      "confidence": "moderate",
+      "guardrail": "Serum B12 alone is insufficient."
+    },
+    {
+      "blood_nutrient_entity": "25OH vitamin D/PTH",
+      "paired_source": "urine/bone",
+      "paired_entity": "urinary calcium + bone turnover/DXA",
+      "combined_pattern": "low_25OH_D + high_PTH + high_urinary_calcium/bone turnover + microgravity",
+      "interpretation": "Bone mineral risk branch in spaceflight context.",
+      "confidence": "moderate",
+      "guardrail": "Vitamin D alone does not prove bone loss or explain fatigue."
+    },
+    {
+      "blood_nutrient_entity": "albumin/prealbumin",
+      "paired_source": "blood_inflammation/urine",
+      "paired_entity": "CRP/IL6 + proteinuria",
+      "combined_pattern": "low_albumin/prealbumin + high_inflammation or urine_protein_loss",
+      "interpretation": "Illness/inflammation/nutrition or renal-loss confounded branch.",
+      "confidence": "moderate",
+      "guardrail": "Not a pure nutrition marker."
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "iron_deficiency_without_anemia_01",
+      "chain": "low_ferritin_or_low_TSAT + fatigue + normal_Hb -> iron_deficiency_without_anemia_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "ferritin",
+        "TSAT",
+        "Hb",
+        "CRP/AGP",
+        "fatigue"
+      ],
+      "notes": "Biochemically plausible and clinically relevant; fatigue link should be outcome-timed when possible."
+    },
+    {
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_02",
+      "chain": "low_Hb + low_ferritin/TSAT + low_MCV/high_RDW -> iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CBC",
+        "ferritin",
+        "TSAT",
+        "MCV",
+        "RDW"
+      ],
+      "notes": "Moves from nutrient deficiency to oxygen-delivery limitation only with anemia/performance context."
+    },
+    {
+      "chain_id": "functional_B12_deficiency_03",
+      "chain": "borderline_B12 + high_MMA/homocysteine + cognitive_symptoms -> functional_B12_deficiency_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "B12",
+        "MMA",
+        "homocysteine",
+        "renal_function",
+        "symptoms"
+      ],
+      "notes": "MMA/homocysteine improve interpretation beyond serum B12."
+    },
+    {
+      "chain_id": "bone_mineral_risk_04",
+      "chain": "low_25OH_D + high_PTH + urinary_calcium/bone_turnover + microgravity -> bone_mineral_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "25OH_D",
+        "PTH",
+        "calcium/phosphate",
+        "urinary_calcium",
+        "bone_turnover",
+        "microgravity_context"
+      ],
+      "notes": "Astronaut-relevant but requires bone markers; not a single-marker inference."
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Vitamin D deficiency alone explains fatigue or brain fog.",
+      "reason": "Evidence requires context and fatigue/cognition links are not specific; vitamin D should be interpreted with PTH/calcium/bone and clinical context.",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Serum B12 alone is sufficient to diagnose functional B12 deficiency.",
+      "reason": "Functional deficiency may require MMA/homocysteine; serum B12 can misclassify.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Albumin/prealbumin are pure nutrition markers.",
+      "reason": "They are strongly affected by inflammation, illness, fluid shifts, liver and kidney status.",
+      "recommendation": "exclude"
+    }
+  ],
+  "research_gaps": [
+    "More same-participant longitudinal studies are needed linking nutrient markers to timed fatigue, cognition, mood, exercise performance, and sleep outcomes.",
+    "Astronaut/spaceflight-specific validation is needed for vitamin D/PTH/urinary calcium/bone-turnover chains under microgravity.",
+    "Trace mineral markers need better cross-modal validation with immune function and symptoms."
+  ],
+  "summary": {
+    "most_reliable_nutrient_markers": [
+      "Ferritin when adjusted for inflammation and paired with TSAT/sTfR",
+      "sTfR/log ferritin index for iron deficiency vs anemia of chronic disease",
+      "MMA/homocysteine for functional B12 context",
+      "25OH vitamin D with PTH/calcium/bone markers for bone-mineral context"
+    ],
+    "most_context_dependent_markers": [
+      "Ferritin",
+      "Albumin/prealbumin",
+      "Vitamin D for fatigue/cognition claims",
+      "Serum magnesium",
+      "Trace minerals"
+    ],
+    "highest_value_cross_modal_links": [
+      "Ferritin/TSAT + CRP/AGP + CBC",
+      "B12 + MMA/homocysteine + CBC/cognitive symptoms",
+      "25OH vitamin D + PTH + urine calcium + bone turnover + microgravity",
+      "Albumin/prealbumin + CRP + urine protein/liver/kidney markers"
+    ],
+    "overall_assessment": "Blood nutrient biomarkers provide high-value interpretation for iron deficiency/anemia, functional B-vitamin status, bone-mineral risk, and protein-nutrition/inflammation states, but most nutrient-to-fatigue/cognition links require cross-modal context and should not be inferred from isolated abnormalities."
+  }
+}

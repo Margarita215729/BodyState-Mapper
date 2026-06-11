@@ -1,0 +1,34 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol",
+    "series_name": "Final All-to-All Inference Matrix, Guardrails, and Validation Protocol",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "partial_usable_guardrail_scaffold_but_incomplete_matrix",
+  "core_interpretation": "The file captures the final safety philosophy and validation requirements, but the all-to-all matrix and validation protocol are incomplete and need a manual synthesis pass.",
+  "usable_elements": [
+    "source inventory concept",
+    "core guardrails G1-G10",
+    "validation philosophy: external validation, calibration, missing data handling, explainability, traceability"
+  ],
+  "missing_elements": [
+    "complete source_tree_inventory for 001-035",
+    "full all-to-all matrix",
+    "full validation_protocol fields",
+    "confidence scoring implementation",
+    "next-measurement recommendation engine"
+  ],
+  "critical_guardrails": [
+    "unknown_is_not_negative_evidence",
+    "single_marker_never_equals_mechanism",
+    "symptom_report_never_equals_mechanism",
+    "context_override_before_mechanism",
+    "medication_timing_first",
+    "environmental_exposure_separate_from_physiologic_effect",
+    "group_reference_separate_from_individual_baseline",
+    "within_person_deviation_priority",
+    "temporal_lag_required_for_causality",
+    "objective_performance_separate_from_subjective_symptom"
+  ],
+  "recommendation": "Use as final validation/guardrail scaffold, then build complete v1.0 package by merging cleaned trees 001-035 plus manual all-to-all synthesis."
+}

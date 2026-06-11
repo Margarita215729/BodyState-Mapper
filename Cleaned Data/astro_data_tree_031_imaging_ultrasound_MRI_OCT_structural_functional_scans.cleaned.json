@@ -1,0 +1,48 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans",
+    "series_name": "Imaging Integration Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable_but_generic",
+  "core_interpretation": "Imaging is a structural/functional integration layer. Imaging findings require physiological, clinical, protocol and outcome context; they should not be used alone to infer symptoms or mechanisms.",
+  "high_value_chains": [
+    {
+      "chain_id": "SANS_structural_branch",
+      "chain": "OCT_RNFL_change + cephalad_fluid_shift + visual_change -> SANS_structural_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "cardiovascular_deconditioning_branch",
+      "chain": "echo_reduced_LV_volume + reduced_plasma_volume + orthostatic_intolerance -> cardiovascular_deconditioning_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "unloading_muscle_loss_branch",
+      "chain": "muscle_ultrasound_thickness_loss + strength_loss + low_activity -> unloading_muscle_loss_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "unloading_bone_loss_branch",
+      "chain": "DXA_BMD_loss + increased_CTX + microgravity -> unloading_bone_loss_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "ICP_proxy_branch",
+      "chain": "ONSD_ultrasound_abnormality + fluid_shift/HDT + visual_or_headache_context -> ICP_proxy_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer disease from adaptive spaceflight remodeling alone.",
+    "Do not infer symptoms from imaging abnormalities without functional outcome.",
+    "Do not infer absence of disease from normal imaging alone.",
+    "Do not compare imaging across devices/protocols without calibration.",
+    "Do not use imaging as a standalone mechanism layer."
+  ],
+  "research_gaps": [
+    "Needs stronger astronaut-specific imaging integration.",
+    "Sparse longitudinal studies linking advanced imaging markers to operational outcomes.",
+    "Need harmonization across ONSD, muscle, bone and AI imaging pipelines."
+  ]
+}

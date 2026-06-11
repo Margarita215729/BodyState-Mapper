@@ -1,0 +1,100 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_R002_pain_headache_migraine_injury_wound_procedure_performance_repair",
+    "series_name": "Pain, Headache, Migraine, Injury, Wound, Procedure Recovery, and Pain-Limited Performance Repair Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "status": "cleaned_strong_context_override"
+  },
+  "core_interpretation": "Pain/headache/injury/procedure signals are major context overrides for fatigue, sleep disruption, cognitive complaints, activity reduction, functional testing, and medication risk.",
+  "measured_domains": [
+    "pain intensity/duration/interference",
+    "headache/migraine phenotype",
+    "injury/wound/procedure recovery",
+    "pain-sleep-fatigue cognition links",
+    "analgesic context",
+    "pain-limited performance"
+  ],
+  "high_value_chains": [
+    {
+      "chain_id": "pain_sleep_fatigue_branch",
+      "chain": "high_pain + sleep_fragmentation + next_day_fatigue -> pain_sleep_fatigue_branch",
+      "confidence": "high",
+      "required_sources": [
+        "pain marker",
+        "sleep measure",
+        "fatigue outcome"
+      ]
+    },
+    {
+      "chain_id": "migraine_phenotype_branch",
+      "chain": "headache + photophobia/phonophobia/nausea + episodic_pattern -> migraine_phenotype_branch",
+      "confidence": "high",
+      "required_sources": [
+        "headache marker",
+        "migraine symptoms",
+        "episodic pattern"
+      ]
+    },
+    {
+      "chain_id": "injury_context_override_branch",
+      "chain": "pain_limited_strength_test + injury_report -> injury_context_override_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "functional test",
+        "injury report"
+      ]
+    },
+    {
+      "chain_id": "wound_infection_hypothesis",
+      "chain": "wound_redness/swelling + fever + high_WBC/CRP -> wound_infection_hypothesis",
+      "confidence": "moderate-high",
+      "required_sources": [
+        "wound assessment",
+        "temperature",
+        "CBC/CRP"
+      ]
+    },
+    {
+      "chain_id": "medication_respiratory_risk_context_branch",
+      "chain": "post_procedure_pain + opioid_or_tramadol_use + low_RR/sedation -> medication_respiratory_risk_context_branch",
+      "confidence": "high",
+      "required_sources": [
+        "pain/procedure log",
+        "medication log",
+        "RR/sedation/O2"
+      ]
+    },
+    {
+      "chain_id": "pain_perception_performance_limiter_branch",
+      "chain": "high_pain + high_RPE + normal_CPET -> pain_perception_performance_limiter_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "pain",
+        "RPE",
+        "CPET"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer pain mechanism from pain severity alone.",
+    "Do not infer migraine from headache alone.",
+    "Do not infer SANS from headache/visual symptoms without ocular markers.",
+    "Do not infer muscle weakness from pain-limited strength testing.",
+    "Do not infer infection from wound discomfort alone.",
+    "Always check analgesic timing and side effects."
+  ],
+  "required_next_measurements": [
+    "pain location/duration/interference",
+    "migraine symptom diary",
+    "sleep objective/diary",
+    "medication timing",
+    "functional limitation notes",
+    "wound assessment",
+    "CBC/CRP if infection suspected"
+  ],
+  "research_gaps": [
+    "Sparse spaceflight-specific injury/pain management evidence.",
+    "Need validated functional tools that capture pain interference.",
+    "Need longitudinal links between pain, objective cognitive fatigability, and operational performance."
+  ]
+}

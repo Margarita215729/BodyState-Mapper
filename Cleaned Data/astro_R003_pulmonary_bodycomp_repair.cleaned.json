@@ -1,0 +1,100 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_R003_pulmonary_mechanics_PSG_EEG_sleep_body_composition_repair",
+    "series_name": "Pulmonary Mechanics, PSG/EEG Sleep Architecture, and Body Composition Repair Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "status": "cleaned_usable_but_sleep_PSG_body_composition_incomplete"
+  },
+  "core_interpretation": "Pulmonary mechanics are usable; body composition is partially covered; PSG/EEG sleep architecture is underfilled in the Consensus output and needs a targeted follow-up if PSG/EEG is required.",
+  "measured_domains": [
+    "spirometry and DLCO",
+    "respiratory muscle strength",
+    "body position effects on PFTs",
+    "body composition/lean mass context",
+    "PSG/EEG sleep architecture gap"
+  ],
+  "high_value_chains": [
+    {
+      "chain_id": "obstructive_pulmonary_limitation_branch",
+      "chain": "low_FEV1_FVC + dyspnea + exercise_limitation -> obstructive_pulmonary_limitation_branch",
+      "confidence": "high",
+      "required_sources": [
+        "spirometry",
+        "symptoms",
+        "exercise test"
+      ]
+    },
+    {
+      "chain_id": "restrictive_pulmonary_mechanics_branch",
+      "chain": "low_FVC_or_TLC + dyspnea + normal_ETCO2 -> restrictive_pulmonary_mechanics_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "spirometry",
+        "lung volumes",
+        "ETCO2/symptoms"
+      ]
+    },
+    {
+      "chain_id": "diffusion_gas_exchange_limitation_branch",
+      "chain": "low_DLCO + exercise_desaturation + dyspnea -> diffusion_gas_exchange_limitation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "DLCO",
+        "exercise SpO2",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "chain": "normal_spirometry + dyspnea + low_ETCO2 -> dysfunctional_breathing_hypocapnia_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "spirometry",
+        "ETCO2",
+        "dyspnea context"
+      ]
+    },
+    {
+      "chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "chain": "low_lean_mass + low_strength + low_activity -> deconditioning_or_sarcopenia_context_branch",
+      "confidence": "high",
+      "required_sources": [
+        "DXA/BIA",
+        "strength test",
+        "activity log"
+      ]
+    },
+    {
+      "chain_id": "body_recomposition_hidden_risk_branch",
+      "chain": "normal_body_mass + muscle_loss + fat_gain -> body_recomposition_hidden_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "body composition",
+        "body mass trend"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer pulmonary disease from dyspnea alone.",
+    "Do not infer gas exchange limitation from spirometry alone.",
+    "Do not infer sleep architecture from consumer wearable staging alone.",
+    "Do not infer sleep recovery from total sleep time alone.",
+    "Do not infer metabolic risk from BMI alone.",
+    "Do not infer muscle function from lean mass alone."
+  ],
+  "required_next_measurements": [
+    "DLCO",
+    "lung volumes/TLC",
+    "CPET",
+    "ETCO2",
+    "exercise SpO2",
+    "DXA/BIA body composition",
+    "direct strength testing",
+    "PSG/EEG markers if sleep architecture is needed"
+  ],
+  "research_gaps": [
+    "Consensus output did not adequately populate PSG/EEG sleep architecture entities.",
+    "Sparse astronaut validation for pulmonary mechanics and body composition.",
+    "Need harmonized lung function reference values and cross-modal links to cognition/fatigue."
+  ]
+}

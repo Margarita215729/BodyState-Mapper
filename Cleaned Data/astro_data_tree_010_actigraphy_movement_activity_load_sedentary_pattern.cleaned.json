@@ -1,0 +1,284 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern",
+    "series_name": "Actigraphy and Movement Variation Tree: Activity Load, Sedentary Pattern, Deconditioning, Fatigue, Recovery, and Cognition",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "status": "usable_with_limitations"
+  },
+  "data_source": {
+    "source_id": "actigraphy_movement_activity",
+    "source_category": "wearable_activity_behavioral_physiology",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "continuous_monitoring",
+      "symptom_triggered",
+      "exercise_protocol",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "step_count_total_activity_counts",
+      "entity_name": "Step count and total activity counts",
+      "measurement_type": "activity_marker|movement_pattern_marker",
+      "sample_or_sensor": "actigraphy|accelerometer|wearable",
+      "result_variations": [
+        {
+          "variation_id": "decreased_step_count_or_activity_counts",
+          "result_pattern": "Below population/personal norm or declining trend over time",
+          "direction": "decreased|baseline_deviation|patterned",
+          "standalone_interpretation": [
+            "Objective reduction in movement volume; may reflect inactivity, deconditioning, illness, injury, mood, confinement, or mission constraints."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "age",
+            "health status",
+            "mission phase",
+            "injury/pain",
+            "exercise schedule",
+            "CPET/VO2",
+            "muscle strength",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CPET",
+              "other_entity": "VO2max/VO2peak",
+              "combined_meaning": "Low activity plus low VO2 supports a deconditioning branch more than fatigue alone.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "muscle_function",
+              "other_entity": "strength_or_mobility_decline",
+              "combined_meaning": "Low activity plus strength decline supports functional deconditioning.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "deconditioning_branch",
+            "illness_or_injury_related_inactivity",
+            "mission_constraint_activity_reduction"
+          ],
+          "candidate_chains": [
+            "low_activity + low_VO2 + muscle_strength_decline -> deconditioning_branch"
+          ],
+          "guardrails": [
+            "Do not infer fatigue from low activity alone.",
+            "Do not compare Earth step count with microgravity movement without mission context."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "sedentary_time_and_bouts",
+      "entity_name": "Sedentary time and sedentary bout duration",
+      "measurement_type": "sedentary_marker|behavioral_pattern_marker",
+      "sample_or_sensor": "actigraphy|accelerometer|wearable",
+      "result_variations": [
+        {
+          "variation_id": "high_sedentary_time",
+          "result_pattern": "High total sedentary time and/or prolonged sedentary bouts",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "Behavioral inactivity pattern associated with adverse health outcomes in pooled accelerometry research."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep duration",
+            "mission schedule",
+            "injury/pain",
+            "environment constraints",
+            "MVPA",
+            "muscle strength",
+            "mood"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "sleep_duration",
+              "combined_meaning": "High sedentary time with normal sleep points toward behavioral inactivity rather than sleep extension.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "mood",
+              "other_entity": "depressive_symptoms",
+              "combined_meaning": "Sedentary pattern plus mood symptoms may reflect behavioral low-recovery cluster but is not diagnostic.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "behavioral_inactivity_branch",
+            "low_recovery_behavioral_cluster"
+          ],
+          "candidate_chains": [
+            "high_sedentary_time + poor_sleep + mood_worsening -> low_recovery_behavioral_cluster"
+          ],
+          "guardrails": [
+            "Separate sedentary behavior from sleep.",
+            "Do not infer deconditioning from sedentary time alone."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "activity_fragmentation_rest_activity_rhythm",
+      "entity_name": "Activity fragmentation and rest-activity rhythm",
+      "measurement_type": "rest_activity_marker|recovery_marker",
+      "sample_or_sensor": "actigraphy|accelerometer",
+      "result_variations": [
+        {
+          "variation_id": "fragmented_irregular_rest_activity",
+          "result_pattern": "High intradaily variability, low interdaily stability, low relative amplitude, fragmented activity",
+          "direction": "fragmented|irregular|baseline_deviation",
+          "standalone_interpretation": [
+            "Disrupted rest-activity organization; can occur with aging, mood disorders, cancer/fatigue states, sleep disruption, or environmental schedule constraints."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep fragmentation",
+            "light exposure",
+            "mission schedule",
+            "mood",
+            "fatigue",
+            "HRV/RHR"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "fragmentation/WASO",
+              "combined_meaning": "Fragmented activity plus fragmented sleep supports disrupted rest-activity recovery branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "autonomic",
+              "other_entity": "low_HRV/elevated_RHR",
+              "combined_meaning": "Rest-activity disruption plus low HRV suggests low recovery but is not mechanism-specific.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "disrupted_rest_activity_recovery_branch",
+            "circadian_behavioral_disorganization"
+          ],
+          "candidate_chains": [
+            "fragmented_activity + fragmented_sleep + low_HRV -> disrupted_rest_activity_recovery_branch"
+          ],
+          "guardrails": [
+            "Activity fragmentation is not specific to fatigue.",
+            "Rest-activity rhythm is influenced by schedule/environment, not only internal circadian state."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "post_exertional_activity_drop",
+      "entity_name": "Post-exertional activity drop",
+      "measurement_type": "fatigue_marker|recovery_marker|exercise_load_marker",
+      "sample_or_sensor": "actigraphy|exercise_log|symptom_log",
+      "result_variations": [
+        {
+          "variation_id": "next_day_activity_drop_after_load",
+          "result_pattern": "High exertion/load followed by delayed activity reduction and symptom worsening",
+          "direction": "post_exertional|delayed|decreased",
+          "standalone_interpretation": [
+            "Candidate PEM/activity-pacing signature only when temporally linked to symptom worsening."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "exercise load",
+            "timed fatigue/PEM symptoms",
+            "sleep",
+            "HRV/RHR",
+            "CPET/metabolic data",
+            "pain/injury"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_log",
+              "other_entity": "next_day_fatigue/brain_fog/PEM",
+              "combined_meaning": "Delayed symptom worsening plus activity drop supports post-exertional malaise activity branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "blood_metabolic",
+              "other_entity": "lactate/acylcarnitines/CPET",
+              "combined_meaning": "Activity drop plus metabolic strain markers strengthens exertional intolerance branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "post_exertional_malaise_activity_branch",
+            "activity_pacing_limitation"
+          ],
+          "candidate_chains": [
+            "high_exercise_load + next_day_activity_drop + fatigue_symptom_worsening -> post_exertional_malaise_activity_branch"
+          ],
+          "guardrails": [
+            "Do not infer PEM without delayed symptom/activity pattern.",
+            "One low-activity day is not sufficient."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Wearable energy expenditure estimates are accurate proxies for true energy expenditure.",
+      "reason": "Systematic reviews show large heterogeneity and only moderate correlation with reference methods.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Activity fragmentation always indicates fatigue.",
+      "reason": "Fragmentation can reflect aging, mood disorder, disease, schedule, or environmental factors.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "research_gaps": [
+    "Few studies link actigraphy-derived post-exertional drops to timed symptom worsening/PEM.",
+    "Limited cross-modal integration of actigraphy with physiological and neurobehavioral outcomes in astronaut-like environments.",
+    "Data cleaning and preprocessing protocols vary strongly across devices/studies."
+  ],
+  "summary": {
+    "most_reliable_activity_markers": [
+      "Step count with protocol context",
+      "Total activity counts",
+      "MVPA",
+      "Sedentary time"
+    ],
+    "most_context_dependent_markers": [
+      "Energy expenditure proxy",
+      "Activity fragmentation metrics",
+      "Gait speed/mobility proxies",
+      "Microgravity step count"
+    ],
+    "overall_assessment": "Actigraphy provides robust objective movement and sedentary-pattern data, but interpretation requires timing, mission context, symptoms, CPET/strength, sleep, and autonomic data."
+  }
+}

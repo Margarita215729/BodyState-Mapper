@@ -1,0 +1,779 @@
+{
+  "package": "Cleaned_Data_Corrected",
+  "generated_at": "2026-06-11T21:56:39",
+  "corrections_applied": [
+    "removed_macos_metadata",
+    "removed_duplicate_astro_002_short_alias",
+    "repaired_autonomic_stress_axis_json_from_fixed_version",
+    "added_inventory_and_corrected_readme"
+  ],
+  "files": [
+    {
+      "file_name": "README.md",
+      "role": "documentation",
+      "size_bytes": 12395
+    },
+    {
+      "file_name": "astro_R002_pain_injury_repair.cleaned.json",
+      "role": "repair_tree",
+      "size_bytes": 3609,
+      "json_valid": true,
+      "series_id": "astro_data_tree_R002_pain_headache_migraine_injury_wound_procedure_performance_repair",
+      "series_name": "Pain, Headache, Migraine, Injury, Wound, Procedure Recovery, and Pain-Limited Performance Repair Tree"
+    },
+    {
+      "file_name": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "role": "repair_tree",
+      "size_bytes": 3605,
+      "json_valid": true,
+      "series_id": "astro_data_tree_R003_pulmonary_mechanics_PSG_EEG_sleep_body_composition_repair",
+      "series_name": "Pulmonary Mechanics, PSG/EEG Sleep Architecture, and Body Composition Repair Tree"
+    },
+    {
+      "file_name": "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json",
+      "role": "repair_tree",
+      "size_bytes": 23837,
+      "json_valid": true,
+      "series_id": "astro_data_tree_R004_PSG_EEG_sleep_architecture_sleep_disordered_breathing_repair",
+      "series_name": "PSG/EEG Sleep Architecture Repair Tree: Sleep Stages, Slow-Wave Sleep, REM, Arousal, Sleep-Disordered Breathing, Fatigue, Cognition, Mood, and Wearable Discrepancy"
+    },
+    {
+      "file_name": "astro_data_tree_001_003_completion_notes.md",
+      "role": "documentation",
+      "size_bytes": 424
+    },
+    {
+      "file_name": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 16217,
+      "json_valid": true,
+      "series_id": "astro_data_tree_001_feces_stool_microbiome_GI_markers_v2",
+      "series_name": "Feces/Stool Data Variation Tree v2: Clinical Stool Markers + Microbiome/Metabolomics"
+    },
+    {
+      "file_name": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "role": "repair_tree_canonical_for_missing_002",
+      "size_bytes": 4052,
+      "json_valid": true,
+      "series_id": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair",
+      "series_name": "Blood Systemic State Repair Tree"
+    },
+    {
+      "file_name": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 15208,
+      "json_valid": true,
+      "series_id": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers_v2",
+      "series_name": "Urine Data Variation Tree v2: Hydration/Renal + Symptoms/Hormone/Circadian/Oxidative/Nitrogen Completion"
+    },
+    {
+      "file_name": "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 23756,
+      "json_valid": true,
+      "series_id": "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals",
+      "series_name": "Blood Nutrient Biomarker Variation Tree: Iron, B12, Folate, Vitamin D, Minerals, Fatigue, Cognition, and Mood"
+    },
+    {
+      "file_name": "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 7315,
+      "json_valid": true,
+      "series_id": "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion",
+      "series_name": "Blood Metabolic Completion Tree: Ketones, Lactate, Pyruvate, CPET, Metabolic Flexibility, Exercise Intolerance, PEM"
+    },
+    {
+      "file_name": "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 9900,
+      "json_valid": true,
+      "series_id": "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones",
+      "series_name": "Blood Metabolic Biomarker Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 9926,
+      "json_valid": true,
+      "series_id": "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones",
+      "series_name": "Blood Endocrine Biomarker Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3994,
+      "json_valid": true,
+      "series_id": "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress",
+      "series_name": "Blood Coagulation, Vascular, Endothelial, and Oxidative Stress Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 5850,
+      "json_valid": true,
+      "series_id": "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers",
+      "series_name": "Saliva Biomarker Variation Tree: Cortisol Rhythm, Stress, Immune Markers"
+    },
+    {
+      "file_name": "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 6089,
+      "json_valid": true,
+      "series_id": "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity",
+      "series_name": "Saliva Variation Tree: Oral Microbiome, Viral Reactivation, Mucosal Immunity"
+    },
+    {
+      "file_name": "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 11483,
+      "json_valid": true,
+      "series_id": "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern",
+      "series_name": "Actigraphy and Movement Variation Tree: Activity Load, Sedentary Pattern, Deconditioning, Fatigue, Recovery, and Cognition"
+    },
+    {
+      "file_name": "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 8767,
+      "json_valid": true,
+      "series_id": "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm",
+      "series_name": "Light Exposure and Circadian Phase Variation Tree: Sleep-Wake Rhythm, Melatonin, Alertness, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 9793,
+      "json_valid": true,
+      "series_id": "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery",
+      "series_name": "Sleep Variation Tree: Duration, Quality, Fragmentation, Architecture, Recovery, Fatigue, Mood, Cognition, and Autonomic State"
+    },
+    {
+      "file_name": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3450,
+      "json_valid": true,
+      "series_id": "astro_data_tree_013_heart_rate_HRV_autonomic_balance",
+      "series_name": "Heart Rate and HRV Variation Tree:Autonomic Balance,Stress,Recovery,Fatigue,Sleep,Cognition,and Orthostatic Physiology"
+    },
+    {
+      "file_name": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3402,
+      "json_valid": true,
+      "series_id": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation",
+      "series_name": "Blood Pressure and Orthostatic Physiology Variation Tree:Volume Regulation,Dizziness,Brain Fog,Fatigue,and Spaceflight Deconditioning"
+    },
+    {
+      "file_name": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3651,
+      "json_valid": true,
+      "series_id": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound",
+      "series_name": "Cardiovascular Structure and Vascular Function Variation Tree:Echo,Ultrasound,Stiffness,Endothelial Function,Orthostatic Tolerance,Fatigue,and Spaceflight Risk"
+    },
+    {
+      "file_name": "astro_data_tree_016_respiration_SpO2_CO2_ventilation_gas_exchange.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 4090,
+      "json_valid": true,
+      "series_id": "astro_data_tree_016_respiration_SpO2_CO2_ventilation_gas_exchange",
+      "series_name": "Respiration and Gas Exchange Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_017_temperature_thermoregulation_heat_strain_circadian_temperature.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3931,
+      "json_valid": true,
+      "series_id": "astro_data_tree_017_temperature_thermoregulation_heat_strain_circadian_temperature",
+      "series_name": "Temperature and Thermoregulation Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_018_exercise_physiology_VO2_workload_HR_recovery_functional_capacity.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 4304,
+      "json_valid": true,
+      "series_id": "astro_data_tree_018_exercise_physiology_VO2_workload_HR_recovery_functional_capacity",
+      "series_name": "Exercise Physiology Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_019_cognition_reaction_time_attention_working_memory_executive_function.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 6146,
+      "json_valid": true,
+      "series_id": "astro_data_tree_019_cognition_reaction_time_attention_working_memory_executive_function",
+      "series_name": "Cognition Variation Tree: Reaction Time, Attention, Working Memory, Executive Function, Brain Fog, Fatigue, Sleep, Circadian, and Spaceflight Performance"
+    },
+    {
+      "file_name": "astro_data_tree_020_fatigue_sleepiness_mental_fatigue_objective_fatigability_PEM.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 6141,
+      "json_valid": true,
+      "series_id": "astro_data_tree_020_fatigue_sleepiness_mental_fatigue_objective_fatigability_PEM",
+      "series_name": "Fatigue Variation Tree: Subjective Fatigue, Sleepiness, Mental Fatigue, Objective Fatigability, PEM, Recovery Failure, and Differential Inference"
+    },
+    {
+      "file_name": "astro_data_tree_021_mood_stress_anxiety_irritability_anhedonia_behavioral_health.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 6802,
+      "json_valid": true,
+      "series_id": "astro_data_tree_021_mood_stress_anxiety_irritability_anhedonia_behavioral_health",
+      "series_name": "Mood and Stress Variation Tree: Anxiety-like Physiology, Irritability, Anhedonia, Stress, Behavioral Health, Sleep, Fatigue, Cognition, and Spaceflight Isolation"
+    },
+    {
+      "file_name": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2143,
+      "json_valid": true,
+      "series_id": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication",
+      "series_name": "Team Process and Social Stress Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2067,
+      "json_valid": true,
+      "series_id": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation",
+      "series_name": "Sensorimotor and Vestibular Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2146,
+      "json_valid": true,
+      "series_id": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response",
+      "series_name": "Muscle and Functional Mobility Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2837,
+      "json_valid": true,
+      "series_id": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects",
+      "series_name": "Bone and Mineral Metabolism Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2847,
+      "json_valid": true,
+      "series_id": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure",
+      "series_name": "Ocular and SANS Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2992,
+      "json_valid": true,
+      "series_id": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality",
+      "series_name": "Habitat Environment Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2413,
+      "json_valid": true,
+      "series_id": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links",
+      "series_name": "Radiation Exposure Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2603,
+      "json_valid": true,
+      "series_id": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system",
+      "series_name": "Nutrition and Hydration Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 3089,
+      "json_valid": true,
+      "series_id": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing",
+      "series_name": "Medication and Countermeasure Context Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2177,
+      "json_valid": true,
+      "series_id": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans",
+      "series_name": "Imaging Integration Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2186,
+      "json_valid": true,
+      "series_id": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays",
+      "series_name": "Immune Function Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2422,
+      "json_valid": true,
+      "series_id": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology",
+      "series_name": "Microbiome and Microbial Ecology Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 2262,
+      "json_valid": true,
+      "series_id": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions",
+      "series_name": "Mission Phase and Temporal Dynamics Variation Tree"
+    },
+    {
+      "file_name": "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 1830,
+      "json_valid": true,
+      "series_id": "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix",
+      "series_name": "Cross-Modal Hidden-State Candidate Matrix"
+    },
+    {
+      "file_name": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "role": "primary_astronaut_source_tree",
+      "size_bytes": 1663,
+      "json_valid": true,
+      "series_id": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol",
+      "series_name": "Final All-to-All Inference Matrix, Guardrails, and Validation Protocol"
+    },
+    {
+      "file_name": "autonomic_stress_axis.json",
+      "role": "repaired_legacy_support_module",
+      "size_bytes": 22253,
+      "json_valid": true,
+      "series_id": "series_001_autonomic_stress_axis",
+      "series_name": "Autonomic Physiology, Stress Axis, and Neurobehavior"
+    },
+    {
+      "file_name": "autonomic_stress_axis_curated.json",
+      "role": "curated_support_module",
+      "size_bytes": 28863,
+      "json_valid": true,
+      "series_id": "series_001_autonomic_stress_axis",
+      "series_name": "Autonomic Physiology, Stress Axis, and Neurobehavior"
+    },
+    {
+      "file_name": "autonomic_stress_axis_fixed.json",
+      "role": "fixed_legacy_support_module",
+      "size_bytes": 22253,
+      "json_valid": true,
+      "series_id": "series_001_autonomic_stress_axis",
+      "series_name": "Autonomic Physiology, Stress Axis, and Neurobehavior"
+    },
+    {
+      "file_name": "gut_immune_microbiome_brain_axis_curated.json",
+      "role": "curated_support_module",
+      "size_bytes": 52015,
+      "json_valid": true,
+      "series_id": "series_003_gut_immune_microbiome_brain_axis",
+      "series_name": "Gut, Immune, Microbiome, and Brain Axis"
+    },
+    {
+      "file_name": "metabolic_glucose_insulin_lactate_cognition_partial_curated.json",
+      "role": "curated_support_module",
+      "size_bytes": 24222,
+      "json_valid": true,
+      "series_id": "series_004_metabolic_glucose_insulin_lactate_cognition",
+      "series_name": "Metabolic State, Glucose, Insulin, Lactate, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 21077,
+      "json_valid": true,
+      "series_id": "series_004b_postprandial_fasting_ketones_fatigue_cognition",
+      "series_name": "Postprandial State, Fasting, Ketones, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 27291,
+      "json_valid": true,
+      "series_id": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition",
+      "series_name": "Postprandial Glucose Excursions, Brain Fog, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 38826,
+      "json_valid": true,
+      "series_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition",
+      "series_name": "Sleep, Circadian State, Autonomic-Metabolic-Inflammatory Changes, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 32004,
+      "json_valid": true,
+      "series_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition",
+      "series_name": "Autonomic State, HRV, Resting Heart Rate, Fatigue, Stress, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 19946,
+      "json_valid": true,
+      "series_id": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition",
+      "series_name": "HPA Axis, Cortisol, Stress Physiology, Fatigue, Anxiety, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 26700,
+      "json_valid": true,
+      "series_id": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition",
+      "series_name": "Inflammation, Cytokines, Sickness Behavior, Fatigue, Mood, Motivation, and Cognition"
+    },
+    {
+      "file_name": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 15669,
+      "json_valid": true,
+      "series_id": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition",
+      "series_name": "Pain, Nociception, Central Sensitization, Fatigue, Mood, Sleep, Autonomic State, and Cognition"
+    },
+    {
+      "file_name": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 18726,
+      "json_valid": true,
+      "series_id": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition",
+      "series_name": "Respiration, CO2, Oxygenation, Panic, Dizziness, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 14090,
+      "json_valid": true,
+      "series_id": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition",
+      "series_name": "Hydration, Electrolytes, Blood Pressure, Orthostatic Intolerance, Dizziness, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 11494,
+      "json_valid": true,
+      "series_id": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition",
+      "series_name": "Physical Activity, Exercise, Lactate, Recovery, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 7273,
+      "json_valid": true,
+      "series_id": "series_013_thyroid_basal_metabolism_fatigue_mood_cognition",
+      "series_name": "Thyroid Function, Basal Metabolism, Thermoregulation, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 25473,
+      "json_valid": true,
+      "series_id": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition",
+      "series_name": "Nutritional Deficiency Markers, Fatigue, Mood, Cognition, Dizziness, and Recovery"
+    },
+    {
+      "file_name": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 16354,
+      "json_valid": true,
+      "series_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition",
+      "series_name": "Sex Hormones, Menstrual Cycle, Reproductive Endocrine State, Fatigue, Mood, Sleep, Pain, and Cognition"
+    },
+    {
+      "file_name": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 19048,
+      "json_valid": true,
+      "series_id": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition",
+      "series_name": "Gut-Brain Axis, GI Symptoms, Microbiome, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 32720,
+      "json_valid": true,
+      "series_id": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition",
+      "series_name": "Medication and Substance Effects on Fatigue,Mood,Sleep,Autonomic State,GI Symptoms,and Cognition"
+    },
+    {
+      "file_name": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 28715,
+      "json_valid": true,
+      "series_id": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition",
+      "series_name": "Environmental Exposures,Light,Noise,Temperature,Air Quality,Fatigue,Sleep,Mood,and Cognition"
+    },
+    {
+      "file_name": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 16850,
+      "json_valid": true,
+      "series_id": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition",
+      "series_name": "Headache,Migraine,Vestibular Symptoms,Fatigue,Brain Fog,Mood,Sleep,and Cognition"
+    },
+    {
+      "file_name": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 29981,
+      "json_valid": true,
+      "series_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog",
+      "series_name": "Post-Viral States, Long COVID, Immune Activation, Dysautonomia, Fatigue, Brain Fog, and Cognition"
+    },
+    {
+      "file_name": "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 12626,
+      "json_valid": true,
+      "series_id": "series_021_allostatic_load_recovery_failure_physiological_reserve",
+      "series_name": "Allostatic Load, Recovery Failure, Physiological Reserve, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 13699,
+      "json_valid": true,
+      "series_id": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog",
+      "series_name": "Cerebral Perfusion, CO2, Oxygenation, Orthostatic Regulation, Dizziness, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 17114,
+      "json_valid": true,
+      "series_id": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition",
+      "series_name": "Sickness Behavior, Neuroimmune Signaling, Fatigue, Motivation, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 16436,
+      "json_valid": true,
+      "series_id": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition",
+      "series_name": "Metabolic Flexibility, Mitochondrial Energy, Lactate, Exercise Intolerance, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 16481,
+      "json_valid": true,
+      "series_id": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety",
+      "series_name": "Interoception, Symptom Perception, Prediction Error, Fatigue, Anxiety, Dizziness, and Brain Fog"
+    },
+    {
+      "file_name": "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 3769,
+      "json_valid": true,
+      "series_id": "series_026_cognitive_load_mental_fatigue_attention_resource_depletion",
+      "series_name": "Cognitive Load, Mental Fatigue, Attention Resource Depletion, Brain Fog, and Performance"
+    },
+    {
+      "file_name": "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 3769,
+      "json_valid": true,
+      "series_id": "series_027_sensory_overload_central_sensitization_fatigue_cognition",
+      "series_name": "Sensory Overload, Central Sensitization, Sensory Gain, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 3655,
+      "json_valid": true,
+      "series_id": "series_028_endocrine_rhythm_integration_fatigue_mood_cognition",
+      "series_name": "Endocrine Rhythm Integration, Cortisol, Thyroid, Sex Hormones, Glucose, Fatigue, Mood, and Cognition"
+    },
+    {
+      "file_name": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 10958,
+      "json_valid": true,
+      "series_id": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition",
+      "series_name": "Sleep Architecture, Glymphatic Clearance, Memory Consolidation, Fatigue, and Cognition"
+    },
+    {
+      "file_name": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 10809,
+      "json_valid": true,
+      "series_id": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference",
+      "series_name": "Wearable Signal Reliability, HRV, Sleep, Temperature, Activity, and Health State Inference"
+    },
+    {
+      "file_name": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 11426,
+      "json_valid": true,
+      "series_id": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference",
+      "series_name": "Lab Marker Reliability, Biomarker Interpretation, and Fatigue/Mood/Cognition Inference"
+    },
+    {
+      "file_name": "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 1839,
+      "json_valid": true,
+      "series_id": "series_032_self_report_objective_performance_fatigue_brain_fog_inference",
+      "series_name": "Self-Report vs Objective Performance,Fatigue,Brain Fog,Sleepiness,and Functional Inference"
+    },
+    {
+      "file_name": "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 1750,
+      "json_valid": true,
+      "series_id": "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures",
+      "series_name": "Temporal Dynamics,Acute vs Delayed vs Chronic Signatures,Fatigue,Brain Fog,and Recovery"
+    },
+    {
+      "file_name": "series_034_individual_baseline_within_person_deviation_health_state_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 1858,
+      "json_valid": true,
+      "series_id": "series_034_individual_baseline_within_person_deviation_health_state_inference",
+      "series_name": "Individual Baseline Modeling,Within-Person Deviation,and Personalized Health State Inference"
+    },
+    {
+      "file_name": "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8084,
+      "json_valid": true,
+      "series_id": "series_035_causal_inference_confounding_uncertainty_health_graph",
+      "series_name": "Causal Inference, Confounding, Uncertainty, and Evidence Grading for Health State Graphs"
+    },
+    {
+      "file_name": "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8200,
+      "json_valid": true,
+      "series_id": "series_036_context_override_medication_environment_behavior_inference_rules",
+      "series_name": "Context Override Rules: Medication, Environment, Behavior, and Health State Inference"
+    },
+    {
+      "file_name": "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8469,
+      "json_valid": true,
+      "series_id": "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference",
+      "series_name": "Missing Data, Partial Observability, Uncertainty, and Sparse Multimodal Health Inference"
+    },
+    {
+      "file_name": "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 7762,
+      "json_valid": true,
+      "series_id": "series_038_uncertainty_scoring_confidence_calibration_health_state_inference",
+      "series_name": "Uncertainty Scoring,Confidence Calibration,and Health State Inference"
+    },
+    {
+      "file_name": "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 7869,
+      "json_valid": true,
+      "series_id": "series_039_evidence_grading_source_quality_graph_edge_promotion",
+      "series_name": "Evidence Grading,Source Quality,and Graph Edge Promotion Rules"
+    },
+    {
+      "file_name": "series_040_fatigue_phenotypes_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8679,
+      "json_valid": true,
+      "series_id": "series_040_fatigue_phenotypes_differential_inference",
+      "series_name": "Fatigue Phenotypes,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_041_brain_fog_phenotypes_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 12444,
+      "json_valid": true,
+      "series_id": "series_041_brain_fog_phenotypes_differential_inference",
+      "series_name": "Brain Fog Phenotypes,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_042_dizziness_phenotypes_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 11718,
+      "json_valid": true,
+      "series_id": "series_042_dizziness_phenotypes_differential_inference",
+      "series_name": "Dizziness Phenotypes,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 12692,
+      "json_valid": true,
+      "series_id": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine",
+      "series_name": "Anxiety-like Physiology,Panic,Dysautonomia,Medication,Metabolic,and Endocrine Differential Inference"
+    },
+    {
+      "file_name": "series_044_low_recovery_state_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 5903,
+      "json_valid": true,
+      "series_id": "series_044_low_recovery_state_differential_inference",
+      "series_name": "Low Recovery State,Recovery Failure,Readiness,Fatigue,Mood,and Cognition"
+    },
+    {
+      "file_name": "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 6080,
+      "json_valid": true,
+      "series_id": "series_045_mood_worsening_phenotypes_differential_inference",
+      "series_name": "Mood Worsening Phenotypes,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 6116,
+      "json_valid": true,
+      "series_id": "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference",
+      "series_name": "GI-Fatigue-Mood-Brain Fog Clusters,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8214,
+      "json_valid": true,
+      "series_id": "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference",
+      "series_name": "Headache/Migraine-Brain Fog-Dizziness-Fatigue Clusters,Differential Inference,and Mechanism-Specific Measurement"
+    },
+    {
+      "file_name": "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8756,
+      "json_valid": true,
+      "series_id": "series_048_metabolic_fatigue_clusters_differential_inference",
+      "series_name": "Metabolic Fatigue Clusters,Glucose Variability,Metabolic Flexibility,Exercise Intolerance,and Brain Fog"
+    },
+    {
+      "file_name": "series_049_multibranch_differential_inference_templates.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 8100,
+      "json_valid": true,
+      "series_id": "series_049_multibranch_differential_inference_templates",
+      "series_name": "Multi-Branch Differential Inference Templates for Symptoms,Phenotypes,Mechanisms,and Measurements"
+    },
+    {
+      "file_name": "series_050_final_graph_guardrails_validation_protocol.cleaned.json",
+      "role": "base_bodystate_scientific_series",
+      "size_bytes": 21663,
+      "json_valid": true,
+      "series_id": "series_050_final_graph_guardrails_validation_protocol",
+      "series_name": "Final Graph Guardrails,Validation Protocol,Traceability,Uncertainty,and Update Governance"
+    },
+    {
+      "file_name": "sleep_circadian_inflammation_cognition_curated.json",
+      "role": "curated_support_module",
+      "size_bytes": 63024,
+      "json_valid": true,
+      "series_id": "series_002_sleep_circadian_inflammation_cognition",
+      "series_name": "Sleep, Circadian Rhythm, Inflammation, and Cognition"
+    },
+    {
+      "file_name": "README_CORRECTED.md",
+      "role": "documentation",
+      "size_bytes": 1286
+    }
+  ]
+}

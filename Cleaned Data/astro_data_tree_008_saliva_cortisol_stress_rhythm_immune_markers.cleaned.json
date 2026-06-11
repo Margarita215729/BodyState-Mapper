@@ -1,0 +1,162 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers",
+    "series_name": "Saliva Biomarker Variation Tree: Cortisol Rhythm, Stress, Immune Markers",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "saliva_stress_immune",
+    "source_category": "biofluid_saliva_HPA_axis_autonomic_immune"
+  },
+  "measured_entities": [
+    {
+      "entity_id": "salivary_cortisol_rhythm",
+      "entity_name": "Salivary cortisol rhythm (CAR, diurnal slope, AUC)",
+      "measurement_type": "HPA_axis_marker|circadian_marker",
+      "sample_or_sensor": "saliva",
+      "result_variations": [
+        {
+          "variation_id": "flattened_diurnal_slope_or_blunted_CAR",
+          "result_pattern": "flattened slope or blunted cortisol awakening response",
+          "direction": "flattened|decreased|patterned",
+          "standalone_interpretation": [
+            "altered HPA/circadian regulation; context-dependent"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "awakening adherence",
+            "sleep timing",
+            "age",
+            "fatigue/mood/stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_actigraphy",
+              "other_entity": "sleep timing/quality",
+              "combined_meaning": "flattened slope/CAR + poor sleep + fatigue/mood symptoms supports HPA-circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "HPA_circadian_disruption_branch",
+            "HPA_reactivity_hypothesis"
+          ],
+          "candidate_chains": [
+            "flattened_diurnal_cortisol_slope + poor_sleep + fatigue/mood_worsening -> HPA_circadian_disruption_branch"
+          ],
+          "guardrails": [
+            "one saliva sample cannot infer HPA-axis disorder",
+            "total cortisol AUC rarely tracks fatigue strongly"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "salivary_alpha_amylase",
+      "entity_name": "Salivary alpha-amylase",
+      "measurement_type": "autonomic_marker|stress_marker",
+      "sample_or_sensor": "saliva",
+      "result_variations": [
+        {
+          "variation_id": "sAA_stress_reactivity",
+          "result_pattern": "rapid rise during/after psychosocial stress",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "sympathetic/adrenomedullary activation proxy"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "HR/HRV",
+            "stress task",
+            "cortisol",
+            "subjective stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cardiovascular",
+              "other_entity": "HR/HRV",
+              "combined_meaning": "sAA rise + tachycardia/low HRV supports sympathetic arousal branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sympathetic_arousal_branch"
+          ],
+          "candidate_chains": [
+            "high_alpha_amylase + tachycardia/low_HRV + anxiety_like_symptoms -> sympathetic_arousal_branch"
+          ],
+          "guardrails": [
+            "sAA is not HPA-axis cortisol",
+            "not interchangeable with catecholamines"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "salivary_sIgA_cytokines",
+      "entity_name": "sIgA and salivary cytokines",
+      "measurement_type": "immune_marker|inflammatory_marker",
+      "sample_or_sensor": "saliva",
+      "result_variations": [
+        {
+          "variation_id": "low_sIgA_or_high_salivary_IL6",
+          "result_pattern": "low sIgA with stress/infection; elevated IL-6/TNF/IL-1β with stress/sleep changes",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "mucosal immune vulnerability or local inflammatory activation"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "oral health",
+            "URTI logs",
+            "blood markers",
+            "sleep/stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "infection_logs",
+              "other_entity": "URTI symptoms",
+              "combined_meaning": "low sIgA + high stress/training load + URTI episodes supports mucosal immune suppression hypothesis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mucosal_immune_suppression_hypothesis",
+            "sleep_inflammation_link_branch"
+          ],
+          "candidate_chains": [
+            "low_sIgA + high_stress + infection_frequency -> mucosal_immune_suppression_hypothesis"
+          ],
+          "guardrails": [
+            "do not infer systemic inflammation from saliva cytokines alone"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "single salivary cortisol value is weak",
+    "collection timing/protocol is mandatory",
+    "saliva cytokines are confounded by oral health",
+    "saliva immune markers do not equal systemic immunity"
+  ]
+}

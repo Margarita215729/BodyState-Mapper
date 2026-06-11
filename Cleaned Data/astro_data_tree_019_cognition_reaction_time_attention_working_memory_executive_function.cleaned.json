@@ -1,0 +1,172 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_019_cognition_reaction_time_attention_working_memory_executive_function",
+    "series_name": "Cognition Variation Tree: Reaction Time, Attention, Working Memory, Executive Function, Brain Fog, Fatigue, Sleep, Circadian, and Spaceflight Performance",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "cognition_neurobehavioral_performance",
+    "source_category": "neurobehavioral_functional_performance",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "continuous_or_repeated_testing",
+      "sleep_loss_protocol",
+      "circadian_protocol",
+      "symptom_triggered",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "reaction_time_pvt",
+      "entity_name": "PVT Reaction Time & Lapses",
+      "measurement_type": "reaction_time_marker|attention_marker|processing_speed_marker|error_marker",
+      "sample_or_sensor": "PVT|digital_cognitive_test|tablet_task",
+      "key_variations": [
+        "slowed_reaction_time_increased_lapses",
+        "PVT_lapses_false_starts",
+        "baseline_deviation_or_state_dependent_slowing"
+      ],
+      "standalone_interpretation": [
+        "objective vigilance/alertness impairment"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "sleep duration/fragmentation",
+        "circadian phase",
+        "fatigue state",
+        "test timing",
+        "practice effects"
+      ],
+      "guardrails": [
+        "Do not infer mechanism from one poor test.",
+        "Separate reaction time slowing from attention lapses."
+      ]
+    },
+    {
+      "entity_id": "attention_working_memory_executive_processing",
+      "entity_name": "Sustained Attention, Working Memory, Executive Function, Processing Speed",
+      "measurement_type": "attention_marker|working_memory_marker|executive_function_marker|processing_speed_marker",
+      "sample_or_sensor": "digital_cognitive_test|neuropsychological_test",
+      "key_variations": [
+        "working_memory_accuracy_decline",
+        "processing_speed_slowing",
+        "executive_function_impairment",
+        "increased_error_rate"
+      ],
+      "standalone_interpretation": [
+        "domain-specific cognitive performance change"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "sleep/circadian state",
+        "mood/stress",
+        "inflammation/fatigue",
+        "medications",
+        "practice/learning effects"
+      ],
+      "guardrails": [
+        "Do not equate subjective brain fog with objective impairment.",
+        "Do not treat decision-making tasks as direct proxy for executive function."
+      ]
+    },
+    {
+      "entity_id": "subjective_brain_fog_cognitive_concern",
+      "entity_name": "Subjective Brain Fog / Cognitive Concern",
+      "measurement_type": "brain_fog_marker|subjective_cognition_marker",
+      "sample_or_sensor": "questionnaire|EMA|symptom_report",
+      "key_variations": [
+        "subjective_brain_fog_with_normal_tests",
+        "subjective_brain_fog_with_objective_decline"
+      ],
+      "standalone_interpretation": [
+        "symptom burden; objective significance uncertain"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "objective test battery",
+        "mood/anxiety",
+        "fatigue",
+        "sleep",
+        "test sensitivity"
+      ],
+      "guardrails": [
+        "Subjective complaints weakly predict objective impairment across populations."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "sleep_loss_alertness_impairment_branch",
+      "chain": "short_sleep + PVT_lapses + subjective_sleepiness -> sleep_loss_alertness_impairment_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PVT",
+        "sleep duration",
+        "subjective sleepiness"
+      ]
+    },
+    {
+      "chain_id": "circadian_performance_risk_branch",
+      "chain": "circadian_misalignment + reaction_time_slowing + operational_errors -> circadian_performance_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RT/accuracy",
+        "time-of-day/circadian phase",
+        "operational outcome"
+      ]
+    },
+    {
+      "chain_id": "symptom_perception_or_test_sensitivity_gap_branch",
+      "chain": "subjective_brain_fog + normal_objective_tests -> symptom_perception_or_test_sensitivity_gap_branch",
+      "confidence": "high",
+      "required_sources": [
+        "subjective report",
+        "objective test battery"
+      ]
+    },
+    {
+      "chain_id": "neuroimmune_cognitive_slowing_hypothesis",
+      "chain": "working_memory_decline + inflammation/sickness_behavior + fatigue -> neuroimmune_cognitive_slowing_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "working memory test",
+        "inflammatory/fatigue markers"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Subjective cognitive complaints reliably predict objective impairment.",
+      "reason": "Meta-analytic evidence shows weak association across populations.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Decision-making on IGT is a direct proxy for executive function.",
+      "reason": "Most studies find small or non-significant correlations.",
+      "recommendation": "exclude"
+    }
+  ],
+  "summary": {
+    "status": "usable",
+    "most_reliable_markers": [
+      "PVT reaction time/lapses",
+      "working memory accuracy/reaction time",
+      "processing speed"
+    ],
+    "most_context_dependent_markers": [
+      "subjective brain fog",
+      "sustained/selective attention",
+      "decision-making tasks"
+    ],
+    "overall_assessment": "Strong objective cognitive-performance layer; best for state-dependent alertness/performance when paired with sleep/circadian/physiology and practice-effect controls."
+  },
+  "schema_notes": {
+    "source_pdf": "PROMPT_019_cognition_reaction_time_attention.pdf",
+    "cleaned_by": "ChatGPT",
+    "version": "cleaned_v1"
+  }
+}

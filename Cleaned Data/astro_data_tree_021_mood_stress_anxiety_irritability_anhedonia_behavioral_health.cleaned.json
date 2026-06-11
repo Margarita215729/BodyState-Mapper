@@ -1,0 +1,208 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_021_mood_stress_anxiety_irritability_anhedonia_behavioral_health",
+    "series_name": "Mood and Stress Variation Tree: Anxiety-like Physiology, Irritability, Anhedonia, Stress, Behavioral Health, Sleep, Fatigue, Cognition, and Spaceflight Isolation",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "mood_stress_behavioral_health",
+    "source_category": "subjective_behavioral_neuropsychological_state",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "daily_report",
+      "EMA",
+      "team_context",
+      "symptom_triggered",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "depressed_mood_anhedonia_apathy",
+      "entity_name": "Depressed Mood, Anhedonia, Apathy",
+      "measurement_type": "mood_marker|anhedonia_marker|apathy_marker",
+      "sample_or_sensor": "questionnaire|EMA|interview|behavioral_task",
+      "key_variations": [
+        "persistent_depressed_mood_high_anhedonia",
+        "apathy_low_motivation",
+        "low_positive_affect"
+      ],
+      "standalone_interpretation": [
+        "mood disturbance risk; functional impairment context"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "sleep",
+        "activity",
+        "inflammation",
+        "fatigue",
+        "reward processing"
+      ],
+      "guardrails": [
+        "Separate anhedonia/apathy from fatigue.",
+        "Mood report is not psychiatric diagnosis."
+      ]
+    },
+    {
+      "entity_id": "anxiety_like_symptoms_panic_physiology",
+      "entity_name": "Anxiety-like Symptoms and Panic-like Physiology",
+      "measurement_type": "anxiety_marker|panic_like_marker",
+      "sample_or_sensor": "questionnaire|EMA|physiology",
+      "key_variations": [
+        "anxiety_like_symptoms_with_tachycardia_low_ETCO2",
+        "anxiety_like_symptoms_with_thyroid_pattern"
+      ],
+      "standalone_interpretation": [
+        "subjective anxiety or anxiety-like physiology; mechanism uncertain"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "ETCO2",
+        "HR/HRV",
+        "thyroid",
+        "medications",
+        "sleep"
+      ],
+      "guardrails": [
+        "Do not infer anxiety disorder from tachycardia/panic-like physiology alone."
+      ]
+    },
+    {
+      "entity_id": "stress_burnout_affect_variability",
+      "entity_name": "Perceived Stress, Burnout, Affect Variability",
+      "measurement_type": "stress_marker|burnout_marker|affect_variability_marker",
+      "sample_or_sensor": "PSS|POMS|PANAS|EMA|workload_report",
+      "key_variations": [
+        "high_perceived_stress",
+        "burnout_exhaustion",
+        "high_affect_variability"
+      ],
+      "standalone_interpretation": [
+        "subjective stress/behavioral health load"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "cortisol slope",
+        "HRV",
+        "inflammation",
+        "workload",
+        "sleep"
+      ],
+      "guardrails": [
+        "Do not infer biological stress from perceived stress alone."
+      ]
+    },
+    {
+      "entity_id": "social_isolation_team_conflict",
+      "entity_name": "Social Isolation, Team Conflict, Behavioral Withdrawal",
+      "measurement_type": "team_stress_marker|behavioral_health_marker",
+      "sample_or_sensor": "team_report|operational_log|EMA|interview",
+      "key_variations": [
+        "social_isolation_loneliness",
+        "team_conflict_mood_variability",
+        "behavioral_withdrawal"
+      ],
+      "standalone_interpretation": [
+        "team/mission behavioral risk context"
+      ],
+      "requires_context": true,
+      "context_needed": [
+        "team dynamics",
+        "mission phase",
+        "operational performance",
+        "sleep and workload"
+      ],
+      "guardrails": [
+        "Separate isolation/team conflict from individual psychopathology."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "hyperventilation_anxiety_like_branch",
+      "chain": "high_anxiety_like_symptoms + tachycardia + low_ETCO2 + normal_thyroid -> hyperventilation_anxiety_like_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "subjective report",
+        "physiology",
+        "thyroid"
+      ]
+    },
+    {
+      "chain_id": "sickness_behavior_mood_branch",
+      "chain": "anhedonia/apathy + inflammation_markers + fatigue -> sickness_behavior_mood_branch",
+      "confidence": "high",
+      "required_sources": [
+        "anhedonia/apathy scale",
+        "CRP/IL6",
+        "fatigue"
+      ]
+    },
+    {
+      "chain_id": "mood_sleep_activity_branch",
+      "chain": "depressed_mood/anhedonia + sleep_fragmentation + low_activity -> mood_sleep_activity_branch",
+      "confidence": "high",
+      "required_sources": [
+        "mood scale",
+        "sleep",
+        "activity"
+      ]
+    },
+    {
+      "chain_id": "stress_recovery_branch",
+      "chain": "perceived_stress + flattened_diurnal_cortisol_slope + high_inflammation/low_HRV -> stress_recovery_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PSS",
+        "cortisol slope",
+        "CRP/IL6",
+        "HRV"
+      ]
+    },
+    {
+      "chain_id": "team_behavioral_risk_branch",
+      "chain": "social_isolation/team_conflict + mood_variability + operational_errors -> team_behavioral_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "team context",
+        "mood tracking",
+        "operational logs"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Burnout is simply depression.",
+      "reason": "Meta-analytic/longitudinal evidence suggests overlap but empirical distinction.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Perceived stress alone indicates biological dysregulation.",
+      "reason": "Perceived stress only partially explains biomarkers; objective markers needed.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "summary": {
+    "status": "strong",
+    "most_reliable_markers": [
+      "PHQ-9/GAD-7/POMS/PANAS/PSS",
+      "anhedonia scales",
+      "burnout scales",
+      "EMA affect variability"
+    ],
+    "most_context_dependent_markers": [
+      "irritability",
+      "perceived stress",
+      "hormonal contraception-related mood change"
+    ],
+    "overall_assessment": "Strong biopsychosocial/behavioral-health layer; must be integrated with sleep, endocrine, autonomic, inflammation, medication, environment, and team context."
+  },
+  "schema_notes": {
+    "source_pdf": "PROMPT_021_mood_stress_anxiety_irritabilit.pdf",
+    "cleaned_by": "ChatGPT",
+    "version": "cleaned_v1"
+  }
+}

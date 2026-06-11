@@ -1,0 +1,526 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_R004_PSG_EEG_sleep_architecture_sleep_disordered_breathing_repair",
+    "series_name": "PSG/EEG Sleep Architecture Repair Tree: Sleep Stages, Slow-Wave Sleep, REM, Arousal, Sleep-Disordered Breathing, Fatigue, Cognition, Mood, and Wearable Discrepancy",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2024-07-11",
+    "repair_reason": "PSG/EEG sleep architecture and sleep-disordered breathing were under-covered in previous cleaned trees."
+  },
+  "status": "cleaned_usable_strong",
+  "data_source": {
+    "source_id": "PSG_EEG_sleep_architecture",
+    "source_category": "objective_sleep_architecture_sleep_disordered_breathing",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "sleep_study",
+      "symptom_triggered",
+      "fatigue_assessment",
+      "cognition_assessment",
+      "bed_rest",
+      "head_down_tilt",
+      "ICE_analog",
+      "research_protocol"
+    ]
+  },
+  "core_interpretation": "PSG/EEG-derived sleep architecture markers provide objective ground truth for sleep fragmentation, sleep stages, sleep-disordered breathing and wearable validation; total sleep time alone is insufficient to infer recovery.",
+  "measured_entities": [
+    {
+      "entity_id": "total_sleep_time_PSG",
+      "entity_name": "Total Sleep Time by PSG",
+      "measurement_type": "PSG_marker|sleep_stage_marker",
+      "sample_or_sensor": "PSG|sleep_lab|home_sleep_apnea_test",
+      "result_variations": [
+        {
+          "variation_id": "short_total_sleep_time_PSG",
+          "result_pattern": "<7h TST or significant within-person reduction from baseline/control group",
+          "direction": "decreased|shortened|baseline_deviation",
+          "standalone_interpretation": [
+            "Short TST alone does not define poor sleep quality or recovery."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep_efficiency_PSG",
+            "WASO",
+            "arousal_index",
+            "next_day_performance"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition/PVT tree",
+              "other_entity": "next_day_PVT_lapses|subjective_sleepiness",
+              "combined_meaning": "Short TST plus next-day lapses supports acute sleep loss branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "acute_sleep_loss_branch"
+          ],
+          "candidate_chains": [
+            "short_total_sleep_time_PSG + next_day_PVT_lapses + subjective_sleepiness -> acute_sleep_loss_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep recovery from total sleep time alone."
+          ],
+          "required_next_measurements": [
+            "WASO",
+            "arousal_index",
+            "subjective/objective fatigue"
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "sleep_fragmentation_PSG",
+      "entity_name": "Sleep Fragmentation: WASO, Arousal Index, Sleep Maintenance Efficiency",
+      "measurement_type": "sleep_fragmentation_marker|recovery_marker|performance_risk_marker",
+      "sample_or_sensor": "PSG|EEG|sleep_lab",
+      "result_variations": [
+        {
+          "variation_id": "high_WASO_or_arousal_index",
+          "result_pattern": "High WASO and/or arousal index with normal or near-normal total sleep time",
+          "direction": "increased|fragmented|baseline_deviation",
+          "standalone_interpretation": [
+            "Suggests disrupted sleep continuity; may impair recovery even when total sleep duration appears adequate."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "TST",
+            "pain/noise/medication/environment context",
+            "next_day_fatigue_or_PVT"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "fatigue/cognition tree",
+              "other_entity": "next_day_fatigue|PVT_lapses",
+              "combined_meaning": "High fragmentation plus next-day impairment supports sleep fragmentation recovery failure branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "environment tree",
+              "other_entity": "night_noise_exposure",
+              "combined_meaning": "Night noise plus arousal index plus next-day fatigue supports noise sleep recovery branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_fragmentation_recovery_failure_branch",
+            "noise_sleep_recovery_branch"
+          ],
+          "candidate_chains": [
+            "high_WASO_or_arousal_index + normal_total_sleep_time + next_day_fatigue -> sleep_fragmentation_recovery_failure_branch"
+          ],
+          "guardrails": [
+            "Do not infer recovery from total sleep time alone.",
+            "Check pain, noise, CO2, temperature, medication and circadian phase."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "N3_slow_wave_sleep_EEG",
+      "entity_name": "N3 / Slow-Wave Sleep / EEG Slow-Wave Activity",
+      "measurement_type": "sleep_stage_marker|EEG_marker|sleep_microarchitecture_marker|recovery_marker",
+      "sample_or_sensor": "PSG|EEG",
+      "result_variations": [
+        {
+          "variation_id": "low_N3_or_slow_wave_activity",
+          "result_pattern": "Reduced N3 percent and/or reduced EEG slow-wave activity with normal or near-normal total sleep time",
+          "direction": "decreased|stage_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "May indicate impaired restorative sleep architecture; interpretation requires cognition/fatigue outcomes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "age",
+            "first-night effect",
+            "medications",
+            "fatigue/cognition outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition/fatigue tree",
+              "other_entity": "memory_impairment|fatigue",
+              "combined_meaning": "Low N3/SWA plus memory/fatigue supports sleep architecture recovery branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_architecture_recovery_branch"
+          ],
+          "candidate_chains": [
+            "low_N3_slow_wave_sleep_percent + memory_impairment/fatigue + normal_total_sleep_time -> sleep_architecture_recovery_branch"
+          ],
+          "guardrails": [
+            "Do not infer N3 impairment from consumer wearable staging.",
+            "Do not infer cognition mechanism without measured outcome."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "REM_sleep_architecture",
+      "entity_name": "REM Percent, REM Latency, REM Fragmentation",
+      "measurement_type": "sleep_stage_marker|EEG_marker|mood_circadian_marker",
+      "sample_or_sensor": "PSG|EEG",
+      "result_variations": [
+        {
+          "variation_id": "REM_fragmentation_or_reduced_REM",
+          "result_pattern": "Reduced or fragmented REM sleep, abnormal REM latency, or REM shift relative to baseline",
+          "direction": "decreased|fragmented|delayed|stage_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "REM changes are context-dependent and should not be treated as mood/cognition mechanism without linked outcomes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "circadian phase",
+            "medications",
+            "mood outcomes",
+            "sleep-disordered breathing markers"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "mood/circadian tree",
+              "other_entity": "mood_change|circadian_misalignment",
+              "combined_meaning": "REM disruption plus mood change and circadian misalignment supports REM mood circadian branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "REM_mood_circadian_branch"
+          ],
+          "candidate_chains": [
+            "REM_fragmentation_or_reduced_REM + mood_change + circadian_misalignment -> REM_mood_circadian_branch"
+          ],
+          "guardrails": [
+            "Do not infer mood mechanism from REM changes without measured mood/circadian outcomes."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "sleep_disordered_breathing_PSG",
+      "entity_name": "AHI, RDI, ODI, Minimum SpO2, Time Below 90%, Central/Obstructive Apnea Index",
+      "measurement_type": "sleep_disordered_breathing_marker|oxygen_desaturation_marker|performance_risk_marker",
+      "sample_or_sensor": "PSG|home_sleep_apnea_test|pulse_oximetry|respiratory_belt",
+      "result_variations": [
+        {
+          "variation_id": "high_AHI_RDI_ODI_nocturnal_desaturation",
+          "result_pattern": "Elevated AHI/RDI with elevated ODI and/or nocturnal oxygen desaturation",
+          "direction": "increased|impaired|fragmented",
+          "standalone_interpretation": [
+            "Supports objective sleep-disordered breathing when linked to respiratory events; daytime SpO2 may remain normal."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "daytime sleepiness/fatigue",
+            "body composition/adiposity",
+            "medications",
+            "daytime SpO2"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "fatigue/cognition tree",
+              "other_entity": "daytime_sleepiness|fatigue|PVT_lapses",
+              "combined_meaning": "SDB markers plus daytime impairment supports sleep-disordered breathing branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "respiration tree",
+              "other_entity": "nocturnal_desaturation|daytime_SpO2",
+              "combined_meaning": "Nocturnal desaturation with normal daytime SpO2 supports nocturnal respiratory sleep risk branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_disordered_breathing_branch",
+            "nocturnal_respiratory_sleep_risk_branch"
+          ],
+          "candidate_chains": [
+            "high_AHI_or_RDI + high_ODI + daytime_sleepiness/fatigue -> sleep_disordered_breathing_branch",
+            "high_AHI + normal_daytime_SpO2 + nocturnal_desaturation -> nocturnal_respiratory_sleep_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep apnea from fatigue or snoring alone without AHI/RDI/ODI.",
+            "Do not infer daytime oxygenation from nocturnal SpO2 alone."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "periodic_limb_movement_sleep",
+      "entity_name": "Periodic Limb Movement Index",
+      "measurement_type": "sleep_fragmentation_marker|sleep_disordered_movement_marker",
+      "sample_or_sensor": "PSG|leg_EMG",
+      "result_variations": [
+        {
+          "variation_id": "high_periodic_limb_movement_index",
+          "result_pattern": "Elevated periodic limb movement index with arousals or sleep fragmentation",
+          "direction": "increased|fragmented",
+          "standalone_interpretation": [
+            "May contribute to sleep fragmentation and daytime sleepiness when temporally linked."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "arousal index",
+            "iron/ferritin status",
+            "medications",
+            "daytime symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood nutrients tree",
+              "other_entity": "ferritin/iron_status",
+              "combined_meaning": "PLMI plus iron context may guide restless legs/limb movement interpretation.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "fatigue tree",
+              "other_entity": "daytime_sleepiness",
+              "combined_meaning": "PLMI plus fragmentation plus daytime sleepiness supports limb movement sleep fragmentation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "limb_movement_sleep_fragmentation_branch"
+          ],
+          "candidate_chains": [
+            "high_periodic_limb_movement_index + sleep_fragmentation + daytime_sleepiness -> limb_movement_sleep_fragmentation_branch"
+          ],
+          "guardrails": [
+            "Do not attribute daytime symptoms to limb movements without arousal/fragmentation and symptom timing."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "wearable_PSG_discrepancy",
+      "entity_name": "PSG vs Wearable Sleep Stage/Fragmentation Discrepancy",
+      "measurement_type": "wearable_validation_marker|PSG_marker|sleep_microarchitecture_marker",
+      "sample_or_sensor": "consumer_wearable|validated_wearable|actigraphy|PSG|EEG",
+      "result_variations": [
+        {
+          "variation_id": "wearable_normal_PSG_abnormal",
+          "result_pattern": "Wearable shows normal sleep duration/stage distribution while PSG shows high arousals, low N3, or SDB",
+          "direction": "discrepant|patterned",
+          "standalone_interpretation": [
+            "Consumer wearable estimates can miss fragmentation, arousals, deep sleep loss or sleep-disordered breathing."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "device type",
+            "algorithm validation",
+            "PSG confirmation",
+            "symptom/performance outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable sleep tree",
+              "other_entity": "normal_wearable_sleep",
+              "combined_meaning": "Normal wearable sleep with abnormal PSG supports wearable false reassurance branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "wearable_sleep_false_reassurance_branch"
+          ],
+          "candidate_chains": [
+            "wearable_normal_sleep + PSG_high_arousal_index_or_low_N3 -> wearable_sleep_false_reassurance_branch"
+          ],
+          "guardrails": [
+            "Do not infer PSG stages from consumer wearable staging.",
+            "Do not use consumer wearable staging to diagnose specific sleep disorders."
+          ]
+        }
+      ]
+    },
+    {
+      "entity_id": "subjective_objective_sleep_mismatch",
+      "entity_name": "Subjective-Objective Sleep Mismatch",
+      "measurement_type": "subjective_objective_mismatch_marker|sleep_quality_marker",
+      "sample_or_sensor": "questionnaire|sleep_diary|PSG|actigraphy|wearable",
+      "result_variations": [
+        {
+          "variation_id": "poor_subjective_sleep_normal_PSG",
+          "result_pattern": "Poor subjective sleep with normal PSG architecture and normal objective sleep continuity",
+          "direction": "mismatch|patterned",
+          "standalone_interpretation": [
+            "Suggests symptom perception, anxiety, pain, environmental or insomnia-cognitive context rather than objectively disrupted architecture."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "pain",
+            "anxiety/mood",
+            "environment",
+            "medication",
+            "cognition/fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "pain/mood/environment trees",
+              "other_entity": "pain|anxiety|noise|CO2",
+              "combined_meaning": "Poor subjective sleep with normal PSG should trigger context override search.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "subjective_objective_sleep_mismatch_branch"
+          ],
+          "candidate_chains": [
+            "poor_subjective_sleep + normal_PSG + high_anxiety_or_pain -> subjective_objective_sleep_mismatch_branch"
+          ],
+          "guardrails": [
+            "Do not infer insomnia mechanism from subjective sleep complaint alone."
+          ]
+        }
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "acute_sleep_loss_branch",
+      "chain": "short_total_sleep_time_PSG + next_day_PVT_lapses + subjective_sleepiness -> acute_sleep_loss_branch",
+      "confidence": "high",
+      "required_sources": [
+        "TST by PSG",
+        "objective performance outcome",
+        "subjective symptom"
+      ],
+      "notes": "Short objective sleep plus vigilance lapses and sleepiness supports acute sleep loss; TST alone is insufficient."
+    },
+    {
+      "chain_id": "sleep_fragmentation_recovery_failure_branch",
+      "chain": "high_WASO_or_arousal_index + normal_total_sleep_time + next_day_fatigue -> sleep_fragmentation_recovery_failure_branch",
+      "confidence": "high",
+      "required_sources": [
+        "WASO/arousal index",
+        "TST",
+        "fatigue outcome"
+      ],
+      "notes": "Fragmentation can predict impairment even when duration is preserved."
+    },
+    {
+      "chain_id": "sleep_architecture_recovery_branch",
+      "chain": "low_N3_slow_wave_sleep_percent + memory_impairment/fatigue + normal_total_sleep_time -> sleep_architecture_recovery_branch",
+      "confidence": "moderate-high",
+      "required_sources": [
+        "N3% by PSG/EEG",
+        "cognitive/fatigue outcome"
+      ],
+      "notes": "Reduced N3/SWS may impair memory/recovery, but outcome measurement is required."
+    },
+    {
+      "chain_id": "sleep_disordered_breathing_branch",
+      "chain": "high_AHI_or_RDI + high_ODI + daytime_sleepiness/fatigue -> sleep_disordered_breathing_branch",
+      "confidence": "high",
+      "required_sources": [
+        "AHI/RDI",
+        "ODI/nocturnal SpO2",
+        "daytime symptom or performance outcome"
+      ],
+      "notes": "Objective SDB plus daytime impairment supports sleep-disordered breathing branch."
+    },
+    {
+      "chain_id": "nocturnal_respiratory_sleep_risk_branch",
+      "chain": "high_AHI + normal_daytime_SpO2 + nocturnal_desaturation -> nocturnal_respiratory_sleep_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "AHI",
+        "daytime SpO2",
+        "overnight oximetry"
+      ],
+      "notes": "Nocturnal oxygenation risk can be missed by daytime SpO2."
+    },
+    {
+      "chain_id": "limb_movement_sleep_fragmentation_branch",
+      "chain": "high_periodic_limb_movement_index + sleep_fragmentation + daytime_sleepiness -> limb_movement_sleep_fragmentation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "PLMI",
+        "arousal/fragmentation index",
+        "daytime symptoms"
+      ],
+      "notes": "Requires fragmentation and symptom context."
+    },
+    {
+      "chain_id": "wearable_sleep_false_reassurance_branch",
+      "chain": "wearable_normal_sleep + PSG_high_arousal_index_or_low_N3 -> wearable_sleep_false_reassurance_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "consumer wearable",
+        "PSG/EEG"
+      ],
+      "notes": "Wearables may miss arousals and microarchitecture abnormalities."
+    },
+    {
+      "chain_id": "subjective_objective_sleep_mismatch_branch",
+      "chain": "poor_subjective_sleep + normal_PSG + high_anxiety_or_pain -> subjective_objective_sleep_mismatch_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "subjective sleep report",
+        "PSG",
+        "pain/mood context"
+      ],
+      "notes": "Subjective complaints may not match objective architecture."
+    },
+    {
+      "chain_id": "medication_sleep_architecture_override_branch",
+      "chain": "sedative_hypnotic_use + altered_sleep_architecture + next_day_PVT_lapses -> medication_sleep_architecture_override_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "medication log",
+        "PSG/EEG",
+        "PVT"
+      ],
+      "notes": "Medication timing should be checked before inferring primary sleep pathology."
+    }
+  ],
+  "guardrails": [
+    "Do not infer sleep recovery from total sleep time alone.",
+    "Do not infer PSG sleep stages from consumer wearable staging.",
+    "Do not infer sleep apnea from fatigue or snoring alone without AHI/RDI/ODI.",
+    "Do not infer daytime oxygenation from nocturnal SpO2 alone.",
+    "Do not infer mood or cognition mechanism from REM/N3 changes without measured outcomes.",
+    "Do not infer insomnia mechanism from subjective sleep complaint alone.",
+    "Do not ignore pain, medication, noise, CO2, circadian phase, and mission phase as context overrides.",
+    "Full-chain=true only if sleep architecture marker, mediator/context, and symptom/performance outcome are measured with timing."
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Wearables can substitute for PSG in diagnosing specific sleep disorders or quantifying all sleep stages.",
+      "reason": "Systematic reviews/meta-analyses show wearables are less accurate for stage classification and fragmentation than PSG/EEG.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Total sleep time alone is sufficient to assess recovery or performance risk.",
+      "reason": "Fragmentation and deep-stage loss can predict impairment even when sleep duration is preserved.",
+      "recommendation": "exclude"
+    }
+  ],
+  "research_gaps": [
+    "Few studies simultaneously measure objective architecture, subjective quality, and next-day performance in the same individuals.",
+    "Limited validation of wearables for microarchitecture such as spindles, K-complexes and spectral power outside lab settings.",
+    "Sparse astronaut/spaceflight-specific PSG/EEG data on architecture-performance links.",
+    "Heterogeneity in reporting of microarchitecture and cross-modal outcomes across populations."
+  ],
+  "summary": {
+    "most_reliable_PSG_EEG_sleep_markers": [
+      "WASO, arousal index and sleep maintenance efficiency for sleep continuity and cognitive/performance risk.",
+      "AHI/RDI/ODI/minimum nocturnal SpO2 for sleep-disordered breathing and nocturnal oxygenation risk.",
+      "N3/SWS and slow-wave activity for restorative architecture when linked to memory/fatigue outcomes."
+    ],
+    "most_context_dependent_markers": [
+      "Total sleep time, which requires fragmentation and next-day outcome context.",
+      "Wearable-derived staging, which varies by device and is less reliable for arousals/deep stages.",
+      "Subjective sleep complaints, which may reflect pain, mood, environment, medication or perception mismatch."
+    ],
+    "highest_value_cross_modal_links": [
+      "Short TST + PVT lapses + subjective sleepiness = acute sleep loss branch.",
+      "High WASO/arousal index + normal TST + next-day fatigue = fragmentation-driven impairment.",
+      "Wearable normal + PSG high arousals/low N3 = false reassurance risk.",
+      "High AHI/RDI/ODI + daytime sleepiness/fatigue = sleep-disordered breathing branch."
+    ],
+    "overall_assessment": "Objective PSG/EEG markers fill the missing parameter-level sleep architecture layer. Fragmentation and sleep microarchitecture often explain recovery/performance risk better than total duration alone. PSG/EEG remains the ground truth for stages, arousals and sleep-disordered breathing, while wearables are supportive but not diagnostic. This repair tree should be integrated as a context-sensitive objective sleep architecture layer rather than a standalone diagnosis module."
+  }
+}

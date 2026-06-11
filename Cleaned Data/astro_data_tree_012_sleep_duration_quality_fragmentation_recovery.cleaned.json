@@ -1,0 +1,250 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery",
+    "series_name": "Sleep Variation Tree: Duration, Quality, Fragmentation, Architecture, Recovery, Fatigue, Mood, Cognition, and Autonomic State",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "status": "usable_but_needs_spaceflight_completion"
+  },
+  "data_source": {
+    "source_id": "sleep",
+    "source_category": "wearable_PSG_behavioral_recovery_physiology",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "continuous_monitoring",
+      "symptom_triggered",
+      "sleep_lab",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "total_sleep_time_sleep_opportunity_time_in_bed",
+      "entity_name": "Total sleep time, sleep opportunity, time in bed",
+      "measurement_type": "sleep_duration_marker|recovery_marker",
+      "sample_or_sensor": "actigraphy|wearable|PSG|sleep_diary",
+      "result_variations": [
+        {
+          "variation_id": "short_sleep_duration",
+          "result_pattern": "Below recommended or age-specific total sleep time; often <6h in adults",
+          "direction": "decreased|baseline_deviation|patterned",
+          "standalone_interpretation": [
+            "Short sleep is associated with impaired alertness/performance and multiple adverse health outcomes, but cannot alone define recovery state."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep opportunity",
+            "age",
+            "measurement method",
+            "circadian phase",
+            "PVT/sleepiness",
+            "mission schedule"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "PVT_lapses/reaction_time",
+              "combined_meaning": "Short TST plus PVT lapses and sleepiness supports sleep-loss alertness impairment branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_loss_alertness_impairment_branch"
+          ],
+          "candidate_chains": [
+            "short_sleep_duration + PVT_lapses + subjective_sleepiness -> sleep_loss_alertness_impairment_branch"
+          ],
+          "guardrails": [
+            "Separate sleep opportunity from actual sleep duration.",
+            "Do not infer recovery state from sleep duration alone."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "sleep_efficiency_WASO_fragmentation",
+      "entity_name": "Sleep efficiency, WASO, awakenings, sleep fragmentation",
+      "measurement_type": "sleep_quality_marker|sleep_fragmentation_marker|recovery_marker",
+      "sample_or_sensor": "actigraphy|wearable|PSG",
+      "result_variations": [
+        {
+          "variation_id": "fragmented_sleep_high_WASO",
+          "result_pattern": "Low sleep efficiency, high WASO, frequent awakenings, high fragmentation",
+          "direction": "fragmented|decreased|increased",
+          "standalone_interpretation": [
+            "Disrupted sleep continuity; may impair recovery even if total sleep duration appears adequate."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "TST",
+            "sleep opportunity",
+            "HRV/RHR",
+            "pain",
+            "noise/CO2/temp",
+            "medications",
+            "fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "autonomic",
+              "other_entity": "low_HRV/elevated_RHR",
+              "combined_meaning": "Fragmented sleep plus low HRV and fatigue supports poor recovery fragmentation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "poor_recovery_sleep_fragmentation_branch"
+          ],
+          "candidate_chains": [
+            "fragmented_sleep/WASO_high + low_HRV + fatigue -> poor_recovery_sleep_fragmentation_branch"
+          ],
+          "guardrails": [
+            "Poor sleep is not a complete fatigue mechanism without context.",
+            "Compare devices/protocols cautiously."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "sleep_architecture_REM_NREM_SWS",
+      "entity_name": "REM, NREM, slow-wave/N3 sleep architecture",
+      "measurement_type": "sleep_architecture_marker",
+      "sample_or_sensor": "PSG|validated_sleep_staging",
+      "result_variations": [
+        {
+          "variation_id": "reduced_SWS_N3_or_REM_abnormality",
+          "result_pattern": "Reduced SWS/N3 or altered REM/NREM architecture",
+          "direction": "decreased|patterned|baseline_deviation",
+          "standalone_interpretation": [
+            "Sleep architecture alteration associated with aging, neurodegeneration, memory/performance changes in some literature."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "PSG confirmation",
+            "age",
+            "sleep disorder status",
+            "cognition/memory outcome",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "memory/performance",
+              "combined_meaning": "Low SWS/N3 with impaired memory/performance supports sleep architecture cognition branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_architecture_cognition_branch"
+          ],
+          "candidate_chains": [
+            "low_slow_wave_sleep + impaired_memory/performance -> sleep_architecture_cognition_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep architecture from consumer wearable staging without validation.",
+            "Wearable sleep-stage abnormality without PSG is uncertain."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "subjective_sleep_quality_insomnia",
+      "entity_name": "Subjective sleep quality and insomnia severity",
+      "measurement_type": "subjective_sleep_marker",
+      "sample_or_sensor": "questionnaire|sleep_diary",
+      "result_variations": [
+        {
+          "variation_id": "poor_subjective_sleep_normal_objective_sleep",
+          "result_pattern": "Poor subjective sleep quality with normal objective TST/efficiency",
+          "direction": "patterned|baseline_deviation",
+          "standalone_interpretation": [
+            "Subjective-objective sleep mismatch; common in insomnia and psychiatric/stress states."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "objective sleep metrics",
+            "anxiety/stress",
+            "mood",
+            "sleep diary",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "mood_stress",
+              "other_entity": "anxiety/stress symptoms",
+              "combined_meaning": "Poor subjective sleep with normal objective metrics plus stress/anxiety supports sleep perception mismatch branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_perception_mismatch_branch"
+          ],
+          "candidate_chains": [
+            "poor_subjective_sleep + normal_objective_sleep + anxiety/stress -> sleep_perception_mismatch_branch"
+          ],
+          "guardrails": [
+            "Subjective and objective sleep metrics are not equivalent.",
+            "Do not dismiss subjective distress as unreal."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "Consumer wearables accurately stage REM/NREM/light/deep sleep versus PSG.",
+      "reason": "Meta-analyses show limited specificity for sleep staging; useful for gross patterns, not precise architecture.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Improving total sleep time alone guarantees recovery.",
+      "reason": "Recovery also depends on fragmentation, architecture, circadian alignment, autonomic state and performance.",
+      "recommendation": "exclude"
+    }
+  ],
+  "research_gaps": [
+    "Few studies combine objective physiology, performance/cognition and subjective quality longitudinally in the same participants.",
+    "Limited wearable staging validation outside healthy young adults.",
+    "Sparse spaceflight/extreme-environment PSG architecture data."
+  ],
+  "summary": {
+    "most_reliable_sleep_markers": [
+      "TST with protocol context",
+      "Sleep efficiency",
+      "WASO",
+      "PSG-derived REM/SWS/N3"
+    ],
+    "most_context_dependent_markers": [
+      "Wearable sleep stage estimates",
+      "Subjective global quality scores",
+      "Napping"
+    ],
+    "overall_assessment": "Sleep metrics are high-value for alertness/recovery inference when paired with circadian, autonomic, performance and subjective outcomes."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion",
+    "series_name": "Blood Metabolic Completion Tree: Ketones, Lactate, Pyruvate, CPET, Metabolic Flexibility, Exercise Intolerance, PEM",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "target_existing_tree": "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones",
+  "completion_scope": "ketones_lactate_CPET_metabolic_flexibility_exertional_intolerance_PEM",
+  "measured_entities": [
+    {
+      "entity_id": "lactate_accumulation_exercise",
+      "entity_name": "Blood lactate during exercise/CPET",
+      "measurement_type": "lactate_marker|exercise_metabolism_marker|CPET_marker",
+      "sample_or_sensor": "blood|exercise_test|CPET",
+      "result_variations": [
+        {
+          "variation_id": "elevated_lactate_low_workload",
+          "result_pattern": "high lactate at low/submaximal workload",
+          "direction": "increased|exercise_induced",
+          "standalone_interpretation": [
+            "metabolic strain; possible impaired oxidative metabolism when intensity-adjusted"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "VO2/anaerobic threshold",
+            "RER/fat oxidation",
+            "workload",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CPET",
+              "other_entity": "anaerobic_threshold/VO2/symptom_logs",
+              "combined_meaning": "elevated lactate at low workload + reduced anaerobic threshold + exertional intolerance supports metabolic strain branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "metabolic_strain_branch",
+            "impaired_metabolic_flexibility_hypothesis"
+          ],
+          "candidate_chains": [
+            "elevated_lactate_at_low_workload + reduced_anaerobic_threshold + exertional_intolerance -> metabolic_strain_branch"
+          ],
+          "guardrails": [
+            "lactate rises normally with exercise intensity",
+            "do not infer mitochondrial dysfunction from fatigue alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "BHB_ketones",
+      "entity_name": "Beta-hydroxybutyrate / ketones",
+      "measurement_type": "ketone_marker|energy_availability_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "BHB_high_context_dependent",
+          "result_pattern": "elevated BHB/ketones",
+          "direction": "increased|fasting|patterned",
+          "standalone_interpretation": [
+            "ketone utilization state; meaning depends on glucose, intake, body mass, symptoms"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "glucose",
+            "energy intake",
+            "body mass",
+            "acid-base context",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "diet/body_mass",
+              "other_entity": "energy intake/weight change",
+              "combined_meaning": "high BHB + low intake + weight loss + fatigue suggests low energy availability rather than nutritional ketosis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "nutritional_ketosis_branch",
+            "low_energy_availability_branch",
+            "ketoacidosis_red_flag_branch"
+          ],
+          "candidate_chains": [
+            "BHB_high + normal_glucose + adequate_energy_intake -> nutritional_ketosis_branch",
+            "BHB_high + low_energy_intake + weight_loss + fatigue -> low_energy_availability_branch"
+          ],
+          "guardrails": [
+            "do not infer low energy availability from ketones alone",
+            "separate blood ketones from urine ketones"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "acylcarnitines_fat_oxidation",
+      "entity_name": "Acylcarnitines / fatty acid oxidation / metabolomics",
+      "measurement_type": "metabolomics_marker|metabolic_flexibility_marker",
+      "sample_or_sensor": "blood|metabolomics_panel",
+      "result_variations": [
+        {
+          "variation_id": "abnormal_acylcarnitine_reduced_fat_oxidation",
+          "result_pattern": "abnormal acylcarnitine profile with reduced fat oxidation/exercise intolerance",
+          "direction": "patterned|decreased",
+          "standalone_interpretation": [
+            "possible impaired substrate utilization or metabolic flexibility"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "exercise test",
+            "fat oxidation/RER",
+            "symptom timing",
+            "diet"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "exercise_test",
+              "other_entity": "fat oxidation/RER/exercise intolerance",
+              "combined_meaning": "abnormal acylcarnitines + reduced fat oxidation + exercise intolerance supports impaired metabolic flexibility branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "impaired_metabolic_flexibility_branch"
+          ],
+          "candidate_chains": [
+            "abnormal_acylcarnitine_pattern + reduced_fat_oxidation + exercise_intolerance -> impaired_metabolic_flexibility_branch"
+          ],
+          "guardrails": [
+            "metabolomics pattern alone does not diagnose mitochondrial disease"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "metabolic_strain_branch_long_covid_me_cfs_pem",
+      "chain": "elevated_lactate_at_low_workload + reduced_anaerobic_threshold + exertional_intolerance -> metabolic_strain/PEM branch",
+      "confidence": "high",
+      "required_sources": [
+        "blood lactate",
+        "CPET",
+        "symptom timing"
+      ],
+      "notes": "merge into 005"
+    },
+    {
+      "chain_id": "delayed_recovery_metabolic_branch",
+      "chain": "post_exertional_metabolite_shift + next_day_fatigue/brain_fog -> delayed_recovery_metabolic_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "serial metabolomics",
+        "timed symptom logs"
+      ],
+      "notes": "needs longitudinal validation"
+    }
+  ],
+  "guardrails": [
+    "do not infer mitochondrial dysfunction from fatigue alone",
+    "do not infer PEM from acute tiredness",
+    "do not infer low energy availability from ketones alone",
+    "do not infer acute brain fog without timed cognitive/symptom data"
+  ]
+}

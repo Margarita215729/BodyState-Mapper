@@ -1,0 +1,90 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound",
+    "series_name": "Cardiovascular Structure and Vascular Function Variation Tree:Echo,Ultrasound,Stiffness,Endothelial Function,Orthostatic Tolerance,Fatigue,and Spaceflight Risk",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "status": "strong",
+  "data_source": {
+    "source_id": "cardiovascular_structure_vascular_function",
+    "source_category": "cardiovascular_imaging_vascular_function_ultrasound"
+  },
+  "core_branches": [
+    {
+      "chain_id": "vascular_risk_branch",
+      "chain": "increased_arterial_stiffness_PWV + endothelial_dysfunction_low_FMD_RHI + LVH_or_albuminuria -> vascular_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PWV",
+        "FMD/RHI",
+        "echo or renal markers",
+        "BP/metabolic profile"
+      ]
+    },
+    {
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "chain": "prolonged_bed_rest_or_spaceflight + reduced_LV/RV_mass_and_volume + decreased_stroke_volume + fluid_shift_markers -> spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "echo/MRI",
+        "fluid distribution/plasma volume",
+        "mission phase",
+        "orthostatic tests"
+      ]
+    },
+    {
+      "chain_id": "volume_cardiac_output_branch",
+      "chain": "reduced_stroke_volume + reduced_plasma_volume + orthostatic_intolerance -> volume_cardiac_output_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "stroke volume",
+        "plasma volume",
+        "orthostatic symptoms/test"
+      ]
+    },
+    {
+      "chain_id": "microvascular_HFpEF_predisposition_branch",
+      "chain": "low_RHI + increased_LV_diastolic_stiffness -> microvascular_HFpEF_predisposition_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RHI",
+        "diastolic wall strain/E/e’",
+        "BP/comorbidities"
+      ]
+    },
+    {
+      "chain_id": "early_vascular_aging_branch",
+      "chain": "increased_PWV + normal_or_mild_cIMT + longitudinal_LV_remodeling -> early_vascular_aging_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PWV",
+        "cIMT",
+        "echo/MRI over time"
+      ]
+    },
+    {
+      "chain_id": "non_structural_exercise_limitation_branch",
+      "chain": "normal_echo + exercise_intolerance + abnormal_CPET -> non_structural_exercise_limitation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "echo/MRI",
+        "CPET",
+        "symptoms"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer heart disease from microgravity-induced remodeling alone.",
+    "Do not infer brain fog from vascular stiffness alone.",
+    "Do not infer endothelial dysfunction from one biomarker without functional vascular measure.",
+    "Do not infer orthostatic intolerance from resting cardiac structure.",
+    "Separate acute reversible PWV increases from chronic structural arterial stiffness.",
+    "Do not label athlete-like chamber enlargement as cardiomyopathy without context."
+  ],
+  "research_gaps": [
+    "Limited human data linking cerebral/carotid flow changes under orthostatic/spaceflight conditions to objective brain fog/cognition.",
+    "Few integrated astronaut or analog studies combining PWV/FMD, echo/MRI, plasma volume, orthostatic tolerance and neurocognitive outcomes.",
+    "Sparse prospective work on microvascular endothelial indices and symptomatic HFpEF/exercise intolerance trajectories."
+  ]
+}

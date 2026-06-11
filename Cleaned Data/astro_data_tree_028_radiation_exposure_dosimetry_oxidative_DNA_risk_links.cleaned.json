@@ -1,0 +1,49 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links",
+    "series_name": "Radiation Exposure Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable_strong_risk_layer",
+  "core_interpretation": "Radiation data are exposure/risk and biological-effect context layers; physical dose must be separated from biological injury and modeled long-term risk.",
+  "high_value_chains": [
+    {
+      "chain_id": "radiation_biological_effect_branch",
+      "chain": "high_cumulative_dose + increased_chromosomal_aberrations -> radiation_biological_effect_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "acute_radiation_event_branch",
+      "chain": "solar_particle_event + acute_dose_increase + DNA_damage_marker_shift -> acute_radiation_event_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "radiation_oxidative_inflammatory_branch",
+      "chain": "high_dose + oxidative_stress_markers + inflammation -> radiation_oxidative_inflammatory_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "radiation_vascular_risk_branch",
+      "chain": "radiation_dose + endothelial_markers + arterial_stiffness/CVD_outcome -> radiation_vascular_risk_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "long_term_surveillance_branch",
+      "chain": "modeled_high_lifetime_cancer_risk + cumulative_dose -> long_term_surveillance_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer radiation injury from dose alone.",
+    "Do not infer cancer from radiation exposure marker.",
+    "Do not infer CNS/cognitive effect without excluding sleep, CO2, stress, workload and medication context.",
+    "Do not infer radiation-specific oxidative stress without dose-timing linkage.",
+    "Do not treat terrestrial radiation cohorts as identical to space radiation."
+  ],
+  "research_gaps": [
+    "Limited astronaut-specific longitudinal biomarker data linking space dosimetry to health outcomes.",
+    "Uncertainty in translating terrestrial cohort risks to space environments with different LET/radiation quality.",
+    "Need for harmonized protocols integrating omics, cytogenetics, dosimetry and clinical endpoints.",
+    "Insufficient data on countermeasure efficacy against chronic low-dose space radiation."
+  ]
+}

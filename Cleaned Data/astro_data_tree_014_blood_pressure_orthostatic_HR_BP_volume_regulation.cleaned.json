@@ -1,0 +1,87 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation",
+    "series_name": "Blood Pressure and Orthostatic Physiology Variation Tree:Volume Regulation,Dizziness,Brain Fog,Fatigue,and Spaceflight Deconditioning",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "status": "usable",
+  "data_source": {
+    "source_id": "blood_pressure_orthostatic_volume",
+    "source_category": "cardiovascular_autonomic_volume_regulation"
+  },
+  "core_branches": [
+    {
+      "chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "chain": "orthostatic_HR_increase + dizziness + no_BP_drop -> POTS-like orthostatic intolerance branch",
+      "confidence": "high",
+      "required_sources": [
+        "active stand or tilt table HR/BP",
+        "symptom report"
+      ]
+    },
+    {
+      "chain_id": "orthostatic_hypotension_branch",
+      "chain": "orthostatic_BP_drop + dizziness/syncope -> orthostatic hypotension branch",
+      "confidence": "high",
+      "required_sources": [
+        "active stand or tilt table BP",
+        "symptom report"
+      ]
+    },
+    {
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "chain": "high_urine_osmolality + low_fluid_intake + orthostatic_tachycardia -> hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "urine osmolality/USG",
+        "fluid intake",
+        "orthostatic HR/BP"
+      ]
+    },
+    {
+      "chain_id": "autonomic_dysregulation_branch",
+      "chain": "normal_urine_osmolality + orthostatic_symptoms + low_HRV -> autonomic_dysregulation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "urine markers",
+        "orthostatic symptoms",
+        "HRV"
+      ]
+    },
+    {
+      "chain_id": "spaceflight_deconditioning_volume_branch",
+      "chain": "postflight_or_bed_rest + reduced_plasma_volume + orthostatic_intolerance -> spaceflight deconditioning volume branch",
+      "confidence": "high",
+      "required_sources": [
+        "plasma volume",
+        "pre/post flight or bedrest testing",
+        "symptoms"
+      ]
+    },
+    {
+      "chain_id": "cerebral_autoregulation_hypothesis",
+      "chain": "orthostatic_symptoms + normal_HR_BP + abnormal_cerebral_perfusion -> cerebral_autoregulation_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "orthostatic symptoms",
+        "HR/BP",
+        "cerebral perfusion"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer POTS from tachycardia outside orthostatic testing.",
+    "Do not infer hypovolemia from urine concentration alone.",
+    "Do not infer cerebral hypoperfusion from dizziness alone.",
+    "Do not infer dehydration from low BP alone.",
+    "Do not compare orthostatic tests without protocol duration/posture/medication context.",
+    "Plasma volume loss is important but not sufficient for postural intolerance in all individuals."
+  ],
+  "research_gaps": [
+    "Few studies link urine osmolality/specific gravity directly to hypovolemia diagnosis in orthostatic settings.",
+    "Limited data on cognitive outcomes linked to measured cerebral perfusion during orthostatic stress.",
+    "Sparse high-quality long-term salt/fluid intervention trials.",
+    "Lack of standardized active stand vs tilt table protocols across populations."
+  ]
+}

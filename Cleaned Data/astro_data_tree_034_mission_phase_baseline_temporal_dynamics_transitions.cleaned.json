@@ -1,0 +1,49 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions",
+    "series_name": "Mission Phase and Temporal Dynamics Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_strong_temporal_rule_layer",
+  "core_interpretation": "Mission phase and within-person temporal dynamics are a global rule layer: individual baseline, repeated measures, temporal lag and recovery slope take priority over group reference ranges.",
+  "high_value_chains": [
+    {
+      "chain_id": "within_person_state_trajectory_branch",
+      "chain": "preflight_baseline + inflight_deviation + postflight_recovery -> within_person_state_trajectory_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "adaptation_branch",
+      "chain": "early_inflight_shift + later_stabilization -> adaptation_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "cumulative_load_branch",
+      "chain": "progressive_mid_to_late_mission_drift + fatigue/performance_decline -> cumulative_load_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "re_adaptation_branch",
+      "chain": "post_landing_orthostatic_intolerance + recovery_over_days/weeks -> re_adaptation_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "lagged_effect_branch",
+      "chain": "acute_exposure + delayed_symptom_peak -> lagged_effect_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer abnormal state from group reference range alone.",
+    "Do not infer pathology from early mission adaptation alone.",
+    "Do not interpret postflight values without recovery timing.",
+    "Do not ignore lag between exposure and symptom/marker response.",
+    "Do not compare phases without protocol/sample timing."
+  ],
+  "research_gaps": [
+    "Need harmonized protocols and standardized reporting of timing/sampling across studies.",
+    "Limited longitudinal studies with sufficient sample size to model persistent deviations and recovery slopes.",
+    "Insufficient integration of multi-modal data across all mission phases.",
+    "Lack of robust methods to distinguish adaptation from pathology using time-series modeling."
+  ]
+}

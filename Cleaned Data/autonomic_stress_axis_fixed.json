@@ -9,7 +9,9 @@
     "date_generated": "2026-06-09"
   },
   "search_scope": {
-    "species_priority": ["human"],
+    "species_priority": [
+      "human"
+    ],
     "include_indirect_evidence": true,
     "preferred_evidence_types": [
       "systematic_review",
@@ -108,7 +110,7 @@
           }
         ],
         "mechanistic_summary": "Vagal modulation of autonomic tone (as indexed by HRV) is plausibly linked to HPA-axis engagement; several human studies indicate that higher HRV during stress is associated with reduced cortisol reactivity or more rapid cortisol recovery, whereas lower HRV can accompany greater cortisol changes in some contexts. This pattern is context-sensitive and not uniformly observed across all samples."
-        },
+      },
       "cognitive_neurobehavioral_output": {
         "variable": "anxiety and stress reactivity; emotional regulation",
         "observable_name": "state/trait anxiety measures; threat reactivity; interoceptive awareness",
@@ -150,8 +152,9 @@
             "source_type": "clinical_study",
             "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889120",
             "relevant_finding": "Higher HRV before a stressor linked to smaller cortisol increase; higher HRV during stress linked to cortisol decline.",
-            "supports_which_part": ["physiology_to_biochemistry"]
-            ,
+            "supports_which_part": [
+              "physiology_to_biochemistry"
+            ],
             "study_population": "adult humans",
             "sample_size": 386,
             "limitations_of_source": "Sample drawn from archival MIDUS-like data; generalizability limited to similar contexts"
@@ -163,7 +166,9 @@
             "source_type": "experimental_human_study",
             "doi_or_url": "https://pubmed.ncbi.nlm.nih.gov/22901344",
             "relevant_finding": "HRV and cortisol measured during social stress tasks; patterns support an association between autonomic and HPA responses under social stress.",
-            "supports_which_part": ["physiology_to_biochemistry"],
+            "supports_which_part": [
+              "physiology_to_biochemistry"
+            ],
             "study_population": "adult humans",
             "sample_size": "not specified in provided excerpt",
             "limitations_of_source": "Details on sample size and exact analytic approach not provided here"
@@ -175,7 +180,9 @@
             "source_type": "mechanistic_review",
             "doi_or_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8045383",
             "relevant_finding": "RMSSD robustly reflects vagal tone and is sensitive to stress induction; TSST reduces RMSSD",
-            "supports_which_part": ["physiology_to_biochemistry"],
+            "supports_which_part": [
+              "physiology_to_biochemistry"
+            ],
             "study_population": "human",
             "sample_size": "not applicable",
             "limitations_of_source": "Mechanistic review; not a single primary study"
@@ -187,7 +194,10 @@
             "source_type": "systematic_review",
             "doi_or_url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0105054",
             "relevant_finding": "HRV and cortisol relationships show developmental variability; higher HRV during stress is sometimes associated with lower cortisol reactivity, but findings are not universal across age groups",
-            "supports_which_part": ["physiology_to_biochemistry", "biochemistry_to_neurobehavior"],
+            "supports_which_part": [
+              "physiology_to_biochemistry",
+              "biochemistry_to_neurobehavior"
+            ],
             "study_population": "mixed_age",
             "sample_size": "not applicable",
             "limitations_of_source": "Systematic review notes context-dependency and age-related differences"
@@ -240,8 +250,8 @@
         "reason_for_action": "Represents plausible HRV-cortisol-anxiety associations supported by multiple human studies",
         "risk_of_overinterpretation": "moderate"
       }
-    ]
-  },
+    }
+  ],
   "negative_or_uncertain_findings": [
     {
       "claim": "In some large adult samples, no relationship between anxiety and HRV or cortisol metrics was observed",
@@ -345,35 +355,122 @@
   },
   "Works Cited": {
     "sources": [
-      [1] "https://epublications.marquette.edu/theses_open/691",
-      [2] "https://epublications.marquette.edu/cgi/viewcontent.cgi?article=1693&context=theses_open",
-      [3] "https://nature.com/articles/s41598-025-93137-8",
-      [4] "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0274298",
-      [5] "https://pmc.ncbi.nlm.nih.gov/articles/PMC5967249",
-      [6] "https://pmc.ncbi.nlm.nih.gov/articles/PMC8045383",
-      [7] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889120",
-      [8] "https://diva-portal.org/smash/get/diva2:345553/FULLTEXT01.pdf",
-      [9] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12010509",
-      [10] "https://journals.viamedica.pl/international_maritime_health/article/download/26125/20919",
-      [11] "https://pmc.ncbi.nlm.nih.gov/articles/PMC9839632",
-      [12] "https://pmc.ncbi.nlm.nih.gov/articles/PMC12171375",
-      [13] "https://pmc.ncbi.nlm.nih.gov/articles/PMC2937087",
-      [14] "https://pmc.ncbi.nlm.nih.gov/articles/PMC3805119",
-      [15] "https://pmc.ncbi.nlm.nih.gov/articles/PMC3307789",
-      [16] "https://pubmed.ncbi.nlm.nih.gov/6869114",
-      [17] "https://pubmed.ncbi.nlm.nih.gov/8038025",
-      [18] "https://frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1474650/full",
-      [19] "https://midus.wisc.edu/wp-content/uploads/2024/04/1702.pdf",
-      [20] "https://pubmed.ncbi.nlm.nih.gov/24016864",
-      [21] "https://pmc.ncbi.nlm.nih.gov/articles/PMC11617258",
-      [22] "https://ptsd.va.gov/professional/articles/article-pdf/id1548512.pdf",
-      [23] "https://pubmed.ncbi.nlm.nih.gov/22901344",
-      [24] "https://sciencedirect.com/science/article/abs/pii/S1569904820300859",
-      [25] "https://nature.com/articles/s41398-023-02331-7",
-      [26] "https://frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1068410/full",
-      [27] "https://eneuro.org/content/10/6/ENEURO.0088-23.2023",
-      [28] "https://frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1055445/full",
-      [29] "https://www.sciencedaily.com/releases/2010/03/100329162926.htm"
+      {
+        "index": 1,
+        "url": "https://epublications.marquette.edu/theses_open/691"
+      },
+      {
+        "index": 2,
+        "url": "https://epublications.marquette.edu/cgi/viewcontent.cgi?article=1693&context=theses_open"
+      },
+      {
+        "index": 3,
+        "url": "https://nature.com/articles/s41598-025-93137-8"
+      },
+      {
+        "index": 4,
+        "url": "https://journals.plos.org/plosone/article?id=10.1371%2Fjournal.pone.0274298"
+      },
+      {
+        "index": 5,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5967249"
+      },
+      {
+        "index": 6,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8045383"
+      },
+      {
+        "index": 7,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12889120"
+      },
+      {
+        "index": 8,
+        "url": "https://diva-portal.org/smash/get/diva2:345553/FULLTEXT01.pdf"
+      },
+      {
+        "index": 9,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12010509"
+      },
+      {
+        "index": 10,
+        "url": "https://journals.viamedica.pl/international_maritime_health/article/download/26125/20919"
+      },
+      {
+        "index": 11,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9839632"
+      },
+      {
+        "index": 12,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12171375"
+      },
+      {
+        "index": 13,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2937087"
+      },
+      {
+        "index": 14,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3805119"
+      },
+      {
+        "index": 15,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3307789"
+      },
+      {
+        "index": 16,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/6869114"
+      },
+      {
+        "index": 17,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/8038025"
+      },
+      {
+        "index": 18,
+        "url": "https://frontiersin.org/journals/psychiatry/articles/10.3389/fpsyt.2024.1474650/full"
+      },
+      {
+        "index": 19,
+        "url": "https://midus.wisc.edu/wp-content/uploads/2024/04/1702.pdf"
+      },
+      {
+        "index": 20,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/24016864"
+      },
+      {
+        "index": 21,
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11617258"
+      },
+      {
+        "index": 22,
+        "url": "https://ptsd.va.gov/professional/articles/article-pdf/id1548512.pdf"
+      },
+      {
+        "index": 23,
+        "url": "https://pubmed.ncbi.nlm.nih.gov/22901344"
+      },
+      {
+        "index": 24,
+        "url": "https://sciencedirect.com/science/article/abs/pii/S1569904820300859"
+      },
+      {
+        "index": 25,
+        "url": "https://nature.com/articles/s41398-023-02331-7"
+      },
+      {
+        "index": 26,
+        "url": "https://frontiersin.org/journals/human-neuroscience/articles/10.3389/fnhum.2023.1068410/full"
+      },
+      {
+        "index": 27,
+        "url": "https://eneuro.org/content/10/6/ENEURO.0088-23.2023"
+      },
+      {
+        "index": 28,
+        "url": "https://frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2023.1055445/full"
+      },
+      {
+        "index": 29,
+        "url": "https://www.sciencedaily.com/releases/2010/03/100329162926.htm"
+      }
     ]
   }
 }

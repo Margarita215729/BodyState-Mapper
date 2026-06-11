@@ -1,0 +1,48 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response",
+    "series_name": "Muscle and Functional Mobility Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_strong",
+  "core_interpretation": "Muscle/function tree should prioritize strength and functional mobility over muscle mass alone.",
+  "high_value_chains": [
+    {
+      "chain_id": "deconditioning_branch",
+      "chain": "low_muscle_strength + low_activity + low_VO2peak -> deconditioning_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "catabolic_low_energy_availability_branch",
+      "chain": "muscle_mass_loss + negative_nitrogen_balance + low_energy_intake -> catabolic_low_energy_availability_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "unloading_countermeasure_gap_branch",
+      "chain": "postflight_strength_loss + microgravity + countermeasure_adherence_low -> unloading_countermeasure_gap_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "neuromuscular_function_or_pain_limitation_branch",
+      "chain": "preserved_muscle_mass + low_strength -> neuromuscular_function_or_pain_limitation_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "functional_mobility_risk_branch",
+      "chain": "low_gait_speed + low_strength + balance_impairment -> functional_mobility_risk_branch",
+      "confidence": "high"
+    }
+  ],
+  "guardrails": [
+    "Do not infer muscle loss from low activity alone.",
+    "Do not infer weakness from fatigue report alone.",
+    "Do not infer countermeasure failure without adherence/load data.",
+    "Do not infer sarcopenia from one strength test without mass/function context.",
+    "Do not compare strength metrics without protocol and body-size normalization."
+  ],
+  "research_gaps": [
+    "Few studies directly compare countermeasure nonresponse vs nonadherence vs insufficient load.",
+    "Sparse longitudinal data on postflight recovery trajectories after unloading.",
+    "Limited harmonization of ultrasound protocols."
+  ]
+}

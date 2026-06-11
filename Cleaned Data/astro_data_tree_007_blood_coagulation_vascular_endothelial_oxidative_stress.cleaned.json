@@ -1,0 +1,112 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress",
+    "series_name": "Blood Coagulation, Vascular, Endothelial, and Oxidative Stress Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "blood_coagulation_vascular_oxidative",
+    "source_category": "biofluid_vascular_endothelial_coagulation_oxidative_stress"
+  },
+  "measured_entities": [
+    {
+      "entity_id": "d_dimer",
+      "entity_name": "D-dimer",
+      "measurement_type": "coagulation_marker|fibrinolysis_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "d_dimer_elevated_no_imaging",
+          "result_pattern": "above reference range without imaging evidence",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "coagulation activation/fibrinolysis; nonspecific"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "imaging",
+            "inflammation",
+            "recent surgery/illness"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "imaging",
+              "other_entity": "CT/ultrasound",
+              "combined_meaning": "high D-dimer + symptoms + positive imaging supports thrombotic event branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "nonspecific_coagulation_activation_branch",
+            "thrombotic_event_branch"
+          ],
+          "candidate_chains": [
+            "high_D_dimer + symptoms + imaging_positive -> thrombotic_event_branch"
+          ],
+          "guardrails": [
+            "do not infer thrombosis from D-dimer alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "vWF_FactorVIII_endothelial",
+      "entity_name": "vWF / Factor VIII / endothelial activation markers",
+      "measurement_type": "endothelial_marker|vascular_marker",
+      "sample_or_sensor": "blood",
+      "result_variations": [
+        {
+          "variation_id": "vWF_FVIII_high_inflammation",
+          "result_pattern": "elevated vWF/Factor VIII with CRP/IL6/NLR/endothelial markers",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "endothelial activation/dysfunction context"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "inflammation markers",
+            "acute illness/post-viral state",
+            "vascular symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/IL6/NLR",
+              "combined_meaning": "high vWF/FVIII + inflammation supports endothelial activation branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "endothelial_activation_branch"
+          ],
+          "candidate_chains": [
+            "high_vWF/FactorVIII + endothelial_markers + inflammation -> endothelial_activation_branch"
+          ],
+          "guardrails": [
+            "endothelial markers are not direct perfusion measurements"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "D-dimer positive is nonspecific",
+    "platelet count is not platelet activation",
+    "oxidative stress markers require radiation/inflammation/exercise context",
+    "microclots remain hypothesis/low-to-moderate confidence unless validated"
+  ]
+}

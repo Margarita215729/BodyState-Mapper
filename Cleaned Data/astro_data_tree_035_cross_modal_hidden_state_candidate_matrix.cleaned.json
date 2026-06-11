@@ -1,0 +1,47 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix",
+    "series_name": "Cross-Modal Hidden-State Candidate Matrix",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "partial_usable_but_needs_manual_expansion",
+  "core_interpretation": "The file provides the correct inference philosophy and policies, but only one hidden state is fully expanded; the remaining required hidden states are listed but not materialized.",
+  "usable_elements": [
+    "global inference rules",
+    "context override priority order",
+    "missing data policy",
+    "uncertainty policy",
+    "acute_sleep_loss hidden state example"
+  ],
+  "missing_elements": [
+    "full candidate hidden-state matrix for all required hidden states",
+    "positive/negative evidence for each state",
+    "context overrides for each state",
+    "next measurement recommendations for each state"
+  ],
+  "global_rules": [
+    {
+      "rule_id": "G1",
+      "rule_name": "No single-marker inference unless risk flag"
+    },
+    {
+      "rule_id": "G2",
+      "rule_name": "Temporal/within-person deviation prioritization"
+    },
+    {
+      "rule_id": "G3",
+      "rule_name": "Context override before biological inference"
+    },
+    {
+      "rule_id": "G4",
+      "rule_name": "Unknown data is not negative evidence"
+    }
+  ],
+  "guardrails": [
+    "Do not infer hidden states from one marker alone unless explicitly single-source risk flag.",
+    "Medication/context/environmental overrides must be checked before biological inference.",
+    "High confidence requires temporal alignment of input marker, mediator/context and outcome.",
+    "Unknown or missing data is not negative evidence."
+  ],
+  "recommendation": "Keep as scaffold; generate manual v2 from all completed source trees."
+}

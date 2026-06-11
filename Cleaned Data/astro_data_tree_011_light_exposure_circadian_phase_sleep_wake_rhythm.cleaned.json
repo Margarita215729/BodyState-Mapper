@@ -1,0 +1,214 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm",
+    "series_name": "Light Exposure and Circadian Phase Variation Tree: Sleep-Wake Rhythm, Melatonin, Alertness, Fatigue, Mood, and Cognition",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "status": "usable"
+  },
+  "data_source": {
+    "source_id": "light_circadian_phase",
+    "source_category": "wearable_environment_circadian_physiology",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "continuous_monitoring",
+      "morning_evening_sampling",
+      "shift_schedule",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "daytime_evening_melanopic_light",
+      "entity_name": "Daytime and evening light exposure",
+      "measurement_type": "light_exposure_marker|environmental_marker",
+      "sample_or_sensor": "wearable_light_sensor|environment_sensor|actigraphy",
+      "result_variations": [
+        {
+          "variation_id": "low_daytime_high_evening_light",
+          "result_pattern": "Low daytime light exposure and/or high evening blue/melanopic light exposure",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "Input pattern that increases risk of delayed circadian phase, later sleep timing, longer sleep onset latency, and altered alertness."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "DLMO/melatonin",
+            "sleep timing",
+            "wear location",
+            "spectrum/melanopic irradiance",
+            "mission schedule"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "actigraphy/sleep_diary",
+              "other_entity": "delayed sleep midpoint/sleep onset latency",
+              "combined_meaning": "Low daytime plus high evening light with delayed sleep supports circadian delay branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "saliva",
+              "other_entity": "DLMO/salivary melatonin",
+              "combined_meaning": "Evening melanopic light plus delayed DLMO strongly supports biological phase delay.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_delay_branch"
+          ],
+          "candidate_chains": [
+            "low_daytime_light + high_evening_light + delayed_sleep_midpoint -> circadian_delay_branch"
+          ],
+          "guardrails": [
+            "Light exposure is input, not circadian phase itself.",
+            "Do not compare lux-only data to melanopic light without caution."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "DLMO_melatonin_aMT6s",
+      "entity_name": "DLMO, salivary melatonin, urinary 6-sulfatoxymelatonin",
+      "measurement_type": "circadian_phase_marker|melatonin_marker",
+      "sample_or_sensor": "saliva|urine",
+      "result_variations": [
+        {
+          "variation_id": "delayed_or_shifted_melatonin_phase",
+          "result_pattern": "Delayed DLMO or shifted urinary aMT6s acrophase",
+          "direction": "delayed|phase_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "Biological circadian phase shift; DLMO is a high-value marker of central circadian phase, while urinary aMT6s is useful in field studies."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sampling timing",
+            "dim light conditions",
+            "light schedule",
+            "sleep timing",
+            "medications",
+            "melatonin supplementation"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "sleep midpoint/sleep onset",
+              "combined_meaning": "Delayed melatonin phase plus late sleep timing supports delayed circadian phase branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "space_analog_lighting",
+              "other_entity": "dynamic lighting schedule",
+              "combined_meaning": "Dynamic lighting plus stabilized aMT6s supports circadian countermeasure response.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "delayed_circadian_phase_branch",
+            "circadian_countermeasure_response_branch"
+          ],
+          "candidate_chains": [
+            "delayed_DLMO + late_sleep_timing + morning_sleepiness -> delayed_circadian_phase_branch",
+            "shifted_6_sulfatoxymelatonin + altered_light_schedule + fragmented_sleep -> circadian_disruption_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep quality from melatonin alone.",
+            "Urinary aMT6s is a proxy, not direct sleep measurement."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "rest_activity_rhythm_social_jetlag",
+      "entity_name": "Rest-activity rhythm, sleep midpoint, social jetlag",
+      "measurement_type": "sleep_wake_marker|circadian_proxy_marker",
+      "sample_or_sensor": "actigraphy|sleep_diary|wearable",
+      "result_variations": [
+        {
+          "variation_id": "irregular_or_misaligned_rhythm",
+          "result_pattern": "Irregular rest-activity rhythm, social jetlag, shifted sleep midpoint, low interdaily stability",
+          "direction": "irregular|phase_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "Behavioral/circadian proxy of misalignment, but affected by schedule, social constraints, illness, and environment."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "DLMO/melatonin",
+            "light exposure",
+            "work/mission schedule",
+            "sleep duration",
+            "PVT/cognition"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "PVT/reaction time lapses",
+              "combined_meaning": "Misalignment plus reduced sleep and PVT lapses supports alertness performance risk branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_misalignment_branch",
+            "alertness_performance_risk_branch"
+          ],
+          "candidate_chains": [
+            "circadian_misalignment + reduced_sleep + PVT_lapses -> alertness_performance_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer circadian phase from bedtime alone.",
+            "Rest-activity rhythms are influenced by non-circadian factors."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "All individuals respond similarly to the same evening light intensity.",
+      "reason": "Large interindividual variability in melatonin suppression and phase response.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Evening red or blue-depleted light has no circadian effect.",
+      "reason": "Effects are usually smaller than blue-rich light, but not necessarily zero.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "research_gaps": [
+    "Few large-scale intervention studies combine wearable melanopic sensors with timed cognitive outcomes.",
+    "Limited astronaut studies integrating light, actigraphy, melatonin and cognition longitudinally.",
+    "Long-term metabolic/health effects of chronic low daytime/high evening light remain incompletely mapped."
+  ],
+  "summary": {
+    "most_reliable_circadian_markers": [
+      "DLMO via saliva",
+      "Urinary aMT6s acrophase for field studies",
+      "Timed melanopic/evening light exposure"
+    ],
+    "most_context_dependent_markers": [
+      "Sleep midpoint/social jetlag",
+      "Actigraphy rest-activity stability",
+      "Lux-only light data"
+    ],
+    "overall_assessment": "Light/circadian data are high-value when light timing/spectrum is paired with biological phase markers and sleep/performance outcomes."
+  }
+}

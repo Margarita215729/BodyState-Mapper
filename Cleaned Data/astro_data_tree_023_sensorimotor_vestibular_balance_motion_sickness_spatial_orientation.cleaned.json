@@ -1,0 +1,46 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation",
+    "series_name": "Sensorimotor and Vestibular Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable_but_needs_astronaut_completion_later",
+  "core_interpretation": "Sensorimotor markers are useful for balance, vestibular and motion-sickness branches; subjective dizziness is not enough.",
+  "high_value_chains": [
+    {
+      "chain_id": "sensorimotor_adaptation_branch",
+      "chain": "postflight_balance_impairment + recent_microgravity + normal_strength -> sensorimotor_adaptation_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "motion_sickness_branch",
+      "chain": "high_motion_sickness_score + visual-vestibular_conflict + nausea -> motion_sickness_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "vestibular_dysfunction_branch",
+      "chain": "impaired_VOR + vertigo + postural_instability -> vestibular_dysfunction_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "orthostatic_dizziness_branch",
+      "chain": "dizziness + orthostatic_HR_increase + normal_VOR -> orthostatic_dizziness_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "hyperventilation_dizziness_branch",
+      "chain": "dizziness + low_ETCO2 + normal_SpO2 + normal_balance -> hyperventilation_dizziness_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer vestibular disorder from dizziness alone.",
+    "Do not infer postflight pathology from transient adaptation.",
+    "Do not infer balance cause without strength, vision, vestibular and orthostatic context.",
+    "Do not compare balance/gait metrics without protocol context."
+  ],
+  "research_gaps": [
+    "Sparse direct astronaut/space analog data linking operational errors to specific sensorimotor markers.",
+    "Few studies integrating orthostatic/cerebral perfusion/fatigue/cognition with sensorimotor outcomes."
+  ]
+}

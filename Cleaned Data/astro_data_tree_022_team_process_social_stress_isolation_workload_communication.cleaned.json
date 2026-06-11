@@ -1,0 +1,48 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication",
+    "series_name": "Team Process and Social Stress Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable",
+  "core_interpretation": "Team/social/workload signals are team-level and operational context layers, not individual psychiatric diagnosis.",
+  "high_value_chains": [
+    {
+      "chain_id": "workload_sleep_performance_risk_branch",
+      "chain": "high_workload + sleep_debt + PVT_lapses -> workload_sleep_performance_risk_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "team_behavioral_risk_branch",
+      "chain": "team_conflict + mood_variability + operational_errors -> team_behavioral_risk_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "isolation_mood_activity_branch",
+      "chain": "social_isolation + depressed_mood/anhedonia + low_activity -> isolation_mood_activity_branch",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "communication_coordination_risk_branch",
+      "chain": "communication_delay + low_shared_mental_model + task_errors -> communication_coordination_risk_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "resilient_team_adaptation_branch",
+      "chain": "high_cohesion + high_workload + stable_performance -> resilient_team_adaptation_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer individual psychopathology from team conflict alone.",
+    "Do not treat all conflict as harmful; distinguish task conflict from relational conflict.",
+    "Do not infer stress biology from workload score alone.",
+    "Separate isolation from loneliness.",
+    "Separate communication frequency from communication quality."
+  ],
+  "research_gaps": [
+    "No consensus on how team cohesion relates to performance in ICE/space analogs.",
+    "Few longitudinal studies tracking both behavioral/process markers and operational outcomes.",
+    "Limited integration of physiological markers with behavioral/social markers."
+  ]
+}

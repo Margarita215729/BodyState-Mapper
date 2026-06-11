@@ -1,0 +1,48 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays",
+    "series_name": "Immune Function Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping"
+  },
+  "status": "cleaned_usable_but_needs_spaceflight_completion_later",
+  "core_interpretation": "Immune markers are strongest when cell subsets, cytokines, latent virus markers and symptoms are interpreted together. Cytokines or viral DNA alone are not diagnoses.",
+  "high_value_chains": [
+    {
+      "chain_id": "inflammatory_sickness_behavior_branch",
+      "chain": "high_IL6/TNF/CRP + fatigue/anhedonia + sickness_behavior -> inflammatory_sickness_behavior_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "stress_related_immune_suppression_branch",
+      "chain": "low_NK_activity + latent_virus_shedding + high_stress -> stress_related_immune_suppression_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "viral_reactivation_fatigue_hypothesis",
+      "chain": "EBV_or_HSV_reactivation + fatigue + immune_shift -> viral_reactivation_fatigue_hypothesis",
+      "confidence": "moderate"
+    },
+    {
+      "chain_id": "acute_inflammatory_infection_branch",
+      "chain": "high_NLR + fever/temperature + symptoms -> acute_inflammatory_infection_branch",
+      "confidence": "high"
+    },
+    {
+      "chain_id": "postviral_immune_branch",
+      "chain": "immune_activation + postviral_status + brain_fog/fatigue -> postviral_immune_branch",
+      "confidence": "moderate"
+    }
+  ],
+  "guardrails": [
+    "Do not infer infection from cytokines alone.",
+    "Do not infer immune suppression from one low immune cell count.",
+    "Do not infer active disease from latent virus DNA alone.",
+    "Do not infer fatigue mechanism from immune marker without symptom timing.",
+    "Do not treat saliva viral shedding as systemic immune failure."
+  ],
+  "research_gaps": [
+    "Limited spaceflight-specific immune dysregulation data compared to terrestrial cohorts.",
+    "Sparse longitudinal immune/symptom/performance panels.",
+    "Need assays distinguishing immune activation from suppression in complex states."
+  ]
+}

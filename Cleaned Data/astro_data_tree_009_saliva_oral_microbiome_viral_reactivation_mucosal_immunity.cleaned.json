@@ -1,0 +1,160 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity",
+    "series_name": "Saliva Variation Tree: Oral Microbiome, Viral Reactivation, Mucosal Immunity",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11"
+  },
+  "data_source": {
+    "source_id": "saliva_oral_microbiome_viral",
+    "source_category": "biofluid_saliva_oral_microbiome_viral_mucosal_immunity"
+  },
+  "measured_entities": [
+    {
+      "entity_id": "oral_microbiome_dysbiosis",
+      "entity_name": "Oral microbiome diversity/dysbiosis and periodontal pathogens",
+      "measurement_type": "oral_microbiome_marker|oral_inflammation_marker",
+      "sample_or_sensor": "saliva|oral_swab",
+      "result_variations": [
+        {
+          "variation_id": "periodontal_dysbiosis_pathogens",
+          "result_pattern": "increased periodontal pathogens with oral inflammatory signs",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "local oral inflammatory disease risk when confirmed clinically"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "periodontal exam",
+            "oral hygiene",
+            "salivary cytokines"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "oral_exam",
+              "other_entity": "periodontal pockets/bleeding",
+              "combined_meaning": "oral dysbiosis + periodontitis findings supports local periodontal inflammatory branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "periodontal_inflammation_branch",
+            "oral_systemic_inflammation_hypothesis"
+          ],
+          "candidate_chains": [
+            "oral_dysbiosis + periodontal_inflammation + blood_CRP -> oral_systemic_inflammation_hypothesis"
+          ],
+          "guardrails": [
+            "do not infer gut dysbiosis from oral microbiome",
+            "do not treat oral microbiome shift as diagnosis"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "herpesvirus_reactivation",
+      "entity_name": "EBV/HSV/CMV/VZV reactivation / viral shedding",
+      "measurement_type": "viral_reactivation_marker|infection_risk_marker",
+      "sample_or_sensor": "saliva|serum|other",
+      "result_variations": [
+        {
+          "variation_id": "HHV_reactivation_stress_depression",
+          "result_pattern": "viral DNA/serologic evidence of herpesvirus reactivation with stress/depression context",
+          "direction": "present|baseline_deviation",
+          "standalone_interpretation": [
+            "population-level association with stress/depression; not active symptomatic infection by itself"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "stress/mood",
+            "immune markers",
+            "sampling site"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "psychological",
+              "other_entity": "depression/stress status",
+              "combined_meaning": "HHV reactivation + stress/depression supports stress-related viral reactivation branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "stress_related_viral_reactivation_branch",
+            "asymptomatic_shedding_branch"
+          ],
+          "candidate_chains": [
+            "EBV_or_HSV_shedding + high_stress/cortisol + low_sIgA -> stress_related_viral_reactivation_branch"
+          ],
+          "guardrails": [
+            "viral DNA alone does not prove active symptomatic infection",
+            "do not infer fatigue without timing/context"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "salivary_mucosal_immunity",
+      "entity_name": "sIgA, lactoferrin, lysozyme, defensins",
+      "measurement_type": "mucosal_immune_marker|infection_risk_marker",
+      "sample_or_sensor": "saliva",
+      "result_variations": [
+        {
+          "variation_id": "low_sIgA_high_workload_URI",
+          "result_pattern": "low sIgA relative to baseline with high workload/stress and URI episodes",
+          "direction": "decreased|baseline_deviation",
+          "standalone_interpretation": [
+            "mucosal immune vulnerability branch"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "URI logs",
+            "training/workload",
+            "oral health"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_logs",
+              "other_entity": "URI episodes",
+              "combined_meaning": "low sIgA + frequent URI + high workload/stress supports mucosal immune vulnerability",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mucosal_immune_vulnerability_branch"
+          ],
+          "candidate_chains": [
+            "low_sIgA + frequent_URI_symptoms + high_workload/stress -> mucosal_immune_vulnerability_branch"
+          ],
+          "guardrails": [
+            "do not infer systemic immune suppression from saliva alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "guardrails": [
+    "oral microbiome is not gut microbiome",
+    "viral DNA is not active infection",
+    "salivary cytokines are confounded by periodontal disease",
+    "fatigue cannot be inferred from viral shedding alone"
+  ]
+}

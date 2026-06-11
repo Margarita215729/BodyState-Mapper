@@ -1,0 +1,123 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_018_exercise_physiology_VO2_workload_HR_recovery_functional_capacity",
+    "series_name": "Exercise Physiology Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "strong",
+  "measured_entities": [
+    {
+      "entity_id": "VO2peak_max",
+      "key_variations": [
+        "reduced_VO2peak_with_cardiac_limitation",
+        "day2_VO2peak_drop_PEM_pattern",
+        "high_VO2max_athlete_profile"
+      ],
+      "interpretation": "Objective exercise capacity marker, but mechanism requires oxygen pulse, stroke volume, ventilation, muscle and effort context.",
+      "guardrails": [
+        "Do not infer mechanism from low VO2 alone."
+      ]
+    },
+    {
+      "entity_id": "chronotropic_response_HR_recovery",
+      "key_variations": [
+        "chronotropic_incompetence",
+        "blunted_HR_recovery"
+      ],
+      "interpretation": "Autonomic/cardiac rate response and recovery layer distinct from resting HRV.",
+      "guardrails": [
+        "Check medications and protocol."
+      ]
+    },
+    {
+      "entity_id": "ventilatory_thresholds_efficiency",
+      "key_variations": [
+        "reduced_VT_AT",
+        "high_VE_VCO2",
+        "inefficient_ventilation_ME_CFS"
+      ],
+      "interpretation": "Useful for distinguishing pulmonary/cardiac/peripheral/metabolic or perceptual limitations.",
+      "guardrails": [
+        "CPET thresholds are not subjective RPE."
+      ]
+    },
+    {
+      "entity_id": "functional_capacity_field_tests",
+      "key_variations": [
+        "6MWD_group_estimator",
+        "6MWT_30STS_cutpoints",
+        "ventilatory_dynamics_during_6MWT"
+      ],
+      "interpretation": "Good screening and group-level tracking; limited for precise individual VO2 without CPET.",
+      "guardrails": [
+        "6MWT alone should not assign individual VO2peak with precision."
+      ]
+    },
+    {
+      "entity_id": "countermeasure_response",
+      "key_variations": [
+        "improved_VO2_HR_response_after_training"
+      ],
+      "interpretation": "Tracks response to exercise countermeasures/rehabilitation when protocol and adherence are known.",
+      "guardrails": [
+        "Spaceflight deconditioning differs from chronic disease physiology."
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "cardiac_output_limitation_branch",
+      "chain": "low_VO2peak + low_oxygen_pulse + impaired_stroke_volume_reserve -> cardiac_output_limitation_branch",
+      "confidence": "high",
+      "required_sources": [
+        "VO2peak",
+        "oxygen pulse or stroke volume",
+        "chronotropic response"
+      ]
+    },
+    {
+      "chain_id": "PEM_objective_functional_branch",
+      "chain": "day2_CPET_drop_in_VO2_and_work + delayed_symptom_worsening -> PEM_objective_functional_branch",
+      "confidence": "high",
+      "required_sources": [
+        "two-day CPET",
+        "RPE",
+        "symptom timing"
+      ]
+    },
+    {
+      "chain_id": "perceptual_or_neurobehavioral_fatigue_branch",
+      "chain": "normal_or_fitness_matched_CPET + high_RPE + inefficient_ventilation -> perceptual_or_neurobehavioral_fatigue_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CPET",
+        "RPE",
+        "ventilatory efficiency"
+      ]
+    },
+    {
+      "chain_id": "spaceflight_deconditioning_branch",
+      "chain": "postflight_low_VO2 + reduced_plasma_volume + low_activity -> spaceflight_deconditioning_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "VO2",
+        "plasma volume",
+        "activity/mission phase"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "6MWT accurately predicts individual VO2peak for clinical decisions.",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Chronotropic incompetence always indicates cardiac disease.",
+      "recommendation": "keep_as_hypothesis"
+    }
+  ],
+  "summary": {
+    "overall_assessment": "Exercise physiology tree is strong. CPET-derived VO2, thresholds, ventilatory efficiency, HR dynamics and two-day CPET provide a mechanism-sensitive layer for deconditioning, cardiopulmonary limitation, autonomic limitation, PEM and countermeasure response."
+  }
+}

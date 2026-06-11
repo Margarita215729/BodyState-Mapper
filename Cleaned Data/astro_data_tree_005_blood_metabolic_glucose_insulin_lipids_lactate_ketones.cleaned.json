@@ -1,0 +1,298 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones",
+    "series_name": "Blood Metabolic Biomarker Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_generated": "2026-06-11",
+    "status": "cleaned_from_uploaded_consensus_reports",
+    "quality": "usable_with_gaps"
+  },
+  "data_source": {
+    "source_id": "blood_metabolic",
+    "source_category": "biofluid_metabolic_energy_state",
+    "collection_contexts": [
+      "preflight",
+      "inflight",
+      "postflight",
+      "symptom_triggered",
+      "exercise_test",
+      "meal_test",
+      "research_protocol"
+    ]
+  },
+  "measured_entities": [
+    {
+      "entity_id": "fasting_glucose",
+      "result_variations": [
+        {
+          "variation_id": "fasting_glucose_high",
+          "result_pattern": "increased fasting glucose / impaired fasting glucose / diabetes-range pattern",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "impaired glucose regulation or diabetes risk"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "HbA1c",
+            "insulin/HOMA-IR",
+            "lipids",
+            "stress/illness",
+            "fasting state"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_metabolic",
+              "other_entity": "HbA1c",
+              "combined_meaning": "adds chronicity context",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "impaired_glucose_regulation",
+            "diabetes_risk"
+          ],
+          "candidate_chains": [
+            "high_fasting_glucose + HbA1c_high + insulin_resistance_indices -> chronic_metabolic_dysregulation_branch"
+          ],
+          "guardrails": [
+            "fasting glucose alone does not describe variability or postprandial excursions"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Tohidi 2018",
+              "Kosovski 2024"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "HbA1c",
+      "result_variations": [
+        {
+          "variation_id": "hba1c_high",
+          "result_pattern": "elevated HbA1c",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "chronic average glycemic exposure"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CBC/hemoglobin disorders",
+            "CGM",
+            "iron status"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CGM",
+              "other_entity": "time_in_range/glycemic_variability",
+              "combined_meaning": "CGM adds variability not captured by HbA1c",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "chronic_hyperglycemia"
+          ],
+          "candidate_chains": [
+            "HbA1c_high + high_glucose_variability -> diabetes_complication_risk_branch"
+          ],
+          "guardrails": [
+            "HbA1c does not measure glycemic variability"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Mahmoud 2024",
+              "Tian 2025",
+              "Ke 2024"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "CGM_glucose_variability_time_in_range",
+      "result_variations": [
+        {
+          "variation_id": "high_gv_low_tir",
+          "result_pattern": "high glycemic variability / low time in range",
+          "direction": "variable",
+          "standalone_interpretation": [
+            "in diabetes contexts predicts higher complication risk independent of HbA1c"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diabetes status",
+            "medication",
+            "meal timing",
+            "activity",
+            "sleep",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_log",
+              "other_entity": "timed fatigue/brain fog/cognition",
+              "combined_meaning": "needed to test acute postprandial symptom branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "glycemic_instability"
+          ],
+          "candidate_chains": [
+            "high_CGM_variability + low_TIR -> diabetes_complication_risk_branch",
+            "postprandial_spike + timed_brain_fog + cognitive_test -> acute_postprandial_brain_fog_hypothesis"
+          ],
+          "guardrails": [
+            "acute symptom inference requires time-locked CGM + symptoms/cognition"
+          ],
+          "evidence": {
+            "strength": "high for diabetes complications; low/moderate for acute symptom inference",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Yapanis 2022",
+              "Hjort 2024",
+              "Fang 2025"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "insulin_HOMAIR_TyG_TGHDL",
+      "result_variations": [
+        {
+          "variation_id": "IR_indices_high",
+          "result_pattern": "high fasting insulin/HOMA-IR/TyG/TG-HDL/METS-IR",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "insulin resistance/metabolic syndrome risk"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "BMI",
+            "waist circumference",
+            "fasting state",
+            "population cutoffs"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "anthropometrics",
+              "other_entity": "BMI/WC",
+              "combined_meaning": "high TyG + high BMI/WC improves metabolic syndrome/hypertension risk inference",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "insulin_resistance",
+            "metabolic_syndrome_risk"
+          ],
+          "candidate_chains": [
+            "high_TyG + high_BMI_WC -> metabolic_syndrome_hypertension_risk_branch"
+          ],
+          "guardrails": [
+            "TyG/TG-HDL alone should not diagnose beta-cell dysfunction"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Sun 2024",
+              "Adams-Huet 2024",
+              "Nabipoorashrafi 2022"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity_id": "ketones_lactate_pyruvate",
+      "result_variations": [
+        {
+          "variation_id": "evidence_gap",
+          "result_pattern": "not sufficiently covered in uploaded metabolic files",
+          "direction": "unknown",
+          "standalone_interpretation": [],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fasting",
+            "blood glucose",
+            "acid-base status",
+            "exercise workload",
+            "CPET"
+          ],
+          "candidate_hidden_states": [
+            "fasting_low_energy_availability_branch",
+            "ketoacidosis_red_flag_branch",
+            "mitochondrial_exertional_intolerance_branch"
+          ],
+          "candidate_chains": [
+            "BHB_high + low_energy_intake + fatigue -> fasting_low_energy_availability_branch",
+            "BHB_high + hyperglycemia + acidosis -> ketoacidosis_red_flag_branch",
+            "lactate_high_at_low_workload + reduced_anaerobic_threshold + PEM -> mitochondrial_exertional_intolerance_branch"
+          ],
+          "guardrails": [
+            "ketones do not automatically mean pathology",
+            "lactate does not automatically mean toxin"
+          ],
+          "evidence": {
+            "strength": "low in current uploaded set",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ]
+    }
+  ],
+  "high_value_inference_chains": [
+    {
+      "chain_id": "met_syndrome_risk_chain_tyg_bmi_wc",
+      "chain": "high_TyG_index + high_BMI/WC -> metabolic_syndrome_hypertension_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "TyG",
+        "BMI",
+        "waist circumference"
+      ]
+    },
+    {
+      "chain_id": "chronic_glycemic_variability_complication_branch",
+      "chain": "high_CGM_glycemic_variability + low_time_in_range -> diabetic_microvascular_macrovascular_risk_branch",
+      "confidence": "high in diabetes contexts",
+      "required_sources": [
+        "CGM",
+        "TIR",
+        "diabetes context"
+      ]
+    }
+  ],
+  "negative_or_uncertain_findings": [
+    {
+      "claim": "HbA1c alone is sufficient to assess glycemic variability",
+      "reason": "HbA1c does not capture acute fluctuations/time-in-range",
+      "recommendation": "exclude"
+    },
+    {
+      "claim": "Glucose spike alone explains acute brain fog",
+      "reason": "timed symptom/cognition studies are limited",
+      "recommendation": "keep_as_hypothesis"
+    },
+    {
+      "claim": "Ketone/lactate branches are complete",
+      "reason": "uploaded reports had placeholders/sparse coverage",
+      "recommendation": "needs_more_evidence"
+    }
+  ],
+  "summary": {
+    "overall_assessment": "Usable for cardiometabolic risk and insulin-resistance inference; weak for acute brain fog/fatigue and lactate/ketone/exercise-intolerance branches without targeted completion."
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "research_series": {
+    "series_id": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality",
+    "series_name": "Habitat Environment Variation Tree",
+    "project": "BodyState Mapper / Astronaut Data Mapping",
+    "date_cleaned": "2026-06-11"
+  },
+  "status": "cleaned_usable_strong_environment_context",
+  "core_interpretation": "Habitat environment is an exposure/context layer. CO2, ventilation, PM/VOC, noise and thermal environment are useful only when linked to timed physiological, sleep, symptom or performance outcomes.",
+  "high_value_chains": [
+    {
+      "chain_id": "co2_cognitive_headache_risk_branch",
+      "chain": "high_habitat_CO2 + headache + PVT_lapses -> CO2_cognitive_headache_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CO2 sensor",
+        "headache report",
+        "timed cognition/PVT"
+      ]
+    },
+    {
+      "chain_id": "air_quality_respiratory_branch",
+      "chain": "high_VOC_or_PM + respiratory_symptoms + inflammation -> air_quality_respiratory_branch",
+      "confidence": "high",
+      "required_sources": [
+        "VOC/PM sensor",
+        "respiratory symptoms",
+        "inflammatory marker"
+      ]
+    },
+    {
+      "chain_id": "noise_sleep_recovery_branch",
+      "chain": "night_noise_exposure + sleep_fragmentation + next_day_fatigue -> noise_sleep_recovery_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "noise dosimeter",
+        "sleep log/actigraphy",
+        "fatigue report"
+      ]
+    },
+    {
+      "chain_id": "heat_strain_environment_branch",
+      "chain": "high_temperature/humidity + high_core_temp/HR + cognitive_slowing -> heat_strain_environment_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "environment temp/humidity",
+        "core temp/HR",
+        "cognition/performance"
+      ]
+    },
+    {
+      "chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "chain": "high_habitat_CO2 + normal_ETCO2 + no_symptoms -> environmental_exposure_without_physiologic_effect_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CO2 sensor",
+        "ETCO2/physiology",
+        "symptom log"
+      ]
+    }
+  ],
+  "guardrails": [
+    "Do not infer blood CO2 from habitat CO2 alone.",
+    "Do not infer cognitive impairment from CO2 exposure without timed testing.",
+    "Do not infer hypoxia from low O2 without SpO2 or physiologic context.",
+    "Do not infer illness from VOC/PM exposure alone.",
+    "Do not infer heat strain from thermal discomfort alone."
+  ],
+  "research_gaps": [
+    "Sparse longitudinal data linking environmental markers to operational performance/symptom clusters in confined habitats.",
+    "Limited real-world studies integrating physiological/neurobehavioral outcomes with continuous environmental monitoring.",
+    "Few studies on spacecraft/submarine/ICE analog environments compared with schools/offices/residences."
+  ]
+}
