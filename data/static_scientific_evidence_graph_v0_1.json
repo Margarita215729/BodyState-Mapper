@@ -440,6 +440,19 @@
       "created_from_edges": [
         "wearable_multimodal_features_to_stress_state_prediction"
       ]
+    },
+    {
+      "node_id": "elevated_heart_rate_relative_to_baseline",
+      "node_type": "observable_marker",
+      "label": "Elevated Heart Rate Relative To Baseline",
+      "domain": "autonomic_cardiovascular",
+      "description": "Resting HR elevated above individual baseline by >= 1 std or >= 15%. THSI input for autonomic and recovery state inference.",
+      "allowed_as_input": true,
+      "allowed_as_output": false,
+      "clinical_diagnosis": false,
+      "created_from_edges": [
+        "elevated_resting_hr_to_low_recovery_state"
+      ]
     }
   ],
   "edges": [
@@ -1771,7 +1784,7 @@
   ],
   "validation_summary": {
     "source_count": 15,
-    "node_count": 33,
+    "node_count": 34,
     "edge_count": 21,
     "direct_diagnostic_edges": 0,
     "validation_status": "failed"

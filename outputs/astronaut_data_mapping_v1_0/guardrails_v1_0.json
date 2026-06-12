@@ -1,0 +1,1731 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_guardrails": 194,
+  "required_guardrails_present": 23,
+  "guardrails": [
+    {
+      "guardrail_id": "unknown_is_not_negative_evidence",
+      "text": "Absence of a measurement does not mean the underlying state is absent. Unknown is not negative evidence.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "single_marker_never_equals_mechanism",
+      "text": "No single biomarker alone establishes a physiological mechanism. Require convergent evidence.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "symptom_report_never_equals_mechanism",
+      "text": "Subjective symptom reports do not directly identify physiological mechanisms. Require objective correlates.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "context_override_before_mechanism",
+      "text": "Context factors (medications, environment, mission phase) must be evaluated before inferring mechanism.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "medication_timing_first",
+      "text": "Active medications with known effects on target biomarkers must be evaluated before any mechanistic inference.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "environmental_exposure_separate_from_physiologic_effect",
+      "text": "Environmental CO2, radiation, and other exposures are distinct from their physiological effects. Do not conflate exposure with outcome.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "group_reference_separate_from_individual_baseline",
+      "text": "Population reference ranges are not substitutes for individual baseline values. Within-person deviation is primary.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "within_person_deviation_priority",
+      "text": "Within-person deviation from individual baseline takes priority over comparison to group norms.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "temporal_lag_required_for_causality",
+      "text": "Causal inference requires temporal precedence. Cross-sectional associations do not establish causality.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "objective_performance_separate_from_subjective_symptom",
+      "text": "Objective performance measures and subjective symptom reports are distinct. Neither substitutes for the other.",
+      "source_files": [
+        "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "imaging_abnormality_separate_from_functional_impairment",
+      "text": "Structural imaging abnormalities do not directly imply functional impairment without functional assessment.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "microbiome_association_not_causality",
+      "text": "Microbiome composition associations with symptoms/states are not causal without intervention evidence.",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "immune_marker_not_infection_without_symptoms",
+      "text": "Elevated immune markers do not confirm active infection without clinical symptoms and confirmatory testing.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "radiation_dose_not_injury_without_biomarker_or_outcome",
+      "text": "Radiation dose accumulation does not equal biological injury without supporting biomarkers or clinical outcomes.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "SANS_not_subjective_vision_symptom",
+      "text": "SANS risk requires objective optic findings (imaging/OCT/fundoscopy), not subjective visual symptoms alone.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "PEM_not_normal_fatigue",
+      "text": "Post-exertional malaise (PEM) is a specific, delayed, exertion-triggered worsening distinct from normal post-exertional fatigue.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "hydration_intake_not_hydration_status",
+      "text": "Fluid intake records do not establish hydration status. Require urine specific gravity, osmolality, or plasma markers.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "low_activity_not_fatigue",
+      "text": "Reduced activity level does not equal fatigue. Multiple mechanisms produce activity reduction.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "low_VO2_not_mechanism",
+      "text": "Low VO2max indicates reduced aerobic capacity but does not identify the limiting mechanism.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "normal_one_source_not_ruleout",
+      "text": "Normal result on one measurement does not rule out an abnormality detectable by another method.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "wearable_sleep_stage_not_PSG",
+      "text": "Wearable sleep stage estimates are not equivalent to polysomnography. Stage accuracy is limited.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "pain_limited_performance_not_muscle_weakness",
+      "text": "Performance limitation due to pain is not equivalent to intrinsic muscle weakness.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "recommend_next_measurement_when_uncertain",
+      "text": "When insufficient data exists to score a hidden state, output a next-best-measurement recommendation, not a forced conclusion.",
+      "source_files": [],
+      "is_required": true,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_pain_mechanism_from_pain_severity_alone",
+      "text": "Do not infer pain mechanism from pain severity alone.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_migraine_from_headache_alone",
+      "text": "Do not infer migraine from headache alone.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sans_from_headache_visual_symptoms_without_ocul",
+      "text": "Do not infer SANS from headache/visual symptoms without ocular markers.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_muscle_weakness_from_painlimited_strength_test",
+      "text": "Do not infer muscle weakness from pain-limited strength testing.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_infection_from_wound_discomfort_alone",
+      "text": "Do not infer infection from wound discomfort alone.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "always_check_analgesic_timing_and_side_effects",
+      "text": "Always check analgesic timing and side effects.",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_pulmonary_disease_from_dyspnea_alone",
+      "text": "Do not infer pulmonary disease from dyspnea alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_gas_exchange_limitation_from_spirometry_alone",
+      "text": "Do not infer gas exchange limitation from spirometry alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sleep_architecture_from_consumer_wearable_stagi",
+      "text": "Do not infer sleep architecture from consumer wearable staging alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sleep_recovery_from_total_sleep_time_alone",
+      "text": "Do not infer sleep recovery from total sleep time alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_metabolic_risk_from_bmi_alone",
+      "text": "Do not infer metabolic risk from BMI alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_muscle_function_from_lean_mass_alone",
+      "text": "Do not infer muscle function from lean mass alone.",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_psg_sleep_stages_from_consumer_wearable_staging",
+      "text": "Do not infer PSG sleep stages from consumer wearable staging.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sleep_apnea_from_fatigue_or_snoring_alone_witho",
+      "text": "Do not infer sleep apnea from fatigue or snoring alone without AHI/RDI/ODI.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_daytime_oxygenation_from_nocturnal_spo2_alone",
+      "text": "Do not infer daytime oxygenation from nocturnal SpO2 alone.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_mood_or_cognition_mechanism_from_rem_n3_changes",
+      "text": "Do not infer mood or cognition mechanism from REM/N3 changes without measured outcomes.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_insomnia_mechanism_from_subjective_sleep_compla",
+      "text": "Do not infer insomnia mechanism from subjective sleep complaint alone.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_ignore_pain_medication_noise_co2_circadian_phase",
+      "text": "Do not ignore pain, medication, noise, CO2, circadian phase, and mission phase as context overrides.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "fullchaintrue_only_if_sleep_architecture_marker_mediator",
+      "text": "Full-chain=true only if sleep architecture marker, mediator/context, and symptom/performance outcome are measured with timing.",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "gi_symptoms_not_dysbiosis",
+      "text": "GI symptoms != dysbiosis",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "stool_pattern_not_diagnosis",
+      "text": "stool pattern != diagnosis",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "fit_fobt_does_not_localize_bleeding_source",
+      "text": "FIT/FOBT does not localize bleeding source",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "calprotectin_lactoferrin_are_inflammation_markers_not_ibd_d",
+      "text": "calprotectin/lactoferrin are inflammation markers, not IBD diagnosis",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "stool_microbiome_without_symptoms_blood_changes_may_be_uncer",
+      "text": "stool microbiome without symptoms/blood changes may be uncertain significance",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_diagnosis_from_cbc_cmp_alone",
+      "text": "Do not infer diagnosis from CBC/CMP alone.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_dehydration_from_bun_creatinine_or_sodium_alone",
+      "text": "Do not infer dehydration from BUN/creatinine or sodium alone.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_infection_from_wbc_nlr_crp_alone",
+      "text": "Do not infer infection from WBC/NLR/CRP alone.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_liver_injury_from_one_mild_ast_alt_elevation_wi",
+      "text": "Do not infer liver injury from one mild AST/ALT elevation without timing/context.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_nutrition_deficiency_from_albumin_alone",
+      "text": "Do not infer nutrition deficiency from albumin alone.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "use_serial_trends_and_individual_baselines_when_possible",
+      "text": "Use serial trends and individual baselines when possible.",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "a_urine_biomarker_rarely_explains_fatigue_cognition_alone",
+      "text": "A urine biomarker rarely explains fatigue/cognition alone.",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "symptomlinked_urine_branches_are_low_moderate_confidence_un",
+      "text": "Symptom-linked urine branches are low/moderate confidence unless same-participant outcome data exist.",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "singleday_urine_metabolomics_is_not_a_stable_phenotype",
+      "text": "Single-day urine metabolomics is not a stable phenotype.",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "urine_hormone_metabolites_are_not_direct_serum_saliva_hormon",
+      "text": "Urine hormone metabolites are not direct serum/saliva hormone levels.",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "hydration_adaptation_must_be_separated_from_hypovolemia",
+      "text": "Hydration adaptation must be separated from hypovolemia.",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_mitochondrial_dysfunction_from_fatigue_alone",
+      "text": "do not infer mitochondrial dysfunction from fatigue alone",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_pem_from_acute_tiredness",
+      "text": "do not infer PEM from acute tiredness",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_low_energy_availability_from_ketones_alone",
+      "text": "do not infer low energy availability from ketones alone",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_acute_brain_fog_without_timed_cognitive_symptom",
+      "text": "do not infer acute brain fog without timed cognitive/symptom data",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "ddimer_positive_is_nonspecific",
+      "text": "D-dimer positive is nonspecific",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "platelet_count_is_not_platelet_activation",
+      "text": "platelet count is not platelet activation",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "oxidative_stress_markers_require_radiation_inflammation_exer",
+      "text": "oxidative stress markers require radiation/inflammation/exercise context",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "microclots_remain_hypothesis_lowtomoderate_confidence_unle",
+      "text": "microclots remain hypothesis/low-to-moderate confidence unless validated",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "single_salivary_cortisol_value_is_weak",
+      "text": "single salivary cortisol value is weak",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "collection_timing_protocol_is_mandatory",
+      "text": "collection timing/protocol is mandatory",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "saliva_cytokines_are_confounded_by_oral_health",
+      "text": "saliva cytokines are confounded by oral health",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "saliva_immune_markers_do_not_equal_systemic_immunity",
+      "text": "saliva immune markers do not equal systemic immunity",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "oral_microbiome_is_not_gut_microbiome",
+      "text": "oral microbiome is not gut microbiome",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "viral_dna_is_not_active_infection",
+      "text": "viral DNA is not active infection",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "salivary_cytokines_are_confounded_by_periodontal_disease",
+      "text": "salivary cytokines are confounded by periodontal disease",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "fatigue_cannot_be_inferred_from_viral_shedding_alone",
+      "text": "fatigue cannot be inferred from viral shedding alone",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_stress_from_low_hrv_alone",
+      "text": "Do not infer stress from low HRV alone.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_parasympathetic_withdrawal_from_one_wearable_re",
+      "text": "Do not infer parasympathetic withdrawal from one wearable reading.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_dehydration_from_elevated_hr_alone",
+      "text": "Do not infer dehydration from elevated HR alone.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_hrv_values_across_devices_protocols_without_v",
+      "text": "Do not compare HRV values across devices/protocols without validation.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "lf_hf_ratio_should_not_be_treated_as_a_direct_measure_of_sym",
+      "text": "LF/HF ratio should not be treated as a direct measure of sympathovagal balance.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "ppgderived_prv_cannot_fully_replace_ecgderived_hrv",
+      "text": "PPG-derived PRV cannot fully replace ECG-derived HRV.",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_pots_from_tachycardia_outside_orthostatic_testi",
+      "text": "Do not infer POTS from tachycardia outside orthostatic testing.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_hypovolemia_from_urine_concentration_alone",
+      "text": "Do not infer hypovolemia from urine concentration alone.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_cerebral_hypoperfusion_from_dizziness_alone",
+      "text": "Do not infer cerebral hypoperfusion from dizziness alone.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_dehydration_from_low_bp_alone",
+      "text": "Do not infer dehydration from low BP alone.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_orthostatic_tests_without_protocol_duration_p",
+      "text": "Do not compare orthostatic tests without protocol duration/posture/medication context.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "plasma_volume_loss_is_important_but_not_sufficient_for_postu",
+      "text": "Plasma volume loss is important but not sufficient for postural intolerance in all individuals.",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_heart_disease_from_microgravityinduced_remodel",
+      "text": "Do not infer heart disease from microgravity-induced remodeling alone.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_brain_fog_from_vascular_stiffness_alone",
+      "text": "Do not infer brain fog from vascular stiffness alone.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_endothelial_dysfunction_from_one_biomarker_with",
+      "text": "Do not infer endothelial dysfunction from one biomarker without functional vascular measure.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_orthostatic_intolerance_from_resting_cardiac_st",
+      "text": "Do not infer orthostatic intolerance from resting cardiac structure.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_acute_reversible_pwv_increases_from_chronic_structu",
+      "text": "Separate acute reversible PWV increases from chronic structural arterial stiffness.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_label_athletelike_chamber_enlargement_as_cardiomyopa",
+      "text": "Do not label athlete-like chamber enlargement as cardiomyopathy without context.",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_individual_psychopathology_from_team_conflict_a",
+      "text": "Do not infer individual psychopathology from team conflict alone.",
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_treat_all_conflict_as_harmful_distinguish_task_confl",
+      "text": "Do not treat all conflict as harmful; distinguish task conflict from relational conflict.",
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_stress_biology_from_workload_score_alone",
+      "text": "Do not infer stress biology from workload score alone.",
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_isolation_from_loneliness",
+      "text": "Separate isolation from loneliness.",
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_communication_frequency_from_communication_quality",
+      "text": "Separate communication frequency from communication quality.",
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_vestibular_disorder_from_dizziness_alone",
+      "text": "Do not infer vestibular disorder from dizziness alone.",
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_postflight_pathology_from_transient_adaptation",
+      "text": "Do not infer postflight pathology from transient adaptation.",
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_balance_cause_without_strength_vision_vestibu",
+      "text": "Do not infer balance cause without strength, vision, vestibular and orthostatic context.",
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_balance_gait_metrics_without_protocol_context",
+      "text": "Do not compare balance/gait metrics without protocol context.",
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_muscle_loss_from_low_activity_alone",
+      "text": "Do not infer muscle loss from low activity alone.",
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_weakness_from_fatigue_report_alone",
+      "text": "Do not infer weakness from fatigue report alone.",
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_countermeasure_failure_without_adherence_load_d",
+      "text": "Do not infer countermeasure failure without adherence/load data.",
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sarcopenia_from_one_strength_test_without_mass",
+      "text": "Do not infer sarcopenia from one strength test without mass/function context.",
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_strength_metrics_without_protocol_and_bodysi",
+      "text": "Do not compare strength metrics without protocol and body-size normalization.",
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_fracture_risk_from_vitamin_d_alone",
+      "text": "Do not infer fracture risk from vitamin D alone.",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_bone_loss_from_one_bone_turnover_marker_alone",
+      "text": "Do not infer bone loss from one bone turnover marker alone.",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_osteoporosis_from_microgravityassociated_rever",
+      "text": "Do not infer osteoporosis from microgravity-associated reversible changes without context.",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_renal_stone_risk_from_urinary_calcium_alone",
+      "text": "Do not infer renal stone risk from urinary calcium alone.",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_bmd_across_devices_sites_without_protocol_con",
+      "text": "Do not compare BMD across devices/sites without protocol context.",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_icp_from_iop_alone",
+      "text": "Do not infer ICP from IOP alone.",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_sans_from_subjective_visual_symptoms_alone",
+      "text": "Do not infer SANS from subjective visual symptoms alone.",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_brain_fog_from_ocular_markers_alone",
+      "text": "Do not infer brain fog from ocular markers alone.",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_treat_terrestrial_papilledema_iih_literature_as_ident",
+      "text": "Do not treat terrestrial papilledema/IIH literature as identical to spaceflight SANS.",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_oct_ultrasound_metrics_without_protocol_and_d",
+      "text": "Do not compare OCT/ultrasound metrics without protocol and device context.",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_blood_co2_from_habitat_co2_alone",
+      "text": "Do not infer blood CO2 from habitat CO2 alone.",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_cognitive_impairment_from_co2_exposure_without",
+      "text": "Do not infer cognitive impairment from CO2 exposure without timed testing.",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_hypoxia_from_low_o2_without_spo2_or_physiologic",
+      "text": "Do not infer hypoxia from low O2 without SpO2 or physiologic context.",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_illness_from_voc_pm_exposure_alone",
+      "text": "Do not infer illness from VOC/PM exposure alone.",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_heat_strain_from_thermal_discomfort_alone",
+      "text": "Do not infer heat strain from thermal discomfort alone.",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_radiation_injury_from_dose_alone",
+      "text": "Do not infer radiation injury from dose alone.",
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_cancer_from_radiation_exposure_marker",
+      "text": "Do not infer cancer from radiation exposure marker.",
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_cns_cognitive_effect_without_excluding_sleep_c",
+      "text": "Do not infer CNS/cognitive effect without excluding sleep, CO2, stress, workload and medication context.",
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_radiationspecific_oxidative_stress_without_dos",
+      "text": "Do not infer radiation-specific oxidative stress without dose-timing linkage.",
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_treat_terrestrial_radiation_cohorts_as_identical_to_s",
+      "text": "Do not treat terrestrial radiation cohorts as identical to space radiation.",
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_nutrient_deficiency_from_intake_alone",
+      "text": "Do not infer nutrient deficiency from intake alone.",
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_hydration_status_from_fluid_intake_alone",
+      "text": "Do not infer hydration status from fluid intake alone.",
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_low_energy_availability_from_one_lowcalorie_da",
+      "text": "Do not infer low energy availability from one low-calorie day.",
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_dietary_causality_for_mood_fatigue_without_timi",
+      "text": "Do not infer dietary causality for mood/fatigue without timing and biomarkers.",
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_diet_logs_without_underreporting_and_protocol",
+      "text": "Do not compare diet logs without underreporting and protocol context.",
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_new_disease_mechanism_before_checking_medicatio",
+      "text": "Do not infer new disease mechanism before checking medication timing.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_countermeasure_failure_without_adherence_load_t",
+      "text": "Do not infer countermeasure failure without adherence/load/timing data.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_psychiatric_or_autonomic_disorder_from_medicati",
+      "text": "Do not infer psychiatric or autonomic disorder from medication-induced symptoms.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_drug_causality_without_temporal_relationship",
+      "text": "Do not infer drug causality without temporal relationship.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_ignore_drug_interactions_polypharmacy",
+      "text": "Do not ignore drug interactions/polypharmacy.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_assume_all_medications_act_the_same_way_in_space_as_o",
+      "text": "Do not assume all medications act the same way in space as on Earth.",
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_disease_from_adaptive_spaceflight_remodeling_al",
+      "text": "Do not infer disease from adaptive spaceflight remodeling alone.",
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_symptoms_from_imaging_abnormalities_without_fun",
+      "text": "Do not infer symptoms from imaging abnormalities without functional outcome.",
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_absence_of_disease_from_normal_imaging_alone",
+      "text": "Do not infer absence of disease from normal imaging alone.",
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_imaging_across_devices_protocols_without_cali",
+      "text": "Do not compare imaging across devices/protocols without calibration.",
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_use_imaging_as_a_standalone_mechanism_layer",
+      "text": "Do not use imaging as a standalone mechanism layer.",
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_infection_from_cytokines_alone",
+      "text": "Do not infer infection from cytokines alone.",
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_immune_suppression_from_one_low_immune_cell_cou",
+      "text": "Do not infer immune suppression from one low immune cell count.",
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_active_disease_from_latent_virus_dna_alone",
+      "text": "Do not infer active disease from latent virus DNA alone.",
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_fatigue_mechanism_from_immune_marker_without_sy",
+      "text": "Do not infer fatigue mechanism from immune marker without symptom timing.",
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_treat_saliva_viral_shedding_as_systemic_immune_failur",
+      "text": "Do not treat saliva viral shedding as systemic immune failure.",
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_disease_from_low_diversity_alone",
+      "text": "Do not infer disease from low diversity alone.",
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_infection_from_pathogen_dna_alone",
+      "text": "Do not infer infection from pathogen DNA alone.",
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_gutbrain_causality_from_microbiome_shift_alone",
+      "text": "Do not infer gut-brain causality from microbiome shift alone.",
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_host_colonization_from_environmental_swab_alone",
+      "text": "Do not infer host colonization from environmental swab alone.",
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_microbiome_profiles_without_sequencing_platfo",
+      "text": "Do not compare microbiome profiles without sequencing/platform/diet/antibiotic context.",
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_abnormal_state_from_group_reference_range_alone",
+      "text": "Do not infer abnormal state from group reference range alone.",
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_pathology_from_early_mission_adaptation_alone",
+      "text": "Do not infer pathology from early mission adaptation alone.",
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_interpret_postflight_values_without_recovery_timing",
+      "text": "Do not interpret postflight values without recovery timing.",
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_ignore_lag_between_exposure_and_symptom_marker_respon",
+      "text": "Do not ignore lag between exposure and symptom/marker response.",
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_compare_phases_without_protocol_sample_timing",
+      "text": "Do not compare phases without protocol/sample timing.",
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_hidden_states_from_one_marker_alone_unless_expl",
+      "text": "Do not infer hidden states from one marker alone unless explicitly single-source risk flag.",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "medication_context_environmental_overrides_must_be_checked_b",
+      "text": "Medication/context/environmental overrides must be checked before biological inference.",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "high_confidence_requires_temporal_alignment_of_input_marker",
+      "text": "High confidence requires temporal alignment of input marker, mediator/context and outcome.",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "unknown_or_missing_data_is_not_negative_evidence",
+      "text": "Unknown or missing data is not negative evidence.",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "rule_id_g1_rule_name_no_singlemarker_inference_u",
+      "text": "{'rule_id': 'G1', 'rule_name': 'No single-marker inference unless risk flag'}",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "rule_id_g2_rule_name_temporal_withinperson_devia",
+      "text": "{'rule_id': 'G2', 'rule_name': 'Temporal/within-person deviation prioritization'}",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "rule_id_g3_rule_name_context_override_before_biol",
+      "text": "{'rule_id': 'G3', 'rule_name': 'Context override before biological inference'}",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "rule_id_g4_rule_name_unknown_data_is_not_negative",
+      "text": "{'rule_id': 'G4', 'rule_name': 'Unknown data is not negative evidence'}",
+      "source_files": [
+        "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_use_tshonly_borderline_abnormalities_as_a_strong_exp",
+      "text": "Do not use TSH-only borderline abnormalities as a strong explanation for fatigue or brain fog.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_overt_hypothyroidism_hyperthyroidism_from_subclinic",
+      "text": "Separate overt hypothyroidism/hyperthyroidism from subclinical thyroid dysfunction.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_autoimmune_thyroiditis_antibody_positivity_from_hor",
+      "text": "Separate autoimmune thyroiditis/antibody positivity from hormone deficiency.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_that_levothyroxine_improves_cognition_fatigue_i",
+      "text": "Do not infer that levothyroxine improves cognition/fatigue in elderly subclinical hypothyroidism; RCT evidence is negative.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "normal_tsh_makes_common_primary_overt_thyroid_dysfunction_le",
+      "text": "Normal TSH makes common primary overt thyroid dysfunction less likely, but does not fully resolve edge cases such as central hypothyroidism, treatment status, free hormone abnormalities, or autoimmune psychiatric associations.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "treat_withinreferencerange_ft4_ft3_effects_as_subtle_nonl",
+      "text": "Treat within-reference-range FT4/FT3 effects as subtle, nonlinear, and low/moderate confidence.",
+      "source_files": [
+        "series_013_thyroid_basal_metabolism_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_merge_mental_fatigue_with_sleepiness_boredom_depres",
+      "text": "Do not merge mental fatigue with sleepiness, boredom, depression, burnout, PEM, or physical fatigue.",
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_objective_cognitive_impairment_from_subjective",
+      "text": "Do not infer objective cognitive impairment from subjective fatigue alone.",
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "motivation_can_temporarily_buffer_performance_despite_high_s",
+      "text": "Motivation can temporarily buffer performance despite high subjective fatigue.",
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "subjective_scales_alone_are_insufficient_for_robust_assessme",
+      "text": "Subjective scales alone are insufficient for robust assessment.",
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_qstconfirmed_central_sensitization_from_selfrepor",
+      "text": "Separate QST-confirmed central sensitization from self-reported sensory sensitivity and hypervigilance.",
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_objective_cognitive_impairment_from_sensory_ove",
+      "text": "Do not infer objective cognitive impairment from sensory overload alone.",
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "modalityspecific_sensitivity_and_generalized_sensory_overlo",
+      "text": "Modality-specific sensitivity and generalized sensory overload may differ.",
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "anxiety_depression_pain_migraine_and_sleep_can_mediate_o",
+      "text": "Anxiety, depression, pain, migraine, and sleep can mediate or amplify associations.",
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_cortisol_rhythm_from_cortisol_level",
+      "text": "Separate cortisol rhythm from cortisol level.",
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_melatonin_dlmo_from_sleep_timing_proxy",
+      "text": "Separate melatonin/DLMO from sleep timing proxy.",
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "single_morning_hormone_value_may_be_normal_despite_disrupted",
+      "text": "Single morning hormone value may be normal despite disrupted rhythm.",
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "measured_hormone_rhythm_is_stronger_evidence_than_calendar_p",
+      "text": "Measured hormone rhythm is stronger evidence than calendar phase or single lab value.",
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "thyroidaxis_rhythmicity_is_underexplored_compared_with_cort",
+      "text": "Thyroid-axis rhythmicity is underexplored compared with cortisol/melatonin.",
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "do_not_infer_objective_cognitive_impairment_from_brain_fog_a",
+      "text": "Do not infer objective cognitive impairment from brain fog alone",
+      "source_files": [
+        "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "objective_normal_tests_do_not_invalidate_symptoms",
+      "text": "Objective normal tests do not invalidate symptoms",
+      "source_files": [
+        "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "subjective_and_objective_measures_predict_different_outcomes",
+      "text": "Subjective and objective measures predict different outcomes",
+      "source_files": [
+        "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "performance_validity_context_may_be_needed_in_clinical_setti",
+      "text": "Performance validity context may be needed in clinical settings",
+      "source_files": [
+        "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_immediate_acute_fatigue_from_delayed_pem",
+      "text": "Separate immediate acute fatigue from delayed PEM",
+      "source_files": [
+        "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "require_triggertimelagpeakrecovery_fields",
+      "text": "Require trigger-time-lag-peak-recovery fields",
+      "source_files": [
+        "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "onetime_abnormal_value_is_not_chronic_baseline_shift",
+      "text": "One-time abnormal value is not chronic baseline shift",
+      "source_files": [
+        "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "population_reference_range_is_not_personal_baseline",
+      "text": "Population reference range is not personal baseline",
+      "source_files": [
+        "series_034_individual_baseline_within_person_deviation_health_state_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_baseline_drift_from_acute_state_change",
+      "text": "Separate baseline drift from acute state change",
+      "source_files": [
+        "series_034_individual_baseline_within_person_deviation_health_state_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "guardrail_id": "separate_measurement_noise_from_biological_change",
+      "text": "Separate measurement noise from biological change",
+      "source_files": [
+        "series_034_individual_baseline_within_person_deviation_health_state_inference.cleaned.json"
+      ],
+      "is_required": false,
+      "synthesis_status": "assembled_from_existing_sources"
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "validator": "check_interface_files_v1_0",
+  "timestamp": "2026-06-12T16:49:44.087753+00:00",
+  "overall_status": "PASS",
+  "summary": {
+    "checks_total": 16,
+    "checks_passed": 16,
+    "checks_failed": 0,
+    "tabs_found": [
+      "Workflow",
+      "Evidence Map",
+      "Hidden States",
+      "Parameters",
+      "Guardrails",
+      "Corpus / Coverage",
+      "Source Traceability"
+    ],
+    "overall_status": "PASS"
+  },
+  "checks": [
+    {
+      "check": "index_exists",
+      "status": "PASS",
+      "passed": true,
+      "message": "index.html exists: True",
+      "details": {}
+    },
+    {
+      "check": "styles_exists",
+      "status": "PASS",
+      "passed": true,
+      "message": "styles.css exists: True",
+      "details": {}
+    },
+    {
+      "check": "app_exists",
+      "status": "PASS",
+      "passed": true,
+      "message": "app.js exists: True",
+      "details": {}
+    },
+    {
+      "check": "index_references_styles",
+      "status": "PASS",
+      "passed": true,
+      "message": "index.html references styles.css",
+      "details": {}
+    },
+    {
+      "check": "index_references_app",
+      "status": "PASS",
+      "passed": true,
+      "message": "index.html references app.js",
+      "details": {}
+    },
+    {
+      "check": "app_references_graph",
+      "status": "PASS",
+      "passed": true,
+      "message": "app.js references integrated_evidence_graph_v1_0.json",
+      "details": {}
+    },
+    {
+      "check": "no_external_cdn_links",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 external CDN/remote references found",
+      "details": {
+        "references": []
+      }
+    },
+    {
+      "check": "no_remote_assets",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 remote asset URLs found",
+      "details": {
+        "urls": []
+      }
+    },
+    {
+      "check": "no_diagnosis_language",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 diagnosis phrases found",
+      "details": {
+        "phrases": []
+      }
+    },
+    {
+      "check": "all_required_tabs_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "7/7 required tabs present",
+      "details": {
+        "found": [
+          "Workflow",
+          "Evidence Map",
+          "Hidden States",
+          "Parameters",
+          "Guardrails",
+          "Corpus / Coverage",
+          "Source Traceability"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check": "expanded_intake_fields_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "42 intake fields (need >= 42); 14/14 representative labels present",
+      "details": {
+        "field_count": 42,
+        "missing_labels": []
+      }
+    },
+    {
+      "check": "random_demo_data_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "random-demo button present=True; 7 demo profiles (need >= 7)",
+      "details": {
+        "button": true,
+        "demo_profiles": 7
+      }
+    },
+    {
+      "check": "activated_graph_container_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "activated graph container (id=\"activated-graph\") present",
+      "details": {}
+    },
+    {
+      "check": "report_sections_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "10/10 report sections present",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "check": "mandatory_safety_line_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "mandatory safety line \"This is not a diagnosis.\" present",
+      "details": {}
+    },
+    {
+      "check": "fetch_failure_guidance_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "fetch-failure guidance (server command + URL) present",
+      "details": {}
+    }
+  ]
+}

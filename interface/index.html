@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BodyState Mapper — Traceable Human State Inference (THSI)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-main">
+      <div class="brand">
+        <span class="brand-mark">BSM</span>
+        <div class="brand-text">
+          <h1>BodyState Mapper</h1>
+          <p class="subtitle">Traceable Human State Inference Under Partial Biological Observability &middot; Astronaut Data Mapping v1.0</p>
+        </div>
+      </div>
+      <div class="not-diagnosis-badge" title="This system never outputs diagnoses.">
+        Not a diagnostic system &mdash; traceable hypotheses only
+      </div>
+    </div>
+    <nav class="tabs" id="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="workflow" role="tab">Workflow</button>
+      <button class="tab-btn" data-tab="evidence-map" role="tab">Evidence Map</button>
+      <button class="tab-btn" data-tab="hidden-states" role="tab">Hidden States</button>
+      <button class="tab-btn" data-tab="parameters" role="tab">Parameters</button>
+      <button class="tab-btn" data-tab="guardrails" role="tab">Guardrails</button>
+      <button class="tab-btn" data-tab="corpus" role="tab">Corpus / Coverage</button>
+      <button class="tab-btn" data-tab="traceability" role="tab">Source Traceability</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div id="loading" class="loading-panel">
+      <div class="spinner" aria-hidden="true"></div>
+      <p>Loading integrated evidence graph&hellip;</p>
+    </div>
+
+    <div id="load-error" class="error-panel hidden">
+      <h2>Could not load the integrated evidence graph</h2>
+      <p>This dashboard must be served over HTTP (file:// will not work).</p>
+      <pre>Run:  python -m http.server 8000
+Open: http://localhost:8000/interface/</pre>
+      <p class="error-detail" id="error-detail"></p>
+    </div>
+
+    <!-- ===================== WORKFLOW (landing) ===================== -->
+    <section class="tab-panel" id="tab-workflow" hidden>
+      <ol class="workflow-rail" id="workflow-rail">
+        <li data-step="intake" class="active">1 &middot; Data Intake</li>
+        <li data-step="report">2 &middot; Generate Report</li>
+        <li data-step="graph">3 &middot; Activated Graph</li>
+        <li data-step="measurements">4 &middot; Next Measurements</li>
+        <li data-step="sources">5 &middot; Source Traceability</li>
+      </ol>
+
+      <!-- STEP 1: DATA INTAKE -->
+      <section class="wf-step" id="step-intake">
+        <div class="step-head">
+          <h2 class="panel-title">1 &middot; Data Intake</h2>
+          <p class="safety-line">Not a diagnostic system &mdash; traceable hypotheses only.</p>
+        </div>
+        <p class="panel-note">
+          Enter what is known. Leave unknown fields as <code>unknown</code> / <code>unavailable</code> &mdash;
+          unknown is not negative evidence. Inputs map to nodes in the integrated evidence graph; the engine is
+          a transparent, rule-based mapping (no machine learning), and outputs only traceable hypotheses with
+          explicit uncertainty.
+        </p>
+        <div class="intake-actions">
+          <button type="button" class="primary-btn" id="btn-generate">Generate report</button>
+          <button type="button" class="accent-btn" id="btn-demo-random">Fill random demo data</button>
+          <button type="button" class="ghost-btn" id="btn-clear">Clear</button>
+          <span class="intake-meta" id="intake-meta"></span>
+        </div>
+        <form id="intake-form" class="intake-form"></form>
+      </section>
+
+      <!-- STEP 2: GENERATED REPORT -->
+      <section class="wf-step" id="step-report">
+        <div class="step-head">
+          <h2 class="panel-title">2 &middot; Traceable Report</h2>
+        </div>
+        <p class="not-diagnosis-line" id="report-safety">This is not a diagnosis. Outputs are traceable hidden-state hypotheses with uncertainty, missing data, guardrails, and next-best measurements.</p>
+        <div id="report-output" class="report-output">
+          <p class="placeholder">Fill in observations above and select <strong>Generate report</strong>. Every output below will be a traceable hypothesis with explicit uncertainty &mdash; never a diagnosis.</p>
+        </div>
+      </section>
+
+      <!-- STEP 3: ACTIVATED GRAPH -->
+      <section class="wf-step" id="step-graph">
+        <div class="step-head">
+          <h2 class="panel-title">3 &middot; Activated Evidence Graph</h2>
+        </div>
+        <p class="panel-note">The activated subgraph shows the full traceable chain from input signals to candidate hidden states, the guardrails that constrain them, and the measurements that would reduce uncertainty. Click any node or edge for full detail.</p>
+        <div class="graph-controls" id="graph-controls">
+          <label class="gc-toggle"><input type="checkbox" id="gctl-active-only" checked /> Active path only</label>
+          <label class="gc-toggle"><input type="checkbox" id="gctl-neighbors" /> First-degree neighbors</label>
+          <label class="gc-toggle"><input type="checkbox" id="gctl-guardrails" checked /> Guardrails</label>
+          <label class="gc-toggle"><input type="checkbox" id="gctl-measurements" checked /> Required measurements</label>
+          <label class="gc-toggle"><input type="checkbox" id="gctl-sources" /> Source traceability</label>
+          <span class="gc-sep"></span>
+          <button type="button" class="ghost-btn sm" id="gctl-zoom-in">Zoom +</button>
+          <button type="button" class="ghost-btn sm" id="gctl-zoom-out">Zoom &minus;</button>
+          <button type="button" class="ghost-btn sm" id="gctl-reset">Reset view</button>
+        </div>
+        <div class="graph-stage">
+          <div class="graph-canvas-wrap" id="activated-graph">
+            <svg id="activated-graph-svg" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Activated evidence graph"></svg>
+            <p class="graph-empty placeholder" id="graph-empty">Generate a report to activate the relevant subgraph of the 1,979-node evidence graph.</p>
+          </div>
+          <aside class="graph-side" id="graph-side">
+            <p class="placeholder">Select a node or edge in the activated graph to inspect its full traceable detail.</p>
+          </aside>
+        </div>
+        <div class="graph-legend" id="graph-legend"></div>
+      </section>
+
+      <!-- STEP 4: NEXT MEASUREMENTS -->
+      <section class="wf-step" id="step-measurements">
+        <div class="step-head">
+          <h2 class="panel-title">4 &middot; Next Best Measurements</h2>
+        </div>
+        <p class="panel-note">Ranked measurements that would most reduce uncertainty for the active hypotheses. These are recommendations to resolve ambiguity &mdash; not instructions for treatment.</p>
+        <div id="measurements-output" class="measurements-output">
+          <p class="placeholder">Next-best measurements appear here after a report is generated.</p>
+        </div>
+      </section>
+
+      <!-- STEP 5: SOURCE TRACEABILITY (report-scoped) -->
+      <section class="wf-step" id="step-sources">
+        <div class="step-head">
+          <h2 class="panel-title">5 &middot; Source Traceability</h2>
+        </div>
+        <p class="panel-note">Every activated node and edge traces back to source files and source trees in the corpus. The full corpus-wide view is in the <strong>Source Traceability</strong> tab.</p>
+        <div id="report-sources-output" class="sources-output">
+          <p class="placeholder">The sources behind the activated hypotheses appear here after a report is generated.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- ===================== EVIDENCE MAP ===================== -->
+    <section class="tab-panel" id="tab-evidence-map" hidden>
+      <h2 class="panel-title">Evidence Map</h2>
+      <p class="panel-note">Path-centric explorer. Each card is a traceable chain (parameter &rarr; variation &rarr; chain &rarr; hidden state &rarr; guardrail &rarr; measurement), not a raw node dump.</p>
+      <div class="filter-bar">
+        <input type="search" id="em-search" placeholder="Search by id, label, domain, type&hellip;" />
+        <div class="filter-row">
+          <select id="em-filter-type"><option value="">All node types</option></select>
+          <select id="em-filter-domain"><option value="">All domains</option></select>
+          <select id="em-filter-confidence"><option value="">All confidence</option></select>
+          <select id="em-filter-evidence"><option value="">All evidence strength</option></select>
+          <select id="em-filter-pipeline"><option value="">All pipeline status</option></select>
+        </div>
+      </div>
+      <p class="result-count" id="em-count"></p>
+      <div class="explorer-layout">
+        <div class="explorer-left">
+          <ul class="node-list" id="em-list"></ul>
+          <div class="pagination" id="em-pagination"></div>
+        </div>
+        <div class="explorer-right">
+          <div id="em-detail" class="detail-panel">
+            <p class="placeholder">Select a node to see the paths it participates in, copy a path, or jump to any node on the path.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HIDDEN STATES ===================== -->
+    <section class="tab-panel" id="tab-hidden-states" hidden>
+      <h2 class="panel-title">Hidden State Hypotheses</h2>
+      <p class="panel-note">Hidden states are traceable hypotheses with uncertainty &mdash; never diagnoses.</p>
+      <div class="filter-bar">
+        <input type="search" id="hs-search" placeholder="Search hidden states&hellip;" />
+        <div class="filter-row">
+          <select id="hs-filter-pipeline"><option value="">All readiness</option><option value="ready">ready</option><option value="partial">partial</option><option value="needs_review">needs_review</option></select>
+          <select id="hs-filter-confidence"><option value="">All confidence</option></select>
+          <select id="hs-filter-domain"><option value="">All domains</option></select>
+        </div>
+      </div>
+      <div class="hs-layout">
+        <ul class="card-list" id="hs-list"></ul>
+        <div id="hs-detail" class="detail-panel"><p class="placeholder">Select a hidden state to see what supports it, what it does NOT prove, missing data, guardrails, next measurements, traceable chains, source files, and a readiness badge.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== PARAMETERS ===================== -->
+    <section class="tab-panel" id="tab-parameters" hidden>
+      <h2 class="panel-title">Measured Parameters</h2>
+      <p class="panel-note">For each parameter: what it can support, what it cannot prove alone, required context, and measurements that reduce uncertainty.</p>
+      <div class="filter-bar">
+        <input type="search" id="param-search" placeholder="Search parameters&hellip;" />
+        <div class="filter-row">
+          <select id="param-filter-domain"><option value="">All domains</option></select>
+          <select id="param-filter-tree"><option value="">All source trees</option></select>
+          <select id="param-filter-evidence"><option value="">All evidence strength</option></select>
+          <select id="param-filter-guardrails"><option value="">Guardrails: any</option><option value="yes">Has guardrails</option><option value="no">No guardrails</option></select>
+          <select id="param-filter-review"><option value="">Review: any</option><option value="yes">Needs review</option><option value="no">Not flagged</option></select>
+        </div>
+      </div>
+      <p class="result-count" id="param-count"></p>
+      <div class="param-layout">
+        <ul class="node-list" id="param-list"></ul>
+        <div class="pagination" id="param-pagination"></div>
+        <div id="param-detail" class="detail-panel"><p class="placeholder">Select a parameter to trace: parameter &rarr; variations &rarr; hidden states &rarr; guardrails &rarr; measurements.</p></div>
+      </div>
+    </section>
+
+    <!-- ===================== GUARDRAILS ===================== -->
+    <section class="tab-panel" id="tab-guardrails" hidden>
+      <h2 class="panel-title">Guardrails</h2>
+      <p class="panel-note">Guardrails constrain inference. Each card explains in plain language why it exists, what false inference it prevents, and which paths it constrains.</p>
+      <div class="filter-bar">
+        <input type="search" id="guardrail-search" placeholder="Search guardrails&hellip;" />
+        <select id="guardrail-filter"><option value="">All guardrails</option><option value="required">Required only</option><option value="core">Core only</option></select>
+      </div>
+      <div class="guardrail-grid" id="guardrail-list"></div>
+    </section>
+
+    <!-- ===================== CORPUS / COVERAGE ===================== -->
+    <section class="tab-panel" id="tab-corpus" hidden>
+      <h2 class="panel-title">Corpus / Coverage</h2>
+      <p class="panel-note">This view shows where the evidence graph is strong, partial, or still needs review.</p>
+      <p class="panel-note" id="corpus-meta"></p>
+      <div class="card-grid" id="corpus-cards"></div>
+      <div class="chart-grid">
+        <div class="chart-card"><h3>Graph scale by node type</h3><div class="bar-chart" id="corpus-nodes-type"></div></div>
+        <div class="chart-card"><h3>Edge type distribution</h3><div class="bar-chart" id="corpus-edges-type"></div></div>
+        <div class="chart-card"><h3>Readiness (node pipeline status)</h3><div class="bar-chart" id="corpus-readiness"></div></div>
+        <div class="chart-card"><h3>Evidence confidence distribution (edges)</h3><div class="bar-chart" id="corpus-confidence"></div></div>
+        <div class="chart-card"><h3>Hidden-state coverage (supported vs partial)</h3><div class="bar-chart" id="corpus-hs-coverage"></div></div>
+        <div class="chart-card"><h3>Guardrail coverage</h3><div class="bar-chart" id="corpus-guardrail-coverage"></div></div>
+        <div class="chart-card"><h3>Most connected parameters</h3><div class="bar-chart" id="corpus-top-params"></div></div>
+        <div class="chart-card"><h3>Most connected hidden states</h3><div class="bar-chart" id="corpus-top-hs"></div></div>
+      </div>
+      <div class="chart-card full"><h3>Source tree contribution (nodes derived)</h3><div class="bar-chart" id="corpus-source-trees"></div></div>
+    </section>
+
+    <!-- ===================== SOURCE TRACEABILITY (corpus-wide) ===================== -->
+    <section class="tab-panel" id="tab-traceability" hidden>
+      <h2 class="panel-title">Source Traceability</h2>
+      <p class="panel-note">Every node and edge traces back to source files and source trees. Search by source_tree_id, filename, parameter, or hidden state.</p>
+      <div class="filter-bar">
+        <input type="search" id="trace-search" placeholder="Search by filename, source_tree_id, parameter, or hidden state&hellip;" />
+      </div>
+      <p class="result-count" id="trace-count"></p>
+      <div class="trace-table-wrap">
+        <table class="trace-table" id="trace-table">
+          <thead>
+            <tr><th>Source file / tree</th><th>Type</th><th>Role</th><th># Nodes</th><th># Edges</th><th>Parameters</th><th>Hidden states</th><th>Guardrails</th></tr>
+          </thead>
+          <tbody id="trace-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <span id="footer-status"></span>
+    <span class="footer-rule">This is not a diagnosis. Outputs are traceable hypotheses with uncertainty.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

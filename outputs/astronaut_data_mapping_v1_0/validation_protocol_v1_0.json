@@ -1,0 +1,527 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "source_file": "series_050_final_graph_guardrails_validation_protocol.cleaned.json",
+  "validation_layers": [
+    {
+      "layer_id": "L1_json_parse",
+      "name": "JSON Parse Validation",
+      "description": "All package files must parse as valid JSON.",
+      "failure_action": "BLOCK"
+    },
+    {
+      "layer_id": "L2_required_fields",
+      "name": "Required Field Validation",
+      "description": "All registry entries must have parameter_id, source_files, evidence_strength.",
+      "failure_action": "BLOCK"
+    },
+    {
+      "layer_id": "L3_core_guardrails",
+      "name": "Core Guardrail Presence",
+      "description": "Required guardrails must be present in guardrails_v1_0.json.",
+      "required_guardrails": [
+        "unknown_is_not_negative_evidence",
+        "single_marker_never_equals_mechanism",
+        "symptom_report_never_equals_mechanism",
+        "context_override_before_mechanism",
+        "medication_timing_first",
+        "environmental_exposure_separate_from_physiologic_effect",
+        "group_reference_separate_from_individual_baseline",
+        "within_person_deviation_priority",
+        "temporal_lag_required_for_causality",
+        "objective_performance_separate_from_subjective_symptom",
+        "imaging_abnormality_separate_from_functional_impairment",
+        "microbiome_association_not_causality",
+        "immune_marker_not_infection_without_symptoms",
+        "radiation_dose_not_injury_without_biomarker_or_outcome",
+        "SANS_not_subjective_vision_symptom",
+        "PEM_not_normal_fatigue",
+        "hydration_intake_not_hydration_status",
+        "low_activity_not_fatigue",
+        "low_VO2_not_mechanism",
+        "normal_one_source_not_ruleout",
+        "wearable_sleep_stage_not_PSG",
+        "pain_limited_performance_not_muscle_weakness",
+        "recommend_next_measurement_when_uncertain"
+      ],
+      "failure_action": "BLOCK"
+    },
+    {
+      "layer_id": "L4_no_diagnosis",
+      "name": "No Medical Diagnosis",
+      "description": "No hidden state or chain output may be labeled as a final medical diagnosis.",
+      "failure_action": "BLOCK"
+    },
+    {
+      "layer_id": "L5_traceability",
+      "name": "Source Traceability",
+      "description": "All major hidden states must reference at least one source_file or be marked partial/needs_review.",
+      "failure_action": "WARN"
+    },
+    {
+      "layer_id": "L6_r001_mapping",
+      "name": "R001 Canonical Mapping",
+      "description": "R001 alias must map to canonical 002 file.",
+      "failure_action": "WARN"
+    },
+    {
+      "layer_id": "L7_elevated_hr_node",
+      "name": "elevated_heart_rate_relative_to_baseline Node",
+      "description": "Node must exist in all three static node files.",
+      "failure_action": "BLOCK"
+    }
+  ],
+  "source_patterns": [
+    {
+      "pattern_id": "series_050_pattern_001",
+      "pattern_name": "Multi-stage validation is required before deployment-level claims",
+      "causal_status": "validation_rule",
+      "physiological_input": {
+        "variable": "health_state_inference_model",
+        "direction": "unvalidated_to_validated",
+        "measurement_methods": [
+          "internal_validation",
+          "external_validation",
+          "prospective_validation",
+          "real_world_monitoring"
+        ],
+        "contexts": [
+          "biomedical_knowledge_graph",
+          "clinical_decision_support",
+          "wearable_lab_symptom_integration"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "validation_stage",
+        "category": "validation_marker",
+        "direction": "increasing_rigor",
+        "pathway": "internal validation -> external validation -> prospective validation -> continuous monitoring",
+        "mechanism": "generalizability and clinical usefulness cannot be inferred from retrospective/internal accuracy alone"
+      },
+      "neurobehavioral_output": {
+        "variable": "deployment_readiness",
+        "direction": "requires_review",
+        "measurement_methods": [
+          "external_dataset_performance",
+          "prospective_performance",
+          "clinical_utility_assessment",
+          "safety_evaluation"
+        ],
+        "affected_functions": [
+          "trustworthy_inference",
+          "safe_user_facing_explanation"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Do not treat internal or retrospective performance as deployment readiness; require external/prospective validation before probability or clinical utility claims.",
+        "hypotheses": [
+          {
+            "target": "deployment_readiness",
+            "domain": "validation",
+            "direction": "requires_external_and_prospective_validation",
+            "confidence": "high",
+            "reason": "Reviews emphasize multi-phase validation and show external/prospective validation is often missing."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "predeployment_to_continuous_monitoring",
+        "latency": "validation_required_before_use",
+        "reversibility": "revision_possible"
+      },
+      "modulators_confounders": [
+        "dataset_shift",
+        "population_shift",
+        "measurement_noise",
+        "missing_data",
+        "workflow_mismatch",
+        "bias",
+        "calibration_drift"
+      ],
+      "evidence": {
+        "strength": "high",
+        "summary": "No single standardized protocol exists, but best practice converges on internal, external, and prospective validation plus calibration, uncertainty reporting, traceability, error analysis, and governance.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "well_replicated",
+        "key_sources": [
+          {
+            "title": "Validation protocols for biomedical knowledge graphs and clinical AI systems",
+            "authors": "Consensus synthesis",
+            "year": 2026,
+            "source_type": "systematic_review_synthesis",
+            "doi_or_url": "uploaded_pdf",
+            "relevant_finding": "Multi-stage validation is essential; external/prospective validation and calibration are persistent gaps.",
+            "population": "human health AI/CDSS/knowledge graph studies",
+            "sample_size": "50 included papers",
+            "limitations": "Heterogeneous methods; no unified standard protocol."
+          }
+        ]
+      },
+      "limitations": [
+        "No universal gold-standard validation protocol",
+        "Few real-world prospective deployments",
+        "Calibration and uncertainty reporting remain inconsistent"
+      ],
+      "alternative_explanations": [
+        "High retrospective performance may reflect overfitting or dataset leakage",
+        "Good internal validation may fail under dataset shift",
+        "Clinical utility may be poor despite technical accuracy"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "static_graph_validation",
+          "external_validation_required",
+          "prospective_validation_required",
+          "calibration_required",
+          "continuous_monitoring"
+        ],
+        "candidate_edges": [
+          {
+            "source": "internal_validation_only",
+            "target": "deployment_readiness",
+            "edge_type": "rejects",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "external_validation",
+            "target": "deployment_readiness",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "moderate"
+          },
+          {
+            "source": "prospective_validation",
+            "target": "deployment_readiness",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "high"
+      }
+    },
+    {
+      "pattern_id": "series_050_pattern_002",
+      "pattern_name": "Every graph edge requires source traceability and evidence versioning",
+      "causal_status": "methodological_rule",
+      "physiological_input": {
+        "variable": "graph_edge_or_node",
+        "direction": "traceable_or_untraceable",
+        "measurement_methods": [
+          "source_registry",
+          "evidence_card",
+          "edge_metadata",
+          "versioning"
+        ],
+        "contexts": [
+          "static_graph",
+          "personal_inference_graph"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "source_traceability",
+        "category": "traceability_marker",
+        "direction": "required",
+        "pathway": "node/edge -> source registry -> evidence grade -> version history",
+        "mechanism": "untraceable graph elements cannot be audited, updated, or safely explained"
+      },
+      "neurobehavioral_output": {
+        "variable": "user_facing_explanation_quality",
+        "direction": "accepted_if_traceable",
+        "measurement_methods": [
+          "explanation_trace",
+          "citation_map",
+          "evidence_version"
+        ],
+        "affected_functions": [
+          "trust",
+          "auditability",
+          "update_governance"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "No node, edge, guardrail, or inference template enters the production graph without source traceability, evidence grade, and version metadata.",
+        "hypotheses": [
+          {
+            "target": "edge_traceability",
+            "domain": "governance",
+            "direction": "required",
+            "confidence": "high",
+            "reason": "Knowledge graph reviews highlight lack of traceability and standardized evaluation as major barriers."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "evidence_update",
+        "latency": "update_required_when_evidence_changes",
+        "reversibility": "rollback_possible"
+      },
+      "modulators_confounders": [
+        "source_quality",
+        "risk_of_bias",
+        "replication_status",
+        "evidence_update",
+        "conflicting_evidence"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Knowledge graph evaluation lacks standardization, and source traceability is a recurring requirement for trustworthy biomedical graph deployment.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Healthcare knowledge graph construction and evaluation reviews",
+            "authors": "Abu-Salih et al.; Budhdeo et al.",
+            "year": 2023,
+            "source_type": "knowledge_graph_validation",
+            "doi_or_url": "see uploaded references",
+            "relevant_finding": "Biomedical KG applications vary widely in construction/validation and often lack real-world deployment and standardized evaluation.",
+            "population": "biomedical KG studies",
+            "sample_size": "review-level",
+            "limitations": "Heterogeneous KG applications."
+          }
+        ]
+      },
+      "limitations": [
+        "Traceability does not guarantee correctness",
+        "Citation quality must still be graded",
+        "Evidence may be outdated"
+      ],
+      "alternative_explanations": [
+        "An edge may be traceable but low quality",
+        "A source may support association but not causality"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "edge_traceability",
+          "source_traceability",
+          "evidence_versioning",
+          "explanation_trace",
+          "rollback_protocol"
+        ],
+        "candidate_edges": [
+          {
+            "source": "untraceable_edge",
+            "target": "production_graph_entry",
+            "edge_type": "rejects",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "source_traceability",
+            "target": "explanation_quality",
+            "edge_type": "increases_likelihood_of",
+            "polarity": "positive",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "low"
+      }
+    },
+    {
+      "pattern_id": "series_050_pattern_003",
+      "pattern_name": "Safety guardrail and red-team test suite is required",
+      "causal_status": "safety_rule",
+      "physiological_input": {
+        "variable": "inference_output",
+        "direction": "guardrail_tested_or_untested",
+        "measurement_methods": [
+          "red_team_cases",
+          "ablation_tests",
+          "error_analysis",
+          "single_marker_dependence_test"
+        ],
+        "contexts": [
+          "missing_data",
+          "normal_labs_with_symptoms",
+          "wearable_artifact",
+          "medication_confounder",
+          "post_exertional_delay",
+          "orthostatic_symptoms"
+        ]
+      },
+      "mediator": {
+        "status": "directly_measured",
+        "name": "guardrail_test_suite",
+        "category": "safety_guardrail",
+        "direction": "required",
+        "pathway": "candidate inference -> red-team case -> failure mode -> corrected rule",
+        "mechanism": "safety depends on testing common inference failures, not just average accuracy"
+      },
+      "neurobehavioral_output": {
+        "variable": "safe_mechanism_hypothesis_output",
+        "direction": "accepted_if_guardrail_passed",
+        "measurement_methods": [
+          "error_analysis_report",
+          "ablation_report",
+          "red_team_pass_fail"
+        ],
+        "affected_functions": [
+          "safe_explanation",
+          "next_measurement_recommendation",
+          "avoidance_of_diagnosis_claims"
+        ]
+      },
+      "chain_validity": {
+        "physiology_to_mediator_supported": false,
+        "mediator_to_output_supported": false,
+        "full_chain_directly_supported": false,
+        "confidence": "high"
+      },
+      "inference_rule": {
+        "plain_language_rule": "Every inferred state must include uncertainty and must pass red-team guardrails before user-facing explanation; the system must output mechanism hypotheses, not medical diagnoses.",
+        "hypotheses": [
+          {
+            "target": "safe_user_facing_output",
+            "domain": "safety",
+            "direction": "requires_guardrail_testing",
+            "confidence": "high",
+            "reason": "Safety guardrails/red-team testing are rarely implemented but are recommended as a key gap in clinical AI validation."
+          }
+        ]
+      },
+      "temporal_dynamics": {
+        "timescale": "predeployment_and_continuous_monitoring",
+        "latency": "drift_or_error_detected",
+        "reversibility": "rollback_possible"
+      },
+      "modulators_confounders": [
+        "missing_data",
+        "artifact",
+        "context_override",
+        "calibration_error",
+        "dataset_shift",
+        "user_population_shift"
+      ],
+      "evidence": {
+        "strength": "moderate",
+        "summary": "Safety guardrails, red-team testing, ablation/error analysis, and continuous monitoring are underused but necessary for trustworthy health inference systems.",
+        "human_evidence": true,
+        "mechanistic_evidence": false,
+        "replication_status": "partially_replicated",
+        "key_sources": [
+          {
+            "title": "Clinical AI validation and safety guardrail reviews",
+            "authors": "Kenig et al.; Jacob et al.; Kwong et al.",
+            "year": 2023,
+            "source_type": "clinical_AI_guideline_or_review",
+            "doi_or_url": "see uploaded references",
+            "relevant_finding": "Few studies report systematic red-team scenarios or safety evaluation beyond technical performance.",
+            "population": "clinical AI/CDSS studies",
+            "sample_size": "review-level",
+            "limitations": "Safety testing standards still emerging."
+          }
+        ]
+      },
+      "limitations": [
+        "Red-team scenarios cannot cover all failures",
+        "Prospective monitoring still required",
+        "Guardrail performance may drift with new populations or devices"
+      ],
+      "alternative_explanations": [
+        "Failure may reflect measurement noise rather than model logic",
+        "Guardrail may be too conservative and reduce usefulness"
+      ],
+      "body_state_mapper_use": {
+        "candidate_nodes": [
+          "guardrail_test_suite",
+          "red_team_case",
+          "error_analysis",
+          "ablation_test",
+          "single_marker_dependence_test",
+          "clinical_safety_boundary",
+          "not_a_diagnosis",
+          "next_measurement_recommendation"
+        ],
+        "candidate_edges": [
+          {
+            "source": "single_marker_dependence",
+            "target": "inference_confidence",
+            "edge_type": "downweights",
+            "polarity": "negative",
+            "confidence": "high"
+          },
+          {
+            "source": "red_team_case_failed",
+            "target": "requires_review",
+            "edge_type": "requires_review",
+            "polarity": "neutral",
+            "confidence": "high"
+          },
+          {
+            "source": "uncertainty_report_required",
+            "target": "user_facing_output",
+            "edge_type": "validation_rule",
+            "polarity": "neutral",
+            "confidence": "high"
+          }
+        ],
+        "recommended_action": "add_guardrail",
+        "risk_of_overinterpretation": "low"
+      }
+    }
+  ],
+  "source_high_value_candidate_nodes": [
+    {
+      "node_id": "static_graph_validation",
+      "domain": "validation",
+      "definition": "Structured review of graph nodes, edges, guardrails, evidence grades, and source traceability before use.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "edge_traceability",
+      "domain": "traceability",
+      "definition": "Requirement that every graph edge links to source evidence, evidence grade, causal status, and version metadata.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "uncertainty_report_required",
+      "domain": "uncertainty",
+      "definition": "Every inferred state must include explicit confidence and uncertainty explanation.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "external_validation_required",
+      "domain": "validation",
+      "definition": "Requirement for testing against independent data before generalization claims.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "prospective_validation_required",
+      "domain": "validation",
+      "definition": "Requirement for real-time or forward-looking validation before deployment readiness claims.",
+      "evidence_strength": "high"
+    },
+    {
+      "node_id": "guardrail_test_suite",
+      "domain": "safety",
+      "definition": "Predefined red-team cases and ablation tests used to expose unsafe inference failures.",
+      "evidence_strength": "moderate"
+    },
+    {
+      "node_id": "not_a_diagnosis",
+      "domain": "safety",
+      "definition": "Boundary rule that BodyState Mapper outputs mechanism hypotheses and next measurements, not medical diagnoses.",
+      "evidence_strength": "high"
+    }
+  ]
+}

@@ -1,0 +1,3311 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_entries": 58,
+  "variation_trees": [
+    {
+      "parameter_id": "activity_fragmentation_rest_activity_rhythm",
+      "display_name": "Activity fragmentation and rest-activity rhythm",
+      "source_files": [
+        "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "fragmented_irregular_rest_activity",
+          "result_pattern": "High intradaily variability, low interdaily stability, low relative amplitude, fragmented activity",
+          "direction": "fragmented|irregular|baseline_deviation",
+          "standalone_interpretation": [
+            "Disrupted rest-activity organization; can occur with aging, mood disorders, cancer/fatigue states, sleep disruption, or environmental schedule constraints."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep fragmentation",
+            "light exposure",
+            "mission schedule",
+            "mood",
+            "fatigue",
+            "HRV/RHR"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "fragmentation/WASO",
+              "combined_meaning": "Fragmented activity plus fragmented sleep supports disrupted rest-activity recovery branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "autonomic",
+              "other_entity": "low_HRV/elevated_RHR",
+              "combined_meaning": "Rest-activity disruption plus low HRV suggests low recovery but is not mechanism-specific.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "disrupted_rest_activity_recovery_branch",
+            "circadian_behavioral_disorganization"
+          ],
+          "candidate_chains": [
+            "fragmented_activity + fragmented_sleep + low_HRV -> disrupted_rest_activity_recovery_branch"
+          ],
+          "guardrails": [
+            "Activity fragmentation is not specific to fatigue.",
+            "Rest-activity rhythm is influenced by schedule/environment, not only internal circadian state."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "acylcarnitines_fat_oxidation",
+      "display_name": "Acylcarnitines / fatty acid oxidation / metabolomics",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "abnormal_acylcarnitine_reduced_fat_oxidation",
+          "result_pattern": "abnormal acylcarnitine profile with reduced fat oxidation/exercise intolerance",
+          "direction": "patterned|decreased",
+          "standalone_interpretation": [
+            "possible impaired substrate utilization or metabolic flexibility"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "exercise test",
+            "fat oxidation/RER",
+            "symptom timing",
+            "diet"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "exercise_test",
+              "other_entity": "fat oxidation/RER/exercise intolerance",
+              "combined_meaning": "abnormal acylcarnitines + reduced fat oxidation + exercise intolerance supports impaired metabolic flexibility branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "impaired_metabolic_flexibility_branch"
+          ],
+          "candidate_chains": [
+            "abnormal_acylcarnitine_pattern + reduced_fat_oxidation + exercise_intolerance -> impaired_metabolic_flexibility_branch"
+          ],
+          "guardrails": [
+            "metabolomics pattern alone does not diagnose mitochondrial disease"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "albumin_prealbumin_total_protein",
+      "display_name": "Albumin, prealbumin, total protein",
+      "source_files": [
+        "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_albumin_prealbumin_contextual",
+          "result_pattern": "Low albumin/prealbumin/total protein",
+          "direction": "decreased",
+          "standalone_interpretation": [
+            "May reflect malnutrition, inflammation/illness, liver disease, kidney loss, or fluid shifts depending on context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/inflammation",
+            "liver markers",
+            "kidney markers/proteinuria",
+            "fluid status",
+            "dietary protein",
+            "body mass",
+            "illness"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/IL6",
+              "combined_meaning": "Low albumin/prealbumin with inflammation supports illness/inflammation-nutrition confounded branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "urine",
+              "other_entity": "proteinuria/albuminuria",
+              "combined_meaning": "Low serum protein plus urinary protein loss supports renal protein loss branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "illness_inflammation_nutrition_confounded_branch",
+            "protein_energy_malnutrition_hypothesis",
+            "renal_or_hepatic_loss_branch",
+            "fluid_shift_context"
+          ],
+          "candidate_chains": [
+            "low_albumin/prealbumin + inflammation_markers -> illness_inflammation_nutrition_confounded_branch"
+          ],
+          "guardrails": [
+            "Albumin/prealbumin are not pure nutrition markers.",
+            "Interpret with inflammation, fluid shifts, liver and kidney context."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Mizuiri 2025",
+              "Valvano 2025"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "b12_folate_functional_panel",
+      "display_name": "Vitamin B12, MMA, homocysteine, folate",
+      "source_files": [
+        "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "borderline_b12_high_mma_homocysteine",
+          "result_pattern": "Borderline/low B12 with elevated MMA and/or homocysteine",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "Suggests functional B12 deficiency more strongly than serum B12 alone."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "renal function",
+            "folate",
+            "CBC macrocytosis",
+            "neurologic/cognitive symptoms",
+            "diet/supplementation"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CBC",
+              "other_entity": "MCV/RDW",
+              "combined_meaning": "Macrocytosis plus abnormal B12/MMA/homocysteine supports megaloblastic deficiency branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "neurobehavioral",
+              "other_entity": "cognitive symptoms/paresthesias/fatigue",
+              "combined_meaning": "Symptoms increase clinical relevance but do not prove causality without biochemical pattern.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "functional_B12_deficiency",
+            "megaloblastic_deficiency_branch"
+          ],
+          "candidate_chains": [
+            "borderline_B12 + high_MMA/homocysteine + cognitive_symptoms -> functional_B12_deficiency_branch"
+          ],
+          "guardrails": [
+            "Serum B12 alone is insufficient to diagnose functional B12 deficiency.",
+            "Interpret MMA with renal function."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Storz 2023",
+              "Lukovac 2024"
+            ]
+          }
+        },
+        {
+          "variation_id": "folate_low_or_b12_low_macrocytosis",
+          "result_pattern": "Low folate and/or B12 with macrocytosis",
+          "direction": "decreased|patterned",
+          "standalone_interpretation": [
+            "Supports megaloblastic deficiency pattern when paired with CBC changes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "B12",
+            "MMA",
+            "homocysteine",
+            "CBC",
+            "diet",
+            "medications",
+            "malabsorption"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "feces_stool",
+              "other_entity": "malabsorption markers/GI disease",
+              "combined_meaning": "GI malabsorption plus B-vitamin deficiency supports malabsorption-fatigue branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "folate_deficiency",
+            "B12_deficiency",
+            "malabsorption_related_deficiency"
+          ],
+          "candidate_chains": [
+            "macrocytosis + low_B12_or_folate + cognitive/fatigue symptoms -> megaloblastic_deficiency_branch"
+          ],
+          "guardrails": [
+            "Do not treat macrocytosis as B12 deficiency without folate, medication, alcohol/liver and thyroid context."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Ozkanay 2023"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "bhb_ketones",
+      "display_name": "Beta-hydroxybutyrate / ketones",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "BHB_high_context_dependent",
+          "result_pattern": "elevated BHB/ketones",
+          "direction": "increased|fasting|patterned",
+          "standalone_interpretation": [
+            "ketone utilization state; meaning depends on glucose, intake, body mass, symptoms"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "glucose",
+            "energy intake",
+            "body mass",
+            "acid-base context",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "diet/body_mass",
+              "other_entity": "energy intake/weight change",
+              "combined_meaning": "high BHB + low intake + weight loss + fatigue suggests low energy availability rather than nutritional ketosis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "nutritional_ketosis_branch",
+            "low_energy_availability_branch",
+            "ketoacidosis_red_flag_branch"
+          ],
+          "candidate_chains": [
+            "BHB_high + normal_glucose + adequate_energy_intake -> nutritional_ketosis_branch",
+            "BHB_high + low_energy_intake + weight_loss + fatigue -> low_energy_availability_branch"
+          ],
+          "guardrails": [
+            "do not infer low energy availability from ketones alone",
+            "separate blood ketones from urine ketones"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "bristol_bowel_pattern",
+      "display_name": "Bristol stool type / bowel frequency / diarrhea / constipation",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "patterned_constipation_or_diarrhea",
+          "result_pattern": "Bristol 1-2/low frequency or Bristol 6-7/high frequency",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "phenotype marker for transit/stool pattern, not mechanism"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber/fluid",
+            "medications",
+            "GI symptoms",
+            "urine hydration markers",
+            "blood electrolytes",
+            "sleep/mood/fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urine_osmolality_volume",
+              "combined_meaning": "high-frequency diarrhea + concentrated urine suggests dehydration risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "constipation_burden_cluster",
+            "diarrhea_dehydration_risk_cluster"
+          ],
+          "candidate_chains": [
+            "Bristol_6_7 + high_frequency + low_urine_volume/high_osmolality -> diarrhea_dehydration_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer dysbiosis from stool pattern alone.",
+            "Bristol pattern is phenotype, not diagnosis.",
+            "Do not infer dehydration without urine/blood/intake/context."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "cgm_glucose_variability_time_in_range",
+      "display_name": "CGM_glucose_variability_time_in_range",
+      "source_files": [
+        "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "high_gv_low_tir",
+          "result_pattern": "high glycemic variability / low time in range",
+          "direction": "variable",
+          "standalone_interpretation": [
+            "in diabetes contexts predicts higher complication risk independent of HbA1c"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diabetes status",
+            "medication",
+            "meal timing",
+            "activity",
+            "sleep",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_log",
+              "other_entity": "timed fatigue/brain fog/cognition",
+              "combined_meaning": "needed to test acute postprandial symptom branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "glycemic_instability"
+          ],
+          "candidate_chains": [
+            "high_CGM_variability + low_TIR -> diabetes_complication_risk_branch",
+            "postprandial_spike + timed_brain_fog + cognitive_test -> acute_postprandial_brain_fog_hypothesis"
+          ],
+          "guardrails": [
+            "acute symptom inference requires time-locked CGM + symptoms/cognition"
+          ],
+          "evidence": {
+            "strength": "high for diabetes complications; low/moderate for acute symptom inference",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Yapanis 2022",
+              "Hjort 2024",
+              "Fang 2025"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "d_dimer",
+      "display_name": "D-dimer",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "d_dimer_elevated_no_imaging",
+          "result_pattern": "above reference range without imaging evidence",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "coagulation activation/fibrinolysis; nonspecific"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "imaging",
+            "inflammation",
+            "recent surgery/illness"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "imaging",
+              "other_entity": "CT/ultrasound",
+              "combined_meaning": "high D-dimer + symptoms + positive imaging supports thrombotic event branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "nonspecific_coagulation_activation_branch",
+            "thrombotic_event_branch"
+          ],
+          "candidate_chains": [
+            "high_D_dimer + symptoms + imaging_positive -> thrombotic_event_branch"
+          ],
+          "guardrails": [
+            "do not infer thrombosis from D-dimer alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "daytime_evening_melanopic_light",
+      "display_name": "Daytime and evening light exposure",
+      "source_files": [
+        "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_daytime_high_evening_light",
+          "result_pattern": "Low daytime light exposure and/or high evening blue/melanopic light exposure",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "Input pattern that increases risk of delayed circadian phase, later sleep timing, longer sleep onset latency, and altered alertness."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "DLMO/melatonin",
+            "sleep timing",
+            "wear location",
+            "spectrum/melanopic irradiance",
+            "mission schedule"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "actigraphy/sleep_diary",
+              "other_entity": "delayed sleep midpoint/sleep onset latency",
+              "combined_meaning": "Low daytime plus high evening light with delayed sleep supports circadian delay branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "saliva",
+              "other_entity": "DLMO/salivary melatonin",
+              "combined_meaning": "Evening melanopic light plus delayed DLMO strongly supports biological phase delay.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_delay_branch"
+          ],
+          "candidate_chains": [
+            "low_daytime_light + high_evening_light + delayed_sleep_midpoint -> circadian_delay_branch"
+          ],
+          "guardrails": [
+            "Light exposure is input, not circadian phase itself.",
+            "Do not compare lux-only data to melanopic light without caution."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "dlmo_melatonin_amt6s",
+      "display_name": "DLMO, salivary melatonin, urinary 6-sulfatoxymelatonin",
+      "source_files": [
+        "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "delayed_or_shifted_melatonin_phase",
+          "result_pattern": "Delayed DLMO or shifted urinary aMT6s acrophase",
+          "direction": "delayed|phase_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "Biological circadian phase shift; DLMO is a high-value marker of central circadian phase, while urinary aMT6s is useful in field studies."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sampling timing",
+            "dim light conditions",
+            "light schedule",
+            "sleep timing",
+            "medications",
+            "melatonin supplementation"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "sleep midpoint/sleep onset",
+              "combined_meaning": "Delayed melatonin phase plus late sleep timing supports delayed circadian phase branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "space_analog_lighting",
+              "other_entity": "dynamic lighting schedule",
+              "combined_meaning": "Dynamic lighting plus stabilized aMT6s supports circadian countermeasure response.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "delayed_circadian_phase_branch",
+            "circadian_countermeasure_response_branch"
+          ],
+          "candidate_chains": [
+            "delayed_DLMO + late_sleep_timing + morning_sleepiness -> delayed_circadian_phase_branch",
+            "shifted_6_sulfatoxymelatonin + altered_light_schedule + fragmented_sleep -> circadian_disruption_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep quality from melatonin alone.",
+            "Urinary aMT6s is a proxy, not direct sleep measurement."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "fasting_glucose",
+      "display_name": "fasting_glucose",
+      "source_files": [
+        "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "fasting_glucose_high",
+          "result_pattern": "increased fasting glucose / impaired fasting glucose / diabetes-range pattern",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "impaired glucose regulation or diabetes risk"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "HbA1c",
+            "insulin/HOMA-IR",
+            "lipids",
+            "stress/illness",
+            "fasting state"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_metabolic",
+              "other_entity": "HbA1c",
+              "combined_meaning": "adds chronicity context",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "impaired_glucose_regulation",
+            "diabetes_risk"
+          ],
+          "candidate_chains": [
+            "high_fasting_glucose + HbA1c_high + insulin_resistance_indices -> chronic_metabolic_dysregulation_branch"
+          ],
+          "guardrails": [
+            "fasting glucose alone does not describe variability or postprandial excursions"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Tohidi 2018",
+              "Kosovski 2024"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "fecal_calprotectin_lactoferrin",
+      "display_name": "fecal calprotectin / lactoferrin",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "fecal_inflammation_high",
+          "result_pattern": "elevated calprotectin/lactoferrin",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "intestinal inflammation marker; helps distinguish inflammatory from functional patterns"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "GI symptoms",
+            "CRP/IL6/CBC",
+            "infection testing",
+            "NSAIDs",
+            "repeat testing",
+            "endoscopy if indicated"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_IL6_CBC",
+              "combined_meaning": "fecal inflammation + systemic inflammation + GI symptoms supports intestinal inflammation/IBD branch",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "intestinal_inflammation",
+            "IBD_activity_hypothesis",
+            "infectious_inflammation_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_calprotectin/lactoferrin + CRP_high + GI_symptoms -> intestinal_inflammation_or_IBD_branch"
+          ],
+          "guardrails": [
+            "Do not infer IBD from calprotectin alone.",
+            "Fecal inflammation markers can rise with infection, NSAIDs, and other GI inflammation.",
+            "Normal marker does not erase symptoms."
+          ],
+          "evidence_strength": "high"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "fecal_occult_blood_fit",
+      "display_name": "FOBT/FIT",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "fit_positive",
+          "result_pattern": "positive FIT/FOBT",
+          "direction": "present",
+          "standalone_interpretation": [
+            "blood detected in stool; useful screening/triage marker"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "colonoscopy/follow-up",
+            "Hb/Hct",
+            "ferritin/iron markers",
+            "GI symptoms",
+            "NSAID/anticoagulant use"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "hemoglobin_ferritin",
+              "combined_meaning": "positive stool blood + low Hb/ferritin supports GI blood loss -> iron deficiency branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "GI_blood_loss",
+            "iron_deficiency_from_GI_loss"
+          ],
+          "candidate_chains": [
+            "positive_occult_blood + low_Hb/ferritin -> GI_blood_loss_iron_deficiency_branch"
+          ],
+          "guardrails": [
+            "Do not infer source of bleeding from FIT/FOBT alone.",
+            "Positive FIT/FOBT is not a diagnosis; requires clinical follow-up.",
+            "False positives and non-neoplastic bleeding are possible."
+          ],
+          "evidence_strength": "high"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "hba1c",
+      "display_name": "HbA1c",
+      "source_files": [
+        "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "hba1c_high",
+          "result_pattern": "elevated HbA1c",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "chronic average glycemic exposure"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CBC/hemoglobin disorders",
+            "CGM",
+            "iron status"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CGM",
+              "other_entity": "time_in_range/glycemic_variability",
+              "combined_meaning": "CGM adds variability not captured by HbA1c",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "chronic_hyperglycemia"
+          ],
+          "candidate_chains": [
+            "HbA1c_high + high_glucose_variability -> diabetes_complication_risk_branch"
+          ],
+          "guardrails": [
+            "HbA1c does not measure glycemic variability"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Mahmoud 2024",
+              "Tian 2025",
+              "Ke 2024"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "herpesvirus_reactivation",
+      "display_name": "EBV/HSV/CMV/VZV reactivation / viral shedding",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "HHV_reactivation_stress_depression",
+          "result_pattern": "viral DNA/serologic evidence of herpesvirus reactivation with stress/depression context",
+          "direction": "present|baseline_deviation",
+          "standalone_interpretation": [
+            "population-level association with stress/depression; not active symptomatic infection by itself"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "stress/mood",
+            "immune markers",
+            "sampling site"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "psychological",
+              "other_entity": "depression/stress status",
+              "combined_meaning": "HHV reactivation + stress/depression supports stress-related viral reactivation branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "stress_related_viral_reactivation_branch",
+            "asymptomatic_shedding_branch"
+          ],
+          "candidate_chains": [
+            "EBV_or_HSV_shedding + high_stress/cortisol + low_sIgA -> stress_related_viral_reactivation_branch"
+          ],
+          "guardrails": [
+            "viral DNA alone does not prove active symptomatic infection",
+            "do not infer fatigue without timing/context"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "hormone_circadian_metabolites",
+      "display_name": "urinary cortisol metabolites / catecholamine metabolites / 6-sulfatoxymelatonin",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "circadian_stress_pattern",
+          "result_pattern": "shifted melatonin metabolite or elevated stress hormone metabolites",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "non-invasive proxy for circadian output or stress physiology"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "collection timing",
+            "actigraphy",
+            "light exposure",
+            "sleep logs",
+            "workload/stress",
+            "saliva/serum hormones"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_light",
+              "other_entity": "actigraphy_light_exposure",
+              "combined_meaning": "shifted 6-sulfatoxymelatonin + light/sleep timing supports circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_disruption_branch",
+            "stress_recovery_branch"
+          ],
+          "candidate_chains": [
+            "low/shifted_6_sulfatoxymelatonin + light_exposure_shift + sleep_fragmentation -> circadian_disruption_branch",
+            "urinary_cortisol_metabolites + workload/stress + poor_sleep -> stress_recovery_branch"
+          ],
+          "guardrails": [
+            "Urine hormone metabolites are not equivalent to serum/saliva levels.",
+            "6-sulfatoxymelatonin is not direct sleep quality.",
+            "Timing/collection protocol is mandatory."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "hpa_axis_cortisol",
+      "display_name": "HPA_axis_cortisol",
+      "source_files": [
+        "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "flattened_cortisol_slope",
+          "result_pattern": "flattened diurnal cortisol slope / disrupted rhythm",
+          "direction": "circadian|patterned",
+          "standalone_interpretation": [
+            "associated with poorer health/stress-circadian disruption; rhythm more meaningful than one value"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sampling time",
+            "sleep timing",
+            "light exposure",
+            "stress/workload",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_actigraphy",
+              "other_entity": "sleep fragmentation/light timing",
+              "combined_meaning": "supports HPA-circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "HPA_circadian_disruption_branch",
+            "stress_recovery_branch"
+          ],
+          "candidate_chains": [
+            "flattened_cortisol_slope + poor_sleep + fatigue/mood_worsening -> HPA_circadian_disruption_branch",
+            "high_evening_cortisol + sleep_fragmentation + low_recovery -> stress_sleep_recovery_branch"
+          ],
+          "guardrails": [
+            "do not infer HPA-axis state from one cortisol value"
+          ],
+          "evidence": {
+            "strength": "moderate/high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Adam 2017",
+              "Noushad 2021",
+              "Juliana 2025"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "insulin_homair_tyg_tghdl",
+      "display_name": "insulin_HOMAIR_TyG_TGHDL",
+      "source_files": [
+        "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "IR_indices_high",
+          "result_pattern": "high fasting insulin/HOMA-IR/TyG/TG-HDL/METS-IR",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "insulin resistance/metabolic syndrome risk"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "BMI",
+            "waist circumference",
+            "fasting state",
+            "population cutoffs"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "anthropometrics",
+              "other_entity": "BMI/WC",
+              "combined_meaning": "high TyG + high BMI/WC improves metabolic syndrome/hypertension risk inference",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "insulin_resistance",
+            "metabolic_syndrome_risk"
+          ],
+          "candidate_chains": [
+            "high_TyG + high_BMI_WC -> metabolic_syndrome_hypertension_risk_branch"
+          ],
+          "guardrails": [
+            "TyG/TG-HDL alone should not diagnose beta-cell dysfunction"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Sun 2024",
+              "Adams-Huet 2024",
+              "Nabipoorashrafi 2022"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "iron_panel_ferritin_tsat_stfr_hepcidin",
+      "display_name": "Iron status panel: ferritin, TSAT, serum iron, TIBC, sTfR, hepcidin",
+      "source_files": [
+        "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_ferritin_low_tsat_no_inflammation",
+          "result_pattern": "Low ferritin and/or low TSAT with normal CRP/AGP",
+          "direction": "decreased",
+          "standalone_interpretation": [
+            "Iron deficiency likely when inflammatory markers are not elevated."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/AGP",
+            "CBC",
+            "Hb/Hct",
+            "MCV/RDW",
+            "symptoms",
+            "diet",
+            "GI blood loss/malabsorption context"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CBC",
+              "other_entity": "Hb/MCV/RDW",
+              "combined_meaning": "Low Hb + low ferritin/TSAT + low MCV or high RDW supports iron deficiency anemia and oxygen-delivery limitation branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "symptom_report",
+              "other_entity": "fatigue/exercise intolerance",
+              "combined_meaning": "Low ferritin/TSAT with fatigue but normal Hb supports iron deficiency without anemia branch, not oxygen-delivery limitation unless performance/HR response supports it.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "feces_stool",
+              "other_entity": "FIT/FOBT or fecal inflammation/malabsorption markers",
+              "combined_meaning": "Iron deficiency with positive occult blood or malabsorption markers supports GI blood loss/malabsorption investigation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "iron_deficiency_without_anemia",
+            "iron_deficiency_anemia",
+            "oxygen_delivery_limitation_if_anemic"
+          ],
+          "candidate_chains": [
+            "low_ferritin_or_low_TSAT + fatigue + normal_Hb -> iron_deficiency_without_anemia_branch",
+            "low_Hb + low_ferritin/TSAT + low_MCV/high_RDW -> iron_deficiency_anemia_oxygen_delivery_branch"
+          ],
+          "guardrails": [
+            "Do not infer anemia from low ferritin alone.",
+            "Do not infer oxygen delivery limitation without Hb/Hct/performance context."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Lahtiharju 2025",
+              "Namaste 2017",
+              "Skikne 2011",
+              "Daude 2020"
+            ]
+          }
+        },
+        {
+          "variation_id": "normal_or_high_ferritin_with_inflammation",
+          "result_pattern": "Normal/high ferritin with elevated CRP/AGP or inflammatory disease context",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "Ferritin may be elevated as an acute phase reactant; iron stores may be overestimated."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/AGP",
+            "TSAT",
+            "sTfR or sTfR/log ferritin index",
+            "hepcidin",
+            "inflammatory diagnosis",
+            "CBC"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/AGP/IL6",
+              "combined_meaning": "Inflammation can mask iron deficiency by raising ferritin; TSAT/sTfR helps disambiguate.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "inflammation_confounded_iron_status",
+            "anemia_of_inflammation",
+            "functional_iron_deficiency"
+          ],
+          "candidate_chains": [
+            "ferritin_normal_or_high + CRP_high + low_TSAT -> inflammation_confounded_iron_status_branch"
+          ],
+          "guardrails": [
+            "Normal/high ferritin does not rule out iron deficiency when inflammation is present."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Namaste 2017",
+              "Mei 2017",
+              "Richardson 2024",
+              "Daude 2020"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "ketones_lactate_pyruvate",
+      "display_name": "ketones_lactate_pyruvate",
+      "source_files": [
+        "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "evidence_gap",
+          "result_pattern": "not sufficiently covered in uploaded metabolic files",
+          "direction": "unknown",
+          "standalone_interpretation": [],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fasting",
+            "blood glucose",
+            "acid-base status",
+            "exercise workload",
+            "CPET"
+          ],
+          "candidate_hidden_states": [
+            "fasting_low_energy_availability_branch",
+            "ketoacidosis_red_flag_branch",
+            "mitochondrial_exertional_intolerance_branch"
+          ],
+          "candidate_chains": [
+            "BHB_high + low_energy_intake + fatigue -> fasting_low_energy_availability_branch",
+            "BHB_high + hyperglycemia + acidosis -> ketoacidosis_red_flag_branch",
+            "lactate_high_at_low_workload + reduced_anaerobic_threshold + PEM -> mitochondrial_exertional_intolerance_branch"
+          ],
+          "guardrails": [
+            "ketones do not automatically mean pathology",
+            "lactate does not automatically mean toxin"
+          ],
+          "evidence": {
+            "strength": "low in current uploaded set",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "lactate_accumulation_exercise",
+      "display_name": "Blood lactate during exercise/CPET",
+      "source_files": [
+        "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "elevated_lactate_low_workload",
+          "result_pattern": "high lactate at low/submaximal workload",
+          "direction": "increased|exercise_induced",
+          "standalone_interpretation": [
+            "metabolic strain; possible impaired oxidative metabolism when intensity-adjusted"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "VO2/anaerobic threshold",
+            "RER/fat oxidation",
+            "workload",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CPET",
+              "other_entity": "anaerobic_threshold/VO2/symptom_logs",
+              "combined_meaning": "elevated lactate at low workload + reduced anaerobic threshold + exertional intolerance supports metabolic strain branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "metabolic_strain_branch",
+            "impaired_metabolic_flexibility_hypothesis"
+          ],
+          "candidate_chains": [
+            "elevated_lactate_at_low_workload + reduced_anaerobic_threshold + exertional_intolerance -> metabolic_strain_branch"
+          ],
+          "guardrails": [
+            "lactate rises normally with exercise intensity",
+            "do not infer mitochondrial dysfunction from fatigue alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "malabsorption_markers",
+      "display_name": "fecal fat / pancreatic elastase / bile acids / stool pH",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "malabsorption_pattern",
+          "result_pattern": "fecal fat high and/or pancreatic elastase low and/or bile acid abnormality",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "supports malabsorption/digestive insufficiency branch depending on marker pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "dietary fat intake",
+            "weight/body mass",
+            "GI symptoms",
+            "B12/iron/vitamin D",
+            "albumin",
+            "stool frequency"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_nutrients",
+              "other_entity": "iron_B12_vitaminD_albumin",
+              "combined_meaning": "malabsorption markers + nutrient deficiency supports malabsorption-fatigue cluster",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "malabsorption",
+            "exocrine_pancreatic_insufficiency",
+            "bile_acid_diarrhea"
+          ],
+          "candidate_chains": [
+            "low_pancreatic_elastase + fecal_fat_high + nutrient_deficiency -> malabsorption_fatigue_cluster"
+          ],
+          "guardrails": [
+            "Do not infer malabsorption from fatigue alone.",
+            "Fecal fat requires dietary/context interpretation.",
+            "Bile acid branch requires chronic watery diarrhea context."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "microbiome_diversity",
+      "display_name": "alpha/beta diversity",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_diversity_contextual",
+          "result_pattern": "decreased alpha diversity or altered beta diversity",
+          "direction": "decreased/patterned",
+          "standalone_interpretation": [
+            "associated with several disease states but not diagnostic"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet",
+            "BMI",
+            "medications/antibiotics",
+            "GI symptoms",
+            "inflammation",
+            "geography/mission diet"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_HOMA_IR",
+              "combined_meaning": "lower diversity + inflammatory/metabolic markers supports inflammatory/metabolic microbiome disturbance hypothesis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "microbiome_disturbance_hypothesis"
+          ],
+          "candidate_chains": [
+            "low_diversity + symptoms + blood_marker_shift -> context-dependent microbiome branch"
+          ],
+          "guardrails": [
+            "Low diversity is not always pathological.",
+            "Do not infer dysbiosis/disease from diversity alone.",
+            "Associations are often cross-sectional."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "n3_slow_wave_sleep_eeg",
+      "display_name": "N3 / Slow-Wave Sleep / EEG Slow-Wave Activity",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_N3_or_slow_wave_activity",
+          "result_pattern": "Reduced N3 percent and/or reduced EEG slow-wave activity with normal or near-normal total sleep time",
+          "direction": "decreased|stage_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "May indicate impaired restorative sleep architecture; interpretation requires cognition/fatigue outcomes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "age",
+            "first-night effect",
+            "medications",
+            "fatigue/cognition outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition/fatigue tree",
+              "other_entity": "memory_impairment|fatigue",
+              "combined_meaning": "Low N3/SWA plus memory/fatigue supports sleep architecture recovery branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_architecture_recovery_branch"
+          ],
+          "candidate_chains": [
+            "low_N3_slow_wave_sleep_percent + memory_impairment/fatigue + normal_total_sleep_time -> sleep_architecture_recovery_branch"
+          ],
+          "guardrails": [
+            "Do not infer N3 impairment from consumer wearable staging.",
+            "Do not infer cognition mechanism without measured outcome."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "nitrogen_balance_urea",
+      "display_name": "urinary urea nitrogen / nitrogen balance markers",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "negative_nitrogen_balance_pattern",
+          "result_pattern": "catabolic nitrogen balance pattern",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "protein metabolism/catabolism indicator when intake and excretion are quantified"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "protein intake",
+            "energy intake",
+            "exercise load",
+            "body composition",
+            "muscle strength",
+            "mission phase"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "nutrition_muscle",
+              "other_entity": "protein_intake_body_composition_strength",
+              "combined_meaning": "negative nitrogen balance + low energy/protein intake + muscle loss supports catabolic/low-energy availability branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "catabolic_state",
+            "low_energy_availability"
+          ],
+          "candidate_chains": [
+            "negative_nitrogen_balance + low_energy_intake + exercise_load + muscle_loss -> catabolic_low_energy_availability_branch"
+          ],
+          "guardrails": [
+            "Nitrogen balance is not muscle loss by itself.",
+            "Requires accurate intake and collection data.",
+            "Single measurement is not stable phenotype."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "oral_microbiome_dysbiosis",
+      "display_name": "Oral microbiome diversity/dysbiosis and periodontal pathogens",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "periodontal_dysbiosis_pathogens",
+          "result_pattern": "increased periodontal pathogens with oral inflammatory signs",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "local oral inflammatory disease risk when confirmed clinically"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "periodontal exam",
+            "oral hygiene",
+            "salivary cytokines"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "oral_exam",
+              "other_entity": "periodontal pockets/bleeding",
+              "combined_meaning": "oral dysbiosis + periodontitis findings supports local periodontal inflammatory branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "periodontal_inflammation_branch",
+            "oral_systemic_inflammation_hypothesis"
+          ],
+          "candidate_chains": [
+            "oral_dysbiosis + periodontal_inflammation + blood_CRP -> oral_systemic_inflammation_hypothesis"
+          ],
+          "guardrails": [
+            "do not infer gut dysbiosis from oral microbiome",
+            "do not treat oral microbiome shift as diagnosis"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "oxidative_stress_markers",
+      "display_name": "8-OHdG / F2-isoprostanes and oxidative stress markers",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "oxidative_stress_high",
+          "result_pattern": "elevated urinary oxidative stress markers",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "non-specific oxidative stress signal"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "radiation exposure",
+            "inflammation",
+            "exercise",
+            "renal status",
+            "diet/antioxidants",
+            "fatigue/outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "radiation_inflammation",
+              "other_entity": "radiation_dose_CRP_cytokines",
+              "combined_meaning": "oxidative marker + radiation/inflammation + symptoms supports oxidative stress hypothesis",
+              "confidence": "low/moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "oxidative_stress_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_oxidative_stress_markers + radiation_or_inflammation + fatigue -> oxidative_stress_hypothesis"
+          ],
+          "guardrails": [
+            "Oxidative stress marker lacks mechanism specificity.",
+            "Do not explain fatigue from urine oxidative marker alone.",
+            "Repeat and cross-modal context needed."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "periodic_limb_movement_sleep",
+      "display_name": "Periodic Limb Movement Index",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "high_periodic_limb_movement_index",
+          "result_pattern": "Elevated periodic limb movement index with arousals or sleep fragmentation",
+          "direction": "increased|fragmented",
+          "standalone_interpretation": [
+            "May contribute to sleep fragmentation and daytime sleepiness when temporally linked."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "arousal index",
+            "iron/ferritin status",
+            "medications",
+            "daytime symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood nutrients tree",
+              "other_entity": "ferritin/iron_status",
+              "combined_meaning": "PLMI plus iron context may guide restless legs/limb movement interpretation.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "fatigue tree",
+              "other_entity": "daytime_sleepiness",
+              "combined_meaning": "PLMI plus fragmentation plus daytime sleepiness supports limb movement sleep fragmentation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "limb_movement_sleep_fragmentation_branch"
+          ],
+          "candidate_chains": [
+            "high_periodic_limb_movement_index + sleep_fragmentation + daytime_sleepiness -> limb_movement_sleep_fragmentation_branch"
+          ],
+          "guardrails": [
+            "Do not attribute daytime symptoms to limb movements without arousal/fragmentation and symptom timing."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "post_exertional_activity_drop",
+      "display_name": "Post-exertional activity drop",
+      "source_files": [
+        "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "next_day_activity_drop_after_load",
+          "result_pattern": "High exertion/load followed by delayed activity reduction and symptom worsening",
+          "direction": "post_exertional|delayed|decreased",
+          "standalone_interpretation": [
+            "Candidate PEM/activity-pacing signature only when temporally linked to symptom worsening."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "exercise load",
+            "timed fatigue/PEM symptoms",
+            "sleep",
+            "HRV/RHR",
+            "CPET/metabolic data",
+            "pain/injury"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_log",
+              "other_entity": "next_day_fatigue/brain_fog/PEM",
+              "combined_meaning": "Delayed symptom worsening plus activity drop supports post-exertional malaise activity branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "blood_metabolic",
+              "other_entity": "lactate/acylcarnitines/CPET",
+              "combined_meaning": "Activity drop plus metabolic strain markers strengthens exertional intolerance branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "post_exertional_malaise_activity_branch",
+            "activity_pacing_limitation"
+          ],
+          "candidate_chains": [
+            "high_exercise_load + next_day_activity_drop + fatigue_symptom_worsening -> post_exertional_malaise_activity_branch"
+          ],
+          "guardrails": [
+            "Do not infer PEM without delayed symptom/activity pattern.",
+            "One low-activity day is not sufficient."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "rem_sleep_architecture",
+      "display_name": "REM Percent, REM Latency, REM Fragmentation",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "REM_fragmentation_or_reduced_REM",
+          "result_pattern": "Reduced or fragmented REM sleep, abnormal REM latency, or REM shift relative to baseline",
+          "direction": "decreased|fragmented|delayed|stage_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "REM changes are context-dependent and should not be treated as mood/cognition mechanism without linked outcomes."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "circadian phase",
+            "medications",
+            "mood outcomes",
+            "sleep-disordered breathing markers"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "mood/circadian tree",
+              "other_entity": "mood_change|circadian_misalignment",
+              "combined_meaning": "REM disruption plus mood change and circadian misalignment supports REM mood circadian branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "REM_mood_circadian_branch"
+          ],
+          "candidate_chains": [
+            "REM_fragmentation_or_reduced_REM + mood_change + circadian_misalignment -> REM_mood_circadian_branch"
+          ],
+          "guardrails": [
+            "Do not infer mood mechanism from REM changes without measured mood/circadian outcomes."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "rest_activity_rhythm_social_jetlag",
+      "display_name": "Rest-activity rhythm, sleep midpoint, social jetlag",
+      "source_files": [
+        "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "irregular_or_misaligned_rhythm",
+          "result_pattern": "Irregular rest-activity rhythm, social jetlag, shifted sleep midpoint, low interdaily stability",
+          "direction": "irregular|phase_shifted|baseline_deviation",
+          "standalone_interpretation": [
+            "Behavioral/circadian proxy of misalignment, but affected by schedule, social constraints, illness, and environment."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "DLMO/melatonin",
+            "light exposure",
+            "work/mission schedule",
+            "sleep duration",
+            "PVT/cognition"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "PVT/reaction time lapses",
+              "combined_meaning": "Misalignment plus reduced sleep and PVT lapses supports alertness performance risk branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "circadian_misalignment_branch",
+            "alertness_performance_risk_branch"
+          ],
+          "candidate_chains": [
+            "circadian_misalignment + reduced_sleep + PVT_lapses -> alertness_performance_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer circadian phase from bedtime alone.",
+            "Rest-activity rhythms are influenced by non-circadian factors."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "salivary_alpha_amylase",
+      "display_name": "Salivary alpha-amylase",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json",
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "sAA_stress_reactivity",
+          "result_pattern": "rapid rise during/after psychosocial stress",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "sympathetic/adrenomedullary activation proxy"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "HR/HRV",
+            "stress task",
+            "cortisol",
+            "subjective stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cardiovascular",
+              "other_entity": "HR/HRV",
+              "combined_meaning": "sAA rise + tachycardia/low HRV supports sympathetic arousal branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sympathetic_arousal_branch"
+          ],
+          "candidate_chains": [
+            "high_alpha_amylase + tachycardia/low_HRV + anxiety_like_symptoms -> sympathetic_arousal_branch"
+          ],
+          "guardrails": [
+            "sAA is not HPA-axis cortisol",
+            "not interchangeable with catecholamines"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "salivary_cortisol_rhythm",
+      "display_name": "Salivary cortisol rhythm (CAR, diurnal slope, AUC)",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "flattened_diurnal_slope_or_blunted_CAR",
+          "result_pattern": "flattened slope or blunted cortisol awakening response",
+          "direction": "flattened|decreased|patterned",
+          "standalone_interpretation": [
+            "altered HPA/circadian regulation; context-dependent"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "awakening adherence",
+            "sleep timing",
+            "age",
+            "fatigue/mood/stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep_actigraphy",
+              "other_entity": "sleep timing/quality",
+              "combined_meaning": "flattened slope/CAR + poor sleep + fatigue/mood symptoms supports HPA-circadian disruption branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "HPA_circadian_disruption_branch",
+            "HPA_reactivity_hypothesis"
+          ],
+          "candidate_chains": [
+            "flattened_diurnal_cortisol_slope + poor_sleep + fatigue/mood_worsening -> HPA_circadian_disruption_branch"
+          ],
+          "guardrails": [
+            "one saliva sample cannot infer HPA-axis disorder",
+            "total cortisol AUC rarely tracks fatigue strongly"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "salivary_mucosal_immunity",
+      "display_name": "sIgA, lactoferrin, lysozyme, defensins",
+      "source_files": [
+        "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_sIgA_high_workload_URI",
+          "result_pattern": "low sIgA relative to baseline with high workload/stress and URI episodes",
+          "direction": "decreased|baseline_deviation",
+          "standalone_interpretation": [
+            "mucosal immune vulnerability branch"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "URI logs",
+            "training/workload",
+            "oral health"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "symptom_logs",
+              "other_entity": "URI episodes",
+              "combined_meaning": "low sIgA + frequent URI + high workload/stress supports mucosal immune vulnerability",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mucosal_immune_vulnerability_branch"
+          ],
+          "candidate_chains": [
+            "low_sIgA + frequent_URI_symptoms + high_workload/stress -> mucosal_immune_vulnerability_branch"
+          ],
+          "guardrails": [
+            "do not infer systemic immune suppression from saliva alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "salivary_siga_cytokines",
+      "display_name": "sIgA and salivary cytokines",
+      "source_files": [
+        "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_sIgA_or_high_salivary_IL6",
+          "result_pattern": "low sIgA with stress/infection; elevated IL-6/TNF/IL-1β with stress/sleep changes",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "mucosal immune vulnerability or local inflammatory activation"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "oral health",
+            "URTI logs",
+            "blood markers",
+            "sleep/stress"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "infection_logs",
+              "other_entity": "URTI symptoms",
+              "combined_meaning": "low sIgA + high stress/training load + URTI episodes supports mucosal immune suppression hypothesis",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mucosal_immune_suppression_hypothesis",
+            "sleep_inflammation_link_branch"
+          ],
+          "candidate_chains": [
+            "low_sIgA + high_stress + infection_frequency -> mucosal_immune_suppression_hypothesis"
+          ],
+          "guardrails": [
+            "do not infer systemic inflammation from saliva cytokines alone"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sedentary_time_and_bouts",
+      "display_name": "Sedentary time and sedentary bout duration",
+      "source_files": [
+        "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "high_sedentary_time",
+          "result_pattern": "High total sedentary time and/or prolonged sedentary bouts",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "Behavioral inactivity pattern associated with adverse health outcomes in pooled accelerometry research."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep duration",
+            "mission schedule",
+            "injury/pain",
+            "environment constraints",
+            "MVPA",
+            "muscle strength",
+            "mood"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "sleep",
+              "other_entity": "sleep_duration",
+              "combined_meaning": "High sedentary time with normal sleep points toward behavioral inactivity rather than sleep extension.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "mood",
+              "other_entity": "depressive_symptoms",
+              "combined_meaning": "Sedentary pattern plus mood symptoms may reflect behavioral low-recovery cluster but is not diagnostic.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "behavioral_inactivity_branch",
+            "low_recovery_behavioral_cluster"
+          ],
+          "candidate_chains": [
+            "high_sedentary_time + poor_sleep + mood_worsening -> low_recovery_behavioral_cluster"
+          ],
+          "guardrails": [
+            "Separate sedentary behavior from sleep.",
+            "Do not infer deconditioning from sedentary time alone."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sex_hormones_gonadal_axis",
+      "display_name": "sex_hormones_gonadal_axis",
+      "source_files": [
+        "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "cycle_phase_or_contraception_modulated_pattern",
+          "result_pattern": "phase-dependent or contraception-modulated hormone pattern",
+          "direction": "phase_dependent",
+          "standalone_interpretation": [
+            "may modulate mood/sleep/HRV/cognition/HPA response"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "cycle phase",
+            "hormonal contraception",
+            "sampling timing",
+            "symptoms",
+            "sleep",
+            "HRV"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "HRV/sleep/RHR",
+              "combined_meaning": "supports sex-hormone modulation branch if temporally aligned",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sex_hormone_modulation_branch"
+          ],
+          "candidate_chains": [
+            "cycle_phase_or_hormonal_contraception + HRV/sleep/mood_shift -> sex_hormone_modulation_branch"
+          ],
+          "guardrails": [
+            "do not infer hormone-related mood change without cycle/contraception/timing context"
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Wieczorek 2023",
+              "Klusmann 2022",
+              "Kjaergaard 2021"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sleep_architecture_rem_nrem_sws",
+      "display_name": "REM, NREM, slow-wave/N3 sleep architecture",
+      "source_files": [
+        "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "reduced_SWS_N3_or_REM_abnormality",
+          "result_pattern": "Reduced SWS/N3 or altered REM/NREM architecture",
+          "direction": "decreased|patterned|baseline_deviation",
+          "standalone_interpretation": [
+            "Sleep architecture alteration associated with aging, neurodegeneration, memory/performance changes in some literature."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "PSG confirmation",
+            "age",
+            "sleep disorder status",
+            "cognition/memory outcome",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "memory/performance",
+              "combined_meaning": "Low SWS/N3 with impaired memory/performance supports sleep architecture cognition branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_architecture_cognition_branch"
+          ],
+          "candidate_chains": [
+            "low_slow_wave_sleep + impaired_memory/performance -> sleep_architecture_cognition_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep architecture from consumer wearable staging without validation.",
+            "Wearable sleep-stage abnormality without PSG is uncertain."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sleep_disordered_breathing_psg",
+      "display_name": "AHI, RDI, ODI, Minimum SpO2, Time Below 90%, Central/Obstructive Apnea Index",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "high_AHI_RDI_ODI_nocturnal_desaturation",
+          "result_pattern": "Elevated AHI/RDI with elevated ODI and/or nocturnal oxygen desaturation",
+          "direction": "increased|impaired|fragmented",
+          "standalone_interpretation": [
+            "Supports objective sleep-disordered breathing when linked to respiratory events; daytime SpO2 may remain normal."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "daytime sleepiness/fatigue",
+            "body composition/adiposity",
+            "medications",
+            "daytime SpO2"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "fatigue/cognition tree",
+              "other_entity": "daytime_sleepiness|fatigue|PVT_lapses",
+              "combined_meaning": "SDB markers plus daytime impairment supports sleep-disordered breathing branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "respiration tree",
+              "other_entity": "nocturnal_desaturation|daytime_SpO2",
+              "combined_meaning": "Nocturnal desaturation with normal daytime SpO2 supports nocturnal respiratory sleep risk branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_disordered_breathing_branch",
+            "nocturnal_respiratory_sleep_risk_branch"
+          ],
+          "candidate_chains": [
+            "high_AHI_or_RDI + high_ODI + daytime_sleepiness/fatigue -> sleep_disordered_breathing_branch",
+            "high_AHI + normal_daytime_SpO2 + nocturnal_desaturation -> nocturnal_respiratory_sleep_risk_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep apnea from fatigue or snoring alone without AHI/RDI/ODI.",
+            "Do not infer daytime oxygenation from nocturnal SpO2 alone."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sleep_efficiency_waso_fragmentation",
+      "display_name": "Sleep efficiency, WASO, awakenings, sleep fragmentation",
+      "source_files": [
+        "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "fragmented_sleep_high_WASO",
+          "result_pattern": "Low sleep efficiency, high WASO, frequent awakenings, high fragmentation",
+          "direction": "fragmented|decreased|increased",
+          "standalone_interpretation": [
+            "Disrupted sleep continuity; may impair recovery even if total sleep duration appears adequate."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "TST",
+            "sleep opportunity",
+            "HRV/RHR",
+            "pain",
+            "noise/CO2/temp",
+            "medications",
+            "fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "autonomic",
+              "other_entity": "low_HRV/elevated_RHR",
+              "combined_meaning": "Fragmented sleep plus low HRV and fatigue supports poor recovery fragmentation branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "poor_recovery_sleep_fragmentation_branch"
+          ],
+          "candidate_chains": [
+            "fragmented_sleep/WASO_high + low_HRV + fatigue -> poor_recovery_sleep_fragmentation_branch"
+          ],
+          "guardrails": [
+            "Poor sleep is not a complete fatigue mechanism without context.",
+            "Compare devices/protocols cautiously."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "sleep_fragmentation_psg",
+      "display_name": "Sleep Fragmentation: WASO, Arousal Index, Sleep Maintenance Efficiency",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "high_WASO_or_arousal_index",
+          "result_pattern": "High WASO and/or arousal index with normal or near-normal total sleep time",
+          "direction": "increased|fragmented|baseline_deviation",
+          "standalone_interpretation": [
+            "Suggests disrupted sleep continuity; may impair recovery even when total sleep duration appears adequate."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "TST",
+            "pain/noise/medication/environment context",
+            "next_day_fatigue_or_PVT"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "fatigue/cognition tree",
+              "other_entity": "next_day_fatigue|PVT_lapses",
+              "combined_meaning": "High fragmentation plus next-day impairment supports sleep fragmentation recovery failure branch.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "environment tree",
+              "other_entity": "night_noise_exposure",
+              "combined_meaning": "Night noise plus arousal index plus next-day fatigue supports noise sleep recovery branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_fragmentation_recovery_failure_branch",
+            "noise_sleep_recovery_branch"
+          ],
+          "candidate_chains": [
+            "high_WASO_or_arousal_index + normal_total_sleep_time + next_day_fatigue -> sleep_fragmentation_recovery_failure_branch"
+          ],
+          "guardrails": [
+            "Do not infer recovery from total sleep time alone.",
+            "Check pain, noise, CO2, temperature, medication and circadian phase."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "step_count_total_activity_counts",
+      "display_name": "Step count and total activity counts",
+      "source_files": [
+        "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "decreased_step_count_or_activity_counts",
+          "result_pattern": "Below population/personal norm or declining trend over time",
+          "direction": "decreased|baseline_deviation|patterned",
+          "standalone_interpretation": [
+            "Objective reduction in movement volume; may reflect inactivity, deconditioning, illness, injury, mood, confinement, or mission constraints."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "age",
+            "health status",
+            "mission phase",
+            "injury/pain",
+            "exercise schedule",
+            "CPET/VO2",
+            "muscle strength",
+            "symptom timing"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "CPET",
+              "other_entity": "VO2max/VO2peak",
+              "combined_meaning": "Low activity plus low VO2 supports a deconditioning branch more than fatigue alone.",
+              "confidence": "high"
+            },
+            {
+              "other_source": "muscle_function",
+              "other_entity": "strength_or_mobility_decline",
+              "combined_meaning": "Low activity plus strength decline supports functional deconditioning.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "deconditioning_branch",
+            "illness_or_injury_related_inactivity",
+            "mission_constraint_activity_reduction"
+          ],
+          "candidate_chains": [
+            "low_activity + low_VO2 + muscle_strength_decline -> deconditioning_branch"
+          ],
+          "guardrails": [
+            "Do not infer fatigue from low activity alone.",
+            "Do not compare Earth step count with microgravity movement without mission context."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "stool_metabolites",
+      "display_name": "SCFA / butyrate / propionate / acetate / bile acid metabolites / tryptophan-kynurenine / indoles / LPS pathways",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "metabolite_shift_pattern",
+          "result_pattern": "reduced butyrate/SCFA or altered bile acid/tryptophan pathway",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "microbiome functional/metabolite signal; systemic meaning requires cross-modal data"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber",
+            "stool transit",
+            "blood inflammation",
+            "blood tryptophan/kynurenine",
+            "mood/fatigue/cognition",
+            "GI symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "tryptophan_kynurenine_inflammation",
+              "combined_meaning": "stool tryptophan/kynurenine shift + inflammation + mood/fatigue supports immune-metabolic gut-brain hypothesis",
+              "confidence": "moderate/low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "gut_brain_axis_hypothesis",
+            "intestinal_inflammation_metabolite_branch"
+          ],
+          "candidate_chains": [
+            "low_butyrate + high_calprotectin/CRP + GI_symptoms -> intestinal_inflammation_metabolite_branch"
+          ],
+          "guardrails": [
+            "SCFA concentration is not the same as production/absorption.",
+            "Stool metabolite level is not necessarily systemic exposure.",
+            "Do not infer causality from cross-sectional metabolomics."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "stool_pathogen_cdiff_parasites",
+      "display_name": "stool pathogen panel / C. difficile / parasites",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "pathogen_positive_symptomatic",
+          "result_pattern": "pathogen/toxin positive with compatible symptoms",
+          "direction": "present",
+          "standalone_interpretation": [
+            "supports infectious diarrhea branch when symptoms and timing fit"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "acute diarrhea",
+            "fever",
+            "travel/exposure",
+            "antibiotics",
+            "C. difficile toxin vs PCR",
+            "hydration/urine/electrolytes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urine_osmolality_electrolytes",
+              "combined_meaning": "infectious diarrhea + concentrated urine/electrolyte shift supports dehydration risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "infectious_diarrhea",
+            "dehydration_risk"
+          ],
+          "candidate_chains": [
+            "watery_diarrhea + pathogen_positive + urine_concentration/electrolyte_shift -> infectious_diarrhea_dehydration_branch"
+          ],
+          "guardrails": [
+            "Separate colonization from active disease when tests allow.",
+            "Do not infer dehydration from diarrhea alone.",
+            "Do not conflate infectious diarrhea with IBD/IBS."
+          ],
+          "evidence_strength": "moderate/high"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "subjective_objective_sleep_mismatch",
+      "display_name": "Subjective-Objective Sleep Mismatch",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "poor_subjective_sleep_normal_PSG",
+          "result_pattern": "Poor subjective sleep with normal PSG architecture and normal objective sleep continuity",
+          "direction": "mismatch|patterned",
+          "standalone_interpretation": [
+            "Suggests symptom perception, anxiety, pain, environmental or insomnia-cognitive context rather than objectively disrupted architecture."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "pain",
+            "anxiety/mood",
+            "environment",
+            "medication",
+            "cognition/fatigue"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "pain/mood/environment trees",
+              "other_entity": "pain|anxiety|noise|CO2",
+              "combined_meaning": "Poor subjective sleep with normal PSG should trigger context override search.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "subjective_objective_sleep_mismatch_branch"
+          ],
+          "candidate_chains": [
+            "poor_subjective_sleep + normal_PSG + high_anxiety_or_pain -> subjective_objective_sleep_mismatch_branch"
+          ],
+          "guardrails": [
+            "Do not infer insomnia mechanism from subjective sleep complaint alone."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "subjective_sleep_quality_insomnia",
+      "display_name": "Subjective sleep quality and insomnia severity",
+      "source_files": [
+        "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "poor_subjective_sleep_normal_objective_sleep",
+          "result_pattern": "Poor subjective sleep quality with normal objective TST/efficiency",
+          "direction": "patterned|baseline_deviation",
+          "standalone_interpretation": [
+            "Subjective-objective sleep mismatch; common in insomnia and psychiatric/stress states."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "objective sleep metrics",
+            "anxiety/stress",
+            "mood",
+            "sleep diary",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "mood_stress",
+              "other_entity": "anxiety/stress symptoms",
+              "combined_meaning": "Poor subjective sleep with normal objective metrics plus stress/anxiety supports sleep perception mismatch branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_perception_mismatch_branch"
+          ],
+          "candidate_chains": [
+            "poor_subjective_sleep + normal_objective_sleep + anxiety/stress -> sleep_perception_mismatch_branch"
+          ],
+          "guardrails": [
+            "Subjective and objective sleep metrics are not equivalent.",
+            "Do not dismiss subjective distress as unreal."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "taxa_shifts",
+      "display_name": "Faecalibacterium / Akkermansia / Bifidobacterium / Lactobacillus / Enterobacteriaceae / Prevotella/Bacteroides/Ruminococcus",
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "taxa_shift_pattern",
+          "result_pattern": "butyrate-producer depletion or pro-inflammatory taxa expansion",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "taxa-level association with gut/metabolic/immune states; not diagnostic alone"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "diet/fiber",
+            "antibiotics/probiotics",
+            "GI symptoms",
+            "blood inflammation",
+            "stool transit"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "CRP_cytokines",
+              "combined_meaning": "low Faecalibacterium/butyrate producers + CRP/cytokines + GI symptoms supports intestinal inflammation-metabolite branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "inflammatory_dysbiosis_hypothesis",
+            "diet_microbiome_response_branch"
+          ],
+          "candidate_chains": [
+            "Enterobacteriaceae_expansion + inflammation_markers + GI_symptoms -> inflammatory_dysbiosis_hypothesis"
+          ],
+          "guardrails": [
+            "Do not infer disease from a single taxon.",
+            "Probiotic-associated taxa increase is not automatically beneficial.",
+            "Firmicutes/Bacteroidetes ratio is not reliable standalone."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "thyroid_hormones",
+      "display_name": "thyroid_hormones",
+      "source_files": [
+        "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "overt_hypothyroid_pattern",
+          "result_pattern": "TSH high + free T4 low",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "overt hypothyroidism pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "symptoms",
+            "RHR",
+            "body temperature",
+            "thyroid antibodies"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "low_RHR/body_temperature",
+              "combined_meaning": "supports hypothyroid physiological phenotype when labs are abnormal",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "overt_hypothyroid_branch"
+          ],
+          "candidate_chains": [
+            "TSH_high + freeT4_low + fatigue/cold_intolerance/low_RHR -> overt_hypothyroid_branch"
+          ],
+          "guardrails": [
+            "do not infer thyroid dysfunction from fatigue alone"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fitzgerald 2020",
+              "Rong 2021"
+            ]
+          }
+        },
+        {
+          "variation_id": "subclinical_hypothyroid_pattern",
+          "result_pattern": "TSH high + free T4 normal",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "subclinical hypothyroid lab pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "thyroid antibodies",
+            "repeat testing",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_endocrine",
+              "other_entity": "TPOAb/TgAb",
+              "combined_meaning": "antibody positivity increases future/overt dysfunction risk",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "subclinical_hypothyroid_or_autoimmune_context_branch"
+          ],
+          "candidate_chains": [
+            "TSH_high + freeT4_normal + TPOAb/TgAb_positive -> thyroid_autoimmune_risk_branch"
+          ],
+          "guardrails": [
+            "subclinical pattern is not overt dysfunction"
+          ],
+          "evidence": {
+            "strength": "moderate/high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Bliddal 2022",
+              "Fitzgerald 2020"
+            ]
+          }
+        },
+        {
+          "variation_id": "hyperthyroid_pattern",
+          "result_pattern": "TSH low + free T4/free T3 high",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "overt hyperthyroid pattern"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "tachycardia",
+            "anxiety/tremor",
+            "temperature",
+            "medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable",
+              "other_entity": "tachycardia/high_RHR",
+              "combined_meaning": "endocrine-like anxiety/tachycardia branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "hyperthyroid_anxiety_like_branch"
+          ],
+          "candidate_chains": [
+            "TSH_low + freeT4/freeT3_high + tachycardia/anxiety/tremor -> hyperthyroid_anxiety_like_branch"
+          ],
+          "guardrails": [
+            "do not infer psychiatric anxiety from tachycardia before endocrine/autonomic/medication context"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fitzgerald 2020"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "total_sleep_time_psg",
+      "display_name": "Total Sleep Time by PSG",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "short_total_sleep_time_PSG",
+          "result_pattern": "<7h TST or significant within-person reduction from baseline/control group",
+          "direction": "decreased|shortened|baseline_deviation",
+          "standalone_interpretation": [
+            "Short TST alone does not define poor sleep quality or recovery."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep_efficiency_PSG",
+            "WASO",
+            "arousal_index",
+            "next_day_performance"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition/PVT tree",
+              "other_entity": "next_day_PVT_lapses|subjective_sleepiness",
+              "combined_meaning": "Short TST plus next-day lapses supports acute sleep loss branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "acute_sleep_loss_branch"
+          ],
+          "candidate_chains": [
+            "short_total_sleep_time_PSG + next_day_PVT_lapses + subjective_sleepiness -> acute_sleep_loss_branch"
+          ],
+          "guardrails": [
+            "Do not infer sleep recovery from total sleep time alone."
+          ],
+          "required_next_measurements": [
+            "WASO",
+            "arousal_index",
+            "subjective/objective fatigue"
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "total_sleep_time_sleep_opportunity_time_in_bed",
+      "display_name": "Total sleep time, sleep opportunity, time in bed",
+      "source_files": [
+        "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "short_sleep_duration",
+          "result_pattern": "Below recommended or age-specific total sleep time; often <6h in adults",
+          "direction": "decreased|baseline_deviation|patterned",
+          "standalone_interpretation": [
+            "Short sleep is associated with impaired alertness/performance and multiple adverse health outcomes, but cannot alone define recovery state."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "sleep opportunity",
+            "age",
+            "measurement method",
+            "circadian phase",
+            "PVT/sleepiness",
+            "mission schedule"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition",
+              "other_entity": "PVT_lapses/reaction_time",
+              "combined_meaning": "Short TST plus PVT lapses and sleepiness supports sleep-loss alertness impairment branch.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "sleep_loss_alertness_impairment_branch"
+          ],
+          "candidate_chains": [
+            "short_sleep_duration + PVT_lapses + subjective_sleepiness -> sleep_loss_alertness_impairment_branch"
+          ],
+          "guardrails": [
+            "Separate sleep opportunity from actual sleep duration.",
+            "Do not infer recovery state from sleep duration alone."
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "urinary_calcium_bone_context",
+      "display_name": "urinary calcium / mineral excretion",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "urinary_calcium_high_microgravity_context",
+          "result_pattern": "elevated urinary calcium/mineral excretion in unloading/microgravity context",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "possible mineral mobilization signal; not bone loss by itself"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "microgravity/unloading",
+            "bone turnover markers",
+            "DXA/imaging",
+            "vitamin D/PTH",
+            "diet",
+            "exercise countermeasures",
+            "kidney stone markers"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "bone",
+              "other_entity": "bone_turnover_DXA",
+              "combined_meaning": "urinary calcium + bone turnover/DXA + microgravity supports bone mineral loss risk branch",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "bone_mineral_loss_risk",
+            "kidney_stone_risk"
+          ],
+          "candidate_chains": [
+            "high_urinary_calcium + microgravity + bone_turnover -> bone_mineral_loss_risk_branch"
+          ],
+          "guardrails": [
+            "Urinary calcium alone != bone loss.",
+            "Separate bone loss risk from kidney stone risk/current stone.",
+            "Diet and exercise countermeasures must be included."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "urinary_tubular_markers",
+      "display_name": "KIM-1 / MCP-1 / A1M / B2M / NGAL and related tubular markers",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "tubular_dysfunction_high",
+          "result_pattern": "elevated tubular injury/dysfunction markers",
+          "direction": "increased",
+          "standalone_interpretation": [
+            "renal tubular injury/dysfunction signal; associated with frailty/cognitive impairment in CKD contexts"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "eGFR",
+            "albuminuria/proteinuria",
+            "CKD/AKI context",
+            "BP",
+            "diabetes",
+            "age"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "cognition_function",
+              "other_entity": "frailty_cognitive_tests",
+              "combined_meaning": "tubular markers + frailty/cognitive impairment in CKD supports renal-systemic vulnerability branch",
+              "confidence": "moderate/high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "renal_systemic_vulnerability",
+            "CKD_progression_risk"
+          ],
+          "candidate_chains": [
+            "tubular_injury_markers + CKD_context + frailty/cognition -> renal_systemic_vulnerability_branch"
+          ],
+          "guardrails": [
+            "Do not generalize CKD findings to healthy astronauts without validation.",
+            "Cutoffs vary; repeat/context required."
+          ],
+          "evidence_strength": "strong in CKD/frailty context"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "urine_hydration_markers",
+      "display_name": "urine osmolality / USG / color / volume",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "concentrated_urine_contextual",
+          "result_pattern": "high UOsm/USG, dark color, low volume",
+          "direction": "increased/patterned",
+          "standalone_interpretation": [
+            "concentrated urine and renal water conservation; not sufficient for clinical dehydration"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "fluid intake",
+            "body mass",
+            "plasma osmolality",
+            "orthostatic HR/BP",
+            "heat/exercise",
+            "symptoms",
+            "age/comorbidity"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood",
+              "other_entity": "plasma_osmolality",
+              "combined_meaning": "concentrated urine + normal plasma osmolality supports renal conservation adaptation",
+              "confidence": "high"
+            },
+            {
+              "other_source": "orthostatic_vitals",
+              "other_entity": "HR_BP_response",
+              "combined_meaning": "concentrated urine + orthostatic tachycardia/hypotension + dizziness supports hypovolemia/dehydration hypothesis",
+              "confidence": "low/moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "renal_conservation_adaptation",
+            "mild_hypohydration",
+            "hypovolemia_dehydration_hypothesis"
+          ],
+          "candidate_chains": [
+            "high_uosm/high_USG + normal_plasma_osmolality + stable_body_mass -> renal_conservation_adaptation",
+            "high_uosm/high_USG + orthostatic_tachycardia + dizziness -> hypovolemia_dehydration_hypothesis"
+          ],
+          "guardrails": [
+            "Concentrated urine alone does not confirm clinically meaningful dehydration.",
+            "Hydration marker is not blood volume/orthostatic tolerance.",
+            "Accuracy is weaker in older/comorbid populations."
+          ],
+          "evidence_strength": "high for hydration context; weak for symptom causality"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "urine_metabolomics",
+      "display_name": "urine metabolomics panels",
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "metabolomics_disorder_signature",
+          "result_pattern": "multi-metabolite pattern discriminating mood/cognitive/fatigue-related groups",
+          "direction": "patterned",
+          "standalone_interpretation": [
+            "research-level classifier signal; may separate group-level disease states"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "external validation",
+            "repeat sampling",
+            "symptoms timing",
+            "blood/sleep/cognition measures",
+            "diet/medications"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "neurobehavioral",
+              "other_entity": "mood_cognition_fatigue",
+              "combined_meaning": "repeated urine metabolomics + timed symptoms/cognitive tests may support personalized trajectory tracking",
+              "confidence": "moderate/low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "metabolic_omics_signature_hypothesis"
+          ],
+          "candidate_chains": [
+            "repeated_urine_metabolomics + symptom_trajectory -> mood/cognition/fatigue_omics_hypothesis"
+          ],
+          "guardrails": [
+            "Single-day urine metabolomics does not represent stable phenotype.",
+            "Group classifier is not individual diagnosis.",
+            "External validation required."
+          ],
+          "evidence_strength": "moderate"
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "vitamin_d_calcium_pth_bone_mineral_panel",
+      "display_name": "25OH vitamin D, calcium, phosphate, PTH, magnesium",
+      "source_files": [
+        "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_25ohd_high_pth_bone_context",
+          "result_pattern": "Low 25OH vitamin D with elevated PTH and bone/mineral context",
+          "direction": "decreased|increased|patterned",
+          "standalone_interpretation": [
+            "Suggests vitamin D-related bone-mineral stress when paired with PTH/calcium/phosphate and bone context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "PTH",
+            "calcium",
+            "phosphate",
+            "magnesium",
+            "urinary calcium",
+            "bone turnover markers",
+            "DXA",
+            "microgravity exposure",
+            "diet/supplements"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "urinary calcium",
+              "combined_meaning": "Low vitamin D/high PTH plus urinary calcium/bone turnover and microgravity supports bone mineral risk branch.",
+              "confidence": "moderate"
+            },
+            {
+              "other_source": "musculoskeletal",
+              "other_entity": "DXA/bone turnover",
+              "combined_meaning": "Bone markers are required to move from nutrient abnormality to bone loss risk.",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "bone_mineral_risk_branch",
+            "secondary_hyperparathyroidism_context"
+          ],
+          "candidate_chains": [
+            "low_25OH_D + high_PTH + urinary_calcium/bone_turnover + microgravity -> bone_mineral_risk_branch"
+          ],
+          "guardrails": [
+            "Vitamin D deficiency alone should not explain fatigue.",
+            "Do not infer bone loss from vitamin D/calcium alone."
+          ],
+          "evidence": {
+            "strength": "moderate",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Soepnel 2023",
+              "Isa 2023",
+              "Ozkanay 2023"
+            ]
+          }
+        },
+        {
+          "variation_id": "serum_magnesium_abnormal",
+          "result_pattern": "Low or high serum magnesium",
+          "direction": "decreased|increased",
+          "standalone_interpretation": [
+            "Serum magnesium may reflect circulating magnesium but is not a complete measure of total body magnesium status."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "renal function",
+            "urine magnesium",
+            "diet/supplements",
+            "GI loss",
+            "medications",
+            "symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "urine",
+              "other_entity": "magnesium excretion",
+              "combined_meaning": "Serum plus urine magnesium helps separate intake/renal loss/GI loss contexts.",
+              "confidence": "low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "mineral_status_uncertain",
+            "renal_or_GI_mineral_loss_context"
+          ],
+          "candidate_chains": [
+            "serum_magnesium_abnormal + urine_magnesium + GI_or_renal_context -> mineral_loss_hypothesis"
+          ],
+          "guardrails": [
+            "Serum magnesium is not equivalent to total body magnesium stores."
+          ],
+          "evidence": {
+            "strength": "low",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "general mineral biomarker literature in retrieved set"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "vwf_factorviii_endothelial",
+      "display_name": "vWF / Factor VIII / endothelial activation markers",
+      "source_files": [
+        "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "vWF_FVIII_high_inflammation",
+          "result_pattern": "elevated vWF/Factor VIII with CRP/IL6/NLR/endothelial markers",
+          "direction": "increased|patterned",
+          "standalone_interpretation": [
+            "endothelial activation/dysfunction context"
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "inflammation markers",
+            "acute illness/post-viral state",
+            "vascular symptoms"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "blood_inflammation",
+              "other_entity": "CRP/IL6/NLR",
+              "combined_meaning": "high vWF/FVIII + inflammation supports endothelial activation branch",
+              "confidence": "high"
+            }
+          ],
+          "candidate_hidden_states": [
+            "endothelial_activation_branch"
+          ],
+          "candidate_chains": [
+            "high_vWF/FactorVIII + endothelial_markers + inflammation -> endothelial_activation_branch"
+          ],
+          "guardrails": [
+            "endothelial markers are not direct perfusion measurements"
+          ],
+          "evidence": {
+            "strength": "high",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": []
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "wearable_psg_discrepancy",
+      "display_name": "PSG vs Wearable Sleep Stage/Fragmentation Discrepancy",
+      "source_files": [
+        "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "wearable_normal_PSG_abnormal",
+          "result_pattern": "Wearable shows normal sleep duration/stage distribution while PSG shows high arousals, low N3, or SDB",
+          "direction": "discrepant|patterned",
+          "standalone_interpretation": [
+            "Consumer wearable estimates can miss fragmentation, arousals, deep sleep loss or sleep-disordered breathing."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "device type",
+            "algorithm validation",
+            "PSG confirmation",
+            "symptom/performance outcomes"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "wearable sleep tree",
+              "other_entity": "normal_wearable_sleep",
+              "combined_meaning": "Normal wearable sleep with abnormal PSG supports wearable false reassurance branch.",
+              "confidence": "moderate"
+            }
+          ],
+          "candidate_hidden_states": [
+            "wearable_sleep_false_reassurance_branch"
+          ],
+          "candidate_chains": [
+            "wearable_normal_sleep + PSG_high_arousal_index_or_low_N3 -> wearable_sleep_false_reassurance_branch"
+          ],
+          "guardrails": [
+            "Do not infer PSG stages from consumer wearable staging.",
+            "Do not use consumer wearable staging to diagnose specific sleep disorders."
+          ]
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "parameter_id": "zinc_copper_selenium_micronutrient_panel",
+      "display_name": "Zinc, copper, selenium",
+      "source_files": [
+        "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json"
+      ],
+      "result_variations": [
+        {
+          "variation_id": "low_trace_mineral_pattern",
+          "result_pattern": "Low zinc, copper, or selenium, alone or patterned",
+          "direction": "decreased|patterned",
+          "standalone_interpretation": [
+            "May reflect micronutrient insufficiency, inflammation redistribution, or dietary/malabsorption context."
+          ],
+          "requires_context": true,
+          "context_needed": [
+            "CRP/inflammation",
+            "albumin",
+            "diet",
+            "GI malabsorption",
+            "immune markers",
+            "infection frequency",
+            "supplement use"
+          ],
+          "cross_modal_links": [
+            {
+              "other_source": "immune",
+              "other_entity": "infection frequency/immune markers",
+              "combined_meaning": "Low trace minerals with immune alterations may support micronutrient-immune function hypothesis but rarely a standalone explanation.",
+              "confidence": "low"
+            }
+          ],
+          "candidate_hidden_states": [
+            "micronutrient_immune_function_hypothesis",
+            "malabsorption_or_low_intake_branch"
+          ],
+          "candidate_chains": [
+            "low_zinc_or_selenium + immune_markers + infection_frequency -> micronutrient_immune_function_hypothesis"
+          ],
+          "guardrails": [
+            "Trace mineral abnormalities are context dependent and affected by inflammation and protein status."
+          ],
+          "evidence": {
+            "strength": "low",
+            "human_evidence": true,
+            "mechanistic_evidence": true,
+            "key_sources": [
+              "Fayet-Moore 2014",
+              "Valvano 2025"
+            ]
+          }
+        }
+      ],
+      "standalone_interpretation": [],
+      "candidate_hidden_states": [],
+      "synthesis_status": "assembled_from_existing_sources"
+    }
+  ]
+}

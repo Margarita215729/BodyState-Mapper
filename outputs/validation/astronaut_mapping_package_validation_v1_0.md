@@ -1,0 +1,105 @@
+# Astronaut Mapping Package Validation v1.0
+**Timestamp:** 2026-06-11T23:29:19.584560+00:00
+**Overall:** PASS
+- Passes: 76
+- Warnings: 19
+- Failures: 0
+
+## Warnings
+- hidden_state_traceability: infectious_or_inflammatory_load: no source, marked partial/needs_review
+- hidden_state_traceability: PEM_objective_branch: no source, marked partial/needs_review
+- hidden_state_traceability: postviral_immune_activation: no source, marked partial/needs_review
+- hidden_state_traceability: microbiome_immune_context: no source, marked partial/needs_review
+- hidden_state_traceability: medication_context_override: no source, marked partial/needs_review
+- hidden_state_traceability: HPA_circadian_disruption: no source, marked partial/needs_review
+- hidden_state_traceability: environmental_CO2_performance_risk: no source, marked partial/needs_review
+- hidden_state_traceability: functional_B12_deficiency: no source, marked partial/needs_review
+- hidden_state_traceability: thyroid_dysfunction_context: no source, marked partial/needs_review
+- hidden_state_traceability: unknown_or_missing_data_state: no source, marked partial/needs_review
+- hidden_state_traceability: viral_reactivation_context: no source, marked partial/needs_review
+- hidden_state_traceability: perceptual_neurobehavioral_fatigue: no source, marked partial/needs_review
+- hidden_state_traceability: iron_deficiency_oxygen_delivery_branch: no source, marked partial/needs_review
+- hidden_state_traceability: wearable_sleep_false_reassurance: no source, marked partial/needs_review
+- hidden_state_traceability: acute_sleep_loss: no source, marked partial/needs_review
+- hidden_state_traceability: hyperventilation_hypocapnia_state: no source, marked partial/needs_review
+- hidden_state_traceability: sleep_fragmentation_recovery_failure: no source, marked partial/needs_review
+- hidden_state_traceability: bone_unloading_loss: no source, marked partial/needs_review
+- hidden_state_traceability: metabolic_strain: no source, marked partial/needs_review
+
+## Passes
+- file_exists: astronaut_data_sources_v1_0.json
+- file_exists: measured_entities_v1_0.json
+- file_exists: measured_parameter_registry_v1_0.json
+- file_exists: result_variation_trees_v1_0.json
+- file_exists: cross_modal_links_v1_0.json
+- file_exists: hidden_state_candidates_v1_0.json
+- file_exists: inference_chains_v1_0.json
+- file_exists: guardrails_v1_0.json
+- file_exists: required_measurements_v1_0.json
+- file_exists: mission_phase_interpretation_v1_0.json
+- file_exists: all_to_all_matrix_v1_0.json
+- file_exists: validation_protocol_v1_0.json
+- file_exists: data_intake_contract_v1_0.json
+- file_exists: README.md
+- json_valid: astronaut_data_sources_v1_0.json
+- json_valid: measured_entities_v1_0.json
+- json_valid: measured_parameter_registry_v1_0.json
+- json_valid: result_variation_trees_v1_0.json
+- json_valid: cross_modal_links_v1_0.json
+- json_valid: hidden_state_candidates_v1_0.json
+- json_valid: inference_chains_v1_0.json
+- json_valid: guardrails_v1_0.json
+- json_valid: required_measurements_v1_0.json
+- json_valid: mission_phase_interpretation_v1_0.json
+- json_valid: all_to_all_matrix_v1_0.json
+- json_valid: validation_protocol_v1_0.json
+- json_valid: data_intake_contract_v1_0.json
+- registry_not_empty: 487 parameters
+- registry_required_fields: All required fields present in sampled entries
+- hidden_states_not_empty: 34 hidden states
+- required_hidden_state_present: low_recovery_state
+- required_hidden_state_present: acute_sleep_loss
+- required_hidden_state_present: orthostatic_intolerance
+- required_hidden_state_present: PEM_objective_branch
+- required_hidden_state_present: unknown_or_missing_data_state
+- hidden_state_required_fields: All required fields present
+- chains_not_empty: 245 chains
+- chain_required_fields: All required fields present
+- guardrails_not_empty: 194 guardrails
+- matrix_not_empty: 440 entries
+- matrix_required_fields: All required fields present
+- intake_section_present: accepted_source_categories
+- intake_section_present: universal_observation_object_schema
+- intake_section_present: wearable_intake_fields
+- intake_section_present: self_report_intake_fields
+- intake_section_present: clinical_lab_intake_fields
+- intake_section_present: context_intake_fields
+- intake_section_present: allowed_result_variation_categories
+- intake_section_present: interpretation_levels
+- intake_section_present: confidence_levels
+- intake_section_present: response_types
+- intake_section_present: required_guardrails_in_output
+- intake_section_present: minimal_mvp_intake_form
+- intake_section_present: minimal_mvp_output_form
+- guardrail_unknown_not_negative: Found by ID
+- guardrail_single_marker: Found by ID
+- guardrail_medication_timing: Found by ID
+- elevated_hr_node_in_static_file: static_nodes_v0_1.json
+- elevated_hr_node_in_static_file: static_scientific_evidence_graph_v0_1.json
+- r001_r002_present: R001=False, R002=True
+- hidden_state_traceability: low_energy_availability: traceable
+- hidden_state_traceability: inflammatory_sickness_behavior: traceable
+- hidden_state_traceability: deconditioning: traceable
+- hidden_state_traceability: catabolic_muscle_loss: traceable
+- hidden_state_traceability: pain_sleep_fatigue_branch: traceable
+- hidden_state_traceability: circadian_misalignment: traceable
+- hidden_state_traceability: hypovolemia_dehydration_hypothesis: traceable
+- hidden_state_traceability: orthostatic_intolerance: traceable
+- hidden_state_traceability: migraine_phenotype_branch: traceable
+- hidden_state_traceability: renal_stone_risk_branch: traceable
+- hidden_state_traceability: team_behavioral_risk: traceable
+- hidden_state_traceability: SANS_risk_branch: traceable
+- hidden_state_traceability: radiation_biological_effect_branch: traceable
+- hidden_state_traceability: low_recovery_state: traceable
+- hidden_state_traceability: heat_strain: traceable
+- no_diagnosis_claim: No hidden states claim diagnosis as final conclusion

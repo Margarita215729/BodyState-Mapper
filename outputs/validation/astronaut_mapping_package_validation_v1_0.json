@@ -1,0 +1,392 @@
+{
+  "validation_timestamp": "2026-06-11T23:29:19.584560+00:00",
+  "overall_result": "PASS",
+  "passes": 76,
+  "warnings": 19,
+  "failures": 0,
+  "pass_details": [
+    {
+      "check_id": "file_exists",
+      "message": "astronaut_data_sources_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "measured_entities_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "measured_parameter_registry_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "result_variation_trees_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "cross_modal_links_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "hidden_state_candidates_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "inference_chains_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "guardrails_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "required_measurements_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "mission_phase_interpretation_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "all_to_all_matrix_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "validation_protocol_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "data_intake_contract_v1_0.json"
+    },
+    {
+      "check_id": "file_exists",
+      "message": "README.md"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "astronaut_data_sources_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "measured_entities_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "measured_parameter_registry_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "result_variation_trees_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "cross_modal_links_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "hidden_state_candidates_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "inference_chains_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "guardrails_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "required_measurements_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "mission_phase_interpretation_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "all_to_all_matrix_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "validation_protocol_v1_0.json"
+    },
+    {
+      "check_id": "json_valid",
+      "message": "data_intake_contract_v1_0.json"
+    },
+    {
+      "check_id": "registry_not_empty",
+      "message": "487 parameters"
+    },
+    {
+      "check_id": "registry_required_fields",
+      "message": "All required fields present in sampled entries"
+    },
+    {
+      "check_id": "hidden_states_not_empty",
+      "message": "34 hidden states"
+    },
+    {
+      "check_id": "required_hidden_state_present",
+      "message": "low_recovery_state"
+    },
+    {
+      "check_id": "required_hidden_state_present",
+      "message": "acute_sleep_loss"
+    },
+    {
+      "check_id": "required_hidden_state_present",
+      "message": "orthostatic_intolerance"
+    },
+    {
+      "check_id": "required_hidden_state_present",
+      "message": "PEM_objective_branch"
+    },
+    {
+      "check_id": "required_hidden_state_present",
+      "message": "unknown_or_missing_data_state"
+    },
+    {
+      "check_id": "hidden_state_required_fields",
+      "message": "All required fields present"
+    },
+    {
+      "check_id": "chains_not_empty",
+      "message": "245 chains"
+    },
+    {
+      "check_id": "chain_required_fields",
+      "message": "All required fields present"
+    },
+    {
+      "check_id": "guardrails_not_empty",
+      "message": "194 guardrails"
+    },
+    {
+      "check_id": "matrix_not_empty",
+      "message": "440 entries"
+    },
+    {
+      "check_id": "matrix_required_fields",
+      "message": "All required fields present"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "accepted_source_categories"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "universal_observation_object_schema"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "wearable_intake_fields"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "self_report_intake_fields"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "clinical_lab_intake_fields"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "context_intake_fields"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "allowed_result_variation_categories"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "interpretation_levels"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "confidence_levels"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "response_types"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "required_guardrails_in_output"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "minimal_mvp_intake_form"
+    },
+    {
+      "check_id": "intake_section_present",
+      "message": "minimal_mvp_output_form"
+    },
+    {
+      "check_id": "guardrail_unknown_not_negative",
+      "message": "Found by ID"
+    },
+    {
+      "check_id": "guardrail_single_marker",
+      "message": "Found by ID"
+    },
+    {
+      "check_id": "guardrail_medication_timing",
+      "message": "Found by ID"
+    },
+    {
+      "check_id": "elevated_hr_node_in_static_file",
+      "message": "static_nodes_v0_1.json"
+    },
+    {
+      "check_id": "elevated_hr_node_in_static_file",
+      "message": "static_scientific_evidence_graph_v0_1.json"
+    },
+    {
+      "check_id": "r001_r002_present",
+      "message": "R001=False, R002=True"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "low_energy_availability: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "inflammatory_sickness_behavior: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "deconditioning: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "catabolic_muscle_loss: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "pain_sleep_fatigue_branch: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "circadian_misalignment: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "hypovolemia_dehydration_hypothesis: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "orthostatic_intolerance: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "migraine_phenotype_branch: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "renal_stone_risk_branch: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "team_behavioral_risk: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "SANS_risk_branch: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "radiation_biological_effect_branch: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "low_recovery_state: traceable"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "heat_strain: traceable"
+    },
+    {
+      "check_id": "no_diagnosis_claim",
+      "message": "No hidden states claim diagnosis as final conclusion"
+    }
+  ],
+  "warning_details": [
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "infectious_or_inflammatory_load: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "PEM_objective_branch: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "postviral_immune_activation: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "microbiome_immune_context: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "medication_context_override: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "HPA_circadian_disruption: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "environmental_CO2_performance_risk: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "functional_B12_deficiency: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "thyroid_dysfunction_context: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "unknown_or_missing_data_state: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "viral_reactivation_context: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "perceptual_neurobehavioral_fatigue: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "iron_deficiency_oxygen_delivery_branch: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "wearable_sleep_false_reassurance: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "acute_sleep_loss: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "hyperventilation_hypocapnia_state: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "sleep_fragmentation_recovery_failure: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "bone_unloading_loss: no source, marked partial/needs_review"
+    },
+    {
+      "check_id": "hidden_state_traceability",
+      "message": "metabolic_strain: no source, marked partial/needs_review"
+    }
+  ],
+  "failure_details": []
+}

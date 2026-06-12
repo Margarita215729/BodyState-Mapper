@@ -1,0 +1,3833 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_links": 233,
+  "cross_modal_links": [
+    {
+      "source_parameter_id": "high_pain + sleep_fragmentation + next_day_fatigue",
+      "target_state": "pain_sleep_fatigue_branch",
+      "chain_id": "pain_sleep_fatigue_branch",
+      "chain": "high_pain + sleep_fragmentation + next_day_fatigue -> pain_sleep_fatigue_branch",
+      "confidence": "high",
+      "required_sources": [
+        "pain marker",
+        "sleep measure",
+        "fatigue outcome"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "headache + photophobia/phonophobia/nausea + episodic_pattern",
+      "target_state": "migraine_phenotype_branch",
+      "chain_id": "migraine_phenotype_branch",
+      "chain": "headache + photophobia/phonophobia/nausea + episodic_pattern -> migraine_phenotype_branch",
+      "confidence": "high",
+      "required_sources": [
+        "headache marker",
+        "migraine symptoms",
+        "episodic pattern"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "pain_limited_strength_test + injury_report",
+      "target_state": "injury_context_override_branch",
+      "chain_id": "injury_context_override_branch",
+      "chain": "pain_limited_strength_test + injury_report -> injury_context_override_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "functional test",
+        "injury report"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "wound_redness/swelling + fever + high_WBC/CRP",
+      "target_state": "wound_infection_hypothesis",
+      "chain_id": "wound_infection_hypothesis",
+      "chain": "wound_redness/swelling + fever + high_WBC/CRP -> wound_infection_hypothesis",
+      "confidence": "moderate-high",
+      "required_sources": [
+        "wound assessment",
+        "temperature",
+        "CBC/CRP"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_procedure_pain + opioid_or_tramadol_use + low_RR/sedation",
+      "target_state": "medication_respiratory_risk_context_branch",
+      "chain_id": "medication_respiratory_risk_context_branch",
+      "chain": "post_procedure_pain + opioid_or_tramadol_use + low_RR/sedation -> medication_respiratory_risk_context_branch",
+      "confidence": "high",
+      "required_sources": [
+        "pain/procedure log",
+        "medication log",
+        "RR/sedation/O2"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_pain + high_RPE + normal_CPET",
+      "target_state": "pain_perception_performance_limiter_branch",
+      "chain_id": "pain_perception_performance_limiter_branch",
+      "chain": "high_pain + high_RPE + normal_CPET -> pain_perception_performance_limiter_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "pain",
+        "RPE",
+        "CPET"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_FEV1_FVC + dyspnea + exercise_limitation",
+      "target_state": "obstructive_pulmonary_limitation_branch",
+      "chain_id": "obstructive_pulmonary_limitation_branch",
+      "chain": "low_FEV1_FVC + dyspnea + exercise_limitation -> obstructive_pulmonary_limitation_branch",
+      "confidence": "high",
+      "required_sources": [
+        "spirometry",
+        "symptoms",
+        "exercise test"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_FVC_or_TLC + dyspnea + normal_ETCO2",
+      "target_state": "restrictive_pulmonary_mechanics_branch",
+      "chain_id": "restrictive_pulmonary_mechanics_branch",
+      "chain": "low_FVC_or_TLC + dyspnea + normal_ETCO2 -> restrictive_pulmonary_mechanics_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "spirometry",
+        "lung volumes",
+        "ETCO2/symptoms"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_DLCO + exercise_desaturation + dyspnea",
+      "target_state": "diffusion_gas_exchange_limitation_branch",
+      "chain_id": "diffusion_gas_exchange_limitation_branch",
+      "chain": "low_DLCO + exercise_desaturation + dyspnea -> diffusion_gas_exchange_limitation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "DLCO",
+        "exercise SpO2",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "normal_spirometry + dyspnea + low_ETCO2",
+      "target_state": "dysfunctional_breathing_hypocapnia_branch",
+      "chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "chain": "normal_spirometry + dyspnea + low_ETCO2 -> dysfunctional_breathing_hypocapnia_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "spirometry",
+        "ETCO2",
+        "dyspnea context"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_lean_mass + low_strength + low_activity",
+      "target_state": "deconditioning_or_sarcopenia_context_branch",
+      "chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "chain": "low_lean_mass + low_strength + low_activity -> deconditioning_or_sarcopenia_context_branch",
+      "confidence": "high",
+      "required_sources": [
+        "DXA/BIA",
+        "strength test",
+        "activity log"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "normal_body_mass + muscle_loss + fat_gain",
+      "target_state": "body_recomposition_hidden_risk_branch",
+      "chain_id": "body_recomposition_hidden_risk_branch",
+      "chain": "normal_body_mass + muscle_loss + fat_gain -> body_recomposition_hidden_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "body composition",
+        "body mass trend"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "source_tree_id": "repair_R003",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "positive_occult_blood + low_Hb/ferritin",
+      "target_state": "GI_blood_loss_iron_deficiency_branch",
+      "chain_id": "",
+      "chain": "positive_occult_blood + low_Hb/ferritin -> GI_blood_loss_iron_deficiency_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_001",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_Hb + low_MCV/high_RDW + low_ferritin_or_low_TSAT",
+      "target_state": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain": "low_Hb + low_MCV/high_RDW + low_ferritin_or_low_TSAT -> iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CBC",
+        "iron studies"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_Hb + normal_MCV + high_CRP_or_kidney_marker",
+      "target_state": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain": "low_Hb + normal_MCV + high_CRP_or_kidney_marker -> anemia_of_inflammation_or_chronic_disease_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CBC",
+        "CRP",
+        "kidney markers"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_WBC_neutrophils + fever_temperature + high_CRP",
+      "target_state": "acute_inflammatory_infection_branch",
+      "chain_id": "acute_inflammatory_infection_branch",
+      "chain": "high_WBC_neutrophils + fever_temperature + high_CRP -> acute_inflammatory_infection_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CBC differential",
+        "temperature/symptoms",
+        "CRP"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_BUN_creatinine_ratio + high_urine_osmolality + orthostatic_tachycardia",
+      "target_state": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "chain": "high_BUN_creatinine_ratio + high_urine_osmolality + orthostatic_tachycardia -> hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "CMP/kidney panel",
+        "urine osmolality",
+        "orthostatic vitals"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_sodium_or_major_electrolyte_shift + confusion/fatigue + medication_or_fluid_context",
+      "target_state": "electrolyte_neurocognitive_risk_branch",
+      "chain_id": "electrolyte_neurocognitive_risk_branch",
+      "chain": "low_sodium_or_major_electrolyte_shift + confusion/fatigue + medication_or_fluid_context -> electrolyte_neurocognitive_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "electrolytes",
+        "symptoms",
+        "medication/fluid context"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_AST_ALT + medication_timing_or_exertion + symptoms",
+      "target_state": "hepatic_or_muscle_context_branch",
+      "chain_id": "hepatic_or_muscle_context_branch",
+      "chain": "high_AST_ALT + medication_timing_or_exertion + symptoms -> hepatic_or_muscle_context_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "liver enzymes",
+        "medication/exertion timing",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_albumin + high_CRP + edema_or_fluid_shift",
+      "target_state": "inflammation_fluid_nutrition_confounded_branch",
+      "chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "chain": "low_albumin + high_CRP + edema_or_fluid_shift -> inflammation_fluid_nutrition_confounded_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "albumin",
+        "CRP",
+        "fluid/nutrition context"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_002",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "elevated_resting_HR_relative_to_baseline + low_HRV + poor_sleep",
+      "target_state": "low_recovery_state_branch",
+      "chain_id": "low_recovery_state_branch",
+      "chain": "elevated_resting_HR_relative_to_baseline + low_HRV + poor_sleep -> low_recovery_state_branch",
+      "confidence": "high",
+      "required_sources": [
+        "resting HR",
+        "HRV",
+        "sleep quality"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "elevated_resting_HR + fever/inflammation + fatigue",
+      "target_state": "infection_or_inflammatory_load_branch",
+      "chain_id": "infection_or_inflammatory_load_branch",
+      "chain": "elevated_resting_HR + fever/inflammation + fatigue -> infection_or_inflammatory_load_branch",
+      "confidence": "high",
+      "required_sources": [
+        "resting HR",
+        "CRP/IL-6 or fever",
+        "fatigue/symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "elevated_resting_HR + low_Hb/ferritin + exercise_intolerance",
+      "target_state": "oxygen_delivery_compensation_branch",
+      "chain_id": "oxygen_delivery_compensation_branch",
+      "chain": "elevated_resting_HR + low_Hb/ferritin + exercise_intolerance -> oxygen_delivery_compensation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "resting HR",
+        "CBC/iron markers",
+        "exercise tolerance"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_HR_increase + dizziness + normal_BP_or_BP_drop",
+      "target_state": "orthostatic_intolerance_branch",
+      "chain_id": "orthostatic_intolerance_branch",
+      "chain": "orthostatic_HR_increase + dizziness + normal_BP_or_BP_drop -> orthostatic_intolerance_branch",
+      "confidence": "high",
+      "required_sources": [
+        "orthostatic HR/BP",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_RMSSD + high_training_load + next_day_fatigue",
+      "target_state": "insufficient_recovery_or_overreaching_branch",
+      "chain_id": "insufficient_recovery_or_overreaching_branch",
+      "chain": "low_RMSSD + high_training_load + next_day_fatigue -> insufficient_recovery_or_overreaching_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RMSSD",
+        "training load",
+        "timed fatigue"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_HRV + high_alpha_amylase + anxiety_like_symptoms",
+      "target_state": "sympathetic_arousal_branch",
+      "chain_id": "sympathetic_arousal_branch",
+      "chain": "low_HRV + high_alpha_amylase + anxiety_like_symptoms -> sympathetic_arousal_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "HRV",
+        "salivary alpha-amylase",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "spaceflight_or_bed_rest + altered_HRV + orthostatic_intolerance_postflight",
+      "target_state": "autonomic_deconditioning_branch",
+      "chain_id": "autonomic_deconditioning_branch",
+      "chain": "spaceflight_or_bed_rest + altered_HRV + orthostatic_intolerance_postflight -> autonomic_deconditioning_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "mission/bedrest phase",
+        "HRV",
+        "orthostatic test"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_013",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_HR_increase + dizziness + no_BP_drop",
+      "target_state": "POTS-like orthostatic intolerance branch",
+      "chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "chain": "orthostatic_HR_increase + dizziness + no_BP_drop -> POTS-like orthostatic intolerance branch",
+      "confidence": "high",
+      "required_sources": [
+        "active stand or tilt table HR/BP",
+        "symptom report"
+      ],
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_014",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_BP_drop + dizziness/syncope",
+      "target_state": "orthostatic hypotension branch",
+      "chain_id": "orthostatic_hypotension_branch",
+      "chain": "orthostatic_BP_drop + dizziness/syncope -> orthostatic hypotension branch",
+      "confidence": "high",
+      "required_sources": [
+        "active stand or tilt table BP",
+        "symptom report"
+      ],
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_014",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "normal_urine_osmolality + orthostatic_symptoms + low_HRV",
+      "target_state": "autonomic_dysregulation_branch",
+      "chain_id": "autonomic_dysregulation_branch",
+      "chain": "normal_urine_osmolality + orthostatic_symptoms + low_HRV -> autonomic_dysregulation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "urine markers",
+        "orthostatic symptoms",
+        "HRV"
+      ],
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_014",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "postflight_or_bed_rest + reduced_plasma_volume + orthostatic_intolerance",
+      "target_state": "spaceflight deconditioning volume branch",
+      "chain_id": "spaceflight_deconditioning_volume_branch",
+      "chain": "postflight_or_bed_rest + reduced_plasma_volume + orthostatic_intolerance -> spaceflight deconditioning volume branch",
+      "confidence": "high",
+      "required_sources": [
+        "plasma volume",
+        "pre/post flight or bedrest testing",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_014",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_symptoms + normal_HR_BP + abnormal_cerebral_perfusion",
+      "target_state": "cerebral_autoregulation_hypothesis",
+      "chain_id": "cerebral_autoregulation_hypothesis",
+      "chain": "orthostatic_symptoms + normal_HR_BP + abnormal_cerebral_perfusion -> cerebral_autoregulation_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "orthostatic symptoms",
+        "HR/BP",
+        "cerebral perfusion"
+      ],
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_014",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "increased_arterial_stiffness_PWV + endothelial_dysfunction_low_FMD_RHI + LVH_or_albuminuria",
+      "target_state": "vascular_risk_branch",
+      "chain_id": "vascular_risk_branch",
+      "chain": "increased_arterial_stiffness_PWV + endothelial_dysfunction_low_FMD_RHI + LVH_or_albuminuria -> vascular_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PWV",
+        "FMD/RHI",
+        "echo or renal markers",
+        "BP/metabolic profile"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "prolonged_bed_rest_or_spaceflight + reduced_LV/RV_mass_and_volume + decreased_stroke_volume + fluid_shift_markers",
+      "target_state": "spaceflight_cardiovascular_adaptation_branch",
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "chain": "prolonged_bed_rest_or_spaceflight + reduced_LV/RV_mass_and_volume + decreased_stroke_volume + fluid_shift_markers -> spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "echo/MRI",
+        "fluid distribution/plasma volume",
+        "mission phase",
+        "orthostatic tests"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "reduced_stroke_volume + reduced_plasma_volume + orthostatic_intolerance",
+      "target_state": "volume_cardiac_output_branch",
+      "chain_id": "volume_cardiac_output_branch",
+      "chain": "reduced_stroke_volume + reduced_plasma_volume + orthostatic_intolerance -> volume_cardiac_output_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "stroke volume",
+        "plasma volume",
+        "orthostatic symptoms/test"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_RHI + increased_LV_diastolic_stiffness",
+      "target_state": "microvascular_HFpEF_predisposition_branch",
+      "chain_id": "microvascular_HFpEF_predisposition_branch",
+      "chain": "low_RHI + increased_LV_diastolic_stiffness -> microvascular_HFpEF_predisposition_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "RHI",
+        "diastolic wall strain/E/e’",
+        "BP/comorbidities"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "increased_PWV + normal_or_mild_cIMT + longitudinal_LV_remodeling",
+      "target_state": "early_vascular_aging_branch",
+      "chain_id": "early_vascular_aging_branch",
+      "chain": "increased_PWV + normal_or_mild_cIMT + longitudinal_LV_remodeling -> early_vascular_aging_branch",
+      "confidence": "high",
+      "required_sources": [
+        "PWV",
+        "cIMT",
+        "echo/MRI over time"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "normal_echo + exercise_intolerance + abnormal_CPET",
+      "target_state": "non_structural_exercise_limitation_branch",
+      "chain_id": "non_structural_exercise_limitation_branch",
+      "chain": "normal_echo + exercise_intolerance + abnormal_CPET -> non_structural_exercise_limitation_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "echo/MRI",
+        "CPET",
+        "symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_015",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_workload + sleep_debt + PVT_lapses",
+      "target_state": "workload_sleep_performance_risk_branch",
+      "chain_id": "workload_sleep_performance_risk_branch",
+      "chain": "high_workload + sleep_debt + PVT_lapses -> workload_sleep_performance_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_022",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "team_conflict + mood_variability + operational_errors",
+      "target_state": "team_behavioral_risk_branch",
+      "chain_id": "team_behavioral_risk_branch",
+      "chain": "team_conflict + mood_variability + operational_errors -> team_behavioral_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_022",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "social_isolation + depressed_mood/anhedonia + low_activity",
+      "target_state": "isolation_mood_activity_branch",
+      "chain_id": "isolation_mood_activity_branch",
+      "chain": "social_isolation + depressed_mood/anhedonia + low_activity -> isolation_mood_activity_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_022",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "communication_delay + low_shared_mental_model + task_errors",
+      "target_state": "communication_coordination_risk_branch",
+      "chain_id": "communication_coordination_risk_branch",
+      "chain": "communication_delay + low_shared_mental_model + task_errors -> communication_coordination_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_022",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_cohesion + high_workload + stable_performance",
+      "target_state": "resilient_team_adaptation_branch",
+      "chain_id": "resilient_team_adaptation_branch",
+      "chain": "high_cohesion + high_workload + stable_performance -> resilient_team_adaptation_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_022",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "postflight_balance_impairment + recent_microgravity + normal_strength",
+      "target_state": "sensorimotor_adaptation_branch",
+      "chain_id": "sensorimotor_adaptation_branch",
+      "chain": "postflight_balance_impairment + recent_microgravity + normal_strength -> sensorimotor_adaptation_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_023",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_motion_sickness_score + visual-vestibular_conflict + nausea",
+      "target_state": "motion_sickness_branch",
+      "chain_id": "motion_sickness_branch",
+      "chain": "high_motion_sickness_score + visual-vestibular_conflict + nausea -> motion_sickness_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_023",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "impaired_VOR + vertigo + postural_instability",
+      "target_state": "vestibular_dysfunction_branch",
+      "chain_id": "vestibular_dysfunction_branch",
+      "chain": "impaired_VOR + vertigo + postural_instability -> vestibular_dysfunction_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_023",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "dizziness + orthostatic_HR_increase + normal_VOR",
+      "target_state": "orthostatic_dizziness_branch",
+      "chain_id": "orthostatic_dizziness_branch",
+      "chain": "dizziness + orthostatic_HR_increase + normal_VOR -> orthostatic_dizziness_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_023",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "dizziness + low_ETCO2 + normal_SpO2 + normal_balance",
+      "target_state": "hyperventilation_dizziness_branch",
+      "chain_id": "hyperventilation_dizziness_branch",
+      "chain": "dizziness + low_ETCO2 + normal_SpO2 + normal_balance -> hyperventilation_dizziness_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_023",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_muscle_strength + low_activity + low_VO2peak",
+      "target_state": "deconditioning_branch",
+      "chain_id": "deconditioning_branch",
+      "chain": "low_muscle_strength + low_activity + low_VO2peak -> deconditioning_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_024",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "muscle_mass_loss + negative_nitrogen_balance + low_energy_intake",
+      "target_state": "catabolic_low_energy_availability_branch",
+      "chain_id": "catabolic_low_energy_availability_branch",
+      "chain": "muscle_mass_loss + negative_nitrogen_balance + low_energy_intake -> catabolic_low_energy_availability_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_024",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "postflight_strength_loss + microgravity + countermeasure_adherence_low",
+      "target_state": "unloading_countermeasure_gap_branch",
+      "chain_id": "unloading_countermeasure_gap_branch",
+      "chain": "postflight_strength_loss + microgravity + countermeasure_adherence_low -> unloading_countermeasure_gap_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_024",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "preserved_muscle_mass + low_strength",
+      "target_state": "neuromuscular_function_or_pain_limitation_branch",
+      "chain_id": "neuromuscular_function_or_pain_limitation_branch",
+      "chain": "preserved_muscle_mass + low_strength -> neuromuscular_function_or_pain_limitation_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_024",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_gait_speed + low_strength + balance_impairment",
+      "target_state": "functional_mobility_risk_branch",
+      "chain_id": "functional_mobility_risk_branch",
+      "chain": "low_gait_speed + low_strength + balance_impairment -> functional_mobility_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_024",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "microgravity_or_bed_rest + increased_CTX/NTX + decreased_BMD",
+      "target_state": "unloading_bone_loss_branch",
+      "chain_id": "unloading_bone_loss_branch",
+      "chain": "microgravity_or_bed_rest + increased_CTX/NTX + decreased_BMD -> unloading_bone_loss_branch",
+      "confidence": "high",
+      "required_sources": [
+        "DXA/QCT/pQCT",
+        "CTX/NTX",
+        "mission phase"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_025",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_urinary_calcium + microgravity + low_fluid_intake",
+      "target_state": "renal_stone_risk_branch",
+      "chain_id": "renal_stone_risk_branch",
+      "chain": "high_urinary_calcium + microgravity + low_fluid_intake -> renal_stone_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "urine markers",
+        "fluid intake",
+        "mission phase"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_025",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_25OH_D + high_PTH + low_BMD_or_high_turnover",
+      "target_state": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain": "low_25OH_D + high_PTH + low_BMD_or_high_turnover -> secondary_hyperparathyroid_bone_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "vitamin D",
+        "PTH",
+        "BMD or turnover"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_025",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "decreased_BMD + low_muscle_strength + balance_impairment",
+      "target_state": "fracture_fall_risk_branch",
+      "chain_id": "fracture_fall_risk_branch",
+      "chain": "decreased_BMD + low_muscle_strength + balance_impairment -> fracture_fall_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "BMD/structure",
+        "strength",
+        "balance/falls context"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_025",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "countermeasure_adherence + stable_BMD + preserved_strength",
+      "target_state": "bone_countermeasure_response_branch",
+      "chain_id": "bone_countermeasure_response_branch",
+      "chain": "countermeasure_adherence + stable_BMD + preserved_strength -> bone_countermeasure_response_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "countermeasure logs",
+        "BMD",
+        "strength/function"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_025",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "microgravity + cephalad_fluid_shift + optic_disc_edema/RNFL_change",
+      "target_state": "SANS_risk_branch",
+      "chain_id": "SANS_risk_branch",
+      "chain": "microgravity + cephalad_fluid_shift + optic_disc_edema/RNFL_change -> SANS_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "spaceflight/HDT exposure",
+        "OCT/fundoscopy",
+        "fluid-shift or venous markers"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_026",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "hyperopic_shift + globe_flattening + optic_disc_edema",
+      "target_state": "SANS_structural_visual_branch",
+      "chain_id": "SANS_structural_visual_branch",
+      "chain": "hyperopic_shift + globe_flattening + optic_disc_edema -> SANS_structural_visual_branch",
+      "confidence": "high",
+      "required_sources": [
+        "refraction/visual acuity",
+        "OCT/MRI",
+        "fundoscopy"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_026",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "optic_nerve_sheath_diameter_increase + head_down_tilt + visual_symptoms",
+      "target_state": "ICP_proxy_hypothesis",
+      "chain_id": "ICP_proxy_hypothesis",
+      "chain": "optic_nerve_sheath_diameter_increase + head_down_tilt + visual_symptoms -> ICP_proxy_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [
+        "ONSD ultrasound/MRI",
+        "HDT/fluid-shift",
+        "visual symptoms"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_026",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "LBNP + decreased_IOP/ONSD/choroidal_thickness",
+      "target_state": "countermeasure_effect_branch",
+      "chain_id": "countermeasure_effect_branch",
+      "chain": "LBNP + decreased_IOP/ONSD/choroidal_thickness -> countermeasure_effect_branch",
+      "confidence": "high",
+      "required_sources": [
+        "LBNP/countermeasure log",
+        "IOP",
+        "ONSD/OCT"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_026",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "visual_symptoms + normal_OCT/fundoscopy",
+      "target_state": "non_structural_visual_symptom_branch",
+      "chain_id": "non_structural_visual_symptom_branch",
+      "chain": "visual_symptoms + normal_OCT/fundoscopy -> non_structural_visual_symptom_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "symptom report",
+        "OCT/fundus",
+        "environment/headache/migraine context"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_026",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_habitat_CO2 + headache + PVT_lapses",
+      "target_state": "CO2_cognitive_headache_risk_branch",
+      "chain_id": "co2_cognitive_headache_risk_branch",
+      "chain": "high_habitat_CO2 + headache + PVT_lapses -> CO2_cognitive_headache_risk_branch",
+      "confidence": "high",
+      "required_sources": [
+        "CO2 sensor",
+        "headache report",
+        "timed cognition/PVT"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_027",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_VOC_or_PM + respiratory_symptoms + inflammation",
+      "target_state": "air_quality_respiratory_branch",
+      "chain_id": "air_quality_respiratory_branch",
+      "chain": "high_VOC_or_PM + respiratory_symptoms + inflammation -> air_quality_respiratory_branch",
+      "confidence": "high",
+      "required_sources": [
+        "VOC/PM sensor",
+        "respiratory symptoms",
+        "inflammatory marker"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_027",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "night_noise_exposure + sleep_fragmentation + next_day_fatigue",
+      "target_state": "noise_sleep_recovery_branch",
+      "chain_id": "noise_sleep_recovery_branch",
+      "chain": "night_noise_exposure + sleep_fragmentation + next_day_fatigue -> noise_sleep_recovery_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "noise dosimeter",
+        "sleep log/actigraphy",
+        "fatigue report"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_027",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_temperature/humidity + high_core_temp/HR + cognitive_slowing",
+      "target_state": "heat_strain_environment_branch",
+      "chain_id": "heat_strain_environment_branch",
+      "chain": "high_temperature/humidity + high_core_temp/HR + cognitive_slowing -> heat_strain_environment_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "environment temp/humidity",
+        "core temp/HR",
+        "cognition/performance"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_027",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_habitat_CO2 + normal_ETCO2 + no_symptoms",
+      "target_state": "environmental_exposure_without_physiologic_effect_branch",
+      "chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "chain": "high_habitat_CO2 + normal_ETCO2 + no_symptoms -> environmental_exposure_without_physiologic_effect_branch",
+      "confidence": "moderate",
+      "required_sources": [
+        "CO2 sensor",
+        "ETCO2/physiology",
+        "symptom log"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_027",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_cumulative_dose + increased_chromosomal_aberrations",
+      "target_state": "radiation_biological_effect_branch",
+      "chain_id": "radiation_biological_effect_branch",
+      "chain": "high_cumulative_dose + increased_chromosomal_aberrations -> radiation_biological_effect_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_028",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "solar_particle_event + acute_dose_increase + DNA_damage_marker_shift",
+      "target_state": "acute_radiation_event_branch",
+      "chain_id": "acute_radiation_event_branch",
+      "chain": "solar_particle_event + acute_dose_increase + DNA_damage_marker_shift -> acute_radiation_event_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_028",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_dose + oxidative_stress_markers + inflammation",
+      "target_state": "radiation_oxidative_inflammatory_branch",
+      "chain_id": "radiation_oxidative_inflammatory_branch",
+      "chain": "high_dose + oxidative_stress_markers + inflammation -> radiation_oxidative_inflammatory_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_028",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "radiation_dose + endothelial_markers + arterial_stiffness/CVD_outcome",
+      "target_state": "radiation_vascular_risk_branch",
+      "chain_id": "radiation_vascular_risk_branch",
+      "chain": "radiation_dose + endothelial_markers + arterial_stiffness/CVD_outcome -> radiation_vascular_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_028",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "modeled_high_lifetime_cancer_risk + cumulative_dose",
+      "target_state": "long_term_surveillance_branch",
+      "chain_id": "long_term_surveillance_branch",
+      "chain": "modeled_high_lifetime_cancer_risk + cumulative_dose -> long_term_surveillance_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_028",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_energy_intake + weight_loss + BHB_high",
+      "target_state": "low_energy_availability_branch",
+      "chain_id": "low_energy_availability_branch",
+      "chain": "low_energy_intake + weight_loss + BHB_high -> low_energy_availability_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_029",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_protein_intake + negative_nitrogen_balance + muscle_mass_loss",
+      "target_state": "catabolic_muscle_loss_branch",
+      "chain_id": "catabolic_muscle_loss_branch",
+      "chain": "low_protein_intake + negative_nitrogen_balance + muscle_mass_loss -> catabolic_muscle_loss_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_029",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "late_eating + circadian_misalignment + poor_sleep/glucose_variability",
+      "target_state": "meal_timing_circadian_metabolic_branch",
+      "chain_id": "meal_timing_circadian_metabolic_branch",
+      "chain": "late_eating + circadian_misalignment + poor_sleep/glucose_variability -> meal_timing_circadian_metabolic_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_029",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_fiber_intake + constipation/GI_symptoms + microbiome_shift",
+      "target_state": "diet_GI_microbiome_branch",
+      "chain_id": "diet_GI_microbiome_branch",
+      "chain": "low_fiber_intake + constipation/GI_symptoms + microbiome_shift -> diet_GI_microbiome_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_029",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "poor_food_acceptability + reduced_energy_intake + mood/fatigue",
+      "target_state": "food_system_behavioral_risk_branch",
+      "chain_id": "food_system_behavioral_risk_branch",
+      "chain": "poor_food_acceptability + reduced_energy_intake + mood/fatigue -> food_system_behavioral_risk_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_029",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sedative_hypnotic_use + next_day_PVT_lapses + sleepiness",
+      "target_state": "medication_sleepiness_context_override",
+      "chain_id": "medication_sleepiness_context_override",
+      "chain": "sedative_hypnotic_use + next_day_PVT_lapses + sleepiness -> medication_sleepiness_context_override",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "beta_blocker_use + low_peak_HR/chronotropic_response + exercise_intolerance",
+      "target_state": "medication_chronotropic_override",
+      "chain_id": "medication_chronotropic_override",
+      "chain": "beta_blocker_use + low_peak_HR/chronotropic_response + exercise_intolerance -> medication_chronotropic_override",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "anticholinergic_burden + cognitive_slowing + dry_mouth/constipation",
+      "target_state": "anticholinergic_cognitive_GI_branch",
+      "chain_id": "anticholinergic_cognitive_GI_branch",
+      "chain": "anticholinergic_burden + cognitive_slowing + dry_mouth/constipation -> anticholinergic_cognitive_GI_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "SSRI/SNRI_start_or_change + GI_symptoms/sleep_change/anxiety_shift",
+      "target_state": "antidepressant_timing_context_branch",
+      "chain_id": "antidepressant_timing_context_branch",
+      "chain": "SSRI/SNRI_start_or_change + GI_symptoms/sleep_change/anxiety_shift -> antidepressant_timing_context_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "opioid_or_tramadol_use + low_RR/sleep_desaturation + sedation",
+      "target_state": "respiratory_depression_risk_branch",
+      "chain_id": "respiratory_depression_risk_branch",
+      "chain": "opioid_or_tramadol_use + low_RR/sleep_desaturation + sedation -> respiratory_depression_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "exercise_countermeasure_low_adherence + strength/BMD_loss",
+      "target_state": "countermeasure_adherence_gap_branch",
+      "chain_id": "countermeasure_adherence_gap_branch",
+      "chain": "exercise_countermeasure_low_adherence + strength/BMD_loss -> countermeasure_adherence_gap_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_030",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "OCT_RNFL_change + cephalad_fluid_shift + visual_change",
+      "target_state": "SANS_structural_branch",
+      "chain_id": "SANS_structural_branch",
+      "chain": "OCT_RNFL_change + cephalad_fluid_shift + visual_change -> SANS_structural_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_031",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "echo_reduced_LV_volume + reduced_plasma_volume + orthostatic_intolerance",
+      "target_state": "cardiovascular_deconditioning_branch",
+      "chain_id": "cardiovascular_deconditioning_branch",
+      "chain": "echo_reduced_LV_volume + reduced_plasma_volume + orthostatic_intolerance -> cardiovascular_deconditioning_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_031",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "muscle_ultrasound_thickness_loss + strength_loss + low_activity",
+      "target_state": "unloading_muscle_loss_branch",
+      "chain_id": "unloading_muscle_loss_branch",
+      "chain": "muscle_ultrasound_thickness_loss + strength_loss + low_activity -> unloading_muscle_loss_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_031",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "ONSD_ultrasound_abnormality + fluid_shift/HDT + visual_or_headache_context",
+      "target_state": "ICP_proxy_branch",
+      "chain_id": "ICP_proxy_branch",
+      "chain": "ONSD_ultrasound_abnormality + fluid_shift/HDT + visual_or_headache_context -> ICP_proxy_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_031",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_IL6/TNF/CRP + fatigue/anhedonia + sickness_behavior",
+      "target_state": "inflammatory_sickness_behavior_branch",
+      "chain_id": "inflammatory_sickness_behavior_branch",
+      "chain": "high_IL6/TNF/CRP + fatigue/anhedonia + sickness_behavior -> inflammatory_sickness_behavior_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_032",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "low_NK_activity + latent_virus_shedding + high_stress",
+      "target_state": "stress_related_immune_suppression_branch",
+      "chain_id": "stress_related_immune_suppression_branch",
+      "chain": "low_NK_activity + latent_virus_shedding + high_stress -> stress_related_immune_suppression_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_032",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "EBV_or_HSV_reactivation + fatigue + immune_shift",
+      "target_state": "viral_reactivation_fatigue_hypothesis",
+      "chain_id": "viral_reactivation_fatigue_hypothesis",
+      "chain": "EBV_or_HSV_reactivation + fatigue + immune_shift -> viral_reactivation_fatigue_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_032",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "immune_activation + postviral_status + brain_fog/fatigue",
+      "target_state": "postviral_immune_branch",
+      "chain_id": "postviral_immune_branch",
+      "chain": "immune_activation + postviral_status + brain_fog/fatigue -> postviral_immune_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_032",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "gut_microbiome_shift + immune_activation + fatigue/mood",
+      "target_state": "gut_immune_brain_hypothesis",
+      "chain_id": "gut_immune_brain_hypothesis",
+      "chain": "gut_microbiome_shift + immune_activation + fatigue/mood -> gut_immune_brain_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_033",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "oral_dysbiosis + periodontal_inflammation + blood_CRP",
+      "target_state": "oral_systemic_inflammation_hypothesis",
+      "chain_id": "oral_systemic_inflammation_hypothesis",
+      "chain": "oral_dysbiosis + periodontal_inflammation + blood_CRP -> oral_systemic_inflammation_hypothesis",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_033",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "environmental_pathogen_detection + crew_skin/oral_matching + symptoms",
+      "target_state": "crew_environment_transfer_branch",
+      "chain_id": "crew_environment_transfer_branch",
+      "chain": "environmental_pathogen_detection + crew_skin/oral_matching + symptoms -> crew_environment_transfer_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_033",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "AMR_gene_increase + antibiotic_use + pathogen_detection",
+      "target_state": "antimicrobial_resistance_risk_branch",
+      "chain_id": "antimicrobial_resistance_risk_branch",
+      "chain": "AMR_gene_increase + antibiotic_use + pathogen_detection -> antimicrobial_resistance_risk_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_033",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "spaceflight_microbiome_instability + immune_shift + infection_risk",
+      "target_state": "astronaut_microbiome_immune_branch",
+      "chain_id": "astronaut_microbiome_immune_branch",
+      "chain": "spaceflight_microbiome_instability + immune_shift + infection_risk -> astronaut_microbiome_immune_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_033",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "preflight_baseline + inflight_deviation + postflight_recovery",
+      "target_state": "within_person_state_trajectory_branch",
+      "chain_id": "within_person_state_trajectory_branch",
+      "chain": "preflight_baseline + inflight_deviation + postflight_recovery -> within_person_state_trajectory_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_034",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "early_inflight_shift + later_stabilization",
+      "target_state": "adaptation_branch",
+      "chain_id": "adaptation_branch",
+      "chain": "early_inflight_shift + later_stabilization -> adaptation_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_034",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "progressive_mid_to_late_mission_drift + fatigue/performance_decline",
+      "target_state": "cumulative_load_branch",
+      "chain_id": "cumulative_load_branch",
+      "chain": "progressive_mid_to_late_mission_drift + fatigue/performance_decline -> cumulative_load_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_034",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_landing_orthostatic_intolerance + recovery_over_days/weeks",
+      "target_state": "re_adaptation_branch",
+      "chain_id": "re_adaptation_branch",
+      "chain": "post_landing_orthostatic_intolerance + recovery_over_days/weeks -> re_adaptation_branch",
+      "confidence": "high",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_034",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_exposure + delayed_symptom_peak",
+      "target_state": "lagged_effect_branch",
+      "chain_id": "lagged_effect_branch",
+      "chain": "acute_exposure + delayed_symptom_peak -> lagged_effect_branch",
+      "confidence": "moderate",
+      "required_sources": [],
+      "source_files": [
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json"
+      ],
+      "source_tree_id": "astro_tree_034",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "hrv_rmssd_resting_or_reactive",
+      "target_state": "",
+      "chain_id": "series_001_pattern_001",
+      "chain": "hrv_rmssd_resting_or_reactive -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "ECG-derived RMSSD",
+        "time-domain HRV metrics (SDNN, RMSSD)",
+        "standardized HRV assessment during rest and stress tasks"
+      ],
+      "source_files": [
+        "autonomic_stress_axis_curated.json"
+      ],
+      "source_tree_id": "autonomic_stress_axis",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "ibs_symptoms",
+      "target_state": "",
+      "chain_id": "series_003_pattern_001",
+      "chain": "ibs_symptoms -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical_diagnosis",
+        "symptom_questionnaire"
+      ],
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "source_tree_id": "gut_immune_microbiome_brain_axis",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "ibs_microbial_dysbiosis",
+      "target_state": "",
+      "chain_id": "series_003_pattern_002",
+      "chain": "ibs_microbial_dysbiosis -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical_diagnosis",
+        "symptom_questionnaire"
+      ],
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "source_tree_id": "gut_immune_microbiome_brain_axis",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "gut_permeability_markers",
+      "target_state": "",
+      "chain_id": "series_003_pattern_003",
+      "chain": "gut_permeability_markers -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical_diagnosis",
+        "symptom_questionnaire"
+      ],
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "source_tree_id": "gut_immune_microbiome_brain_axis",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "abdominal_pain_in_ibs",
+      "target_state": "",
+      "chain_id": "series_003_pattern_004",
+      "chain": "abdominal_pain_in_ibs -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical_diagnosis",
+        "symptom_questionnaire"
+      ],
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "source_tree_id": "gut_immune_microbiome_brain_axis",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "insulin_resistance",
+      "target_state": "",
+      "chain_id": "series_004_pattern_001",
+      "chain": "insulin_resistance -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "homa_ir",
+        "fasting_insulin",
+        "genetic_risk_scores"
+      ],
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "source_tree_id": "metabolic_glucose_insulin_lactate_cognition_partial",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "glucose_variability",
+      "target_state": "",
+      "chain_id": "series_004_pattern_002",
+      "chain": "glucose_variability -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "mage",
+        "hba1c_variability",
+        "fasting_plasma_glucose_sd",
+        "fasting_plasma_glucose_cv"
+      ],
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "source_tree_id": "metabolic_glucose_insulin_lactate_cognition_partial",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "intermittent_fasting_or_time_restricted_eating",
+      "target_state": "cognitive_function_and_mental_health",
+      "chain_id": "series_004b_pattern_001",
+      "chain": "intermittent_fasting_or_time_restricted_eating -> cognitive_function_and_mental_health",
+      "confidence": "unknown",
+      "required_sources": [
+        "dietary intervention",
+        "randomized controlled trial",
+        "systematic review"
+      ],
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004b_postprandial_fasting_ketones_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "beta_hydroxybutyrate_levels",
+      "target_state": "general_cognitive_performance",
+      "chain_id": "series_004b_pattern_002",
+      "chain": "beta_hydroxybutyrate_levels -> general_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "NMR spectroscopy",
+        "blood assays"
+      ],
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004b_postprandial_fasting_ketones_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "short_term_fasting_duration_hours_to_days",
+      "target_state": "cognitive_performance",
+      "chain_id": "series_004b_pattern_003",
+      "chain": "short_term_fasting_duration_hours_to_days -> cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "experimental fasting protocols"
+      ],
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004b_postprandial_fasting_ketones_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_severe_hypoglycemia",
+      "target_state": "acute_cognitive_performance",
+      "chain_id": "series_004c_pattern_001",
+      "chain": "acute_severe_hypoglycemia -> acute_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "glucose clamp",
+        "blood glucose monitoring",
+        "CGM"
+      ],
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004c_postprandial_glucose_brain_fog_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "short_term_glycemic_variability",
+      "target_state": "global_cognition_and_executive_function",
+      "chain_id": "series_004c_pattern_002",
+      "chain": "short_term_glycemic_variability -> global_cognition_and_executive_function",
+      "confidence": "unknown",
+      "required_sources": [
+        "CGM",
+        "MAGE",
+        "coefficient_of_variation",
+        "postprandial_glucose_excursion"
+      ],
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004c_postprandial_glucose_brain_fog_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "typical_postprandial_glycemic_excursion",
+      "target_state": "objective_cognition_and_subjective_fatigue",
+      "chain_id": "series_004c_pattern_003",
+      "chain": "typical_postprandial_glycemic_excursion -> objective_cognition_and_subjective_fatigue",
+      "confidence": "unknown",
+      "required_sources": [
+        "meal challenge",
+        "high_GI_vs_low_GI_meal",
+        "postprandial glucose measurement",
+        "CGM"
+      ],
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004c_postprandial_glucose_brain_fog_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "symptomatic_glycemic_event_awareness",
+      "target_state": "daily_functioning_energy_mood_memory",
+      "chain_id": "series_004c_pattern_004",
+      "chain": "symptomatic_glycemic_event_awareness -> daily_functioning_energy_mood_memory",
+      "confidence": "unknown",
+      "required_sources": [
+        "EMA",
+        "self-report app",
+        "CGM",
+        "symptom reporting"
+      ],
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_004c_postprandial_glucose_brain_fog_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "insufficient_or_disrupted_sleep",
+      "target_state": "next_day_fatigue_mood_and_cognitive_performance",
+      "chain_id": "series_005_pattern_001",
+      "chain": "insufficient_or_disrupted_sleep -> next_day_fatigue_mood_and_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "sleep deprivation protocol",
+        "sleep restriction protocol",
+        "sleep fragmentation protocol",
+        "actigraphy",
+        "polysomnography",
+        "wearable sleep tracking",
+        "sleep diary"
+      ],
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "circadian_misalignment",
+      "target_state": "fatigue_mood_and_cognitive_performance",
+      "chain_id": "series_005_pattern_002",
+      "chain": "circadian_misalignment -> fatigue_mood_and_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "forced desynchrony protocol",
+        "shift work exposure",
+        "social jetlag estimates",
+        "sleep timing records",
+        "actigraphy"
+      ],
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_sleep_restriction",
+      "target_state": "attention_executive_function_and_working_memory",
+      "chain_id": "series_005_pattern_003",
+      "chain": "chronic_sleep_restriction -> attention_executive_function_and_working_memory",
+      "confidence": "unknown",
+      "required_sources": [
+        "experimental sleep restriction protocol",
+        "psychomotor vigilance task",
+        "working memory tasks",
+        "subjective sleepiness scales"
+      ],
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sleep_disturbance_or_poor_sleep_quality",
+      "target_state": "fatigue_mood_and_sickness_behavior_like_symptoms",
+      "chain_id": "series_005_pattern_004",
+      "chain": "sleep_disturbance_or_poor_sleep_quality -> fatigue_mood_and_sickness_behavior_like_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "sleep diary",
+        "questionnaires",
+        "actigraphy",
+        "polysomnography",
+        "experimental sleep deprivation"
+      ],
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "reduced_vagally_mediated_HRV",
+      "target_state": "fatigue_stress_mood_recovery_status",
+      "chain_id": "series_006_pattern_001",
+      "chain": "reduced_vagally_mediated_HRV -> fatigue_stress_mood_recovery_status",
+      "confidence": "unknown",
+      "required_sources": [
+        "RMSSD",
+        "HF-HRV",
+        "SDNN",
+        "ambulatory HRV",
+        "resting HRV",
+        "wearable/ECG-derived HRV"
+      ],
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "higher_resting_vagally_mediated_HRV",
+      "target_state": "executive_attention_working_memory_performance",
+      "chain_id": "series_006_pattern_002",
+      "chain": "higher_resting_vagally_mediated_HRV -> executive_attention_working_memory_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "RMSSD",
+        "HF-HRV",
+        "respiratory sinus arrhythmia",
+        "resting ECG HRV"
+      ],
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_mental_stress",
+      "target_state": "acute_stress_state_and_recovery",
+      "chain_id": "series_006_pattern_003",
+      "chain": "acute_mental_stress -> acute_stress_state_and_recovery",
+      "confidence": "unknown",
+      "required_sources": [
+        "laboratory stress task",
+        "psychophysiological stress protocol",
+        "self-reported stress"
+      ],
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "slow_breathing_or_HRV_biofeedback",
+      "target_state": "mood_stress_resilience",
+      "chain_id": "series_006_pattern_004",
+      "chain": "slow_breathing_or_HRV_biofeedback -> mood_stress_resilience",
+      "confidence": "unknown",
+      "required_sources": [
+        "paced breathing",
+        "HRV biofeedback",
+        "transcutaneous vagus nerve stimulation"
+      ],
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_006_autonomic_hrv_resting_hr_fatigue_stress",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "HPA_axis_dysregulation",
+      "target_state": "fatigue_burnout_exhaustion",
+      "chain_id": "series_007_pattern_001",
+      "chain": "HPA_axis_dysregulation -> fatigue_burnout_exhaustion",
+      "confidence": "unknown",
+      "required_sources": [
+        "salivary cortisol",
+        "cortisol awakening response",
+        "diurnal cortisol slope"
+      ],
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_psychological_stress",
+      "target_state": "acute_stress_state",
+      "chain_id": "series_007_pattern_002",
+      "chain": "acute_psychological_stress -> acute_stress_state",
+      "confidence": "unknown",
+      "required_sources": [
+        "TSST",
+        "laboratory stress tasks"
+      ],
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_psychological_stress_or_allostatic_load",
+      "target_state": "metabolic_inflammatory_risk_and_mood_fatigue",
+      "chain_id": "series_007_pattern_003",
+      "chain": "chronic_psychological_stress_or_allostatic_load -> metabolic_inflammatory_risk_and_mood_fatigue",
+      "confidence": "unknown",
+      "required_sources": [
+        "stress questionnaires",
+        "allostatic load indices",
+        "longitudinal cohorts"
+      ],
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_immune_activation_or_chronic_low_grade_inflammation",
+      "target_state": "sickness_behavior_fatigue_anhedonia_motivation_loss",
+      "chain_id": "series_008_pattern_001",
+      "chain": "acute_immune_activation_or_chronic_low_grade_inflammation -> sickness_behavior_fatigue_anhedonia_motivation_loss",
+      "confidence": "unknown",
+      "required_sources": [
+        "CRP",
+        "hsCRP",
+        "IL-6",
+        "TNF-alpha",
+        "IL-1beta",
+        "LPS/endotoxin challenge",
+        "vaccination challenge",
+        "Mendelian randomization",
+        "anti-inflammatory intervention"
+      ],
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "systemic_inflammation",
+      "target_state": "objective_cognitive_performance",
+      "chain_id": "series_008_pattern_002",
+      "chain": "systemic_inflammation -> objective_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "CRP",
+        "IL-6",
+        "TNF-alpha",
+        "IL-1beta",
+        "biomarker studies",
+        "meta-analysis"
+      ],
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "persistent_fatigue_with_normal_standard_inflammatory_markers",
+      "target_state": "persistent_subjective_fatigue_or_brain_fog",
+      "chain_id": "series_008_pattern_003",
+      "chain": "persistent_fatigue_with_normal_standard_inflammatory_markers -> persistent_subjective_fatigue_or_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "CRP",
+        "cytokine panels",
+        "immune profiling",
+        "clinical symptom scales"
+      ],
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_centralized_pain",
+      "target_state": "objective_cognitive_performance",
+      "chain_id": "series_009_pattern_001",
+      "chain": "chronic_centralized_pain -> objective_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "pain intensity scales",
+        "pain interference scales",
+        "fibromyalgia index",
+        "QST",
+        "clinical diagnosis"
+      ],
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_009_pain_nociception_central_sensitization_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_pain_state",
+      "target_state": "fatigue_and_cognitive_symptoms",
+      "chain_id": "series_009_pattern_002",
+      "chain": "chronic_pain_state -> fatigue_and_cognitive_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "pain scales",
+        "pain interference scales",
+        "central sensitization inventories"
+      ],
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_009_pain_nociception_central_sensitization_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "fibromyalgia_symptom_burden",
+      "target_state": "fatigue_mood_sleep_symptoms",
+      "chain_id": "series_009_pattern_003",
+      "chain": "fibromyalgia_symptom_burden -> fatigue_mood_sleep_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical diagnosis",
+        "pain ratings",
+        "fatigue/sleep/mood scales"
+      ],
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_009_pain_nociception_central_sensitization_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "hyperventilation_state",
+      "target_state": "attention_and_cognitive_inhibition",
+      "chain_id": "series_010_pattern_001",
+      "chain": "hyperventilation_state -> attention_and_cognitive_inhibition",
+      "confidence": "unknown",
+      "required_sources": [
+        "end-tidal CO2",
+        "capnography",
+        "experimental hyperventilation",
+        "simulated altitude"
+      ],
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_010_respiration_CO2_oxygenation_panic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "dysfunctional_breathing_pattern",
+      "target_state": "fatigue_dyspnea_brain_fog",
+      "chain_id": "series_010_pattern_002",
+      "chain": "dysfunctional_breathing_pattern -> fatigue_dyspnea_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "CPET",
+        "ventilatory pattern analysis",
+        "VE/VCO2 slope",
+        "end-tidal CO2"
+      ],
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_010_respiration_CO2_oxygenation_panic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "panic_disorder_or_panic_attack_state",
+      "target_state": "panic_anxiety_symptoms",
+      "chain_id": "series_010_pattern_003",
+      "chain": "panic_disorder_or_panic_attack_state -> panic_anxiety_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "ETCO2",
+        "minute ventilation",
+        "CO2 challenge",
+        "capnography"
+      ],
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_010_respiration_CO2_oxygenation_panic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sleep_disordered_breathing_intermitent_hypoxia",
+      "target_state": "cognitive_decline_and_executive_dysfunction",
+      "chain_id": "series_010_pattern_004",
+      "chain": "sleep_disordered_breathing_intermitent_hypoxia -> cognitive_decline_and_executive_dysfunction",
+      "confidence": "unknown",
+      "required_sources": [
+        "polysomnography",
+        "oxygen desaturation index",
+        "SpO2",
+        "apnea-hypopnea index"
+      ],
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_010_respiration_CO2_oxygenation_panic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "slow_paced_diaphragmatic_breathing",
+      "target_state": "anxiety_arousal_attention",
+      "chain_id": "series_010_pattern_005",
+      "chain": "slow_paced_diaphragmatic_breathing -> anxiety_arousal_attention",
+      "confidence": "unknown",
+      "required_sources": [
+        "paced breathing protocols",
+        "respiratory rate",
+        "HRV/RSA",
+        "intervention trials"
+      ],
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_010_respiration_CO2_oxygenation_panic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "dehydration_or_hypohydration",
+      "target_state": "sustained_attention_vigilance_and_subjective_fatigue",
+      "chain_id": "series_011_pattern_001",
+      "chain": "dehydration_or_hypohydration -> sustained_attention_vigilance_and_subjective_fatigue",
+      "confidence": "unknown",
+      "required_sources": [
+        "plasma_osmolality",
+        "urine_osmolality",
+        "urine_specific_gravity",
+        "body_mass_loss_percentage"
+      ],
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_intolerance_or_POTS_pattern",
+      "target_state": "orthostatic_brain_fog_dizziness_fatigue_cognition",
+      "chain_id": "series_011_pattern_002",
+      "chain": "orthostatic_intolerance_or_POTS_pattern -> orthostatic_brain_fog_dizziness_fatigue_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "orthostatic_BP_change",
+        "orthostatic_HR_change",
+        "tilt_table_testing",
+        "cerebral_blood_flow_velocity",
+        "symptom_scales"
+      ],
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "moderate_to_vigorous_physical_activity",
+      "target_state": "mood_fatigue_cognition",
+      "chain_id": "series_012_pattern_001",
+      "chain": "moderate_to_vigorous_physical_activity -> mood_fatigue_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "accelerometry",
+        "exercise intervention",
+        "self-report",
+        "VO2max/fitness measures"
+      ],
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_012_physical_activity_exercise_lactate_recovery_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sedentary_behavior",
+      "target_state": "fatigue_depression_motivation_cognition",
+      "chain_id": "series_012_pattern_002",
+      "chain": "sedentary_behavior -> fatigue_depression_motivation_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "accelerometry",
+        "sedentary time",
+        "TV/passive sedentary behavior",
+        "ambulatory assessment"
+      ],
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_012_physical_activity_exercise_lactate_recovery_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "excessive_exertion_or_overtraining",
+      "target_state": "post_exertional_malaise_and_fatigue",
+      "chain_id": "series_012_pattern_003",
+      "chain": "excessive_exertion_or_overtraining -> post_exertional_malaise_and_fatigue",
+      "confidence": "unknown",
+      "required_sources": [
+        "exercise load",
+        "CPET",
+        "CK",
+        "DOMS",
+        "RPE",
+        "symptom exacerbation after exertion"
+      ],
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_012_physical_activity_exercise_lactate_recovery_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "iron_deficiency_status",
+      "target_state": "fatigue_mood_sleep_attention_cognition",
+      "chain_id": "series_014_pattern_001",
+      "chain": "iron_deficiency_status -> fatigue_mood_sleep_attention_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "ferritin",
+        "transferrin saturation",
+        "hemoglobin",
+        "serum iron",
+        "TIBC",
+        "CBC indices"
+      ],
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_014_nutritional_deficiency_markers_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "functional_vitamin_B12_deficiency",
+      "target_state": "cognitive_and_neuropsychiatric_impairment",
+      "chain_id": "series_014_pattern_002",
+      "chain": "functional_vitamin_B12_deficiency -> cognitive_and_neuropsychiatric_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "serum B12",
+        "methylmalonic acid",
+        "homocysteine"
+      ],
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_014_nutritional_deficiency_markers_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "non_iron_non_B12_micronutrient_status",
+      "target_state": "mood_sleep_cognitive_frailty",
+      "chain_id": "series_014_pattern_003",
+      "chain": "non_iron_non_B12_micronutrient_status -> mood_sleep_cognitive_frailty",
+      "confidence": "unknown",
+      "required_sources": [
+        "25OH vitamin D",
+        "zinc",
+        "serum magnesium",
+        "RBC magnesium",
+        "omega-3 index",
+        "folate",
+        "homocysteine"
+      ],
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_014_nutritional_deficiency_markers_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "menstrual_cycle_hormone_fluctuation",
+      "target_state": "subjective_mood_fatigue_sleep_symptoms",
+      "chain_id": "series_015_pattern_001",
+      "chain": "menstrual_cycle_hormone_fluctuation -> subjective_mood_fatigue_sleep_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "cycle tracking",
+        "daily diary",
+        "wearable tracking",
+        "estradiol/progesterone when measured"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "menstrual_cycle_phase",
+      "target_state": "objective_cognitive_performance",
+      "chain_id": "series_015_pattern_002",
+      "chain": "menstrual_cycle_phase -> objective_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "cycle tracking",
+        "phase verification",
+        "cognitive testing"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "PMS_PMDD_or_mood_disorder_status",
+      "target_state": "cycle_related_symptom_exacerbation",
+      "chain_id": "series_015_pattern_003",
+      "chain": "PMS_PMDD_or_mood_disorder_status -> cycle_related_symptom_exacerbation",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical diagnosis",
+        "symptom tracking",
+        "daily diary"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "menstrual_cycle_phase_or_hormonal_state",
+      "target_state": "readiness_or_recovery_metrics",
+      "chain_id": "series_015_pattern_004",
+      "chain": "menstrual_cycle_phase_or_hormonal_state -> readiness_or_recovery_metrics",
+      "confidence": "unknown",
+      "required_sources": [
+        "wearables",
+        "HRV",
+        "RHR",
+        "body temperature"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "oral_contraceptive_withdrawal_week",
+      "target_state": "mood_anxiety_fatigue_symptoms",
+      "chain_id": "series_015_pattern_005",
+      "chain": "oral_contraceptive_withdrawal_week -> mood_anxiety_fatigue_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "contraceptive schedule",
+        "hormonal contraception studies"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "perimenopause_hormone_variability",
+      "target_state": "depressive_symptoms",
+      "chain_id": "series_015_pattern_006",
+      "chain": "perimenopause_hormone_variability -> depressive_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "longitudinal hormone tracking"
+      ],
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_015_sex_hormones_menstrual_cycle_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "gut_microbiota_composition_function",
+      "target_state": "mood_fatigue_cognitive_symptoms",
+      "chain_id": "series_016_pattern_001",
+      "chain": "gut_microbiota_composition_function -> mood_fatigue_cognitive_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "stool microbiome diversity/taxa",
+        "metagenomics",
+        "SCFA profiles",
+        "GI symptom scales"
+      ],
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "IBS_IBD_symptom_burden",
+      "target_state": "fatigue_anxiety_depression",
+      "chain_id": "series_016_pattern_002",
+      "chain": "IBS_IBD_symptom_burden -> fatigue_anxiety_depression",
+      "confidence": "unknown",
+      "required_sources": [
+        "IBS severity scales",
+        "IBD activity markers",
+        "fecal calprotectin",
+        "GI symptom scales"
+      ],
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "diet_probiotic_prebiotic_FMT_intervention",
+      "target_state": "subjective_mood_fatigue_GI_symptoms",
+      "chain_id": "series_016_pattern_003",
+      "chain": "diet_probiotic_prebiotic_FMT_intervention -> subjective_mood_fatigue_GI_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "RCTs",
+        "dietary interventions",
+        "probiotic/prebiotic/FMT trials"
+      ],
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "caffeine_intake",
+      "target_state": "sleep_quality_fatigue_attention",
+      "chain_id": "series_017_pattern_001",
+      "chain": "caffeine_intake -> sleep_quality_fatigue_attention",
+      "confidence": "unknown",
+      "required_sources": [
+        "dose timing records",
+        "RCT caffeine administration",
+        "self-report"
+      ],
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_017_medication_substance_effects_fatigue_mood_sleep",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sedative_opioid_anticholinergic_exposure",
+      "target_state": "sedation_cognitive_slowing_physical_impairment",
+      "chain_id": "series_017_pattern_002",
+      "chain": "sedative_opioid_anticholinergic_exposure -> sedation_cognitive_slowing_physical_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "prescription records",
+        "medication exposure assessment",
+        "longitudinal cohorts"
+      ],
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_017_medication_substance_effects_fatigue_mood_sleep",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "SSRI_SNRI_use_or_discontinuation",
+      "target_state": "mood_sleep_fatigue_cognition_withdrawal",
+      "chain_id": "series_017_pattern_003",
+      "chain": "SSRI_SNRI_use_or_discontinuation -> mood_sleep_fatigue_cognition_withdrawal",
+      "confidence": "unknown",
+      "required_sources": [
+        "RCTs",
+        "meta-analyses",
+        "prescription/treatment records"
+      ],
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_017_medication_substance_effects_fatigue_mood_sleep",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "stimulant_or_ADHD_medication_use",
+      "target_state": "executive_function_sleep_anxiety",
+      "chain_id": "series_017_pattern_004",
+      "chain": "stimulant_or_ADHD_medication_use -> executive_function_sleep_anxiety",
+      "confidence": "unknown",
+      "required_sources": [
+        "RCTs",
+        "meta-analyses",
+        "daily medication/sleep tracking"
+      ],
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_017_medication_substance_effects_fatigue_mood_sleep",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "THC_cannabis_alcohol_nicotine_use",
+      "target_state": "sleep_anxiety_cognition_fatigue",
+      "chain_id": "series_017_pattern_005",
+      "chain": "THC_cannabis_alcohol_nicotine_use -> sleep_anxiety_cognition_fatigue",
+      "confidence": "unknown",
+      "required_sources": [
+        "self-report",
+        "acute administration studies",
+        "meta-analyses",
+        "sleep studies"
+      ],
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_017_medication_substance_effects_fatigue_mood_sleep",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "evening_blue_light_exposure_or_light_at_night",
+      "target_state": "sleep_quality_attention_mood",
+      "chain_id": "series_018_pattern_001",
+      "chain": "evening_blue_light_exposure_or_light_at_night -> sleep_quality_attention_mood",
+      "confidence": "unknown",
+      "required_sources": [
+        "lab light exposure",
+        "screen/tablet exposure",
+        "self-report device use",
+        "wearable/light monitoring"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "morning_or_daytime_bright_light_exposure",
+      "target_state": "alertness_mood_executive_function",
+      "chain_id": "series_018_pattern_002",
+      "chain": "morning_or_daytime_bright_light_exposure -> alertness_mood_executive_function",
+      "confidence": "unknown",
+      "required_sources": [
+        "light exposure monitoring",
+        "office illuminance manipulation",
+        "bright-light intervention"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "PM2_5_air_pollution_exposure",
+      "target_state": "global_cognition_executive_function",
+      "chain_id": "series_018_pattern_003",
+      "chain": "PM2_5_air_pollution_exposure -> global_cognition_executive_function",
+      "confidence": "unknown",
+      "required_sources": [
+        "ambient pollution monitoring",
+        "short-term particulate exposure",
+        "cohort exposure models",
+        "indoor pollution proxy"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "high_indoor_CO2_or_moderate_heat_poor_ventilation",
+      "target_state": "fatigue_stress_task_performance",
+      "chain_id": "series_018_pattern_004",
+      "chain": "high_indoor_CO2_or_moderate_heat_poor_ventilation -> fatigue_stress_task_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "lab chamber CO2/temperature manipulation",
+        "indoor environmental monitoring",
+        "task performance tests"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_noise_or_noise_heat_combined_exposure",
+      "target_state": "higher_order_cognition_anxiety_depression",
+      "chain_id": "series_018_pattern_005",
+      "chain": "chronic_noise_or_noise_heat_combined_exposure -> higher_order_cognition_anxiety_depression",
+      "confidence": "unknown",
+      "required_sources": [
+        "decibel/noise exposure estimates",
+        "lab combined stressor studies",
+        "cohort exposure models"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "green_space_or_nature_exposure",
+      "target_state": "wellbeing_mental_distress",
+      "chain_id": "series_018_pattern_006",
+      "chain": "green_space_or_nature_exposure -> wellbeing_mental_distress",
+      "confidence": "unknown",
+      "required_sources": [
+        "surveyed visits",
+        "residential greenness",
+        "green/blue space exposure"
+      ],
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_018_environment_light_noise_heat_air_quality_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "migraine_attack_or_postdrome",
+      "target_state": "fatigue_brain_fog_cognitive_performance",
+      "chain_id": "series_019_pattern_001",
+      "chain": "migraine_attack_or_postdrome -> fatigue_brain_fog_cognitive_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical diagnosis",
+        "prospective diary",
+        "cognitive testing"
+      ],
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_019_headache_migraine_vestibular_fatigue_brain_fog",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "vestibular_migraine",
+      "target_state": "dizziness_brain_fog_visuospatial_cognition",
+      "chain_id": "series_019_pattern_002",
+      "chain": "vestibular_migraine -> dizziness_brain_fog_visuospatial_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical diagnosis",
+        "vestibular testing",
+        "neuropsychological testing"
+      ],
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_019_headache_migraine_vestibular_fatigue_brain_fog",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "migraine_burden_or_chronic_headache",
+      "target_state": "functional_impairment_mood_fatigue_cognition",
+      "chain_id": "series_019_pattern_003",
+      "chain": "migraine_burden_or_chronic_headache -> functional_impairment_mood_fatigue_cognition",
+      "confidence": "unknown",
+      "required_sources": [
+        "headache frequency",
+        "diagnosis",
+        "sleep questionnaires",
+        "autonomic testing"
+      ],
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_019_headache_migraine_vestibular_fatigue_brain_fog",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_viral_state_or_long_COVID_state",
+      "target_state": "persistent_fatigue_brain_fog_and_functional_impairment",
+      "chain_id": "series_020_pattern_001",
+      "chain": "post_viral_state_or_long_COVID_state -> persistent_fatigue_brain_fog_and_functional_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical diagnosis",
+        "symptom inventories",
+        "post-acute infection cohort follow-up"
+      ],
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_infectious_dysautonomia",
+      "target_state": "fatigue_dizziness_brain_fog_exercise_intolerance",
+      "chain_id": "series_020_pattern_002",
+      "chain": "post_infectious_dysautonomia -> fatigue_dizziness_brain_fog_exercise_intolerance",
+      "confidence": "unknown",
+      "required_sources": [
+        "autonomic testing",
+        "tilt-table testing",
+        "orthostatic HR/BP",
+        "HRV",
+        "small fiber neuropathy testing"
+      ],
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "persistent_immune_activation_after_infection",
+      "target_state": "fatigue_brain_fog_mood_symptoms",
+      "chain_id": "series_020_pattern_003",
+      "chain": "persistent_immune_activation_after_infection -> fatigue_brain_fog_mood_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "cytokine panels",
+        "T-cell phenotyping",
+        "interferon signaling",
+        "autoantibodies",
+        "immune profiling"
+      ],
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_viral_neurocognitive_state",
+      "target_state": "subjective_brain_fog_and_objective_cognitive_impairment",
+      "chain_id": "series_020_pattern_004",
+      "chain": "post_viral_neurocognitive_state -> subjective_brain_fog_and_objective_cognitive_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "neuropsychological testing",
+        "cognitive complaints",
+        "PET",
+        "MRI",
+        "QEEG"
+      ],
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "allostatic_load",
+      "target_state": "fatigue_burnout_mood_cognition_health_risk",
+      "chain_id": "series_021_pattern_001",
+      "chain": "allostatic_load -> fatigue_burnout_mood_cognition_health_risk",
+      "confidence": "unknown",
+      "required_sources": [
+        "multi-system biomarker index",
+        "composite AL score"
+      ],
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "source_tree_id": "series_021_allostatic_load_recovery_failure_physiological",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "persistent_multi_signal_deviation_from_baseline",
+      "target_state": "low_recovery_state",
+      "chain_id": "series_021_pattern_002",
+      "chain": "persistent_multi_signal_deviation_from_baseline -> low_recovery_state",
+      "confidence": "unknown",
+      "required_sources": [
+        "HRV/RMSSD",
+        "RHR",
+        "sleep metrics",
+        "cortisol",
+        "CRP/IL-6",
+        "glucose/HbA1c",
+        "activity load"
+      ],
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "source_tree_id": "series_021_allostatic_load_recovery_failure_physiological",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_stress_response",
+      "target_state": "long_term_stress_burden",
+      "chain_id": "series_021_pattern_003",
+      "chain": "acute_stress_response -> long_term_stress_burden",
+      "confidence": "unknown",
+      "required_sources": [
+        "cortisol reactivity",
+        "HRV reactivity",
+        "stress recovery timing"
+      ],
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "source_tree_id": "series_021_allostatic_load_recovery_failure_physiological",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_challenge_or_orthostatic_intolerance",
+      "target_state": "dizziness_fatigue_brain_fog_cognitive_impairment",
+      "chain_id": "series_022_pattern_001",
+      "chain": "orthostatic_challenge_or_orthostatic_intolerance -> dizziness_fatigue_brain_fog_cognitive_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "tilt-table testing",
+        "head-up tilt",
+        "TCD",
+        "NIRS",
+        "orthostatic HR/BP"
+      ],
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "reduced_ETCO2_or_hypocapnia",
+      "target_state": "dizziness_and_brain_fog",
+      "chain_id": "series_022_pattern_002",
+      "chain": "reduced_ETCO2_or_hypocapnia -> dizziness_and_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "capnography",
+        "ETCO2",
+        "PaCO2"
+      ],
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "source_tree_id": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_immune_activation",
+      "target_state": "sickness_behavior",
+      "chain_id": "series_023_pattern_001",
+      "chain": "acute_immune_activation -> sickness_behavior",
+      "confidence": "unknown",
+      "required_sources": [
+        "LPS/endotoxin challenge",
+        "typhoid vaccination",
+        "cytokine assays"
+      ],
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_023_sickness_behavior_neuroimmune_fatigue_motivation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_low_grade_inflammation",
+      "target_state": "anhedonia_low_motivation",
+      "chain_id": "series_023_pattern_002",
+      "chain": "chronic_low_grade_inflammation -> anhedonia_low_motivation",
+      "confidence": "unknown",
+      "required_sources": [
+        "CRP",
+        "IL-6",
+        "TNF-alpha",
+        "soluble receptors"
+      ],
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_023_sickness_behavior_neuroimmune_fatigue_motivation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "interferon_signaling",
+      "target_state": "depressive_anhedonic_symptoms",
+      "chain_id": "series_023_pattern_003",
+      "chain": "interferon_signaling -> depressive_anhedonic_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "interferon-alpha treatment",
+        "KYN/TRP ratio",
+        "IDO activity",
+        "tryptophan"
+      ],
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_023_sickness_behavior_neuroimmune_fatigue_motivation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "impaired_metabolic_flexibility",
+      "target_state": "fatigue_exercise_intolerance",
+      "chain_id": "series_024_pattern_001",
+      "chain": "impaired_metabolic_flexibility -> fatigue_exercise_intolerance",
+      "confidence": "unknown",
+      "required_sources": [
+        "CPET",
+        "RER/RQ",
+        "fat oxidation capacity",
+        "substrate oxidation",
+        "insulin sensitivity"
+      ],
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "post_exertional_malaise",
+      "target_state": "delayed_fatigue_worsening_and_brain_fog",
+      "chain_id": "series_024_pattern_002",
+      "chain": "post_exertional_malaise -> delayed_fatigue_worsening_and_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "2-day CPET",
+        "metabolomics",
+        "MRS",
+        "symptom timing"
+      ],
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "elevated_lactate",
+      "target_state": "fatigue_or_energy_stress",
+      "chain_id": "series_024_pattern_003",
+      "chain": "elevated_lactate -> fatigue_or_energy_stress",
+      "confidence": "unknown",
+      "required_sources": [
+        "blood lactate",
+        "brain MRS lactate",
+        "CPET lactate"
+      ],
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "interoceptive_construct_mismatch",
+      "target_state": "symptom_perception",
+      "chain_id": "series_025_pattern_001",
+      "chain": "interoceptive_construct_mismatch -> symptom_perception",
+      "confidence": "unknown",
+      "required_sources": [
+        "heartbeat detection",
+        "questionnaires",
+        "metacognitive confidence"
+      ],
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "source_tree_id": "series_025_interoception_symptom_perception_prediction_error_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "chronic_pain_state",
+      "target_state": "symptom_amplification",
+      "chain_id": "series_025_pattern_002",
+      "chain": "chronic_pain_state -> symptom_amplification",
+      "confidence": "unknown",
+      "required_sources": [
+        "pain diagnosis",
+        "pain scales",
+        "interoception tasks/questionnaires"
+      ],
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "source_tree_id": "series_025_interoception_symptom_perception_prediction_error_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "interoceptive_prediction_error",
+      "target_state": "symptom_amplification",
+      "chain_id": "series_025_pattern_003",
+      "chain": "interoceptive_prediction_error -> symptom_amplification",
+      "confidence": "unknown",
+      "required_sources": [
+        "Bayesian modeling",
+        "expectation manipulation",
+        "neuroimaging",
+        "intervention studies"
+      ],
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "source_tree_id": "series_025_interoception_symptom_perception_prediction_error_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_026_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "source_tree_id": "series_026_cognitive_load_mental_fatigue_attention_resource",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_026_pattern_002",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "source_tree_id": "series_026_cognitive_load_mental_fatigue_attention_resource",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_026_pattern_003",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_026_cognitive_load_mental_fatigue_attention_resource_depletion.cleaned.json"
+      ],
+      "source_tree_id": "series_026_cognitive_load_mental_fatigue_attention_resource",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_027_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_027_sensory_overload_central_sensitization_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_027_pattern_002",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_027_sensory_overload_central_sensitization_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_027_pattern_003",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_027_sensory_overload_central_sensitization_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_027_sensory_overload_central_sensitization_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_028_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_028_endocrine_rhythm_integration_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_028_pattern_002",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_028_endocrine_rhythm_integration_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_028_pattern_003",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_028_endocrine_rhythm_integration_fatigue_mood_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_028_endocrine_rhythm_integration_fatigue_mood",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "precise_SO_spindle_coupling",
+      "target_state": "memory_consolidation",
+      "chain_id": "series_029_pattern_001",
+      "chain": "precise_SO_spindle_coupling -> memory_consolidation",
+      "confidence": "unknown",
+      "required_sources": [
+        "PSG",
+        "EEG",
+        "fMRI/EEG"
+      ],
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_029_sleep_architecture_glymphatic_memory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "reduced_glymphatic_clearance",
+      "target_state": "cognitive_decline_risk",
+      "chain_id": "series_029_pattern_002",
+      "chain": "reduced_glymphatic_clearance -> cognitive_decline_risk",
+      "confidence": "unknown",
+      "required_sources": [
+        "DTI-ALPS",
+        "MRI",
+        "PET",
+        "CSF biomarkers"
+      ],
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_029_sleep_architecture_glymphatic_memory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "sleep_fragmentation",
+      "target_state": "next_day_fatigue_and_executive_inhibition",
+      "chain_id": "series_029_pattern_003",
+      "chain": "sleep_fragmentation -> next_day_fatigue_and_executive_inhibition",
+      "confidence": "unknown",
+      "required_sources": [
+        "PSG",
+        "experimental sleep fragmentation",
+        "WASO",
+        "arousal index"
+      ],
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "source_tree_id": "series_029_sleep_architecture_glymphatic_memory_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "wearable_RHR_or_HR",
+      "target_state": "health_state_inference_reliability",
+      "chain_id": "series_030_pattern_001",
+      "chain": "wearable_RHR_or_HR -> health_state_inference_reliability",
+      "confidence": "unknown",
+      "required_sources": [
+        "PPG wearable",
+        "ECG comparator"
+      ],
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "wearable_HRV_proxy",
+      "target_state": "recovery_or_stress_inference",
+      "chain_id": "series_030_pattern_002",
+      "chain": "wearable_HRV_proxy -> recovery_or_stress_inference",
+      "confidence": "unknown",
+      "required_sources": [
+        "PPG RMSSD",
+        "PPG SDNN",
+        "ECG RMSSD"
+      ],
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "wearable_sleep_metrics",
+      "target_state": "sleep_based_fatigue_inference",
+      "chain_id": "series_030_pattern_003",
+      "chain": "wearable_sleep_metrics -> sleep_based_fatigue_inference",
+      "confidence": "unknown",
+      "required_sources": [
+        "consumer wearable",
+        "actigraphy",
+        "PSG comparison"
+      ],
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "single_lab_biomarker",
+      "target_state": "fatigue_mood_cognition_inference_reliability",
+      "chain_id": "series_031_pattern_001",
+      "chain": "single_lab_biomarker -> fatigue_mood_cognition_inference_reliability",
+      "confidence": "unknown",
+      "required_sources": [
+        "CRP",
+        "IL-6",
+        "TNF-alpha",
+        "ferritin",
+        "B12",
+        "TSH",
+        "cortisol",
+        "HbA1c"
+      ],
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "ferritin",
+      "target_state": "iron_related_fatigue_inference",
+      "chain_id": "series_031_pattern_002",
+      "chain": "ferritin -> iron_related_fatigue_inference",
+      "confidence": "unknown",
+      "required_sources": [
+        "serum ferritin",
+        "CRP",
+        "transferrin saturation",
+        "hepcidin",
+        "sTfR"
+      ],
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "serum_B12",
+      "target_state": "cognitive_or_neurologic_symptom_inference",
+      "chain_id": "series_031_pattern_003",
+      "chain": "serum_B12 -> cognitive_or_neurologic_symptom_inference",
+      "confidence": "unknown",
+      "required_sources": [
+        "serum B12",
+        "MMA",
+        "homocysteine",
+        "folate"
+      ],
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_032_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_032_self_report_objective_performance_fatigue_brain_fog_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_032_self_report_objective_performance_fatigue_brain_fog",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_033_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_033_temporal_dynamics_acute_delayed_chronic_symptom_signatures.cleaned.json"
+      ],
+      "source_tree_id": "series_033_temporal_dynamics_acute_delayed_chronic_symptom",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "",
+      "target_state": "",
+      "chain_id": "series_034_pattern_001",
+      "chain": " -> ",
+      "confidence": "unknown",
+      "required_sources": [],
+      "source_files": [
+        "series_034_individual_baseline_within_person_deviation_health_state_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_034_individual_baseline_within_person_deviation_health_state",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "observational_health_association",
+      "target_state": "edge_confidence_assignment",
+      "chain_id": "series_035_pattern_001",
+      "chain": "observational_health_association -> edge_confidence_assignment",
+      "confidence": "unknown",
+      "required_sources": [
+        "DAGs",
+        "potential outcomes",
+        "causal diagrams",
+        "observational cohorts"
+      ],
+      "source_files": [
+        "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json"
+      ],
+      "source_tree_id": "series_035_causal_inference_confounding_uncertainty_health",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "contextual_factor",
+      "target_state": "inference_confidence",
+      "chain_id": "series_036_pattern_001",
+      "chain": "contextual_factor -> inference_confidence",
+      "confidence": "unknown",
+      "required_sources": [
+        "sleep/circadian history",
+        "medication/substance timing",
+        "environmental exposure",
+        "exercise/meal timing",
+        "menstrual phase",
+        "stress/travel/shift work"
+      ],
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "source_tree_id": "series_036_context_override_medication_environment_behavior_inference",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "incomplete_multimodal_observations",
+      "target_state": "latent_state_hypothesis",
+      "chain_id": "series_037_pattern_001",
+      "chain": "incomplete_multimodal_observations -> latent_state_hypothesis",
+      "confidence": "unknown",
+      "required_sources": [
+        "wearables",
+        "EMA",
+        "lab biomarkers",
+        "passive sensing",
+        "clinical records"
+      ],
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_037_missing_data_partial_observability_uncertainty_sparse_health",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "uncalibrated_model_score",
+      "target_state": "health_state_confidence",
+      "chain_id": "series_038_pattern_001",
+      "chain": "uncalibrated_model_score -> health_state_confidence",
+      "confidence": "unknown",
+      "required_sources": [
+        "ML prediction score",
+        "clinical prediction model",
+        "wearable/digital health model"
+      ],
+      "source_files": [
+        "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_038_uncertainty_scoring_confidence_calibration_health_state",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "evidence_body_quality",
+      "target_state": "graph_edge_promotion_decision",
+      "chain_id": "series_039_pattern_001",
+      "chain": "evidence_body_quality -> graph_edge_promotion_decision",
+      "confidence": "unknown",
+      "required_sources": [
+        "GRADE",
+        "ROBINS-I",
+        "ROBINS-E",
+        "RoB 2",
+        "AMSTAR-2",
+        "ROBIS",
+        "PRISMA"
+      ],
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "source_tree_id": "series_039_evidence_grading_source_quality_graph_edge",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "fatigue_symptom_report",
+      "target_state": "mechanism_specific_measurement_recommendation",
+      "chain_id": "series_040_pattern_001",
+      "chain": "fatigue_symptom_report -> mechanism_specific_measurement_recommendation",
+      "confidence": "unknown",
+      "required_sources": [
+        "fatigue scales",
+        "EMA",
+        "clinical interview",
+        "wearables",
+        "CPET",
+        "neuropsychological testing",
+        "sleep testing"
+      ],
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_040_fatigue_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "subjective_brain_fog",
+      "target_state": "objective_cognitive_impairment",
+      "chain_id": "series_041_pattern_001",
+      "chain": "subjective_brain_fog -> objective_cognitive_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "self-report",
+        "Brief Brain Fog Scale",
+        "Cognitive Failures Questionnaire",
+        "structured interview"
+      ],
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_041_brain_fog_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "context_specific_brain_fog_trigger",
+      "target_state": "attention_processing_speed_worsening",
+      "chain_id": "series_041_pattern_002",
+      "chain": "context_specific_brain_fog_trigger -> attention_processing_speed_worsening",
+      "confidence": "unknown",
+      "required_sources": [
+        "EMA",
+        "orthostatic testing",
+        "wearables",
+        "smartphone cognitive tasks",
+        "medication timing"
+      ],
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_041_brain_fog_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "dizziness_symptom_report",
+      "target_state": "next_measurement_needed",
+      "chain_id": "series_042_pattern_001",
+      "chain": "dizziness_symptom_report -> next_measurement_needed",
+      "confidence": "unknown",
+      "required_sources": [
+        "structured history",
+        "Dizziness Handicap Inventory",
+        "vestibular questionnaire"
+      ],
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_042_dizziness_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "orthostatic_or_respiratory_dizziness_context",
+      "target_state": "lightheadedness_presyncope_brain_fog",
+      "chain_id": "series_042_pattern_002",
+      "chain": "orthostatic_or_respiratory_dizziness_context -> lightheadedness_presyncope_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "active stand",
+        "tilt table",
+        "orthostatic HR/BP",
+        "TCD",
+        "NIRS",
+        "capnography",
+        "ETCO2"
+      ],
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_042_dizziness_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "anxiety_like_symptom_cluster",
+      "target_state": "anxiety_like_state_uncertain",
+      "chain_id": "series_043_pattern_001",
+      "chain": "anxiety_like_symptom_cluster -> anxiety_like_state_uncertain",
+      "confidence": "unknown",
+      "required_sources": [
+        "symptom report",
+        "HR/RHR",
+        "HRV",
+        "orthostatic HR/BP",
+        "ETCO2",
+        "ECG",
+        "glucose",
+        "TSH/freeT4/freeT3",
+        "medication timing"
+      ],
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "source_tree_id": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "reduced_vagally_mediated_HRV",
+      "target_state": "anxiety_like_symptoms",
+      "chain_id": "series_043_pattern_002",
+      "chain": "reduced_vagally_mediated_HRV -> anxiety_like_symptoms",
+      "confidence": "unknown",
+      "required_sources": [
+        "ECG HRV",
+        "wearable HRV",
+        "HF-HRV",
+        "RMSSD"
+      ],
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "source_tree_id": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "convergent_sleep_autonomic_activity_symptom_deviation",
+      "target_state": "fatigue_mood_cognition_performance",
+      "chain_id": "series_044_pattern_001",
+      "chain": "convergent_sleep_autonomic_activity_symptom_deviation -> fatigue_mood_cognition_performance",
+      "confidence": "unknown",
+      "required_sources": [
+        "HRV/RMSSD",
+        "RHR",
+        "sleep metrics",
+        "activity load",
+        "subjective recovery scales"
+      ],
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_044_low_recovery_state_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "mood_worsening_symptom_profile",
+      "target_state": "mood_worsening_subtype",
+      "chain_id": "series_045_pattern_001",
+      "chain": "mood_worsening_symptom_profile -> mood_worsening_subtype",
+      "confidence": "unknown",
+      "required_sources": [
+        "symptom scales",
+        "biomarkers",
+        "actigraphy",
+        "neuroimaging"
+      ],
+      "source_files": [
+        "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_045_mood_worsening_phenotypes_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "GI_symptom_cluster",
+      "target_state": "fatigue_mood_sleep_brain_fog_functional_impairment",
+      "chain_id": "series_046_pattern_001",
+      "chain": "GI_symptom_cluster -> fatigue_mood_sleep_brain_fog_functional_impairment",
+      "confidence": "unknown",
+      "required_sources": [
+        "GI symptom scores",
+        "Bristol stool scale",
+        "calprotectin",
+        "CRP",
+        "microbiome/metabolomics",
+        "nutrient labs"
+      ],
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_046_GI_fatigue_mood_brain_fog_clusters_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "migraine_phase",
+      "target_state": "fatigue_brain_fog_cognitive_impairment_sensory_sensitivity",
+      "chain_id": "series_047_pattern_001",
+      "chain": "migraine_phase -> fatigue_brain_fog_cognitive_impairment_sensory_sensitivity",
+      "confidence": "unknown",
+      "required_sources": [
+        "headache diary",
+        "prospective diary",
+        "clinical interview",
+        "neuropsychological testing"
+      ],
+      "source_files": [
+        "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_047_headache_migraine_brain_fog_dizziness_clusters_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "impaired_mitochondrial_energy_or_metabolic_flexibility",
+      "target_state": "fatigue_exercise_intolerance_PEM_brain_fog",
+      "chain_id": "series_048_pattern_001",
+      "chain": "impaired_mitochondrial_energy_or_metabolic_flexibility -> fatigue_exercise_intolerance_PEM_brain_fog",
+      "confidence": "unknown",
+      "required_sources": [
+        "CPET",
+        "muscle biopsy",
+        "metabolomics",
+        "lactate",
+        "fat oxidation testing"
+      ],
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "source_tree_id": "series_048_metabolic_fatigue_clusters_differential",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "symptom_report",
+      "target_state": "candidate_mechanism_and_next_measurement",
+      "chain_id": "series_049_pattern_001",
+      "chain": "symptom_report -> candidate_mechanism_and_next_measurement",
+      "confidence": "unknown",
+      "required_sources": [
+        "clinical history",
+        "questionnaires",
+        "wearables",
+        "labs",
+        "objective testing"
+      ],
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "source_tree_id": "series_049_multibranch_differential_inference",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "health_state_inference_model",
+      "target_state": "deployment_readiness",
+      "chain_id": "series_050_pattern_001",
+      "chain": "health_state_inference_model -> deployment_readiness",
+      "confidence": "unknown",
+      "required_sources": [
+        "internal_validation",
+        "external_validation",
+        "prospective_validation",
+        "real_world_monitoring"
+      ],
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "source_tree_id": "series_050_final_graph_guardrails_validation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "graph_edge_or_node",
+      "target_state": "user_facing_explanation_quality",
+      "chain_id": "series_050_pattern_002",
+      "chain": "graph_edge_or_node -> user_facing_explanation_quality",
+      "confidence": "unknown",
+      "required_sources": [
+        "source_registry",
+        "evidence_card",
+        "edge_metadata",
+        "versioning"
+      ],
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "source_tree_id": "series_050_final_graph_guardrails_validation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "inference_output",
+      "target_state": "safe_mechanism_hypothesis_output",
+      "chain_id": "series_050_pattern_003",
+      "chain": "inference_output -> safe_mechanism_hypothesis_output",
+      "confidence": "unknown",
+      "required_sources": [
+        "red_team_cases",
+        "ablation_tests",
+        "error_analysis",
+        "single_marker_dependence_test"
+      ],
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "source_tree_id": "series_050_final_graph_guardrails_validation",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_sleep_deprivation",
+      "target_state": "",
+      "chain_id": "series_002_pattern_001",
+      "chain": "acute_sleep_deprivation -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "experimental_sleep_restriction_protocol",
+        "polysomnography",
+        "sleep_diary",
+        "actigraphy"
+      ],
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "source_tree_id": "sleep_circadian_inflammation_cognition",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "acute_sleep_disruption",
+      "target_state": "",
+      "chain_id": "series_002_pattern_002",
+      "chain": "acute_sleep_disruption -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "polysomnography",
+        "sleep_diary",
+        "actigraphy",
+        "salivary_cortisol_assay"
+      ],
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "source_tree_id": "sleep_circadian_inflammation_cognition",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "circadian_disruption",
+      "target_state": "",
+      "chain_id": "series_002_pattern_003",
+      "chain": "circadian_disruption -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "actigraphy",
+        "melatonin_timing",
+        "light_exposure_assessment",
+        "sleep_timing_assessment"
+      ],
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "source_tree_id": "sleep_circadian_inflammation_cognition",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "source_parameter_id": "obstructive_sleep_apnea",
+      "target_state": "",
+      "chain_id": "series_002_pattern_004",
+      "chain": "obstructive_sleep_apnea -> ",
+      "confidence": "unknown",
+      "required_sources": [
+        "polysomnography",
+        "oxygen_desaturation_index",
+        "apnea_hypopnea_index"
+      ],
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "source_tree_id": "sleep_circadian_inflammation_cognition",
+      "synthesis_status": "assembled_from_existing_sources"
+    }
+  ]
+}

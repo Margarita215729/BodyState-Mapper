@@ -1,0 +1,811 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_hidden_states": 34,
+  "hidden_states": [
+    {
+      "hidden_state_id": "infectious_or_inflammatory_load",
+      "display_name": "Infectious or Inflammatory Load",
+      "description": "Elevated systemic inflammatory markers (CRP, IL-6, WBC) without confirmed infection; hypothesis only.",
+      "domains": [
+        "immune",
+        "inflammatory"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "PEM_objective_branch",
+      "display_name": "Post-Exertional Malaise (Objective Branch)",
+      "description": "Objective performance decrement following sub-maximal exertion at 24-48h delay; consistent with ME/CFS PEM. Not normal fatigue.",
+      "domains": [
+        "PEM",
+        "exercise",
+        "immune"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "low_energy_availability",
+      "display_name": "Low Energy Availability",
+      "description": "Insufficient dietary energy relative to exercise load; associated with hormonal suppression and bone loss.",
+      "domains": [
+        "nutrition",
+        "metabolic"
+      ],
+      "source_files": [
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "supporting_chains": [
+        "",
+        "catabolic_low_energy_availability_branch",
+        "low_energy_availability_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "inflammatory_sickness_behavior",
+      "display_name": "Inflammatory Sickness Behavior",
+      "description": "Fatigue, cognitive slowing, anhedonia pattern associated with inflammatory activation.",
+      "domains": [
+        "immune",
+        "neuroimmune",
+        "cognitive"
+      ],
+      "source_files": [
+        "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json"
+      ],
+      "supporting_chains": [
+        "inflammatory_sickness_behavior_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "postviral_immune_activation",
+      "display_name": "Post-Viral Immune Activation",
+      "description": "Persistent immune activation pattern following acute viral illness; associated with long COVID phenotype.",
+      "domains": [
+        "immune",
+        "postviral"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "deconditioning",
+      "display_name": "Deconditioning",
+      "description": "Reduced aerobic capacity and functional performance relative to individual baseline.",
+      "domains": [
+        "exercise",
+        "cardiovascular"
+      ],
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+        "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json"
+      ],
+      "supporting_chains": [
+        "deconditioning_or_sarcopenia_context_branch",
+        "autonomic_deconditioning_branch",
+        "spaceflight_deconditioning_volume_branch",
+        "deconditioning_branch",
+        "cardiovascular_deconditioning_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "microbiome_immune_context",
+      "display_name": "Microbiome / Immune Context",
+      "description": "Microbiome composition shift associated with immune dysregulation; association only, not causality.",
+      "domains": [
+        "microbiome",
+        "immune"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "medication_context_override",
+      "display_name": "Medication Context Override",
+      "description": "Active medication(s) with known effects on target biomarkers; must be evaluated before mechanism inference.",
+      "domains": [
+        "pharmacology"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "catabolic_muscle_loss",
+      "display_name": "Catabolic Muscle Loss",
+      "description": "Lean mass reduction under spaceflight-related unloading or negative energy balance.",
+      "domains": [
+        "musculoskeletal",
+        "metabolic"
+      ],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "supporting_chains": [
+        "catabolic_muscle_loss_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "HPA_circadian_disruption",
+      "display_name": "HPA Axis / Circadian Disruption",
+      "description": "Flattened or phase-shifted cortisol awakening response consistent with HPA dysregulation.",
+      "domains": [
+        "endocrine",
+        "circadian",
+        "stress"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "environmental_CO2_performance_risk",
+      "display_name": "Environmental CO2 Performance Risk",
+      "description": "Elevated habitat CO2 levels (>1000ppm) associated with cognitive impairment risk. Distinct from physiologic ETCO2.",
+      "domains": [
+        "environment",
+        "cognitive"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "pain_sleep_fatigue_branch",
+      "display_name": "Pain / Sleep / Fatigue Branch",
+      "description": "Bidirectional pain-sleep disruption-fatigue cycle requiring separate pain assessment.",
+      "domains": [
+        "pain",
+        "sleep",
+        "fatigue"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "supporting_chains": [
+        "pain_sleep_fatigue_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "functional_B12_deficiency",
+      "display_name": "Functional B12 Deficiency",
+      "description": "B12/folate deficiency pattern with neurological or hematological correlates.",
+      "domains": [
+        "nutrition",
+        "neurological"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "circadian_misalignment",
+      "display_name": "Circadian Misalignment",
+      "description": "Phase shift of endogenous circadian rhythm relative to sleep/wake schedule, detectable via temperature, melatonin, cortisol rhythm.",
+      "domains": [
+        "circadian",
+        "sleep"
+      ],
+      "source_files": [
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "supporting_chains": [
+        "meal_timing_circadian_metabolic_branch",
+        "series_005_pattern_002"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "hypovolemia_dehydration_hypothesis",
+      "display_name": "Hypovolemia / Dehydration Hypothesis",
+      "description": "Reduced plasma volume hypothesis based on elevated osmolality, concentrated urine, orthostatic HR changes.",
+      "domains": [
+        "cardiovascular",
+        "renal",
+        "hydration"
+      ],
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+        "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+        "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json"
+      ],
+      "supporting_chains": [
+        "hypovolemia_dehydration_hypothesis",
+        "",
+        "hypovolemia_dehydration_hypothesis",
+        "hypovolemia_dehydration_hypothesis"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "thyroid_dysfunction_context",
+      "display_name": "Thyroid Dysfunction Context",
+      "description": "TSH/fT4/fT3 pattern suggesting thyroid dysregulation; fatigue/cognitive modifier.",
+      "domains": [
+        "endocrine"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "orthostatic_intolerance",
+      "display_name": "Orthostatic Intolerance",
+      "description": "Excessive HR increase or BP drop upon standing, associated with deconditioning, hypovolemia, or dysautonomia.",
+      "domains": [
+        "cardiovascular",
+        "autonomic"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+        "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+        "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json",
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "supporting_chains": [
+        "orthostatic_intolerance_branch",
+        "autonomic_deconditioning_branch",
+        "POTS_like_orthostatic_intolerance_branch",
+        "spaceflight_deconditioning_volume_branch",
+        "volume_cardiac_output_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "unknown_or_missing_data_state",
+      "display_name": "Unknown or Missing Data State",
+      "description": "Insufficient data to score any specific hidden state. Unknown is not negative evidence.",
+      "domains": [
+        "data_quality"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "viral_reactivation_context",
+      "display_name": "Viral Reactivation Context",
+      "description": "Evidence of reactivation of latent herpesviruses (EBV, CMV, VZV) under immunosuppression or stress.",
+      "domains": [
+        "immune",
+        "virology"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "perceptual_neurobehavioral_fatigue",
+      "display_name": "Perceptual / Neurobehavioral Fatigue",
+      "description": "Subjective fatigue, sleepiness, or brain fog with objective PVT/cognitive performance decrement.",
+      "domains": [
+        "cognitive",
+        "fatigue"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "migraine_phenotype_branch",
+      "display_name": "Migraine Phenotype Branch",
+      "description": "Migraine-specific pattern including prodrome, photophobia, phonophobia, postdrome fatigue.",
+      "domains": [
+        "headache",
+        "neurological"
+      ],
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "supporting_chains": [
+        "migraine_phenotype_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "iron_deficiency_oxygen_delivery_branch",
+      "display_name": "Iron Deficiency / Oxygen Delivery Branch",
+      "description": "Low ferritin/Hb/MCV pattern consistent with iron deficiency and impaired oxygen delivery.",
+      "domains": [
+        "hematology",
+        "nutrition"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "renal_stone_risk_branch",
+      "display_name": "Renal Stone Risk Branch",
+      "description": "Hypercalciuria, elevated oxalate, low citrate pattern under unloading or dehydration.",
+      "domains": [
+        "renal",
+        "bone"
+      ],
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "supporting_chains": [
+        "renal_stone_risk_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "team_behavioral_risk",
+      "display_name": "Team Behavioral Risk",
+      "description": "Communication breakdown, conflict, or performance degradation at team level; not individual clinical.",
+      "domains": [
+        "behavioral",
+        "social"
+      ],
+      "source_files": [
+        "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json"
+      ],
+      "supporting_chains": [
+        "team_behavioral_risk_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "SANS_risk_branch",
+      "display_name": "SANS Risk Branch",
+      "description": "Spaceflight Associated Neuro-ocular Syndrome risk indicators: ICP elevation, optic disc edema, globe flattening.",
+      "domains": [
+        "ocular",
+        "SANS",
+        "intracranial"
+      ],
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "supporting_chains": [
+        "SANS_risk_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "wearable_sleep_false_reassurance",
+      "display_name": "Wearable Sleep False Reassurance",
+      "description": "Wearable sleep staging discordant with subjective report or cognitive performance; PSG required for stage accuracy.",
+      "domains": [
+        "wearable",
+        "sleep"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "acute_sleep_loss",
+      "display_name": "Acute Sleep Loss",
+      "description": "Total sleep time acutely below individual baseline with objective performance decrement.",
+      "domains": [
+        "sleep"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "hyperventilation_hypocapnia_state",
+      "display_name": "Hyperventilation / Hypocapnia State",
+      "description": "Reduced end-tidal CO2 consistent with hyperventilation pattern; associated with anxiety, panic, dizziness.",
+      "domains": [
+        "respiratory"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "sleep_fragmentation_recovery_failure",
+      "display_name": "Sleep Fragmentation / Recovery Failure",
+      "description": "High WASO, fragmented sleep architecture with inadequate restorative sleep despite sufficient duration.",
+      "domains": [
+        "sleep"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "bone_unloading_loss",
+      "display_name": "Bone Unloading / Loss",
+      "description": "Bone mineral density loss associated with unloading (spaceflight, immobilization) and renal stone risk.",
+      "domains": [
+        "musculoskeletal",
+        "bone"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "radiation_biological_effect_branch",
+      "display_name": "Radiation Biological Effect Branch",
+      "description": "Radiation dose accumulation with oxidative stress or DNA damage biomarker elevation.",
+      "domains": [
+        "radiation"
+      ],
+      "source_files": [
+        "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json"
+      ],
+      "supporting_chains": [
+        "radiation_biological_effect_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "low_recovery_state",
+      "display_name": "Low Recovery State",
+      "description": "Constellation of elevated resting HR, suppressed HRV, poor sleep, and high subjective fatigue indicating inadequate physiological recovery.",
+      "domains": [
+        "autonomic",
+        "sleep",
+        "HRV"
+      ],
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "supporting_chains": [
+        "low_recovery_state_branch",
+        "series_021_pattern_002"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "heat_strain",
+      "display_name": "Heat Strain",
+      "description": "Core or skin temperature elevation with autonomic and cognitive effects; modulated by hydration and exertion.",
+      "domains": [
+        "thermoregulation"
+      ],
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "supporting_chains": [
+        "heat_strain_environment_branch"
+      ],
+      "confidence": "moderate",
+      "pipeline_status": "ready",
+      "needs_review": false,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    },
+    {
+      "hidden_state_id": "metabolic_strain",
+      "display_name": "Metabolic Strain",
+      "description": "Multi-marker metabolic stress including altered glucose regulation, lipid shifts, or elevated lactate.",
+      "domains": [
+        "metabolic"
+      ],
+      "source_files": [],
+      "supporting_chains": [],
+      "confidence": "low",
+      "pipeline_status": "partial",
+      "needs_review": true,
+      "synthesis_status": "assembled_from_existing_sources",
+      "do_not_infer": [
+        "final_diagnosis",
+        "medical_conclusion"
+      ],
+      "output_type": "traceable_hypothesis_with_uncertainty",
+      "not_a_diagnosis": true
+    }
+  ]
+}

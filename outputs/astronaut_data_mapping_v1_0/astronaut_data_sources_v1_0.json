@@ -1,0 +1,327 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_sources": 40,
+  "sources": [
+    {
+      "source_id": "repair_R002",
+      "filename": "astro_R002_pain_injury_repair.cleaned.json",
+      "relative_path": "Cleaned Data/astro_R002_pain_injury_repair.cleaned.json",
+      "inferred_role": "repair_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "repair_R003",
+      "filename": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "relative_path": "Cleaned Data/astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "inferred_role": "repair_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "repair_R004",
+      "filename": "astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json",
+      "relative_path": "Cleaned Data/astro_R004_PSG_EEG_sleep_architecture_repair.cleaned.json",
+      "inferred_role": "repair_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_001",
+      "filename": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_002",
+      "filename": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_003",
+      "filename": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_004",
+      "filename": "astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_004_blood_nutrients_iron_B12_folate_vitaminD_minerals.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_005A",
+      "filename": "astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_005A_metabolic_exertion_ketones_lactate_CPET_PEM_completion.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_005",
+      "filename": "astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_005_blood_metabolic_glucose_insulin_lipids_lactate_ketones.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_006",
+      "filename": "astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_006_blood_endocrine_thyroid_cortisol_sex_hormones.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_007",
+      "filename": "astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_007_blood_coagulation_vascular_endothelial_oxidative_stress.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_008",
+      "filename": "astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_008_saliva_cortisol_stress_rhythm_immune_markers.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_009",
+      "filename": "astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_009_saliva_oral_microbiome_viral_reactivation_mucosal_immunity.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_010",
+      "filename": "astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_010_actigraphy_movement_activity_load_sedentary_pattern.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_011",
+      "filename": "astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_011_light_exposure_circadian_phase_sleep_wake_rhythm.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_012",
+      "filename": "astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_012_sleep_duration_quality_fragmentation_recovery.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_013",
+      "filename": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_014",
+      "filename": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_015",
+      "filename": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_016",
+      "filename": "astro_data_tree_016_respiration_SpO2_CO2_ventilation_gas_exchange.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_016_respiration_SpO2_CO2_ventilation_gas_exchange.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_017",
+      "filename": "astro_data_tree_017_temperature_thermoregulation_heat_strain_circadian_temperature.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_017_temperature_thermoregulation_heat_strain_circadian_temperature.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_018",
+      "filename": "astro_data_tree_018_exercise_physiology_VO2_workload_HR_recovery_functional_capacity.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_018_exercise_physiology_VO2_workload_HR_recovery_functional_capacity.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_019",
+      "filename": "astro_data_tree_019_cognition_reaction_time_attention_working_memory_executive_function.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_019_cognition_reaction_time_attention_working_memory_executive_function.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_020",
+      "filename": "astro_data_tree_020_fatigue_sleepiness_mental_fatigue_objective_fatigability_PEM.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_020_fatigue_sleepiness_mental_fatigue_objective_fatigability_PEM.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_021",
+      "filename": "astro_data_tree_021_mood_stress_anxiety_irritability_anhedonia_behavioral_health.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_021_mood_stress_anxiety_irritability_anhedonia_behavioral_health.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_022",
+      "filename": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_023",
+      "filename": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_024",
+      "filename": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_025",
+      "filename": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_026",
+      "filename": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_027",
+      "filename": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_028",
+      "filename": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_029",
+      "filename": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_030",
+      "filename": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_031",
+      "filename": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_032",
+      "filename": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_033",
+      "filename": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_034",
+      "filename": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_035",
+      "filename": "astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_035_cross_modal_hidden_state_candidate_matrix.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    },
+    {
+      "source_id": "astro_tree_036",
+      "filename": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "relative_path": "Cleaned Data/astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "inferred_role": "primary_astronaut_source_tree",
+      "pipeline_use_priority": "primary",
+      "alias_of": null
+    }
+  ]
+}

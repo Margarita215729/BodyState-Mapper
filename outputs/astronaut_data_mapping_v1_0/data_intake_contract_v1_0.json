@@ -1,0 +1,616 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "contract_version": "1.0",
+  "project": "BodyState Mapper / THSI",
+  "source_template": null,
+  "not_a_diagnostic_system": true,
+  "accepted_source_categories": [
+    {
+      "id": "wearable_continuous",
+      "display": "Continuous Wearable Sensor",
+      "examples": [
+        "HR",
+        "HRV",
+        "SpO2",
+        "skin temperature",
+        "accelerometry",
+        "EDA"
+      ]
+    },
+    {
+      "id": "wearable_sleep",
+      "display": "Wearable Sleep Estimate",
+      "examples": [
+        "total sleep time",
+        "sleep stages",
+        "WASO",
+        "sleep efficiency"
+      ],
+      "caveat": "Not equivalent to PSG"
+    },
+    {
+      "id": "self_report_symptom",
+      "display": "Self-Report Symptom Scale",
+      "examples": [
+        "fatigue VAS",
+        "pain NRS",
+        "mood scales",
+        "EMA items"
+      ]
+    },
+    {
+      "id": "self_report_behavioral",
+      "display": "Self-Report Behavioral",
+      "examples": [
+        "dietary recall",
+        "medication log",
+        "activity log"
+      ]
+    },
+    {
+      "id": "clinical_lab_blood",
+      "display": "Clinical Lab — Blood",
+      "examples": [
+        "CBC",
+        "CMP",
+        "CRP",
+        "ferritin",
+        "cortisol",
+        "hormones",
+        "metabolic panel"
+      ]
+    },
+    {
+      "id": "clinical_lab_urine",
+      "display": "Clinical Lab — Urine",
+      "examples": [
+        "urine specific gravity",
+        "osmolality",
+        "creatinine",
+        "electrolytes",
+        "oxalate"
+      ]
+    },
+    {
+      "id": "clinical_lab_stool",
+      "display": "Clinical Lab — Stool",
+      "examples": [
+        "calprotectin",
+        "occult blood",
+        "microbiome 16S"
+      ]
+    },
+    {
+      "id": "clinical_lab_saliva",
+      "display": "Clinical Lab — Saliva",
+      "examples": [
+        "salivary cortisol",
+        "sIgA",
+        "viral reactivation antibody titers"
+      ]
+    },
+    {
+      "id": "functional_cognitive",
+      "display": "Functional / Cognitive Assessment",
+      "examples": [
+        "PVT",
+        "DSST",
+        "n-back",
+        "executive function tasks"
+      ]
+    },
+    {
+      "id": "sleep_study",
+      "display": "Sleep Study (PSG/HSAT)",
+      "examples": [
+        "polysomnography",
+        "home sleep apnea test",
+        "actigraphy"
+      ]
+    },
+    {
+      "id": "imaging",
+      "display": "Imaging",
+      "examples": [
+        "ultrasound",
+        "MRI",
+        "OCT",
+        "fundoscopy",
+        "DEXA"
+      ]
+    },
+    {
+      "id": "environmental_sensor",
+      "display": "Environmental Sensor",
+      "examples": [
+        "habitat CO2",
+        "O2 partial pressure",
+        "temperature",
+        "humidity",
+        "noise",
+        "light lux"
+      ]
+    },
+    {
+      "id": "exercise_physiology",
+      "display": "Exercise Physiology",
+      "examples": [
+        "VO2max",
+        "lactate threshold",
+        "CPET",
+        "6MWT",
+        "muscle strength"
+      ]
+    },
+    {
+      "id": "context_metadata",
+      "display": "Context Metadata",
+      "examples": [
+        "mission phase",
+        "medication list",
+        "recent illness",
+        "time since last sleep"
+      ]
+    }
+  ],
+  "universal_observation_object_schema": {
+    "observation_id": {
+      "type": "string",
+      "required": true,
+      "description": "Unique observation identifier"
+    },
+    "subject_id": {
+      "type": "string",
+      "required": true,
+      "description": "De-identified subject identifier"
+    },
+    "timestamp_utc": {
+      "type": "string",
+      "format": "ISO8601",
+      "required": true
+    },
+    "parameter_id": {
+      "type": "string",
+      "required": true,
+      "description": "Canonical parameter ID from registry"
+    },
+    "raw_value": {
+      "type": "any",
+      "required": true,
+      "description": "Raw measured value"
+    },
+    "unit": {
+      "type": "string",
+      "required": false
+    },
+    "source_category": {
+      "type": "string",
+      "required": true,
+      "enum": "accepted_source_categories"
+    },
+    "source_device_or_method": {
+      "type": "string",
+      "required": false
+    },
+    "result_variation_id": {
+      "type": "string",
+      "required": false,
+      "description": "Matched result variation from registry"
+    },
+    "confidence_in_measurement": {
+      "type": "string",
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "unknown"
+      ],
+      "required": true
+    },
+    "context_flags": {
+      "type": "array",
+      "items": "string",
+      "required": false,
+      "description": "Active context overrides"
+    },
+    "missing_data_note": {
+      "type": "string",
+      "required": false
+    },
+    "individual_baseline_value": {
+      "type": "any",
+      "required": false
+    },
+    "deviation_from_baseline": {
+      "type": "any",
+      "required": false
+    }
+  },
+  "wearable_intake_fields": {
+    "additional_to_universal": [
+      {
+        "field": "device_model",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "sampling_rate_hz",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "wear_compliance_pct",
+        "type": "number",
+        "required": false,
+        "description": "0-100"
+      },
+      {
+        "field": "artifact_removed",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "field": "algorithm_version",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "caveat": "Wearable sleep stages are not PSG. HRV accuracy varies by device and motion artifact."
+  },
+  "self_report_intake_fields": {
+    "additional_to_universal": [
+      {
+        "field": "scale_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "field": "scale_version",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "response_options",
+        "type": "array",
+        "required": false
+      },
+      {
+        "field": "anchor_labels",
+        "type": "object",
+        "required": false
+      },
+      {
+        "field": "administration_context",
+        "type": "string",
+        "required": false,
+        "examples": [
+          "morning",
+          "post-exercise",
+          "EMA-triggered"
+        ]
+      }
+    ],
+    "caveat": "Self-report symptom scales do not identify mechanisms. Require objective correlates."
+  },
+  "clinical_lab_intake_fields": {
+    "additional_to_universal": [
+      {
+        "field": "lab_reference_range_low",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "lab_reference_range_high",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "lab_name",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "collection_conditions",
+        "type": "string",
+        "required": false,
+        "examples": [
+          "fasting",
+          "post-exercise",
+          "morning"
+        ]
+      },
+      {
+        "field": "sample_timing_from_event_hrs",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "assay_method",
+        "type": "string",
+        "required": false
+      }
+    ],
+    "caveat": "Lab reference ranges are population-based. Within-person deviation from individual baseline takes priority."
+  },
+  "urine_stool_saliva_intake_fields": {
+    "additional_to_universal": [
+      {
+        "field": "collection_time_of_day",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "first_morning_void",
+        "type": "boolean",
+        "required": false
+      },
+      {
+        "field": "collection_conditions",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "storage_conditions",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "freezing_delay_hrs",
+        "type": "number",
+        "required": false
+      }
+    ],
+    "caveat": "Saliva cortisol is time-of-day dependent. Stool microbiome reflects recent diet and transit time."
+  },
+  "functional_cognitive_sleep_study_intake_fields": {
+    "additional_to_universal": [
+      {
+        "field": "test_name",
+        "type": "string",
+        "required": true
+      },
+      {
+        "field": "test_version",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "test_duration_min",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "time_of_day",
+        "type": "string",
+        "required": false
+      },
+      {
+        "field": "time_since_sleep_hrs",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "time_since_last_meal_hrs",
+        "type": "number",
+        "required": false
+      },
+      {
+        "field": "practice_session_completed",
+        "type": "boolean",
+        "required": false
+      }
+    ],
+    "caveat": "Cognitive tests are sensitive to learning effects, time-of-day, and pre-test state."
+  },
+  "context_intake_fields": {
+    "context_object_schema": {
+      "mission_phase": {
+        "type": "string",
+        "enum": [
+          "preflight_baseline",
+          "launch_early_inflight",
+          "mid_mission",
+          "late_mission",
+          "early_postflight",
+          "late_postflight",
+          "terrestrial"
+        ]
+      },
+      "active_medications": {
+        "type": "array",
+        "items": {
+          "drug": "string",
+          "dose": "string",
+          "timing_hrs_before_collection": "number"
+        }
+      },
+      "recent_acute_illness": {
+        "type": "boolean"
+      },
+      "illness_onset_days_ago": {
+        "type": "number"
+      },
+      "recent_high_intensity_exercise_hrs_ago": {
+        "type": "number"
+      },
+      "total_sleep_previous_night_hrs": {
+        "type": "number"
+      },
+      "habitat_co2_ppm": {
+        "type": "number"
+      },
+      "ambient_temperature_celsius": {
+        "type": "number"
+      },
+      "individual_baseline_collection_date": {
+        "type": "string",
+        "format": "ISO8601"
+      }
+    }
+  },
+  "allowed_result_variation_categories": [
+    "normal_within_individual_baseline",
+    "elevated_relative_to_baseline",
+    "suppressed_relative_to_baseline",
+    "elevated_relative_to_population_norm",
+    "suppressed_relative_to_population_norm",
+    "absent_or_undetectable",
+    "present_or_detectable",
+    "positive",
+    "negative",
+    "indeterminate",
+    "borderline",
+    "critically_elevated",
+    "critically_suppressed",
+    "trending_up",
+    "trending_down",
+    "stable",
+    "missing",
+    "artifact_suspected"
+  ],
+  "interpretation_levels": [
+    {
+      "level_id": "L1_raw_value",
+      "description": "Raw value with unit. No interpretation."
+    },
+    {
+      "level_id": "L2_result_variation",
+      "description": "Assignment to result variation category from registry."
+    },
+    {
+      "level_id": "L3_baseline_comparison",
+      "description": "Comparison to individual baseline if available."
+    },
+    {
+      "level_id": "L4_context_check",
+      "description": "Context/guardrail override evaluation."
+    },
+    {
+      "level_id": "L5_hidden_state_scoring",
+      "description": "Weighted contribution to hidden state candidates."
+    },
+    {
+      "level_id": "L6_next_measurement_recommendation",
+      "description": "Next-best-measurement output when data insufficient."
+    },
+    {
+      "level_id": "L7_traceable_report",
+      "description": "Full traceable output with uncertainty, source_file, chain_id."
+    }
+  ],
+  "confidence_levels": [
+    {
+      "id": "high",
+      "description": "Multiple convergent data sources, individual baseline available, context evaluated"
+    },
+    {
+      "id": "moderate",
+      "description": "Two or more data sources, some context evaluated"
+    },
+    {
+      "id": "low",
+      "description": "Single data source or high uncertainty"
+    },
+    {
+      "id": "unknown",
+      "description": "Insufficient data to score confidence"
+    }
+  ],
+  "response_types": [
+    {
+      "id": "hidden_state_hypothesis",
+      "description": "Scored hidden state with confidence and traceable source chain"
+    },
+    {
+      "id": "missing_data_note",
+      "description": "Required data absent; specify what is missing and why it matters"
+    },
+    {
+      "id": "context_override_note",
+      "description": "Active context overrides mechanism inference"
+    },
+    {
+      "id": "guardrail_triggered",
+      "description": "A guardrail has blocked or modified inference"
+    },
+    {
+      "id": "next_measurement_recommendation",
+      "description": "Specific measurement recommended to reduce uncertainty"
+    },
+    {
+      "id": "no_inference_possible",
+      "description": "Insufficient data for any inference; unknown_or_missing_data_state"
+    }
+  ],
+  "required_guardrails_in_output": [
+    "unknown_is_not_negative_evidence",
+    "single_marker_never_equals_mechanism",
+    "symptom_report_never_equals_mechanism",
+    "context_override_before_mechanism",
+    "medication_timing_first",
+    "environmental_exposure_separate_from_physiologic_effect",
+    "group_reference_separate_from_individual_baseline",
+    "within_person_deviation_priority",
+    "temporal_lag_required_for_causality",
+    "objective_performance_separate_from_subjective_symptom",
+    "imaging_abnormality_separate_from_functional_impairment",
+    "microbiome_association_not_causality",
+    "immune_marker_not_infection_without_symptoms",
+    "radiation_dose_not_injury_without_biomarker_or_outcome",
+    "SANS_not_subjective_vision_symptom",
+    "PEM_not_normal_fatigue",
+    "hydration_intake_not_hydration_status",
+    "low_activity_not_fatigue",
+    "low_VO2_not_mechanism",
+    "normal_one_source_not_ruleout",
+    "wearable_sleep_stage_not_PSG",
+    "pain_limited_performance_not_muscle_weakness",
+    "recommend_next_measurement_when_uncertain"
+  ],
+  "minimal_mvp_intake_form": {
+    "description": "Minimum required fields to run any inference",
+    "required_fields": [
+      "subject_id",
+      "timestamp_utc",
+      "at_least_one_observation_with_parameter_id_and_raw_value",
+      "context.mission_phase_or_terrestrial",
+      "context.active_medications_or_none"
+    ],
+    "optional_but_strongly_recommended": [
+      "individual_baseline_values",
+      "context.recent_acute_illness",
+      "context.total_sleep_previous_night_hrs",
+      "context.recent_high_intensity_exercise_hrs_ago"
+    ]
+  },
+  "minimal_mvp_output_form": {
+    "description": "Minimum required fields in any output/report",
+    "required_fields": [
+      "subject_id",
+      "inference_timestamp_utc",
+      "input_parameter_ids",
+      "hidden_state_scores",
+      "confidence_overall",
+      "guardrails_triggered",
+      "missing_data_notes",
+      "next_measurement_recommendations",
+      "traceable_source_chain_ids"
+    ],
+    "prohibited_fields": [
+      "medical_diagnosis",
+      "definitive_mechanism_without_convergent_evidence",
+      "treatment_recommendation"
+    ]
+  },
+  "workflow": [
+    "1. raw multimodal data intake via accepted_source_categories",
+    "2. normalize to universal_observation_object_schema",
+    "3. lookup parameter_id in measured_parameter_registry_v1_0.json",
+    "4. assign result_variation_id from result_variation_trees_v1_0.json",
+    "5. evaluate context_intake_fields and check guardrails_v1_0.json",
+    "6. score hidden_state_candidates_v1_0.json using inference_chains_v1_0.json",
+    "7. output next-measurement recommendations from required_measurements_v1_0.json",
+    "8. generate traceable report with confidence, source_file, chain_id"
+  ]
+}

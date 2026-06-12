@@ -1,0 +1,5015 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_entries": 626,
+  "required_measurements": [
+    {
+      "triggering_chain_id": "pain_sleep_fatigue_branch",
+      "required_measurement": "pain marker",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "pain_sleep_fatigue_branch",
+      "required_measurement": "sleep measure",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "pain_sleep_fatigue_branch",
+      "required_measurement": "fatigue outcome",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "migraine_phenotype_branch",
+      "required_measurement": "headache marker",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "migraine_phenotype_branch",
+      "required_measurement": "migraine symptoms",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "migraine_phenotype_branch",
+      "required_measurement": "episodic pattern",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "injury_context_override_branch",
+      "required_measurement": "functional test",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "injury_context_override_branch",
+      "required_measurement": "injury report",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "wound_infection_hypothesis",
+      "required_measurement": "wound assessment",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "wound_infection_hypothesis",
+      "required_measurement": "temperature",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "wound_infection_hypothesis",
+      "required_measurement": "CBC/CRP",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "medication_respiratory_risk_context_branch",
+      "required_measurement": "pain/procedure log",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "medication_respiratory_risk_context_branch",
+      "required_measurement": "medication log",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "medication_respiratory_risk_context_branch",
+      "required_measurement": "RR/sedation/O2",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "pain_perception_performance_limiter_branch",
+      "required_measurement": "pain",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "pain_perception_performance_limiter_branch",
+      "required_measurement": "RPE",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "pain_perception_performance_limiter_branch",
+      "required_measurement": "CPET",
+      "source_files": [
+        "astro_R002_pain_injury_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "obstructive_pulmonary_limitation_branch",
+      "required_measurement": "spirometry",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "obstructive_pulmonary_limitation_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "obstructive_pulmonary_limitation_branch",
+      "required_measurement": "exercise test",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "restrictive_pulmonary_mechanics_branch",
+      "required_measurement": "spirometry",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "restrictive_pulmonary_mechanics_branch",
+      "required_measurement": "lung volumes",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "restrictive_pulmonary_mechanics_branch",
+      "required_measurement": "ETCO2/symptoms",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "diffusion_gas_exchange_limitation_branch",
+      "required_measurement": "DLCO",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "diffusion_gas_exchange_limitation_branch",
+      "required_measurement": "exercise SpO2",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "diffusion_gas_exchange_limitation_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "required_measurement": "spirometry",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "required_measurement": "ETCO2",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "required_measurement": "dyspnea context",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "required_measurement": "DXA/BIA",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "required_measurement": "strength test",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "required_measurement": "activity log",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "body_recomposition_hidden_risk_branch",
+      "required_measurement": "body composition",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "body_recomposition_hidden_risk_branch",
+      "required_measurement": "body mass trend",
+      "source_files": [
+        "astro_R003_pulmonary_bodycomp_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "required_measurement": "CBC",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "required_measurement": "iron studies",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "required_measurement": "CBC",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "required_measurement": "CRP",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "required_measurement": "kidney markers",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "acute_inflammatory_infection_branch",
+      "required_measurement": "CBC differential",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "acute_inflammatory_infection_branch",
+      "required_measurement": "temperature/symptoms",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "acute_inflammatory_infection_branch",
+      "required_measurement": "CRP",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hypovolemia_dehydration_hypothesis",
+      "required_measurement": "CMP/kidney panel",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hypovolemia_dehydration_hypothesis",
+      "required_measurement": "urine osmolality",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hypovolemia_dehydration_hypothesis",
+      "required_measurement": "orthostatic vitals",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "electrolyte_neurocognitive_risk_branch",
+      "required_measurement": "electrolytes",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "electrolyte_neurocognitive_risk_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "electrolyte_neurocognitive_risk_branch",
+      "required_measurement": "medication/fluid context",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hepatic_or_muscle_context_branch",
+      "required_measurement": "liver enzymes",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hepatic_or_muscle_context_branch",
+      "required_measurement": "medication/exertion timing",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "hepatic_or_muscle_context_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "required_measurement": "albumin",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "required_measurement": "CRP",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "required_measurement": "fluid/nutrition context",
+      "source_files": [
+        "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "low_recovery_state_branch",
+      "required_measurement": "resting HR",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "low_recovery_state_branch",
+      "required_measurement": "HRV",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "low_recovery_state_branch",
+      "required_measurement": "sleep quality",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "infection_or_inflammatory_load_branch",
+      "required_measurement": "resting HR",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "infection_or_inflammatory_load_branch",
+      "required_measurement": "CRP/IL-6 or fever",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "infection_or_inflammatory_load_branch",
+      "required_measurement": "fatigue/symptoms",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "oxygen_delivery_compensation_branch",
+      "required_measurement": "resting HR",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "oxygen_delivery_compensation_branch",
+      "required_measurement": "CBC/iron markers",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "oxygen_delivery_compensation_branch",
+      "required_measurement": "exercise tolerance",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "orthostatic_intolerance_branch",
+      "required_measurement": "orthostatic HR/BP",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "orthostatic_intolerance_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "insufficient_recovery_or_overreaching_branch",
+      "required_measurement": "RMSSD",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "insufficient_recovery_or_overreaching_branch",
+      "required_measurement": "training load",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "insufficient_recovery_or_overreaching_branch",
+      "required_measurement": "timed fatigue",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "sympathetic_arousal_branch",
+      "required_measurement": "HRV",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "sympathetic_arousal_branch",
+      "required_measurement": "salivary alpha-amylase",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "sympathetic_arousal_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_deconditioning_branch",
+      "required_measurement": "mission/bedrest phase",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_deconditioning_branch",
+      "required_measurement": "HRV",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_deconditioning_branch",
+      "required_measurement": "orthostatic test",
+      "source_files": [
+        "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "required_measurement": "active stand or tilt table HR/BP",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "required_measurement": "symptom report",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "orthostatic_hypotension_branch",
+      "required_measurement": "active stand or tilt table BP",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "orthostatic_hypotension_branch",
+      "required_measurement": "symptom report",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_dysregulation_branch",
+      "required_measurement": "urine markers",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_dysregulation_branch",
+      "required_measurement": "orthostatic symptoms",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "autonomic_dysregulation_branch",
+      "required_measurement": "HRV",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_deconditioning_volume_branch",
+      "required_measurement": "plasma volume",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_deconditioning_volume_branch",
+      "required_measurement": "pre/post flight or bedrest testing",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_deconditioning_volume_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "cerebral_autoregulation_hypothesis",
+      "required_measurement": "orthostatic symptoms",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "cerebral_autoregulation_hypothesis",
+      "required_measurement": "HR/BP",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "cerebral_autoregulation_hypothesis",
+      "required_measurement": "cerebral perfusion",
+      "source_files": [
+        "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "vascular_risk_branch",
+      "required_measurement": "PWV",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "vascular_risk_branch",
+      "required_measurement": "FMD/RHI",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "vascular_risk_branch",
+      "required_measurement": "echo or renal markers",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "vascular_risk_branch",
+      "required_measurement": "BP/metabolic profile",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "required_measurement": "echo/MRI",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "required_measurement": "fluid distribution/plasma volume",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "required_measurement": "mission phase",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "required_measurement": "orthostatic tests",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "volume_cardiac_output_branch",
+      "required_measurement": "stroke volume",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "volume_cardiac_output_branch",
+      "required_measurement": "plasma volume",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "volume_cardiac_output_branch",
+      "required_measurement": "orthostatic symptoms/test",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "microvascular_HFpEF_predisposition_branch",
+      "required_measurement": "RHI",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "microvascular_HFpEF_predisposition_branch",
+      "required_measurement": "diastolic wall strain/E/e’",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "microvascular_HFpEF_predisposition_branch",
+      "required_measurement": "BP/comorbidities",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "early_vascular_aging_branch",
+      "required_measurement": "PWV",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "early_vascular_aging_branch",
+      "required_measurement": "cIMT",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "early_vascular_aging_branch",
+      "required_measurement": "echo/MRI over time",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_exercise_limitation_branch",
+      "required_measurement": "echo/MRI",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_exercise_limitation_branch",
+      "required_measurement": "CPET",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_exercise_limitation_branch",
+      "required_measurement": "symptoms",
+      "source_files": [
+        "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "unloading_bone_loss_branch",
+      "required_measurement": "DXA/QCT/pQCT",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "unloading_bone_loss_branch",
+      "required_measurement": "CTX/NTX",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "unloading_bone_loss_branch",
+      "required_measurement": "mission phase",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "renal_stone_risk_branch",
+      "required_measurement": "urine markers",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "renal_stone_risk_branch",
+      "required_measurement": "fluid intake",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "renal_stone_risk_branch",
+      "required_measurement": "mission phase",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "required_measurement": "vitamin D",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "required_measurement": "PTH",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "required_measurement": "BMD or turnover",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "fracture_fall_risk_branch",
+      "required_measurement": "BMD/structure",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "fracture_fall_risk_branch",
+      "required_measurement": "strength",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "fracture_fall_risk_branch",
+      "required_measurement": "balance/falls context",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "bone_countermeasure_response_branch",
+      "required_measurement": "countermeasure logs",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "bone_countermeasure_response_branch",
+      "required_measurement": "BMD",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "bone_countermeasure_response_branch",
+      "required_measurement": "strength/function",
+      "source_files": [
+        "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_risk_branch",
+      "required_measurement": "spaceflight/HDT exposure",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_risk_branch",
+      "required_measurement": "OCT/fundoscopy",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_risk_branch",
+      "required_measurement": "fluid-shift or venous markers",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_structural_visual_branch",
+      "required_measurement": "refraction/visual acuity",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_structural_visual_branch",
+      "required_measurement": "OCT/MRI",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "SANS_structural_visual_branch",
+      "required_measurement": "fundoscopy",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "ICP_proxy_hypothesis",
+      "required_measurement": "ONSD ultrasound/MRI",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "ICP_proxy_hypothesis",
+      "required_measurement": "HDT/fluid-shift",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "ICP_proxy_hypothesis",
+      "required_measurement": "visual symptoms",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "countermeasure_effect_branch",
+      "required_measurement": "LBNP/countermeasure log",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "countermeasure_effect_branch",
+      "required_measurement": "IOP",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "countermeasure_effect_branch",
+      "required_measurement": "ONSD/OCT",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_visual_symptom_branch",
+      "required_measurement": "symptom report",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_visual_symptom_branch",
+      "required_measurement": "OCT/fundus",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "non_structural_visual_symptom_branch",
+      "required_measurement": "environment/headache/migraine context",
+      "source_files": [
+        "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "co2_cognitive_headache_risk_branch",
+      "required_measurement": "CO2 sensor",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "co2_cognitive_headache_risk_branch",
+      "required_measurement": "headache report",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "co2_cognitive_headache_risk_branch",
+      "required_measurement": "timed cognition/PVT",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "air_quality_respiratory_branch",
+      "required_measurement": "VOC/PM sensor",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "air_quality_respiratory_branch",
+      "required_measurement": "respiratory symptoms",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "air_quality_respiratory_branch",
+      "required_measurement": "inflammatory marker",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "noise_sleep_recovery_branch",
+      "required_measurement": "noise dosimeter",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "noise_sleep_recovery_branch",
+      "required_measurement": "sleep log/actigraphy",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "noise_sleep_recovery_branch",
+      "required_measurement": "fatigue report",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "heat_strain_environment_branch",
+      "required_measurement": "environment temp/humidity",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "heat_strain_environment_branch",
+      "required_measurement": "core temp/HR",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "heat_strain_environment_branch",
+      "required_measurement": "cognition/performance",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "required_measurement": "CO2 sensor",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "required_measurement": "ETCO2/physiology",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "required_measurement": "symptom log",
+      "source_files": [
+        "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_001_pattern_001",
+      "required_measurement": "ECG-derived RMSSD",
+      "source_files": [
+        "autonomic_stress_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_001_pattern_001",
+      "required_measurement": "time-domain HRV metrics (SDNN, RMSSD)",
+      "source_files": [
+        "autonomic_stress_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_001_pattern_001",
+      "required_measurement": "standardized HRV assessment during rest and stress tasks",
+      "source_files": [
+        "autonomic_stress_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_001",
+      "required_measurement": "clinical_diagnosis",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_001",
+      "required_measurement": "symptom_questionnaire",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_002",
+      "required_measurement": "clinical_diagnosis",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_002",
+      "required_measurement": "symptom_questionnaire",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_003",
+      "required_measurement": "clinical_diagnosis",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_003",
+      "required_measurement": "symptom_questionnaire",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_004",
+      "required_measurement": "clinical_diagnosis",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_003_pattern_004",
+      "required_measurement": "symptom_questionnaire",
+      "source_files": [
+        "gut_immune_microbiome_brain_axis_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_001",
+      "required_measurement": "homa_ir",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_001",
+      "required_measurement": "fasting_insulin",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_001",
+      "required_measurement": "genetic_risk_scores",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_002",
+      "required_measurement": "mage",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_002",
+      "required_measurement": "hba1c_variability",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_002",
+      "required_measurement": "fasting_plasma_glucose_sd",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004_pattern_002",
+      "required_measurement": "fasting_plasma_glucose_cv",
+      "source_files": [
+        "metabolic_glucose_insulin_lactate_cognition_partial_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_001",
+      "required_measurement": "dietary intervention",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_001",
+      "required_measurement": "randomized controlled trial",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_001",
+      "required_measurement": "systematic review",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_002",
+      "required_measurement": "NMR spectroscopy",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_002",
+      "required_measurement": "blood assays",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004b_pattern_003",
+      "required_measurement": "experimental fasting protocols",
+      "source_files": [
+        "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_001",
+      "required_measurement": "glucose clamp",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_001",
+      "required_measurement": "blood glucose monitoring",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_001",
+      "required_measurement": "CGM",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_002",
+      "required_measurement": "CGM",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_002",
+      "required_measurement": "MAGE",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_002",
+      "required_measurement": "coefficient_of_variation",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_002",
+      "required_measurement": "postprandial_glucose_excursion",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_003",
+      "required_measurement": "meal challenge",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_003",
+      "required_measurement": "high_GI_vs_low_GI_meal",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_003",
+      "required_measurement": "postprandial glucose measurement",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_003",
+      "required_measurement": "CGM",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_004",
+      "required_measurement": "EMA",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_004",
+      "required_measurement": "self-report app",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_004",
+      "required_measurement": "CGM",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_004c_pattern_004",
+      "required_measurement": "symptom reporting",
+      "source_files": [
+        "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "sleep deprivation protocol",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "sleep restriction protocol",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "sleep fragmentation protocol",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "wearable sleep tracking",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_001",
+      "required_measurement": "sleep diary",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_002",
+      "required_measurement": "forced desynchrony protocol",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_002",
+      "required_measurement": "shift work exposure",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_002",
+      "required_measurement": "social jetlag estimates",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_002",
+      "required_measurement": "sleep timing records",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_002",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_003",
+      "required_measurement": "experimental sleep restriction protocol",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_003",
+      "required_measurement": "psychomotor vigilance task",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_003",
+      "required_measurement": "working memory tasks",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_003",
+      "required_measurement": "subjective sleepiness scales",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_004",
+      "required_measurement": "sleep diary",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_004",
+      "required_measurement": "questionnaires",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_004",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_004",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_005_pattern_004",
+      "required_measurement": "experimental sleep deprivation",
+      "source_files": [
+        "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "RMSSD",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "HF-HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "SDNN",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "ambulatory HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "resting HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_001",
+      "required_measurement": "wearable/ECG-derived HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_002",
+      "required_measurement": "RMSSD",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_002",
+      "required_measurement": "HF-HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_002",
+      "required_measurement": "respiratory sinus arrhythmia",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_002",
+      "required_measurement": "resting ECG HRV",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_003",
+      "required_measurement": "laboratory stress task",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_003",
+      "required_measurement": "psychophysiological stress protocol",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_003",
+      "required_measurement": "self-reported stress",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_004",
+      "required_measurement": "paced breathing",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_004",
+      "required_measurement": "HRV biofeedback",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_006_pattern_004",
+      "required_measurement": "transcutaneous vagus nerve stimulation",
+      "source_files": [
+        "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_001",
+      "required_measurement": "salivary cortisol",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_001",
+      "required_measurement": "cortisol awakening response",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_001",
+      "required_measurement": "diurnal cortisol slope",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_002",
+      "required_measurement": "TSST",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_002",
+      "required_measurement": "laboratory stress tasks",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_003",
+      "required_measurement": "stress questionnaires",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_003",
+      "required_measurement": "allostatic load indices",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_007_pattern_003",
+      "required_measurement": "longitudinal cohorts",
+      "source_files": [
+        "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "hsCRP",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "IL-6",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "TNF-alpha",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "IL-1beta",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "LPS/endotoxin challenge",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "vaccination challenge",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "Mendelian randomization",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_001",
+      "required_measurement": "anti-inflammatory intervention",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "IL-6",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "TNF-alpha",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "IL-1beta",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "biomarker studies",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_002",
+      "required_measurement": "meta-analysis",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_003",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_003",
+      "required_measurement": "cytokine panels",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_003",
+      "required_measurement": "immune profiling",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_008_pattern_003",
+      "required_measurement": "clinical symptom scales",
+      "source_files": [
+        "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_001",
+      "required_measurement": "pain intensity scales",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_001",
+      "required_measurement": "pain interference scales",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_001",
+      "required_measurement": "fibromyalgia index",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_001",
+      "required_measurement": "QST",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_001",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_002",
+      "required_measurement": "pain scales",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_002",
+      "required_measurement": "pain interference scales",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_002",
+      "required_measurement": "central sensitization inventories",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_003",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_003",
+      "required_measurement": "pain ratings",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_009_pattern_003",
+      "required_measurement": "fatigue/sleep/mood scales",
+      "source_files": [
+        "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_001",
+      "required_measurement": "end-tidal CO2",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_001",
+      "required_measurement": "capnography",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_001",
+      "required_measurement": "experimental hyperventilation",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_001",
+      "required_measurement": "simulated altitude",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_002",
+      "required_measurement": "CPET",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_002",
+      "required_measurement": "ventilatory pattern analysis",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_002",
+      "required_measurement": "VE/VCO2 slope",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_002",
+      "required_measurement": "end-tidal CO2",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_003",
+      "required_measurement": "ETCO2",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_003",
+      "required_measurement": "minute ventilation",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_003",
+      "required_measurement": "CO2 challenge",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_003",
+      "required_measurement": "capnography",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_004",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_004",
+      "required_measurement": "oxygen desaturation index",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_004",
+      "required_measurement": "SpO2",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_004",
+      "required_measurement": "apnea-hypopnea index",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_005",
+      "required_measurement": "paced breathing protocols",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_005",
+      "required_measurement": "respiratory rate",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_005",
+      "required_measurement": "HRV/RSA",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_010_pattern_005",
+      "required_measurement": "intervention trials",
+      "source_files": [
+        "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_001",
+      "required_measurement": "plasma_osmolality",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_001",
+      "required_measurement": "urine_osmolality",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_001",
+      "required_measurement": "urine_specific_gravity",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_001",
+      "required_measurement": "body_mass_loss_percentage",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_002",
+      "required_measurement": "orthostatic_BP_change",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_002",
+      "required_measurement": "orthostatic_HR_change",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_002",
+      "required_measurement": "tilt_table_testing",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_002",
+      "required_measurement": "cerebral_blood_flow_velocity",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_011_pattern_002",
+      "required_measurement": "symptom_scales",
+      "source_files": [
+        "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_001",
+      "required_measurement": "accelerometry",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_001",
+      "required_measurement": "exercise intervention",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_001",
+      "required_measurement": "self-report",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_001",
+      "required_measurement": "VO2max/fitness measures",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_002",
+      "required_measurement": "accelerometry",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_002",
+      "required_measurement": "sedentary time",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_002",
+      "required_measurement": "TV/passive sedentary behavior",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_002",
+      "required_measurement": "ambulatory assessment",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "exercise load",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "CPET",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "CK",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "DOMS",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "RPE",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_012_pattern_003",
+      "required_measurement": "symptom exacerbation after exertion",
+      "source_files": [
+        "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "ferritin",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "transferrin saturation",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "hemoglobin",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "serum iron",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "TIBC",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_001",
+      "required_measurement": "CBC indices",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_002",
+      "required_measurement": "serum B12",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_002",
+      "required_measurement": "methylmalonic acid",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_002",
+      "required_measurement": "homocysteine",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "25OH vitamin D",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "zinc",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "serum magnesium",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "RBC magnesium",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "omega-3 index",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "folate",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_014_pattern_003",
+      "required_measurement": "homocysteine",
+      "source_files": [
+        "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_001",
+      "required_measurement": "cycle tracking",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_001",
+      "required_measurement": "daily diary",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_001",
+      "required_measurement": "wearable tracking",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_001",
+      "required_measurement": "estradiol/progesterone when measured",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_002",
+      "required_measurement": "cycle tracking",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_002",
+      "required_measurement": "phase verification",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_002",
+      "required_measurement": "cognitive testing",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_003",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_003",
+      "required_measurement": "symptom tracking",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_003",
+      "required_measurement": "daily diary",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_004",
+      "required_measurement": "wearables",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_004",
+      "required_measurement": "HRV",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_004",
+      "required_measurement": "RHR",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_004",
+      "required_measurement": "body temperature",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_005",
+      "required_measurement": "contraceptive schedule",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_005",
+      "required_measurement": "hormonal contraception studies",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_015_pattern_006",
+      "required_measurement": "longitudinal hormone tracking",
+      "source_files": [
+        "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_001",
+      "required_measurement": "stool microbiome diversity/taxa",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_001",
+      "required_measurement": "metagenomics",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_001",
+      "required_measurement": "SCFA profiles",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_001",
+      "required_measurement": "GI symptom scales",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_002",
+      "required_measurement": "IBS severity scales",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_002",
+      "required_measurement": "IBD activity markers",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_002",
+      "required_measurement": "fecal calprotectin",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_002",
+      "required_measurement": "GI symptom scales",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_003",
+      "required_measurement": "RCTs",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_003",
+      "required_measurement": "dietary interventions",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_016_pattern_003",
+      "required_measurement": "probiotic/prebiotic/FMT trials",
+      "source_files": [
+        "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_001",
+      "required_measurement": "dose timing records",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_001",
+      "required_measurement": "RCT caffeine administration",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_001",
+      "required_measurement": "self-report",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_002",
+      "required_measurement": "prescription records",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_002",
+      "required_measurement": "medication exposure assessment",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_002",
+      "required_measurement": "longitudinal cohorts",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_003",
+      "required_measurement": "RCTs",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_003",
+      "required_measurement": "meta-analyses",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_003",
+      "required_measurement": "prescription/treatment records",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_004",
+      "required_measurement": "RCTs",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_004",
+      "required_measurement": "meta-analyses",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_004",
+      "required_measurement": "daily medication/sleep tracking",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_005",
+      "required_measurement": "self-report",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_005",
+      "required_measurement": "acute administration studies",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_005",
+      "required_measurement": "meta-analyses",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_017_pattern_005",
+      "required_measurement": "sleep studies",
+      "source_files": [
+        "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_001",
+      "required_measurement": "lab light exposure",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_001",
+      "required_measurement": "screen/tablet exposure",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_001",
+      "required_measurement": "self-report device use",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_001",
+      "required_measurement": "wearable/light monitoring",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_002",
+      "required_measurement": "light exposure monitoring",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_002",
+      "required_measurement": "office illuminance manipulation",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_002",
+      "required_measurement": "bright-light intervention",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_003",
+      "required_measurement": "ambient pollution monitoring",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_003",
+      "required_measurement": "short-term particulate exposure",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_003",
+      "required_measurement": "cohort exposure models",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_003",
+      "required_measurement": "indoor pollution proxy",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_004",
+      "required_measurement": "lab chamber CO2/temperature manipulation",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_004",
+      "required_measurement": "indoor environmental monitoring",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_004",
+      "required_measurement": "task performance tests",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_005",
+      "required_measurement": "decibel/noise exposure estimates",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_005",
+      "required_measurement": "lab combined stressor studies",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_005",
+      "required_measurement": "cohort exposure models",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_006",
+      "required_measurement": "surveyed visits",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_006",
+      "required_measurement": "residential greenness",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_018_pattern_006",
+      "required_measurement": "green/blue space exposure",
+      "source_files": [
+        "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_001",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_001",
+      "required_measurement": "prospective diary",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_001",
+      "required_measurement": "cognitive testing",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_002",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_002",
+      "required_measurement": "vestibular testing",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_002",
+      "required_measurement": "neuropsychological testing",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_003",
+      "required_measurement": "headache frequency",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_003",
+      "required_measurement": "diagnosis",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_003",
+      "required_measurement": "sleep questionnaires",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_019_pattern_003",
+      "required_measurement": "autonomic testing",
+      "source_files": [
+        "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_001",
+      "required_measurement": "clinical diagnosis",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_001",
+      "required_measurement": "symptom inventories",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_001",
+      "required_measurement": "post-acute infection cohort follow-up",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_002",
+      "required_measurement": "autonomic testing",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_002",
+      "required_measurement": "tilt-table testing",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_002",
+      "required_measurement": "orthostatic HR/BP",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_002",
+      "required_measurement": "HRV",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_002",
+      "required_measurement": "small fiber neuropathy testing",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_003",
+      "required_measurement": "cytokine panels",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_003",
+      "required_measurement": "T-cell phenotyping",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_003",
+      "required_measurement": "interferon signaling",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_003",
+      "required_measurement": "autoantibodies",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_003",
+      "required_measurement": "immune profiling",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_004",
+      "required_measurement": "neuropsychological testing",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_004",
+      "required_measurement": "cognitive complaints",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_004",
+      "required_measurement": "PET",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_004",
+      "required_measurement": "MRI",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_020_pattern_004",
+      "required_measurement": "QEEG",
+      "source_files": [
+        "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_001",
+      "required_measurement": "multi-system biomarker index",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_001",
+      "required_measurement": "composite AL score",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "HRV/RMSSD",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "RHR",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "sleep metrics",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "cortisol",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "CRP/IL-6",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "glucose/HbA1c",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_002",
+      "required_measurement": "activity load",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_003",
+      "required_measurement": "cortisol reactivity",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_003",
+      "required_measurement": "HRV reactivity",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_021_pattern_003",
+      "required_measurement": "stress recovery timing",
+      "source_files": [
+        "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_001",
+      "required_measurement": "tilt-table testing",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_001",
+      "required_measurement": "head-up tilt",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_001",
+      "required_measurement": "TCD",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_001",
+      "required_measurement": "NIRS",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_001",
+      "required_measurement": "orthostatic HR/BP",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_002",
+      "required_measurement": "capnography",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_002",
+      "required_measurement": "ETCO2",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_022_pattern_002",
+      "required_measurement": "PaCO2",
+      "source_files": [
+        "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_001",
+      "required_measurement": "LPS/endotoxin challenge",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_001",
+      "required_measurement": "typhoid vaccination",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_001",
+      "required_measurement": "cytokine assays",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_002",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_002",
+      "required_measurement": "IL-6",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_002",
+      "required_measurement": "TNF-alpha",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_002",
+      "required_measurement": "soluble receptors",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_003",
+      "required_measurement": "interferon-alpha treatment",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_003",
+      "required_measurement": "KYN/TRP ratio",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_003",
+      "required_measurement": "IDO activity",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_023_pattern_003",
+      "required_measurement": "tryptophan",
+      "source_files": [
+        "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_001",
+      "required_measurement": "CPET",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_001",
+      "required_measurement": "RER/RQ",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_001",
+      "required_measurement": "fat oxidation capacity",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_001",
+      "required_measurement": "substrate oxidation",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_001",
+      "required_measurement": "insulin sensitivity",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_002",
+      "required_measurement": "2-day CPET",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_002",
+      "required_measurement": "metabolomics",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_002",
+      "required_measurement": "MRS",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_002",
+      "required_measurement": "symptom timing",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_003",
+      "required_measurement": "blood lactate",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_003",
+      "required_measurement": "brain MRS lactate",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_024_pattern_003",
+      "required_measurement": "CPET lactate",
+      "source_files": [
+        "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_001",
+      "required_measurement": "heartbeat detection",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_001",
+      "required_measurement": "questionnaires",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_001",
+      "required_measurement": "metacognitive confidence",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_002",
+      "required_measurement": "pain diagnosis",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_002",
+      "required_measurement": "pain scales",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_002",
+      "required_measurement": "interoception tasks/questionnaires",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_003",
+      "required_measurement": "Bayesian modeling",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_003",
+      "required_measurement": "expectation manipulation",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_003",
+      "required_measurement": "neuroimaging",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_025_pattern_003",
+      "required_measurement": "intervention studies",
+      "source_files": [
+        "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_001",
+      "required_measurement": "PSG",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_001",
+      "required_measurement": "EEG",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_001",
+      "required_measurement": "fMRI/EEG",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_002",
+      "required_measurement": "DTI-ALPS",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_002",
+      "required_measurement": "MRI",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_002",
+      "required_measurement": "PET",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_002",
+      "required_measurement": "CSF biomarkers",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_003",
+      "required_measurement": "PSG",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_003",
+      "required_measurement": "experimental sleep fragmentation",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_003",
+      "required_measurement": "WASO",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_029_pattern_003",
+      "required_measurement": "arousal index",
+      "source_files": [
+        "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_001",
+      "required_measurement": "PPG wearable",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_001",
+      "required_measurement": "ECG comparator",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_002",
+      "required_measurement": "PPG RMSSD",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_002",
+      "required_measurement": "PPG SDNN",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_002",
+      "required_measurement": "ECG RMSSD",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_003",
+      "required_measurement": "consumer wearable",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_003",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_030_pattern_003",
+      "required_measurement": "PSG comparison",
+      "source_files": [
+        "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "IL-6",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "TNF-alpha",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "ferritin",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "B12",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "TSH",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "cortisol",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_001",
+      "required_measurement": "HbA1c",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_002",
+      "required_measurement": "serum ferritin",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_002",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_002",
+      "required_measurement": "transferrin saturation",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_002",
+      "required_measurement": "hepcidin",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_002",
+      "required_measurement": "sTfR",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_003",
+      "required_measurement": "serum B12",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_003",
+      "required_measurement": "MMA",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_003",
+      "required_measurement": "homocysteine",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_031_pattern_003",
+      "required_measurement": "folate",
+      "source_files": [
+        "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_035_pattern_001",
+      "required_measurement": "DAGs",
+      "source_files": [
+        "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_035_pattern_001",
+      "required_measurement": "potential outcomes",
+      "source_files": [
+        "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_035_pattern_001",
+      "required_measurement": "causal diagrams",
+      "source_files": [
+        "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_035_pattern_001",
+      "required_measurement": "observational cohorts",
+      "source_files": [
+        "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "sleep/circadian history",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "medication/substance timing",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "environmental exposure",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "exercise/meal timing",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "menstrual phase",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_036_pattern_001",
+      "required_measurement": "stress/travel/shift work",
+      "source_files": [
+        "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_037_pattern_001",
+      "required_measurement": "wearables",
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_037_pattern_001",
+      "required_measurement": "EMA",
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_037_pattern_001",
+      "required_measurement": "lab biomarkers",
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_037_pattern_001",
+      "required_measurement": "passive sensing",
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_037_pattern_001",
+      "required_measurement": "clinical records",
+      "source_files": [
+        "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_038_pattern_001",
+      "required_measurement": "ML prediction score",
+      "source_files": [
+        "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_038_pattern_001",
+      "required_measurement": "clinical prediction model",
+      "source_files": [
+        "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_038_pattern_001",
+      "required_measurement": "wearable/digital health model",
+      "source_files": [
+        "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "GRADE",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "ROBINS-I",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "ROBINS-E",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "RoB 2",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "AMSTAR-2",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "ROBIS",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_039_pattern_001",
+      "required_measurement": "PRISMA",
+      "source_files": [
+        "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "fatigue scales",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "EMA",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "clinical interview",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "wearables",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "CPET",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "neuropsychological testing",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_040_pattern_001",
+      "required_measurement": "sleep testing",
+      "source_files": [
+        "series_040_fatigue_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_001",
+      "required_measurement": "self-report",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_001",
+      "required_measurement": "Brief Brain Fog Scale",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_001",
+      "required_measurement": "Cognitive Failures Questionnaire",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_001",
+      "required_measurement": "structured interview",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_002",
+      "required_measurement": "EMA",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_002",
+      "required_measurement": "orthostatic testing",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_002",
+      "required_measurement": "wearables",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_002",
+      "required_measurement": "smartphone cognitive tasks",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_041_pattern_002",
+      "required_measurement": "medication timing",
+      "source_files": [
+        "series_041_brain_fog_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_001",
+      "required_measurement": "structured history",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_001",
+      "required_measurement": "Dizziness Handicap Inventory",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_001",
+      "required_measurement": "vestibular questionnaire",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "active stand",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "tilt table",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "orthostatic HR/BP",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "TCD",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "NIRS",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "capnography",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_042_pattern_002",
+      "required_measurement": "ETCO2",
+      "source_files": [
+        "series_042_dizziness_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "symptom report",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "HR/RHR",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "HRV",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "orthostatic HR/BP",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "ETCO2",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "ECG",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "glucose",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "TSH/freeT4/freeT3",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_001",
+      "required_measurement": "medication timing",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_002",
+      "required_measurement": "ECG HRV",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_002",
+      "required_measurement": "wearable HRV",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_002",
+      "required_measurement": "HF-HRV",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_043_pattern_002",
+      "required_measurement": "RMSSD",
+      "source_files": [
+        "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_044_pattern_001",
+      "required_measurement": "HRV/RMSSD",
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_044_pattern_001",
+      "required_measurement": "RHR",
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_044_pattern_001",
+      "required_measurement": "sleep metrics",
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_044_pattern_001",
+      "required_measurement": "activity load",
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_044_pattern_001",
+      "required_measurement": "subjective recovery scales",
+      "source_files": [
+        "series_044_low_recovery_state_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_045_pattern_001",
+      "required_measurement": "symptom scales",
+      "source_files": [
+        "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_045_pattern_001",
+      "required_measurement": "biomarkers",
+      "source_files": [
+        "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_045_pattern_001",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_045_pattern_001",
+      "required_measurement": "neuroimaging",
+      "source_files": [
+        "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "GI symptom scores",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "Bristol stool scale",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "calprotectin",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "CRP",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "microbiome/metabolomics",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_046_pattern_001",
+      "required_measurement": "nutrient labs",
+      "source_files": [
+        "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_047_pattern_001",
+      "required_measurement": "headache diary",
+      "source_files": [
+        "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_047_pattern_001",
+      "required_measurement": "prospective diary",
+      "source_files": [
+        "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_047_pattern_001",
+      "required_measurement": "clinical interview",
+      "source_files": [
+        "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_047_pattern_001",
+      "required_measurement": "neuropsychological testing",
+      "source_files": [
+        "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_048_pattern_001",
+      "required_measurement": "CPET",
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_048_pattern_001",
+      "required_measurement": "muscle biopsy",
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_048_pattern_001",
+      "required_measurement": "metabolomics",
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_048_pattern_001",
+      "required_measurement": "lactate",
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_048_pattern_001",
+      "required_measurement": "fat oxidation testing",
+      "source_files": [
+        "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_049_pattern_001",
+      "required_measurement": "clinical history",
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_049_pattern_001",
+      "required_measurement": "questionnaires",
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_049_pattern_001",
+      "required_measurement": "wearables",
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_049_pattern_001",
+      "required_measurement": "labs",
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_049_pattern_001",
+      "required_measurement": "objective testing",
+      "source_files": [
+        "series_049_multibranch_differential_inference_templates.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_001",
+      "required_measurement": "internal_validation",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_001",
+      "required_measurement": "external_validation",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_001",
+      "required_measurement": "prospective_validation",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_001",
+      "required_measurement": "real_world_monitoring",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_002",
+      "required_measurement": "source_registry",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_002",
+      "required_measurement": "evidence_card",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_002",
+      "required_measurement": "edge_metadata",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_002",
+      "required_measurement": "versioning",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_003",
+      "required_measurement": "red_team_cases",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_003",
+      "required_measurement": "ablation_tests",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_003",
+      "required_measurement": "error_analysis",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_050_pattern_003",
+      "required_measurement": "single_marker_dependence_test",
+      "source_files": [
+        "series_050_final_graph_guardrails_validation_protocol.cleaned.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_001",
+      "required_measurement": "experimental_sleep_restriction_protocol",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_001",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_001",
+      "required_measurement": "sleep_diary",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_001",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_002",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_002",
+      "required_measurement": "sleep_diary",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_002",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_002",
+      "required_measurement": "salivary_cortisol_assay",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_003",
+      "required_measurement": "actigraphy",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_003",
+      "required_measurement": "melatonin_timing",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_003",
+      "required_measurement": "light_exposure_assessment",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_003",
+      "required_measurement": "sleep_timing_assessment",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_004",
+      "required_measurement": "polysomnography",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_004",
+      "required_measurement": "oxygen_desaturation_index",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "triggering_chain_id": "series_002_pattern_004",
+      "required_measurement": "apnea_hypopnea_index",
+      "source_files": [
+        "sleep_circadian_inflammation_cognition_curated.json"
+      ],
+      "synthesis_status": "assembled_from_existing_sources"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_phases": 6,
+  "mission_phases": [
+    {
+      "phase_id": "preflight_baseline",
+      "display_name": "Preflight Baseline",
+      "description": "Pre-mission baseline collection. Individual-specific reference values established here.",
+      "interpretation_notes": [
+        "Establish within-person baseline for all parameters",
+        "Group norms are secondary to individual baseline"
+      ],
+      "key_risks": [
+        "Selection bias",
+        "Pre-mission stress artifacts"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "phase_id": "launch_early_inflight",
+      "display_name": "Launch / Early Inflight (0–30 days)",
+      "description": "Adaptation phase. Rapid physiological changes expected; many parameters outside baseline are normal adaptation.",
+      "interpretation_notes": [
+        "Fluid shift alters plasma volume",
+        "Circadian disruption common",
+        "Motion sickness adaptation window",
+        "HRV changes expected during first week"
+      ],
+      "key_risks": [
+        "Space motion sickness",
+        "Fluid redistribution",
+        "Sleep disruption"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "phase_id": "mid_mission",
+      "display_name": "Mid-Mission (30–150 days)",
+      "description": "Steady-state inflight. Deconditioning, bone loss, immune changes accumulate.",
+      "interpretation_notes": [
+        "Bone loss ongoing",
+        "Muscle loss if countermeasures inadequate",
+        "Viral reactivation risk highest",
+        "Cognitive performance monitoring important"
+      ],
+      "key_risks": [
+        "Deconditioning",
+        "Bone unloading",
+        "Viral reactivation",
+        "Team behavioral risk"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "phase_id": "late_mission",
+      "display_name": "Late Mission (150+ days)",
+      "description": "Cumulative effects dominant. Maximum radiation, bone, and muscle loss risk.",
+      "interpretation_notes": [
+        "All cumulative risks at peak",
+        "Pre-return preparation window",
+        "Radiation biomarker monitoring"
+      ],
+      "key_risks": [
+        "Radiation accumulation",
+        "Maximum deconditioning",
+        "SANS risk elevated"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "phase_id": "early_postflight",
+      "display_name": "Early Postflight (0–30 days)",
+      "description": "Rapid re-adaptation to gravity. Orthostatic intolerance, balance deficits, bone/muscle recovery begins.",
+      "interpretation_notes": [
+        "Orthostatic intolerance expected and transient",
+        "Balance/vestibular adaptation required",
+        "Fluid re-equilibration ongoing",
+        "Many inflight changes reverse within weeks"
+      ],
+      "key_risks": [
+        "Orthostatic intolerance",
+        "Fall risk",
+        "Bone fracture risk elevated"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    },
+    {
+      "phase_id": "late_postflight",
+      "display_name": "Late Postflight (30–180 days)",
+      "description": "Long-term recovery. Most parameters return to baseline; bone and vision changes may persist.",
+      "interpretation_notes": [
+        "Bone recovery incomplete at 6 months for some",
+        "SANS changes may persist",
+        "Cognitive recovery generally complete by 6 months"
+      ],
+      "key_risks": [
+        "Persistent SANS",
+        "Incomplete bone recovery"
+      ],
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources"
+    }
+  ]
+}

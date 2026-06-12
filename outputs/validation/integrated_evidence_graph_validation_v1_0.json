@@ -1,0 +1,174 @@
+{
+  "validator": "validate_integrated_evidence_graph_v1_0",
+  "timestamp": "2026-06-12T16:49:44.150893+00:00",
+  "overall_status": "PASS",
+  "summary": {
+    "node_count": 1979,
+    "edge_count": 5698,
+    "nodes_by_type": {
+      "context": 236,
+      "data_quality_flag": 3,
+      "evidence_source": 15,
+      "guardrail": 194,
+      "hidden_state": 54,
+      "inference_chain": 245,
+      "measured_parameter": 498,
+      "observation_input_type": 14,
+      "required_measurement": 465,
+      "response_type": 6,
+      "result_variation": 63,
+      "source_file": 93,
+      "source_tree": 93
+    },
+    "edges_by_type": {
+      "CAN_ACCEPT_INPUT": 431,
+      "CAN_OUTPUT_RESPONSE": 37,
+      "CONSTRAINED_BY_GUARDRAIL": 194,
+      "CONTAINS": 155,
+      "CONTEXT_OVERRIDES": 1,
+      "DERIVED_FROM": 771,
+      "HAS_VARIATION": 63,
+      "MEASURES": 524,
+      "NEEDS_REVIEW": 872,
+      "PART_OF_CHAIN": 22,
+      "RECOMMENDS_MEASUREMENT": 626,
+      "REQUIRES_CONTEXT": 328,
+      "SUPPORTED_BY_SOURCE": 1621,
+      "SUPPORTS_HIDDEN_STATE": 53
+    },
+    "hidden_state_count": 54,
+    "guardrail_count": 194,
+    "checks_total": 15,
+    "checks_passed": 15,
+    "checks_failed": 0,
+    "overall_status": "PASS"
+  },
+  "checks": [
+    {
+      "check": "L1_parse_graph",
+      "status": "PASS",
+      "passed": true,
+      "message": "Parsed integrated_evidence_graph_v1_0.json",
+      "details": {}
+    },
+    {
+      "check": "L1_parse_nodes",
+      "status": "PASS",
+      "passed": true,
+      "message": "Parsed integrated_evidence_graph_nodes_v1_0.json",
+      "details": {}
+    },
+    {
+      "check": "L1_parse_edges",
+      "status": "PASS",
+      "passed": true,
+      "message": "Parsed integrated_evidence_graph_edges_v1_0.json",
+      "details": {}
+    },
+    {
+      "check": "L1_parse_stats",
+      "status": "PASS",
+      "passed": true,
+      "message": "Parsed integrated_evidence_graph_stats_v1_0.json",
+      "details": {}
+    },
+    {
+      "check": "edge_endpoints_exist",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 edge endpoints missing",
+      "details": {
+        "examples": []
+      }
+    },
+    {
+      "check": "no_duplicate_node_ids",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 duplicate node ids",
+      "details": {
+        "duplicates": {}
+      }
+    },
+    {
+      "check": "no_duplicate_edge_ids",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 duplicate edge ids",
+      "details": {
+        "duplicates": {}
+      }
+    },
+    {
+      "check": "required_hidden_states_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "33/33 required hidden states present",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "check": "required_guardrails_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "23/23 required guardrails present",
+      "details": {
+        "missing": []
+      }
+    },
+    {
+      "check": "elevated_hr_node_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "elevated_heart_rate_relative_to_baseline present",
+      "details": {}
+    },
+    {
+      "check": "hidden_state_support_coverage",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 ready hidden states without incoming support edge",
+      "details": {
+        "unsupported": []
+      }
+    },
+    {
+      "check": "measured_parameter_traceability",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 measured parameters without source traceability",
+      "details": {
+        "examples": []
+      }
+    },
+    {
+      "check": "no_diagnosis_language_in_edges",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 edges contain diagnosis language",
+      "details": {
+        "examples": []
+      }
+    },
+    {
+      "check": "stats_consistent",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 stats inconsistencies",
+      "details": {
+        "inconsistencies": []
+      }
+    },
+    {
+      "check": "standalone_files_match_graph",
+      "status": "PASS",
+      "passed": true,
+      "message": "standalone node/edge files match embedded graph",
+      "details": {
+        "standalone_nodes": 1979,
+        "standalone_edges": 5698
+      }
+    }
+  ]
+}

@@ -1,0 +1,3969 @@
+{
+  "build_timestamp": "2026-06-11T23:06:35.543463+00:00",
+  "synthesis_status": "assembled_from_existing_sources",
+  "total_matrix_entries": 440,
+  "source_file_036": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+  "matrix": [
+    {
+      "source": "high_pain",
+      "target": "pain_sleep_fatigue_branch",
+      "chain_id": "pain_sleep_fatigue_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_fragmentation",
+      "target": "pain_sleep_fatigue_branch",
+      "chain_id": "pain_sleep_fatigue_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "next_day_fatigue",
+      "target": "pain_sleep_fatigue_branch",
+      "chain_id": "pain_sleep_fatigue_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "headache",
+      "target": "migraine_phenotype_branch",
+      "chain_id": "migraine_phenotype_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "photophobia/phonophobia/nausea",
+      "target": "migraine_phenotype_branch",
+      "chain_id": "migraine_phenotype_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "episodic_pattern",
+      "target": "migraine_phenotype_branch",
+      "chain_id": "migraine_phenotype_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "pain_limited_strength_test",
+      "target": "injury_context_override_branch",
+      "chain_id": "injury_context_override_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "injury_report",
+      "target": "injury_context_override_branch",
+      "chain_id": "injury_context_override_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "wound_redness/swelling",
+      "target": "wound_infection_hypothesis",
+      "chain_id": "wound_infection_hypothesis",
+      "confidence": "moderate-high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fever",
+      "target": "wound_infection_hypothesis",
+      "chain_id": "wound_infection_hypothesis",
+      "confidence": "moderate-high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_WBC/CRP",
+      "target": "wound_infection_hypothesis",
+      "chain_id": "wound_infection_hypothesis",
+      "confidence": "moderate-high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_procedure_pain",
+      "target": "medication_respiratory_risk_context_branch",
+      "chain_id": "medication_respiratory_risk_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "opioid_or_tramadol_use",
+      "target": "medication_respiratory_risk_context_branch",
+      "chain_id": "medication_respiratory_risk_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_RR/sedation",
+      "target": "medication_respiratory_risk_context_branch",
+      "chain_id": "medication_respiratory_risk_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_pain",
+      "target": "pain_perception_performance_limiter_branch",
+      "chain_id": "pain_perception_performance_limiter_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_RPE",
+      "target": "pain_perception_performance_limiter_branch",
+      "chain_id": "pain_perception_performance_limiter_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_CPET",
+      "target": "pain_perception_performance_limiter_branch",
+      "chain_id": "pain_perception_performance_limiter_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R002_pain_injury_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_FEV1_FVC",
+      "target": "obstructive_pulmonary_limitation_branch",
+      "chain_id": "obstructive_pulmonary_limitation_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dyspnea",
+      "target": "obstructive_pulmonary_limitation_branch",
+      "chain_id": "obstructive_pulmonary_limitation_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_limitation",
+      "target": "obstructive_pulmonary_limitation_branch",
+      "chain_id": "obstructive_pulmonary_limitation_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_FVC_or_TLC",
+      "target": "restrictive_pulmonary_mechanics_branch",
+      "chain_id": "restrictive_pulmonary_mechanics_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dyspnea",
+      "target": "restrictive_pulmonary_mechanics_branch",
+      "chain_id": "restrictive_pulmonary_mechanics_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_ETCO2",
+      "target": "restrictive_pulmonary_mechanics_branch",
+      "chain_id": "restrictive_pulmonary_mechanics_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_DLCO",
+      "target": "diffusion_gas_exchange_limitation_branch",
+      "chain_id": "diffusion_gas_exchange_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_desaturation",
+      "target": "diffusion_gas_exchange_limitation_branch",
+      "chain_id": "diffusion_gas_exchange_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dyspnea",
+      "target": "diffusion_gas_exchange_limitation_branch",
+      "chain_id": "diffusion_gas_exchange_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_spirometry",
+      "target": "dysfunctional_breathing_hypocapnia_branch",
+      "chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dyspnea",
+      "target": "dysfunctional_breathing_hypocapnia_branch",
+      "chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_ETCO2",
+      "target": "dysfunctional_breathing_hypocapnia_branch",
+      "chain_id": "dysfunctional_breathing_hypocapnia_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_lean_mass",
+      "target": "deconditioning_or_sarcopenia_context_branch",
+      "chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_strength",
+      "target": "deconditioning_or_sarcopenia_context_branch",
+      "chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_activity",
+      "target": "deconditioning_or_sarcopenia_context_branch",
+      "chain_id": "deconditioning_or_sarcopenia_context_branch",
+      "confidence": "high",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_body_mass",
+      "target": "body_recomposition_hidden_risk_branch",
+      "chain_id": "body_recomposition_hidden_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "muscle_loss",
+      "target": "body_recomposition_hidden_risk_branch",
+      "chain_id": "body_recomposition_hidden_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fat_gain",
+      "target": "body_recomposition_hidden_risk_branch",
+      "chain_id": "body_recomposition_hidden_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "positive_occult_blood",
+      "target": "GI_blood_loss_iron_deficiency_branch",
+      "chain_id": "chain_0012",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_Hb/ferritin",
+      "target": "GI_blood_loss_iron_deficiency_branch",
+      "chain_id": "chain_0012",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_calprotectin/lactoferrin",
+      "target": "intestinal_inflammation_or_IBD_branch",
+      "chain_id": "chain_0013",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "CRP_high",
+      "target": "intestinal_inflammation_or_IBD_branch",
+      "chain_id": "chain_0013",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "GI_symptoms",
+      "target": "intestinal_inflammation_or_IBD_branch",
+      "chain_id": "chain_0013",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "pathogen_positive",
+      "target": "infectious_diarrhea_dehydration_branch",
+      "chain_id": "chain_0014",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_watery_diarrhea",
+      "target": "infectious_diarrhea_dehydration_branch",
+      "chain_id": "chain_0014",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "urine_concentration/electrolyte_shift",
+      "target": "infectious_diarrhea_dehydration_branch",
+      "chain_id": "chain_0014",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fecal_fat_high/low_pancreatic_elastase",
+      "target": "malabsorption_fatigue_cluster",
+      "chain_id": "chain_0015",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "nutrient_deficiency",
+      "target": "malabsorption_fatigue_cluster",
+      "chain_id": "chain_0015",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_butyrate/Faecalibacterium",
+      "target": "intestinal_inflammation_metabolite_branch",
+      "chain_id": "chain_0016",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_calprotectin/CRP",
+      "target": "intestinal_inflammation_metabolite_branch",
+      "chain_id": "chain_0016",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "GI_symptoms",
+      "target": "intestinal_inflammation_metabolite_branch",
+      "chain_id": "chain_0016",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microbiome_shift",
+      "target": "uncertain_significance_branch",
+      "chain_id": "chain_0017",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "no_symptoms",
+      "target": "uncertain_significance_branch",
+      "chain_id": "chain_0017",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "no_blood_change",
+      "target": "uncertain_significance_branch",
+      "chain_id": "chain_0017",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_001_feces_stool_microbiome_GI_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_Hb",
+      "target": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_MCV/high_RDW",
+      "target": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_ferritin_or_low_TSAT",
+      "target": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "chain_id": "iron_deficiency_anemia_oxygen_delivery_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_Hb",
+      "target": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_MCV",
+      "target": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_CRP_or_kidney_marker",
+      "target": "anemia_of_inflammation_or_chronic_disease_branch",
+      "chain_id": "anemia_of_inflammation_or_chronic_disease_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_WBC_neutrophils",
+      "target": "acute_inflammatory_infection_branch",
+      "chain_id": "acute_inflammatory_infection_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fever_temperature",
+      "target": "acute_inflammatory_infection_branch",
+      "chain_id": "acute_inflammatory_infection_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_CRP",
+      "target": "acute_inflammatory_infection_branch",
+      "chain_id": "acute_inflammatory_infection_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_BUN_creatinine_ratio",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_urine_osmolality",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_tachycardia",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "hypovolemia_dehydration_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_sodium_or_major_electrolyte_shift",
+      "target": "electrolyte_neurocognitive_risk_branch",
+      "chain_id": "electrolyte_neurocognitive_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "confusion/fatigue",
+      "target": "electrolyte_neurocognitive_risk_branch",
+      "chain_id": "electrolyte_neurocognitive_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "medication_or_fluid_context",
+      "target": "electrolyte_neurocognitive_risk_branch",
+      "chain_id": "electrolyte_neurocognitive_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_AST_ALT",
+      "target": "hepatic_or_muscle_context_branch",
+      "chain_id": "hepatic_or_muscle_context_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "medication_timing_or_exertion",
+      "target": "hepatic_or_muscle_context_branch",
+      "chain_id": "hepatic_or_muscle_context_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "symptoms",
+      "target": "hepatic_or_muscle_context_branch",
+      "chain_id": "hepatic_or_muscle_context_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_albumin",
+      "target": "inflammation_fluid_nutrition_confounded_branch",
+      "chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_CRP",
+      "target": "inflammation_fluid_nutrition_confounded_branch",
+      "chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "edema_or_fluid_shift",
+      "target": "inflammation_fluid_nutrition_confounded_branch",
+      "chain_id": "inflammation_fluid_nutrition_confounded_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_uosm/high_USG",
+      "target": "renal_conservation_adaptation",
+      "chain_id": "chain_0025",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_plasma_osmolality",
+      "target": "renal_conservation_adaptation",
+      "chain_id": "chain_0025",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "stable_body_mass",
+      "target": "renal_conservation_adaptation",
+      "chain_id": "chain_0025",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_uosm/high_USG",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "chain_0026",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_tachycardia",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "chain_0026",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness",
+      "target": "hypovolemia_dehydration_hypothesis",
+      "chain_id": "chain_0026",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "shifted_6_sulfatoxymelatonin",
+      "target": "circadian_disruption_branch",
+      "chain_id": "chain_0027",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "light_exposure_shift",
+      "target": "circadian_disruption_branch",
+      "chain_id": "chain_0027",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_fragmentation",
+      "target": "circadian_disruption_branch",
+      "chain_id": "chain_0027",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "urinary_cortisol_metabolites",
+      "target": "stress_recovery_branch",
+      "chain_id": "chain_0028",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "workload/stress",
+      "target": "stress_recovery_branch",
+      "chain_id": "chain_0028",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "poor_sleep",
+      "target": "stress_recovery_branch",
+      "chain_id": "chain_0028",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "oxidative_stress_markers",
+      "target": "oxidative_stress_hypothesis",
+      "chain_id": "chain_0029",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "radiation_or_inflammation",
+      "target": "oxidative_stress_hypothesis",
+      "chain_id": "chain_0029",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue",
+      "target": "oxidative_stress_hypothesis",
+      "chain_id": "chain_0029",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "negative_nitrogen_balance",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "chain_0030",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_energy_intake",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "chain_0030",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_load",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "chain_0030",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "muscle_loss",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "chain_0030",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "urinary_calcium",
+      "target": "bone_mineral_loss_risk_branch",
+      "chain_id": "chain_0031",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microgravity",
+      "target": "bone_mineral_loss_risk_branch",
+      "chain_id": "chain_0031",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "bone_turnover",
+      "target": "bone_mineral_loss_risk_branch",
+      "chain_id": "chain_0031",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_003_urine_hydration_renal_mineral_metabolic_markers.v2.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "elevated_resting_HR_relative_to_baseline",
+      "target": "low_recovery_state_branch",
+      "chain_id": "low_recovery_state_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_HRV",
+      "target": "low_recovery_state_branch",
+      "chain_id": "low_recovery_state_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "poor_sleep",
+      "target": "low_recovery_state_branch",
+      "chain_id": "low_recovery_state_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "elevated_resting_HR",
+      "target": "infection_or_inflammatory_load_branch",
+      "chain_id": "infection_or_inflammatory_load_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fever/inflammation",
+      "target": "infection_or_inflammatory_load_branch",
+      "chain_id": "infection_or_inflammatory_load_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue",
+      "target": "infection_or_inflammatory_load_branch",
+      "chain_id": "infection_or_inflammatory_load_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "elevated_resting_HR",
+      "target": "oxygen_delivery_compensation_branch",
+      "chain_id": "oxygen_delivery_compensation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_Hb/ferritin",
+      "target": "oxygen_delivery_compensation_branch",
+      "chain_id": "oxygen_delivery_compensation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_intolerance",
+      "target": "oxygen_delivery_compensation_branch",
+      "chain_id": "oxygen_delivery_compensation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_HR_increase",
+      "target": "orthostatic_intolerance_branch",
+      "chain_id": "orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness",
+      "target": "orthostatic_intolerance_branch",
+      "chain_id": "orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_BP_or_BP_drop",
+      "target": "orthostatic_intolerance_branch",
+      "chain_id": "orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_RMSSD",
+      "target": "insufficient_recovery_or_overreaching_branch",
+      "chain_id": "insufficient_recovery_or_overreaching_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_training_load",
+      "target": "insufficient_recovery_or_overreaching_branch",
+      "chain_id": "insufficient_recovery_or_overreaching_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "next_day_fatigue",
+      "target": "insufficient_recovery_or_overreaching_branch",
+      "chain_id": "insufficient_recovery_or_overreaching_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_HRV",
+      "target": "sympathetic_arousal_branch",
+      "chain_id": "sympathetic_arousal_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_alpha_amylase",
+      "target": "sympathetic_arousal_branch",
+      "chain_id": "sympathetic_arousal_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "anxiety_like_symptoms",
+      "target": "sympathetic_arousal_branch",
+      "chain_id": "sympathetic_arousal_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "spaceflight_or_bed_rest",
+      "target": "autonomic_deconditioning_branch",
+      "chain_id": "autonomic_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "altered_HRV",
+      "target": "autonomic_deconditioning_branch",
+      "chain_id": "autonomic_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_intolerance_postflight",
+      "target": "autonomic_deconditioning_branch",
+      "chain_id": "autonomic_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_HR_increase",
+      "target": "POTS-like orthostatic intolerance branch",
+      "chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness",
+      "target": "POTS-like orthostatic intolerance branch",
+      "chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "no_BP_drop",
+      "target": "POTS-like orthostatic intolerance branch",
+      "chain_id": "POTS_like_orthostatic_intolerance_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_BP_drop",
+      "target": "orthostatic hypotension branch",
+      "chain_id": "orthostatic_hypotension_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness/syncope",
+      "target": "orthostatic hypotension branch",
+      "chain_id": "orthostatic_hypotension_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_urine_osmolality",
+      "target": "autonomic_dysregulation_branch",
+      "chain_id": "autonomic_dysregulation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_symptoms",
+      "target": "autonomic_dysregulation_branch",
+      "chain_id": "autonomic_dysregulation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_HRV",
+      "target": "autonomic_dysregulation_branch",
+      "chain_id": "autonomic_dysregulation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postflight_or_bed_rest",
+      "target": "spaceflight deconditioning volume branch",
+      "chain_id": "spaceflight_deconditioning_volume_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_plasma_volume",
+      "target": "spaceflight deconditioning volume branch",
+      "chain_id": "spaceflight_deconditioning_volume_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_intolerance",
+      "target": "spaceflight deconditioning volume branch",
+      "chain_id": "spaceflight_deconditioning_volume_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_symptoms",
+      "target": "cerebral_autoregulation_hypothesis",
+      "chain_id": "cerebral_autoregulation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_HR_BP",
+      "target": "cerebral_autoregulation_hypothesis",
+      "chain_id": "cerebral_autoregulation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "abnormal_cerebral_perfusion",
+      "target": "cerebral_autoregulation_hypothesis",
+      "chain_id": "cerebral_autoregulation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "increased_arterial_stiffness_PWV",
+      "target": "vascular_risk_branch",
+      "chain_id": "vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "endothelial_dysfunction_low_FMD_RHI",
+      "target": "vascular_risk_branch",
+      "chain_id": "vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "LVH_or_albuminuria",
+      "target": "vascular_risk_branch",
+      "chain_id": "vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "prolonged_bed_rest_or_spaceflight",
+      "target": "spaceflight_cardiovascular_adaptation_branch",
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_LV/RV_mass_and_volume",
+      "target": "spaceflight_cardiovascular_adaptation_branch",
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "decreased_stroke_volume",
+      "target": "spaceflight_cardiovascular_adaptation_branch",
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fluid_shift_markers",
+      "target": "spaceflight_cardiovascular_adaptation_branch",
+      "chain_id": "spaceflight_cardiovascular_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_stroke_volume",
+      "target": "volume_cardiac_output_branch",
+      "chain_id": "volume_cardiac_output_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_plasma_volume",
+      "target": "volume_cardiac_output_branch",
+      "chain_id": "volume_cardiac_output_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_intolerance",
+      "target": "volume_cardiac_output_branch",
+      "chain_id": "volume_cardiac_output_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_RHI",
+      "target": "microvascular_HFpEF_predisposition_branch",
+      "chain_id": "microvascular_HFpEF_predisposition_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "increased_LV_diastolic_stiffness",
+      "target": "microvascular_HFpEF_predisposition_branch",
+      "chain_id": "microvascular_HFpEF_predisposition_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "increased_PWV",
+      "target": "early_vascular_aging_branch",
+      "chain_id": "early_vascular_aging_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_or_mild_cIMT",
+      "target": "early_vascular_aging_branch",
+      "chain_id": "early_vascular_aging_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "longitudinal_LV_remodeling",
+      "target": "early_vascular_aging_branch",
+      "chain_id": "early_vascular_aging_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_echo",
+      "target": "non_structural_exercise_limitation_branch",
+      "chain_id": "non_structural_exercise_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_intolerance",
+      "target": "non_structural_exercise_limitation_branch",
+      "chain_id": "non_structural_exercise_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "abnormal_CPET",
+      "target": "non_structural_exercise_limitation_branch",
+      "chain_id": "non_structural_exercise_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_workload",
+      "target": "workload_sleep_performance_risk_branch",
+      "chain_id": "workload_sleep_performance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_debt",
+      "target": "workload_sleep_performance_risk_branch",
+      "chain_id": "workload_sleep_performance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "PVT_lapses",
+      "target": "workload_sleep_performance_risk_branch",
+      "chain_id": "workload_sleep_performance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "team_conflict",
+      "target": "team_behavioral_risk_branch",
+      "chain_id": "team_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "mood_variability",
+      "target": "team_behavioral_risk_branch",
+      "chain_id": "team_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "operational_errors",
+      "target": "team_behavioral_risk_branch",
+      "chain_id": "team_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "social_isolation",
+      "target": "isolation_mood_activity_branch",
+      "chain_id": "isolation_mood_activity_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "depressed_mood/anhedonia",
+      "target": "isolation_mood_activity_branch",
+      "chain_id": "isolation_mood_activity_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_activity",
+      "target": "isolation_mood_activity_branch",
+      "chain_id": "isolation_mood_activity_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "communication_delay",
+      "target": "communication_coordination_risk_branch",
+      "chain_id": "communication_coordination_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_shared_mental_model",
+      "target": "communication_coordination_risk_branch",
+      "chain_id": "communication_coordination_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "task_errors",
+      "target": "communication_coordination_risk_branch",
+      "chain_id": "communication_coordination_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_cohesion",
+      "target": "resilient_team_adaptation_branch",
+      "chain_id": "resilient_team_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_workload",
+      "target": "resilient_team_adaptation_branch",
+      "chain_id": "resilient_team_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "stable_performance",
+      "target": "resilient_team_adaptation_branch",
+      "chain_id": "resilient_team_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_022_team_process_social_stress_isolation_workload_communication.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postflight_balance_impairment",
+      "target": "sensorimotor_adaptation_branch",
+      "chain_id": "sensorimotor_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "recent_microgravity",
+      "target": "sensorimotor_adaptation_branch",
+      "chain_id": "sensorimotor_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_strength",
+      "target": "sensorimotor_adaptation_branch",
+      "chain_id": "sensorimotor_adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_motion_sickness_score",
+      "target": "motion_sickness_branch",
+      "chain_id": "motion_sickness_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "visual-vestibular_conflict",
+      "target": "motion_sickness_branch",
+      "chain_id": "motion_sickness_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "nausea",
+      "target": "motion_sickness_branch",
+      "chain_id": "motion_sickness_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "impaired_VOR",
+      "target": "vestibular_dysfunction_branch",
+      "chain_id": "vestibular_dysfunction_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "vertigo",
+      "target": "vestibular_dysfunction_branch",
+      "chain_id": "vestibular_dysfunction_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postural_instability",
+      "target": "vestibular_dysfunction_branch",
+      "chain_id": "vestibular_dysfunction_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness",
+      "target": "orthostatic_dizziness_branch",
+      "chain_id": "orthostatic_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_HR_increase",
+      "target": "orthostatic_dizziness_branch",
+      "chain_id": "orthostatic_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_VOR",
+      "target": "orthostatic_dizziness_branch",
+      "chain_id": "orthostatic_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness",
+      "target": "hyperventilation_dizziness_branch",
+      "chain_id": "hyperventilation_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_ETCO2",
+      "target": "hyperventilation_dizziness_branch",
+      "chain_id": "hyperventilation_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_SpO2",
+      "target": "hyperventilation_dizziness_branch",
+      "chain_id": "hyperventilation_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_balance",
+      "target": "hyperventilation_dizziness_branch",
+      "chain_id": "hyperventilation_dizziness_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_023_sensorimotor_vestibular_balance_motion_sickness_spatial_orientation.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_muscle_strength",
+      "target": "deconditioning_branch",
+      "chain_id": "deconditioning_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_activity",
+      "target": "deconditioning_branch",
+      "chain_id": "deconditioning_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_VO2peak",
+      "target": "deconditioning_branch",
+      "chain_id": "deconditioning_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "muscle_mass_loss",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "catabolic_low_energy_availability_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "negative_nitrogen_balance",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "catabolic_low_energy_availability_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_energy_intake",
+      "target": "catabolic_low_energy_availability_branch",
+      "chain_id": "catabolic_low_energy_availability_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postflight_strength_loss",
+      "target": "unloading_countermeasure_gap_branch",
+      "chain_id": "unloading_countermeasure_gap_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microgravity",
+      "target": "unloading_countermeasure_gap_branch",
+      "chain_id": "unloading_countermeasure_gap_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "countermeasure_adherence_low",
+      "target": "unloading_countermeasure_gap_branch",
+      "chain_id": "unloading_countermeasure_gap_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "preserved_muscle_mass",
+      "target": "neuromuscular_function_or_pain_limitation_branch",
+      "chain_id": "neuromuscular_function_or_pain_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_strength",
+      "target": "neuromuscular_function_or_pain_limitation_branch",
+      "chain_id": "neuromuscular_function_or_pain_limitation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_gait_speed",
+      "target": "functional_mobility_risk_branch",
+      "chain_id": "functional_mobility_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_strength",
+      "target": "functional_mobility_risk_branch",
+      "chain_id": "functional_mobility_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "balance_impairment",
+      "target": "functional_mobility_risk_branch",
+      "chain_id": "functional_mobility_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_024_muscle_strength_functional_mobility_exercise_countermeasure_response.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microgravity_or_bed_rest",
+      "target": "unloading_bone_loss_branch",
+      "chain_id": "unloading_bone_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "increased_CTX/NTX",
+      "target": "unloading_bone_loss_branch",
+      "chain_id": "unloading_bone_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "decreased_BMD",
+      "target": "unloading_bone_loss_branch",
+      "chain_id": "unloading_bone_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_urinary_calcium",
+      "target": "renal_stone_risk_branch",
+      "chain_id": "renal_stone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microgravity",
+      "target": "renal_stone_risk_branch",
+      "chain_id": "renal_stone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_fluid_intake",
+      "target": "renal_stone_risk_branch",
+      "chain_id": "renal_stone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_25OH_D",
+      "target": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_PTH",
+      "target": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_BMD_or_high_turnover",
+      "target": "secondary_hyperparathyroid_bone_risk_branch",
+      "chain_id": "secondary_hyperparathyroid_bone_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "decreased_BMD",
+      "target": "fracture_fall_risk_branch",
+      "chain_id": "fracture_fall_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_muscle_strength",
+      "target": "fracture_fall_risk_branch",
+      "chain_id": "fracture_fall_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "balance_impairment",
+      "target": "fracture_fall_risk_branch",
+      "chain_id": "fracture_fall_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "countermeasure_adherence",
+      "target": "bone_countermeasure_response_branch",
+      "chain_id": "bone_countermeasure_response_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "stable_BMD",
+      "target": "bone_countermeasure_response_branch",
+      "chain_id": "bone_countermeasure_response_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "preserved_strength",
+      "target": "bone_countermeasure_response_branch",
+      "chain_id": "bone_countermeasure_response_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microgravity",
+      "target": "SANS_risk_branch",
+      "chain_id": "SANS_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "cephalad_fluid_shift",
+      "target": "SANS_risk_branch",
+      "chain_id": "SANS_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "optic_disc_edema/RNFL_change",
+      "target": "SANS_risk_branch",
+      "chain_id": "SANS_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "hyperopic_shift",
+      "target": "SANS_structural_visual_branch",
+      "chain_id": "SANS_structural_visual_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "globe_flattening",
+      "target": "SANS_structural_visual_branch",
+      "chain_id": "SANS_structural_visual_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "optic_disc_edema",
+      "target": "SANS_structural_visual_branch",
+      "chain_id": "SANS_structural_visual_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "optic_nerve_sheath_diameter_increase",
+      "target": "ICP_proxy_hypothesis",
+      "chain_id": "ICP_proxy_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "head_down_tilt",
+      "target": "ICP_proxy_hypothesis",
+      "chain_id": "ICP_proxy_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "visual_symptoms",
+      "target": "ICP_proxy_hypothesis",
+      "chain_id": "ICP_proxy_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "LBNP",
+      "target": "countermeasure_effect_branch",
+      "chain_id": "countermeasure_effect_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "decreased_IOP/ONSD/choroidal_thickness",
+      "target": "countermeasure_effect_branch",
+      "chain_id": "countermeasure_effect_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "visual_symptoms",
+      "target": "non_structural_visual_symptom_branch",
+      "chain_id": "non_structural_visual_symptom_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_OCT/fundoscopy",
+      "target": "non_structural_visual_symptom_branch",
+      "chain_id": "non_structural_visual_symptom_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_habitat_CO2",
+      "target": "CO2_cognitive_headache_risk_branch",
+      "chain_id": "co2_cognitive_headache_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "headache",
+      "target": "CO2_cognitive_headache_risk_branch",
+      "chain_id": "co2_cognitive_headache_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "PVT_lapses",
+      "target": "CO2_cognitive_headache_risk_branch",
+      "chain_id": "co2_cognitive_headache_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_VOC_or_PM",
+      "target": "air_quality_respiratory_branch",
+      "chain_id": "air_quality_respiratory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "respiratory_symptoms",
+      "target": "air_quality_respiratory_branch",
+      "chain_id": "air_quality_respiratory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "inflammation",
+      "target": "air_quality_respiratory_branch",
+      "chain_id": "air_quality_respiratory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "night_noise_exposure",
+      "target": "noise_sleep_recovery_branch",
+      "chain_id": "noise_sleep_recovery_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_fragmentation",
+      "target": "noise_sleep_recovery_branch",
+      "chain_id": "noise_sleep_recovery_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "next_day_fatigue",
+      "target": "noise_sleep_recovery_branch",
+      "chain_id": "noise_sleep_recovery_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_temperature/humidity",
+      "target": "heat_strain_environment_branch",
+      "chain_id": "heat_strain_environment_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_core_temp/HR",
+      "target": "heat_strain_environment_branch",
+      "chain_id": "heat_strain_environment_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "cognitive_slowing",
+      "target": "heat_strain_environment_branch",
+      "chain_id": "heat_strain_environment_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_habitat_CO2",
+      "target": "environmental_exposure_without_physiologic_effect_branch",
+      "chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "normal_ETCO2",
+      "target": "environmental_exposure_without_physiologic_effect_branch",
+      "chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "no_symptoms",
+      "target": "environmental_exposure_without_physiologic_effect_branch",
+      "chain_id": "environmental_exposure_without_physiologic_effect_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_cumulative_dose",
+      "target": "radiation_biological_effect_branch",
+      "chain_id": "radiation_biological_effect_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "increased_chromosomal_aberrations",
+      "target": "radiation_biological_effect_branch",
+      "chain_id": "radiation_biological_effect_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "solar_particle_event",
+      "target": "acute_radiation_event_branch",
+      "chain_id": "acute_radiation_event_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_dose_increase",
+      "target": "acute_radiation_event_branch",
+      "chain_id": "acute_radiation_event_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "DNA_damage_marker_shift",
+      "target": "acute_radiation_event_branch",
+      "chain_id": "acute_radiation_event_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_dose",
+      "target": "radiation_oxidative_inflammatory_branch",
+      "chain_id": "radiation_oxidative_inflammatory_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "oxidative_stress_markers",
+      "target": "radiation_oxidative_inflammatory_branch",
+      "chain_id": "radiation_oxidative_inflammatory_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "inflammation",
+      "target": "radiation_oxidative_inflammatory_branch",
+      "chain_id": "radiation_oxidative_inflammatory_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "radiation_dose",
+      "target": "radiation_vascular_risk_branch",
+      "chain_id": "radiation_vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "endothelial_markers",
+      "target": "radiation_vascular_risk_branch",
+      "chain_id": "radiation_vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "arterial_stiffness/CVD_outcome",
+      "target": "radiation_vascular_risk_branch",
+      "chain_id": "radiation_vascular_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "modeled_high_lifetime_cancer_risk",
+      "target": "long_term_surveillance_branch",
+      "chain_id": "long_term_surveillance_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "cumulative_dose",
+      "target": "long_term_surveillance_branch",
+      "chain_id": "long_term_surveillance_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_028_radiation_exposure_dosimetry_oxidative_DNA_risk_links.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_energy_intake",
+      "target": "low_energy_availability_branch",
+      "chain_id": "low_energy_availability_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "weight_loss",
+      "target": "low_energy_availability_branch",
+      "chain_id": "low_energy_availability_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "BHB_high",
+      "target": "low_energy_availability_branch",
+      "chain_id": "low_energy_availability_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_protein_intake",
+      "target": "catabolic_muscle_loss_branch",
+      "chain_id": "catabolic_muscle_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "negative_nitrogen_balance",
+      "target": "catabolic_muscle_loss_branch",
+      "chain_id": "catabolic_muscle_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "muscle_mass_loss",
+      "target": "catabolic_muscle_loss_branch",
+      "chain_id": "catabolic_muscle_loss_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "late_eating",
+      "target": "meal_timing_circadian_metabolic_branch",
+      "chain_id": "meal_timing_circadian_metabolic_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "circadian_misalignment",
+      "target": "meal_timing_circadian_metabolic_branch",
+      "chain_id": "meal_timing_circadian_metabolic_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "poor_sleep/glucose_variability",
+      "target": "meal_timing_circadian_metabolic_branch",
+      "chain_id": "meal_timing_circadian_metabolic_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_fiber_intake",
+      "target": "diet_GI_microbiome_branch",
+      "chain_id": "diet_GI_microbiome_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "constipation/GI_symptoms",
+      "target": "diet_GI_microbiome_branch",
+      "chain_id": "diet_GI_microbiome_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "microbiome_shift",
+      "target": "diet_GI_microbiome_branch",
+      "chain_id": "diet_GI_microbiome_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "poor_food_acceptability",
+      "target": "food_system_behavioral_risk_branch",
+      "chain_id": "food_system_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_energy_intake",
+      "target": "food_system_behavioral_risk_branch",
+      "chain_id": "food_system_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "mood/fatigue",
+      "target": "food_system_behavioral_risk_branch",
+      "chain_id": "food_system_behavioral_risk_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_029_nutrition_diet_hydration_intake_energy_balance_food_system.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sedative_hypnotic_use",
+      "target": "medication_sleepiness_context_override",
+      "chain_id": "medication_sleepiness_context_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "next_day_PVT_lapses",
+      "target": "medication_sleepiness_context_override",
+      "chain_id": "medication_sleepiness_context_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleepiness",
+      "target": "medication_sleepiness_context_override",
+      "chain_id": "medication_sleepiness_context_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "beta_blocker_use",
+      "target": "medication_chronotropic_override",
+      "chain_id": "medication_chronotropic_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_peak_HR/chronotropic_response",
+      "target": "medication_chronotropic_override",
+      "chain_id": "medication_chronotropic_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_intolerance",
+      "target": "medication_chronotropic_override",
+      "chain_id": "medication_chronotropic_override",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "anticholinergic_burden",
+      "target": "anticholinergic_cognitive_GI_branch",
+      "chain_id": "anticholinergic_cognitive_GI_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "cognitive_slowing",
+      "target": "anticholinergic_cognitive_GI_branch",
+      "chain_id": "anticholinergic_cognitive_GI_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dry_mouth/constipation",
+      "target": "anticholinergic_cognitive_GI_branch",
+      "chain_id": "anticholinergic_cognitive_GI_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "SSRI/SNRI_start_or_change",
+      "target": "antidepressant_timing_context_branch",
+      "chain_id": "antidepressant_timing_context_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "GI_symptoms/sleep_change/anxiety_shift",
+      "target": "antidepressant_timing_context_branch",
+      "chain_id": "antidepressant_timing_context_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "opioid_or_tramadol_use",
+      "target": "respiratory_depression_risk_branch",
+      "chain_id": "respiratory_depression_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_RR/sleep_desaturation",
+      "target": "respiratory_depression_risk_branch",
+      "chain_id": "respiratory_depression_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sedation",
+      "target": "respiratory_depression_risk_branch",
+      "chain_id": "respiratory_depression_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "exercise_countermeasure_low_adherence",
+      "target": "countermeasure_adherence_gap_branch",
+      "chain_id": "countermeasure_adherence_gap_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "strength/BMD_loss",
+      "target": "countermeasure_adherence_gap_branch",
+      "chain_id": "countermeasure_adherence_gap_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_030_medications_countermeasures_procedures_side_effects_timing.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "OCT_RNFL_change",
+      "target": "SANS_structural_branch",
+      "chain_id": "SANS_structural_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "cephalad_fluid_shift",
+      "target": "SANS_structural_branch",
+      "chain_id": "SANS_structural_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "visual_change",
+      "target": "SANS_structural_branch",
+      "chain_id": "SANS_structural_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "echo_reduced_LV_volume",
+      "target": "cardiovascular_deconditioning_branch",
+      "chain_id": "cardiovascular_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_plasma_volume",
+      "target": "cardiovascular_deconditioning_branch",
+      "chain_id": "cardiovascular_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_intolerance",
+      "target": "cardiovascular_deconditioning_branch",
+      "chain_id": "cardiovascular_deconditioning_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "muscle_ultrasound_thickness_loss",
+      "target": "unloading_muscle_loss_branch",
+      "chain_id": "unloading_muscle_loss_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "strength_loss",
+      "target": "unloading_muscle_loss_branch",
+      "chain_id": "unloading_muscle_loss_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_activity",
+      "target": "unloading_muscle_loss_branch",
+      "chain_id": "unloading_muscle_loss_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "ONSD_ultrasound_abnormality",
+      "target": "ICP_proxy_branch",
+      "chain_id": "ICP_proxy_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fluid_shift/HDT",
+      "target": "ICP_proxy_branch",
+      "chain_id": "ICP_proxy_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "visual_or_headache_context",
+      "target": "ICP_proxy_branch",
+      "chain_id": "ICP_proxy_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_031_imaging_ultrasound_MRI_OCT_structural_functional_scans.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_IL6/TNF/CRP",
+      "target": "inflammatory_sickness_behavior_branch",
+      "chain_id": "inflammatory_sickness_behavior_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue/anhedonia",
+      "target": "inflammatory_sickness_behavior_branch",
+      "chain_id": "inflammatory_sickness_behavior_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sickness_behavior",
+      "target": "inflammatory_sickness_behavior_branch",
+      "chain_id": "inflammatory_sickness_behavior_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "low_NK_activity",
+      "target": "stress_related_immune_suppression_branch",
+      "chain_id": "stress_related_immune_suppression_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "latent_virus_shedding",
+      "target": "stress_related_immune_suppression_branch",
+      "chain_id": "stress_related_immune_suppression_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_stress",
+      "target": "stress_related_immune_suppression_branch",
+      "chain_id": "stress_related_immune_suppression_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "EBV_or_HSV_reactivation",
+      "target": "viral_reactivation_fatigue_hypothesis",
+      "chain_id": "viral_reactivation_fatigue_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue",
+      "target": "viral_reactivation_fatigue_hypothesis",
+      "chain_id": "viral_reactivation_fatigue_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "immune_shift",
+      "target": "viral_reactivation_fatigue_hypothesis",
+      "chain_id": "viral_reactivation_fatigue_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "immune_activation",
+      "target": "postviral_immune_branch",
+      "chain_id": "postviral_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postviral_status",
+      "target": "postviral_immune_branch",
+      "chain_id": "postviral_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "brain_fog/fatigue",
+      "target": "postviral_immune_branch",
+      "chain_id": "postviral_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_032_immune_function_cells_cytokines_latent_virus_assays.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "gut_microbiome_shift",
+      "target": "gut_immune_brain_hypothesis",
+      "chain_id": "gut_immune_brain_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "immune_activation",
+      "target": "gut_immune_brain_hypothesis",
+      "chain_id": "gut_immune_brain_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue/mood",
+      "target": "gut_immune_brain_hypothesis",
+      "chain_id": "gut_immune_brain_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "oral_dysbiosis",
+      "target": "oral_systemic_inflammation_hypothesis",
+      "chain_id": "oral_systemic_inflammation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "periodontal_inflammation",
+      "target": "oral_systemic_inflammation_hypothesis",
+      "chain_id": "oral_systemic_inflammation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "blood_CRP",
+      "target": "oral_systemic_inflammation_hypothesis",
+      "chain_id": "oral_systemic_inflammation_hypothesis",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "environmental_pathogen_detection",
+      "target": "crew_environment_transfer_branch",
+      "chain_id": "crew_environment_transfer_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "crew_skin/oral_matching",
+      "target": "crew_environment_transfer_branch",
+      "chain_id": "crew_environment_transfer_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "symptoms",
+      "target": "crew_environment_transfer_branch",
+      "chain_id": "crew_environment_transfer_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "AMR_gene_increase",
+      "target": "antimicrobial_resistance_risk_branch",
+      "chain_id": "antimicrobial_resistance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "antibiotic_use",
+      "target": "antimicrobial_resistance_risk_branch",
+      "chain_id": "antimicrobial_resistance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "pathogen_detection",
+      "target": "antimicrobial_resistance_risk_branch",
+      "chain_id": "antimicrobial_resistance_risk_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "spaceflight_microbiome_instability",
+      "target": "astronaut_microbiome_immune_branch",
+      "chain_id": "astronaut_microbiome_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "immune_shift",
+      "target": "astronaut_microbiome_immune_branch",
+      "chain_id": "astronaut_microbiome_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "infection_risk",
+      "target": "astronaut_microbiome_immune_branch",
+      "chain_id": "astronaut_microbiome_immune_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_033_microbiome_fecal_oral_skin_environmental_pathogen_ecology.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "preflight_baseline",
+      "target": "within_person_state_trajectory_branch",
+      "chain_id": "within_person_state_trajectory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "inflight_deviation",
+      "target": "within_person_state_trajectory_branch",
+      "chain_id": "within_person_state_trajectory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "postflight_recovery",
+      "target": "within_person_state_trajectory_branch",
+      "chain_id": "within_person_state_trajectory_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "early_inflight_shift",
+      "target": "adaptation_branch",
+      "chain_id": "adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "later_stabilization",
+      "target": "adaptation_branch",
+      "chain_id": "adaptation_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "progressive_mid_to_late_mission_drift",
+      "target": "cumulative_load_branch",
+      "chain_id": "cumulative_load_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue/performance_decline",
+      "target": "cumulative_load_branch",
+      "chain_id": "cumulative_load_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_landing_orthostatic_intolerance",
+      "target": "re_adaptation_branch",
+      "chain_id": "re_adaptation_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "recovery_over_days/weeks",
+      "target": "re_adaptation_branch",
+      "chain_id": "re_adaptation_branch",
+      "confidence": "high",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_exposure",
+      "target": "lagged_effect_branch",
+      "chain_id": "lagged_effect_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "delayed_symptom_peak",
+      "target": "lagged_effect_branch",
+      "chain_id": "lagged_effect_branch",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_034_mission_phase_baseline_temporal_dynamics_transitions.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "intermittent_fasting_or_time_restricted_eating",
+      "target": "cognitive_function_and_mental_health",
+      "chain_id": "series_004b_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "beta_hydroxybutyrate_levels",
+      "target": "general_cognitive_performance",
+      "chain_id": "series_004b_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "short_term_fasting_duration_hours_to_days",
+      "target": "cognitive_performance",
+      "chain_id": "series_004b_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_004b_postprandial_fasting_ketones_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_severe_hypoglycemia",
+      "target": "acute_cognitive_performance",
+      "chain_id": "series_004c_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "short_term_glycemic_variability",
+      "target": "global_cognition_and_executive_function",
+      "chain_id": "series_004c_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "typical_postprandial_glycemic_excursion",
+      "target": "objective_cognition_and_subjective_fatigue",
+      "chain_id": "series_004c_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "symptomatic_glycemic_event_awareness",
+      "target": "daily_functioning_energy_mood_memory",
+      "chain_id": "series_004c_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_004c_postprandial_glucose_brain_fog_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "insufficient_or_disrupted_sleep",
+      "target": "next_day_fatigue_mood_and_cognitive_performance",
+      "chain_id": "series_005_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "circadian_misalignment",
+      "target": "fatigue_mood_and_cognitive_performance",
+      "chain_id": "series_005_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_sleep_restriction",
+      "target": "attention_executive_function_and_working_memory",
+      "chain_id": "series_005_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_disturbance_or_poor_sleep_quality",
+      "target": "fatigue_mood_and_sickness_behavior_like_symptoms",
+      "chain_id": "series_005_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_vagally_mediated_HRV",
+      "target": "fatigue_stress_mood_recovery_status",
+      "chain_id": "series_006_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "higher_resting_vagally_mediated_HRV",
+      "target": "executive_attention_working_memory_performance",
+      "chain_id": "series_006_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_mental_stress",
+      "target": "acute_stress_state_and_recovery",
+      "chain_id": "series_006_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "slow_breathing_or_HRV_biofeedback",
+      "target": "mood_stress_resilience",
+      "chain_id": "series_006_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_006_autonomic_hrv_resting_hr_fatigue_stress_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "HPA_axis_dysregulation",
+      "target": "fatigue_burnout_exhaustion",
+      "chain_id": "series_007_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_psychological_stress",
+      "target": "acute_stress_state",
+      "chain_id": "series_007_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_psychological_stress_or_allostatic_load",
+      "target": "metabolic_inflammatory_risk_and_mood_fatigue",
+      "chain_id": "series_007_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_007_hpa_axis_cortisol_stress_fatigue_anxiety_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_immune_activation_or_chronic_low_grade_inflammation",
+      "target": "sickness_behavior_fatigue_anhedonia_motivation_loss",
+      "chain_id": "series_008_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "systemic_inflammation",
+      "target": "objective_cognitive_performance",
+      "chain_id": "series_008_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "persistent_fatigue_with_normal_standard_inflammatory_markers",
+      "target": "persistent_subjective_fatigue_or_brain_fog",
+      "chain_id": "series_008_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_008_inflammation_cytokines_sickness_behavior_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_centralized_pain",
+      "target": "objective_cognitive_performance",
+      "chain_id": "series_009_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_pain_state",
+      "target": "fatigue_and_cognitive_symptoms",
+      "chain_id": "series_009_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fibromyalgia_symptom_burden",
+      "target": "fatigue_mood_sleep_symptoms",
+      "chain_id": "series_009_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_009_pain_nociception_central_sensitization_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "hyperventilation_state",
+      "target": "attention_and_cognitive_inhibition",
+      "chain_id": "series_010_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dysfunctional_breathing_pattern",
+      "target": "fatigue_dyspnea_brain_fog",
+      "chain_id": "series_010_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "panic_disorder_or_panic_attack_state",
+      "target": "panic_anxiety_symptoms",
+      "chain_id": "series_010_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_disordered_breathing_intermitent_hypoxia",
+      "target": "cognitive_decline_and_executive_dysfunction",
+      "chain_id": "series_010_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "slow_paced_diaphragmatic_breathing",
+      "target": "anxiety_arousal_attention",
+      "chain_id": "series_010_pattern_005",
+      "confidence": "unknown",
+      "source_file": "series_010_respiration_CO2_oxygenation_panic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dehydration_or_hypohydration",
+      "target": "sustained_attention_vigilance_and_subjective_fatigue",
+      "chain_id": "series_011_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_intolerance_or_POTS_pattern",
+      "target": "orthostatic_brain_fog_dizziness_fatigue_cognition",
+      "chain_id": "series_011_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_011_hydration_electrolytes_blood_pressure_orthostatic_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "moderate_to_vigorous_physical_activity",
+      "target": "mood_fatigue_cognition",
+      "chain_id": "series_012_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sedentary_behavior",
+      "target": "fatigue_depression_motivation_cognition",
+      "chain_id": "series_012_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "excessive_exertion_or_overtraining",
+      "target": "post_exertional_malaise_and_fatigue",
+      "chain_id": "series_012_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_012_physical_activity_exercise_lactate_recovery_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "iron_deficiency_status",
+      "target": "fatigue_mood_sleep_attention_cognition",
+      "chain_id": "series_014_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "functional_vitamin_B12_deficiency",
+      "target": "cognitive_and_neuropsychiatric_impairment",
+      "chain_id": "series_014_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "non_iron_non_B12_micronutrient_status",
+      "target": "mood_sleep_cognitive_frailty",
+      "chain_id": "series_014_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_014_nutritional_deficiency_markers_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "menstrual_cycle_hormone_fluctuation",
+      "target": "subjective_mood_fatigue_sleep_symptoms",
+      "chain_id": "series_015_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "menstrual_cycle_phase",
+      "target": "objective_cognitive_performance",
+      "chain_id": "series_015_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "PMS_PMDD_or_mood_disorder_status",
+      "target": "cycle_related_symptom_exacerbation",
+      "chain_id": "series_015_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "menstrual_cycle_phase_or_hormonal_state",
+      "target": "readiness_or_recovery_metrics",
+      "chain_id": "series_015_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "oral_contraceptive_withdrawal_week",
+      "target": "mood_anxiety_fatigue_symptoms",
+      "chain_id": "series_015_pattern_005",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "perimenopause_hormone_variability",
+      "target": "depressive_symptoms",
+      "chain_id": "series_015_pattern_006",
+      "confidence": "unknown",
+      "source_file": "series_015_sex_hormones_menstrual_cycle_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "gut_microbiota_composition_function",
+      "target": "mood_fatigue_cognitive_symptoms",
+      "chain_id": "series_016_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "IBS_IBD_symptom_burden",
+      "target": "fatigue_anxiety_depression",
+      "chain_id": "series_016_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "diet_probiotic_prebiotic_FMT_intervention",
+      "target": "subjective_mood_fatigue_GI_symptoms",
+      "chain_id": "series_016_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_016_gut_brain_axis_GI_symptoms_microbiome_fatigue_mood_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "caffeine_intake",
+      "target": "sleep_quality_fatigue_attention",
+      "chain_id": "series_017_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sedative_opioid_anticholinergic_exposure",
+      "target": "sedation_cognitive_slowing_physical_impairment",
+      "chain_id": "series_017_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "SSRI_SNRI_use_or_discontinuation",
+      "target": "mood_sleep_fatigue_cognition_withdrawal",
+      "chain_id": "series_017_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "stimulant_or_ADHD_medication_use",
+      "target": "executive_function_sleep_anxiety",
+      "chain_id": "series_017_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "THC_cannabis_alcohol_nicotine_use",
+      "target": "sleep_anxiety_cognition_fatigue",
+      "chain_id": "series_017_pattern_005",
+      "confidence": "unknown",
+      "source_file": "series_017_medication_substance_effects_fatigue_mood_sleep_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "evening_blue_light_exposure_or_light_at_night",
+      "target": "sleep_quality_attention_mood",
+      "chain_id": "series_018_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "morning_or_daytime_bright_light_exposure",
+      "target": "alertness_mood_executive_function",
+      "chain_id": "series_018_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "PM2_5_air_pollution_exposure",
+      "target": "global_cognition_executive_function",
+      "chain_id": "series_018_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "high_indoor_CO2_or_moderate_heat_poor_ventilation",
+      "target": "fatigue_stress_task_performance",
+      "chain_id": "series_018_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_noise_or_noise_heat_combined_exposure",
+      "target": "higher_order_cognition_anxiety_depression",
+      "chain_id": "series_018_pattern_005",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "green_space_or_nature_exposure",
+      "target": "wellbeing_mental_distress",
+      "chain_id": "series_018_pattern_006",
+      "confidence": "unknown",
+      "source_file": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "migraine_attack_or_postdrome",
+      "target": "fatigue_brain_fog_cognitive_performance",
+      "chain_id": "series_019_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "vestibular_migraine",
+      "target": "dizziness_brain_fog_visuospatial_cognition",
+      "chain_id": "series_019_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "migraine_burden_or_chronic_headache",
+      "target": "functional_impairment_mood_fatigue_cognition",
+      "chain_id": "series_019_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_019_headache_migraine_vestibular_fatigue_brain_fog_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_viral_state_or_long_COVID_state",
+      "target": "persistent_fatigue_brain_fog_and_functional_impairment",
+      "chain_id": "series_020_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_infectious_dysautonomia",
+      "target": "fatigue_dizziness_brain_fog_exercise_intolerance",
+      "chain_id": "series_020_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "persistent_immune_activation_after_infection",
+      "target": "fatigue_brain_fog_mood_symptoms",
+      "chain_id": "series_020_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_viral_neurocognitive_state",
+      "target": "subjective_brain_fog_and_objective_cognitive_impairment",
+      "chain_id": "series_020_pattern_004",
+      "confidence": "unknown",
+      "source_file": "series_020_post_viral_long_COVID_immune_dysautonomia_fatigue_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "allostatic_load",
+      "target": "fatigue_burnout_mood_cognition_health_risk",
+      "chain_id": "series_021_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "persistent_multi_signal_deviation_from_baseline",
+      "target": "low_recovery_state",
+      "chain_id": "series_021_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_stress_response",
+      "target": "long_term_stress_burden",
+      "chain_id": "series_021_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_021_allostatic_load_recovery_failure_physiological_reserve.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_challenge_or_orthostatic_intolerance",
+      "target": "dizziness_fatigue_brain_fog_cognitive_impairment",
+      "chain_id": "series_022_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_ETCO2_or_hypocapnia",
+      "target": "dizziness_and_brain_fog",
+      "chain_id": "series_022_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_022_cerebral_perfusion_CO2_oxygen_orthostatic_brain_fog.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "acute_immune_activation",
+      "target": "sickness_behavior",
+      "chain_id": "series_023_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_low_grade_inflammation",
+      "target": "anhedonia_low_motivation",
+      "chain_id": "series_023_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "interferon_signaling",
+      "target": "depressive_anhedonic_symptoms",
+      "chain_id": "series_023_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_023_sickness_behavior_neuroimmune_fatigue_motivation_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "impaired_metabolic_flexibility",
+      "target": "fatigue_exercise_intolerance",
+      "chain_id": "series_024_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "post_exertional_malaise",
+      "target": "delayed_fatigue_worsening_and_brain_fog",
+      "chain_id": "series_024_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "elevated_lactate",
+      "target": "fatigue_or_energy_stress",
+      "chain_id": "series_024_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_024_metabolic_flexibility_mitochondrial_energy_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "interoceptive_construct_mismatch",
+      "target": "symptom_perception",
+      "chain_id": "series_025_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "chronic_pain_state",
+      "target": "symptom_amplification",
+      "chain_id": "series_025_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "interoceptive_prediction_error",
+      "target": "symptom_amplification",
+      "chain_id": "series_025_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_025_interoception_symptom_perception_prediction_error_fatigue_anxiety.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "precise_SO_spindle_coupling",
+      "target": "memory_consolidation",
+      "chain_id": "series_029_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_glymphatic_clearance",
+      "target": "cognitive_decline_risk",
+      "chain_id": "series_029_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "sleep_fragmentation",
+      "target": "next_day_fatigue_and_executive_inhibition",
+      "chain_id": "series_029_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_029_sleep_architecture_glymphatic_memory_fatigue_cognition.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "wearable_RHR_or_HR",
+      "target": "health_state_inference_reliability",
+      "chain_id": "series_030_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "wearable_HRV_proxy",
+      "target": "recovery_or_stress_inference",
+      "chain_id": "series_030_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "wearable_sleep_metrics",
+      "target": "sleep_based_fatigue_inference",
+      "chain_id": "series_030_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_030_wearable_signal_reliability_HRV_sleep_temp_activity_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "single_lab_biomarker",
+      "target": "fatigue_mood_cognition_inference_reliability",
+      "chain_id": "series_031_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "ferritin",
+      "target": "iron_related_fatigue_inference",
+      "chain_id": "series_031_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "serum_B12",
+      "target": "cognitive_or_neurologic_symptom_inference",
+      "chain_id": "series_031_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_031_lab_marker_reliability_biomarker_interpretation_fatigue_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "observational_health_association",
+      "target": "edge_confidence_assignment",
+      "chain_id": "series_035_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_035_causal_inference_confounding_uncertainty_health_graph.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "contextual_factor",
+      "target": "inference_confidence",
+      "chain_id": "series_036_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_036_context_override_medication_environment_behavior_inference_rules.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "incomplete_multimodal_observations",
+      "target": "latent_state_hypothesis",
+      "chain_id": "series_037_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_037_missing_data_partial_observability_uncertainty_sparse_health_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "uncalibrated_model_score",
+      "target": "health_state_confidence",
+      "chain_id": "series_038_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_038_uncertainty_scoring_confidence_calibration_health_state_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "evidence_body_quality",
+      "target": "graph_edge_promotion_decision",
+      "chain_id": "series_039_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_039_evidence_grading_source_quality_graph_edge_promotion.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "fatigue_symptom_report",
+      "target": "mechanism_specific_measurement_recommendation",
+      "chain_id": "series_040_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_040_fatigue_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "subjective_brain_fog",
+      "target": "objective_cognitive_impairment",
+      "chain_id": "series_041_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_041_brain_fog_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "context_specific_brain_fog_trigger",
+      "target": "attention_processing_speed_worsening",
+      "chain_id": "series_041_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_041_brain_fog_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "dizziness_symptom_report",
+      "target": "next_measurement_needed",
+      "chain_id": "series_042_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_042_dizziness_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "orthostatic_or_respiratory_dizziness_context",
+      "target": "lightheadedness_presyncope_brain_fog",
+      "chain_id": "series_042_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_042_dizziness_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "anxiety_like_symptom_cluster",
+      "target": "anxiety_like_state_uncertain",
+      "chain_id": "series_043_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "reduced_vagally_mediated_HRV",
+      "target": "anxiety_like_symptoms",
+      "chain_id": "series_043_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_043_anxiety_like_physiology_panic_dysautonomia_stimulant_endocrine.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "convergent_sleep_autonomic_activity_symptom_deviation",
+      "target": "fatigue_mood_cognition_performance",
+      "chain_id": "series_044_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_044_low_recovery_state_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "mood_worsening_symptom_profile",
+      "target": "mood_worsening_subtype",
+      "chain_id": "series_045_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_045_mood_worsening_phenotypes_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "GI_symptom_cluster",
+      "target": "fatigue_mood_sleep_brain_fog_functional_impairment",
+      "chain_id": "series_046_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_046_GI_fatigue_mood_brain_fog_clusters_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "migraine_phase",
+      "target": "fatigue_brain_fog_cognitive_impairment_sensory_sensitivity",
+      "chain_id": "series_047_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_047_headache_migraine_brain_fog_dizziness_clusters_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "impaired_mitochondrial_energy_or_metabolic_flexibility",
+      "target": "fatigue_exercise_intolerance_PEM_brain_fog",
+      "chain_id": "series_048_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_048_metabolic_fatigue_clusters_differential_inference.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "symptom_report",
+      "target": "candidate_mechanism_and_next_measurement",
+      "chain_id": "series_049_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_049_multibranch_differential_inference_templates.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "health_state_inference_model",
+      "target": "deployment_readiness",
+      "chain_id": "series_050_pattern_001",
+      "confidence": "unknown",
+      "source_file": "series_050_final_graph_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "graph_edge_or_node",
+      "target": "user_facing_explanation_quality",
+      "chain_id": "series_050_pattern_002",
+      "confidence": "unknown",
+      "source_file": "series_050_final_graph_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "inference_output",
+      "target": "safe_mechanism_hypothesis_output",
+      "chain_id": "series_050_pattern_003",
+      "confidence": "unknown",
+      "source_file": "series_050_final_graph_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "source inventory concept",
+      "target": "see_inference_chains",
+      "chain_id": "",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "core guardrails G1-G10",
+      "target": "see_inference_chains",
+      "chain_id": "",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    },
+    {
+      "source": "validation philosophy: external validation, calibration, missing data handling, explainability, traceability",
+      "target": "see_inference_chains",
+      "chain_id": "",
+      "confidence": "moderate",
+      "source_file": "astro_data_tree_036_final_all_to_all_inference_matrix_guardrails_validation_protocol.cleaned.json",
+      "synthesis_status": "assembled_from_existing_sources",
+      "not_a_diagnosis": true
+    }
+  ],
+  "global_guardrail": "No matrix entry constitutes a medical diagnosis. All entries are traceable hypotheses."
+}

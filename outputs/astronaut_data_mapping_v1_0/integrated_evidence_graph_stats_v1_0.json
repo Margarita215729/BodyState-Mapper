@@ -1,0 +1,315 @@
+{
+  "metadata": {
+    "graph_id": "thsi_integrated_evidence_graph_v1_0",
+    "version": "1.0",
+    "scientific_name": "Traceable Human State Inference Under Partial Biological Observability",
+    "product": "BodyState Mapper",
+    "extension": "Astronaut Data Mapping",
+    "build_timestamp": "2026-06-11T23:21:21.655609+00:00",
+    "synthesis_status": "assembled_from_existing_sources",
+    "not_a_diagnostic_system": true,
+    "core_rule": "Outputs are traceable hidden-state hypotheses with uncertainty, missing-data notes, guardrails, and next-best measurements. Never a diagnosis.",
+    "node_types": [
+      "context",
+      "data_quality_flag",
+      "evidence_source",
+      "guardrail",
+      "hidden_state",
+      "inference_chain",
+      "measured_parameter",
+      "observation_input_type",
+      "required_measurement",
+      "response_type",
+      "result_variation",
+      "source_file",
+      "source_tree"
+    ],
+    "edge_types": [
+      "ALIAS_OF",
+      "CAN_ACCEPT_INPUT",
+      "CAN_OUTPUT_RESPONSE",
+      "CONSTRAINED_BY_GUARDRAIL",
+      "CONTAINS",
+      "CONTEXT_OVERRIDES",
+      "CONTRADICTS_OR_REDUCES_CONFIDENCE",
+      "DERIVED_FROM",
+      "HAS_VARIATION",
+      "MEASURES",
+      "NEEDS_REVIEW",
+      "PART_OF_CHAIN",
+      "RECOMMENDS_MEASUREMENT",
+      "REQUIRES_CONTEXT",
+      "SUPPORTED_BY_SOURCE",
+      "SUPPORTS_HIDDEN_STATE"
+    ],
+    "required_hidden_states_present": [
+      "low_recovery_state",
+      "acute_sleep_loss",
+      "sleep_fragmentation_recovery_failure",
+      "circadian_misalignment",
+      "orthostatic_intolerance",
+      "hypovolemia_dehydration_hypothesis",
+      "hyperventilation_hypocapnia_state",
+      "environmental_CO2_performance_risk",
+      "heat_strain",
+      "infectious_or_inflammatory_load",
+      "inflammatory_sickness_behavior",
+      "postviral_immune_activation",
+      "viral_reactivation_context",
+      "metabolic_strain",
+      "low_energy_availability",
+      "catabolic_muscle_loss",
+      "deconditioning",
+      "PEM_objective_branch",
+      "pain_sleep_fatigue_branch",
+      "migraine_phenotype_branch",
+      "iron_deficiency_oxygen_delivery_branch",
+      "functional_B12_deficiency",
+      "thyroid_dysfunction_context",
+      "HPA_circadian_disruption",
+      "medication_context_override",
+      "bone_unloading_loss",
+      "SANS_risk_branch",
+      "renal_stone_risk_branch",
+      "radiation_biological_effect_branch",
+      "team_behavioral_risk",
+      "microbiome_immune_context",
+      "wearable_sleep_false_reassurance",
+      "unknown_or_missing_data_state"
+    ],
+    "required_hidden_states_missing": [],
+    "required_guardrails_present": [
+      "unknown_is_not_negative_evidence",
+      "single_marker_never_equals_mechanism",
+      "symptom_report_never_equals_mechanism",
+      "context_override_before_mechanism",
+      "medication_timing_first",
+      "environmental_exposure_separate_from_physiologic_effect",
+      "group_reference_separate_from_individual_baseline",
+      "within_person_deviation_priority",
+      "temporal_lag_required_for_causality",
+      "objective_performance_separate_from_subjective_symptom",
+      "imaging_abnormality_separate_from_functional_impairment",
+      "microbiome_association_not_causality",
+      "immune_marker_not_infection_without_symptoms",
+      "radiation_dose_not_injury_without_biomarker_or_outcome",
+      "SANS_not_subjective_vision_symptom",
+      "PEM_not_normal_fatigue",
+      "hydration_intake_not_hydration_status",
+      "low_activity_not_fatigue",
+      "low_VO2_not_mechanism",
+      "normal_one_source_not_ruleout",
+      "wearable_sleep_stage_not_PSG",
+      "pain_limited_performance_not_muscle_weakness",
+      "recommend_next_measurement_when_uncertain"
+    ],
+    "required_guardrails_missing": []
+  },
+  "stats": {
+    "node_count": 1979,
+    "edge_count": 5698,
+    "nodes_by_type": {
+      "context": 236,
+      "data_quality_flag": 3,
+      "evidence_source": 15,
+      "guardrail": 194,
+      "hidden_state": 54,
+      "inference_chain": 245,
+      "measured_parameter": 498,
+      "observation_input_type": 14,
+      "required_measurement": 465,
+      "response_type": 6,
+      "result_variation": 63,
+      "source_file": 93,
+      "source_tree": 93
+    },
+    "edges_by_type": {
+      "CAN_ACCEPT_INPUT": 431,
+      "CAN_OUTPUT_RESPONSE": 37,
+      "CONSTRAINED_BY_GUARDRAIL": 194,
+      "CONTAINS": 155,
+      "CONTEXT_OVERRIDES": 1,
+      "DERIVED_FROM": 771,
+      "HAS_VARIATION": 63,
+      "MEASURES": 524,
+      "NEEDS_REVIEW": 872,
+      "PART_OF_CHAIN": 22,
+      "RECOMMENDS_MEASUREMENT": 626,
+      "REQUIRES_CONTEXT": 328,
+      "SUPPORTED_BY_SOURCE": 1621,
+      "SUPPORTS_HIDDEN_STATE": 53
+    },
+    "top_connected_nodes": [
+      {
+        "id": "dqf::low_evidence_strength",
+        "label": "Low Evidence Strength",
+        "type": "data_quality_flag",
+        "degree": 459
+      },
+      {
+        "id": "dqf::needs_review_pipeline_status",
+        "label": "Needs Review Pipeline Status",
+        "type": "data_quality_flag",
+        "degree": 413
+      },
+      {
+        "id": "input::wearable_continuous",
+        "label": "Continuous Wearable Sensor",
+        "type": "observation_input_type",
+        "degree": 64
+      },
+      {
+        "id": "input::clinical_lab_blood",
+        "label": "Clinical Lab — Blood",
+        "type": "observation_input_type",
+        "degree": 57
+      },
+      {
+        "id": "file::astro_R002_pain_injury_repair.cleaned.json",
+        "label": "astro_R002_pain_injury_repair.cleaned.json",
+        "type": "source_file",
+        "degree": 56
+      },
+      {
+        "id": "input::environmental_sensor",
+        "label": "Environmental Sensor",
+        "type": "observation_input_type",
+        "degree": 56
+      },
+      {
+        "id": "input::self_report_symptom",
+        "label": "Self-Report Symptom Scale",
+        "type": "observation_input_type",
+        "degree": 55
+      },
+      {
+        "id": "file::astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+        "label": "astro_data_tree_002_blood_systemic_CBC_CMP_electrolytes_kidney_liver_repair.cleaned.json",
+        "type": "source_file",
+        "degree": 54
+      },
+      {
+        "id": "file::astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+        "label": "astro_data_tree_015_cardiovascular_structure_function_vascular_stiffness_ultrasound.cleaned.json",
+        "type": "source_file",
+        "degree": 54
+      },
+      {
+        "id": "tree::repair_R002",
+        "label": "repair_R002",
+        "type": "source_tree",
+        "degree": 54
+      },
+      {
+        "id": "tree::astro_tree_002",
+        "label": "astro_tree_002",
+        "type": "source_tree",
+        "degree": 53
+      },
+      {
+        "id": "file::astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+        "label": "astro_R003_pulmonary_bodycomp_repair.cleaned.json",
+        "type": "source_file",
+        "degree": 51
+      },
+      {
+        "id": "input::wearable_sleep",
+        "label": "Wearable Sleep Estimate",
+        "type": "observation_input_type",
+        "degree": 51
+      },
+      {
+        "id": "file::astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+        "label": "astro_data_tree_013_heart_rate_HRV_autonomic_balance.cleaned.json",
+        "type": "source_file",
+        "degree": 49
+      },
+      {
+        "id": "tree::repair_R003",
+        "label": "repair_R003",
+        "type": "source_tree",
+        "degree": 49
+      },
+      {
+        "id": "tree::astro_tree_015",
+        "label": "astro_tree_015",
+        "type": "source_tree",
+        "degree": 47
+      },
+      {
+        "id": "file::astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+        "label": "astro_data_tree_014_blood_pressure_orthostatic_HR_BP_volume_regulation.cleaned.json",
+        "type": "source_file",
+        "degree": 46
+      },
+      {
+        "id": "file::astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+        "label": "astro_data_tree_026_ocular_SANS_vision_retinal_optic_nerve_brain_fluid_pressure.cleaned.json",
+        "type": "source_file",
+        "degree": 43
+      },
+      {
+        "id": "file::astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+        "label": "astro_data_tree_025_bone_mineral_metabolism_fracture_risk_unloading_effects.cleaned.json",
+        "type": "source_file",
+        "degree": 42
+      },
+      {
+        "id": "file::astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+        "label": "astro_data_tree_027_habitat_environment_CO2_O2_pressure_humidity_noise_air_quality.cleaned.json",
+        "type": "source_file",
+        "degree": 40
+      },
+      {
+        "id": "tree::astro_tree_014",
+        "label": "astro_tree_014",
+        "type": "source_tree",
+        "degree": 40
+      },
+      {
+        "id": "file::series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+        "label": "series_005_sleep_circadian_autonomic_metabolic_inflammatory_fatigue_cognition.cleaned.json",
+        "type": "source_file",
+        "degree": 39
+      },
+      {
+        "id": "tree::astro_tree_013",
+        "label": "astro_tree_013",
+        "type": "source_tree",
+        "degree": 39
+      },
+      {
+        "id": "tree::astro_tree_026",
+        "label": "astro_tree_026",
+        "type": "source_tree",
+        "degree": 37
+      },
+      {
+        "id": "file::series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+        "label": "series_018_environment_light_noise_heat_air_quality_fatigue_cognition.cleaned.json",
+        "type": "source_file",
+        "degree": 37
+      }
+    ],
+    "hidden_state_count": 54,
+    "guardrail_count": 194,
+    "measured_parameter_count": 498,
+    "source_tree_count": 93,
+    "needs_review_count": 0,
+    "high_confidence_edge_count": 2726,
+    "low_confidence_edge_count": 35,
+    "partial_node_count": 413,
+    "ready_node_count": 1566,
+    "confidence_distribution_edges": {
+      "moderate": 2672,
+      "high": 2726,
+      "low": 35,
+      "unknown": 265
+    },
+    "pipeline_status_distribution_nodes": {
+      "partial": 413,
+      "ready": 1566
+    },
+    "dropped_edges_missing_endpoint": 0
+  }
+}
