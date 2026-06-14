@@ -2,12 +2,15 @@
 
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
 SOURCES_PDF_DIR = PROJECT_ROOT / "sources_pdf"
 DATA_DIR = PROJECT_ROOT / "data"
 SCHEMAS_DIR = PROJECT_ROOT / "schemas"
+SCRIPTS_DIR = PROJECT_ROOT / "scripts"
 FIGURES_DIR = PROJECT_ROOT / "figures"
 OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+INTERFACE_DIR = PROJECT_ROOT / "interface"
+DOCS_DIR = PROJECT_ROOT / "docs"
 
 REGISTRY_CSV = DATA_DIR / "evidence_source_registry_v0_1.csv"
 REGISTRY_JSON = DATA_DIR / "evidence_source_registry_v0_1.json"

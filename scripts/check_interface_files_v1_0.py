@@ -205,6 +205,37 @@ def main() -> int:
     report.add("fetch_failure_guidance_present", has_guidance,
                "fetch-failure guidance (server command + URL) present")
 
+    # Every local JSON path the interface loads must exist on disk.
+    referenced_json = sorted(set(
+        re.findall(r'["\']([^"\']*?\.json)["\']', app_src)
+        + re.findall(r'["\']([^"\']*?\.json)["\']', index_src)
+    ))
+    # Only resolve relative, local paths (skip absolute URLs handled elsewhere).
+    local_json = [p for p in referenced_json if not re.match(r'[a-zA-Z]+://', p)]
+    missing_json = []
+    resolved_json = []
+    for rel in local_json:
+        candidate = (INTERFACE_DIR / rel).resolve()
+        if candidate.is_file():
+            resolved_json.append(rel)
+        else:
+            missing_json.append(rel)
+    report.add("referenced_json_files_exist", not missing_json,
+               f"{len(resolved_json)}/{len(local_json)} referenced JSON files exist on disk",
+               {"resolved": resolved_json, "missing": missing_json})
+
+    # No broken local absolute paths referenced by the interface.
+    abs_paths = re.findall(r'(?:["\'(]|\bfile://)(/(?:Users|home)/[^"\')\s]+)', combined)
+    report.add("no_broken_absolute_paths", not abs_paths,
+               f"{len(abs_paths)} absolute local path reference(s) found",
+               {"paths": abs_paths[:20]})
+
+    # Required output file present (the graph the dashboard depends on).
+    graph_path = (PROJECT_ROOT / "outputs" / "astronaut_data_mapping_v1_0"
+                  / "integrated_evidence_graph_v1_0.json")
+    report.add("required_output_present", graph_path.is_file(),
+               f"integrated_evidence_graph_v1_0.json present: {graph_path.is_file()}")
+
     summary = {
         "checks_total": len(report.checks),
         "checks_passed": sum(1 for c in report.checks if c["passed"]),

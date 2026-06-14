@@ -22,7 +22,7 @@ Counts:
   nodes: 34
 
 Passed (6):
-  ✓ All 15 registry PDFs present in /Users/rm/Desktop/BodyState Mapper/sources_pdf
+  ✓ All 15 registry PDFs present in <project root>/sources_pdf
   ✓ No duplicate source_id values
   ✓ No direct observable_marker → psychological_state_hypothesis edges
   ✓ No duplicate edge_id values
@@ -47,8 +47,8 @@ Passed (5):
   ✓ All 3 raw observations have required fields
   ✓ All 3 derived markers have supporting_observations
   ✓ All 3 inference input observations reference static nodes
-  ✓ Personal evidence graph JSON exists: /Users/rm/Desktop/BodyState Mapper/outputs/demo_personal_evidence_graph_v0_1.json
-  ✓ Inference input JSON exists: /Users/rm/Desktop/BodyState Mapper/outputs/demo_inference_input_from_personal_graph_v0_1.json
+  ✓ Personal evidence graph JSON exists: <project root>/outputs/demo_personal_evidence_graph_v0_1.json
+  ✓ Inference input JSON exists: <project root>/outputs/demo_inference_input_from_personal_graph_v0_1.json
 
 Validation status: PASSED
 
@@ -101,7 +101,7 @@ VALIDATION COMPLETE
   Warnings: 19
   Failures: 0
 ============================================================
-[WRITE] /Users/rm/Desktop/BodyState Mapper/outputs/validation/astronaut_mapping_package_validation_v1_0.json
-[WRITE] /Users/rm/Desktop/BodyState Mapper/outputs/validation/astronaut_mapping_package_validation_v1_0.md
+[WRITE] <project root>/outputs/validation/astronaut_mapping_package_validation_v1_0.json
+[WRITE] <project root>/outputs/validation/astronaut_mapping_package_validation_v1_0.md
 
 ```

@@ -1,9 +1,9 @@
 # Dashboard Smoke Test (interface/) — v1.0
 
 - Validator: `check_interface_files_v1_0`
-- Timestamp: 2026-06-12T16:49:44.087753+00:00
+- Timestamp: 2026-06-12T20:32:52.448644+00:00
 - Overall status: **PASS**
-- Checks passed: 16/16
+- Checks passed: 19/19
 
 ## Tabs found
 
@@ -35,6 +35,9 @@
 | report_sections_present | PASS | 10/10 report sections present |
 | mandatory_safety_line_present | PASS | mandatory safety line "This is not a diagnosis." present |
 | fetch_failure_guidance_present | PASS | fetch-failure guidance (server command + URL) present |
+| referenced_json_files_exist | PASS | 1/1 referenced JSON files exist on disk |
+| no_broken_absolute_paths | PASS | 0 absolute local path reference(s) found |
+| required_output_present | PASS | integrated_evidence_graph_v1_0.json present: True |
 
 ## Failing check details
 

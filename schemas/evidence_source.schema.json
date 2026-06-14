@@ -24,7 +24,11 @@
       "minLength": 1
     },
     "authors": {
-      "type": "string"
+      "description": "Canonical form is an array of author name strings. A single delimited string is accepted for legacy CSV-derived rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "year": {
       "oneOf": [
@@ -88,18 +92,32 @@
       "type": "string"
     },
     "main_findings_short": {
-      "type": "string"
+      "description": "Canonical form is an array of finding statements. A single string is accepted for legacy CSV-derived rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "supported_nodes": {
-      "type": "string",
-      "description": "Comma-separated node identifiers supported by this source."
+      "description": "Node identifiers supported by this source. Canonical form is an array; a comma-separated string is accepted for legacy CSV-derived rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "supported_edges": {
-      "type": "string",
-      "description": "Comma-separated edge identifiers supported by this source."
+      "description": "Edge identifiers supported by this source. Canonical form is an array; a comma-separated string is accepted for legacy CSV-derived rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "limitations": {
-      "type": "string"
+      "description": "Canonical form is an array of limitation statements. A single string is accepted for legacy CSV-derived rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "risk_of_overinterpretation": {
       "type": "string",

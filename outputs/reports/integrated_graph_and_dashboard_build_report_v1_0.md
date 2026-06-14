@@ -133,7 +133,7 @@ Validated live via a local server and an automated browser harness:
 ### How to open the dashboard
 
 ```bash
-cd "/Users/rm/Desktop/BodyState Mapper"
+cd "<project root>"
 python3 -m http.server 8000
 # then open:
 # http://localhost:8000/interface/

@@ -22,19 +22,23 @@ from collections import defaultdict
 # ─────────────────────────────────────────────────────────────────────────────
 # PATHS
 # ─────────────────────────────────────────────────────────────────────────────
-PROJECT_ROOT = Path("/Users/rm/Desktop/BodyState Mapper")
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _project_paths import (  # noqa: E402
+    PROJECT_ROOT,
+    DATA_DIR,
+    SCRIPTS_DIR,
+    OUTPUTS_DIR,
+    SOURCES_PDF_DIR as SOURCES_PDF,
+    DOCS_DIR,
+)
+
 # "Cleaned Data" is at project root level (not inside data/)
 _cleaned_data_root = PROJECT_ROOT / "Cleaned Data"
 _cleaned_data_data = PROJECT_ROOT / "data" / "Cleaned Data"
 CLEANED_DATA = _cleaned_data_root if _cleaned_data_root.is_dir() else _cleaned_data_data
-DATA_DIR     = PROJECT_ROOT / "data"
-SCRIPTS_DIR  = PROJECT_ROOT / "scripts"
-OUTPUTS_DIR  = PROJECT_ROOT / "outputs"
 REPORTS_DIR  = OUTPUTS_DIR / "reports"
 VALIDATION_DIR = OUTPUTS_DIR / "validation"
 PKG_DIR      = OUTPUTS_DIR / "astronaut_data_mapping_v1_0"
-SOURCES_PDF  = PROJECT_ROOT / "sources_pdf"
-DOCS_DIR     = PROJECT_ROOT / "docs"
 
 BUILD_TS = datetime.now(timezone.utc).isoformat()
 
@@ -1977,10 +1981,10 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-PROJECT_ROOT = Path("/Users/rm/Desktop/BodyState Mapper")
-PKG_DIR = PROJECT_ROOT / "outputs" / "astronaut_data_mapping_v1_0"
-DATA_DIR = PROJECT_ROOT / "data"
-OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _project_paths import PROJECT_ROOT, DATA_DIR, OUTPUTS_DIR
+
+PKG_DIR = OUTPUTS_DIR / "astronaut_data_mapping_v1_0"
 VALIDATION_DIR = OUTPUTS_DIR / "validation"
 
 EXPECTED_FILES = [

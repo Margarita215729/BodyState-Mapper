@@ -1,10 +1,10 @@
 {
   "validator": "check_interface_files_v1_0",
-  "timestamp": "2026-06-12T16:49:44.087753+00:00",
+  "timestamp": "2026-06-12T20:32:52.448644+00:00",
   "overall_status": "PASS",
   "summary": {
-    "checks_total": 16,
-    "checks_passed": 16,
+    "checks_total": 19,
+    "checks_passed": 19,
     "checks_failed": 0,
     "tabs_found": [
       "Workflow",
@@ -153,6 +153,34 @@
       "status": "PASS",
       "passed": true,
       "message": "fetch-failure guidance (server command + URL) present",
+      "details": {}
+    },
+    {
+      "check": "referenced_json_files_exist",
+      "status": "PASS",
+      "passed": true,
+      "message": "1/1 referenced JSON files exist on disk",
+      "details": {
+        "resolved": [
+          "../outputs/astronaut_data_mapping_v1_0/integrated_evidence_graph_v1_0.json"
+        ],
+        "missing": []
+      }
+    },
+    {
+      "check": "no_broken_absolute_paths",
+      "status": "PASS",
+      "passed": true,
+      "message": "0 absolute local path reference(s) found",
+      "details": {
+        "paths": []
+      }
+    },
+    {
+      "check": "required_output_present",
+      "status": "PASS",
+      "passed": true,
+      "message": "integrated_evidence_graph_v1_0.json present: True",
       "details": {}
     }
   ]

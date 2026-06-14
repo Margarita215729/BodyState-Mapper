@@ -1,0 +1,25 @@
+# macOS / OS artifacts
+.DS_Store
+__MACOSX/
+
+# Python caches and compiled files
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+
+# Temporary archives
+*.tmp.zip
+
+# Local environments
+venv/
+.venv/
+env/
+
+# Build / distribution output
+dist/
+
+# Editor folders
+.idea/
+.vscode/

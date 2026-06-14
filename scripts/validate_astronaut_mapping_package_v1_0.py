@@ -9,10 +9,10 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-PROJECT_ROOT = Path("/Users/rm/Desktop/BodyState Mapper")
-PKG_DIR = PROJECT_ROOT / "outputs" / "astronaut_data_mapping_v1_0"
-DATA_DIR = PROJECT_ROOT / "data"
-OUTPUTS_DIR = PROJECT_ROOT / "outputs"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _project_paths import PROJECT_ROOT, DATA_DIR, OUTPUTS_DIR
+
+PKG_DIR = OUTPUTS_DIR / "astronaut_data_mapping_v1_0"
 VALIDATION_DIR = OUTPUTS_DIR / "validation"
 
 EXPECTED_FILES = [

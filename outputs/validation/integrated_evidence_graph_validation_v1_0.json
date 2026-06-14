@@ -1,6 +1,6 @@
 {
   "validator": "validate_integrated_evidence_graph_v1_0",
-  "timestamp": "2026-06-12T16:49:44.150893+00:00",
+  "timestamp": "2026-06-12T20:32:50.747116+00:00",
   "overall_status": "PASS",
   "summary": {
     "node_count": 1979,

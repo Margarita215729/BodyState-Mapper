@@ -28,26 +28,26 @@ The build script executed Phases 1–9 producing:
 
 ## 3. Files Created
 
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/astronaut_data_sources_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/measured_entities_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/result_variation_trees_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/cross_modal_links_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/hidden_state_candidates_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/inference_chains_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/guardrails_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/required_measurements_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/mission_phase_interpretation_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/all_to_all_matrix_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/validation_protocol_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/README.md`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/data_intake_contract_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/reports/v1_0_prebuild_state_check.md`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/reports/source_file_inventory_summary_v1_0.md`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/astronaut_data_mapping_v1_0/measured_parameter_registry_summary_v1_0.md`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/validation/consolidated_validation_summary_v1_0.md`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/validation/astronaut_mapping_package_validation_v1_0.json`
-- `/Users/rm/Desktop/BodyState Mapper/outputs/validation/astronaut_mapping_package_validation_v1_0.md`
-- `/Users/rm/Desktop/BodyState Mapper/scripts/validate_astronaut_mapping_package_v1_0.py`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/astronaut_data_sources_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/measured_entities_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/result_variation_trees_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/cross_modal_links_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/hidden_state_candidates_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/inference_chains_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/guardrails_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/required_measurements_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/mission_phase_interpretation_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/all_to_all_matrix_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/validation_protocol_v1_0.json`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/README.md`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/data_intake_contract_v1_0.json`
+- `<project root>/outputs/reports/v1_0_prebuild_state_check.md`
+- `<project root>/outputs/reports/source_file_inventory_summary_v1_0.md`
+- `<project root>/outputs/astronaut_data_mapping_v1_0/measured_parameter_registry_summary_v1_0.md`
+- `<project root>/outputs/validation/consolidated_validation_summary_v1_0.md`
+- `<project root>/outputs/validation/astronaut_mapping_package_validation_v1_0.json`
+- `<project root>/outputs/validation/astronaut_mapping_package_validation_v1_0.md`
+- `<project root>/scripts/validate_astronaut_mapping_package_v1_0.py`
 
 ## 4. Files Modified
 

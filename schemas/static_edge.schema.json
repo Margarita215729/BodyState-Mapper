@@ -52,8 +52,11 @@
       "maximum": 5
     },
     "confidence_prior": {
-      "type": "string",
-      "description": "Optional prior confidence label or numeric string for THSI weighting."
+      "description": "Prior confidence for THSI weighting. Canonical form is a number in [0,1]; a label or numeric string is accepted for legacy rows.",
+      "oneOf": [
+        { "type": "number", "minimum": 0, "maximum": 1 },
+        { "type": "string" }
+      ]
     },
     "source_ids": {
       "type": "array",
@@ -87,15 +90,25 @@
       "type": "string"
     },
     "limitations": {
-      "type": "string"
+      "description": "Canonical form is an array of limitation statements. A single string is accepted for legacy rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "context_requirements": {
-      "type": "string",
-      "description": "Conditions under which this edge applies (population, timing, baseline, etc.)."
+      "description": "Conditions under which this edge applies (population, timing, baseline, etc.). Canonical form is an array; a single string is accepted for legacy rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "forbidden_direct_inference": {
-      "type": "string",
-      "description": "Explicit note of what must NOT be inferred from this edge alone."
+      "description": "Explicit note(s) of what must NOT be inferred from this edge alone. Canonical form is an array; a single string is accepted for legacy rows.",
+      "oneOf": [
+        { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        { "type": "string" }
+      ]
     },
     "risk_of_overinterpretation": {
       "type": "string",
